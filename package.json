@@ -20,6 +20,7 @@
     "dotenv": "^17.2.3",
     "dotenv-cli": "^11.0.0",
     "express": "^5.1.0",
+    "express-list-endpoints": "^7.1.1",
     "fs": "^0.0.1-security",
     "http": "^0.0.1-security",
     "joi": "^18.0.1",

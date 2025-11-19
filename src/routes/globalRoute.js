@@ -11,7 +11,8 @@ const publicRouter = new express.Router();
     message: "API is running",
     status: "Success",
   });
-
+  });
+  
   publicRouter.post("/api/users/register",upload.fields([
     { name: "npwpImage", maxCount: 1 },
     { name: "deedImage", maxCount: 1 },
@@ -19,9 +20,10 @@ const publicRouter = new express.Router();
 
 
   publicRouter.post("/api/users/login", authController.login);
-  publicRouter.post("/api/users/OTP", authMiddleware, authController.otpSending);
-  publicRouter.post("/api/users/OTPVerification", authMiddleware, authController.otpVerification);
-  publicRouter.post("/api/users/logout", authMiddleware, authController.logout);
-});
+  
+  publicRouter.use(authMiddleware)
+  publicRouter.post("/api/users/OTP", authController.otpSending);
+  publicRouter.post("/api/users/OTPVerification", authController.otpVerification);
+  publicRouter.post("/api/users/logout", authController.logout);
 
 export { publicRouter };
