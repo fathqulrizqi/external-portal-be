@@ -1,0 +1,137 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./@prisma/client-main"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model AllowedIpCors{
+  ip          String    @db.VarChar(50) @unique
+  @@index([ip])
+}
+
+model User {
+  userId            String    @id @default(uuid()) @db.Uuid
+  email             String    @unique @db.VarChar(150) 
+  password          String    @db.VarChar(255)
+  isActive          Boolean   @default(false)
+  sessionExpireDate DateTime   
+  createdDate   DateTime  @default(now())
+  updateDate    DateTime  @updatedAt
+
+  logs         LogsLogin[]
+  linkedDevice LinkedDevice[]
+  profile      Profile?
+  UserHasRoleAccess UserHasRoleAccess[]
+  otp otpVerifikasi[]
+
+  @@index([email])
+  @@index([isActive])
+  @@index([email,isActive])
+}
+
+model otpVerifikasi{
+  id          Int       @id @default(autoincrement())
+  userId      String    @db.Uuid
+  code        String    @db.VarChar(6)
+  expireDate  DateTime
+  
+  user        User      @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  @@index([userId,code])
+}
+
+model LogsLogin {
+  logsId      String    @id @default(uuid()) @db.Uuid
+  userId      String    @db.Uuid  
+  token       String    @unique @db.Text
+  isActive    Boolean   @default(true)
+  device      String?   @db.Text
+  ip          String?   @db.VarChar(45)
+  createdDate DateTime  @default(now())
+  expireDate  DateTime
+
+  user        User      @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  @@index([userId])
+}
+
+model Role{
+  roleId       Int     @id @default(autoincrement())
+  roleName     String  @db.VarChar(50)
+
+  UserHasRoleAccess UserHasRoleAccess[]
+}
+
+model Access{
+  accessId     Int     @id @default(autoincrement())
+  accessName   String  @db.VarChar(50)
+
+  UserHasRoleAccess UserHasRoleAccess[]
+}
+
+model UserHasRoleAccess{
+  userId       String   @db.Uuid 
+  roleId       Int      
+  accessId     Int      
+
+  user         User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  role         Role     @relation(fields: [roleId], references: [roleId], onDelete: Cascade)
+  access       Access   @relation(fields: [accessId], references: [accessId], onDelete: Cascade)
+  
+  @@id([userId,roleId,accessId])
+  @@index([userId,accessId])
+  @@index([roleId])
+  @@index([userId])
+}
+
+model LinkedDevice {
+  deviceId         String   @id @default(uuid()) @db.Uuid
+  clientDeviceUuid String   @unique @db.Uuid
+  userId           String   @db.Uuid
+
+  user         User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  @@index([userId])
+}
+
+model CompanySegment {
+  segmentId   Int       @id @default(autoincrement())
+  segmentName String    @db.VarChar(100)
+  description String?   @db.VarChar(255)
+
+  profile Profile[]
+}
+
+
+model Profile {
+  userId   String    @id @db.Uuid
+  fullName String?   @db.VarChar(150)
+  urlImage String?   @db.Text         
+  companyName     String    @db.VarChar(150)
+  npwp            String    @db.VarChar(50)
+  deedNumber      String?   @db.VarChar(100) 
+  establishedDate DateTime? @db.Date
+  npwpUrl        String    @db.Text          
+  deedUrl        String    @db.Text          
+  description     String?   @db.Text          
+  segmentId       Int?                 
+  companyAddress         String?   @db.VarChar(255) 
+  companyPhone    String?   @db.VarChar(50)  
+  website         String?   @db.VarChar(100) 
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  
+  segment         CompanySegment? @relation(fields: [segmentId], references: [segmentId])
+  user     User      @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  
+  @@index([userId,segmentId])
+  @@index([segmentId])
+}
