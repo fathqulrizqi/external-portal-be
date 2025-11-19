@@ -19,11 +19,9 @@ const publicRouter = new express.Router();
 
 
   publicRouter.post("/api/users/login", authController.login);
-  
-  publicRouter.use(authMiddleware)
-  publicRouter.post("/api/users/OTP", authController.otpSending);
-  publicRouter.post("/api/users/OTPVerification", authController.otpVerification);
-  publicRouter.post("/api/users/logout", authController.logout);
+  publicRouter.post("/api/users/OTP", authMiddleware, authController.otpSending);
+  publicRouter.post("/api/users/OTPVerification", authMiddleware, authController.otpVerification);
+  publicRouter.post("/api/users/logout", authMiddleware, authController.logout);
 });
 
 export { publicRouter };
