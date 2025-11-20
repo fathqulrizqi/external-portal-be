@@ -86,7 +86,7 @@ const verifikasiRegistrasi = async (userId,email)=> {
     mailer.sendVerificationEmail('Niterra E-Bidding', email, 'Security Alert: Registration Verification Code', Template);
     return true;
 }
-const verifikasiLogin = async (userId,email)=> {
+const verifikasiLogin = async (userId,email,deviceName,ipAddress)=> {
 
     const OTP = createOTP(userId);
 

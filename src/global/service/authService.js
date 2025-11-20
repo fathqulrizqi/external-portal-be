@@ -97,9 +97,9 @@ try {
     });
 
     
-    if (existingDevice != null) {
+    if (existingDevice == null) {
       console.log(existingDevice);
-      await LinkedDevice.create({
+      await ebidding.LinkedDevice.create({
         data: {
           clientDeviceUuid: deviceUuid,
           userId: userId
@@ -116,7 +116,7 @@ try {
 
     }
   } catch (error) {
-    throw new ResponseError(500,'Failed to verify device.');
+    throw new ResponseError(500,'Failed to verify device.'+ error);
   }
 
   const jwtPayload = { userId: user.userId };

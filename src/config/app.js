@@ -37,8 +37,8 @@ app.use(express.json());
 app.use(sanitizeInputMiddleware);
 app.use(express.urlencoded({ extended: true }));
 app.use(publicRouter);
-app.use('/api/admin',adminRouter);
 app.use('/api/users',userRouter);
+app.use('/api/admin',adminRouter);
 
 const server = http.createServer(app);
 const io = new Server(server, {
