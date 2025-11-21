@@ -225,7 +225,9 @@ exports.Prisma.FormL9BankInfoScalarFieldEnum = {
   bankAddress: 'bankAddress',
   noRek: 'noRek',
   swiftCode: 'swiftCode',
-  IBAN: 'IBAN'
+  IBAN: 'IBAN',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.FormL9GeneralInformationScalarFieldEnum = {
@@ -239,13 +241,17 @@ exports.Prisma.FormL9GeneralInformationScalarFieldEnum = {
   companyEmail: 'companyEmail',
   npwp: 'npwp',
   totalCapital: 'totalCapital',
-  segmentId: 'segmentId'
+  segmentId: 'segmentId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.FormL9GeneralInformationContinueScalarFieldEnum = {
   formL9GeneralInformationContinueId: 'formL9GeneralInformationContinueId',
   formGeneralInformationId: 'formGeneralInformationId',
-  permitsHeld: 'permitsHeld'
+  permitsHeld: 'permitsHeld',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.FormL9ManagementScalarFieldEnum = {
@@ -253,7 +259,9 @@ exports.Prisma.FormL9ManagementScalarFieldEnum = {
   formL9Id: 'formL9Id',
   position: 'position',
   name: 'name',
-  noTelpFaxHp: 'noTelpFaxHp'
+  noTelpFaxHp: 'noTelpFaxHp',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.FormL9EmployeScalarFieldEnum = {
@@ -264,7 +272,9 @@ exports.Prisma.FormL9EmployeScalarFieldEnum = {
   engineering: 'engineering',
   production: 'production',
   management: 'management',
-  other: 'other'
+  other: 'other',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.FormL9WorkExperienceScalarFieldEnum = {
@@ -274,7 +284,9 @@ exports.Prisma.FormL9WorkExperienceScalarFieldEnum = {
   typeOfWork: 'typeOfWork',
   score: 'score',
   customerContactPerson: 'customerContactPerson',
-  customerTelpFaxHp: 'customerTelpFaxHp'
+  customerTelpFaxHp: 'customerTelpFaxHp',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.FormL9OthersScalarFieldEnum = {
@@ -291,7 +303,9 @@ exports.Prisma.FormL9OthersScalarFieldEnum = {
   paymentTime: 'paymentTime',
   agreeToConfidentialInformation: 'agreeToConfidentialInformation',
   understandingBreachesOfConfidentiality: 'understandingBreachesOfConfidentiality',
-  signConfidentialityAgreement: 'signConfidentialityAgreement'
+  signConfidentialityAgreement: 'signConfidentialityAgreement',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.FormL9CertificateISOScalarFieldEnum = {
@@ -300,7 +314,9 @@ exports.Prisma.FormL9CertificateISOScalarFieldEnum = {
   isoName: 'isoName',
   validityPeriodFrom: 'validityPeriodFrom',
   validityPeriodTo: 'validityPeriodTo',
-  remakes: 'remakes'
+  remakes: 'remakes',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {

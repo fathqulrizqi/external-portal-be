@@ -131,20 +131,22 @@ model Profile {
 }
 
 model Company {
-  companyId           String   @id @default(uuid()) @db.Uuid
-  segmentId           Int
-  urlImage            String?  @db.Text
-  companyName         String
-  companyFoundingDate DateTime
-  companyStatus       String
-  companyTelpFax      String
-  companyAddress      String
-  companyEmail        String
-  npwp                String
-  website             String?  @db.VarChar(100)
-  createdAt           DateTime @default(now())
-  updatedAt           DateTime @updatedAt
-  totalCapital        String?
+  companyId           String    @id @default(uuid()) @db.Uuid
+  segmentId           Int?
+  urlImage            String?   @db.Text
+  companyName         String?
+  companyFoundingDate DateTime?
+  companyStatus       String?
+  companyTelpFax      String?
+  companyAddress      String?
+  companyEmail        String?
+  npwp                String?
+  website             String?   @db.VarChar(100)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  totalCapital String?
 
   profile Profile[]
   segment CompanySegment? @relation(fields: [segmentId], references: [segmentId])
@@ -183,13 +185,15 @@ model FormL9BankInfo {
   formL9Id String @unique @db.Uuid
   formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
-  beneficiaryName    String
-  beneficiaryAddress String
-  bankName           String
-  bankAddress        String
-  noRek              String
-  swiftCode          String
-  IBAN               String
+  beneficiaryName    String?
+  beneficiaryAddress String?
+  bankName           String?
+  bankAddress        String?
+  noRek              String?
+  swiftCode          String?
+  IBAN               String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
 
   @@index([noRek])
   @@map("ebidding_form_l9_bank_info")
@@ -201,15 +205,17 @@ model FormL9GeneralInformation {
   formL9Id String @unique @db.Uuid
   formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
-  companyName         String
-  companyFoundingDate DateTime
-  companyStatus       String
-  companyTelpFax      String
-  companyAddress      String
-  companyEmail        String
-  npwp                String
+  companyName         String?
+  companyFoundingDate DateTime?
+  companyStatus       String?
+  companyTelpFax      String?
+  companyAddress      String?
+  companyEmail        String?
+  npwp                String?
   totalCapital        String?
-  segmentId           String
+  segmentId           String?
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
 
   generalInfoContinue FormL9GeneralInformationContinue?
 
@@ -224,7 +230,9 @@ model FormL9GeneralInformationContinue {
   formGeneralInformationId String                   @unique @db.Uuid
   generalInformation       FormL9GeneralInformation @relation(fields: [formGeneralInformationId], references: [formGeneralInformationId], onDelete: Cascade)
 
-  permitsHeld String
+  permitsHeld String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   @@map("ebidding_form_l9_general_information_continue")
 }
@@ -235,9 +243,11 @@ model FormL9Management {
   formL9Id String @db.Uuid
   formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
-  position    String
-  name        String
-  noTelpFaxHp String
+  position    String?
+  name        String?
+  noTelpFaxHp String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 
   @@index([formL9Id])
   @@index([name])
@@ -251,12 +261,14 @@ model FormL9Employe {
   formL9Id String @unique @db.Uuid
   formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
-  totalEmployees Int
-  qualityControl Int
-  engineering    Int
-  production     Int
-  management     Int
-  other          Int
+  totalEmployees Int?
+  qualityControl Int?
+  engineering    Int?
+  production     Int?
+  management     Int?
+  other          Int?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 
   @@map("ebidding_form_l9_employe")
 }
@@ -267,11 +279,13 @@ model FormL9WorkExperience {
   formL9Id String @db.Uuid
   formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
-  customerOrLocation    String
-  typeOfWork            String
-  score                 Int
-  customerContactPerson String
-  customerTelpFaxHp     String
+  customerOrLocation    String?
+  typeOfWork            String?
+  score                 Int?
+  customerContactPerson String?
+  customerTelpFaxHp     String?
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
 
   @@index([formL9Id])
   @@index([customerOrLocation])
@@ -294,11 +308,13 @@ model FormL9Others {
   haveAPDRegulation                         Boolean @default(false)
   isTopApplicable                           Boolean @default(false)
 
-  paymentTime String
+  paymentTime String?
 
-  agreeToConfidentialInformation         Boolean @default(false)
-  understandingBreachesOfConfidentiality Boolean @default(false)
-  signConfidentialityAgreement           Boolean @default(false)
+  agreeToConfidentialInformation         Boolean  @default(false)
+  understandingBreachesOfConfidentiality Boolean  @default(false)
+  signConfidentialityAgreement           Boolean  @default(false)
+  createdAt                              DateTime @default(now())
+  updatedAt                              DateTime @updatedAt
 
   certificateISOs FormL9CertificateISO[]
 
@@ -312,11 +328,13 @@ model FormL9CertificateISO {
 
   others FormL9Others @relation(fields: [formL9OthersId], references: [formL9OthersId], onDelete: Cascade)
 
-  isoName            String
-  validityPeriodFrom DateTime
-  validityPeriodTo   DateTime
+  isoName            String?
+  validityPeriodFrom DateTime?
+  validityPeriodTo   DateTime?
 
-  remakes String? @db.Text
+  remakes   String?  @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   @@index([formL9OthersId])
   @@index([isoName])

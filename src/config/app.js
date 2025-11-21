@@ -9,6 +9,7 @@ import {adminRouter} from '../routes/adminRoute.js'
 import {userRouter} from '../routes/userRoute.js'
 import cors from 'cors';
 import sanitizeInputMiddleware from "../middleware/SanitizeInputMiddleware.js";
+import { errorMiddleware } from '../middleware/errorMiddleware.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -39,6 +40,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(globalRouter);
 app.use('/api/users',userRouter);
 app.use('/api/admin',adminRouter);
+app.use(errorMiddleware);
 
 const server = http.createServer(app);
 const io = new Server(server, {

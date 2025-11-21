@@ -7,13 +7,13 @@ import {
 import { ResponseError } from '../../../error/responseError.js';
 
 
-// Helper untuk penanganan error validasi
 const handleValidationError = (error) => {
     const firstError = error.details[0].message;
     throw new ResponseError(400,firstError);
 }
 
 const create = async (payload) => {
+    
     try {
         await createRoleValidation.validateAsync(payload, { abortEarly: false });
     } catch (error) {

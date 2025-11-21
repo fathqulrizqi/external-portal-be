@@ -13822,15 +13822,15 @@ export namespace Prisma {
 
   export type CompanyGroupByOutputType = {
     companyId: string
-    segmentId: number
+    segmentId: number | null
     urlImage: string | null
-    companyName: string
-    companyFoundingDate: Date
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName: string | null
+    companyFoundingDate: Date | null
+    companyStatus: string | null
+    companyTelpFax: string | null
+    companyAddress: string | null
+    companyEmail: string | null
+    npwp: string | null
     website: string | null
     createdAt: Date
     updatedAt: Date
@@ -13953,15 +13953,15 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       companyId: string
-      segmentId: number
+      segmentId: number | null
       urlImage: string | null
-      companyName: string
-      companyFoundingDate: Date
-      companyStatus: string
-      companyTelpFax: string
-      companyAddress: string
-      companyEmail: string
-      npwp: string
+      companyName: string | null
+      companyFoundingDate: Date | null
+      companyStatus: string | null
+      companyTelpFax: string | null
+      companyAddress: string | null
+      companyEmail: string | null
+      npwp: string | null
       website: string | null
       createdAt: Date
       updatedAt: Date
@@ -16110,6 +16110,8 @@ export namespace Prisma {
     noRek: string | null
     swiftCode: string | null
     IBAN: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9BankInfoMaxAggregateOutputType = {
@@ -16122,6 +16124,8 @@ export namespace Prisma {
     noRek: string | null
     swiftCode: string | null
     IBAN: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9BankInfoCountAggregateOutputType = {
@@ -16134,6 +16138,8 @@ export namespace Prisma {
     noRek: number
     swiftCode: number
     IBAN: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -16148,6 +16154,8 @@ export namespace Prisma {
     noRek?: true
     swiftCode?: true
     IBAN?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9BankInfoMaxAggregateInputType = {
@@ -16160,6 +16168,8 @@ export namespace Prisma {
     noRek?: true
     swiftCode?: true
     IBAN?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9BankInfoCountAggregateInputType = {
@@ -16172,6 +16182,8 @@ export namespace Prisma {
     noRek?: true
     swiftCode?: true
     IBAN?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -16250,13 +16262,15 @@ export namespace Prisma {
   export type FormL9BankInfoGroupByOutputType = {
     formL9BankInfoid: string
     formL9Id: string
-    beneficiaryName: string
-    beneficiaryAddress: string
-    bankName: string
-    bankAddress: string
-    noRek: string
-    swiftCode: string
-    IBAN: string
+    beneficiaryName: string | null
+    beneficiaryAddress: string | null
+    bankName: string | null
+    bankAddress: string | null
+    noRek: string | null
+    swiftCode: string | null
+    IBAN: string | null
+    createdAt: Date
+    updatedAt: Date
     _count: FormL9BankInfoCountAggregateOutputType | null
     _min: FormL9BankInfoMinAggregateOutputType | null
     _max: FormL9BankInfoMaxAggregateOutputType | null
@@ -16286,6 +16300,8 @@ export namespace Prisma {
     noRek?: boolean
     swiftCode?: boolean
     IBAN?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9BankInfo"]>
 
@@ -16299,6 +16315,8 @@ export namespace Prisma {
     noRek?: boolean
     swiftCode?: boolean
     IBAN?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9BankInfo"]>
 
@@ -16312,6 +16330,8 @@ export namespace Prisma {
     noRek?: boolean
     swiftCode?: boolean
     IBAN?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9BankInfo"]>
 
@@ -16325,9 +16345,11 @@ export namespace Prisma {
     noRek?: boolean
     swiftCode?: boolean
     IBAN?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FormL9BankInfoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9BankInfoid" | "formL9Id" | "beneficiaryName" | "beneficiaryAddress" | "bankName" | "bankAddress" | "noRek" | "swiftCode" | "IBAN", ExtArgs["result"]["formL9BankInfo"]>
+  export type FormL9BankInfoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9BankInfoid" | "formL9Id" | "beneficiaryName" | "beneficiaryAddress" | "bankName" | "bankAddress" | "noRek" | "swiftCode" | "IBAN" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9BankInfo"]>
   export type FormL9BankInfoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }
@@ -16346,13 +16368,15 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       formL9BankInfoid: string
       formL9Id: string
-      beneficiaryName: string
-      beneficiaryAddress: string
-      bankName: string
-      bankAddress: string
-      noRek: string
-      swiftCode: string
-      IBAN: string
+      beneficiaryName: string | null
+      beneficiaryAddress: string | null
+      bankName: string | null
+      bankAddress: string | null
+      noRek: string | null
+      swiftCode: string | null
+      IBAN: string | null
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["formL9BankInfo"]>
     composites: {}
   }
@@ -16786,6 +16810,8 @@ export namespace Prisma {
     readonly noRek: FieldRef<"FormL9BankInfo", 'String'>
     readonly swiftCode: FieldRef<"FormL9BankInfo", 'String'>
     readonly IBAN: FieldRef<"FormL9BankInfo", 'String'>
+    readonly createdAt: FieldRef<"FormL9BankInfo", 'DateTime'>
+    readonly updatedAt: FieldRef<"FormL9BankInfo", 'DateTime'>
   }
     
 
@@ -17222,6 +17248,8 @@ export namespace Prisma {
     npwp: string | null
     totalCapital: string | null
     segmentId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9GeneralInformationMaxAggregateOutputType = {
@@ -17236,6 +17264,8 @@ export namespace Prisma {
     npwp: string | null
     totalCapital: string | null
     segmentId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9GeneralInformationCountAggregateOutputType = {
@@ -17250,6 +17280,8 @@ export namespace Prisma {
     npwp: number
     totalCapital: number
     segmentId: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -17266,6 +17298,8 @@ export namespace Prisma {
     npwp?: true
     totalCapital?: true
     segmentId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9GeneralInformationMaxAggregateInputType = {
@@ -17280,6 +17314,8 @@ export namespace Prisma {
     npwp?: true
     totalCapital?: true
     segmentId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9GeneralInformationCountAggregateInputType = {
@@ -17294,6 +17330,8 @@ export namespace Prisma {
     npwp?: true
     totalCapital?: true
     segmentId?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -17372,15 +17410,17 @@ export namespace Prisma {
   export type FormL9GeneralInformationGroupByOutputType = {
     formGeneralInformationId: string
     formL9Id: string
-    companyName: string
-    companyFoundingDate: Date
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName: string | null
+    companyFoundingDate: Date | null
+    companyStatus: string | null
+    companyTelpFax: string | null
+    companyAddress: string | null
+    companyEmail: string | null
+    npwp: string | null
     totalCapital: string | null
-    segmentId: string
+    segmentId: string | null
+    createdAt: Date
+    updatedAt: Date
     _count: FormL9GeneralInformationCountAggregateOutputType | null
     _min: FormL9GeneralInformationMinAggregateOutputType | null
     _max: FormL9GeneralInformationMaxAggregateOutputType | null
@@ -17412,6 +17452,8 @@ export namespace Prisma {
     npwp?: boolean
     totalCapital?: boolean
     segmentId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
     generalInfoContinue?: boolean | FormL9GeneralInformation$generalInfoContinueArgs<ExtArgs>
   }, ExtArgs["result"]["formL9GeneralInformation"]>
@@ -17428,6 +17470,8 @@ export namespace Prisma {
     npwp?: boolean
     totalCapital?: boolean
     segmentId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9GeneralInformation"]>
 
@@ -17443,6 +17487,8 @@ export namespace Prisma {
     npwp?: boolean
     totalCapital?: boolean
     segmentId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9GeneralInformation"]>
 
@@ -17458,9 +17504,11 @@ export namespace Prisma {
     npwp?: boolean
     totalCapital?: boolean
     segmentId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FormL9GeneralInformationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formGeneralInformationId" | "formL9Id" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "totalCapital" | "segmentId", ExtArgs["result"]["formL9GeneralInformation"]>
+  export type FormL9GeneralInformationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formGeneralInformationId" | "formL9Id" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "totalCapital" | "segmentId" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9GeneralInformation"]>
   export type FormL9GeneralInformationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
     generalInfoContinue?: boolean | FormL9GeneralInformation$generalInfoContinueArgs<ExtArgs>
@@ -17481,15 +17529,17 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       formGeneralInformationId: string
       formL9Id: string
-      companyName: string
-      companyFoundingDate: Date
-      companyStatus: string
-      companyTelpFax: string
-      companyAddress: string
-      companyEmail: string
-      npwp: string
+      companyName: string | null
+      companyFoundingDate: Date | null
+      companyStatus: string | null
+      companyTelpFax: string | null
+      companyAddress: string | null
+      companyEmail: string | null
+      npwp: string | null
       totalCapital: string | null
-      segmentId: string
+      segmentId: string | null
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["formL9GeneralInformation"]>
     composites: {}
   }
@@ -17926,6 +17976,8 @@ export namespace Prisma {
     readonly npwp: FieldRef<"FormL9GeneralInformation", 'String'>
     readonly totalCapital: FieldRef<"FormL9GeneralInformation", 'String'>
     readonly segmentId: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly createdAt: FieldRef<"FormL9GeneralInformation", 'DateTime'>
+    readonly updatedAt: FieldRef<"FormL9GeneralInformation", 'DateTime'>
   }
     
 
@@ -18373,18 +18425,24 @@ export namespace Prisma {
     formL9GeneralInformationContinueId: string | null
     formGeneralInformationId: string | null
     permitsHeld: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9GeneralInformationContinueMaxAggregateOutputType = {
     formL9GeneralInformationContinueId: string | null
     formGeneralInformationId: string | null
     permitsHeld: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9GeneralInformationContinueCountAggregateOutputType = {
     formL9GeneralInformationContinueId: number
     formGeneralInformationId: number
     permitsHeld: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -18393,18 +18451,24 @@ export namespace Prisma {
     formL9GeneralInformationContinueId?: true
     formGeneralInformationId?: true
     permitsHeld?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9GeneralInformationContinueMaxAggregateInputType = {
     formL9GeneralInformationContinueId?: true
     formGeneralInformationId?: true
     permitsHeld?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9GeneralInformationContinueCountAggregateInputType = {
     formL9GeneralInformationContinueId?: true
     formGeneralInformationId?: true
     permitsHeld?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -18483,7 +18547,9 @@ export namespace Prisma {
   export type FormL9GeneralInformationContinueGroupByOutputType = {
     formL9GeneralInformationContinueId: string
     formGeneralInformationId: string
-    permitsHeld: string
+    permitsHeld: string | null
+    createdAt: Date
+    updatedAt: Date
     _count: FormL9GeneralInformationContinueCountAggregateOutputType | null
     _min: FormL9GeneralInformationContinueMinAggregateOutputType | null
     _max: FormL9GeneralInformationContinueMaxAggregateOutputType | null
@@ -18507,6 +18573,8 @@ export namespace Prisma {
     formL9GeneralInformationContinueId?: boolean
     formGeneralInformationId?: boolean
     permitsHeld?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9GeneralInformationContinue"]>
 
@@ -18514,6 +18582,8 @@ export namespace Prisma {
     formL9GeneralInformationContinueId?: boolean
     formGeneralInformationId?: boolean
     permitsHeld?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9GeneralInformationContinue"]>
 
@@ -18521,6 +18591,8 @@ export namespace Prisma {
     formL9GeneralInformationContinueId?: boolean
     formGeneralInformationId?: boolean
     permitsHeld?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9GeneralInformationContinue"]>
 
@@ -18528,9 +18600,11 @@ export namespace Prisma {
     formL9GeneralInformationContinueId?: boolean
     formGeneralInformationId?: boolean
     permitsHeld?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FormL9GeneralInformationContinueOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9GeneralInformationContinueId" | "formGeneralInformationId" | "permitsHeld", ExtArgs["result"]["formL9GeneralInformationContinue"]>
+  export type FormL9GeneralInformationContinueOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9GeneralInformationContinueId" | "formGeneralInformationId" | "permitsHeld" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9GeneralInformationContinue"]>
   export type FormL9GeneralInformationContinueInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
   }
@@ -18549,7 +18623,9 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       formL9GeneralInformationContinueId: string
       formGeneralInformationId: string
-      permitsHeld: string
+      permitsHeld: string | null
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["formL9GeneralInformationContinue"]>
     composites: {}
   }
@@ -18977,6 +19053,8 @@ export namespace Prisma {
     readonly formL9GeneralInformationContinueId: FieldRef<"FormL9GeneralInformationContinue", 'String'>
     readonly formGeneralInformationId: FieldRef<"FormL9GeneralInformationContinue", 'String'>
     readonly permitsHeld: FieldRef<"FormL9GeneralInformationContinue", 'String'>
+    readonly createdAt: FieldRef<"FormL9GeneralInformationContinue", 'DateTime'>
+    readonly updatedAt: FieldRef<"FormL9GeneralInformationContinue", 'DateTime'>
   }
     
 
@@ -19407,6 +19485,8 @@ export namespace Prisma {
     position: string | null
     name: string | null
     noTelpFaxHp: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9ManagementMaxAggregateOutputType = {
@@ -19415,6 +19495,8 @@ export namespace Prisma {
     position: string | null
     name: string | null
     noTelpFaxHp: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9ManagementCountAggregateOutputType = {
@@ -19423,6 +19505,8 @@ export namespace Prisma {
     position: number
     name: number
     noTelpFaxHp: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -19433,6 +19517,8 @@ export namespace Prisma {
     position?: true
     name?: true
     noTelpFaxHp?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9ManagementMaxAggregateInputType = {
@@ -19441,6 +19527,8 @@ export namespace Prisma {
     position?: true
     name?: true
     noTelpFaxHp?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9ManagementCountAggregateInputType = {
@@ -19449,6 +19537,8 @@ export namespace Prisma {
     position?: true
     name?: true
     noTelpFaxHp?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -19527,9 +19617,11 @@ export namespace Prisma {
   export type FormL9ManagementGroupByOutputType = {
     formL9ManagementId: string
     formL9Id: string
-    position: string
-    name: string
-    noTelpFaxHp: string
+    position: string | null
+    name: string | null
+    noTelpFaxHp: string | null
+    createdAt: Date
+    updatedAt: Date
     _count: FormL9ManagementCountAggregateOutputType | null
     _min: FormL9ManagementMinAggregateOutputType | null
     _max: FormL9ManagementMaxAggregateOutputType | null
@@ -19555,6 +19647,8 @@ export namespace Prisma {
     position?: boolean
     name?: boolean
     noTelpFaxHp?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9Management"]>
 
@@ -19564,6 +19658,8 @@ export namespace Prisma {
     position?: boolean
     name?: boolean
     noTelpFaxHp?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9Management"]>
 
@@ -19573,6 +19669,8 @@ export namespace Prisma {
     position?: boolean
     name?: boolean
     noTelpFaxHp?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9Management"]>
 
@@ -19582,9 +19680,11 @@ export namespace Prisma {
     position?: boolean
     name?: boolean
     noTelpFaxHp?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FormL9ManagementOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9ManagementId" | "formL9Id" | "position" | "name" | "noTelpFaxHp", ExtArgs["result"]["formL9Management"]>
+  export type FormL9ManagementOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9ManagementId" | "formL9Id" | "position" | "name" | "noTelpFaxHp" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9Management"]>
   export type FormL9ManagementInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }
@@ -19603,9 +19703,11 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       formL9ManagementId: string
       formL9Id: string
-      position: string
-      name: string
-      noTelpFaxHp: string
+      position: string | null
+      name: string | null
+      noTelpFaxHp: string | null
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["formL9Management"]>
     composites: {}
   }
@@ -20035,6 +20137,8 @@ export namespace Prisma {
     readonly position: FieldRef<"FormL9Management", 'String'>
     readonly name: FieldRef<"FormL9Management", 'String'>
     readonly noTelpFaxHp: FieldRef<"FormL9Management", 'String'>
+    readonly createdAt: FieldRef<"FormL9Management", 'DateTime'>
+    readonly updatedAt: FieldRef<"FormL9Management", 'DateTime'>
   }
     
 
@@ -20488,6 +20592,8 @@ export namespace Prisma {
     production: number | null
     management: number | null
     other: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9EmployeMaxAggregateOutputType = {
@@ -20499,6 +20605,8 @@ export namespace Prisma {
     production: number | null
     management: number | null
     other: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9EmployeCountAggregateOutputType = {
@@ -20510,6 +20618,8 @@ export namespace Prisma {
     production: number
     management: number
     other: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -20541,6 +20651,8 @@ export namespace Prisma {
     production?: true
     management?: true
     other?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9EmployeMaxAggregateInputType = {
@@ -20552,6 +20664,8 @@ export namespace Prisma {
     production?: true
     management?: true
     other?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9EmployeCountAggregateInputType = {
@@ -20563,6 +20677,8 @@ export namespace Prisma {
     production?: true
     management?: true
     other?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -20655,12 +20771,14 @@ export namespace Prisma {
   export type FormL9EmployeGroupByOutputType = {
     formL9EmployeId: string
     formL9Id: string
-    totalEmployees: number
-    qualityControl: number
-    engineering: number
-    production: number
-    management: number
-    other: number
+    totalEmployees: number | null
+    qualityControl: number | null
+    engineering: number | null
+    production: number | null
+    management: number | null
+    other: number | null
+    createdAt: Date
+    updatedAt: Date
     _count: FormL9EmployeCountAggregateOutputType | null
     _avg: FormL9EmployeAvgAggregateOutputType | null
     _sum: FormL9EmployeSumAggregateOutputType | null
@@ -20691,6 +20809,8 @@ export namespace Prisma {
     production?: boolean
     management?: boolean
     other?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9Employe"]>
 
@@ -20703,6 +20823,8 @@ export namespace Prisma {
     production?: boolean
     management?: boolean
     other?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9Employe"]>
 
@@ -20715,6 +20837,8 @@ export namespace Prisma {
     production?: boolean
     management?: boolean
     other?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9Employe"]>
 
@@ -20727,9 +20851,11 @@ export namespace Prisma {
     production?: boolean
     management?: boolean
     other?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FormL9EmployeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9EmployeId" | "formL9Id" | "totalEmployees" | "qualityControl" | "engineering" | "production" | "management" | "other", ExtArgs["result"]["formL9Employe"]>
+  export type FormL9EmployeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9EmployeId" | "formL9Id" | "totalEmployees" | "qualityControl" | "engineering" | "production" | "management" | "other" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9Employe"]>
   export type FormL9EmployeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }
@@ -20748,12 +20874,14 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       formL9EmployeId: string
       formL9Id: string
-      totalEmployees: number
-      qualityControl: number
-      engineering: number
-      production: number
-      management: number
-      other: number
+      totalEmployees: number | null
+      qualityControl: number | null
+      engineering: number | null
+      production: number | null
+      management: number | null
+      other: number | null
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["formL9Employe"]>
     composites: {}
   }
@@ -21186,6 +21314,8 @@ export namespace Prisma {
     readonly production: FieldRef<"FormL9Employe", 'Int'>
     readonly management: FieldRef<"FormL9Employe", 'Int'>
     readonly other: FieldRef<"FormL9Employe", 'Int'>
+    readonly createdAt: FieldRef<"FormL9Employe", 'DateTime'>
+    readonly updatedAt: FieldRef<"FormL9Employe", 'DateTime'>
   }
     
 
@@ -21628,6 +21758,8 @@ export namespace Prisma {
     score: number | null
     customerContactPerson: string | null
     customerTelpFaxHp: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9WorkExperienceMaxAggregateOutputType = {
@@ -21638,6 +21770,8 @@ export namespace Prisma {
     score: number | null
     customerContactPerson: string | null
     customerTelpFaxHp: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9WorkExperienceCountAggregateOutputType = {
@@ -21648,6 +21782,8 @@ export namespace Prisma {
     score: number
     customerContactPerson: number
     customerTelpFaxHp: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -21668,6 +21804,8 @@ export namespace Prisma {
     score?: true
     customerContactPerson?: true
     customerTelpFaxHp?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9WorkExperienceMaxAggregateInputType = {
@@ -21678,6 +21816,8 @@ export namespace Prisma {
     score?: true
     customerContactPerson?: true
     customerTelpFaxHp?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9WorkExperienceCountAggregateInputType = {
@@ -21688,6 +21828,8 @@ export namespace Prisma {
     score?: true
     customerContactPerson?: true
     customerTelpFaxHp?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -21780,11 +21922,13 @@ export namespace Prisma {
   export type FormL9WorkExperienceGroupByOutputType = {
     formL9WorkExperienceId: string
     formL9Id: string
-    customerOrLocation: string
-    typeOfWork: string
-    score: number
-    customerContactPerson: string
-    customerTelpFaxHp: string
+    customerOrLocation: string | null
+    typeOfWork: string | null
+    score: number | null
+    customerContactPerson: string | null
+    customerTelpFaxHp: string | null
+    createdAt: Date
+    updatedAt: Date
     _count: FormL9WorkExperienceCountAggregateOutputType | null
     _avg: FormL9WorkExperienceAvgAggregateOutputType | null
     _sum: FormL9WorkExperienceSumAggregateOutputType | null
@@ -21814,6 +21958,8 @@ export namespace Prisma {
     score?: boolean
     customerContactPerson?: boolean
     customerTelpFaxHp?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9WorkExperience"]>
 
@@ -21825,6 +21971,8 @@ export namespace Prisma {
     score?: boolean
     customerContactPerson?: boolean
     customerTelpFaxHp?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9WorkExperience"]>
 
@@ -21836,6 +21984,8 @@ export namespace Prisma {
     score?: boolean
     customerContactPerson?: boolean
     customerTelpFaxHp?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9WorkExperience"]>
 
@@ -21847,9 +21997,11 @@ export namespace Prisma {
     score?: boolean
     customerContactPerson?: boolean
     customerTelpFaxHp?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FormL9WorkExperienceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9WorkExperienceId" | "formL9Id" | "customerOrLocation" | "typeOfWork" | "score" | "customerContactPerson" | "customerTelpFaxHp", ExtArgs["result"]["formL9WorkExperience"]>
+  export type FormL9WorkExperienceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9WorkExperienceId" | "formL9Id" | "customerOrLocation" | "typeOfWork" | "score" | "customerContactPerson" | "customerTelpFaxHp" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9WorkExperience"]>
   export type FormL9WorkExperienceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }
@@ -21868,11 +22020,13 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       formL9WorkExperienceId: string
       formL9Id: string
-      customerOrLocation: string
-      typeOfWork: string
-      score: number
-      customerContactPerson: string
-      customerTelpFaxHp: string
+      customerOrLocation: string | null
+      typeOfWork: string | null
+      score: number | null
+      customerContactPerson: string | null
+      customerTelpFaxHp: string | null
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["formL9WorkExperience"]>
     composites: {}
   }
@@ -22304,6 +22458,8 @@ export namespace Prisma {
     readonly score: FieldRef<"FormL9WorkExperience", 'Int'>
     readonly customerContactPerson: FieldRef<"FormL9WorkExperience", 'String'>
     readonly customerTelpFaxHp: FieldRef<"FormL9WorkExperience", 'String'>
+    readonly createdAt: FieldRef<"FormL9WorkExperience", 'DateTime'>
+    readonly updatedAt: FieldRef<"FormL9WorkExperience", 'DateTime'>
   }
     
 
@@ -22743,6 +22899,8 @@ export namespace Prisma {
     agreeToConfidentialInformation: boolean | null
     understandingBreachesOfConfidentiality: boolean | null
     signConfidentialityAgreement: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9OthersMaxAggregateOutputType = {
@@ -22760,6 +22918,8 @@ export namespace Prisma {
     agreeToConfidentialInformation: boolean | null
     understandingBreachesOfConfidentiality: boolean | null
     signConfidentialityAgreement: boolean | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9OthersCountAggregateOutputType = {
@@ -22777,6 +22937,8 @@ export namespace Prisma {
     agreeToConfidentialInformation: number
     understandingBreachesOfConfidentiality: number
     signConfidentialityAgreement: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -22796,6 +22958,8 @@ export namespace Prisma {
     agreeToConfidentialInformation?: true
     understandingBreachesOfConfidentiality?: true
     signConfidentialityAgreement?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9OthersMaxAggregateInputType = {
@@ -22813,6 +22977,8 @@ export namespace Prisma {
     agreeToConfidentialInformation?: true
     understandingBreachesOfConfidentiality?: true
     signConfidentialityAgreement?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9OthersCountAggregateInputType = {
@@ -22830,6 +22996,8 @@ export namespace Prisma {
     agreeToConfidentialInformation?: true
     understandingBreachesOfConfidentiality?: true
     signConfidentialityAgreement?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -22916,10 +23084,12 @@ export namespace Prisma {
     haveAPD: boolean
     haveAPDRegulation: boolean
     isTopApplicable: boolean
-    paymentTime: string
+    paymentTime: string | null
     agreeToConfidentialInformation: boolean
     understandingBreachesOfConfidentiality: boolean
     signConfidentialityAgreement: boolean
+    createdAt: Date
+    updatedAt: Date
     _count: FormL9OthersCountAggregateOutputType | null
     _min: FormL9OthersMinAggregateOutputType | null
     _max: FormL9OthersMaxAggregateOutputType | null
@@ -22954,6 +23124,8 @@ export namespace Prisma {
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
     certificateISOs?: boolean | FormL9Others$certificateISOsArgs<ExtArgs>
     _count?: boolean | FormL9OthersCountOutputTypeDefaultArgs<ExtArgs>
@@ -22974,6 +23146,8 @@ export namespace Prisma {
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9Others"]>
 
@@ -22992,6 +23166,8 @@ export namespace Prisma {
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9Others"]>
 
@@ -23010,9 +23186,11 @@ export namespace Prisma {
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FormL9OthersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9OthersId" | "formL9Id" | "haveCertificateISO" | "haveCompanyOrganizationalStructure" | "haveQualityControlOrganizationalStructure" | "haveProductWarranty" | "haveExpiryDate" | "haveAPD" | "haveAPDRegulation" | "isTopApplicable" | "paymentTime" | "agreeToConfidentialInformation" | "understandingBreachesOfConfidentiality" | "signConfidentialityAgreement", ExtArgs["result"]["formL9Others"]>
+  export type FormL9OthersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9OthersId" | "formL9Id" | "haveCertificateISO" | "haveCompanyOrganizationalStructure" | "haveQualityControlOrganizationalStructure" | "haveProductWarranty" | "haveExpiryDate" | "haveAPD" | "haveAPDRegulation" | "isTopApplicable" | "paymentTime" | "agreeToConfidentialInformation" | "understandingBreachesOfConfidentiality" | "signConfidentialityAgreement" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9Others"]>
   export type FormL9OthersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     formL9?: boolean | FormL9DefaultArgs<ExtArgs>
     certificateISOs?: boolean | FormL9Others$certificateISOsArgs<ExtArgs>
@@ -23042,10 +23220,12 @@ export namespace Prisma {
       haveAPD: boolean
       haveAPDRegulation: boolean
       isTopApplicable: boolean
-      paymentTime: string
+      paymentTime: string | null
       agreeToConfidentialInformation: boolean
       understandingBreachesOfConfidentiality: boolean
       signConfidentialityAgreement: boolean
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["formL9Others"]>
     composites: {}
   }
@@ -23485,6 +23665,8 @@ export namespace Prisma {
     readonly agreeToConfidentialInformation: FieldRef<"FormL9Others", 'Boolean'>
     readonly understandingBreachesOfConfidentiality: FieldRef<"FormL9Others", 'Boolean'>
     readonly signConfidentialityAgreement: FieldRef<"FormL9Others", 'Boolean'>
+    readonly createdAt: FieldRef<"FormL9Others", 'DateTime'>
+    readonly updatedAt: FieldRef<"FormL9Others", 'DateTime'>
   }
     
 
@@ -23940,6 +24122,8 @@ export namespace Prisma {
     validityPeriodFrom: Date | null
     validityPeriodTo: Date | null
     remakes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9CertificateISOMaxAggregateOutputType = {
@@ -23949,6 +24133,8 @@ export namespace Prisma {
     validityPeriodFrom: Date | null
     validityPeriodTo: Date | null
     remakes: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type FormL9CertificateISOCountAggregateOutputType = {
@@ -23958,6 +24144,8 @@ export namespace Prisma {
     validityPeriodFrom: number
     validityPeriodTo: number
     remakes: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -23969,6 +24157,8 @@ export namespace Prisma {
     validityPeriodFrom?: true
     validityPeriodTo?: true
     remakes?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9CertificateISOMaxAggregateInputType = {
@@ -23978,6 +24168,8 @@ export namespace Prisma {
     validityPeriodFrom?: true
     validityPeriodTo?: true
     remakes?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type FormL9CertificateISOCountAggregateInputType = {
@@ -23987,6 +24179,8 @@ export namespace Prisma {
     validityPeriodFrom?: true
     validityPeriodTo?: true
     remakes?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -24065,10 +24259,12 @@ export namespace Prisma {
   export type FormL9CertificateISOGroupByOutputType = {
     certificateISOId: string
     formL9OthersId: string
-    isoName: string
-    validityPeriodFrom: Date
-    validityPeriodTo: Date
+    isoName: string | null
+    validityPeriodFrom: Date | null
+    validityPeriodTo: Date | null
     remakes: string | null
+    createdAt: Date
+    updatedAt: Date
     _count: FormL9CertificateISOCountAggregateOutputType | null
     _min: FormL9CertificateISOMinAggregateOutputType | null
     _max: FormL9CertificateISOMaxAggregateOutputType | null
@@ -24095,6 +24291,8 @@ export namespace Prisma {
     validityPeriodFrom?: boolean
     validityPeriodTo?: boolean
     remakes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9CertificateISO"]>
 
@@ -24105,6 +24303,8 @@ export namespace Prisma {
     validityPeriodFrom?: boolean
     validityPeriodTo?: boolean
     remakes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9CertificateISO"]>
 
@@ -24115,6 +24315,8 @@ export namespace Prisma {
     validityPeriodFrom?: boolean
     validityPeriodTo?: boolean
     remakes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9CertificateISO"]>
 
@@ -24125,9 +24327,11 @@ export namespace Prisma {
     validityPeriodFrom?: boolean
     validityPeriodTo?: boolean
     remakes?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type FormL9CertificateISOOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"certificateISOId" | "formL9OthersId" | "isoName" | "validityPeriodFrom" | "validityPeriodTo" | "remakes", ExtArgs["result"]["formL9CertificateISO"]>
+  export type FormL9CertificateISOOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"certificateISOId" | "formL9OthersId" | "isoName" | "validityPeriodFrom" | "validityPeriodTo" | "remakes" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9CertificateISO"]>
   export type FormL9CertificateISOInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
   }
@@ -24146,10 +24350,12 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       certificateISOId: string
       formL9OthersId: string
-      isoName: string
-      validityPeriodFrom: Date
-      validityPeriodTo: Date
+      isoName: string | null
+      validityPeriodFrom: Date | null
+      validityPeriodTo: Date | null
       remakes: string | null
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["formL9CertificateISO"]>
     composites: {}
   }
@@ -24580,6 +24786,8 @@ export namespace Prisma {
     readonly validityPeriodFrom: FieldRef<"FormL9CertificateISO", 'DateTime'>
     readonly validityPeriodTo: FieldRef<"FormL9CertificateISO", 'DateTime'>
     readonly remakes: FieldRef<"FormL9CertificateISO", 'String'>
+    readonly createdAt: FieldRef<"FormL9CertificateISO", 'DateTime'>
+    readonly updatedAt: FieldRef<"FormL9CertificateISO", 'DateTime'>
   }
     
 
@@ -25148,7 +25356,9 @@ export namespace Prisma {
     bankAddress: 'bankAddress',
     noRek: 'noRek',
     swiftCode: 'swiftCode',
-    IBAN: 'IBAN'
+    IBAN: 'IBAN',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FormL9BankInfoScalarFieldEnum = (typeof FormL9BankInfoScalarFieldEnum)[keyof typeof FormL9BankInfoScalarFieldEnum]
@@ -25165,7 +25375,9 @@ export namespace Prisma {
     companyEmail: 'companyEmail',
     npwp: 'npwp',
     totalCapital: 'totalCapital',
-    segmentId: 'segmentId'
+    segmentId: 'segmentId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FormL9GeneralInformationScalarFieldEnum = (typeof FormL9GeneralInformationScalarFieldEnum)[keyof typeof FormL9GeneralInformationScalarFieldEnum]
@@ -25174,7 +25386,9 @@ export namespace Prisma {
   export const FormL9GeneralInformationContinueScalarFieldEnum: {
     formL9GeneralInformationContinueId: 'formL9GeneralInformationContinueId',
     formGeneralInformationId: 'formGeneralInformationId',
-    permitsHeld: 'permitsHeld'
+    permitsHeld: 'permitsHeld',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FormL9GeneralInformationContinueScalarFieldEnum = (typeof FormL9GeneralInformationContinueScalarFieldEnum)[keyof typeof FormL9GeneralInformationContinueScalarFieldEnum]
@@ -25185,7 +25399,9 @@ export namespace Prisma {
     formL9Id: 'formL9Id',
     position: 'position',
     name: 'name',
-    noTelpFaxHp: 'noTelpFaxHp'
+    noTelpFaxHp: 'noTelpFaxHp',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FormL9ManagementScalarFieldEnum = (typeof FormL9ManagementScalarFieldEnum)[keyof typeof FormL9ManagementScalarFieldEnum]
@@ -25199,7 +25415,9 @@ export namespace Prisma {
     engineering: 'engineering',
     production: 'production',
     management: 'management',
-    other: 'other'
+    other: 'other',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FormL9EmployeScalarFieldEnum = (typeof FormL9EmployeScalarFieldEnum)[keyof typeof FormL9EmployeScalarFieldEnum]
@@ -25212,7 +25430,9 @@ export namespace Prisma {
     typeOfWork: 'typeOfWork',
     score: 'score',
     customerContactPerson: 'customerContactPerson',
-    customerTelpFaxHp: 'customerTelpFaxHp'
+    customerTelpFaxHp: 'customerTelpFaxHp',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FormL9WorkExperienceScalarFieldEnum = (typeof FormL9WorkExperienceScalarFieldEnum)[keyof typeof FormL9WorkExperienceScalarFieldEnum]
@@ -25232,7 +25452,9 @@ export namespace Prisma {
     paymentTime: 'paymentTime',
     agreeToConfidentialInformation: 'agreeToConfidentialInformation',
     understandingBreachesOfConfidentiality: 'understandingBreachesOfConfidentiality',
-    signConfidentialityAgreement: 'signConfidentialityAgreement'
+    signConfidentialityAgreement: 'signConfidentialityAgreement',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FormL9OthersScalarFieldEnum = (typeof FormL9OthersScalarFieldEnum)[keyof typeof FormL9OthersScalarFieldEnum]
@@ -25244,7 +25466,9 @@ export namespace Prisma {
     isoName: 'isoName',
     validityPeriodFrom: 'validityPeriodFrom',
     validityPeriodTo: 'validityPeriodTo',
-    remakes: 'remakes'
+    remakes: 'remakes',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type FormL9CertificateISOScalarFieldEnum = (typeof FormL9CertificateISOScalarFieldEnum)[keyof typeof FormL9CertificateISOScalarFieldEnum]
@@ -25879,15 +26103,15 @@ export namespace Prisma {
     OR?: CompanyWhereInput[]
     NOT?: CompanyWhereInput | CompanyWhereInput[]
     companyId?: UuidFilter<"Company"> | string
-    segmentId?: IntFilter<"Company"> | number
+    segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
-    companyName?: StringFilter<"Company"> | string
-    companyFoundingDate?: DateTimeFilter<"Company"> | Date | string
-    companyStatus?: StringFilter<"Company"> | string
-    companyTelpFax?: StringFilter<"Company"> | string
-    companyAddress?: StringFilter<"Company"> | string
-    companyEmail?: StringFilter<"Company"> | string
-    npwp?: StringFilter<"Company"> | string
+    companyName?: StringNullableFilter<"Company"> | string | null
+    companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
+    companyStatus?: StringNullableFilter<"Company"> | string | null
+    companyTelpFax?: StringNullableFilter<"Company"> | string | null
+    companyAddress?: StringNullableFilter<"Company"> | string | null
+    companyEmail?: StringNullableFilter<"Company"> | string | null
+    npwp?: StringNullableFilter<"Company"> | string | null
     website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
@@ -25899,15 +26123,15 @@ export namespace Prisma {
 
   export type CompanyOrderByWithRelationInput = {
     companyId?: SortOrder
-    segmentId?: SortOrder
+    segmentId?: SortOrderInput | SortOrder
     urlImage?: SortOrderInput | SortOrder
-    companyName?: SortOrder
-    companyFoundingDate?: SortOrder
-    companyStatus?: SortOrder
-    companyTelpFax?: SortOrder
-    companyAddress?: SortOrder
-    companyEmail?: SortOrder
-    npwp?: SortOrder
+    companyName?: SortOrderInput | SortOrder
+    companyFoundingDate?: SortOrderInput | SortOrder
+    companyStatus?: SortOrderInput | SortOrder
+    companyTelpFax?: SortOrderInput | SortOrder
+    companyAddress?: SortOrderInput | SortOrder
+    companyEmail?: SortOrderInput | SortOrder
+    npwp?: SortOrderInput | SortOrder
     website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -25922,15 +26146,15 @@ export namespace Prisma {
     AND?: CompanyWhereInput | CompanyWhereInput[]
     OR?: CompanyWhereInput[]
     NOT?: CompanyWhereInput | CompanyWhereInput[]
-    segmentId?: IntFilter<"Company"> | number
+    segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
-    companyName?: StringFilter<"Company"> | string
-    companyFoundingDate?: DateTimeFilter<"Company"> | Date | string
-    companyStatus?: StringFilter<"Company"> | string
-    companyTelpFax?: StringFilter<"Company"> | string
-    companyAddress?: StringFilter<"Company"> | string
-    companyEmail?: StringFilter<"Company"> | string
-    npwp?: StringFilter<"Company"> | string
+    companyName?: StringNullableFilter<"Company"> | string | null
+    companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
+    companyStatus?: StringNullableFilter<"Company"> | string | null
+    companyTelpFax?: StringNullableFilter<"Company"> | string | null
+    companyAddress?: StringNullableFilter<"Company"> | string | null
+    companyEmail?: StringNullableFilter<"Company"> | string | null
+    npwp?: StringNullableFilter<"Company"> | string | null
     website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
@@ -25942,15 +26166,15 @@ export namespace Prisma {
 
   export type CompanyOrderByWithAggregationInput = {
     companyId?: SortOrder
-    segmentId?: SortOrder
+    segmentId?: SortOrderInput | SortOrder
     urlImage?: SortOrderInput | SortOrder
-    companyName?: SortOrder
-    companyFoundingDate?: SortOrder
-    companyStatus?: SortOrder
-    companyTelpFax?: SortOrder
-    companyAddress?: SortOrder
-    companyEmail?: SortOrder
-    npwp?: SortOrder
+    companyName?: SortOrderInput | SortOrder
+    companyFoundingDate?: SortOrderInput | SortOrder
+    companyStatus?: SortOrderInput | SortOrder
+    companyTelpFax?: SortOrderInput | SortOrder
+    companyAddress?: SortOrderInput | SortOrder
+    companyEmail?: SortOrderInput | SortOrder
+    npwp?: SortOrderInput | SortOrder
     website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -25967,15 +26191,15 @@ export namespace Prisma {
     OR?: CompanyScalarWhereWithAggregatesInput[]
     NOT?: CompanyScalarWhereWithAggregatesInput | CompanyScalarWhereWithAggregatesInput[]
     companyId?: UuidWithAggregatesFilter<"Company"> | string
-    segmentId?: IntWithAggregatesFilter<"Company"> | number
+    segmentId?: IntNullableWithAggregatesFilter<"Company"> | number | null
     urlImage?: StringNullableWithAggregatesFilter<"Company"> | string | null
-    companyName?: StringWithAggregatesFilter<"Company"> | string
-    companyFoundingDate?: DateTimeWithAggregatesFilter<"Company"> | Date | string
-    companyStatus?: StringWithAggregatesFilter<"Company"> | string
-    companyTelpFax?: StringWithAggregatesFilter<"Company"> | string
-    companyAddress?: StringWithAggregatesFilter<"Company"> | string
-    companyEmail?: StringWithAggregatesFilter<"Company"> | string
-    npwp?: StringWithAggregatesFilter<"Company"> | string
+    companyName?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    companyFoundingDate?: DateTimeNullableWithAggregatesFilter<"Company"> | Date | string | null
+    companyStatus?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    companyTelpFax?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    companyAddress?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    companyEmail?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    npwp?: StringNullableWithAggregatesFilter<"Company"> | string | null
     website?: StringNullableWithAggregatesFilter<"Company"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
@@ -26061,26 +26285,30 @@ export namespace Prisma {
     NOT?: FormL9BankInfoWhereInput | FormL9BankInfoWhereInput[]
     formL9BankInfoid?: UuidFilter<"FormL9BankInfo"> | string
     formL9Id?: UuidFilter<"FormL9BankInfo"> | string
-    beneficiaryName?: StringFilter<"FormL9BankInfo"> | string
-    beneficiaryAddress?: StringFilter<"FormL9BankInfo"> | string
-    bankName?: StringFilter<"FormL9BankInfo"> | string
-    bankAddress?: StringFilter<"FormL9BankInfo"> | string
-    noRek?: StringFilter<"FormL9BankInfo"> | string
-    swiftCode?: StringFilter<"FormL9BankInfo"> | string
-    IBAN?: StringFilter<"FormL9BankInfo"> | string
+    beneficiaryName?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    beneficiaryAddress?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    bankName?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    bankAddress?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    noRek?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    swiftCode?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    IBAN?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    createdAt?: DateTimeFilter<"FormL9BankInfo"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9BankInfo"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }
 
   export type FormL9BankInfoOrderByWithRelationInput = {
     formL9BankInfoid?: SortOrder
     formL9Id?: SortOrder
-    beneficiaryName?: SortOrder
-    beneficiaryAddress?: SortOrder
-    bankName?: SortOrder
-    bankAddress?: SortOrder
-    noRek?: SortOrder
-    swiftCode?: SortOrder
-    IBAN?: SortOrder
+    beneficiaryName?: SortOrderInput | SortOrder
+    beneficiaryAddress?: SortOrderInput | SortOrder
+    bankName?: SortOrderInput | SortOrder
+    bankAddress?: SortOrderInput | SortOrder
+    noRek?: SortOrderInput | SortOrder
+    swiftCode?: SortOrderInput | SortOrder
+    IBAN?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     formL9?: FormL9OrderByWithRelationInput
   }
 
@@ -26090,26 +26318,30 @@ export namespace Prisma {
     AND?: FormL9BankInfoWhereInput | FormL9BankInfoWhereInput[]
     OR?: FormL9BankInfoWhereInput[]
     NOT?: FormL9BankInfoWhereInput | FormL9BankInfoWhereInput[]
-    beneficiaryName?: StringFilter<"FormL9BankInfo"> | string
-    beneficiaryAddress?: StringFilter<"FormL9BankInfo"> | string
-    bankName?: StringFilter<"FormL9BankInfo"> | string
-    bankAddress?: StringFilter<"FormL9BankInfo"> | string
-    noRek?: StringFilter<"FormL9BankInfo"> | string
-    swiftCode?: StringFilter<"FormL9BankInfo"> | string
-    IBAN?: StringFilter<"FormL9BankInfo"> | string
+    beneficiaryName?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    beneficiaryAddress?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    bankName?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    bankAddress?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    noRek?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    swiftCode?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    IBAN?: StringNullableFilter<"FormL9BankInfo"> | string | null
+    createdAt?: DateTimeFilter<"FormL9BankInfo"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9BankInfo"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }, "formL9BankInfoid" | "formL9Id">
 
   export type FormL9BankInfoOrderByWithAggregationInput = {
     formL9BankInfoid?: SortOrder
     formL9Id?: SortOrder
-    beneficiaryName?: SortOrder
-    beneficiaryAddress?: SortOrder
-    bankName?: SortOrder
-    bankAddress?: SortOrder
-    noRek?: SortOrder
-    swiftCode?: SortOrder
-    IBAN?: SortOrder
+    beneficiaryName?: SortOrderInput | SortOrder
+    beneficiaryAddress?: SortOrderInput | SortOrder
+    bankName?: SortOrderInput | SortOrder
+    bankAddress?: SortOrderInput | SortOrder
+    noRek?: SortOrderInput | SortOrder
+    swiftCode?: SortOrderInput | SortOrder
+    IBAN?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FormL9BankInfoCountOrderByAggregateInput
     _max?: FormL9BankInfoMaxOrderByAggregateInput
     _min?: FormL9BankInfoMinOrderByAggregateInput
@@ -26121,13 +26353,15 @@ export namespace Prisma {
     NOT?: FormL9BankInfoScalarWhereWithAggregatesInput | FormL9BankInfoScalarWhereWithAggregatesInput[]
     formL9BankInfoid?: UuidWithAggregatesFilter<"FormL9BankInfo"> | string
     formL9Id?: UuidWithAggregatesFilter<"FormL9BankInfo"> | string
-    beneficiaryName?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
-    beneficiaryAddress?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
-    bankName?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
-    bankAddress?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
-    noRek?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
-    swiftCode?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
-    IBAN?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
+    beneficiaryName?: StringNullableWithAggregatesFilter<"FormL9BankInfo"> | string | null
+    beneficiaryAddress?: StringNullableWithAggregatesFilter<"FormL9BankInfo"> | string | null
+    bankName?: StringNullableWithAggregatesFilter<"FormL9BankInfo"> | string | null
+    bankAddress?: StringNullableWithAggregatesFilter<"FormL9BankInfo"> | string | null
+    noRek?: StringNullableWithAggregatesFilter<"FormL9BankInfo"> | string | null
+    swiftCode?: StringNullableWithAggregatesFilter<"FormL9BankInfo"> | string | null
+    IBAN?: StringNullableWithAggregatesFilter<"FormL9BankInfo"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"FormL9BankInfo"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FormL9BankInfo"> | Date | string
   }
 
   export type FormL9GeneralInformationWhereInput = {
@@ -26136,15 +26370,17 @@ export namespace Prisma {
     NOT?: FormL9GeneralInformationWhereInput | FormL9GeneralInformationWhereInput[]
     formGeneralInformationId?: UuidFilter<"FormL9GeneralInformation"> | string
     formL9Id?: UuidFilter<"FormL9GeneralInformation"> | string
-    companyName?: StringFilter<"FormL9GeneralInformation"> | string
-    companyFoundingDate?: DateTimeFilter<"FormL9GeneralInformation"> | Date | string
-    companyStatus?: StringFilter<"FormL9GeneralInformation"> | string
-    companyTelpFax?: StringFilter<"FormL9GeneralInformation"> | string
-    companyAddress?: StringFilter<"FormL9GeneralInformation"> | string
-    companyEmail?: StringFilter<"FormL9GeneralInformation"> | string
-    npwp?: StringFilter<"FormL9GeneralInformation"> | string
+    companyName?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    companyFoundingDate?: DateTimeNullableFilter<"FormL9GeneralInformation"> | Date | string | null
+    companyStatus?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    companyTelpFax?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    companyAddress?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    companyEmail?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    npwp?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
     totalCapital?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
-    segmentId?: StringFilter<"FormL9GeneralInformation"> | string
+    segmentId?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    createdAt?: DateTimeFilter<"FormL9GeneralInformation"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9GeneralInformation"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
     generalInfoContinue?: XOR<FormL9GeneralInformationContinueNullableScalarRelationFilter, FormL9GeneralInformationContinueWhereInput> | null
   }
@@ -26152,15 +26388,17 @@ export namespace Prisma {
   export type FormL9GeneralInformationOrderByWithRelationInput = {
     formGeneralInformationId?: SortOrder
     formL9Id?: SortOrder
-    companyName?: SortOrder
-    companyFoundingDate?: SortOrder
-    companyStatus?: SortOrder
-    companyTelpFax?: SortOrder
-    companyAddress?: SortOrder
-    companyEmail?: SortOrder
-    npwp?: SortOrder
+    companyName?: SortOrderInput | SortOrder
+    companyFoundingDate?: SortOrderInput | SortOrder
+    companyStatus?: SortOrderInput | SortOrder
+    companyTelpFax?: SortOrderInput | SortOrder
+    companyAddress?: SortOrderInput | SortOrder
+    companyEmail?: SortOrderInput | SortOrder
+    npwp?: SortOrderInput | SortOrder
     totalCapital?: SortOrderInput | SortOrder
-    segmentId?: SortOrder
+    segmentId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     formL9?: FormL9OrderByWithRelationInput
     generalInfoContinue?: FormL9GeneralInformationContinueOrderByWithRelationInput
   }
@@ -26171,15 +26409,17 @@ export namespace Prisma {
     AND?: FormL9GeneralInformationWhereInput | FormL9GeneralInformationWhereInput[]
     OR?: FormL9GeneralInformationWhereInput[]
     NOT?: FormL9GeneralInformationWhereInput | FormL9GeneralInformationWhereInput[]
-    companyName?: StringFilter<"FormL9GeneralInformation"> | string
-    companyFoundingDate?: DateTimeFilter<"FormL9GeneralInformation"> | Date | string
-    companyStatus?: StringFilter<"FormL9GeneralInformation"> | string
-    companyTelpFax?: StringFilter<"FormL9GeneralInformation"> | string
-    companyAddress?: StringFilter<"FormL9GeneralInformation"> | string
-    companyEmail?: StringFilter<"FormL9GeneralInformation"> | string
-    npwp?: StringFilter<"FormL9GeneralInformation"> | string
+    companyName?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    companyFoundingDate?: DateTimeNullableFilter<"FormL9GeneralInformation"> | Date | string | null
+    companyStatus?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    companyTelpFax?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    companyAddress?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    companyEmail?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    npwp?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
     totalCapital?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
-    segmentId?: StringFilter<"FormL9GeneralInformation"> | string
+    segmentId?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    createdAt?: DateTimeFilter<"FormL9GeneralInformation"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9GeneralInformation"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
     generalInfoContinue?: XOR<FormL9GeneralInformationContinueNullableScalarRelationFilter, FormL9GeneralInformationContinueWhereInput> | null
   }, "formGeneralInformationId" | "formL9Id">
@@ -26187,15 +26427,17 @@ export namespace Prisma {
   export type FormL9GeneralInformationOrderByWithAggregationInput = {
     formGeneralInformationId?: SortOrder
     formL9Id?: SortOrder
-    companyName?: SortOrder
-    companyFoundingDate?: SortOrder
-    companyStatus?: SortOrder
-    companyTelpFax?: SortOrder
-    companyAddress?: SortOrder
-    companyEmail?: SortOrder
-    npwp?: SortOrder
+    companyName?: SortOrderInput | SortOrder
+    companyFoundingDate?: SortOrderInput | SortOrder
+    companyStatus?: SortOrderInput | SortOrder
+    companyTelpFax?: SortOrderInput | SortOrder
+    companyAddress?: SortOrderInput | SortOrder
+    companyEmail?: SortOrderInput | SortOrder
+    npwp?: SortOrderInput | SortOrder
     totalCapital?: SortOrderInput | SortOrder
-    segmentId?: SortOrder
+    segmentId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FormL9GeneralInformationCountOrderByAggregateInput
     _max?: FormL9GeneralInformationMaxOrderByAggregateInput
     _min?: FormL9GeneralInformationMinOrderByAggregateInput
@@ -26207,15 +26449,17 @@ export namespace Prisma {
     NOT?: FormL9GeneralInformationScalarWhereWithAggregatesInput | FormL9GeneralInformationScalarWhereWithAggregatesInput[]
     formGeneralInformationId?: UuidWithAggregatesFilter<"FormL9GeneralInformation"> | string
     formL9Id?: UuidWithAggregatesFilter<"FormL9GeneralInformation"> | string
-    companyName?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
-    companyFoundingDate?: DateTimeWithAggregatesFilter<"FormL9GeneralInformation"> | Date | string
-    companyStatus?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
-    companyTelpFax?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
-    companyAddress?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
-    companyEmail?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
-    npwp?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    companyName?: StringNullableWithAggregatesFilter<"FormL9GeneralInformation"> | string | null
+    companyFoundingDate?: DateTimeNullableWithAggregatesFilter<"FormL9GeneralInformation"> | Date | string | null
+    companyStatus?: StringNullableWithAggregatesFilter<"FormL9GeneralInformation"> | string | null
+    companyTelpFax?: StringNullableWithAggregatesFilter<"FormL9GeneralInformation"> | string | null
+    companyAddress?: StringNullableWithAggregatesFilter<"FormL9GeneralInformation"> | string | null
+    companyEmail?: StringNullableWithAggregatesFilter<"FormL9GeneralInformation"> | string | null
+    npwp?: StringNullableWithAggregatesFilter<"FormL9GeneralInformation"> | string | null
     totalCapital?: StringNullableWithAggregatesFilter<"FormL9GeneralInformation"> | string | null
-    segmentId?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    segmentId?: StringNullableWithAggregatesFilter<"FormL9GeneralInformation"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"FormL9GeneralInformation"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FormL9GeneralInformation"> | Date | string
   }
 
   export type FormL9GeneralInformationContinueWhereInput = {
@@ -26224,14 +26468,18 @@ export namespace Prisma {
     NOT?: FormL9GeneralInformationContinueWhereInput | FormL9GeneralInformationContinueWhereInput[]
     formL9GeneralInformationContinueId?: UuidFilter<"FormL9GeneralInformationContinue"> | string
     formGeneralInformationId?: UuidFilter<"FormL9GeneralInformationContinue"> | string
-    permitsHeld?: StringFilter<"FormL9GeneralInformationContinue"> | string
+    permitsHeld?: StringNullableFilter<"FormL9GeneralInformationContinue"> | string | null
+    createdAt?: DateTimeFilter<"FormL9GeneralInformationContinue"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9GeneralInformationContinue"> | Date | string
     generalInformation?: XOR<FormL9GeneralInformationScalarRelationFilter, FormL9GeneralInformationWhereInput>
   }
 
   export type FormL9GeneralInformationContinueOrderByWithRelationInput = {
     formL9GeneralInformationContinueId?: SortOrder
     formGeneralInformationId?: SortOrder
-    permitsHeld?: SortOrder
+    permitsHeld?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     generalInformation?: FormL9GeneralInformationOrderByWithRelationInput
   }
 
@@ -26241,14 +26489,18 @@ export namespace Prisma {
     AND?: FormL9GeneralInformationContinueWhereInput | FormL9GeneralInformationContinueWhereInput[]
     OR?: FormL9GeneralInformationContinueWhereInput[]
     NOT?: FormL9GeneralInformationContinueWhereInput | FormL9GeneralInformationContinueWhereInput[]
-    permitsHeld?: StringFilter<"FormL9GeneralInformationContinue"> | string
+    permitsHeld?: StringNullableFilter<"FormL9GeneralInformationContinue"> | string | null
+    createdAt?: DateTimeFilter<"FormL9GeneralInformationContinue"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9GeneralInformationContinue"> | Date | string
     generalInformation?: XOR<FormL9GeneralInformationScalarRelationFilter, FormL9GeneralInformationWhereInput>
   }, "formL9GeneralInformationContinueId" | "formGeneralInformationId">
 
   export type FormL9GeneralInformationContinueOrderByWithAggregationInput = {
     formL9GeneralInformationContinueId?: SortOrder
     formGeneralInformationId?: SortOrder
-    permitsHeld?: SortOrder
+    permitsHeld?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FormL9GeneralInformationContinueCountOrderByAggregateInput
     _max?: FormL9GeneralInformationContinueMaxOrderByAggregateInput
     _min?: FormL9GeneralInformationContinueMinOrderByAggregateInput
@@ -26260,7 +26512,9 @@ export namespace Prisma {
     NOT?: FormL9GeneralInformationContinueScalarWhereWithAggregatesInput | FormL9GeneralInformationContinueScalarWhereWithAggregatesInput[]
     formL9GeneralInformationContinueId?: UuidWithAggregatesFilter<"FormL9GeneralInformationContinue"> | string
     formGeneralInformationId?: UuidWithAggregatesFilter<"FormL9GeneralInformationContinue"> | string
-    permitsHeld?: StringWithAggregatesFilter<"FormL9GeneralInformationContinue"> | string
+    permitsHeld?: StringNullableWithAggregatesFilter<"FormL9GeneralInformationContinue"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"FormL9GeneralInformationContinue"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FormL9GeneralInformationContinue"> | Date | string
   }
 
   export type FormL9ManagementWhereInput = {
@@ -26269,18 +26523,22 @@ export namespace Prisma {
     NOT?: FormL9ManagementWhereInput | FormL9ManagementWhereInput[]
     formL9ManagementId?: UuidFilter<"FormL9Management"> | string
     formL9Id?: UuidFilter<"FormL9Management"> | string
-    position?: StringFilter<"FormL9Management"> | string
-    name?: StringFilter<"FormL9Management"> | string
-    noTelpFaxHp?: StringFilter<"FormL9Management"> | string
+    position?: StringNullableFilter<"FormL9Management"> | string | null
+    name?: StringNullableFilter<"FormL9Management"> | string | null
+    noTelpFaxHp?: StringNullableFilter<"FormL9Management"> | string | null
+    createdAt?: DateTimeFilter<"FormL9Management"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9Management"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }
 
   export type FormL9ManagementOrderByWithRelationInput = {
     formL9ManagementId?: SortOrder
     formL9Id?: SortOrder
-    position?: SortOrder
-    name?: SortOrder
-    noTelpFaxHp?: SortOrder
+    position?: SortOrderInput | SortOrder
+    name?: SortOrderInput | SortOrder
+    noTelpFaxHp?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     formL9?: FormL9OrderByWithRelationInput
   }
 
@@ -26290,18 +26548,22 @@ export namespace Prisma {
     OR?: FormL9ManagementWhereInput[]
     NOT?: FormL9ManagementWhereInput | FormL9ManagementWhereInput[]
     formL9Id?: UuidFilter<"FormL9Management"> | string
-    position?: StringFilter<"FormL9Management"> | string
-    name?: StringFilter<"FormL9Management"> | string
-    noTelpFaxHp?: StringFilter<"FormL9Management"> | string
+    position?: StringNullableFilter<"FormL9Management"> | string | null
+    name?: StringNullableFilter<"FormL9Management"> | string | null
+    noTelpFaxHp?: StringNullableFilter<"FormL9Management"> | string | null
+    createdAt?: DateTimeFilter<"FormL9Management"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9Management"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }, "formL9ManagementId">
 
   export type FormL9ManagementOrderByWithAggregationInput = {
     formL9ManagementId?: SortOrder
     formL9Id?: SortOrder
-    position?: SortOrder
-    name?: SortOrder
-    noTelpFaxHp?: SortOrder
+    position?: SortOrderInput | SortOrder
+    name?: SortOrderInput | SortOrder
+    noTelpFaxHp?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FormL9ManagementCountOrderByAggregateInput
     _max?: FormL9ManagementMaxOrderByAggregateInput
     _min?: FormL9ManagementMinOrderByAggregateInput
@@ -26313,9 +26575,11 @@ export namespace Prisma {
     NOT?: FormL9ManagementScalarWhereWithAggregatesInput | FormL9ManagementScalarWhereWithAggregatesInput[]
     formL9ManagementId?: UuidWithAggregatesFilter<"FormL9Management"> | string
     formL9Id?: UuidWithAggregatesFilter<"FormL9Management"> | string
-    position?: StringWithAggregatesFilter<"FormL9Management"> | string
-    name?: StringWithAggregatesFilter<"FormL9Management"> | string
-    noTelpFaxHp?: StringWithAggregatesFilter<"FormL9Management"> | string
+    position?: StringNullableWithAggregatesFilter<"FormL9Management"> | string | null
+    name?: StringNullableWithAggregatesFilter<"FormL9Management"> | string | null
+    noTelpFaxHp?: StringNullableWithAggregatesFilter<"FormL9Management"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"FormL9Management"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FormL9Management"> | Date | string
   }
 
   export type FormL9EmployeWhereInput = {
@@ -26324,24 +26588,28 @@ export namespace Prisma {
     NOT?: FormL9EmployeWhereInput | FormL9EmployeWhereInput[]
     formL9EmployeId?: UuidFilter<"FormL9Employe"> | string
     formL9Id?: UuidFilter<"FormL9Employe"> | string
-    totalEmployees?: IntFilter<"FormL9Employe"> | number
-    qualityControl?: IntFilter<"FormL9Employe"> | number
-    engineering?: IntFilter<"FormL9Employe"> | number
-    production?: IntFilter<"FormL9Employe"> | number
-    management?: IntFilter<"FormL9Employe"> | number
-    other?: IntFilter<"FormL9Employe"> | number
+    totalEmployees?: IntNullableFilter<"FormL9Employe"> | number | null
+    qualityControl?: IntNullableFilter<"FormL9Employe"> | number | null
+    engineering?: IntNullableFilter<"FormL9Employe"> | number | null
+    production?: IntNullableFilter<"FormL9Employe"> | number | null
+    management?: IntNullableFilter<"FormL9Employe"> | number | null
+    other?: IntNullableFilter<"FormL9Employe"> | number | null
+    createdAt?: DateTimeFilter<"FormL9Employe"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9Employe"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }
 
   export type FormL9EmployeOrderByWithRelationInput = {
     formL9EmployeId?: SortOrder
     formL9Id?: SortOrder
-    totalEmployees?: SortOrder
-    qualityControl?: SortOrder
-    engineering?: SortOrder
-    production?: SortOrder
-    management?: SortOrder
-    other?: SortOrder
+    totalEmployees?: SortOrderInput | SortOrder
+    qualityControl?: SortOrderInput | SortOrder
+    engineering?: SortOrderInput | SortOrder
+    production?: SortOrderInput | SortOrder
+    management?: SortOrderInput | SortOrder
+    other?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     formL9?: FormL9OrderByWithRelationInput
   }
 
@@ -26351,24 +26619,28 @@ export namespace Prisma {
     AND?: FormL9EmployeWhereInput | FormL9EmployeWhereInput[]
     OR?: FormL9EmployeWhereInput[]
     NOT?: FormL9EmployeWhereInput | FormL9EmployeWhereInput[]
-    totalEmployees?: IntFilter<"FormL9Employe"> | number
-    qualityControl?: IntFilter<"FormL9Employe"> | number
-    engineering?: IntFilter<"FormL9Employe"> | number
-    production?: IntFilter<"FormL9Employe"> | number
-    management?: IntFilter<"FormL9Employe"> | number
-    other?: IntFilter<"FormL9Employe"> | number
+    totalEmployees?: IntNullableFilter<"FormL9Employe"> | number | null
+    qualityControl?: IntNullableFilter<"FormL9Employe"> | number | null
+    engineering?: IntNullableFilter<"FormL9Employe"> | number | null
+    production?: IntNullableFilter<"FormL9Employe"> | number | null
+    management?: IntNullableFilter<"FormL9Employe"> | number | null
+    other?: IntNullableFilter<"FormL9Employe"> | number | null
+    createdAt?: DateTimeFilter<"FormL9Employe"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9Employe"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }, "formL9EmployeId" | "formL9Id">
 
   export type FormL9EmployeOrderByWithAggregationInput = {
     formL9EmployeId?: SortOrder
     formL9Id?: SortOrder
-    totalEmployees?: SortOrder
-    qualityControl?: SortOrder
-    engineering?: SortOrder
-    production?: SortOrder
-    management?: SortOrder
-    other?: SortOrder
+    totalEmployees?: SortOrderInput | SortOrder
+    qualityControl?: SortOrderInput | SortOrder
+    engineering?: SortOrderInput | SortOrder
+    production?: SortOrderInput | SortOrder
+    management?: SortOrderInput | SortOrder
+    other?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FormL9EmployeCountOrderByAggregateInput
     _avg?: FormL9EmployeAvgOrderByAggregateInput
     _max?: FormL9EmployeMaxOrderByAggregateInput
@@ -26382,12 +26654,14 @@ export namespace Prisma {
     NOT?: FormL9EmployeScalarWhereWithAggregatesInput | FormL9EmployeScalarWhereWithAggregatesInput[]
     formL9EmployeId?: UuidWithAggregatesFilter<"FormL9Employe"> | string
     formL9Id?: UuidWithAggregatesFilter<"FormL9Employe"> | string
-    totalEmployees?: IntWithAggregatesFilter<"FormL9Employe"> | number
-    qualityControl?: IntWithAggregatesFilter<"FormL9Employe"> | number
-    engineering?: IntWithAggregatesFilter<"FormL9Employe"> | number
-    production?: IntWithAggregatesFilter<"FormL9Employe"> | number
-    management?: IntWithAggregatesFilter<"FormL9Employe"> | number
-    other?: IntWithAggregatesFilter<"FormL9Employe"> | number
+    totalEmployees?: IntNullableWithAggregatesFilter<"FormL9Employe"> | number | null
+    qualityControl?: IntNullableWithAggregatesFilter<"FormL9Employe"> | number | null
+    engineering?: IntNullableWithAggregatesFilter<"FormL9Employe"> | number | null
+    production?: IntNullableWithAggregatesFilter<"FormL9Employe"> | number | null
+    management?: IntNullableWithAggregatesFilter<"FormL9Employe"> | number | null
+    other?: IntNullableWithAggregatesFilter<"FormL9Employe"> | number | null
+    createdAt?: DateTimeWithAggregatesFilter<"FormL9Employe"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FormL9Employe"> | Date | string
   }
 
   export type FormL9WorkExperienceWhereInput = {
@@ -26396,22 +26670,26 @@ export namespace Prisma {
     NOT?: FormL9WorkExperienceWhereInput | FormL9WorkExperienceWhereInput[]
     formL9WorkExperienceId?: UuidFilter<"FormL9WorkExperience"> | string
     formL9Id?: UuidFilter<"FormL9WorkExperience"> | string
-    customerOrLocation?: StringFilter<"FormL9WorkExperience"> | string
-    typeOfWork?: StringFilter<"FormL9WorkExperience"> | string
-    score?: IntFilter<"FormL9WorkExperience"> | number
-    customerContactPerson?: StringFilter<"FormL9WorkExperience"> | string
-    customerTelpFaxHp?: StringFilter<"FormL9WorkExperience"> | string
+    customerOrLocation?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    typeOfWork?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    score?: IntNullableFilter<"FormL9WorkExperience"> | number | null
+    customerContactPerson?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    customerTelpFaxHp?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    createdAt?: DateTimeFilter<"FormL9WorkExperience"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9WorkExperience"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }
 
   export type FormL9WorkExperienceOrderByWithRelationInput = {
     formL9WorkExperienceId?: SortOrder
     formL9Id?: SortOrder
-    customerOrLocation?: SortOrder
-    typeOfWork?: SortOrder
-    score?: SortOrder
-    customerContactPerson?: SortOrder
-    customerTelpFaxHp?: SortOrder
+    customerOrLocation?: SortOrderInput | SortOrder
+    typeOfWork?: SortOrderInput | SortOrder
+    score?: SortOrderInput | SortOrder
+    customerContactPerson?: SortOrderInput | SortOrder
+    customerTelpFaxHp?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     formL9?: FormL9OrderByWithRelationInput
   }
 
@@ -26421,22 +26699,26 @@ export namespace Prisma {
     OR?: FormL9WorkExperienceWhereInput[]
     NOT?: FormL9WorkExperienceWhereInput | FormL9WorkExperienceWhereInput[]
     formL9Id?: UuidFilter<"FormL9WorkExperience"> | string
-    customerOrLocation?: StringFilter<"FormL9WorkExperience"> | string
-    typeOfWork?: StringFilter<"FormL9WorkExperience"> | string
-    score?: IntFilter<"FormL9WorkExperience"> | number
-    customerContactPerson?: StringFilter<"FormL9WorkExperience"> | string
-    customerTelpFaxHp?: StringFilter<"FormL9WorkExperience"> | string
+    customerOrLocation?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    typeOfWork?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    score?: IntNullableFilter<"FormL9WorkExperience"> | number | null
+    customerContactPerson?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    customerTelpFaxHp?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    createdAt?: DateTimeFilter<"FormL9WorkExperience"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9WorkExperience"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }, "formL9WorkExperienceId">
 
   export type FormL9WorkExperienceOrderByWithAggregationInput = {
     formL9WorkExperienceId?: SortOrder
     formL9Id?: SortOrder
-    customerOrLocation?: SortOrder
-    typeOfWork?: SortOrder
-    score?: SortOrder
-    customerContactPerson?: SortOrder
-    customerTelpFaxHp?: SortOrder
+    customerOrLocation?: SortOrderInput | SortOrder
+    typeOfWork?: SortOrderInput | SortOrder
+    score?: SortOrderInput | SortOrder
+    customerContactPerson?: SortOrderInput | SortOrder
+    customerTelpFaxHp?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FormL9WorkExperienceCountOrderByAggregateInput
     _avg?: FormL9WorkExperienceAvgOrderByAggregateInput
     _max?: FormL9WorkExperienceMaxOrderByAggregateInput
@@ -26450,11 +26732,13 @@ export namespace Prisma {
     NOT?: FormL9WorkExperienceScalarWhereWithAggregatesInput | FormL9WorkExperienceScalarWhereWithAggregatesInput[]
     formL9WorkExperienceId?: UuidWithAggregatesFilter<"FormL9WorkExperience"> | string
     formL9Id?: UuidWithAggregatesFilter<"FormL9WorkExperience"> | string
-    customerOrLocation?: StringWithAggregatesFilter<"FormL9WorkExperience"> | string
-    typeOfWork?: StringWithAggregatesFilter<"FormL9WorkExperience"> | string
-    score?: IntWithAggregatesFilter<"FormL9WorkExperience"> | number
-    customerContactPerson?: StringWithAggregatesFilter<"FormL9WorkExperience"> | string
-    customerTelpFaxHp?: StringWithAggregatesFilter<"FormL9WorkExperience"> | string
+    customerOrLocation?: StringNullableWithAggregatesFilter<"FormL9WorkExperience"> | string | null
+    typeOfWork?: StringNullableWithAggregatesFilter<"FormL9WorkExperience"> | string | null
+    score?: IntNullableWithAggregatesFilter<"FormL9WorkExperience"> | number | null
+    customerContactPerson?: StringNullableWithAggregatesFilter<"FormL9WorkExperience"> | string | null
+    customerTelpFaxHp?: StringNullableWithAggregatesFilter<"FormL9WorkExperience"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"FormL9WorkExperience"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FormL9WorkExperience"> | Date | string
   }
 
   export type FormL9OthersWhereInput = {
@@ -26471,10 +26755,12 @@ export namespace Prisma {
     haveAPD?: BoolFilter<"FormL9Others"> | boolean
     haveAPDRegulation?: BoolFilter<"FormL9Others"> | boolean
     isTopApplicable?: BoolFilter<"FormL9Others"> | boolean
-    paymentTime?: StringFilter<"FormL9Others"> | string
+    paymentTime?: StringNullableFilter<"FormL9Others"> | string | null
     agreeToConfidentialInformation?: BoolFilter<"FormL9Others"> | boolean
     understandingBreachesOfConfidentiality?: BoolFilter<"FormL9Others"> | boolean
     signConfidentialityAgreement?: BoolFilter<"FormL9Others"> | boolean
+    createdAt?: DateTimeFilter<"FormL9Others"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9Others"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
     certificateISOs?: FormL9CertificateISOListRelationFilter
   }
@@ -26490,10 +26776,12 @@ export namespace Prisma {
     haveAPD?: SortOrder
     haveAPDRegulation?: SortOrder
     isTopApplicable?: SortOrder
-    paymentTime?: SortOrder
+    paymentTime?: SortOrderInput | SortOrder
     agreeToConfidentialInformation?: SortOrder
     understandingBreachesOfConfidentiality?: SortOrder
     signConfidentialityAgreement?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     formL9?: FormL9OrderByWithRelationInput
     certificateISOs?: FormL9CertificateISOOrderByRelationAggregateInput
   }
@@ -26512,10 +26800,12 @@ export namespace Prisma {
     haveAPD?: BoolFilter<"FormL9Others"> | boolean
     haveAPDRegulation?: BoolFilter<"FormL9Others"> | boolean
     isTopApplicable?: BoolFilter<"FormL9Others"> | boolean
-    paymentTime?: StringFilter<"FormL9Others"> | string
+    paymentTime?: StringNullableFilter<"FormL9Others"> | string | null
     agreeToConfidentialInformation?: BoolFilter<"FormL9Others"> | boolean
     understandingBreachesOfConfidentiality?: BoolFilter<"FormL9Others"> | boolean
     signConfidentialityAgreement?: BoolFilter<"FormL9Others"> | boolean
+    createdAt?: DateTimeFilter<"FormL9Others"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9Others"> | Date | string
     formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
     certificateISOs?: FormL9CertificateISOListRelationFilter
   }, "formL9OthersId" | "formL9Id">
@@ -26531,10 +26821,12 @@ export namespace Prisma {
     haveAPD?: SortOrder
     haveAPDRegulation?: SortOrder
     isTopApplicable?: SortOrder
-    paymentTime?: SortOrder
+    paymentTime?: SortOrderInput | SortOrder
     agreeToConfidentialInformation?: SortOrder
     understandingBreachesOfConfidentiality?: SortOrder
     signConfidentialityAgreement?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FormL9OthersCountOrderByAggregateInput
     _max?: FormL9OthersMaxOrderByAggregateInput
     _min?: FormL9OthersMinOrderByAggregateInput
@@ -26554,10 +26846,12 @@ export namespace Prisma {
     haveAPD?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
     haveAPDRegulation?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
     isTopApplicable?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
-    paymentTime?: StringWithAggregatesFilter<"FormL9Others"> | string
+    paymentTime?: StringNullableWithAggregatesFilter<"FormL9Others"> | string | null
     agreeToConfidentialInformation?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
     understandingBreachesOfConfidentiality?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
     signConfidentialityAgreement?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    createdAt?: DateTimeWithAggregatesFilter<"FormL9Others"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FormL9Others"> | Date | string
   }
 
   export type FormL9CertificateISOWhereInput = {
@@ -26566,20 +26860,24 @@ export namespace Prisma {
     NOT?: FormL9CertificateISOWhereInput | FormL9CertificateISOWhereInput[]
     certificateISOId?: UuidFilter<"FormL9CertificateISO"> | string
     formL9OthersId?: UuidFilter<"FormL9CertificateISO"> | string
-    isoName?: StringFilter<"FormL9CertificateISO"> | string
-    validityPeriodFrom?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
-    validityPeriodTo?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    isoName?: StringNullableFilter<"FormL9CertificateISO"> | string | null
+    validityPeriodFrom?: DateTimeNullableFilter<"FormL9CertificateISO"> | Date | string | null
+    validityPeriodTo?: DateTimeNullableFilter<"FormL9CertificateISO"> | Date | string | null
     remakes?: StringNullableFilter<"FormL9CertificateISO"> | string | null
+    createdAt?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
     others?: XOR<FormL9OthersScalarRelationFilter, FormL9OthersWhereInput>
   }
 
   export type FormL9CertificateISOOrderByWithRelationInput = {
     certificateISOId?: SortOrder
     formL9OthersId?: SortOrder
-    isoName?: SortOrder
-    validityPeriodFrom?: SortOrder
-    validityPeriodTo?: SortOrder
+    isoName?: SortOrderInput | SortOrder
+    validityPeriodFrom?: SortOrderInput | SortOrder
+    validityPeriodTo?: SortOrderInput | SortOrder
     remakes?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     others?: FormL9OthersOrderByWithRelationInput
   }
 
@@ -26589,20 +26887,24 @@ export namespace Prisma {
     OR?: FormL9CertificateISOWhereInput[]
     NOT?: FormL9CertificateISOWhereInput | FormL9CertificateISOWhereInput[]
     formL9OthersId?: UuidFilter<"FormL9CertificateISO"> | string
-    isoName?: StringFilter<"FormL9CertificateISO"> | string
-    validityPeriodFrom?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
-    validityPeriodTo?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    isoName?: StringNullableFilter<"FormL9CertificateISO"> | string | null
+    validityPeriodFrom?: DateTimeNullableFilter<"FormL9CertificateISO"> | Date | string | null
+    validityPeriodTo?: DateTimeNullableFilter<"FormL9CertificateISO"> | Date | string | null
     remakes?: StringNullableFilter<"FormL9CertificateISO"> | string | null
+    createdAt?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
     others?: XOR<FormL9OthersScalarRelationFilter, FormL9OthersWhereInput>
   }, "certificateISOId">
 
   export type FormL9CertificateISOOrderByWithAggregationInput = {
     certificateISOId?: SortOrder
     formL9OthersId?: SortOrder
-    isoName?: SortOrder
-    validityPeriodFrom?: SortOrder
-    validityPeriodTo?: SortOrder
+    isoName?: SortOrderInput | SortOrder
+    validityPeriodFrom?: SortOrderInput | SortOrder
+    validityPeriodTo?: SortOrderInput | SortOrder
     remakes?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: FormL9CertificateISOCountOrderByAggregateInput
     _max?: FormL9CertificateISOMaxOrderByAggregateInput
     _min?: FormL9CertificateISOMinOrderByAggregateInput
@@ -26614,10 +26916,12 @@ export namespace Prisma {
     NOT?: FormL9CertificateISOScalarWhereWithAggregatesInput | FormL9CertificateISOScalarWhereWithAggregatesInput[]
     certificateISOId?: UuidWithAggregatesFilter<"FormL9CertificateISO"> | string
     formL9OthersId?: UuidWithAggregatesFilter<"FormL9CertificateISO"> | string
-    isoName?: StringWithAggregatesFilter<"FormL9CertificateISO"> | string
-    validityPeriodFrom?: DateTimeWithAggregatesFilter<"FormL9CertificateISO"> | Date | string
-    validityPeriodTo?: DateTimeWithAggregatesFilter<"FormL9CertificateISO"> | Date | string
+    isoName?: StringNullableWithAggregatesFilter<"FormL9CertificateISO"> | string | null
+    validityPeriodFrom?: DateTimeNullableWithAggregatesFilter<"FormL9CertificateISO"> | Date | string | null
+    validityPeriodTo?: DateTimeNullableWithAggregatesFilter<"FormL9CertificateISO"> | Date | string | null
     remakes?: StringNullableWithAggregatesFilter<"FormL9CertificateISO"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"FormL9CertificateISO"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FormL9CertificateISO"> | Date | string
   }
 
   export type AllowedIpCorsCreateInput = {
@@ -27126,13 +27430,13 @@ export namespace Prisma {
   export type CompanyCreateInput = {
     companyId?: string
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -27144,15 +27448,15 @@ export namespace Prisma {
 
   export type CompanyUncheckedCreateInput = {
     companyId?: string
-    segmentId: number
+    segmentId?: number | null
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -27164,13 +27468,13 @@ export namespace Prisma {
   export type CompanyUpdateInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -27182,15 +27486,15 @@ export namespace Prisma {
 
   export type CompanyUncheckedUpdateInput = {
     companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: IntFieldUpdateOperationsInput | number
+    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -27201,15 +27505,15 @@ export namespace Prisma {
 
   export type CompanyCreateManyInput = {
     companyId?: string
-    segmentId: number
+    segmentId?: number | null
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -27219,13 +27523,13 @@ export namespace Prisma {
   export type CompanyUpdateManyMutationInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -27234,15 +27538,15 @@ export namespace Prisma {
 
   export type CompanyUncheckedUpdateManyInput = {
     companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: IntFieldUpdateOperationsInput | number
+    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -27330,98 +27634,114 @@ export namespace Prisma {
 
   export type FormL9BankInfoCreateInput = {
     formL9BankInfoid?: string
-    beneficiaryName: string
-    beneficiaryAddress: string
-    bankName: string
-    bankAddress: string
-    noRek: string
-    swiftCode: string
-    IBAN: string
+    beneficiaryName?: string | null
+    beneficiaryAddress?: string | null
+    bankName?: string | null
+    bankAddress?: string | null
+    noRek?: string | null
+    swiftCode?: string | null
+    IBAN?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     formL9: FormL9CreateNestedOneWithoutBankInfoInput
   }
 
   export type FormL9BankInfoUncheckedCreateInput = {
     formL9BankInfoid?: string
     formL9Id: string
-    beneficiaryName: string
-    beneficiaryAddress: string
-    bankName: string
-    bankAddress: string
-    noRek: string
-    swiftCode: string
-    IBAN: string
+    beneficiaryName?: string | null
+    beneficiaryAddress?: string | null
+    bankName?: string | null
+    bankAddress?: string | null
+    noRek?: string | null
+    swiftCode?: string | null
+    IBAN?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9BankInfoUpdateInput = {
     formL9BankInfoid?: StringFieldUpdateOperationsInput | string
-    beneficiaryName?: StringFieldUpdateOperationsInput | string
-    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
-    bankName?: StringFieldUpdateOperationsInput | string
-    bankAddress?: StringFieldUpdateOperationsInput | string
-    noRek?: StringFieldUpdateOperationsInput | string
-    swiftCode?: StringFieldUpdateOperationsInput | string
-    IBAN?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: NullableStringFieldUpdateOperationsInput | string | null
+    beneficiaryAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    bankName?: NullableStringFieldUpdateOperationsInput | string | null
+    bankAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    noRek?: NullableStringFieldUpdateOperationsInput | string | null
+    swiftCode?: NullableStringFieldUpdateOperationsInput | string | null
+    IBAN?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     formL9?: FormL9UpdateOneRequiredWithoutBankInfoNestedInput
   }
 
   export type FormL9BankInfoUncheckedUpdateInput = {
     formL9BankInfoid?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    beneficiaryName?: StringFieldUpdateOperationsInput | string
-    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
-    bankName?: StringFieldUpdateOperationsInput | string
-    bankAddress?: StringFieldUpdateOperationsInput | string
-    noRek?: StringFieldUpdateOperationsInput | string
-    swiftCode?: StringFieldUpdateOperationsInput | string
-    IBAN?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: NullableStringFieldUpdateOperationsInput | string | null
+    beneficiaryAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    bankName?: NullableStringFieldUpdateOperationsInput | string | null
+    bankAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    noRek?: NullableStringFieldUpdateOperationsInput | string | null
+    swiftCode?: NullableStringFieldUpdateOperationsInput | string | null
+    IBAN?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9BankInfoCreateManyInput = {
     formL9BankInfoid?: string
     formL9Id: string
-    beneficiaryName: string
-    beneficiaryAddress: string
-    bankName: string
-    bankAddress: string
-    noRek: string
-    swiftCode: string
-    IBAN: string
+    beneficiaryName?: string | null
+    beneficiaryAddress?: string | null
+    bankName?: string | null
+    bankAddress?: string | null
+    noRek?: string | null
+    swiftCode?: string | null
+    IBAN?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9BankInfoUpdateManyMutationInput = {
     formL9BankInfoid?: StringFieldUpdateOperationsInput | string
-    beneficiaryName?: StringFieldUpdateOperationsInput | string
-    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
-    bankName?: StringFieldUpdateOperationsInput | string
-    bankAddress?: StringFieldUpdateOperationsInput | string
-    noRek?: StringFieldUpdateOperationsInput | string
-    swiftCode?: StringFieldUpdateOperationsInput | string
-    IBAN?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: NullableStringFieldUpdateOperationsInput | string | null
+    beneficiaryAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    bankName?: NullableStringFieldUpdateOperationsInput | string | null
+    bankAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    noRek?: NullableStringFieldUpdateOperationsInput | string | null
+    swiftCode?: NullableStringFieldUpdateOperationsInput | string | null
+    IBAN?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9BankInfoUncheckedUpdateManyInput = {
     formL9BankInfoid?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    beneficiaryName?: StringFieldUpdateOperationsInput | string
-    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
-    bankName?: StringFieldUpdateOperationsInput | string
-    bankAddress?: StringFieldUpdateOperationsInput | string
-    noRek?: StringFieldUpdateOperationsInput | string
-    swiftCode?: StringFieldUpdateOperationsInput | string
-    IBAN?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: NullableStringFieldUpdateOperationsInput | string | null
+    beneficiaryAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    bankName?: NullableStringFieldUpdateOperationsInput | string | null
+    bankAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    noRek?: NullableStringFieldUpdateOperationsInput | string | null
+    swiftCode?: NullableStringFieldUpdateOperationsInput | string | null
+    IBAN?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9GeneralInformationCreateInput = {
     formGeneralInformationId?: string
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     totalCapital?: string | null
-    segmentId: string
+    segmentId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     formL9: FormL9CreateNestedOneWithoutGeneralInformationInput
     generalInfoContinue?: FormL9GeneralInformationContinueCreateNestedOneWithoutGeneralInformationInput
   }
@@ -27429,29 +27749,33 @@ export namespace Prisma {
   export type FormL9GeneralInformationUncheckedCreateInput = {
     formGeneralInformationId?: string
     formL9Id: string
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     totalCapital?: string | null
-    segmentId: string
+    segmentId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     generalInfoContinue?: FormL9GeneralInformationContinueUncheckedCreateNestedOneWithoutGeneralInformationInput
   }
 
   export type FormL9GeneralInformationUpdateInput = {
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     formL9?: FormL9UpdateOneRequiredWithoutGeneralInformationNestedInput
     generalInfoContinue?: FormL9GeneralInformationContinueUpdateOneWithoutGeneralInformationNestedInput
   }
@@ -27459,298 +27783,362 @@ export namespace Prisma {
   export type FormL9GeneralInformationUncheckedUpdateInput = {
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     generalInfoContinue?: FormL9GeneralInformationContinueUncheckedUpdateOneWithoutGeneralInformationNestedInput
   }
 
   export type FormL9GeneralInformationCreateManyInput = {
     formGeneralInformationId?: string
     formL9Id: string
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     totalCapital?: string | null
-    segmentId: string
+    segmentId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9GeneralInformationUpdateManyMutationInput = {
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9GeneralInformationUncheckedUpdateManyInput = {
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9GeneralInformationContinueCreateInput = {
     formL9GeneralInformationContinueId?: string
-    permitsHeld: string
+    permitsHeld?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     generalInformation: FormL9GeneralInformationCreateNestedOneWithoutGeneralInfoContinueInput
   }
 
   export type FormL9GeneralInformationContinueUncheckedCreateInput = {
     formL9GeneralInformationContinueId?: string
     formGeneralInformationId: string
-    permitsHeld: string
+    permitsHeld?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9GeneralInformationContinueUpdateInput = {
     formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
-    permitsHeld?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     generalInformation?: FormL9GeneralInformationUpdateOneRequiredWithoutGeneralInfoContinueNestedInput
   }
 
   export type FormL9GeneralInformationContinueUncheckedUpdateInput = {
     formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
-    permitsHeld?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9GeneralInformationContinueCreateManyInput = {
     formL9GeneralInformationContinueId?: string
     formGeneralInformationId: string
-    permitsHeld: string
+    permitsHeld?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9GeneralInformationContinueUpdateManyMutationInput = {
     formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
-    permitsHeld?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9GeneralInformationContinueUncheckedUpdateManyInput = {
     formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
-    permitsHeld?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9ManagementCreateInput = {
     formL9ManagementId?: string
-    position: string
-    name: string
-    noTelpFaxHp: string
+    position?: string | null
+    name?: string | null
+    noTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     formL9: FormL9CreateNestedOneWithoutManagementsInput
   }
 
   export type FormL9ManagementUncheckedCreateInput = {
     formL9ManagementId?: string
     formL9Id: string
-    position: string
-    name: string
-    noTelpFaxHp: string
+    position?: string | null
+    name?: string | null
+    noTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9ManagementUpdateInput = {
     formL9ManagementId?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    position?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    noTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     formL9?: FormL9UpdateOneRequiredWithoutManagementsNestedInput
   }
 
   export type FormL9ManagementUncheckedUpdateInput = {
     formL9ManagementId?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    position?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    noTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9ManagementCreateManyInput = {
     formL9ManagementId?: string
     formL9Id: string
-    position: string
-    name: string
-    noTelpFaxHp: string
+    position?: string | null
+    name?: string | null
+    noTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9ManagementUpdateManyMutationInput = {
     formL9ManagementId?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    position?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    noTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9ManagementUncheckedUpdateManyInput = {
     formL9ManagementId?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    position?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    noTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9EmployeCreateInput = {
     formL9EmployeId?: string
-    totalEmployees: number
-    qualityControl: number
-    engineering: number
-    production: number
-    management: number
-    other: number
+    totalEmployees?: number | null
+    qualityControl?: number | null
+    engineering?: number | null
+    production?: number | null
+    management?: number | null
+    other?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     formL9: FormL9CreateNestedOneWithoutEmployeeInfoInput
   }
 
   export type FormL9EmployeUncheckedCreateInput = {
     formL9EmployeId?: string
     formL9Id: string
-    totalEmployees: number
-    qualityControl: number
-    engineering: number
-    production: number
-    management: number
-    other: number
+    totalEmployees?: number | null
+    qualityControl?: number | null
+    engineering?: number | null
+    production?: number | null
+    management?: number | null
+    other?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9EmployeUpdateInput = {
     formL9EmployeId?: StringFieldUpdateOperationsInput | string
-    totalEmployees?: IntFieldUpdateOperationsInput | number
-    qualityControl?: IntFieldUpdateOperationsInput | number
-    engineering?: IntFieldUpdateOperationsInput | number
-    production?: IntFieldUpdateOperationsInput | number
-    management?: IntFieldUpdateOperationsInput | number
-    other?: IntFieldUpdateOperationsInput | number
+    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
+    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
+    engineering?: NullableIntFieldUpdateOperationsInput | number | null
+    production?: NullableIntFieldUpdateOperationsInput | number | null
+    management?: NullableIntFieldUpdateOperationsInput | number | null
+    other?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     formL9?: FormL9UpdateOneRequiredWithoutEmployeeInfoNestedInput
   }
 
   export type FormL9EmployeUncheckedUpdateInput = {
     formL9EmployeId?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    totalEmployees?: IntFieldUpdateOperationsInput | number
-    qualityControl?: IntFieldUpdateOperationsInput | number
-    engineering?: IntFieldUpdateOperationsInput | number
-    production?: IntFieldUpdateOperationsInput | number
-    management?: IntFieldUpdateOperationsInput | number
-    other?: IntFieldUpdateOperationsInput | number
+    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
+    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
+    engineering?: NullableIntFieldUpdateOperationsInput | number | null
+    production?: NullableIntFieldUpdateOperationsInput | number | null
+    management?: NullableIntFieldUpdateOperationsInput | number | null
+    other?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9EmployeCreateManyInput = {
     formL9EmployeId?: string
     formL9Id: string
-    totalEmployees: number
-    qualityControl: number
-    engineering: number
-    production: number
-    management: number
-    other: number
+    totalEmployees?: number | null
+    qualityControl?: number | null
+    engineering?: number | null
+    production?: number | null
+    management?: number | null
+    other?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9EmployeUpdateManyMutationInput = {
     formL9EmployeId?: StringFieldUpdateOperationsInput | string
-    totalEmployees?: IntFieldUpdateOperationsInput | number
-    qualityControl?: IntFieldUpdateOperationsInput | number
-    engineering?: IntFieldUpdateOperationsInput | number
-    production?: IntFieldUpdateOperationsInput | number
-    management?: IntFieldUpdateOperationsInput | number
-    other?: IntFieldUpdateOperationsInput | number
+    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
+    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
+    engineering?: NullableIntFieldUpdateOperationsInput | number | null
+    production?: NullableIntFieldUpdateOperationsInput | number | null
+    management?: NullableIntFieldUpdateOperationsInput | number | null
+    other?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9EmployeUncheckedUpdateManyInput = {
     formL9EmployeId?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    totalEmployees?: IntFieldUpdateOperationsInput | number
-    qualityControl?: IntFieldUpdateOperationsInput | number
-    engineering?: IntFieldUpdateOperationsInput | number
-    production?: IntFieldUpdateOperationsInput | number
-    management?: IntFieldUpdateOperationsInput | number
-    other?: IntFieldUpdateOperationsInput | number
+    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
+    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
+    engineering?: NullableIntFieldUpdateOperationsInput | number | null
+    production?: NullableIntFieldUpdateOperationsInput | number | null
+    management?: NullableIntFieldUpdateOperationsInput | number | null
+    other?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9WorkExperienceCreateInput = {
     formL9WorkExperienceId?: string
-    customerOrLocation: string
-    typeOfWork: string
-    score: number
-    customerContactPerson: string
-    customerTelpFaxHp: string
+    customerOrLocation?: string | null
+    typeOfWork?: string | null
+    score?: number | null
+    customerContactPerson?: string | null
+    customerTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     formL9: FormL9CreateNestedOneWithoutWorkExperiencesInput
   }
 
   export type FormL9WorkExperienceUncheckedCreateInput = {
     formL9WorkExperienceId?: string
     formL9Id: string
-    customerOrLocation: string
-    typeOfWork: string
-    score: number
-    customerContactPerson: string
-    customerTelpFaxHp: string
+    customerOrLocation?: string | null
+    typeOfWork?: string | null
+    score?: number | null
+    customerContactPerson?: string | null
+    customerTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9WorkExperienceUpdateInput = {
     formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
-    customerOrLocation?: StringFieldUpdateOperationsInput | string
-    typeOfWork?: StringFieldUpdateOperationsInput | string
-    score?: IntFieldUpdateOperationsInput | number
-    customerContactPerson?: StringFieldUpdateOperationsInput | string
-    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: NullableStringFieldUpdateOperationsInput | string | null
+    typeOfWork?: NullableStringFieldUpdateOperationsInput | string | null
+    score?: NullableIntFieldUpdateOperationsInput | number | null
+    customerContactPerson?: NullableStringFieldUpdateOperationsInput | string | null
+    customerTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     formL9?: FormL9UpdateOneRequiredWithoutWorkExperiencesNestedInput
   }
 
   export type FormL9WorkExperienceUncheckedUpdateInput = {
     formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    customerOrLocation?: StringFieldUpdateOperationsInput | string
-    typeOfWork?: StringFieldUpdateOperationsInput | string
-    score?: IntFieldUpdateOperationsInput | number
-    customerContactPerson?: StringFieldUpdateOperationsInput | string
-    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: NullableStringFieldUpdateOperationsInput | string | null
+    typeOfWork?: NullableStringFieldUpdateOperationsInput | string | null
+    score?: NullableIntFieldUpdateOperationsInput | number | null
+    customerContactPerson?: NullableStringFieldUpdateOperationsInput | string | null
+    customerTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9WorkExperienceCreateManyInput = {
     formL9WorkExperienceId?: string
     formL9Id: string
-    customerOrLocation: string
-    typeOfWork: string
-    score: number
-    customerContactPerson: string
-    customerTelpFaxHp: string
+    customerOrLocation?: string | null
+    typeOfWork?: string | null
+    score?: number | null
+    customerContactPerson?: string | null
+    customerTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9WorkExperienceUpdateManyMutationInput = {
     formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
-    customerOrLocation?: StringFieldUpdateOperationsInput | string
-    typeOfWork?: StringFieldUpdateOperationsInput | string
-    score?: IntFieldUpdateOperationsInput | number
-    customerContactPerson?: StringFieldUpdateOperationsInput | string
-    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: NullableStringFieldUpdateOperationsInput | string | null
+    typeOfWork?: NullableStringFieldUpdateOperationsInput | string | null
+    score?: NullableIntFieldUpdateOperationsInput | number | null
+    customerContactPerson?: NullableStringFieldUpdateOperationsInput | string | null
+    customerTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9WorkExperienceUncheckedUpdateManyInput = {
     formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    customerOrLocation?: StringFieldUpdateOperationsInput | string
-    typeOfWork?: StringFieldUpdateOperationsInput | string
-    score?: IntFieldUpdateOperationsInput | number
-    customerContactPerson?: StringFieldUpdateOperationsInput | string
-    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: NullableStringFieldUpdateOperationsInput | string | null
+    typeOfWork?: NullableStringFieldUpdateOperationsInput | string | null
+    score?: NullableIntFieldUpdateOperationsInput | number | null
+    customerContactPerson?: NullableStringFieldUpdateOperationsInput | string | null
+    customerTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9OthersCreateInput = {
@@ -27763,10 +28151,12 @@ export namespace Prisma {
     haveAPD?: boolean
     haveAPDRegulation?: boolean
     isTopApplicable?: boolean
-    paymentTime: string
+    paymentTime?: string | null
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
     formL9: FormL9CreateNestedOneWithoutOthersInput
     certificateISOs?: FormL9CertificateISOCreateNestedManyWithoutOthersInput
   }
@@ -27782,10 +28172,12 @@ export namespace Prisma {
     haveAPD?: boolean
     haveAPDRegulation?: boolean
     isTopApplicable?: boolean
-    paymentTime: string
+    paymentTime?: string | null
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
     certificateISOs?: FormL9CertificateISOUncheckedCreateNestedManyWithoutOthersInput
   }
 
@@ -27799,10 +28191,12 @@ export namespace Prisma {
     haveAPD?: BoolFieldUpdateOperationsInput | boolean
     haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
     isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
-    paymentTime?: StringFieldUpdateOperationsInput | string
+    paymentTime?: NullableStringFieldUpdateOperationsInput | string | null
     agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
     understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
     signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     formL9?: FormL9UpdateOneRequiredWithoutOthersNestedInput
     certificateISOs?: FormL9CertificateISOUpdateManyWithoutOthersNestedInput
   }
@@ -27818,10 +28212,12 @@ export namespace Prisma {
     haveAPD?: BoolFieldUpdateOperationsInput | boolean
     haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
     isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
-    paymentTime?: StringFieldUpdateOperationsInput | string
+    paymentTime?: NullableStringFieldUpdateOperationsInput | string | null
     agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
     understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
     signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     certificateISOs?: FormL9CertificateISOUncheckedUpdateManyWithoutOthersNestedInput
   }
 
@@ -27836,10 +28232,12 @@ export namespace Prisma {
     haveAPD?: boolean
     haveAPDRegulation?: boolean
     isTopApplicable?: boolean
-    paymentTime: string
+    paymentTime?: string | null
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9OthersUpdateManyMutationInput = {
@@ -27852,10 +28250,12 @@ export namespace Prisma {
     haveAPD?: BoolFieldUpdateOperationsInput | boolean
     haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
     isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
-    paymentTime?: StringFieldUpdateOperationsInput | string
+    paymentTime?: NullableStringFieldUpdateOperationsInput | string | null
     agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
     understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
     signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9OthersUncheckedUpdateManyInput = {
@@ -27869,72 +28269,88 @@ export namespace Prisma {
     haveAPD?: BoolFieldUpdateOperationsInput | boolean
     haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
     isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
-    paymentTime?: StringFieldUpdateOperationsInput | string
+    paymentTime?: NullableStringFieldUpdateOperationsInput | string | null
     agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
     understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
     signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9CertificateISOCreateInput = {
     certificateISOId?: string
-    isoName: string
-    validityPeriodFrom: Date | string
-    validityPeriodTo: Date | string
+    isoName?: string | null
+    validityPeriodFrom?: Date | string | null
+    validityPeriodTo?: Date | string | null
     remakes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     others: FormL9OthersCreateNestedOneWithoutCertificateISOsInput
   }
 
   export type FormL9CertificateISOUncheckedCreateInput = {
     certificateISOId?: string
     formL9OthersId: string
-    isoName: string
-    validityPeriodFrom: Date | string
-    validityPeriodTo: Date | string
+    isoName?: string | null
+    validityPeriodFrom?: Date | string | null
+    validityPeriodTo?: Date | string | null
     remakes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9CertificateISOUpdateInput = {
     certificateISOId?: StringFieldUpdateOperationsInput | string
-    isoName?: StringFieldUpdateOperationsInput | string
-    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
-    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    isoName?: NullableStringFieldUpdateOperationsInput | string | null
+    validityPeriodFrom?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    validityPeriodTo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     remakes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     others?: FormL9OthersUpdateOneRequiredWithoutCertificateISOsNestedInput
   }
 
   export type FormL9CertificateISOUncheckedUpdateInput = {
     certificateISOId?: StringFieldUpdateOperationsInput | string
     formL9OthersId?: StringFieldUpdateOperationsInput | string
-    isoName?: StringFieldUpdateOperationsInput | string
-    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
-    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    isoName?: NullableStringFieldUpdateOperationsInput | string | null
+    validityPeriodFrom?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    validityPeriodTo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     remakes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9CertificateISOCreateManyInput = {
     certificateISOId?: string
     formL9OthersId: string
-    isoName: string
-    validityPeriodFrom: Date | string
-    validityPeriodTo: Date | string
+    isoName?: string | null
+    validityPeriodFrom?: Date | string | null
+    validityPeriodTo?: Date | string | null
     remakes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9CertificateISOUpdateManyMutationInput = {
     certificateISOId?: StringFieldUpdateOperationsInput | string
-    isoName?: StringFieldUpdateOperationsInput | string
-    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
-    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    isoName?: NullableStringFieldUpdateOperationsInput | string | null
+    validityPeriodFrom?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    validityPeriodTo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     remakes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9CertificateISOUncheckedUpdateManyInput = {
     certificateISOId?: StringFieldUpdateOperationsInput | string
     formL9OthersId?: StringFieldUpdateOperationsInput | string
-    isoName?: StringFieldUpdateOperationsInput | string
-    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
-    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    isoName?: NullableStringFieldUpdateOperationsInput | string | null
+    validityPeriodFrom?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    validityPeriodTo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     remakes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -28460,6 +28876,28 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type ProfileListRelationFilter = {
     every?: ProfileWhereInput
     some?: ProfileWhereInput
@@ -28537,6 +28975,36 @@ export namespace Prisma {
 
   export type CompanySumOrderByAggregateInput = {
     segmentId?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type CompanyScalarRelationFilter = {
@@ -28623,6 +29091,8 @@ export namespace Prisma {
     noRek?: SortOrder
     swiftCode?: SortOrder
     IBAN?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9BankInfoMaxOrderByAggregateInput = {
@@ -28635,6 +29105,8 @@ export namespace Prisma {
     noRek?: SortOrder
     swiftCode?: SortOrder
     IBAN?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9BankInfoMinOrderByAggregateInput = {
@@ -28647,6 +29119,8 @@ export namespace Prisma {
     noRek?: SortOrder
     swiftCode?: SortOrder
     IBAN?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9GeneralInformationContinueNullableScalarRelationFilter = {
@@ -28666,6 +29140,8 @@ export namespace Prisma {
     npwp?: SortOrder
     totalCapital?: SortOrder
     segmentId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9GeneralInformationMaxOrderByAggregateInput = {
@@ -28680,6 +29156,8 @@ export namespace Prisma {
     npwp?: SortOrder
     totalCapital?: SortOrder
     segmentId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9GeneralInformationMinOrderByAggregateInput = {
@@ -28694,6 +29172,8 @@ export namespace Prisma {
     npwp?: SortOrder
     totalCapital?: SortOrder
     segmentId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9GeneralInformationScalarRelationFilter = {
@@ -28705,18 +29185,24 @@ export namespace Prisma {
     formL9GeneralInformationContinueId?: SortOrder
     formGeneralInformationId?: SortOrder
     permitsHeld?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9GeneralInformationContinueMaxOrderByAggregateInput = {
     formL9GeneralInformationContinueId?: SortOrder
     formGeneralInformationId?: SortOrder
     permitsHeld?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9GeneralInformationContinueMinOrderByAggregateInput = {
     formL9GeneralInformationContinueId?: SortOrder
     formGeneralInformationId?: SortOrder
     permitsHeld?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9ManagementCountOrderByAggregateInput = {
@@ -28725,6 +29211,8 @@ export namespace Prisma {
     position?: SortOrder
     name?: SortOrder
     noTelpFaxHp?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9ManagementMaxOrderByAggregateInput = {
@@ -28733,6 +29221,8 @@ export namespace Prisma {
     position?: SortOrder
     name?: SortOrder
     noTelpFaxHp?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9ManagementMinOrderByAggregateInput = {
@@ -28741,6 +29231,8 @@ export namespace Prisma {
     position?: SortOrder
     name?: SortOrder
     noTelpFaxHp?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9EmployeCountOrderByAggregateInput = {
@@ -28752,6 +29244,8 @@ export namespace Prisma {
     production?: SortOrder
     management?: SortOrder
     other?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9EmployeAvgOrderByAggregateInput = {
@@ -28772,6 +29266,8 @@ export namespace Prisma {
     production?: SortOrder
     management?: SortOrder
     other?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9EmployeMinOrderByAggregateInput = {
@@ -28783,6 +29279,8 @@ export namespace Prisma {
     production?: SortOrder
     management?: SortOrder
     other?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9EmployeSumOrderByAggregateInput = {
@@ -28802,6 +29300,8 @@ export namespace Prisma {
     score?: SortOrder
     customerContactPerson?: SortOrder
     customerTelpFaxHp?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9WorkExperienceAvgOrderByAggregateInput = {
@@ -28816,6 +29316,8 @@ export namespace Prisma {
     score?: SortOrder
     customerContactPerson?: SortOrder
     customerTelpFaxHp?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9WorkExperienceMinOrderByAggregateInput = {
@@ -28826,6 +29328,8 @@ export namespace Prisma {
     score?: SortOrder
     customerContactPerson?: SortOrder
     customerTelpFaxHp?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9WorkExperienceSumOrderByAggregateInput = {
@@ -28857,6 +29361,8 @@ export namespace Prisma {
     agreeToConfidentialInformation?: SortOrder
     understandingBreachesOfConfidentiality?: SortOrder
     signConfidentialityAgreement?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9OthersMaxOrderByAggregateInput = {
@@ -28874,6 +29380,8 @@ export namespace Prisma {
     agreeToConfidentialInformation?: SortOrder
     understandingBreachesOfConfidentiality?: SortOrder
     signConfidentialityAgreement?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9OthersMinOrderByAggregateInput = {
@@ -28891,6 +29399,8 @@ export namespace Prisma {
     agreeToConfidentialInformation?: SortOrder
     understandingBreachesOfConfidentiality?: SortOrder
     signConfidentialityAgreement?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9OthersScalarRelationFilter = {
@@ -28905,6 +29415,8 @@ export namespace Prisma {
     validityPeriodFrom?: SortOrder
     validityPeriodTo?: SortOrder
     remakes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9CertificateISOMaxOrderByAggregateInput = {
@@ -28914,6 +29426,8 @@ export namespace Prisma {
     validityPeriodFrom?: SortOrder
     validityPeriodTo?: SortOrder
     remakes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type FormL9CertificateISOMinOrderByAggregateInput = {
@@ -28923,6 +29437,8 @@ export namespace Prisma {
     validityPeriodFrom?: SortOrder
     validityPeriodTo?: SortOrder
     remakes?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -29421,6 +29937,10 @@ export namespace Prisma {
     connect?: FormL9WhereUniqueInput
   }
 
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
+  }
+
   export type ProfileUpdateManyWithoutCompanyNestedInput = {
     create?: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput> | ProfileCreateWithoutCompanyInput[] | ProfileUncheckedCreateWithoutCompanyInput[]
     connectOrCreate?: ProfileCreateOrConnectWithoutCompanyInput | ProfileCreateOrConnectWithoutCompanyInput[]
@@ -29453,6 +29973,14 @@ export namespace Prisma {
     delete?: FormL9WhereInput | boolean
     connect?: FormL9WhereUniqueInput
     update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutCompanyInput, FormL9UpdateWithoutCompanyInput>, FormL9UncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type ProfileUncheckedUpdateManyWithoutCompanyNestedInput = {
@@ -30088,6 +30616,58 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type LogsLoginCreateWithoutUserInput = {
@@ -30782,13 +31362,13 @@ export namespace Prisma {
   export type CompanyCreateWithoutSegmentInput = {
     companyId?: string
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -30800,13 +31380,13 @@ export namespace Prisma {
   export type CompanyUncheckedCreateWithoutSegmentInput = {
     companyId?: string
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -30846,15 +31426,15 @@ export namespace Prisma {
     OR?: CompanyScalarWhereInput[]
     NOT?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
     companyId?: UuidFilter<"Company"> | string
-    segmentId?: IntFilter<"Company"> | number
+    segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
-    companyName?: StringFilter<"Company"> | string
-    companyFoundingDate?: DateTimeFilter<"Company"> | Date | string
-    companyStatus?: StringFilter<"Company"> | string
-    companyTelpFax?: StringFilter<"Company"> | string
-    companyAddress?: StringFilter<"Company"> | string
-    companyEmail?: StringFilter<"Company"> | string
-    npwp?: StringFilter<"Company"> | string
+    companyName?: StringNullableFilter<"Company"> | string | null
+    companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
+    companyStatus?: StringNullableFilter<"Company"> | string | null
+    companyTelpFax?: StringNullableFilter<"Company"> | string | null
+    companyAddress?: StringNullableFilter<"Company"> | string | null
+    companyEmail?: StringNullableFilter<"Company"> | string | null
+    npwp?: StringNullableFilter<"Company"> | string | null
     website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
@@ -30899,13 +31479,13 @@ export namespace Prisma {
   export type CompanyCreateWithoutProfileInput = {
     companyId?: string
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -30916,15 +31496,15 @@ export namespace Prisma {
 
   export type CompanyUncheckedCreateWithoutProfileInput = {
     companyId?: string
-    segmentId: number
+    segmentId?: number | null
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -30992,13 +31572,13 @@ export namespace Prisma {
   export type CompanyUpdateWithoutProfileInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31009,15 +31589,15 @@ export namespace Prisma {
 
   export type CompanyUncheckedUpdateWithoutProfileInput = {
     companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: IntFieldUpdateOperationsInput | number
+    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31188,13 +31768,13 @@ export namespace Prisma {
   export type CompanyCreateWithoutFormL9Input = {
     companyId?: string
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -31205,15 +31785,15 @@ export namespace Prisma {
 
   export type CompanyUncheckedCreateWithoutFormL9Input = {
     companyId?: string
-    segmentId: number
+    segmentId?: number | null
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -31228,24 +31808,28 @@ export namespace Prisma {
 
   export type FormL9BankInfoCreateWithoutFormL9Input = {
     formL9BankInfoid?: string
-    beneficiaryName: string
-    beneficiaryAddress: string
-    bankName: string
-    bankAddress: string
-    noRek: string
-    swiftCode: string
-    IBAN: string
+    beneficiaryName?: string | null
+    beneficiaryAddress?: string | null
+    bankName?: string | null
+    bankAddress?: string | null
+    noRek?: string | null
+    swiftCode?: string | null
+    IBAN?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9BankInfoUncheckedCreateWithoutFormL9Input = {
     formL9BankInfoid?: string
-    beneficiaryName: string
-    beneficiaryAddress: string
-    bankName: string
-    bankAddress: string
-    noRek: string
-    swiftCode: string
-    IBAN: string
+    beneficiaryName?: string | null
+    beneficiaryAddress?: string | null
+    bankName?: string | null
+    bankAddress?: string | null
+    noRek?: string | null
+    swiftCode?: string | null
+    IBAN?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9BankInfoCreateOrConnectWithoutFormL9Input = {
@@ -31255,29 +31839,33 @@ export namespace Prisma {
 
   export type FormL9GeneralInformationCreateWithoutFormL9Input = {
     formGeneralInformationId?: string
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     totalCapital?: string | null
-    segmentId: string
+    segmentId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     generalInfoContinue?: FormL9GeneralInformationContinueCreateNestedOneWithoutGeneralInformationInput
   }
 
   export type FormL9GeneralInformationUncheckedCreateWithoutFormL9Input = {
     formGeneralInformationId?: string
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     totalCapital?: string | null
-    segmentId: string
+    segmentId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     generalInfoContinue?: FormL9GeneralInformationContinueUncheckedCreateNestedOneWithoutGeneralInformationInput
   }
 
@@ -31288,22 +31876,26 @@ export namespace Prisma {
 
   export type FormL9EmployeCreateWithoutFormL9Input = {
     formL9EmployeId?: string
-    totalEmployees: number
-    qualityControl: number
-    engineering: number
-    production: number
-    management: number
-    other: number
+    totalEmployees?: number | null
+    qualityControl?: number | null
+    engineering?: number | null
+    production?: number | null
+    management?: number | null
+    other?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9EmployeUncheckedCreateWithoutFormL9Input = {
     formL9EmployeId?: string
-    totalEmployees: number
-    qualityControl: number
-    engineering: number
-    production: number
-    management: number
-    other: number
+    totalEmployees?: number | null
+    qualityControl?: number | null
+    engineering?: number | null
+    production?: number | null
+    management?: number | null
+    other?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9EmployeCreateOrConnectWithoutFormL9Input = {
@@ -31321,10 +31913,12 @@ export namespace Prisma {
     haveAPD?: boolean
     haveAPDRegulation?: boolean
     isTopApplicable?: boolean
-    paymentTime: string
+    paymentTime?: string | null
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
     certificateISOs?: FormL9CertificateISOCreateNestedManyWithoutOthersInput
   }
 
@@ -31338,10 +31932,12 @@ export namespace Prisma {
     haveAPD?: boolean
     haveAPDRegulation?: boolean
     isTopApplicable?: boolean
-    paymentTime: string
+    paymentTime?: string | null
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
     certificateISOs?: FormL9CertificateISOUncheckedCreateNestedManyWithoutOthersInput
   }
 
@@ -31352,16 +31948,20 @@ export namespace Prisma {
 
   export type FormL9ManagementCreateWithoutFormL9Input = {
     formL9ManagementId?: string
-    position: string
-    name: string
-    noTelpFaxHp: string
+    position?: string | null
+    name?: string | null
+    noTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9ManagementUncheckedCreateWithoutFormL9Input = {
     formL9ManagementId?: string
-    position: string
-    name: string
-    noTelpFaxHp: string
+    position?: string | null
+    name?: string | null
+    noTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9ManagementCreateOrConnectWithoutFormL9Input = {
@@ -31376,20 +31976,24 @@ export namespace Prisma {
 
   export type FormL9WorkExperienceCreateWithoutFormL9Input = {
     formL9WorkExperienceId?: string
-    customerOrLocation: string
-    typeOfWork: string
-    score: number
-    customerContactPerson: string
-    customerTelpFaxHp: string
+    customerOrLocation?: string | null
+    typeOfWork?: string | null
+    score?: number | null
+    customerContactPerson?: string | null
+    customerTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9WorkExperienceUncheckedCreateWithoutFormL9Input = {
     formL9WorkExperienceId?: string
-    customerOrLocation: string
-    typeOfWork: string
-    score: number
-    customerContactPerson: string
-    customerTelpFaxHp: string
+    customerOrLocation?: string | null
+    typeOfWork?: string | null
+    score?: number | null
+    customerContactPerson?: string | null
+    customerTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9WorkExperienceCreateOrConnectWithoutFormL9Input = {
@@ -31416,13 +32020,13 @@ export namespace Prisma {
   export type CompanyUpdateWithoutFormL9Input = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31433,15 +32037,15 @@ export namespace Prisma {
 
   export type CompanyUncheckedUpdateWithoutFormL9Input = {
     companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: IntFieldUpdateOperationsInput | number
+    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -31462,24 +32066,28 @@ export namespace Prisma {
 
   export type FormL9BankInfoUpdateWithoutFormL9Input = {
     formL9BankInfoid?: StringFieldUpdateOperationsInput | string
-    beneficiaryName?: StringFieldUpdateOperationsInput | string
-    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
-    bankName?: StringFieldUpdateOperationsInput | string
-    bankAddress?: StringFieldUpdateOperationsInput | string
-    noRek?: StringFieldUpdateOperationsInput | string
-    swiftCode?: StringFieldUpdateOperationsInput | string
-    IBAN?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: NullableStringFieldUpdateOperationsInput | string | null
+    beneficiaryAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    bankName?: NullableStringFieldUpdateOperationsInput | string | null
+    bankAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    noRek?: NullableStringFieldUpdateOperationsInput | string | null
+    swiftCode?: NullableStringFieldUpdateOperationsInput | string | null
+    IBAN?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9BankInfoUncheckedUpdateWithoutFormL9Input = {
     formL9BankInfoid?: StringFieldUpdateOperationsInput | string
-    beneficiaryName?: StringFieldUpdateOperationsInput | string
-    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
-    bankName?: StringFieldUpdateOperationsInput | string
-    bankAddress?: StringFieldUpdateOperationsInput | string
-    noRek?: StringFieldUpdateOperationsInput | string
-    swiftCode?: StringFieldUpdateOperationsInput | string
-    IBAN?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: NullableStringFieldUpdateOperationsInput | string | null
+    beneficiaryAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    bankName?: NullableStringFieldUpdateOperationsInput | string | null
+    bankAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    noRek?: NullableStringFieldUpdateOperationsInput | string | null
+    swiftCode?: NullableStringFieldUpdateOperationsInput | string | null
+    IBAN?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9GeneralInformationUpsertWithoutFormL9Input = {
@@ -31495,29 +32103,33 @@ export namespace Prisma {
 
   export type FormL9GeneralInformationUpdateWithoutFormL9Input = {
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     generalInfoContinue?: FormL9GeneralInformationContinueUpdateOneWithoutGeneralInformationNestedInput
   }
 
   export type FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input = {
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     generalInfoContinue?: FormL9GeneralInformationContinueUncheckedUpdateOneWithoutGeneralInformationNestedInput
   }
 
@@ -31534,22 +32146,26 @@ export namespace Prisma {
 
   export type FormL9EmployeUpdateWithoutFormL9Input = {
     formL9EmployeId?: StringFieldUpdateOperationsInput | string
-    totalEmployees?: IntFieldUpdateOperationsInput | number
-    qualityControl?: IntFieldUpdateOperationsInput | number
-    engineering?: IntFieldUpdateOperationsInput | number
-    production?: IntFieldUpdateOperationsInput | number
-    management?: IntFieldUpdateOperationsInput | number
-    other?: IntFieldUpdateOperationsInput | number
+    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
+    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
+    engineering?: NullableIntFieldUpdateOperationsInput | number | null
+    production?: NullableIntFieldUpdateOperationsInput | number | null
+    management?: NullableIntFieldUpdateOperationsInput | number | null
+    other?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9EmployeUncheckedUpdateWithoutFormL9Input = {
     formL9EmployeId?: StringFieldUpdateOperationsInput | string
-    totalEmployees?: IntFieldUpdateOperationsInput | number
-    qualityControl?: IntFieldUpdateOperationsInput | number
-    engineering?: IntFieldUpdateOperationsInput | number
-    production?: IntFieldUpdateOperationsInput | number
-    management?: IntFieldUpdateOperationsInput | number
-    other?: IntFieldUpdateOperationsInput | number
+    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
+    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
+    engineering?: NullableIntFieldUpdateOperationsInput | number | null
+    production?: NullableIntFieldUpdateOperationsInput | number | null
+    management?: NullableIntFieldUpdateOperationsInput | number | null
+    other?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9OthersUpsertWithoutFormL9Input = {
@@ -31573,10 +32189,12 @@ export namespace Prisma {
     haveAPD?: BoolFieldUpdateOperationsInput | boolean
     haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
     isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
-    paymentTime?: StringFieldUpdateOperationsInput | string
+    paymentTime?: NullableStringFieldUpdateOperationsInput | string | null
     agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
     understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
     signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     certificateISOs?: FormL9CertificateISOUpdateManyWithoutOthersNestedInput
   }
 
@@ -31590,10 +32208,12 @@ export namespace Prisma {
     haveAPD?: BoolFieldUpdateOperationsInput | boolean
     haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
     isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
-    paymentTime?: StringFieldUpdateOperationsInput | string
+    paymentTime?: NullableStringFieldUpdateOperationsInput | string | null
     agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
     understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
     signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     certificateISOs?: FormL9CertificateISOUncheckedUpdateManyWithoutOthersNestedInput
   }
 
@@ -31619,9 +32239,11 @@ export namespace Prisma {
     NOT?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
     formL9ManagementId?: UuidFilter<"FormL9Management"> | string
     formL9Id?: UuidFilter<"FormL9Management"> | string
-    position?: StringFilter<"FormL9Management"> | string
-    name?: StringFilter<"FormL9Management"> | string
-    noTelpFaxHp?: StringFilter<"FormL9Management"> | string
+    position?: StringNullableFilter<"FormL9Management"> | string | null
+    name?: StringNullableFilter<"FormL9Management"> | string | null
+    noTelpFaxHp?: StringNullableFilter<"FormL9Management"> | string | null
+    createdAt?: DateTimeFilter<"FormL9Management"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9Management"> | Date | string
   }
 
   export type FormL9WorkExperienceUpsertWithWhereUniqueWithoutFormL9Input = {
@@ -31646,11 +32268,13 @@ export namespace Prisma {
     NOT?: FormL9WorkExperienceScalarWhereInput | FormL9WorkExperienceScalarWhereInput[]
     formL9WorkExperienceId?: UuidFilter<"FormL9WorkExperience"> | string
     formL9Id?: UuidFilter<"FormL9WorkExperience"> | string
-    customerOrLocation?: StringFilter<"FormL9WorkExperience"> | string
-    typeOfWork?: StringFilter<"FormL9WorkExperience"> | string
-    score?: IntFilter<"FormL9WorkExperience"> | number
-    customerContactPerson?: StringFilter<"FormL9WorkExperience"> | string
-    customerTelpFaxHp?: StringFilter<"FormL9WorkExperience"> | string
+    customerOrLocation?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    typeOfWork?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    score?: IntNullableFilter<"FormL9WorkExperience"> | number | null
+    customerContactPerson?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    customerTelpFaxHp?: StringNullableFilter<"FormL9WorkExperience"> | string | null
+    createdAt?: DateTimeFilter<"FormL9WorkExperience"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9WorkExperience"> | Date | string
   }
 
   export type FormL9CreateWithoutBankInfoInput = {
@@ -31754,12 +32378,16 @@ export namespace Prisma {
 
   export type FormL9GeneralInformationContinueCreateWithoutGeneralInformationInput = {
     formL9GeneralInformationContinueId?: string
-    permitsHeld: string
+    permitsHeld?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9GeneralInformationContinueUncheckedCreateWithoutGeneralInformationInput = {
     formL9GeneralInformationContinueId?: string
-    permitsHeld: string
+    permitsHeld?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9GeneralInformationContinueCreateOrConnectWithoutGeneralInformationInput = {
@@ -31817,40 +32445,48 @@ export namespace Prisma {
 
   export type FormL9GeneralInformationContinueUpdateWithoutGeneralInformationInput = {
     formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
-    permitsHeld?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9GeneralInformationContinueUncheckedUpdateWithoutGeneralInformationInput = {
     formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
-    permitsHeld?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9GeneralInformationCreateWithoutGeneralInfoContinueInput = {
     formGeneralInformationId?: string
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     totalCapital?: string | null
-    segmentId: string
+    segmentId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     formL9: FormL9CreateNestedOneWithoutGeneralInformationInput
   }
 
   export type FormL9GeneralInformationUncheckedCreateWithoutGeneralInfoContinueInput = {
     formGeneralInformationId?: string
     formL9Id: string
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     totalCapital?: string | null
-    segmentId: string
+    segmentId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9GeneralInformationCreateOrConnectWithoutGeneralInfoContinueInput = {
@@ -31871,30 +32507,34 @@ export namespace Prisma {
 
   export type FormL9GeneralInformationUpdateWithoutGeneralInfoContinueInput = {
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     formL9?: FormL9UpdateOneRequiredWithoutGeneralInformationNestedInput
   }
 
   export type FormL9GeneralInformationUncheckedUpdateWithoutGeneralInfoContinueInput = {
     formGeneralInformationId?: StringFieldUpdateOperationsInput | string
     formL9Id?: StringFieldUpdateOperationsInput | string
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9CreateWithoutManagementsInput = {
@@ -32134,18 +32774,22 @@ export namespace Prisma {
 
   export type FormL9CertificateISOCreateWithoutOthersInput = {
     certificateISOId?: string
-    isoName: string
-    validityPeriodFrom: Date | string
-    validityPeriodTo: Date | string
+    isoName?: string | null
+    validityPeriodFrom?: Date | string | null
+    validityPeriodTo?: Date | string | null
     remakes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9CertificateISOUncheckedCreateWithoutOthersInput = {
     certificateISOId?: string
-    isoName: string
-    validityPeriodFrom: Date | string
-    validityPeriodTo: Date | string
+    isoName?: string | null
+    validityPeriodFrom?: Date | string | null
+    validityPeriodTo?: Date | string | null
     remakes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9CertificateISOCreateOrConnectWithoutOthersInput = {
@@ -32217,10 +32861,12 @@ export namespace Prisma {
     NOT?: FormL9CertificateISOScalarWhereInput | FormL9CertificateISOScalarWhereInput[]
     certificateISOId?: UuidFilter<"FormL9CertificateISO"> | string
     formL9OthersId?: UuidFilter<"FormL9CertificateISO"> | string
-    isoName?: StringFilter<"FormL9CertificateISO"> | string
-    validityPeriodFrom?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
-    validityPeriodTo?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    isoName?: StringNullableFilter<"FormL9CertificateISO"> | string | null
+    validityPeriodFrom?: DateTimeNullableFilter<"FormL9CertificateISO"> | Date | string | null
+    validityPeriodTo?: DateTimeNullableFilter<"FormL9CertificateISO"> | Date | string | null
     remakes?: StringNullableFilter<"FormL9CertificateISO"> | string | null
+    createdAt?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
   }
 
   export type FormL9OthersCreateWithoutCertificateISOsInput = {
@@ -32233,10 +32879,12 @@ export namespace Prisma {
     haveAPD?: boolean
     haveAPDRegulation?: boolean
     isTopApplicable?: boolean
-    paymentTime: string
+    paymentTime?: string | null
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
     formL9: FormL9CreateNestedOneWithoutOthersInput
   }
 
@@ -32251,10 +32899,12 @@ export namespace Prisma {
     haveAPD?: boolean
     haveAPDRegulation?: boolean
     isTopApplicable?: boolean
-    paymentTime: string
+    paymentTime?: string | null
     agreeToConfidentialInformation?: boolean
     understandingBreachesOfConfidentiality?: boolean
     signConfidentialityAgreement?: boolean
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9OthersCreateOrConnectWithoutCertificateISOsInput = {
@@ -32283,10 +32933,12 @@ export namespace Prisma {
     haveAPD?: BoolFieldUpdateOperationsInput | boolean
     haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
     isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
-    paymentTime?: StringFieldUpdateOperationsInput | string
+    paymentTime?: NullableStringFieldUpdateOperationsInput | string | null
     agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
     understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
     signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     formL9?: FormL9UpdateOneRequiredWithoutOthersNestedInput
   }
 
@@ -32301,10 +32953,12 @@ export namespace Prisma {
     haveAPD?: BoolFieldUpdateOperationsInput | boolean
     haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
     isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
-    paymentTime?: StringFieldUpdateOperationsInput | string
+    paymentTime?: NullableStringFieldUpdateOperationsInput | string | null
     agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
     understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
     signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type LogsLoginCreateManyUserInput = {
@@ -32453,13 +33107,13 @@ export namespace Prisma {
   export type CompanyCreateManySegmentInput = {
     companyId?: string
     urlImage?: string | null
-    companyName: string
-    companyFoundingDate: Date | string
-    companyStatus: string
-    companyTelpFax: string
-    companyAddress: string
-    companyEmail: string
-    npwp: string
+    companyName?: string | null
+    companyFoundingDate?: Date | string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -32469,13 +33123,13 @@ export namespace Prisma {
   export type CompanyUpdateWithoutSegmentInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -32487,13 +33141,13 @@ export namespace Prisma {
   export type CompanyUncheckedUpdateWithoutSegmentInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -32505,13 +33159,13 @@ export namespace Prisma {
   export type CompanyUncheckedUpdateManyWithoutSegmentInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    companyStatus?: StringFieldUpdateOperationsInput | string
-    companyTelpFax?: StringFieldUpdateOperationsInput | string
-    companyAddress?: StringFieldUpdateOperationsInput | string
-    companyEmail?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -32552,98 +33206,122 @@ export namespace Prisma {
 
   export type FormL9ManagementCreateManyFormL9Input = {
     formL9ManagementId?: string
-    position: string
-    name: string
-    noTelpFaxHp: string
+    position?: string | null
+    name?: string | null
+    noTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9WorkExperienceCreateManyFormL9Input = {
     formL9WorkExperienceId?: string
-    customerOrLocation: string
-    typeOfWork: string
-    score: number
-    customerContactPerson: string
-    customerTelpFaxHp: string
+    customerOrLocation?: string | null
+    typeOfWork?: string | null
+    score?: number | null
+    customerContactPerson?: string | null
+    customerTelpFaxHp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9ManagementUpdateWithoutFormL9Input = {
     formL9ManagementId?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    position?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    noTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9ManagementUncheckedUpdateWithoutFormL9Input = {
     formL9ManagementId?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    position?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    noTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9ManagementUncheckedUpdateManyWithoutFormL9Input = {
     formL9ManagementId?: StringFieldUpdateOperationsInput | string
-    position?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    position?: NullableStringFieldUpdateOperationsInput | string | null
+    name?: NullableStringFieldUpdateOperationsInput | string | null
+    noTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9WorkExperienceUpdateWithoutFormL9Input = {
     formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
-    customerOrLocation?: StringFieldUpdateOperationsInput | string
-    typeOfWork?: StringFieldUpdateOperationsInput | string
-    score?: IntFieldUpdateOperationsInput | number
-    customerContactPerson?: StringFieldUpdateOperationsInput | string
-    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: NullableStringFieldUpdateOperationsInput | string | null
+    typeOfWork?: NullableStringFieldUpdateOperationsInput | string | null
+    score?: NullableIntFieldUpdateOperationsInput | number | null
+    customerContactPerson?: NullableStringFieldUpdateOperationsInput | string | null
+    customerTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9WorkExperienceUncheckedUpdateWithoutFormL9Input = {
     formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
-    customerOrLocation?: StringFieldUpdateOperationsInput | string
-    typeOfWork?: StringFieldUpdateOperationsInput | string
-    score?: IntFieldUpdateOperationsInput | number
-    customerContactPerson?: StringFieldUpdateOperationsInput | string
-    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: NullableStringFieldUpdateOperationsInput | string | null
+    typeOfWork?: NullableStringFieldUpdateOperationsInput | string | null
+    score?: NullableIntFieldUpdateOperationsInput | number | null
+    customerContactPerson?: NullableStringFieldUpdateOperationsInput | string | null
+    customerTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9Input = {
     formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
-    customerOrLocation?: StringFieldUpdateOperationsInput | string
-    typeOfWork?: StringFieldUpdateOperationsInput | string
-    score?: IntFieldUpdateOperationsInput | number
-    customerContactPerson?: StringFieldUpdateOperationsInput | string
-    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: NullableStringFieldUpdateOperationsInput | string | null
+    typeOfWork?: NullableStringFieldUpdateOperationsInput | string | null
+    score?: NullableIntFieldUpdateOperationsInput | number | null
+    customerContactPerson?: NullableStringFieldUpdateOperationsInput | string | null
+    customerTelpFaxHp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9CertificateISOCreateManyOthersInput = {
     certificateISOId?: string
-    isoName: string
-    validityPeriodFrom: Date | string
-    validityPeriodTo: Date | string
+    isoName?: string | null
+    validityPeriodFrom?: Date | string | null
+    validityPeriodTo?: Date | string | null
     remakes?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type FormL9CertificateISOUpdateWithoutOthersInput = {
     certificateISOId?: StringFieldUpdateOperationsInput | string
-    isoName?: StringFieldUpdateOperationsInput | string
-    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
-    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    isoName?: NullableStringFieldUpdateOperationsInput | string | null
+    validityPeriodFrom?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    validityPeriodTo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     remakes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9CertificateISOUncheckedUpdateWithoutOthersInput = {
     certificateISOId?: StringFieldUpdateOperationsInput | string
-    isoName?: StringFieldUpdateOperationsInput | string
-    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
-    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    isoName?: NullableStringFieldUpdateOperationsInput | string | null
+    validityPeriodFrom?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    validityPeriodTo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     remakes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9CertificateISOUncheckedUpdateManyWithoutOthersInput = {
     certificateISOId?: StringFieldUpdateOperationsInput | string
-    isoName?: StringFieldUpdateOperationsInput | string
-    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
-    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    isoName?: NullableStringFieldUpdateOperationsInput | string | null
+    validityPeriodFrom?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    validityPeriodTo?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     remakes?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 
