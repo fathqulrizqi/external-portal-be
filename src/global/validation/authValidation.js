@@ -44,66 +44,6 @@ const registerValidation = Joi.object({
     'string.empty': 'Full name is required',
     'any.required': 'Full name is required',
   }),
-  
-  companyName: Joi.string().required().messages({
-    'string.empty': 'Company name is required',
-    'any.required': 'Company name is required',
-  }),
-  
-  description: Joi.string().required().messages({
-    'string.empty': 'Description is required',
-    'any.required': 'Description is required',
-  }),
-  
-  npwp: Joi.string().required().messages({
-    'string.empty': 'NPWP is required',
-    'any.required': 'NPWP is required',
-  }),
-  
-  deedNumber: Joi.string().required().messages({
-    'string.empty': 'Deed number is required',
-    'any.required': 'Deed number is required',
-  }),
-  
-  establishedDate: Joi.any().required().messages({
-    'any.required': 'Established date is required',
-  }),
-  
-  npwpUrl: Joi.string().required().messages({
-    'string.empty': 'NPWP file is required',
-    'any.required': 'NPWP file is required',
-  }),
-  
-  deedUrl: Joi.string().required().messages({
-    'string.empty': 'Deed file is required',
-    'any.required': 'Deed file is required',
-  }),
-  
-  segmentId: Joi.any().required().messages({
-    'any.required': 'Segment ID is required',
-  }).custom(async (value, helpers) => {
-   try {
-     const segment = await ebidding.companySegment.findUnique({ where: { id: value } });
-  
-     if (!segment) {
-     return helpers.error('any.custom', { message: 'Segment ID not found' });
-     }
-     return value;
-   } catch (dbError) {
-     return helpers.error('any.invalid', { message: 'Invalid Segment ID format' });
-   }
-   }, 'Segment ID Database Check'),
-
-  companyAddress : Joi.string().required().messages({
-      'string.empty': 'company address is required',
-      'any.required': 'company address is required',
-    }),
-
-  companyPhone : Joi.string().required().messages({
-      'string.empty': 'company phone number is required',
-      'any.required': 'company phone number is required',
-    }),
-  website : Joi.string().optional().allow(null)
 });
 
 const loginValidation = Joi.object({

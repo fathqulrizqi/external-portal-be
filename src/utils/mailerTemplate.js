@@ -88,7 +88,7 @@ const verifikasiRegistrasi = async (userId,email)=> {
 }
 const verifikasiLogin = async (userId,email,deviceName,ipAddress)=> {
 
-    const OTP = createOTP(userId);
+    const OTP = await createOTP(userId);
 
 
     const Template = `

@@ -102,6 +102,7 @@ exports.Prisma.UserScalarFieldEnum = {
   email: 'email',
   password: 'password',
   isActive: 'isActive',
+  isVerified: 'isVerified',
   sessionExpireDate: 'sessionExpireDate',
   createdDate: 'createdDate',
   updateDate: 'updateDate'
@@ -155,21 +156,123 @@ exports.Prisma.CompanySegmentScalarFieldEnum = {
 
 exports.Prisma.ProfileScalarFieldEnum = {
   userId: 'userId',
+  companyId: 'companyId',
   fullName: 'fullName',
   urlImage: 'urlImage',
-  companyName: 'companyName',
-  npwp: 'npwp',
-  deedNumber: 'deedNumber',
-  establishedDate: 'establishedDate',
-  npwpUrl: 'npwpUrl',
-  deedUrl: 'deedUrl',
-  description: 'description',
-  segmentId: 'segmentId',
-  companyAddress: 'companyAddress',
-  companyPhone: 'companyPhone',
-  website: 'website',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
+};
+
+exports.Prisma.CompanyScalarFieldEnum = {
+  companyId: 'companyId',
+  segmentId: 'segmentId',
+  urlImage: 'urlImage',
+  companyName: 'companyName',
+  companyFoundingDate: 'companyFoundingDate',
+  companyStatus: 'companyStatus',
+  companyTelpFax: 'companyTelpFax',
+  companyAddress: 'companyAddress',
+  companyEmail: 'companyEmail',
+  npwp: 'npwp',
+  website: 'website',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  totalCapital: 'totalCapital'
+};
+
+exports.Prisma.FormL9ScalarFieldEnum = {
+  formL9Id: 'formL9Id',
+  companyId: 'companyId',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.FormL9BankInfoScalarFieldEnum = {
+  formL9BankInfoid: 'formL9BankInfoid',
+  formL9Id: 'formL9Id',
+  beneficiaryName: 'beneficiaryName',
+  beneficiaryAddress: 'beneficiaryAddress',
+  bankName: 'bankName',
+  bankAddress: 'bankAddress',
+  noRek: 'noRek',
+  swiftCode: 'swiftCode',
+  IBAN: 'IBAN'
+};
+
+exports.Prisma.FormL9GeneralInformationScalarFieldEnum = {
+  formGeneralInformationId: 'formGeneralInformationId',
+  formL9Id: 'formL9Id',
+  companyName: 'companyName',
+  companyFoundingDate: 'companyFoundingDate',
+  companyStatus: 'companyStatus',
+  companyTelpFax: 'companyTelpFax',
+  companyAddress: 'companyAddress',
+  companyEmail: 'companyEmail',
+  npwp: 'npwp',
+  totalCapital: 'totalCapital',
+  segmentId: 'segmentId'
+};
+
+exports.Prisma.FormL9GeneralInformationContinueScalarFieldEnum = {
+  formL9GeneralInformationContinueId: 'formL9GeneralInformationContinueId',
+  formGeneralInformationId: 'formGeneralInformationId',
+  permitsHeld: 'permitsHeld'
+};
+
+exports.Prisma.FormL9ManagementScalarFieldEnum = {
+  formL9ManagementId: 'formL9ManagementId',
+  formL9Id: 'formL9Id',
+  position: 'position',
+  name: 'name',
+  noTelpFaxHp: 'noTelpFaxHp'
+};
+
+exports.Prisma.FormL9EmployeScalarFieldEnum = {
+  formL9EmployeId: 'formL9EmployeId',
+  formL9Id: 'formL9Id',
+  totalEmployees: 'totalEmployees',
+  qualityControl: 'qualityControl',
+  engineering: 'engineering',
+  production: 'production',
+  management: 'management',
+  other: 'other'
+};
+
+exports.Prisma.FormL9WorkExperienceScalarFieldEnum = {
+  formL9WorkExperienceId: 'formL9WorkExperienceId',
+  formL9Id: 'formL9Id',
+  customerOrLocation: 'customerOrLocation',
+  typeOfWork: 'typeOfWork',
+  score: 'score',
+  customerContactPerson: 'customerContactPerson',
+  customerTelpFaxHp: 'customerTelpFaxHp'
+};
+
+exports.Prisma.FormL9OthersScalarFieldEnum = {
+  formL9OthersId: 'formL9OthersId',
+  formL9Id: 'formL9Id',
+  haveCertificateISO: 'haveCertificateISO',
+  haveCompanyOrganizationalStructure: 'haveCompanyOrganizationalStructure',
+  haveQualityControlOrganizationalStructure: 'haveQualityControlOrganizationalStructure',
+  haveProductWarranty: 'haveProductWarranty',
+  haveExpiryDate: 'haveExpiryDate',
+  haveAPD: 'haveAPD',
+  haveAPDRegulation: 'haveAPDRegulation',
+  isTopApplicable: 'isTopApplicable',
+  paymentTime: 'paymentTime',
+  agreeToConfidentialInformation: 'agreeToConfidentialInformation',
+  understandingBreachesOfConfidentiality: 'understandingBreachesOfConfidentiality',
+  signConfidentialityAgreement: 'signConfidentialityAgreement'
+};
+
+exports.Prisma.FormL9CertificateISOScalarFieldEnum = {
+  certificateISOId: 'certificateISOId',
+  formL9OthersId: 'formL9OthersId',
+  isoName: 'isoName',
+  validityPeriodFrom: 'validityPeriodFrom',
+  validityPeriodTo: 'validityPeriodTo',
+  remakes: 'remakes'
 };
 
 exports.Prisma.SortOrder = {
@@ -198,7 +301,17 @@ exports.Prisma.ModelName = {
   UserHasRoleAccess: 'UserHasRoleAccess',
   LinkedDevice: 'LinkedDevice',
   CompanySegment: 'CompanySegment',
-  Profile: 'Profile'
+  Profile: 'Profile',
+  Company: 'Company',
+  FormL9: 'FormL9',
+  FormL9BankInfo: 'FormL9BankInfo',
+  FormL9GeneralInformation: 'FormL9GeneralInformation',
+  FormL9GeneralInformationContinue: 'FormL9GeneralInformationContinue',
+  FormL9Management: 'FormL9Management',
+  FormL9Employe: 'FormL9Employe',
+  FormL9WorkExperience: 'FormL9WorkExperience',
+  FormL9Others: 'FormL9Others',
+  FormL9CertificateISO: 'FormL9CertificateISO'
 };
 /**
  * Create the Client
@@ -211,7 +324,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\laragon\\www\\Backend-External-Portal\\prisma\\mainDB\\@prisma\\client-main",
+      "value": "C:\\laragon\\www\\e-bidding-backend\\prisma\\mainDB\\@prisma\\client-main",
       "fromEnvVar": null
     },
     "config": {
@@ -225,7 +338,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\laragon\\www\\Backend-External-Portal\\prisma\\mainDB\\schema.prisma",
+    "sourceFilePath": "C:\\laragon\\www\\e-bidding-backend\\prisma\\mainDB\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -247,13 +360,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./@prisma/client-main\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel AllowedIpCors {\n  ip String @unique @db.VarChar(50)\n\n  @@index([ip])\n}\n\nmodel User {\n  userId            String   @id @default(uuid()) @db.Uuid\n  email             String   @unique @db.VarChar(150)\n  password          String   @db.VarChar(255)\n  isActive          Boolean  @default(false)\n  sessionExpireDate DateTime\n  createdDate       DateTime @default(now())\n  updateDate        DateTime @updatedAt\n\n  logs              LogsLogin[]\n  linkedDevice      LinkedDevice[]\n  profile           Profile?\n  UserHasRoleAccess UserHasRoleAccess[]\n  otp               otpVerifikasi[]\n\n  @@index([email])\n  @@index([isActive])\n  @@index([email, isActive])\n}\n\nmodel otpVerifikasi {\n  id         Int      @id @default(autoincrement())\n  userId     String   @db.Uuid\n  code       String   @db.VarChar(6)\n  expireDate DateTime\n\n  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)\n\n  @@index([userId, code])\n}\n\nmodel LogsLogin {\n  logsId      String   @id @default(uuid()) @db.Uuid\n  userId      String   @db.Uuid\n  token       String   @unique @db.Text\n  isActive    Boolean  @default(true)\n  device      String?  @db.Text\n  ip          String?  @db.VarChar(45)\n  createdDate DateTime @default(now())\n  expireDate  DateTime\n\n  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)\n\n  @@index([userId])\n}\n\nmodel Role {\n  roleId   Int    @id @default(autoincrement())\n  roleName String @db.VarChar(50)\n\n  UserHasRoleAccess UserHasRoleAccess[]\n}\n\nmodel Access {\n  accessId   Int    @id @default(autoincrement())\n  accessName String @db.VarChar(50)\n\n  UserHasRoleAccess UserHasRoleAccess[]\n}\n\nmodel UserHasRoleAccess {\n  userId   String @db.Uuid\n  roleId   Int\n  accessId Int\n\n  user   User   @relation(fields: [userId], references: [userId], onDelete: Cascade)\n  role   Role   @relation(fields: [roleId], references: [roleId], onDelete: Cascade)\n  access Access @relation(fields: [accessId], references: [accessId], onDelete: Cascade)\n\n  @@id([userId, roleId, accessId])\n  @@index([userId, accessId])\n  @@index([roleId])\n  @@index([userId])\n}\n\nmodel LinkedDevice {\n  deviceId         String @id @default(uuid()) @db.Uuid\n  clientDeviceUuid String @unique @db.Uuid\n  userId           String @db.Uuid\n\n  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)\n\n  @@index([userId])\n}\n\nmodel CompanySegment {\n  segmentId   Int     @id @default(autoincrement())\n  segmentName String  @db.VarChar(100)\n  description String? @db.VarChar(255)\n\n  profile Profile[]\n}\n\nmodel Profile {\n  userId          String    @id @db.Uuid\n  fullName        String?   @db.VarChar(150)\n  urlImage        String?   @db.Text\n  companyName     String    @db.VarChar(150)\n  npwp            String    @db.VarChar(50)\n  deedNumber      String?   @db.VarChar(100)\n  establishedDate DateTime? @db.Date\n  npwpUrl         String    @db.Text\n  deedUrl         String    @db.Text\n  description     String?   @db.Text\n  segmentId       Int?\n  companyAddress  String?   @db.VarChar(255)\n  companyPhone    String?   @db.VarChar(50)\n  website         String?   @db.VarChar(100)\n  createdAt       DateTime  @default(now())\n  updatedAt       DateTime  @updatedAt\n\n  segment CompanySegment? @relation(fields: [segmentId], references: [segmentId])\n  user    User            @relation(fields: [userId], references: [userId], onDelete: Cascade)\n\n  @@index([userId, segmentId])\n  @@index([segmentId])\n}\n",
-  "inlineSchemaHash": "a26337141dce2fd2060d214f3b696de354bbef7cda95f93b5646939ecd67d331",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"./@prisma/client-main\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel AllowedIpCors {\n  ip String @unique @db.VarChar(50)\n\n  @@index([ip])\n}\n\nmodel User {\n  userId            String   @id @default(uuid()) @db.Uuid\n  email             String   @unique @db.VarChar(150)\n  password          String   @db.VarChar(255)\n  isActive          Boolean  @default(false)\n  isVerified        Boolean  @default(false)\n  sessionExpireDate DateTime\n  createdDate       DateTime @default(now())\n  updateDate        DateTime @updatedAt\n\n  logs              LogsLogin[]\n  linkedDevice      LinkedDevice[]\n  profile           Profile?\n  UserHasRoleAccess UserHasRoleAccess[]\n  otp               otpVerifikasi[]\n\n  @@index([email])\n  @@index([isActive])\n  @@index([email, isActive])\n}\n\nmodel otpVerifikasi {\n  id         Int      @id @default(autoincrement())\n  userId     String   @db.Uuid\n  code       String   @db.VarChar(6)\n  expireDate DateTime\n\n  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)\n\n  @@index([userId, code])\n}\n\nmodel LogsLogin {\n  logsId      String   @id @default(uuid()) @db.Uuid\n  userId      String   @db.Uuid\n  token       String   @unique @db.Text\n  isActive    Boolean  @default(true)\n  device      String?  @db.Text\n  ip          String?  @db.VarChar(45)\n  createdDate DateTime @default(now())\n  expireDate  DateTime\n\n  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)\n\n  @@index([userId])\n}\n\nmodel Role {\n  roleId   Int    @id @default(autoincrement())\n  roleName String @db.VarChar(50)\n\n  UserHasRoleAccess UserHasRoleAccess[]\n}\n\nmodel Access {\n  accessId   Int    @id @default(autoincrement())\n  accessName String @db.VarChar(50)\n\n  UserHasRoleAccess UserHasRoleAccess[]\n}\n\nmodel UserHasRoleAccess {\n  userId   String @db.Uuid\n  roleId   Int\n  accessId Int\n\n  user   User   @relation(fields: [userId], references: [userId], onDelete: Cascade)\n  role   Role   @relation(fields: [roleId], references: [roleId], onDelete: Cascade)\n  access Access @relation(fields: [accessId], references: [accessId], onDelete: Cascade)\n\n  @@id([userId, roleId, accessId])\n  @@index([userId, accessId])\n  @@index([roleId])\n  @@index([userId])\n}\n\nmodel LinkedDevice {\n  deviceId         String @id @default(uuid()) @db.Uuid\n  clientDeviceUuid String @unique @db.Uuid\n  userId           String @db.Uuid\n\n  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)\n\n  @@index([userId])\n}\n\nmodel CompanySegment {\n  segmentId   Int     @id @default(autoincrement())\n  segmentName String  @db.VarChar(100)\n  description String? @db.VarChar(255)\n\n  company Company[]\n}\n\nmodel Profile {\n  userId    String   @id @db.Uuid\n  companyId String?  @db.Uuid\n  fullName  String   @db.VarChar(150)\n  urlImage  String?  @db.Text\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  user    User     @relation(fields: [userId], references: [userId], onDelete: Cascade)\n  company Company? @relation(fields: [companyId], references: [companyId], onDelete: Cascade)\n\n  @@index([userId, companyId])\n  @@index([companyId])\n  @@index([fullName])\n}\n\nmodel Company {\n  companyId           String   @id @default(uuid()) @db.Uuid\n  segmentId           Int\n  urlImage            String?  @db.Text\n  companyName         String\n  companyFoundingDate DateTime\n  companyStatus       String\n  companyTelpFax      String\n  companyAddress      String\n  companyEmail        String\n  npwp                String\n  website             String?  @db.VarChar(100)\n  createdAt           DateTime @default(now())\n  updatedAt           DateTime @updatedAt\n  totalCapital        String?\n\n  profile Profile[]\n  segment CompanySegment? @relation(fields: [segmentId], references: [segmentId])\n  formL9  FormL9?\n\n  @@index([companyName])\n  @@index([npwp])\n  @@index([companyEmail])\n  @@index([segmentId])\n}\n\nmodel FormL9 {\n  formL9Id  String   @id @default(uuid()) @db.Uuid\n  companyId String   @unique @db.Uuid\n  status    String   @db.VarChar(50)\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n\n  company Company @relation(fields: [companyId], references: [companyId], onDelete: Cascade)\n\n  bankInfo           FormL9BankInfo?\n  generalInformation FormL9GeneralInformation?\n  employeeInfo       FormL9Employe?\n  others             FormL9Others?\n\n  managements     FormL9Management[]\n  workExperiences FormL9WorkExperience[]\n\n  @@index([companyId])\n  @@map(\"ebidding_form_l9\")\n}\n\nmodel FormL9BankInfo {\n  formL9BankInfoid String @id @default(uuid()) @db.Uuid\n\n  formL9Id String @unique @db.Uuid\n  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)\n\n  beneficiaryName    String\n  beneficiaryAddress String\n  bankName           String\n  bankAddress        String\n  noRek              String\n  swiftCode          String\n  IBAN               String\n\n  @@index([noRek])\n  @@map(\"ebidding_form_l9_bank_info\")\n}\n\nmodel FormL9GeneralInformation {\n  formGeneralInformationId String @id @default(uuid()) @db.Uuid\n\n  formL9Id String @unique @db.Uuid\n  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)\n\n  companyName         String\n  companyFoundingDate DateTime\n  companyStatus       String\n  companyTelpFax      String\n  companyAddress      String\n  companyEmail        String\n  npwp                String\n  totalCapital        String?\n  segmentId           String\n\n  generalInfoContinue FormL9GeneralInformationContinue?\n\n  @@index([companyName])\n  @@index([npwp])\n  @@map(\"ebidding_form_l9_general_information\")\n}\n\nmodel FormL9GeneralInformationContinue {\n  formL9GeneralInformationContinueId String @id @default(uuid()) @db.Uuid\n\n  formGeneralInformationId String                   @unique @db.Uuid\n  generalInformation       FormL9GeneralInformation @relation(fields: [formGeneralInformationId], references: [formGeneralInformationId], onDelete: Cascade)\n\n  permitsHeld String\n\n  @@map(\"ebidding_form_l9_general_information_continue\")\n}\n\nmodel FormL9Management {\n  formL9ManagementId String @id @default(uuid()) @db.Uuid\n\n  formL9Id String @db.Uuid\n  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)\n\n  position    String\n  name        String\n  noTelpFaxHp String\n\n  @@index([formL9Id])\n  @@index([name])\n  @@index([position])\n  @@map(\"ebidding_form_l9_management\")\n}\n\nmodel FormL9Employe {\n  formL9EmployeId String @id @default(uuid()) @db.Uuid\n\n  formL9Id String @unique @db.Uuid\n  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)\n\n  totalEmployees Int\n  qualityControl Int\n  engineering    Int\n  production     Int\n  management     Int\n  other          Int\n\n  @@map(\"ebidding_form_l9_employe\")\n}\n\nmodel FormL9WorkExperience {\n  formL9WorkExperienceId String @id @default(uuid()) @db.Uuid\n\n  formL9Id String @db.Uuid\n  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)\n\n  customerOrLocation    String\n  typeOfWork            String\n  score                 Int\n  customerContactPerson String\n  customerTelpFaxHp     String\n\n  @@index([formL9Id])\n  @@index([customerOrLocation])\n  @@index([typeOfWork])\n  @@map(\"ebidding_form_l9_work_experience\")\n}\n\nmodel FormL9Others {\n  formL9OthersId String @id @default(uuid()) @db.Uuid\n\n  formL9Id String @unique @db.Uuid\n  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)\n\n  haveCertificateISO                        Boolean @default(false)\n  haveCompanyOrganizationalStructure        Boolean @default(false)\n  haveQualityControlOrganizationalStructure Boolean @default(false)\n  haveProductWarranty                       Boolean @default(false)\n  haveExpiryDate                            Boolean @default(false)\n  haveAPD                                   Boolean @default(false)\n  haveAPDRegulation                         Boolean @default(false)\n  isTopApplicable                           Boolean @default(false)\n\n  paymentTime String\n\n  agreeToConfidentialInformation         Boolean @default(false)\n  understandingBreachesOfConfidentiality Boolean @default(false)\n  signConfidentialityAgreement           Boolean @default(false)\n\n  certificateISOs FormL9CertificateISO[]\n\n  @@map(\"ebidding_form_l9_others\")\n}\n\nmodel FormL9CertificateISO {\n  certificateISOId String @id @default(uuid()) @db.Uuid\n\n  formL9OthersId String @db.Uuid\n\n  others FormL9Others @relation(fields: [formL9OthersId], references: [formL9OthersId], onDelete: Cascade)\n\n  isoName            String\n  validityPeriodFrom DateTime\n  validityPeriodTo   DateTime\n\n  remakes String? @db.Text\n\n  @@index([formL9OthersId])\n  @@index([isoName])\n  @@map(\"ebidding_form_l9_certificate_iso\")\n}\n",
+  "inlineSchemaHash": "5c467f514dc6bdecf007dc86b097dbd14d307565a4d0b762acfeae811842e575",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"AllowedIpCors\":{\"fields\":[{\"name\":\"ip\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"User\":{\"fields\":[{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"isActive\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"sessionExpireDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"createdDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updateDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"logs\",\"kind\":\"object\",\"type\":\"LogsLogin\",\"relationName\":\"LogsLoginToUser\"},{\"name\":\"linkedDevice\",\"kind\":\"object\",\"type\":\"LinkedDevice\",\"relationName\":\"LinkedDeviceToUser\"},{\"name\":\"profile\",\"kind\":\"object\",\"type\":\"Profile\",\"relationName\":\"ProfileToUser\"},{\"name\":\"UserHasRoleAccess\",\"kind\":\"object\",\"type\":\"UserHasRoleAccess\",\"relationName\":\"UserToUserHasRoleAccess\"},{\"name\":\"otp\",\"kind\":\"object\",\"type\":\"otpVerifikasi\",\"relationName\":\"UserTootpVerifikasi\"}],\"dbName\":null},\"otpVerifikasi\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"code\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"expireDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"UserTootpVerifikasi\"}],\"dbName\":null},\"LogsLogin\":{\"fields\":[{\"name\":\"logsId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"token\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"isActive\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"device\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"ip\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"expireDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"LogsLoginToUser\"}],\"dbName\":null},\"Role\":{\"fields\":[{\"name\":\"roleId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"roleName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"UserHasRoleAccess\",\"kind\":\"object\",\"type\":\"UserHasRoleAccess\",\"relationName\":\"RoleToUserHasRoleAccess\"}],\"dbName\":null},\"Access\":{\"fields\":[{\"name\":\"accessId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"accessName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"UserHasRoleAccess\",\"kind\":\"object\",\"type\":\"UserHasRoleAccess\",\"relationName\":\"AccessToUserHasRoleAccess\"}],\"dbName\":null},\"UserHasRoleAccess\":{\"fields\":[{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"roleId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"accessId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"UserToUserHasRoleAccess\"},{\"name\":\"role\",\"kind\":\"object\",\"type\":\"Role\",\"relationName\":\"RoleToUserHasRoleAccess\"},{\"name\":\"access\",\"kind\":\"object\",\"type\":\"Access\",\"relationName\":\"AccessToUserHasRoleAccess\"}],\"dbName\":null},\"LinkedDevice\":{\"fields\":[{\"name\":\"deviceId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"clientDeviceUuid\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"LinkedDeviceToUser\"}],\"dbName\":null},\"CompanySegment\":{\"fields\":[{\"name\":\"segmentId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"segmentName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"profile\",\"kind\":\"object\",\"type\":\"Profile\",\"relationName\":\"CompanySegmentToProfile\"}],\"dbName\":null},\"Profile\":{\"fields\":[{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"fullName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"urlImage\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"npwp\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"deedNumber\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"establishedDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"npwpUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"deedUrl\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"segmentId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"companyAddress\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyPhone\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"website\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"segment\",\"kind\":\"object\",\"type\":\"CompanySegment\",\"relationName\":\"CompanySegmentToProfile\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"ProfileToUser\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"AllowedIpCors\":{\"fields\":[{\"name\":\"ip\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"User\":{\"fields\":[{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"password\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"isActive\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"isVerified\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"sessionExpireDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"createdDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updateDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"logs\",\"kind\":\"object\",\"type\":\"LogsLogin\",\"relationName\":\"LogsLoginToUser\"},{\"name\":\"linkedDevice\",\"kind\":\"object\",\"type\":\"LinkedDevice\",\"relationName\":\"LinkedDeviceToUser\"},{\"name\":\"profile\",\"kind\":\"object\",\"type\":\"Profile\",\"relationName\":\"ProfileToUser\"},{\"name\":\"UserHasRoleAccess\",\"kind\":\"object\",\"type\":\"UserHasRoleAccess\",\"relationName\":\"UserToUserHasRoleAccess\"},{\"name\":\"otp\",\"kind\":\"object\",\"type\":\"otpVerifikasi\",\"relationName\":\"UserTootpVerifikasi\"}],\"dbName\":null},\"otpVerifikasi\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"code\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"expireDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"UserTootpVerifikasi\"}],\"dbName\":null},\"LogsLogin\":{\"fields\":[{\"name\":\"logsId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"token\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"isActive\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"device\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"ip\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"expireDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"LogsLoginToUser\"}],\"dbName\":null},\"Role\":{\"fields\":[{\"name\":\"roleId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"roleName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"UserHasRoleAccess\",\"kind\":\"object\",\"type\":\"UserHasRoleAccess\",\"relationName\":\"RoleToUserHasRoleAccess\"}],\"dbName\":null},\"Access\":{\"fields\":[{\"name\":\"accessId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"accessName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"UserHasRoleAccess\",\"kind\":\"object\",\"type\":\"UserHasRoleAccess\",\"relationName\":\"AccessToUserHasRoleAccess\"}],\"dbName\":null},\"UserHasRoleAccess\":{\"fields\":[{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"roleId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"accessId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"UserToUserHasRoleAccess\"},{\"name\":\"role\",\"kind\":\"object\",\"type\":\"Role\",\"relationName\":\"RoleToUserHasRoleAccess\"},{\"name\":\"access\",\"kind\":\"object\",\"type\":\"Access\",\"relationName\":\"AccessToUserHasRoleAccess\"}],\"dbName\":null},\"LinkedDevice\":{\"fields\":[{\"name\":\"deviceId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"clientDeviceUuid\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"LinkedDeviceToUser\"}],\"dbName\":null},\"CompanySegment\":{\"fields\":[{\"name\":\"segmentId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"segmentName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"company\",\"kind\":\"object\",\"type\":\"Company\",\"relationName\":\"CompanyToCompanySegment\"}],\"dbName\":null},\"Profile\":{\"fields\":[{\"name\":\"userId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"fullName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"urlImage\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"user\",\"kind\":\"object\",\"type\":\"User\",\"relationName\":\"ProfileToUser\"},{\"name\":\"company\",\"kind\":\"object\",\"type\":\"Company\",\"relationName\":\"CompanyToProfile\"}],\"dbName\":null},\"Company\":{\"fields\":[{\"name\":\"companyId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"segmentId\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"urlImage\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyFoundingDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"companyStatus\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyTelpFax\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyAddress\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyEmail\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"npwp\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"website\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"totalCapital\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"profile\",\"kind\":\"object\",\"type\":\"Profile\",\"relationName\":\"CompanyToProfile\"},{\"name\":\"segment\",\"kind\":\"object\",\"type\":\"CompanySegment\",\"relationName\":\"CompanyToCompanySegment\"},{\"name\":\"formL9\",\"kind\":\"object\",\"type\":\"FormL9\",\"relationName\":\"CompanyToFormL9\"}],\"dbName\":null},\"FormL9\":{\"fields\":[{\"name\":\"formL9Id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"status\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"updatedAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"company\",\"kind\":\"object\",\"type\":\"Company\",\"relationName\":\"CompanyToFormL9\"},{\"name\":\"bankInfo\",\"kind\":\"object\",\"type\":\"FormL9BankInfo\",\"relationName\":\"FormL9ToFormL9BankInfo\"},{\"name\":\"generalInformation\",\"kind\":\"object\",\"type\":\"FormL9GeneralInformation\",\"relationName\":\"FormL9ToFormL9GeneralInformation\"},{\"name\":\"employeeInfo\",\"kind\":\"object\",\"type\":\"FormL9Employe\",\"relationName\":\"FormL9ToFormL9Employe\"},{\"name\":\"others\",\"kind\":\"object\",\"type\":\"FormL9Others\",\"relationName\":\"FormL9ToFormL9Others\"},{\"name\":\"managements\",\"kind\":\"object\",\"type\":\"FormL9Management\",\"relationName\":\"FormL9ToFormL9Management\"},{\"name\":\"workExperiences\",\"kind\":\"object\",\"type\":\"FormL9WorkExperience\",\"relationName\":\"FormL9ToFormL9WorkExperience\"}],\"dbName\":\"ebidding_form_l9\"},\"FormL9BankInfo\":{\"fields\":[{\"name\":\"formL9BankInfoid\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9Id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9\",\"kind\":\"object\",\"type\":\"FormL9\",\"relationName\":\"FormL9ToFormL9BankInfo\"},{\"name\":\"beneficiaryName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"beneficiaryAddress\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"bankName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"bankAddress\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"noRek\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"swiftCode\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"IBAN\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":\"ebidding_form_l9_bank_info\"},\"FormL9GeneralInformation\":{\"fields\":[{\"name\":\"formGeneralInformationId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9Id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9\",\"kind\":\"object\",\"type\":\"FormL9\",\"relationName\":\"FormL9ToFormL9GeneralInformation\"},{\"name\":\"companyName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyFoundingDate\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"companyStatus\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyTelpFax\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyAddress\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"companyEmail\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"npwp\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"totalCapital\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"segmentId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"generalInfoContinue\",\"kind\":\"object\",\"type\":\"FormL9GeneralInformationContinue\",\"relationName\":\"FormL9GeneralInformationToFormL9GeneralInformationContinue\"}],\"dbName\":\"ebidding_form_l9_general_information\"},\"FormL9GeneralInformationContinue\":{\"fields\":[{\"name\":\"formL9GeneralInformationContinueId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formGeneralInformationId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"generalInformation\",\"kind\":\"object\",\"type\":\"FormL9GeneralInformation\",\"relationName\":\"FormL9GeneralInformationToFormL9GeneralInformationContinue\"},{\"name\":\"permitsHeld\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":\"ebidding_form_l9_general_information_continue\"},\"FormL9Management\":{\"fields\":[{\"name\":\"formL9ManagementId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9Id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9\",\"kind\":\"object\",\"type\":\"FormL9\",\"relationName\":\"FormL9ToFormL9Management\"},{\"name\":\"position\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"name\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"noTelpFaxHp\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":\"ebidding_form_l9_management\"},\"FormL9Employe\":{\"fields\":[{\"name\":\"formL9EmployeId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9Id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9\",\"kind\":\"object\",\"type\":\"FormL9\",\"relationName\":\"FormL9ToFormL9Employe\"},{\"name\":\"totalEmployees\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"qualityControl\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"engineering\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"production\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"management\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"other\",\"kind\":\"scalar\",\"type\":\"Int\"}],\"dbName\":\"ebidding_form_l9_employe\"},\"FormL9WorkExperience\":{\"fields\":[{\"name\":\"formL9WorkExperienceId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9Id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9\",\"kind\":\"object\",\"type\":\"FormL9\",\"relationName\":\"FormL9ToFormL9WorkExperience\"},{\"name\":\"customerOrLocation\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"typeOfWork\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"score\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"customerContactPerson\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"customerTelpFaxHp\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":\"ebidding_form_l9_work_experience\"},\"FormL9Others\":{\"fields\":[{\"name\":\"formL9OthersId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9Id\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9\",\"kind\":\"object\",\"type\":\"FormL9\",\"relationName\":\"FormL9ToFormL9Others\"},{\"name\":\"haveCertificateISO\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"haveCompanyOrganizationalStructure\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"haveQualityControlOrganizationalStructure\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"haveProductWarranty\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"haveExpiryDate\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"haveAPD\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"haveAPDRegulation\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"isTopApplicable\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"paymentTime\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"agreeToConfidentialInformation\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"understandingBreachesOfConfidentiality\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"signConfidentialityAgreement\",\"kind\":\"scalar\",\"type\":\"Boolean\"},{\"name\":\"certificateISOs\",\"kind\":\"object\",\"type\":\"FormL9CertificateISO\",\"relationName\":\"FormL9CertificateISOToFormL9Others\"}],\"dbName\":\"ebidding_form_l9_others\"},\"FormL9CertificateISO\":{\"fields\":[{\"name\":\"certificateISOId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"formL9OthersId\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"others\",\"kind\":\"object\",\"type\":\"FormL9Others\",\"relationName\":\"FormL9CertificateISOToFormL9Others\"},{\"name\":\"isoName\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"validityPeriodFrom\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"validityPeriodTo\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"remakes\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":\"ebidding_form_l9_certificate_iso\"}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),

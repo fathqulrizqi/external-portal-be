@@ -63,6 +63,56 @@ export type CompanySegment = $Result.DefaultSelection<Prisma.$CompanySegmentPayl
  * 
  */
 export type Profile = $Result.DefaultSelection<Prisma.$ProfilePayload>
+/**
+ * Model Company
+ * 
+ */
+export type Company = $Result.DefaultSelection<Prisma.$CompanyPayload>
+/**
+ * Model FormL9
+ * 
+ */
+export type FormL9 = $Result.DefaultSelection<Prisma.$FormL9Payload>
+/**
+ * Model FormL9BankInfo
+ * 
+ */
+export type FormL9BankInfo = $Result.DefaultSelection<Prisma.$FormL9BankInfoPayload>
+/**
+ * Model FormL9GeneralInformation
+ * 
+ */
+export type FormL9GeneralInformation = $Result.DefaultSelection<Prisma.$FormL9GeneralInformationPayload>
+/**
+ * Model FormL9GeneralInformationContinue
+ * 
+ */
+export type FormL9GeneralInformationContinue = $Result.DefaultSelection<Prisma.$FormL9GeneralInformationContinuePayload>
+/**
+ * Model FormL9Management
+ * 
+ */
+export type FormL9Management = $Result.DefaultSelection<Prisma.$FormL9ManagementPayload>
+/**
+ * Model FormL9Employe
+ * 
+ */
+export type FormL9Employe = $Result.DefaultSelection<Prisma.$FormL9EmployePayload>
+/**
+ * Model FormL9WorkExperience
+ * 
+ */
+export type FormL9WorkExperience = $Result.DefaultSelection<Prisma.$FormL9WorkExperiencePayload>
+/**
+ * Model FormL9Others
+ * 
+ */
+export type FormL9Others = $Result.DefaultSelection<Prisma.$FormL9OthersPayload>
+/**
+ * Model FormL9CertificateISO
+ * 
+ */
+export type FormL9CertificateISO = $Result.DefaultSelection<Prisma.$FormL9CertificateISOPayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -281,6 +331,106 @@ export class PrismaClient<
     * ```
     */
   get profile(): Prisma.ProfileDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.company`: Exposes CRUD operations for the **Company** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Companies
+    * const companies = await prisma.company.findMany()
+    * ```
+    */
+  get company(): Prisma.CompanyDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.formL9`: Exposes CRUD operations for the **FormL9** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FormL9s
+    * const formL9s = await prisma.formL9.findMany()
+    * ```
+    */
+  get formL9(): Prisma.FormL9Delegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.formL9BankInfo`: Exposes CRUD operations for the **FormL9BankInfo** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FormL9BankInfos
+    * const formL9BankInfos = await prisma.formL9BankInfo.findMany()
+    * ```
+    */
+  get formL9BankInfo(): Prisma.FormL9BankInfoDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.formL9GeneralInformation`: Exposes CRUD operations for the **FormL9GeneralInformation** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FormL9GeneralInformations
+    * const formL9GeneralInformations = await prisma.formL9GeneralInformation.findMany()
+    * ```
+    */
+  get formL9GeneralInformation(): Prisma.FormL9GeneralInformationDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.formL9GeneralInformationContinue`: Exposes CRUD operations for the **FormL9GeneralInformationContinue** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FormL9GeneralInformationContinues
+    * const formL9GeneralInformationContinues = await prisma.formL9GeneralInformationContinue.findMany()
+    * ```
+    */
+  get formL9GeneralInformationContinue(): Prisma.FormL9GeneralInformationContinueDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.formL9Management`: Exposes CRUD operations for the **FormL9Management** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FormL9Managements
+    * const formL9Managements = await prisma.formL9Management.findMany()
+    * ```
+    */
+  get formL9Management(): Prisma.FormL9ManagementDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.formL9Employe`: Exposes CRUD operations for the **FormL9Employe** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FormL9Employes
+    * const formL9Employes = await prisma.formL9Employe.findMany()
+    * ```
+    */
+  get formL9Employe(): Prisma.FormL9EmployeDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.formL9WorkExperience`: Exposes CRUD operations for the **FormL9WorkExperience** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FormL9WorkExperiences
+    * const formL9WorkExperiences = await prisma.formL9WorkExperience.findMany()
+    * ```
+    */
+  get formL9WorkExperience(): Prisma.FormL9WorkExperienceDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.formL9Others`: Exposes CRUD operations for the **FormL9Others** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FormL9Others
+    * const formL9Others = await prisma.formL9Others.findMany()
+    * ```
+    */
+  get formL9Others(): Prisma.FormL9OthersDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.formL9CertificateISO`: Exposes CRUD operations for the **FormL9CertificateISO** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more FormL9CertificateISOS
+    * const formL9CertificateISOS = await prisma.formL9CertificateISO.findMany()
+    * ```
+    */
+  get formL9CertificateISO(): Prisma.FormL9CertificateISODelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -731,7 +881,17 @@ export namespace Prisma {
     UserHasRoleAccess: 'UserHasRoleAccess',
     LinkedDevice: 'LinkedDevice',
     CompanySegment: 'CompanySegment',
-    Profile: 'Profile'
+    Profile: 'Profile',
+    Company: 'Company',
+    FormL9: 'FormL9',
+    FormL9BankInfo: 'FormL9BankInfo',
+    FormL9GeneralInformation: 'FormL9GeneralInformation',
+    FormL9GeneralInformationContinue: 'FormL9GeneralInformationContinue',
+    FormL9Management: 'FormL9Management',
+    FormL9Employe: 'FormL9Employe',
+    FormL9WorkExperience: 'FormL9WorkExperience',
+    FormL9Others: 'FormL9Others',
+    FormL9CertificateISO: 'FormL9CertificateISO'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -750,7 +910,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "allowedIpCors" | "user" | "otpVerifikasi" | "logsLogin" | "role" | "access" | "userHasRoleAccess" | "linkedDevice" | "companySegment" | "profile"
+      modelProps: "allowedIpCors" | "user" | "otpVerifikasi" | "logsLogin" | "role" | "access" | "userHasRoleAccess" | "linkedDevice" | "companySegment" | "profile" | "company" | "formL9" | "formL9BankInfo" | "formL9GeneralInformation" | "formL9GeneralInformationContinue" | "formL9Management" | "formL9Employe" | "formL9WorkExperience" | "formL9Others" | "formL9CertificateISO"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1494,6 +1654,746 @@ export namespace Prisma {
           }
         }
       }
+      Company: {
+        payload: Prisma.$CompanyPayload<ExtArgs>
+        fields: Prisma.CompanyFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CompanyFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CompanyFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload>
+          }
+          findFirst: {
+            args: Prisma.CompanyFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CompanyFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload>
+          }
+          findMany: {
+            args: Prisma.CompanyFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload>[]
+          }
+          create: {
+            args: Prisma.CompanyCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload>
+          }
+          createMany: {
+            args: Prisma.CompanyCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CompanyCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload>[]
+          }
+          delete: {
+            args: Prisma.CompanyDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload>
+          }
+          update: {
+            args: Prisma.CompanyUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload>
+          }
+          deleteMany: {
+            args: Prisma.CompanyDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CompanyUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CompanyUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload>[]
+          }
+          upsert: {
+            args: Prisma.CompanyUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanyPayload>
+          }
+          aggregate: {
+            args: Prisma.CompanyAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCompany>
+          }
+          groupBy: {
+            args: Prisma.CompanyGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CompanyGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CompanyCountArgs<ExtArgs>
+            result: $Utils.Optional<CompanyCountAggregateOutputType> | number
+          }
+        }
+      }
+      FormL9: {
+        payload: Prisma.$FormL9Payload<ExtArgs>
+        fields: Prisma.FormL9FieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FormL9FindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FormL9FindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload>
+          }
+          findFirst: {
+            args: Prisma.FormL9FindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FormL9FindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload>
+          }
+          findMany: {
+            args: Prisma.FormL9FindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload>[]
+          }
+          create: {
+            args: Prisma.FormL9CreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload>
+          }
+          createMany: {
+            args: Prisma.FormL9CreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FormL9CreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload>[]
+          }
+          delete: {
+            args: Prisma.FormL9DeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload>
+          }
+          update: {
+            args: Prisma.FormL9UpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload>
+          }
+          deleteMany: {
+            args: Prisma.FormL9DeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FormL9UpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FormL9UpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload>[]
+          }
+          upsert: {
+            args: Prisma.FormL9UpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9Payload>
+          }
+          aggregate: {
+            args: Prisma.FormL9AggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFormL9>
+          }
+          groupBy: {
+            args: Prisma.FormL9GroupByArgs<ExtArgs>
+            result: $Utils.Optional<FormL9GroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FormL9CountArgs<ExtArgs>
+            result: $Utils.Optional<FormL9CountAggregateOutputType> | number
+          }
+        }
+      }
+      FormL9BankInfo: {
+        payload: Prisma.$FormL9BankInfoPayload<ExtArgs>
+        fields: Prisma.FormL9BankInfoFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FormL9BankInfoFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FormL9BankInfoFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload>
+          }
+          findFirst: {
+            args: Prisma.FormL9BankInfoFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FormL9BankInfoFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload>
+          }
+          findMany: {
+            args: Prisma.FormL9BankInfoFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload>[]
+          }
+          create: {
+            args: Prisma.FormL9BankInfoCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload>
+          }
+          createMany: {
+            args: Prisma.FormL9BankInfoCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FormL9BankInfoCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload>[]
+          }
+          delete: {
+            args: Prisma.FormL9BankInfoDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload>
+          }
+          update: {
+            args: Prisma.FormL9BankInfoUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload>
+          }
+          deleteMany: {
+            args: Prisma.FormL9BankInfoDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FormL9BankInfoUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FormL9BankInfoUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload>[]
+          }
+          upsert: {
+            args: Prisma.FormL9BankInfoUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9BankInfoPayload>
+          }
+          aggregate: {
+            args: Prisma.FormL9BankInfoAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFormL9BankInfo>
+          }
+          groupBy: {
+            args: Prisma.FormL9BankInfoGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FormL9BankInfoGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FormL9BankInfoCountArgs<ExtArgs>
+            result: $Utils.Optional<FormL9BankInfoCountAggregateOutputType> | number
+          }
+        }
+      }
+      FormL9GeneralInformation: {
+        payload: Prisma.$FormL9GeneralInformationPayload<ExtArgs>
+        fields: Prisma.FormL9GeneralInformationFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FormL9GeneralInformationFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FormL9GeneralInformationFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload>
+          }
+          findFirst: {
+            args: Prisma.FormL9GeneralInformationFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FormL9GeneralInformationFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload>
+          }
+          findMany: {
+            args: Prisma.FormL9GeneralInformationFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload>[]
+          }
+          create: {
+            args: Prisma.FormL9GeneralInformationCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload>
+          }
+          createMany: {
+            args: Prisma.FormL9GeneralInformationCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FormL9GeneralInformationCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload>[]
+          }
+          delete: {
+            args: Prisma.FormL9GeneralInformationDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload>
+          }
+          update: {
+            args: Prisma.FormL9GeneralInformationUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload>
+          }
+          deleteMany: {
+            args: Prisma.FormL9GeneralInformationDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FormL9GeneralInformationUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FormL9GeneralInformationUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload>[]
+          }
+          upsert: {
+            args: Prisma.FormL9GeneralInformationUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationPayload>
+          }
+          aggregate: {
+            args: Prisma.FormL9GeneralInformationAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFormL9GeneralInformation>
+          }
+          groupBy: {
+            args: Prisma.FormL9GeneralInformationGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FormL9GeneralInformationGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FormL9GeneralInformationCountArgs<ExtArgs>
+            result: $Utils.Optional<FormL9GeneralInformationCountAggregateOutputType> | number
+          }
+        }
+      }
+      FormL9GeneralInformationContinue: {
+        payload: Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>
+        fields: Prisma.FormL9GeneralInformationContinueFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FormL9GeneralInformationContinueFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FormL9GeneralInformationContinueFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload>
+          }
+          findFirst: {
+            args: Prisma.FormL9GeneralInformationContinueFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FormL9GeneralInformationContinueFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload>
+          }
+          findMany: {
+            args: Prisma.FormL9GeneralInformationContinueFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload>[]
+          }
+          create: {
+            args: Prisma.FormL9GeneralInformationContinueCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload>
+          }
+          createMany: {
+            args: Prisma.FormL9GeneralInformationContinueCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FormL9GeneralInformationContinueCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload>[]
+          }
+          delete: {
+            args: Prisma.FormL9GeneralInformationContinueDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload>
+          }
+          update: {
+            args: Prisma.FormL9GeneralInformationContinueUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload>
+          }
+          deleteMany: {
+            args: Prisma.FormL9GeneralInformationContinueDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FormL9GeneralInformationContinueUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FormL9GeneralInformationContinueUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload>[]
+          }
+          upsert: {
+            args: Prisma.FormL9GeneralInformationContinueUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9GeneralInformationContinuePayload>
+          }
+          aggregate: {
+            args: Prisma.FormL9GeneralInformationContinueAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFormL9GeneralInformationContinue>
+          }
+          groupBy: {
+            args: Prisma.FormL9GeneralInformationContinueGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FormL9GeneralInformationContinueGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FormL9GeneralInformationContinueCountArgs<ExtArgs>
+            result: $Utils.Optional<FormL9GeneralInformationContinueCountAggregateOutputType> | number
+          }
+        }
+      }
+      FormL9Management: {
+        payload: Prisma.$FormL9ManagementPayload<ExtArgs>
+        fields: Prisma.FormL9ManagementFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FormL9ManagementFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FormL9ManagementFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload>
+          }
+          findFirst: {
+            args: Prisma.FormL9ManagementFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FormL9ManagementFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload>
+          }
+          findMany: {
+            args: Prisma.FormL9ManagementFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload>[]
+          }
+          create: {
+            args: Prisma.FormL9ManagementCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload>
+          }
+          createMany: {
+            args: Prisma.FormL9ManagementCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FormL9ManagementCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload>[]
+          }
+          delete: {
+            args: Prisma.FormL9ManagementDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload>
+          }
+          update: {
+            args: Prisma.FormL9ManagementUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload>
+          }
+          deleteMany: {
+            args: Prisma.FormL9ManagementDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FormL9ManagementUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FormL9ManagementUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload>[]
+          }
+          upsert: {
+            args: Prisma.FormL9ManagementUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9ManagementPayload>
+          }
+          aggregate: {
+            args: Prisma.FormL9ManagementAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFormL9Management>
+          }
+          groupBy: {
+            args: Prisma.FormL9ManagementGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FormL9ManagementGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FormL9ManagementCountArgs<ExtArgs>
+            result: $Utils.Optional<FormL9ManagementCountAggregateOutputType> | number
+          }
+        }
+      }
+      FormL9Employe: {
+        payload: Prisma.$FormL9EmployePayload<ExtArgs>
+        fields: Prisma.FormL9EmployeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FormL9EmployeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FormL9EmployeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload>
+          }
+          findFirst: {
+            args: Prisma.FormL9EmployeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FormL9EmployeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload>
+          }
+          findMany: {
+            args: Prisma.FormL9EmployeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload>[]
+          }
+          create: {
+            args: Prisma.FormL9EmployeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload>
+          }
+          createMany: {
+            args: Prisma.FormL9EmployeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FormL9EmployeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload>[]
+          }
+          delete: {
+            args: Prisma.FormL9EmployeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload>
+          }
+          update: {
+            args: Prisma.FormL9EmployeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload>
+          }
+          deleteMany: {
+            args: Prisma.FormL9EmployeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FormL9EmployeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FormL9EmployeUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload>[]
+          }
+          upsert: {
+            args: Prisma.FormL9EmployeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9EmployePayload>
+          }
+          aggregate: {
+            args: Prisma.FormL9EmployeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFormL9Employe>
+          }
+          groupBy: {
+            args: Prisma.FormL9EmployeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FormL9EmployeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FormL9EmployeCountArgs<ExtArgs>
+            result: $Utils.Optional<FormL9EmployeCountAggregateOutputType> | number
+          }
+        }
+      }
+      FormL9WorkExperience: {
+        payload: Prisma.$FormL9WorkExperiencePayload<ExtArgs>
+        fields: Prisma.FormL9WorkExperienceFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FormL9WorkExperienceFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FormL9WorkExperienceFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload>
+          }
+          findFirst: {
+            args: Prisma.FormL9WorkExperienceFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FormL9WorkExperienceFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload>
+          }
+          findMany: {
+            args: Prisma.FormL9WorkExperienceFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload>[]
+          }
+          create: {
+            args: Prisma.FormL9WorkExperienceCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload>
+          }
+          createMany: {
+            args: Prisma.FormL9WorkExperienceCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FormL9WorkExperienceCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload>[]
+          }
+          delete: {
+            args: Prisma.FormL9WorkExperienceDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload>
+          }
+          update: {
+            args: Prisma.FormL9WorkExperienceUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload>
+          }
+          deleteMany: {
+            args: Prisma.FormL9WorkExperienceDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FormL9WorkExperienceUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FormL9WorkExperienceUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload>[]
+          }
+          upsert: {
+            args: Prisma.FormL9WorkExperienceUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9WorkExperiencePayload>
+          }
+          aggregate: {
+            args: Prisma.FormL9WorkExperienceAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFormL9WorkExperience>
+          }
+          groupBy: {
+            args: Prisma.FormL9WorkExperienceGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FormL9WorkExperienceGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FormL9WorkExperienceCountArgs<ExtArgs>
+            result: $Utils.Optional<FormL9WorkExperienceCountAggregateOutputType> | number
+          }
+        }
+      }
+      FormL9Others: {
+        payload: Prisma.$FormL9OthersPayload<ExtArgs>
+        fields: Prisma.FormL9OthersFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FormL9OthersFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FormL9OthersFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload>
+          }
+          findFirst: {
+            args: Prisma.FormL9OthersFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FormL9OthersFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload>
+          }
+          findMany: {
+            args: Prisma.FormL9OthersFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload>[]
+          }
+          create: {
+            args: Prisma.FormL9OthersCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload>
+          }
+          createMany: {
+            args: Prisma.FormL9OthersCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FormL9OthersCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload>[]
+          }
+          delete: {
+            args: Prisma.FormL9OthersDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload>
+          }
+          update: {
+            args: Prisma.FormL9OthersUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload>
+          }
+          deleteMany: {
+            args: Prisma.FormL9OthersDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FormL9OthersUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FormL9OthersUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload>[]
+          }
+          upsert: {
+            args: Prisma.FormL9OthersUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9OthersPayload>
+          }
+          aggregate: {
+            args: Prisma.FormL9OthersAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFormL9Others>
+          }
+          groupBy: {
+            args: Prisma.FormL9OthersGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FormL9OthersGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FormL9OthersCountArgs<ExtArgs>
+            result: $Utils.Optional<FormL9OthersCountAggregateOutputType> | number
+          }
+        }
+      }
+      FormL9CertificateISO: {
+        payload: Prisma.$FormL9CertificateISOPayload<ExtArgs>
+        fields: Prisma.FormL9CertificateISOFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.FormL9CertificateISOFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.FormL9CertificateISOFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload>
+          }
+          findFirst: {
+            args: Prisma.FormL9CertificateISOFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.FormL9CertificateISOFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload>
+          }
+          findMany: {
+            args: Prisma.FormL9CertificateISOFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload>[]
+          }
+          create: {
+            args: Prisma.FormL9CertificateISOCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload>
+          }
+          createMany: {
+            args: Prisma.FormL9CertificateISOCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.FormL9CertificateISOCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload>[]
+          }
+          delete: {
+            args: Prisma.FormL9CertificateISODeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload>
+          }
+          update: {
+            args: Prisma.FormL9CertificateISOUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload>
+          }
+          deleteMany: {
+            args: Prisma.FormL9CertificateISODeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.FormL9CertificateISOUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.FormL9CertificateISOUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload>[]
+          }
+          upsert: {
+            args: Prisma.FormL9CertificateISOUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$FormL9CertificateISOPayload>
+          }
+          aggregate: {
+            args: Prisma.FormL9CertificateISOAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateFormL9CertificateISO>
+          }
+          groupBy: {
+            args: Prisma.FormL9CertificateISOGroupByArgs<ExtArgs>
+            result: $Utils.Optional<FormL9CertificateISOGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.FormL9CertificateISOCountArgs<ExtArgs>
+            result: $Utils.Optional<FormL9CertificateISOCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -1600,6 +2500,16 @@ export namespace Prisma {
     linkedDevice?: LinkedDeviceOmit
     companySegment?: CompanySegmentOmit
     profile?: ProfileOmit
+    company?: CompanyOmit
+    formL9?: FormL9Omit
+    formL9BankInfo?: FormL9BankInfoOmit
+    formL9GeneralInformation?: FormL9GeneralInformationOmit
+    formL9GeneralInformationContinue?: FormL9GeneralInformationContinueOmit
+    formL9Management?: FormL9ManagementOmit
+    formL9Employe?: FormL9EmployeOmit
+    formL9WorkExperience?: FormL9WorkExperienceOmit
+    formL9Others?: FormL9OthersOmit
+    formL9CertificateISO?: FormL9CertificateISOOmit
   }
 
   /* Types for Logging */
@@ -1800,11 +2710,11 @@ export namespace Prisma {
    */
 
   export type CompanySegmentCountOutputType = {
-    profile: number
+    company: number
   }
 
   export type CompanySegmentCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    profile?: boolean | CompanySegmentCountOutputTypeCountProfileArgs
+    company?: boolean | CompanySegmentCountOutputTypeCountCompanyArgs
   }
 
   // Custom InputTypes
@@ -1821,8 +2731,110 @@ export namespace Prisma {
   /**
    * CompanySegmentCountOutputType without action
    */
-  export type CompanySegmentCountOutputTypeCountProfileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CompanySegmentCountOutputTypeCountCompanyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CompanyWhereInput
+  }
+
+
+  /**
+   * Count Type CompanyCountOutputType
+   */
+
+  export type CompanyCountOutputType = {
+    profile: number
+  }
+
+  export type CompanyCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    profile?: boolean | CompanyCountOutputTypeCountProfileArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * CompanyCountOutputType without action
+   */
+  export type CompanyCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanyCountOutputType
+     */
+    select?: CompanyCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CompanyCountOutputType without action
+   */
+  export type CompanyCountOutputTypeCountProfileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ProfileWhereInput
+  }
+
+
+  /**
+   * Count Type FormL9CountOutputType
+   */
+
+  export type FormL9CountOutputType = {
+    managements: number
+    workExperiences: number
+  }
+
+  export type FormL9CountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    managements?: boolean | FormL9CountOutputTypeCountManagementsArgs
+    workExperiences?: boolean | FormL9CountOutputTypeCountWorkExperiencesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * FormL9CountOutputType without action
+   */
+  export type FormL9CountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CountOutputType
+     */
+    select?: FormL9CountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * FormL9CountOutputType without action
+   */
+  export type FormL9CountOutputTypeCountManagementsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9ManagementWhereInput
+  }
+
+  /**
+   * FormL9CountOutputType without action
+   */
+  export type FormL9CountOutputTypeCountWorkExperiencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9WorkExperienceWhereInput
+  }
+
+
+  /**
+   * Count Type FormL9OthersCountOutputType
+   */
+
+  export type FormL9OthersCountOutputType = {
+    certificateISOs: number
+  }
+
+  export type FormL9OthersCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    certificateISOs?: boolean | FormL9OthersCountOutputTypeCountCertificateISOsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * FormL9OthersCountOutputType without action
+   */
+  export type FormL9OthersCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9OthersCountOutputType
+     */
+    select?: FormL9OthersCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * FormL9OthersCountOutputType without action
+   */
+  export type FormL9OthersCountOutputTypeCountCertificateISOsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9CertificateISOWhereInput
   }
 
 
@@ -2788,6 +3800,7 @@ export namespace Prisma {
     email: string | null
     password: string | null
     isActive: boolean | null
+    isVerified: boolean | null
     sessionExpireDate: Date | null
     createdDate: Date | null
     updateDate: Date | null
@@ -2798,6 +3811,7 @@ export namespace Prisma {
     email: string | null
     password: string | null
     isActive: boolean | null
+    isVerified: boolean | null
     sessionExpireDate: Date | null
     createdDate: Date | null
     updateDate: Date | null
@@ -2808,6 +3822,7 @@ export namespace Prisma {
     email: number
     password: number
     isActive: number
+    isVerified: number
     sessionExpireDate: number
     createdDate: number
     updateDate: number
@@ -2820,6 +3835,7 @@ export namespace Prisma {
     email?: true
     password?: true
     isActive?: true
+    isVerified?: true
     sessionExpireDate?: true
     createdDate?: true
     updateDate?: true
@@ -2830,6 +3846,7 @@ export namespace Prisma {
     email?: true
     password?: true
     isActive?: true
+    isVerified?: true
     sessionExpireDate?: true
     createdDate?: true
     updateDate?: true
@@ -2840,6 +3857,7 @@ export namespace Prisma {
     email?: true
     password?: true
     isActive?: true
+    isVerified?: true
     sessionExpireDate?: true
     createdDate?: true
     updateDate?: true
@@ -2923,6 +3941,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive: boolean
+    isVerified: boolean
     sessionExpireDate: Date
     createdDate: Date
     updateDate: Date
@@ -2950,6 +3969,7 @@ export namespace Prisma {
     email?: boolean
     password?: boolean
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate?: boolean
     createdDate?: boolean
     updateDate?: boolean
@@ -2966,6 +3986,7 @@ export namespace Prisma {
     email?: boolean
     password?: boolean
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate?: boolean
     createdDate?: boolean
     updateDate?: boolean
@@ -2976,6 +3997,7 @@ export namespace Prisma {
     email?: boolean
     password?: boolean
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate?: boolean
     createdDate?: boolean
     updateDate?: boolean
@@ -2986,12 +4008,13 @@ export namespace Prisma {
     email?: boolean
     password?: boolean
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate?: boolean
     createdDate?: boolean
     updateDate?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "email" | "password" | "isActive" | "sessionExpireDate" | "createdDate" | "updateDate", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "email" | "password" | "isActive" | "isVerified" | "sessionExpireDate" | "createdDate" | "updateDate", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     logs?: boolean | User$logsArgs<ExtArgs>
     linkedDevice?: boolean | User$linkedDeviceArgs<ExtArgs>
@@ -3017,6 +4040,7 @@ export namespace Prisma {
       email: string
       password: string
       isActive: boolean
+      isVerified: boolean
       sessionExpireDate: Date
       createdDate: Date
       updateDate: Date
@@ -3452,6 +4476,7 @@ export namespace Prisma {
     readonly email: FieldRef<"User", 'String'>
     readonly password: FieldRef<"User", 'String'>
     readonly isActive: FieldRef<"User", 'Boolean'>
+    readonly isVerified: FieldRef<"User", 'Boolean'>
     readonly sessionExpireDate: FieldRef<"User", 'DateTime'>
     readonly createdDate: FieldRef<"User", 'DateTime'>
     readonly updateDate: FieldRef<"User", 'DateTime'>
@@ -10582,7 +11607,7 @@ export namespace Prisma {
     segmentId?: boolean
     segmentName?: boolean
     description?: boolean
-    profile?: boolean | CompanySegment$profileArgs<ExtArgs>
+    company?: boolean | CompanySegment$companyArgs<ExtArgs>
     _count?: boolean | CompanySegmentCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["companySegment"]>
 
@@ -10606,7 +11631,7 @@ export namespace Prisma {
 
   export type CompanySegmentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"segmentId" | "segmentName" | "description", ExtArgs["result"]["companySegment"]>
   export type CompanySegmentInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    profile?: boolean | CompanySegment$profileArgs<ExtArgs>
+    company?: boolean | CompanySegment$companyArgs<ExtArgs>
     _count?: boolean | CompanySegmentCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type CompanySegmentIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -10615,7 +11640,7 @@ export namespace Prisma {
   export type $CompanySegmentPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "CompanySegment"
     objects: {
-      profile: Prisma.$ProfilePayload<ExtArgs>[]
+      company: Prisma.$CompanyPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       segmentId: number
@@ -11015,7 +12040,7 @@ export namespace Prisma {
    */
   export interface Prisma__CompanySegmentClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    profile<T extends CompanySegment$profileArgs<ExtArgs> = {}>(args?: Subset<T, CompanySegment$profileArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    company<T extends CompanySegment$companyArgs<ExtArgs> = {}>(args?: Subset<T, CompanySegment$companyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -11436,27 +12461,27 @@ export namespace Prisma {
   }
 
   /**
-   * CompanySegment.profile
+   * CompanySegment.company
    */
-  export type CompanySegment$profileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CompanySegment$companyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Profile
+     * Select specific fields to fetch from the Company
      */
-    select?: ProfileSelect<ExtArgs> | null
+    select?: CompanySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Profile
+     * Omit specific fields from the Company
      */
-    omit?: ProfileOmit<ExtArgs> | null
+    omit?: CompanyOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: ProfileInclude<ExtArgs> | null
-    where?: ProfileWhereInput
-    orderBy?: ProfileOrderByWithRelationInput | ProfileOrderByWithRelationInput[]
-    cursor?: ProfileWhereUniqueInput
+    include?: CompanyInclude<ExtArgs> | null
+    where?: CompanyWhereInput
+    orderBy?: CompanyOrderByWithRelationInput | CompanyOrderByWithRelationInput[]
+    cursor?: CompanyWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: ProfileScalarFieldEnum | ProfileScalarFieldEnum[]
+    distinct?: CompanyScalarFieldEnum | CompanyScalarFieldEnum[]
   }
 
   /**
@@ -11484,140 +12509,62 @@ export namespace Prisma {
 
   export type AggregateProfile = {
     _count: ProfileCountAggregateOutputType | null
-    _avg: ProfileAvgAggregateOutputType | null
-    _sum: ProfileSumAggregateOutputType | null
     _min: ProfileMinAggregateOutputType | null
     _max: ProfileMaxAggregateOutputType | null
   }
 
-  export type ProfileAvgAggregateOutputType = {
-    segmentId: number | null
-  }
-
-  export type ProfileSumAggregateOutputType = {
-    segmentId: number | null
-  }
-
   export type ProfileMinAggregateOutputType = {
     userId: string | null
+    companyId: string | null
     fullName: string | null
     urlImage: string | null
-    companyName: string | null
-    npwp: string | null
-    deedNumber: string | null
-    establishedDate: Date | null
-    npwpUrl: string | null
-    deedUrl: string | null
-    description: string | null
-    segmentId: number | null
-    companyAddress: string | null
-    companyPhone: string | null
-    website: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
   export type ProfileMaxAggregateOutputType = {
     userId: string | null
+    companyId: string | null
     fullName: string | null
     urlImage: string | null
-    companyName: string | null
-    npwp: string | null
-    deedNumber: string | null
-    establishedDate: Date | null
-    npwpUrl: string | null
-    deedUrl: string | null
-    description: string | null
-    segmentId: number | null
-    companyAddress: string | null
-    companyPhone: string | null
-    website: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
   export type ProfileCountAggregateOutputType = {
     userId: number
+    companyId: number
     fullName: number
     urlImage: number
-    companyName: number
-    npwp: number
-    deedNumber: number
-    establishedDate: number
-    npwpUrl: number
-    deedUrl: number
-    description: number
-    segmentId: number
-    companyAddress: number
-    companyPhone: number
-    website: number
     createdAt: number
     updatedAt: number
     _all: number
   }
 
 
-  export type ProfileAvgAggregateInputType = {
-    segmentId?: true
-  }
-
-  export type ProfileSumAggregateInputType = {
-    segmentId?: true
-  }
-
   export type ProfileMinAggregateInputType = {
     userId?: true
+    companyId?: true
     fullName?: true
     urlImage?: true
-    companyName?: true
-    npwp?: true
-    deedNumber?: true
-    establishedDate?: true
-    npwpUrl?: true
-    deedUrl?: true
-    description?: true
-    segmentId?: true
-    companyAddress?: true
-    companyPhone?: true
-    website?: true
     createdAt?: true
     updatedAt?: true
   }
 
   export type ProfileMaxAggregateInputType = {
     userId?: true
+    companyId?: true
     fullName?: true
     urlImage?: true
-    companyName?: true
-    npwp?: true
-    deedNumber?: true
-    establishedDate?: true
-    npwpUrl?: true
-    deedUrl?: true
-    description?: true
-    segmentId?: true
-    companyAddress?: true
-    companyPhone?: true
-    website?: true
     createdAt?: true
     updatedAt?: true
   }
 
   export type ProfileCountAggregateInputType = {
     userId?: true
+    companyId?: true
     fullName?: true
     urlImage?: true
-    companyName?: true
-    npwp?: true
-    deedNumber?: true
-    establishedDate?: true
-    npwpUrl?: true
-    deedUrl?: true
-    description?: true
-    segmentId?: true
-    companyAddress?: true
-    companyPhone?: true
-    website?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -11661,18 +12608,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: ProfileAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: ProfileSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: ProfileMinAggregateInputType
@@ -11703,32 +12638,18 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: ProfileCountAggregateInputType | true
-    _avg?: ProfileAvgAggregateInputType
-    _sum?: ProfileSumAggregateInputType
     _min?: ProfileMinAggregateInputType
     _max?: ProfileMaxAggregateInputType
   }
 
   export type ProfileGroupByOutputType = {
     userId: string
-    fullName: string | null
+    companyId: string | null
+    fullName: string
     urlImage: string | null
-    companyName: string
-    npwp: string
-    deedNumber: string | null
-    establishedDate: Date | null
-    npwpUrl: string
-    deedUrl: string
-    description: string | null
-    segmentId: number | null
-    companyAddress: string | null
-    companyPhone: string | null
-    website: string | null
     createdAt: Date
     updatedAt: Date
     _count: ProfileCountAggregateOutputType | null
-    _avg: ProfileAvgAggregateOutputType | null
-    _sum: ProfileSumAggregateOutputType | null
     _min: ProfileMinAggregateOutputType | null
     _max: ProfileMaxAggregateOutputType | null
   }
@@ -11749,121 +12670,71 @@ export namespace Prisma {
 
   export type ProfileSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     userId?: boolean
+    companyId?: boolean
     fullName?: boolean
     urlImage?: boolean
-    companyName?: boolean
-    npwp?: boolean
-    deedNumber?: boolean
-    establishedDate?: boolean
-    npwpUrl?: boolean
-    deedUrl?: boolean
-    description?: boolean
-    segmentId?: boolean
-    companyAddress?: boolean
-    companyPhone?: boolean
-    website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    segment?: boolean | Profile$segmentArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
+    company?: boolean | Profile$companyArgs<ExtArgs>
   }, ExtArgs["result"]["profile"]>
 
   export type ProfileSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     userId?: boolean
+    companyId?: boolean
     fullName?: boolean
     urlImage?: boolean
-    companyName?: boolean
-    npwp?: boolean
-    deedNumber?: boolean
-    establishedDate?: boolean
-    npwpUrl?: boolean
-    deedUrl?: boolean
-    description?: boolean
-    segmentId?: boolean
-    companyAddress?: boolean
-    companyPhone?: boolean
-    website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    segment?: boolean | Profile$segmentArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
+    company?: boolean | Profile$companyArgs<ExtArgs>
   }, ExtArgs["result"]["profile"]>
 
   export type ProfileSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     userId?: boolean
+    companyId?: boolean
     fullName?: boolean
     urlImage?: boolean
-    companyName?: boolean
-    npwp?: boolean
-    deedNumber?: boolean
-    establishedDate?: boolean
-    npwpUrl?: boolean
-    deedUrl?: boolean
-    description?: boolean
-    segmentId?: boolean
-    companyAddress?: boolean
-    companyPhone?: boolean
-    website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    segment?: boolean | Profile$segmentArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
+    company?: boolean | Profile$companyArgs<ExtArgs>
   }, ExtArgs["result"]["profile"]>
 
   export type ProfileSelectScalar = {
     userId?: boolean
+    companyId?: boolean
     fullName?: boolean
     urlImage?: boolean
-    companyName?: boolean
-    npwp?: boolean
-    deedNumber?: boolean
-    establishedDate?: boolean
-    npwpUrl?: boolean
-    deedUrl?: boolean
-    description?: boolean
-    segmentId?: boolean
-    companyAddress?: boolean
-    companyPhone?: boolean
-    website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type ProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "fullName" | "urlImage" | "companyName" | "npwp" | "deedNumber" | "establishedDate" | "npwpUrl" | "deedUrl" | "description" | "segmentId" | "companyAddress" | "companyPhone" | "website" | "createdAt" | "updatedAt", ExtArgs["result"]["profile"]>
+  export type ProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "companyId" | "fullName" | "urlImage" | "createdAt" | "updatedAt", ExtArgs["result"]["profile"]>
   export type ProfileInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    segment?: boolean | Profile$segmentArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
+    company?: boolean | Profile$companyArgs<ExtArgs>
   }
   export type ProfileIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    segment?: boolean | Profile$segmentArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
+    company?: boolean | Profile$companyArgs<ExtArgs>
   }
   export type ProfileIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    segment?: boolean | Profile$segmentArgs<ExtArgs>
     user?: boolean | UserDefaultArgs<ExtArgs>
+    company?: boolean | Profile$companyArgs<ExtArgs>
   }
 
   export type $ProfilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Profile"
     objects: {
-      segment: Prisma.$CompanySegmentPayload<ExtArgs> | null
       user: Prisma.$UserPayload<ExtArgs>
+      company: Prisma.$CompanyPayload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       userId: string
-      fullName: string | null
+      companyId: string | null
+      fullName: string
       urlImage: string | null
-      companyName: string
-      npwp: string
-      deedNumber: string | null
-      establishedDate: Date | null
-      npwpUrl: string
-      deedUrl: string
-      description: string | null
-      segmentId: number | null
-      companyAddress: string | null
-      companyPhone: string | null
-      website: string | null
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["profile"]>
@@ -12260,8 +13131,8 @@ export namespace Prisma {
    */
   export interface Prisma__ProfileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    segment<T extends Profile$segmentArgs<ExtArgs> = {}>(args?: Subset<T, Profile$segmentArgs<ExtArgs>>): Prisma__CompanySegmentClient<$Result.GetResult<Prisma.$CompanySegmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    company<T extends Profile$companyArgs<ExtArgs> = {}>(args?: Subset<T, Profile$companyArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -12292,19 +13163,9 @@ export namespace Prisma {
    */
   interface ProfileFieldRefs {
     readonly userId: FieldRef<"Profile", 'String'>
+    readonly companyId: FieldRef<"Profile", 'String'>
     readonly fullName: FieldRef<"Profile", 'String'>
     readonly urlImage: FieldRef<"Profile", 'String'>
-    readonly companyName: FieldRef<"Profile", 'String'>
-    readonly npwp: FieldRef<"Profile", 'String'>
-    readonly deedNumber: FieldRef<"Profile", 'String'>
-    readonly establishedDate: FieldRef<"Profile", 'DateTime'>
-    readonly npwpUrl: FieldRef<"Profile", 'String'>
-    readonly deedUrl: FieldRef<"Profile", 'String'>
-    readonly description: FieldRef<"Profile", 'String'>
-    readonly segmentId: FieldRef<"Profile", 'Int'>
-    readonly companyAddress: FieldRef<"Profile", 'String'>
-    readonly companyPhone: FieldRef<"Profile", 'String'>
-    readonly website: FieldRef<"Profile", 'String'>
     readonly createdAt: FieldRef<"Profile", 'DateTime'>
     readonly updatedAt: FieldRef<"Profile", 'DateTime'>
   }
@@ -12703,22 +13564,22 @@ export namespace Prisma {
   }
 
   /**
-   * Profile.segment
+   * Profile.company
    */
-  export type Profile$segmentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Profile$companyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CompanySegment
+     * Select specific fields to fetch from the Company
      */
-    select?: CompanySegmentSelect<ExtArgs> | null
+    select?: CompanySelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CompanySegment
+     * Omit specific fields from the Company
      */
-    omit?: CompanySegmentOmit<ExtArgs> | null
+    omit?: CompanyOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CompanySegmentInclude<ExtArgs> | null
-    where?: CompanySegmentWhereInput
+    include?: CompanyInclude<ExtArgs> | null
+    where?: CompanyWhereInput
   }
 
   /**
@@ -12737,6 +13598,11399 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: ProfileInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Company
+   */
+
+  export type AggregateCompany = {
+    _count: CompanyCountAggregateOutputType | null
+    _avg: CompanyAvgAggregateOutputType | null
+    _sum: CompanySumAggregateOutputType | null
+    _min: CompanyMinAggregateOutputType | null
+    _max: CompanyMaxAggregateOutputType | null
+  }
+
+  export type CompanyAvgAggregateOutputType = {
+    segmentId: number | null
+  }
+
+  export type CompanySumAggregateOutputType = {
+    segmentId: number | null
+  }
+
+  export type CompanyMinAggregateOutputType = {
+    companyId: string | null
+    segmentId: number | null
+    urlImage: string | null
+    companyName: string | null
+    companyFoundingDate: Date | null
+    companyStatus: string | null
+    companyTelpFax: string | null
+    companyAddress: string | null
+    companyEmail: string | null
+    npwp: string | null
+    website: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    totalCapital: string | null
+  }
+
+  export type CompanyMaxAggregateOutputType = {
+    companyId: string | null
+    segmentId: number | null
+    urlImage: string | null
+    companyName: string | null
+    companyFoundingDate: Date | null
+    companyStatus: string | null
+    companyTelpFax: string | null
+    companyAddress: string | null
+    companyEmail: string | null
+    npwp: string | null
+    website: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    totalCapital: string | null
+  }
+
+  export type CompanyCountAggregateOutputType = {
+    companyId: number
+    segmentId: number
+    urlImage: number
+    companyName: number
+    companyFoundingDate: number
+    companyStatus: number
+    companyTelpFax: number
+    companyAddress: number
+    companyEmail: number
+    npwp: number
+    website: number
+    createdAt: number
+    updatedAt: number
+    totalCapital: number
+    _all: number
+  }
+
+
+  export type CompanyAvgAggregateInputType = {
+    segmentId?: true
+  }
+
+  export type CompanySumAggregateInputType = {
+    segmentId?: true
+  }
+
+  export type CompanyMinAggregateInputType = {
+    companyId?: true
+    segmentId?: true
+    urlImage?: true
+    companyName?: true
+    companyFoundingDate?: true
+    companyStatus?: true
+    companyTelpFax?: true
+    companyAddress?: true
+    companyEmail?: true
+    npwp?: true
+    website?: true
+    createdAt?: true
+    updatedAt?: true
+    totalCapital?: true
+  }
+
+  export type CompanyMaxAggregateInputType = {
+    companyId?: true
+    segmentId?: true
+    urlImage?: true
+    companyName?: true
+    companyFoundingDate?: true
+    companyStatus?: true
+    companyTelpFax?: true
+    companyAddress?: true
+    companyEmail?: true
+    npwp?: true
+    website?: true
+    createdAt?: true
+    updatedAt?: true
+    totalCapital?: true
+  }
+
+  export type CompanyCountAggregateInputType = {
+    companyId?: true
+    segmentId?: true
+    urlImage?: true
+    companyName?: true
+    companyFoundingDate?: true
+    companyStatus?: true
+    companyTelpFax?: true
+    companyAddress?: true
+    companyEmail?: true
+    npwp?: true
+    website?: true
+    createdAt?: true
+    updatedAt?: true
+    totalCapital?: true
+    _all?: true
+  }
+
+  export type CompanyAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Company to aggregate.
+     */
+    where?: CompanyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Companies to fetch.
+     */
+    orderBy?: CompanyOrderByWithRelationInput | CompanyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CompanyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Companies from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Companies.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Companies
+    **/
+    _count?: true | CompanyCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: CompanyAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: CompanySumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CompanyMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CompanyMaxAggregateInputType
+  }
+
+  export type GetCompanyAggregateType<T extends CompanyAggregateArgs> = {
+        [P in keyof T & keyof AggregateCompany]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCompany[P]>
+      : GetScalarType<T[P], AggregateCompany[P]>
+  }
+
+
+
+
+  export type CompanyGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CompanyWhereInput
+    orderBy?: CompanyOrderByWithAggregationInput | CompanyOrderByWithAggregationInput[]
+    by: CompanyScalarFieldEnum[] | CompanyScalarFieldEnum
+    having?: CompanyScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CompanyCountAggregateInputType | true
+    _avg?: CompanyAvgAggregateInputType
+    _sum?: CompanySumAggregateInputType
+    _min?: CompanyMinAggregateInputType
+    _max?: CompanyMaxAggregateInputType
+  }
+
+  export type CompanyGroupByOutputType = {
+    companyId: string
+    segmentId: number
+    urlImage: string | null
+    companyName: string
+    companyFoundingDate: Date
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    website: string | null
+    createdAt: Date
+    updatedAt: Date
+    totalCapital: string | null
+    _count: CompanyCountAggregateOutputType | null
+    _avg: CompanyAvgAggregateOutputType | null
+    _sum: CompanySumAggregateOutputType | null
+    _min: CompanyMinAggregateOutputType | null
+    _max: CompanyMaxAggregateOutputType | null
+  }
+
+  type GetCompanyGroupByPayload<T extends CompanyGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CompanyGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CompanyGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CompanyGroupByOutputType[P]>
+            : GetScalarType<T[P], CompanyGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CompanySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    companyId?: boolean
+    segmentId?: boolean
+    urlImage?: boolean
+    companyName?: boolean
+    companyFoundingDate?: boolean
+    companyStatus?: boolean
+    companyTelpFax?: boolean
+    companyAddress?: boolean
+    companyEmail?: boolean
+    npwp?: boolean
+    website?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    totalCapital?: boolean
+    profile?: boolean | Company$profileArgs<ExtArgs>
+    segment?: boolean | Company$segmentArgs<ExtArgs>
+    formL9?: boolean | Company$formL9Args<ExtArgs>
+    _count?: boolean | CompanyCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["company"]>
+
+  export type CompanySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    companyId?: boolean
+    segmentId?: boolean
+    urlImage?: boolean
+    companyName?: boolean
+    companyFoundingDate?: boolean
+    companyStatus?: boolean
+    companyTelpFax?: boolean
+    companyAddress?: boolean
+    companyEmail?: boolean
+    npwp?: boolean
+    website?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    totalCapital?: boolean
+    segment?: boolean | Company$segmentArgs<ExtArgs>
+  }, ExtArgs["result"]["company"]>
+
+  export type CompanySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    companyId?: boolean
+    segmentId?: boolean
+    urlImage?: boolean
+    companyName?: boolean
+    companyFoundingDate?: boolean
+    companyStatus?: boolean
+    companyTelpFax?: boolean
+    companyAddress?: boolean
+    companyEmail?: boolean
+    npwp?: boolean
+    website?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    totalCapital?: boolean
+    segment?: boolean | Company$segmentArgs<ExtArgs>
+  }, ExtArgs["result"]["company"]>
+
+  export type CompanySelectScalar = {
+    companyId?: boolean
+    segmentId?: boolean
+    urlImage?: boolean
+    companyName?: boolean
+    companyFoundingDate?: boolean
+    companyStatus?: boolean
+    companyTelpFax?: boolean
+    companyAddress?: boolean
+    companyEmail?: boolean
+    npwp?: boolean
+    website?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    totalCapital?: boolean
+  }
+
+  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "website" | "createdAt" | "updatedAt" | "totalCapital", ExtArgs["result"]["company"]>
+  export type CompanyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    profile?: boolean | Company$profileArgs<ExtArgs>
+    segment?: boolean | Company$segmentArgs<ExtArgs>
+    formL9?: boolean | Company$formL9Args<ExtArgs>
+    _count?: boolean | CompanyCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type CompanyIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    segment?: boolean | Company$segmentArgs<ExtArgs>
+  }
+  export type CompanyIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    segment?: boolean | Company$segmentArgs<ExtArgs>
+  }
+
+  export type $CompanyPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Company"
+    objects: {
+      profile: Prisma.$ProfilePayload<ExtArgs>[]
+      segment: Prisma.$CompanySegmentPayload<ExtArgs> | null
+      formL9: Prisma.$FormL9Payload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      companyId: string
+      segmentId: number
+      urlImage: string | null
+      companyName: string
+      companyFoundingDate: Date
+      companyStatus: string
+      companyTelpFax: string
+      companyAddress: string
+      companyEmail: string
+      npwp: string
+      website: string | null
+      createdAt: Date
+      updatedAt: Date
+      totalCapital: string | null
+    }, ExtArgs["result"]["company"]>
+    composites: {}
+  }
+
+  type CompanyGetPayload<S extends boolean | null | undefined | CompanyDefaultArgs> = $Result.GetResult<Prisma.$CompanyPayload, S>
+
+  type CompanyCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CompanyFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CompanyCountAggregateInputType | true
+    }
+
+  export interface CompanyDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Company'], meta: { name: 'Company' } }
+    /**
+     * Find zero or one Company that matches the filter.
+     * @param {CompanyFindUniqueArgs} args - Arguments to find a Company
+     * @example
+     * // Get one Company
+     * const company = await prisma.company.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CompanyFindUniqueArgs>(args: SelectSubset<T, CompanyFindUniqueArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Company that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CompanyFindUniqueOrThrowArgs} args - Arguments to find a Company
+     * @example
+     * // Get one Company
+     * const company = await prisma.company.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CompanyFindUniqueOrThrowArgs>(args: SelectSubset<T, CompanyFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Company that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanyFindFirstArgs} args - Arguments to find a Company
+     * @example
+     * // Get one Company
+     * const company = await prisma.company.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CompanyFindFirstArgs>(args?: SelectSubset<T, CompanyFindFirstArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Company that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanyFindFirstOrThrowArgs} args - Arguments to find a Company
+     * @example
+     * // Get one Company
+     * const company = await prisma.company.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CompanyFindFirstOrThrowArgs>(args?: SelectSubset<T, CompanyFindFirstOrThrowArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Companies that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanyFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Companies
+     * const companies = await prisma.company.findMany()
+     * 
+     * // Get first 10 Companies
+     * const companies = await prisma.company.findMany({ take: 10 })
+     * 
+     * // Only select the `companyId`
+     * const companyWithCompanyIdOnly = await prisma.company.findMany({ select: { companyId: true } })
+     * 
+     */
+    findMany<T extends CompanyFindManyArgs>(args?: SelectSubset<T, CompanyFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Company.
+     * @param {CompanyCreateArgs} args - Arguments to create a Company.
+     * @example
+     * // Create one Company
+     * const Company = await prisma.company.create({
+     *   data: {
+     *     // ... data to create a Company
+     *   }
+     * })
+     * 
+     */
+    create<T extends CompanyCreateArgs>(args: SelectSubset<T, CompanyCreateArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Companies.
+     * @param {CompanyCreateManyArgs} args - Arguments to create many Companies.
+     * @example
+     * // Create many Companies
+     * const company = await prisma.company.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CompanyCreateManyArgs>(args?: SelectSubset<T, CompanyCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Companies and returns the data saved in the database.
+     * @param {CompanyCreateManyAndReturnArgs} args - Arguments to create many Companies.
+     * @example
+     * // Create many Companies
+     * const company = await prisma.company.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Companies and only return the `companyId`
+     * const companyWithCompanyIdOnly = await prisma.company.createManyAndReturn({
+     *   select: { companyId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CompanyCreateManyAndReturnArgs>(args?: SelectSubset<T, CompanyCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Company.
+     * @param {CompanyDeleteArgs} args - Arguments to delete one Company.
+     * @example
+     * // Delete one Company
+     * const Company = await prisma.company.delete({
+     *   where: {
+     *     // ... filter to delete one Company
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CompanyDeleteArgs>(args: SelectSubset<T, CompanyDeleteArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Company.
+     * @param {CompanyUpdateArgs} args - Arguments to update one Company.
+     * @example
+     * // Update one Company
+     * const company = await prisma.company.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CompanyUpdateArgs>(args: SelectSubset<T, CompanyUpdateArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Companies.
+     * @param {CompanyDeleteManyArgs} args - Arguments to filter Companies to delete.
+     * @example
+     * // Delete a few Companies
+     * const { count } = await prisma.company.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CompanyDeleteManyArgs>(args?: SelectSubset<T, CompanyDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Companies.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanyUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Companies
+     * const company = await prisma.company.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CompanyUpdateManyArgs>(args: SelectSubset<T, CompanyUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Companies and returns the data updated in the database.
+     * @param {CompanyUpdateManyAndReturnArgs} args - Arguments to update many Companies.
+     * @example
+     * // Update many Companies
+     * const company = await prisma.company.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Companies and only return the `companyId`
+     * const companyWithCompanyIdOnly = await prisma.company.updateManyAndReturn({
+     *   select: { companyId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CompanyUpdateManyAndReturnArgs>(args: SelectSubset<T, CompanyUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Company.
+     * @param {CompanyUpsertArgs} args - Arguments to update or create a Company.
+     * @example
+     * // Update or create a Company
+     * const company = await prisma.company.upsert({
+     *   create: {
+     *     // ... data to create a Company
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Company we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CompanyUpsertArgs>(args: SelectSubset<T, CompanyUpsertArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Companies.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanyCountArgs} args - Arguments to filter Companies to count.
+     * @example
+     * // Count the number of Companies
+     * const count = await prisma.company.count({
+     *   where: {
+     *     // ... the filter for the Companies we want to count
+     *   }
+     * })
+    **/
+    count<T extends CompanyCountArgs>(
+      args?: Subset<T, CompanyCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CompanyCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Company.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanyAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CompanyAggregateArgs>(args: Subset<T, CompanyAggregateArgs>): Prisma.PrismaPromise<GetCompanyAggregateType<T>>
+
+    /**
+     * Group by Company.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanyGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CompanyGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CompanyGroupByArgs['orderBy'] }
+        : { orderBy?: CompanyGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CompanyGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCompanyGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Company model
+   */
+  readonly fields: CompanyFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Company.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CompanyClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    profile<T extends Company$profileArgs<ExtArgs> = {}>(args?: Subset<T, Company$profileArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    segment<T extends Company$segmentArgs<ExtArgs> = {}>(args?: Subset<T, Company$segmentArgs<ExtArgs>>): Prisma__CompanySegmentClient<$Result.GetResult<Prisma.$CompanySegmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    formL9<T extends Company$formL9Args<ExtArgs> = {}>(args?: Subset<T, Company$formL9Args<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Company model
+   */
+  interface CompanyFieldRefs {
+    readonly companyId: FieldRef<"Company", 'String'>
+    readonly segmentId: FieldRef<"Company", 'Int'>
+    readonly urlImage: FieldRef<"Company", 'String'>
+    readonly companyName: FieldRef<"Company", 'String'>
+    readonly companyFoundingDate: FieldRef<"Company", 'DateTime'>
+    readonly companyStatus: FieldRef<"Company", 'String'>
+    readonly companyTelpFax: FieldRef<"Company", 'String'>
+    readonly companyAddress: FieldRef<"Company", 'String'>
+    readonly companyEmail: FieldRef<"Company", 'String'>
+    readonly npwp: FieldRef<"Company", 'String'>
+    readonly website: FieldRef<"Company", 'String'>
+    readonly createdAt: FieldRef<"Company", 'DateTime'>
+    readonly updatedAt: FieldRef<"Company", 'DateTime'>
+    readonly totalCapital: FieldRef<"Company", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Company findUnique
+   */
+  export type CompanyFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+    /**
+     * Filter, which Company to fetch.
+     */
+    where: CompanyWhereUniqueInput
+  }
+
+  /**
+   * Company findUniqueOrThrow
+   */
+  export type CompanyFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+    /**
+     * Filter, which Company to fetch.
+     */
+    where: CompanyWhereUniqueInput
+  }
+
+  /**
+   * Company findFirst
+   */
+  export type CompanyFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+    /**
+     * Filter, which Company to fetch.
+     */
+    where?: CompanyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Companies to fetch.
+     */
+    orderBy?: CompanyOrderByWithRelationInput | CompanyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Companies.
+     */
+    cursor?: CompanyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Companies from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Companies.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Companies.
+     */
+    distinct?: CompanyScalarFieldEnum | CompanyScalarFieldEnum[]
+  }
+
+  /**
+   * Company findFirstOrThrow
+   */
+  export type CompanyFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+    /**
+     * Filter, which Company to fetch.
+     */
+    where?: CompanyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Companies to fetch.
+     */
+    orderBy?: CompanyOrderByWithRelationInput | CompanyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Companies.
+     */
+    cursor?: CompanyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Companies from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Companies.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Companies.
+     */
+    distinct?: CompanyScalarFieldEnum | CompanyScalarFieldEnum[]
+  }
+
+  /**
+   * Company findMany
+   */
+  export type CompanyFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+    /**
+     * Filter, which Companies to fetch.
+     */
+    where?: CompanyWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Companies to fetch.
+     */
+    orderBy?: CompanyOrderByWithRelationInput | CompanyOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Companies.
+     */
+    cursor?: CompanyWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Companies from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Companies.
+     */
+    skip?: number
+    distinct?: CompanyScalarFieldEnum | CompanyScalarFieldEnum[]
+  }
+
+  /**
+   * Company create
+   */
+  export type CompanyCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Company.
+     */
+    data: XOR<CompanyCreateInput, CompanyUncheckedCreateInput>
+  }
+
+  /**
+   * Company createMany
+   */
+  export type CompanyCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Companies.
+     */
+    data: CompanyCreateManyInput | CompanyCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Company createManyAndReturn
+   */
+  export type CompanyCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * The data used to create many Companies.
+     */
+    data: CompanyCreateManyInput | CompanyCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Company update
+   */
+  export type CompanyUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Company.
+     */
+    data: XOR<CompanyUpdateInput, CompanyUncheckedUpdateInput>
+    /**
+     * Choose, which Company to update.
+     */
+    where: CompanyWhereUniqueInput
+  }
+
+  /**
+   * Company updateMany
+   */
+  export type CompanyUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Companies.
+     */
+    data: XOR<CompanyUpdateManyMutationInput, CompanyUncheckedUpdateManyInput>
+    /**
+     * Filter which Companies to update
+     */
+    where?: CompanyWhereInput
+    /**
+     * Limit how many Companies to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Company updateManyAndReturn
+   */
+  export type CompanyUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * The data used to update Companies.
+     */
+    data: XOR<CompanyUpdateManyMutationInput, CompanyUncheckedUpdateManyInput>
+    /**
+     * Filter which Companies to update
+     */
+    where?: CompanyWhereInput
+    /**
+     * Limit how many Companies to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Company upsert
+   */
+  export type CompanyUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Company to update in case it exists.
+     */
+    where: CompanyWhereUniqueInput
+    /**
+     * In case the Company found by the `where` argument doesn't exist, create a new Company with this data.
+     */
+    create: XOR<CompanyCreateInput, CompanyUncheckedCreateInput>
+    /**
+     * In case the Company was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CompanyUpdateInput, CompanyUncheckedUpdateInput>
+  }
+
+  /**
+   * Company delete
+   */
+  export type CompanyDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+    /**
+     * Filter which Company to delete.
+     */
+    where: CompanyWhereUniqueInput
+  }
+
+  /**
+   * Company deleteMany
+   */
+  export type CompanyDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Companies to delete
+     */
+    where?: CompanyWhereInput
+    /**
+     * Limit how many Companies to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Company.profile
+   */
+  export type Company$profileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Profile
+     */
+    select?: ProfileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Profile
+     */
+    omit?: ProfileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProfileInclude<ExtArgs> | null
+    where?: ProfileWhereInput
+    orderBy?: ProfileOrderByWithRelationInput | ProfileOrderByWithRelationInput[]
+    cursor?: ProfileWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProfileScalarFieldEnum | ProfileScalarFieldEnum[]
+  }
+
+  /**
+   * Company.segment
+   */
+  export type Company$segmentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegment
+     */
+    select?: CompanySegmentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegment
+     */
+    omit?: CompanySegmentOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentInclude<ExtArgs> | null
+    where?: CompanySegmentWhereInput
+  }
+
+  /**
+   * Company.formL9
+   */
+  export type Company$formL9Args<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    where?: FormL9WhereInput
+  }
+
+  /**
+   * Company without action
+   */
+  export type CompanyDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Company
+     */
+    select?: CompanySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Company
+     */
+    omit?: CompanyOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanyInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FormL9
+   */
+
+  export type AggregateFormL9 = {
+    _count: FormL9CountAggregateOutputType | null
+    _min: FormL9MinAggregateOutputType | null
+    _max: FormL9MaxAggregateOutputType | null
+  }
+
+  export type FormL9MinAggregateOutputType = {
+    formL9Id: string | null
+    companyId: string | null
+    status: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type FormL9MaxAggregateOutputType = {
+    formL9Id: string | null
+    companyId: string | null
+    status: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type FormL9CountAggregateOutputType = {
+    formL9Id: number
+    companyId: number
+    status: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type FormL9MinAggregateInputType = {
+    formL9Id?: true
+    companyId?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type FormL9MaxAggregateInputType = {
+    formL9Id?: true
+    companyId?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type FormL9CountAggregateInputType = {
+    formL9Id?: true
+    companyId?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type FormL9AggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9 to aggregate.
+     */
+    where?: FormL9WhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9s to fetch.
+     */
+    orderBy?: FormL9OrderByWithRelationInput | FormL9OrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FormL9WhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9s from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9s.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FormL9s
+    **/
+    _count?: true | FormL9CountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FormL9MinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FormL9MaxAggregateInputType
+  }
+
+  export type GetFormL9AggregateType<T extends FormL9AggregateArgs> = {
+        [P in keyof T & keyof AggregateFormL9]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFormL9[P]>
+      : GetScalarType<T[P], AggregateFormL9[P]>
+  }
+
+
+
+
+  export type FormL9GroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9WhereInput
+    orderBy?: FormL9OrderByWithAggregationInput | FormL9OrderByWithAggregationInput[]
+    by: FormL9ScalarFieldEnum[] | FormL9ScalarFieldEnum
+    having?: FormL9ScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FormL9CountAggregateInputType | true
+    _min?: FormL9MinAggregateInputType
+    _max?: FormL9MaxAggregateInputType
+  }
+
+  export type FormL9GroupByOutputType = {
+    formL9Id: string
+    companyId: string
+    status: string
+    createdAt: Date
+    updatedAt: Date
+    _count: FormL9CountAggregateOutputType | null
+    _min: FormL9MinAggregateOutputType | null
+    _max: FormL9MaxAggregateOutputType | null
+  }
+
+  type GetFormL9GroupByPayload<T extends FormL9GroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FormL9GroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FormL9GroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FormL9GroupByOutputType[P]>
+            : GetScalarType<T[P], FormL9GroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FormL9Select<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9Id?: boolean
+    companyId?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+    bankInfo?: boolean | FormL9$bankInfoArgs<ExtArgs>
+    generalInformation?: boolean | FormL9$generalInformationArgs<ExtArgs>
+    employeeInfo?: boolean | FormL9$employeeInfoArgs<ExtArgs>
+    others?: boolean | FormL9$othersArgs<ExtArgs>
+    managements?: boolean | FormL9$managementsArgs<ExtArgs>
+    workExperiences?: boolean | FormL9$workExperiencesArgs<ExtArgs>
+    _count?: boolean | FormL9CountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9"]>
+
+  export type FormL9SelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9Id?: boolean
+    companyId?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9"]>
+
+  export type FormL9SelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9Id?: boolean
+    companyId?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9"]>
+
+  export type FormL9SelectScalar = {
+    formL9Id?: boolean
+    companyId?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type FormL9Omit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9Id" | "companyId" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9"]>
+  export type FormL9Include<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+    bankInfo?: boolean | FormL9$bankInfoArgs<ExtArgs>
+    generalInformation?: boolean | FormL9$generalInformationArgs<ExtArgs>
+    employeeInfo?: boolean | FormL9$employeeInfoArgs<ExtArgs>
+    others?: boolean | FormL9$othersArgs<ExtArgs>
+    managements?: boolean | FormL9$managementsArgs<ExtArgs>
+    workExperiences?: boolean | FormL9$workExperiencesArgs<ExtArgs>
+    _count?: boolean | FormL9CountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type FormL9IncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+  }
+  export type FormL9IncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+  }
+
+  export type $FormL9Payload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FormL9"
+    objects: {
+      company: Prisma.$CompanyPayload<ExtArgs>
+      bankInfo: Prisma.$FormL9BankInfoPayload<ExtArgs> | null
+      generalInformation: Prisma.$FormL9GeneralInformationPayload<ExtArgs> | null
+      employeeInfo: Prisma.$FormL9EmployePayload<ExtArgs> | null
+      others: Prisma.$FormL9OthersPayload<ExtArgs> | null
+      managements: Prisma.$FormL9ManagementPayload<ExtArgs>[]
+      workExperiences: Prisma.$FormL9WorkExperiencePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      formL9Id: string
+      companyId: string
+      status: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["formL9"]>
+    composites: {}
+  }
+
+  type FormL9GetPayload<S extends boolean | null | undefined | FormL9DefaultArgs> = $Result.GetResult<Prisma.$FormL9Payload, S>
+
+  type FormL9CountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FormL9FindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FormL9CountAggregateInputType | true
+    }
+
+  export interface FormL9Delegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FormL9'], meta: { name: 'FormL9' } }
+    /**
+     * Find zero or one FormL9 that matches the filter.
+     * @param {FormL9FindUniqueArgs} args - Arguments to find a FormL9
+     * @example
+     * // Get one FormL9
+     * const formL9 = await prisma.formL9.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FormL9FindUniqueArgs>(args: SelectSubset<T, FormL9FindUniqueArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FormL9 that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FormL9FindUniqueOrThrowArgs} args - Arguments to find a FormL9
+     * @example
+     * // Get one FormL9
+     * const formL9 = await prisma.formL9.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FormL9FindUniqueOrThrowArgs>(args: SelectSubset<T, FormL9FindUniqueOrThrowArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9 that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9FindFirstArgs} args - Arguments to find a FormL9
+     * @example
+     * // Get one FormL9
+     * const formL9 = await prisma.formL9.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FormL9FindFirstArgs>(args?: SelectSubset<T, FormL9FindFirstArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9 that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9FindFirstOrThrowArgs} args - Arguments to find a FormL9
+     * @example
+     * // Get one FormL9
+     * const formL9 = await prisma.formL9.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FormL9FindFirstOrThrowArgs>(args?: SelectSubset<T, FormL9FindFirstOrThrowArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FormL9s that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9FindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FormL9s
+     * const formL9s = await prisma.formL9.findMany()
+     * 
+     * // Get first 10 FormL9s
+     * const formL9s = await prisma.formL9.findMany({ take: 10 })
+     * 
+     * // Only select the `formL9Id`
+     * const formL9WithFormL9IdOnly = await prisma.formL9.findMany({ select: { formL9Id: true } })
+     * 
+     */
+    findMany<T extends FormL9FindManyArgs>(args?: SelectSubset<T, FormL9FindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FormL9.
+     * @param {FormL9CreateArgs} args - Arguments to create a FormL9.
+     * @example
+     * // Create one FormL9
+     * const FormL9 = await prisma.formL9.create({
+     *   data: {
+     *     // ... data to create a FormL9
+     *   }
+     * })
+     * 
+     */
+    create<T extends FormL9CreateArgs>(args: SelectSubset<T, FormL9CreateArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FormL9s.
+     * @param {FormL9CreateManyArgs} args - Arguments to create many FormL9s.
+     * @example
+     * // Create many FormL9s
+     * const formL9 = await prisma.formL9.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FormL9CreateManyArgs>(args?: SelectSubset<T, FormL9CreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FormL9s and returns the data saved in the database.
+     * @param {FormL9CreateManyAndReturnArgs} args - Arguments to create many FormL9s.
+     * @example
+     * // Create many FormL9s
+     * const formL9 = await prisma.formL9.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FormL9s and only return the `formL9Id`
+     * const formL9WithFormL9IdOnly = await prisma.formL9.createManyAndReturn({
+     *   select: { formL9Id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FormL9CreateManyAndReturnArgs>(args?: SelectSubset<T, FormL9CreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FormL9.
+     * @param {FormL9DeleteArgs} args - Arguments to delete one FormL9.
+     * @example
+     * // Delete one FormL9
+     * const FormL9 = await prisma.formL9.delete({
+     *   where: {
+     *     // ... filter to delete one FormL9
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FormL9DeleteArgs>(args: SelectSubset<T, FormL9DeleteArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FormL9.
+     * @param {FormL9UpdateArgs} args - Arguments to update one FormL9.
+     * @example
+     * // Update one FormL9
+     * const formL9 = await prisma.formL9.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FormL9UpdateArgs>(args: SelectSubset<T, FormL9UpdateArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FormL9s.
+     * @param {FormL9DeleteManyArgs} args - Arguments to filter FormL9s to delete.
+     * @example
+     * // Delete a few FormL9s
+     * const { count } = await prisma.formL9.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FormL9DeleteManyArgs>(args?: SelectSubset<T, FormL9DeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9s.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9UpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FormL9s
+     * const formL9 = await prisma.formL9.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FormL9UpdateManyArgs>(args: SelectSubset<T, FormL9UpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9s and returns the data updated in the database.
+     * @param {FormL9UpdateManyAndReturnArgs} args - Arguments to update many FormL9s.
+     * @example
+     * // Update many FormL9s
+     * const formL9 = await prisma.formL9.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FormL9s and only return the `formL9Id`
+     * const formL9WithFormL9IdOnly = await prisma.formL9.updateManyAndReturn({
+     *   select: { formL9Id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FormL9UpdateManyAndReturnArgs>(args: SelectSubset<T, FormL9UpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FormL9.
+     * @param {FormL9UpsertArgs} args - Arguments to update or create a FormL9.
+     * @example
+     * // Update or create a FormL9
+     * const formL9 = await prisma.formL9.upsert({
+     *   create: {
+     *     // ... data to create a FormL9
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FormL9 we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FormL9UpsertArgs>(args: SelectSubset<T, FormL9UpsertArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FormL9s.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9CountArgs} args - Arguments to filter FormL9s to count.
+     * @example
+     * // Count the number of FormL9s
+     * const count = await prisma.formL9.count({
+     *   where: {
+     *     // ... the filter for the FormL9s we want to count
+     *   }
+     * })
+    **/
+    count<T extends FormL9CountArgs>(
+      args?: Subset<T, FormL9CountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FormL9CountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FormL9.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9AggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FormL9AggregateArgs>(args: Subset<T, FormL9AggregateArgs>): Prisma.PrismaPromise<GetFormL9AggregateType<T>>
+
+    /**
+     * Group by FormL9.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FormL9GroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FormL9GroupByArgs['orderBy'] }
+        : { orderBy?: FormL9GroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FormL9GroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFormL9GroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FormL9 model
+   */
+  readonly fields: FormL9FieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FormL9.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FormL9Client<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    company<T extends CompanyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CompanyDefaultArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    bankInfo<T extends FormL9$bankInfoArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$bankInfoArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    generalInformation<T extends FormL9$generalInformationArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$generalInformationArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    employeeInfo<T extends FormL9$employeeInfoArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$employeeInfoArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    others<T extends FormL9$othersArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$othersArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    managements<T extends FormL9$managementsArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$managementsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    workExperiences<T extends FormL9$workExperiencesArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$workExperiencesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FormL9 model
+   */
+  interface FormL9FieldRefs {
+    readonly formL9Id: FieldRef<"FormL9", 'String'>
+    readonly companyId: FieldRef<"FormL9", 'String'>
+    readonly status: FieldRef<"FormL9", 'String'>
+    readonly createdAt: FieldRef<"FormL9", 'DateTime'>
+    readonly updatedAt: FieldRef<"FormL9", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FormL9 findUnique
+   */
+  export type FormL9FindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    /**
+     * Filter, which FormL9 to fetch.
+     */
+    where: FormL9WhereUniqueInput
+  }
+
+  /**
+   * FormL9 findUniqueOrThrow
+   */
+  export type FormL9FindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    /**
+     * Filter, which FormL9 to fetch.
+     */
+    where: FormL9WhereUniqueInput
+  }
+
+  /**
+   * FormL9 findFirst
+   */
+  export type FormL9FindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    /**
+     * Filter, which FormL9 to fetch.
+     */
+    where?: FormL9WhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9s to fetch.
+     */
+    orderBy?: FormL9OrderByWithRelationInput | FormL9OrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9s.
+     */
+    cursor?: FormL9WhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9s from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9s.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9s.
+     */
+    distinct?: FormL9ScalarFieldEnum | FormL9ScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9 findFirstOrThrow
+   */
+  export type FormL9FindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    /**
+     * Filter, which FormL9 to fetch.
+     */
+    where?: FormL9WhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9s to fetch.
+     */
+    orderBy?: FormL9OrderByWithRelationInput | FormL9OrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9s.
+     */
+    cursor?: FormL9WhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9s from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9s.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9s.
+     */
+    distinct?: FormL9ScalarFieldEnum | FormL9ScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9 findMany
+   */
+  export type FormL9FindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    /**
+     * Filter, which FormL9s to fetch.
+     */
+    where?: FormL9WhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9s to fetch.
+     */
+    orderBy?: FormL9OrderByWithRelationInput | FormL9OrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FormL9s.
+     */
+    cursor?: FormL9WhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9s from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9s.
+     */
+    skip?: number
+    distinct?: FormL9ScalarFieldEnum | FormL9ScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9 create
+   */
+  export type FormL9CreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    /**
+     * The data needed to create a FormL9.
+     */
+    data: XOR<FormL9CreateInput, FormL9UncheckedCreateInput>
+  }
+
+  /**
+   * FormL9 createMany
+   */
+  export type FormL9CreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FormL9s.
+     */
+    data: FormL9CreateManyInput | FormL9CreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FormL9 createManyAndReturn
+   */
+  export type FormL9CreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9SelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * The data used to create many FormL9s.
+     */
+    data: FormL9CreateManyInput | FormL9CreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9IncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9 update
+   */
+  export type FormL9UpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    /**
+     * The data needed to update a FormL9.
+     */
+    data: XOR<FormL9UpdateInput, FormL9UncheckedUpdateInput>
+    /**
+     * Choose, which FormL9 to update.
+     */
+    where: FormL9WhereUniqueInput
+  }
+
+  /**
+   * FormL9 updateMany
+   */
+  export type FormL9UpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FormL9s.
+     */
+    data: XOR<FormL9UpdateManyMutationInput, FormL9UncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9s to update
+     */
+    where?: FormL9WhereInput
+    /**
+     * Limit how many FormL9s to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9 updateManyAndReturn
+   */
+  export type FormL9UpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9SelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * The data used to update FormL9s.
+     */
+    data: XOR<FormL9UpdateManyMutationInput, FormL9UncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9s to update
+     */
+    where?: FormL9WhereInput
+    /**
+     * Limit how many FormL9s to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9IncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9 upsert
+   */
+  export type FormL9UpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    /**
+     * The filter to search for the FormL9 to update in case it exists.
+     */
+    where: FormL9WhereUniqueInput
+    /**
+     * In case the FormL9 found by the `where` argument doesn't exist, create a new FormL9 with this data.
+     */
+    create: XOR<FormL9CreateInput, FormL9UncheckedCreateInput>
+    /**
+     * In case the FormL9 was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FormL9UpdateInput, FormL9UncheckedUpdateInput>
+  }
+
+  /**
+   * FormL9 delete
+   */
+  export type FormL9DeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+    /**
+     * Filter which FormL9 to delete.
+     */
+    where: FormL9WhereUniqueInput
+  }
+
+  /**
+   * FormL9 deleteMany
+   */
+  export type FormL9DeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9s to delete
+     */
+    where?: FormL9WhereInput
+    /**
+     * Limit how many FormL9s to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9.bankInfo
+   */
+  export type FormL9$bankInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    where?: FormL9BankInfoWhereInput
+  }
+
+  /**
+   * FormL9.generalInformation
+   */
+  export type FormL9$generalInformationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    where?: FormL9GeneralInformationWhereInput
+  }
+
+  /**
+   * FormL9.employeeInfo
+   */
+  export type FormL9$employeeInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    where?: FormL9EmployeWhereInput
+  }
+
+  /**
+   * FormL9.others
+   */
+  export type FormL9$othersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    where?: FormL9OthersWhereInput
+  }
+
+  /**
+   * FormL9.managements
+   */
+  export type FormL9$managementsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    where?: FormL9ManagementWhereInput
+    orderBy?: FormL9ManagementOrderByWithRelationInput | FormL9ManagementOrderByWithRelationInput[]
+    cursor?: FormL9ManagementWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FormL9ManagementScalarFieldEnum | FormL9ManagementScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9.workExperiences
+   */
+  export type FormL9$workExperiencesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    where?: FormL9WorkExperienceWhereInput
+    orderBy?: FormL9WorkExperienceOrderByWithRelationInput | FormL9WorkExperienceOrderByWithRelationInput[]
+    cursor?: FormL9WorkExperienceWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FormL9WorkExperienceScalarFieldEnum | FormL9WorkExperienceScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9 without action
+   */
+  export type FormL9DefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9
+     */
+    select?: FormL9Select<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9
+     */
+    omit?: FormL9Omit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9Include<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FormL9BankInfo
+   */
+
+  export type AggregateFormL9BankInfo = {
+    _count: FormL9BankInfoCountAggregateOutputType | null
+    _min: FormL9BankInfoMinAggregateOutputType | null
+    _max: FormL9BankInfoMaxAggregateOutputType | null
+  }
+
+  export type FormL9BankInfoMinAggregateOutputType = {
+    formL9BankInfoid: string | null
+    formL9Id: string | null
+    beneficiaryName: string | null
+    beneficiaryAddress: string | null
+    bankName: string | null
+    bankAddress: string | null
+    noRek: string | null
+    swiftCode: string | null
+    IBAN: string | null
+  }
+
+  export type FormL9BankInfoMaxAggregateOutputType = {
+    formL9BankInfoid: string | null
+    formL9Id: string | null
+    beneficiaryName: string | null
+    beneficiaryAddress: string | null
+    bankName: string | null
+    bankAddress: string | null
+    noRek: string | null
+    swiftCode: string | null
+    IBAN: string | null
+  }
+
+  export type FormL9BankInfoCountAggregateOutputType = {
+    formL9BankInfoid: number
+    formL9Id: number
+    beneficiaryName: number
+    beneficiaryAddress: number
+    bankName: number
+    bankAddress: number
+    noRek: number
+    swiftCode: number
+    IBAN: number
+    _all: number
+  }
+
+
+  export type FormL9BankInfoMinAggregateInputType = {
+    formL9BankInfoid?: true
+    formL9Id?: true
+    beneficiaryName?: true
+    beneficiaryAddress?: true
+    bankName?: true
+    bankAddress?: true
+    noRek?: true
+    swiftCode?: true
+    IBAN?: true
+  }
+
+  export type FormL9BankInfoMaxAggregateInputType = {
+    formL9BankInfoid?: true
+    formL9Id?: true
+    beneficiaryName?: true
+    beneficiaryAddress?: true
+    bankName?: true
+    bankAddress?: true
+    noRek?: true
+    swiftCode?: true
+    IBAN?: true
+  }
+
+  export type FormL9BankInfoCountAggregateInputType = {
+    formL9BankInfoid?: true
+    formL9Id?: true
+    beneficiaryName?: true
+    beneficiaryAddress?: true
+    bankName?: true
+    bankAddress?: true
+    noRek?: true
+    swiftCode?: true
+    IBAN?: true
+    _all?: true
+  }
+
+  export type FormL9BankInfoAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9BankInfo to aggregate.
+     */
+    where?: FormL9BankInfoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9BankInfos to fetch.
+     */
+    orderBy?: FormL9BankInfoOrderByWithRelationInput | FormL9BankInfoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FormL9BankInfoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9BankInfos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9BankInfos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FormL9BankInfos
+    **/
+    _count?: true | FormL9BankInfoCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FormL9BankInfoMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FormL9BankInfoMaxAggregateInputType
+  }
+
+  export type GetFormL9BankInfoAggregateType<T extends FormL9BankInfoAggregateArgs> = {
+        [P in keyof T & keyof AggregateFormL9BankInfo]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFormL9BankInfo[P]>
+      : GetScalarType<T[P], AggregateFormL9BankInfo[P]>
+  }
+
+
+
+
+  export type FormL9BankInfoGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9BankInfoWhereInput
+    orderBy?: FormL9BankInfoOrderByWithAggregationInput | FormL9BankInfoOrderByWithAggregationInput[]
+    by: FormL9BankInfoScalarFieldEnum[] | FormL9BankInfoScalarFieldEnum
+    having?: FormL9BankInfoScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FormL9BankInfoCountAggregateInputType | true
+    _min?: FormL9BankInfoMinAggregateInputType
+    _max?: FormL9BankInfoMaxAggregateInputType
+  }
+
+  export type FormL9BankInfoGroupByOutputType = {
+    formL9BankInfoid: string
+    formL9Id: string
+    beneficiaryName: string
+    beneficiaryAddress: string
+    bankName: string
+    bankAddress: string
+    noRek: string
+    swiftCode: string
+    IBAN: string
+    _count: FormL9BankInfoCountAggregateOutputType | null
+    _min: FormL9BankInfoMinAggregateOutputType | null
+    _max: FormL9BankInfoMaxAggregateOutputType | null
+  }
+
+  type GetFormL9BankInfoGroupByPayload<T extends FormL9BankInfoGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FormL9BankInfoGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FormL9BankInfoGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FormL9BankInfoGroupByOutputType[P]>
+            : GetScalarType<T[P], FormL9BankInfoGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FormL9BankInfoSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9BankInfoid?: boolean
+    formL9Id?: boolean
+    beneficiaryName?: boolean
+    beneficiaryAddress?: boolean
+    bankName?: boolean
+    bankAddress?: boolean
+    noRek?: boolean
+    swiftCode?: boolean
+    IBAN?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9BankInfo"]>
+
+  export type FormL9BankInfoSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9BankInfoid?: boolean
+    formL9Id?: boolean
+    beneficiaryName?: boolean
+    beneficiaryAddress?: boolean
+    bankName?: boolean
+    bankAddress?: boolean
+    noRek?: boolean
+    swiftCode?: boolean
+    IBAN?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9BankInfo"]>
+
+  export type FormL9BankInfoSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9BankInfoid?: boolean
+    formL9Id?: boolean
+    beneficiaryName?: boolean
+    beneficiaryAddress?: boolean
+    bankName?: boolean
+    bankAddress?: boolean
+    noRek?: boolean
+    swiftCode?: boolean
+    IBAN?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9BankInfo"]>
+
+  export type FormL9BankInfoSelectScalar = {
+    formL9BankInfoid?: boolean
+    formL9Id?: boolean
+    beneficiaryName?: boolean
+    beneficiaryAddress?: boolean
+    bankName?: boolean
+    bankAddress?: boolean
+    noRek?: boolean
+    swiftCode?: boolean
+    IBAN?: boolean
+  }
+
+  export type FormL9BankInfoOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9BankInfoid" | "formL9Id" | "beneficiaryName" | "beneficiaryAddress" | "bankName" | "bankAddress" | "noRek" | "swiftCode" | "IBAN", ExtArgs["result"]["formL9BankInfo"]>
+  export type FormL9BankInfoInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9BankInfoIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9BankInfoIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+
+  export type $FormL9BankInfoPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FormL9BankInfo"
+    objects: {
+      formL9: Prisma.$FormL9Payload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      formL9BankInfoid: string
+      formL9Id: string
+      beneficiaryName: string
+      beneficiaryAddress: string
+      bankName: string
+      bankAddress: string
+      noRek: string
+      swiftCode: string
+      IBAN: string
+    }, ExtArgs["result"]["formL9BankInfo"]>
+    composites: {}
+  }
+
+  type FormL9BankInfoGetPayload<S extends boolean | null | undefined | FormL9BankInfoDefaultArgs> = $Result.GetResult<Prisma.$FormL9BankInfoPayload, S>
+
+  type FormL9BankInfoCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FormL9BankInfoFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FormL9BankInfoCountAggregateInputType | true
+    }
+
+  export interface FormL9BankInfoDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FormL9BankInfo'], meta: { name: 'FormL9BankInfo' } }
+    /**
+     * Find zero or one FormL9BankInfo that matches the filter.
+     * @param {FormL9BankInfoFindUniqueArgs} args - Arguments to find a FormL9BankInfo
+     * @example
+     * // Get one FormL9BankInfo
+     * const formL9BankInfo = await prisma.formL9BankInfo.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FormL9BankInfoFindUniqueArgs>(args: SelectSubset<T, FormL9BankInfoFindUniqueArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FormL9BankInfo that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FormL9BankInfoFindUniqueOrThrowArgs} args - Arguments to find a FormL9BankInfo
+     * @example
+     * // Get one FormL9BankInfo
+     * const formL9BankInfo = await prisma.formL9BankInfo.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FormL9BankInfoFindUniqueOrThrowArgs>(args: SelectSubset<T, FormL9BankInfoFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9BankInfo that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9BankInfoFindFirstArgs} args - Arguments to find a FormL9BankInfo
+     * @example
+     * // Get one FormL9BankInfo
+     * const formL9BankInfo = await prisma.formL9BankInfo.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FormL9BankInfoFindFirstArgs>(args?: SelectSubset<T, FormL9BankInfoFindFirstArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9BankInfo that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9BankInfoFindFirstOrThrowArgs} args - Arguments to find a FormL9BankInfo
+     * @example
+     * // Get one FormL9BankInfo
+     * const formL9BankInfo = await prisma.formL9BankInfo.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FormL9BankInfoFindFirstOrThrowArgs>(args?: SelectSubset<T, FormL9BankInfoFindFirstOrThrowArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FormL9BankInfos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9BankInfoFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FormL9BankInfos
+     * const formL9BankInfos = await prisma.formL9BankInfo.findMany()
+     * 
+     * // Get first 10 FormL9BankInfos
+     * const formL9BankInfos = await prisma.formL9BankInfo.findMany({ take: 10 })
+     * 
+     * // Only select the `formL9BankInfoid`
+     * const formL9BankInfoWithFormL9BankInfoidOnly = await prisma.formL9BankInfo.findMany({ select: { formL9BankInfoid: true } })
+     * 
+     */
+    findMany<T extends FormL9BankInfoFindManyArgs>(args?: SelectSubset<T, FormL9BankInfoFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FormL9BankInfo.
+     * @param {FormL9BankInfoCreateArgs} args - Arguments to create a FormL9BankInfo.
+     * @example
+     * // Create one FormL9BankInfo
+     * const FormL9BankInfo = await prisma.formL9BankInfo.create({
+     *   data: {
+     *     // ... data to create a FormL9BankInfo
+     *   }
+     * })
+     * 
+     */
+    create<T extends FormL9BankInfoCreateArgs>(args: SelectSubset<T, FormL9BankInfoCreateArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FormL9BankInfos.
+     * @param {FormL9BankInfoCreateManyArgs} args - Arguments to create many FormL9BankInfos.
+     * @example
+     * // Create many FormL9BankInfos
+     * const formL9BankInfo = await prisma.formL9BankInfo.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FormL9BankInfoCreateManyArgs>(args?: SelectSubset<T, FormL9BankInfoCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FormL9BankInfos and returns the data saved in the database.
+     * @param {FormL9BankInfoCreateManyAndReturnArgs} args - Arguments to create many FormL9BankInfos.
+     * @example
+     * // Create many FormL9BankInfos
+     * const formL9BankInfo = await prisma.formL9BankInfo.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FormL9BankInfos and only return the `formL9BankInfoid`
+     * const formL9BankInfoWithFormL9BankInfoidOnly = await prisma.formL9BankInfo.createManyAndReturn({
+     *   select: { formL9BankInfoid: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FormL9BankInfoCreateManyAndReturnArgs>(args?: SelectSubset<T, FormL9BankInfoCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FormL9BankInfo.
+     * @param {FormL9BankInfoDeleteArgs} args - Arguments to delete one FormL9BankInfo.
+     * @example
+     * // Delete one FormL9BankInfo
+     * const FormL9BankInfo = await prisma.formL9BankInfo.delete({
+     *   where: {
+     *     // ... filter to delete one FormL9BankInfo
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FormL9BankInfoDeleteArgs>(args: SelectSubset<T, FormL9BankInfoDeleteArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FormL9BankInfo.
+     * @param {FormL9BankInfoUpdateArgs} args - Arguments to update one FormL9BankInfo.
+     * @example
+     * // Update one FormL9BankInfo
+     * const formL9BankInfo = await prisma.formL9BankInfo.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FormL9BankInfoUpdateArgs>(args: SelectSubset<T, FormL9BankInfoUpdateArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FormL9BankInfos.
+     * @param {FormL9BankInfoDeleteManyArgs} args - Arguments to filter FormL9BankInfos to delete.
+     * @example
+     * // Delete a few FormL9BankInfos
+     * const { count } = await prisma.formL9BankInfo.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FormL9BankInfoDeleteManyArgs>(args?: SelectSubset<T, FormL9BankInfoDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9BankInfos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9BankInfoUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FormL9BankInfos
+     * const formL9BankInfo = await prisma.formL9BankInfo.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FormL9BankInfoUpdateManyArgs>(args: SelectSubset<T, FormL9BankInfoUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9BankInfos and returns the data updated in the database.
+     * @param {FormL9BankInfoUpdateManyAndReturnArgs} args - Arguments to update many FormL9BankInfos.
+     * @example
+     * // Update many FormL9BankInfos
+     * const formL9BankInfo = await prisma.formL9BankInfo.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FormL9BankInfos and only return the `formL9BankInfoid`
+     * const formL9BankInfoWithFormL9BankInfoidOnly = await prisma.formL9BankInfo.updateManyAndReturn({
+     *   select: { formL9BankInfoid: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FormL9BankInfoUpdateManyAndReturnArgs>(args: SelectSubset<T, FormL9BankInfoUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FormL9BankInfo.
+     * @param {FormL9BankInfoUpsertArgs} args - Arguments to update or create a FormL9BankInfo.
+     * @example
+     * // Update or create a FormL9BankInfo
+     * const formL9BankInfo = await prisma.formL9BankInfo.upsert({
+     *   create: {
+     *     // ... data to create a FormL9BankInfo
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FormL9BankInfo we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FormL9BankInfoUpsertArgs>(args: SelectSubset<T, FormL9BankInfoUpsertArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FormL9BankInfos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9BankInfoCountArgs} args - Arguments to filter FormL9BankInfos to count.
+     * @example
+     * // Count the number of FormL9BankInfos
+     * const count = await prisma.formL9BankInfo.count({
+     *   where: {
+     *     // ... the filter for the FormL9BankInfos we want to count
+     *   }
+     * })
+    **/
+    count<T extends FormL9BankInfoCountArgs>(
+      args?: Subset<T, FormL9BankInfoCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FormL9BankInfoCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FormL9BankInfo.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9BankInfoAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FormL9BankInfoAggregateArgs>(args: Subset<T, FormL9BankInfoAggregateArgs>): Prisma.PrismaPromise<GetFormL9BankInfoAggregateType<T>>
+
+    /**
+     * Group by FormL9BankInfo.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9BankInfoGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FormL9BankInfoGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FormL9BankInfoGroupByArgs['orderBy'] }
+        : { orderBy?: FormL9BankInfoGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FormL9BankInfoGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFormL9BankInfoGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FormL9BankInfo model
+   */
+  readonly fields: FormL9BankInfoFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FormL9BankInfo.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FormL9BankInfoClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    formL9<T extends FormL9DefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9DefaultArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FormL9BankInfo model
+   */
+  interface FormL9BankInfoFieldRefs {
+    readonly formL9BankInfoid: FieldRef<"FormL9BankInfo", 'String'>
+    readonly formL9Id: FieldRef<"FormL9BankInfo", 'String'>
+    readonly beneficiaryName: FieldRef<"FormL9BankInfo", 'String'>
+    readonly beneficiaryAddress: FieldRef<"FormL9BankInfo", 'String'>
+    readonly bankName: FieldRef<"FormL9BankInfo", 'String'>
+    readonly bankAddress: FieldRef<"FormL9BankInfo", 'String'>
+    readonly noRek: FieldRef<"FormL9BankInfo", 'String'>
+    readonly swiftCode: FieldRef<"FormL9BankInfo", 'String'>
+    readonly IBAN: FieldRef<"FormL9BankInfo", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FormL9BankInfo findUnique
+   */
+  export type FormL9BankInfoFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9BankInfo to fetch.
+     */
+    where: FormL9BankInfoWhereUniqueInput
+  }
+
+  /**
+   * FormL9BankInfo findUniqueOrThrow
+   */
+  export type FormL9BankInfoFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9BankInfo to fetch.
+     */
+    where: FormL9BankInfoWhereUniqueInput
+  }
+
+  /**
+   * FormL9BankInfo findFirst
+   */
+  export type FormL9BankInfoFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9BankInfo to fetch.
+     */
+    where?: FormL9BankInfoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9BankInfos to fetch.
+     */
+    orderBy?: FormL9BankInfoOrderByWithRelationInput | FormL9BankInfoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9BankInfos.
+     */
+    cursor?: FormL9BankInfoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9BankInfos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9BankInfos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9BankInfos.
+     */
+    distinct?: FormL9BankInfoScalarFieldEnum | FormL9BankInfoScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9BankInfo findFirstOrThrow
+   */
+  export type FormL9BankInfoFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9BankInfo to fetch.
+     */
+    where?: FormL9BankInfoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9BankInfos to fetch.
+     */
+    orderBy?: FormL9BankInfoOrderByWithRelationInput | FormL9BankInfoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9BankInfos.
+     */
+    cursor?: FormL9BankInfoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9BankInfos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9BankInfos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9BankInfos.
+     */
+    distinct?: FormL9BankInfoScalarFieldEnum | FormL9BankInfoScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9BankInfo findMany
+   */
+  export type FormL9BankInfoFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9BankInfos to fetch.
+     */
+    where?: FormL9BankInfoWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9BankInfos to fetch.
+     */
+    orderBy?: FormL9BankInfoOrderByWithRelationInput | FormL9BankInfoOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FormL9BankInfos.
+     */
+    cursor?: FormL9BankInfoWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9BankInfos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9BankInfos.
+     */
+    skip?: number
+    distinct?: FormL9BankInfoScalarFieldEnum | FormL9BankInfoScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9BankInfo create
+   */
+  export type FormL9BankInfoCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FormL9BankInfo.
+     */
+    data: XOR<FormL9BankInfoCreateInput, FormL9BankInfoUncheckedCreateInput>
+  }
+
+  /**
+   * FormL9BankInfo createMany
+   */
+  export type FormL9BankInfoCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FormL9BankInfos.
+     */
+    data: FormL9BankInfoCreateManyInput | FormL9BankInfoCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FormL9BankInfo createManyAndReturn
+   */
+  export type FormL9BankInfoCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * The data used to create many FormL9BankInfos.
+     */
+    data: FormL9BankInfoCreateManyInput | FormL9BankInfoCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9BankInfo update
+   */
+  export type FormL9BankInfoUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FormL9BankInfo.
+     */
+    data: XOR<FormL9BankInfoUpdateInput, FormL9BankInfoUncheckedUpdateInput>
+    /**
+     * Choose, which FormL9BankInfo to update.
+     */
+    where: FormL9BankInfoWhereUniqueInput
+  }
+
+  /**
+   * FormL9BankInfo updateMany
+   */
+  export type FormL9BankInfoUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FormL9BankInfos.
+     */
+    data: XOR<FormL9BankInfoUpdateManyMutationInput, FormL9BankInfoUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9BankInfos to update
+     */
+    where?: FormL9BankInfoWhereInput
+    /**
+     * Limit how many FormL9BankInfos to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9BankInfo updateManyAndReturn
+   */
+  export type FormL9BankInfoUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * The data used to update FormL9BankInfos.
+     */
+    data: XOR<FormL9BankInfoUpdateManyMutationInput, FormL9BankInfoUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9BankInfos to update
+     */
+    where?: FormL9BankInfoWhereInput
+    /**
+     * Limit how many FormL9BankInfos to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9BankInfo upsert
+   */
+  export type FormL9BankInfoUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FormL9BankInfo to update in case it exists.
+     */
+    where: FormL9BankInfoWhereUniqueInput
+    /**
+     * In case the FormL9BankInfo found by the `where` argument doesn't exist, create a new FormL9BankInfo with this data.
+     */
+    create: XOR<FormL9BankInfoCreateInput, FormL9BankInfoUncheckedCreateInput>
+    /**
+     * In case the FormL9BankInfo was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FormL9BankInfoUpdateInput, FormL9BankInfoUncheckedUpdateInput>
+  }
+
+  /**
+   * FormL9BankInfo delete
+   */
+  export type FormL9BankInfoDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+    /**
+     * Filter which FormL9BankInfo to delete.
+     */
+    where: FormL9BankInfoWhereUniqueInput
+  }
+
+  /**
+   * FormL9BankInfo deleteMany
+   */
+  export type FormL9BankInfoDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9BankInfos to delete
+     */
+    where?: FormL9BankInfoWhereInput
+    /**
+     * Limit how many FormL9BankInfos to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9BankInfo without action
+   */
+  export type FormL9BankInfoDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9BankInfo
+     */
+    select?: FormL9BankInfoSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9BankInfo
+     */
+    omit?: FormL9BankInfoOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9BankInfoInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FormL9GeneralInformation
+   */
+
+  export type AggregateFormL9GeneralInformation = {
+    _count: FormL9GeneralInformationCountAggregateOutputType | null
+    _min: FormL9GeneralInformationMinAggregateOutputType | null
+    _max: FormL9GeneralInformationMaxAggregateOutputType | null
+  }
+
+  export type FormL9GeneralInformationMinAggregateOutputType = {
+    formGeneralInformationId: string | null
+    formL9Id: string | null
+    companyName: string | null
+    companyFoundingDate: Date | null
+    companyStatus: string | null
+    companyTelpFax: string | null
+    companyAddress: string | null
+    companyEmail: string | null
+    npwp: string | null
+    totalCapital: string | null
+    segmentId: string | null
+  }
+
+  export type FormL9GeneralInformationMaxAggregateOutputType = {
+    formGeneralInformationId: string | null
+    formL9Id: string | null
+    companyName: string | null
+    companyFoundingDate: Date | null
+    companyStatus: string | null
+    companyTelpFax: string | null
+    companyAddress: string | null
+    companyEmail: string | null
+    npwp: string | null
+    totalCapital: string | null
+    segmentId: string | null
+  }
+
+  export type FormL9GeneralInformationCountAggregateOutputType = {
+    formGeneralInformationId: number
+    formL9Id: number
+    companyName: number
+    companyFoundingDate: number
+    companyStatus: number
+    companyTelpFax: number
+    companyAddress: number
+    companyEmail: number
+    npwp: number
+    totalCapital: number
+    segmentId: number
+    _all: number
+  }
+
+
+  export type FormL9GeneralInformationMinAggregateInputType = {
+    formGeneralInformationId?: true
+    formL9Id?: true
+    companyName?: true
+    companyFoundingDate?: true
+    companyStatus?: true
+    companyTelpFax?: true
+    companyAddress?: true
+    companyEmail?: true
+    npwp?: true
+    totalCapital?: true
+    segmentId?: true
+  }
+
+  export type FormL9GeneralInformationMaxAggregateInputType = {
+    formGeneralInformationId?: true
+    formL9Id?: true
+    companyName?: true
+    companyFoundingDate?: true
+    companyStatus?: true
+    companyTelpFax?: true
+    companyAddress?: true
+    companyEmail?: true
+    npwp?: true
+    totalCapital?: true
+    segmentId?: true
+  }
+
+  export type FormL9GeneralInformationCountAggregateInputType = {
+    formGeneralInformationId?: true
+    formL9Id?: true
+    companyName?: true
+    companyFoundingDate?: true
+    companyStatus?: true
+    companyTelpFax?: true
+    companyAddress?: true
+    companyEmail?: true
+    npwp?: true
+    totalCapital?: true
+    segmentId?: true
+    _all?: true
+  }
+
+  export type FormL9GeneralInformationAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9GeneralInformation to aggregate.
+     */
+    where?: FormL9GeneralInformationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9GeneralInformations to fetch.
+     */
+    orderBy?: FormL9GeneralInformationOrderByWithRelationInput | FormL9GeneralInformationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FormL9GeneralInformationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9GeneralInformations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9GeneralInformations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FormL9GeneralInformations
+    **/
+    _count?: true | FormL9GeneralInformationCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FormL9GeneralInformationMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FormL9GeneralInformationMaxAggregateInputType
+  }
+
+  export type GetFormL9GeneralInformationAggregateType<T extends FormL9GeneralInformationAggregateArgs> = {
+        [P in keyof T & keyof AggregateFormL9GeneralInformation]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFormL9GeneralInformation[P]>
+      : GetScalarType<T[P], AggregateFormL9GeneralInformation[P]>
+  }
+
+
+
+
+  export type FormL9GeneralInformationGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9GeneralInformationWhereInput
+    orderBy?: FormL9GeneralInformationOrderByWithAggregationInput | FormL9GeneralInformationOrderByWithAggregationInput[]
+    by: FormL9GeneralInformationScalarFieldEnum[] | FormL9GeneralInformationScalarFieldEnum
+    having?: FormL9GeneralInformationScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FormL9GeneralInformationCountAggregateInputType | true
+    _min?: FormL9GeneralInformationMinAggregateInputType
+    _max?: FormL9GeneralInformationMaxAggregateInputType
+  }
+
+  export type FormL9GeneralInformationGroupByOutputType = {
+    formGeneralInformationId: string
+    formL9Id: string
+    companyName: string
+    companyFoundingDate: Date
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    totalCapital: string | null
+    segmentId: string
+    _count: FormL9GeneralInformationCountAggregateOutputType | null
+    _min: FormL9GeneralInformationMinAggregateOutputType | null
+    _max: FormL9GeneralInformationMaxAggregateOutputType | null
+  }
+
+  type GetFormL9GeneralInformationGroupByPayload<T extends FormL9GeneralInformationGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FormL9GeneralInformationGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FormL9GeneralInformationGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FormL9GeneralInformationGroupByOutputType[P]>
+            : GetScalarType<T[P], FormL9GeneralInformationGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FormL9GeneralInformationSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formGeneralInformationId?: boolean
+    formL9Id?: boolean
+    companyName?: boolean
+    companyFoundingDate?: boolean
+    companyStatus?: boolean
+    companyTelpFax?: boolean
+    companyAddress?: boolean
+    companyEmail?: boolean
+    npwp?: boolean
+    totalCapital?: boolean
+    segmentId?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+    generalInfoContinue?: boolean | FormL9GeneralInformation$generalInfoContinueArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9GeneralInformation"]>
+
+  export type FormL9GeneralInformationSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formGeneralInformationId?: boolean
+    formL9Id?: boolean
+    companyName?: boolean
+    companyFoundingDate?: boolean
+    companyStatus?: boolean
+    companyTelpFax?: boolean
+    companyAddress?: boolean
+    companyEmail?: boolean
+    npwp?: boolean
+    totalCapital?: boolean
+    segmentId?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9GeneralInformation"]>
+
+  export type FormL9GeneralInformationSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formGeneralInformationId?: boolean
+    formL9Id?: boolean
+    companyName?: boolean
+    companyFoundingDate?: boolean
+    companyStatus?: boolean
+    companyTelpFax?: boolean
+    companyAddress?: boolean
+    companyEmail?: boolean
+    npwp?: boolean
+    totalCapital?: boolean
+    segmentId?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9GeneralInformation"]>
+
+  export type FormL9GeneralInformationSelectScalar = {
+    formGeneralInformationId?: boolean
+    formL9Id?: boolean
+    companyName?: boolean
+    companyFoundingDate?: boolean
+    companyStatus?: boolean
+    companyTelpFax?: boolean
+    companyAddress?: boolean
+    companyEmail?: boolean
+    npwp?: boolean
+    totalCapital?: boolean
+    segmentId?: boolean
+  }
+
+  export type FormL9GeneralInformationOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formGeneralInformationId" | "formL9Id" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "totalCapital" | "segmentId", ExtArgs["result"]["formL9GeneralInformation"]>
+  export type FormL9GeneralInformationInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+    generalInfoContinue?: boolean | FormL9GeneralInformation$generalInfoContinueArgs<ExtArgs>
+  }
+  export type FormL9GeneralInformationIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9GeneralInformationIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+
+  export type $FormL9GeneralInformationPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FormL9GeneralInformation"
+    objects: {
+      formL9: Prisma.$FormL9Payload<ExtArgs>
+      generalInfoContinue: Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs> | null
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      formGeneralInformationId: string
+      formL9Id: string
+      companyName: string
+      companyFoundingDate: Date
+      companyStatus: string
+      companyTelpFax: string
+      companyAddress: string
+      companyEmail: string
+      npwp: string
+      totalCapital: string | null
+      segmentId: string
+    }, ExtArgs["result"]["formL9GeneralInformation"]>
+    composites: {}
+  }
+
+  type FormL9GeneralInformationGetPayload<S extends boolean | null | undefined | FormL9GeneralInformationDefaultArgs> = $Result.GetResult<Prisma.$FormL9GeneralInformationPayload, S>
+
+  type FormL9GeneralInformationCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FormL9GeneralInformationFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FormL9GeneralInformationCountAggregateInputType | true
+    }
+
+  export interface FormL9GeneralInformationDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FormL9GeneralInformation'], meta: { name: 'FormL9GeneralInformation' } }
+    /**
+     * Find zero or one FormL9GeneralInformation that matches the filter.
+     * @param {FormL9GeneralInformationFindUniqueArgs} args - Arguments to find a FormL9GeneralInformation
+     * @example
+     * // Get one FormL9GeneralInformation
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FormL9GeneralInformationFindUniqueArgs>(args: SelectSubset<T, FormL9GeneralInformationFindUniqueArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FormL9GeneralInformation that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FormL9GeneralInformationFindUniqueOrThrowArgs} args - Arguments to find a FormL9GeneralInformation
+     * @example
+     * // Get one FormL9GeneralInformation
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FormL9GeneralInformationFindUniqueOrThrowArgs>(args: SelectSubset<T, FormL9GeneralInformationFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9GeneralInformation that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationFindFirstArgs} args - Arguments to find a FormL9GeneralInformation
+     * @example
+     * // Get one FormL9GeneralInformation
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FormL9GeneralInformationFindFirstArgs>(args?: SelectSubset<T, FormL9GeneralInformationFindFirstArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9GeneralInformation that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationFindFirstOrThrowArgs} args - Arguments to find a FormL9GeneralInformation
+     * @example
+     * // Get one FormL9GeneralInformation
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FormL9GeneralInformationFindFirstOrThrowArgs>(args?: SelectSubset<T, FormL9GeneralInformationFindFirstOrThrowArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FormL9GeneralInformations that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FormL9GeneralInformations
+     * const formL9GeneralInformations = await prisma.formL9GeneralInformation.findMany()
+     * 
+     * // Get first 10 FormL9GeneralInformations
+     * const formL9GeneralInformations = await prisma.formL9GeneralInformation.findMany({ take: 10 })
+     * 
+     * // Only select the `formGeneralInformationId`
+     * const formL9GeneralInformationWithFormGeneralInformationIdOnly = await prisma.formL9GeneralInformation.findMany({ select: { formGeneralInformationId: true } })
+     * 
+     */
+    findMany<T extends FormL9GeneralInformationFindManyArgs>(args?: SelectSubset<T, FormL9GeneralInformationFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FormL9GeneralInformation.
+     * @param {FormL9GeneralInformationCreateArgs} args - Arguments to create a FormL9GeneralInformation.
+     * @example
+     * // Create one FormL9GeneralInformation
+     * const FormL9GeneralInformation = await prisma.formL9GeneralInformation.create({
+     *   data: {
+     *     // ... data to create a FormL9GeneralInformation
+     *   }
+     * })
+     * 
+     */
+    create<T extends FormL9GeneralInformationCreateArgs>(args: SelectSubset<T, FormL9GeneralInformationCreateArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FormL9GeneralInformations.
+     * @param {FormL9GeneralInformationCreateManyArgs} args - Arguments to create many FormL9GeneralInformations.
+     * @example
+     * // Create many FormL9GeneralInformations
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FormL9GeneralInformationCreateManyArgs>(args?: SelectSubset<T, FormL9GeneralInformationCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FormL9GeneralInformations and returns the data saved in the database.
+     * @param {FormL9GeneralInformationCreateManyAndReturnArgs} args - Arguments to create many FormL9GeneralInformations.
+     * @example
+     * // Create many FormL9GeneralInformations
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FormL9GeneralInformations and only return the `formGeneralInformationId`
+     * const formL9GeneralInformationWithFormGeneralInformationIdOnly = await prisma.formL9GeneralInformation.createManyAndReturn({
+     *   select: { formGeneralInformationId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FormL9GeneralInformationCreateManyAndReturnArgs>(args?: SelectSubset<T, FormL9GeneralInformationCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FormL9GeneralInformation.
+     * @param {FormL9GeneralInformationDeleteArgs} args - Arguments to delete one FormL9GeneralInformation.
+     * @example
+     * // Delete one FormL9GeneralInformation
+     * const FormL9GeneralInformation = await prisma.formL9GeneralInformation.delete({
+     *   where: {
+     *     // ... filter to delete one FormL9GeneralInformation
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FormL9GeneralInformationDeleteArgs>(args: SelectSubset<T, FormL9GeneralInformationDeleteArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FormL9GeneralInformation.
+     * @param {FormL9GeneralInformationUpdateArgs} args - Arguments to update one FormL9GeneralInformation.
+     * @example
+     * // Update one FormL9GeneralInformation
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FormL9GeneralInformationUpdateArgs>(args: SelectSubset<T, FormL9GeneralInformationUpdateArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FormL9GeneralInformations.
+     * @param {FormL9GeneralInformationDeleteManyArgs} args - Arguments to filter FormL9GeneralInformations to delete.
+     * @example
+     * // Delete a few FormL9GeneralInformations
+     * const { count } = await prisma.formL9GeneralInformation.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FormL9GeneralInformationDeleteManyArgs>(args?: SelectSubset<T, FormL9GeneralInformationDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9GeneralInformations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FormL9GeneralInformations
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FormL9GeneralInformationUpdateManyArgs>(args: SelectSubset<T, FormL9GeneralInformationUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9GeneralInformations and returns the data updated in the database.
+     * @param {FormL9GeneralInformationUpdateManyAndReturnArgs} args - Arguments to update many FormL9GeneralInformations.
+     * @example
+     * // Update many FormL9GeneralInformations
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FormL9GeneralInformations and only return the `formGeneralInformationId`
+     * const formL9GeneralInformationWithFormGeneralInformationIdOnly = await prisma.formL9GeneralInformation.updateManyAndReturn({
+     *   select: { formGeneralInformationId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FormL9GeneralInformationUpdateManyAndReturnArgs>(args: SelectSubset<T, FormL9GeneralInformationUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FormL9GeneralInformation.
+     * @param {FormL9GeneralInformationUpsertArgs} args - Arguments to update or create a FormL9GeneralInformation.
+     * @example
+     * // Update or create a FormL9GeneralInformation
+     * const formL9GeneralInformation = await prisma.formL9GeneralInformation.upsert({
+     *   create: {
+     *     // ... data to create a FormL9GeneralInformation
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FormL9GeneralInformation we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FormL9GeneralInformationUpsertArgs>(args: SelectSubset<T, FormL9GeneralInformationUpsertArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FormL9GeneralInformations.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationCountArgs} args - Arguments to filter FormL9GeneralInformations to count.
+     * @example
+     * // Count the number of FormL9GeneralInformations
+     * const count = await prisma.formL9GeneralInformation.count({
+     *   where: {
+     *     // ... the filter for the FormL9GeneralInformations we want to count
+     *   }
+     * })
+    **/
+    count<T extends FormL9GeneralInformationCountArgs>(
+      args?: Subset<T, FormL9GeneralInformationCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FormL9GeneralInformationCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FormL9GeneralInformation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FormL9GeneralInformationAggregateArgs>(args: Subset<T, FormL9GeneralInformationAggregateArgs>): Prisma.PrismaPromise<GetFormL9GeneralInformationAggregateType<T>>
+
+    /**
+     * Group by FormL9GeneralInformation.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FormL9GeneralInformationGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FormL9GeneralInformationGroupByArgs['orderBy'] }
+        : { orderBy?: FormL9GeneralInformationGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FormL9GeneralInformationGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFormL9GeneralInformationGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FormL9GeneralInformation model
+   */
+  readonly fields: FormL9GeneralInformationFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FormL9GeneralInformation.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FormL9GeneralInformationClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    formL9<T extends FormL9DefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9DefaultArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    generalInfoContinue<T extends FormL9GeneralInformation$generalInfoContinueArgs<ExtArgs> = {}>(args?: Subset<T, FormL9GeneralInformation$generalInfoContinueArgs<ExtArgs>>): Prisma__FormL9GeneralInformationContinueClient<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FormL9GeneralInformation model
+   */
+  interface FormL9GeneralInformationFieldRefs {
+    readonly formGeneralInformationId: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly formL9Id: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly companyName: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly companyFoundingDate: FieldRef<"FormL9GeneralInformation", 'DateTime'>
+    readonly companyStatus: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly companyTelpFax: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly companyAddress: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly companyEmail: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly npwp: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly totalCapital: FieldRef<"FormL9GeneralInformation", 'String'>
+    readonly segmentId: FieldRef<"FormL9GeneralInformation", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FormL9GeneralInformation findUnique
+   */
+  export type FormL9GeneralInformationFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformation to fetch.
+     */
+    where: FormL9GeneralInformationWhereUniqueInput
+  }
+
+  /**
+   * FormL9GeneralInformation findUniqueOrThrow
+   */
+  export type FormL9GeneralInformationFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformation to fetch.
+     */
+    where: FormL9GeneralInformationWhereUniqueInput
+  }
+
+  /**
+   * FormL9GeneralInformation findFirst
+   */
+  export type FormL9GeneralInformationFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformation to fetch.
+     */
+    where?: FormL9GeneralInformationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9GeneralInformations to fetch.
+     */
+    orderBy?: FormL9GeneralInformationOrderByWithRelationInput | FormL9GeneralInformationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9GeneralInformations.
+     */
+    cursor?: FormL9GeneralInformationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9GeneralInformations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9GeneralInformations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9GeneralInformations.
+     */
+    distinct?: FormL9GeneralInformationScalarFieldEnum | FormL9GeneralInformationScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9GeneralInformation findFirstOrThrow
+   */
+  export type FormL9GeneralInformationFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformation to fetch.
+     */
+    where?: FormL9GeneralInformationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9GeneralInformations to fetch.
+     */
+    orderBy?: FormL9GeneralInformationOrderByWithRelationInput | FormL9GeneralInformationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9GeneralInformations.
+     */
+    cursor?: FormL9GeneralInformationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9GeneralInformations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9GeneralInformations.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9GeneralInformations.
+     */
+    distinct?: FormL9GeneralInformationScalarFieldEnum | FormL9GeneralInformationScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9GeneralInformation findMany
+   */
+  export type FormL9GeneralInformationFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformations to fetch.
+     */
+    where?: FormL9GeneralInformationWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9GeneralInformations to fetch.
+     */
+    orderBy?: FormL9GeneralInformationOrderByWithRelationInput | FormL9GeneralInformationOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FormL9GeneralInformations.
+     */
+    cursor?: FormL9GeneralInformationWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9GeneralInformations from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9GeneralInformations.
+     */
+    skip?: number
+    distinct?: FormL9GeneralInformationScalarFieldEnum | FormL9GeneralInformationScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9GeneralInformation create
+   */
+  export type FormL9GeneralInformationCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FormL9GeneralInformation.
+     */
+    data: XOR<FormL9GeneralInformationCreateInput, FormL9GeneralInformationUncheckedCreateInput>
+  }
+
+  /**
+   * FormL9GeneralInformation createMany
+   */
+  export type FormL9GeneralInformationCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FormL9GeneralInformations.
+     */
+    data: FormL9GeneralInformationCreateManyInput | FormL9GeneralInformationCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FormL9GeneralInformation createManyAndReturn
+   */
+  export type FormL9GeneralInformationCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * The data used to create many FormL9GeneralInformations.
+     */
+    data: FormL9GeneralInformationCreateManyInput | FormL9GeneralInformationCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9GeneralInformation update
+   */
+  export type FormL9GeneralInformationUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FormL9GeneralInformation.
+     */
+    data: XOR<FormL9GeneralInformationUpdateInput, FormL9GeneralInformationUncheckedUpdateInput>
+    /**
+     * Choose, which FormL9GeneralInformation to update.
+     */
+    where: FormL9GeneralInformationWhereUniqueInput
+  }
+
+  /**
+   * FormL9GeneralInformation updateMany
+   */
+  export type FormL9GeneralInformationUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FormL9GeneralInformations.
+     */
+    data: XOR<FormL9GeneralInformationUpdateManyMutationInput, FormL9GeneralInformationUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9GeneralInformations to update
+     */
+    where?: FormL9GeneralInformationWhereInput
+    /**
+     * Limit how many FormL9GeneralInformations to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9GeneralInformation updateManyAndReturn
+   */
+  export type FormL9GeneralInformationUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * The data used to update FormL9GeneralInformations.
+     */
+    data: XOR<FormL9GeneralInformationUpdateManyMutationInput, FormL9GeneralInformationUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9GeneralInformations to update
+     */
+    where?: FormL9GeneralInformationWhereInput
+    /**
+     * Limit how many FormL9GeneralInformations to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9GeneralInformation upsert
+   */
+  export type FormL9GeneralInformationUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FormL9GeneralInformation to update in case it exists.
+     */
+    where: FormL9GeneralInformationWhereUniqueInput
+    /**
+     * In case the FormL9GeneralInformation found by the `where` argument doesn't exist, create a new FormL9GeneralInformation with this data.
+     */
+    create: XOR<FormL9GeneralInformationCreateInput, FormL9GeneralInformationUncheckedCreateInput>
+    /**
+     * In case the FormL9GeneralInformation was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FormL9GeneralInformationUpdateInput, FormL9GeneralInformationUncheckedUpdateInput>
+  }
+
+  /**
+   * FormL9GeneralInformation delete
+   */
+  export type FormL9GeneralInformationDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    /**
+     * Filter which FormL9GeneralInformation to delete.
+     */
+    where: FormL9GeneralInformationWhereUniqueInput
+  }
+
+  /**
+   * FormL9GeneralInformation deleteMany
+   */
+  export type FormL9GeneralInformationDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9GeneralInformations to delete
+     */
+    where?: FormL9GeneralInformationWhereInput
+    /**
+     * Limit how many FormL9GeneralInformations to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9GeneralInformation.generalInfoContinue
+   */
+  export type FormL9GeneralInformation$generalInfoContinueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    where?: FormL9GeneralInformationContinueWhereInput
+  }
+
+  /**
+   * FormL9GeneralInformation without action
+   */
+  export type FormL9GeneralInformationDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformation
+     */
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformation
+     */
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FormL9GeneralInformationContinue
+   */
+
+  export type AggregateFormL9GeneralInformationContinue = {
+    _count: FormL9GeneralInformationContinueCountAggregateOutputType | null
+    _min: FormL9GeneralInformationContinueMinAggregateOutputType | null
+    _max: FormL9GeneralInformationContinueMaxAggregateOutputType | null
+  }
+
+  export type FormL9GeneralInformationContinueMinAggregateOutputType = {
+    formL9GeneralInformationContinueId: string | null
+    formGeneralInformationId: string | null
+    permitsHeld: string | null
+  }
+
+  export type FormL9GeneralInformationContinueMaxAggregateOutputType = {
+    formL9GeneralInformationContinueId: string | null
+    formGeneralInformationId: string | null
+    permitsHeld: string | null
+  }
+
+  export type FormL9GeneralInformationContinueCountAggregateOutputType = {
+    formL9GeneralInformationContinueId: number
+    formGeneralInformationId: number
+    permitsHeld: number
+    _all: number
+  }
+
+
+  export type FormL9GeneralInformationContinueMinAggregateInputType = {
+    formL9GeneralInformationContinueId?: true
+    formGeneralInformationId?: true
+    permitsHeld?: true
+  }
+
+  export type FormL9GeneralInformationContinueMaxAggregateInputType = {
+    formL9GeneralInformationContinueId?: true
+    formGeneralInformationId?: true
+    permitsHeld?: true
+  }
+
+  export type FormL9GeneralInformationContinueCountAggregateInputType = {
+    formL9GeneralInformationContinueId?: true
+    formGeneralInformationId?: true
+    permitsHeld?: true
+    _all?: true
+  }
+
+  export type FormL9GeneralInformationContinueAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9GeneralInformationContinue to aggregate.
+     */
+    where?: FormL9GeneralInformationContinueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9GeneralInformationContinues to fetch.
+     */
+    orderBy?: FormL9GeneralInformationContinueOrderByWithRelationInput | FormL9GeneralInformationContinueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FormL9GeneralInformationContinueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9GeneralInformationContinues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9GeneralInformationContinues.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FormL9GeneralInformationContinues
+    **/
+    _count?: true | FormL9GeneralInformationContinueCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FormL9GeneralInformationContinueMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FormL9GeneralInformationContinueMaxAggregateInputType
+  }
+
+  export type GetFormL9GeneralInformationContinueAggregateType<T extends FormL9GeneralInformationContinueAggregateArgs> = {
+        [P in keyof T & keyof AggregateFormL9GeneralInformationContinue]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFormL9GeneralInformationContinue[P]>
+      : GetScalarType<T[P], AggregateFormL9GeneralInformationContinue[P]>
+  }
+
+
+
+
+  export type FormL9GeneralInformationContinueGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9GeneralInformationContinueWhereInput
+    orderBy?: FormL9GeneralInformationContinueOrderByWithAggregationInput | FormL9GeneralInformationContinueOrderByWithAggregationInput[]
+    by: FormL9GeneralInformationContinueScalarFieldEnum[] | FormL9GeneralInformationContinueScalarFieldEnum
+    having?: FormL9GeneralInformationContinueScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FormL9GeneralInformationContinueCountAggregateInputType | true
+    _min?: FormL9GeneralInformationContinueMinAggregateInputType
+    _max?: FormL9GeneralInformationContinueMaxAggregateInputType
+  }
+
+  export type FormL9GeneralInformationContinueGroupByOutputType = {
+    formL9GeneralInformationContinueId: string
+    formGeneralInformationId: string
+    permitsHeld: string
+    _count: FormL9GeneralInformationContinueCountAggregateOutputType | null
+    _min: FormL9GeneralInformationContinueMinAggregateOutputType | null
+    _max: FormL9GeneralInformationContinueMaxAggregateOutputType | null
+  }
+
+  type GetFormL9GeneralInformationContinueGroupByPayload<T extends FormL9GeneralInformationContinueGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FormL9GeneralInformationContinueGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FormL9GeneralInformationContinueGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FormL9GeneralInformationContinueGroupByOutputType[P]>
+            : GetScalarType<T[P], FormL9GeneralInformationContinueGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FormL9GeneralInformationContinueSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9GeneralInformationContinueId?: boolean
+    formGeneralInformationId?: boolean
+    permitsHeld?: boolean
+    generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9GeneralInformationContinue"]>
+
+  export type FormL9GeneralInformationContinueSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9GeneralInformationContinueId?: boolean
+    formGeneralInformationId?: boolean
+    permitsHeld?: boolean
+    generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9GeneralInformationContinue"]>
+
+  export type FormL9GeneralInformationContinueSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9GeneralInformationContinueId?: boolean
+    formGeneralInformationId?: boolean
+    permitsHeld?: boolean
+    generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9GeneralInformationContinue"]>
+
+  export type FormL9GeneralInformationContinueSelectScalar = {
+    formL9GeneralInformationContinueId?: boolean
+    formGeneralInformationId?: boolean
+    permitsHeld?: boolean
+  }
+
+  export type FormL9GeneralInformationContinueOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9GeneralInformationContinueId" | "formGeneralInformationId" | "permitsHeld", ExtArgs["result"]["formL9GeneralInformationContinue"]>
+  export type FormL9GeneralInformationContinueInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
+  }
+  export type FormL9GeneralInformationContinueIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
+  }
+  export type FormL9GeneralInformationContinueIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    generalInformation?: boolean | FormL9GeneralInformationDefaultArgs<ExtArgs>
+  }
+
+  export type $FormL9GeneralInformationContinuePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FormL9GeneralInformationContinue"
+    objects: {
+      generalInformation: Prisma.$FormL9GeneralInformationPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      formL9GeneralInformationContinueId: string
+      formGeneralInformationId: string
+      permitsHeld: string
+    }, ExtArgs["result"]["formL9GeneralInformationContinue"]>
+    composites: {}
+  }
+
+  type FormL9GeneralInformationContinueGetPayload<S extends boolean | null | undefined | FormL9GeneralInformationContinueDefaultArgs> = $Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload, S>
+
+  type FormL9GeneralInformationContinueCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FormL9GeneralInformationContinueFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FormL9GeneralInformationContinueCountAggregateInputType | true
+    }
+
+  export interface FormL9GeneralInformationContinueDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FormL9GeneralInformationContinue'], meta: { name: 'FormL9GeneralInformationContinue' } }
+    /**
+     * Find zero or one FormL9GeneralInformationContinue that matches the filter.
+     * @param {FormL9GeneralInformationContinueFindUniqueArgs} args - Arguments to find a FormL9GeneralInformationContinue
+     * @example
+     * // Get one FormL9GeneralInformationContinue
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FormL9GeneralInformationContinueFindUniqueArgs>(args: SelectSubset<T, FormL9GeneralInformationContinueFindUniqueArgs<ExtArgs>>): Prisma__FormL9GeneralInformationContinueClient<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FormL9GeneralInformationContinue that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FormL9GeneralInformationContinueFindUniqueOrThrowArgs} args - Arguments to find a FormL9GeneralInformationContinue
+     * @example
+     * // Get one FormL9GeneralInformationContinue
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FormL9GeneralInformationContinueFindUniqueOrThrowArgs>(args: SelectSubset<T, FormL9GeneralInformationContinueFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FormL9GeneralInformationContinueClient<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9GeneralInformationContinue that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationContinueFindFirstArgs} args - Arguments to find a FormL9GeneralInformationContinue
+     * @example
+     * // Get one FormL9GeneralInformationContinue
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FormL9GeneralInformationContinueFindFirstArgs>(args?: SelectSubset<T, FormL9GeneralInformationContinueFindFirstArgs<ExtArgs>>): Prisma__FormL9GeneralInformationContinueClient<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9GeneralInformationContinue that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationContinueFindFirstOrThrowArgs} args - Arguments to find a FormL9GeneralInformationContinue
+     * @example
+     * // Get one FormL9GeneralInformationContinue
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FormL9GeneralInformationContinueFindFirstOrThrowArgs>(args?: SelectSubset<T, FormL9GeneralInformationContinueFindFirstOrThrowArgs<ExtArgs>>): Prisma__FormL9GeneralInformationContinueClient<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FormL9GeneralInformationContinues that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationContinueFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FormL9GeneralInformationContinues
+     * const formL9GeneralInformationContinues = await prisma.formL9GeneralInformationContinue.findMany()
+     * 
+     * // Get first 10 FormL9GeneralInformationContinues
+     * const formL9GeneralInformationContinues = await prisma.formL9GeneralInformationContinue.findMany({ take: 10 })
+     * 
+     * // Only select the `formL9GeneralInformationContinueId`
+     * const formL9GeneralInformationContinueWithFormL9GeneralInformationContinueIdOnly = await prisma.formL9GeneralInformationContinue.findMany({ select: { formL9GeneralInformationContinueId: true } })
+     * 
+     */
+    findMany<T extends FormL9GeneralInformationContinueFindManyArgs>(args?: SelectSubset<T, FormL9GeneralInformationContinueFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FormL9GeneralInformationContinue.
+     * @param {FormL9GeneralInformationContinueCreateArgs} args - Arguments to create a FormL9GeneralInformationContinue.
+     * @example
+     * // Create one FormL9GeneralInformationContinue
+     * const FormL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.create({
+     *   data: {
+     *     // ... data to create a FormL9GeneralInformationContinue
+     *   }
+     * })
+     * 
+     */
+    create<T extends FormL9GeneralInformationContinueCreateArgs>(args: SelectSubset<T, FormL9GeneralInformationContinueCreateArgs<ExtArgs>>): Prisma__FormL9GeneralInformationContinueClient<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FormL9GeneralInformationContinues.
+     * @param {FormL9GeneralInformationContinueCreateManyArgs} args - Arguments to create many FormL9GeneralInformationContinues.
+     * @example
+     * // Create many FormL9GeneralInformationContinues
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FormL9GeneralInformationContinueCreateManyArgs>(args?: SelectSubset<T, FormL9GeneralInformationContinueCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FormL9GeneralInformationContinues and returns the data saved in the database.
+     * @param {FormL9GeneralInformationContinueCreateManyAndReturnArgs} args - Arguments to create many FormL9GeneralInformationContinues.
+     * @example
+     * // Create many FormL9GeneralInformationContinues
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FormL9GeneralInformationContinues and only return the `formL9GeneralInformationContinueId`
+     * const formL9GeneralInformationContinueWithFormL9GeneralInformationContinueIdOnly = await prisma.formL9GeneralInformationContinue.createManyAndReturn({
+     *   select: { formL9GeneralInformationContinueId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FormL9GeneralInformationContinueCreateManyAndReturnArgs>(args?: SelectSubset<T, FormL9GeneralInformationContinueCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FormL9GeneralInformationContinue.
+     * @param {FormL9GeneralInformationContinueDeleteArgs} args - Arguments to delete one FormL9GeneralInformationContinue.
+     * @example
+     * // Delete one FormL9GeneralInformationContinue
+     * const FormL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.delete({
+     *   where: {
+     *     // ... filter to delete one FormL9GeneralInformationContinue
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FormL9GeneralInformationContinueDeleteArgs>(args: SelectSubset<T, FormL9GeneralInformationContinueDeleteArgs<ExtArgs>>): Prisma__FormL9GeneralInformationContinueClient<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FormL9GeneralInformationContinue.
+     * @param {FormL9GeneralInformationContinueUpdateArgs} args - Arguments to update one FormL9GeneralInformationContinue.
+     * @example
+     * // Update one FormL9GeneralInformationContinue
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FormL9GeneralInformationContinueUpdateArgs>(args: SelectSubset<T, FormL9GeneralInformationContinueUpdateArgs<ExtArgs>>): Prisma__FormL9GeneralInformationContinueClient<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FormL9GeneralInformationContinues.
+     * @param {FormL9GeneralInformationContinueDeleteManyArgs} args - Arguments to filter FormL9GeneralInformationContinues to delete.
+     * @example
+     * // Delete a few FormL9GeneralInformationContinues
+     * const { count } = await prisma.formL9GeneralInformationContinue.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FormL9GeneralInformationContinueDeleteManyArgs>(args?: SelectSubset<T, FormL9GeneralInformationContinueDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9GeneralInformationContinues.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationContinueUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FormL9GeneralInformationContinues
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FormL9GeneralInformationContinueUpdateManyArgs>(args: SelectSubset<T, FormL9GeneralInformationContinueUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9GeneralInformationContinues and returns the data updated in the database.
+     * @param {FormL9GeneralInformationContinueUpdateManyAndReturnArgs} args - Arguments to update many FormL9GeneralInformationContinues.
+     * @example
+     * // Update many FormL9GeneralInformationContinues
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FormL9GeneralInformationContinues and only return the `formL9GeneralInformationContinueId`
+     * const formL9GeneralInformationContinueWithFormL9GeneralInformationContinueIdOnly = await prisma.formL9GeneralInformationContinue.updateManyAndReturn({
+     *   select: { formL9GeneralInformationContinueId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FormL9GeneralInformationContinueUpdateManyAndReturnArgs>(args: SelectSubset<T, FormL9GeneralInformationContinueUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FormL9GeneralInformationContinue.
+     * @param {FormL9GeneralInformationContinueUpsertArgs} args - Arguments to update or create a FormL9GeneralInformationContinue.
+     * @example
+     * // Update or create a FormL9GeneralInformationContinue
+     * const formL9GeneralInformationContinue = await prisma.formL9GeneralInformationContinue.upsert({
+     *   create: {
+     *     // ... data to create a FormL9GeneralInformationContinue
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FormL9GeneralInformationContinue we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FormL9GeneralInformationContinueUpsertArgs>(args: SelectSubset<T, FormL9GeneralInformationContinueUpsertArgs<ExtArgs>>): Prisma__FormL9GeneralInformationContinueClient<$Result.GetResult<Prisma.$FormL9GeneralInformationContinuePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FormL9GeneralInformationContinues.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationContinueCountArgs} args - Arguments to filter FormL9GeneralInformationContinues to count.
+     * @example
+     * // Count the number of FormL9GeneralInformationContinues
+     * const count = await prisma.formL9GeneralInformationContinue.count({
+     *   where: {
+     *     // ... the filter for the FormL9GeneralInformationContinues we want to count
+     *   }
+     * })
+    **/
+    count<T extends FormL9GeneralInformationContinueCountArgs>(
+      args?: Subset<T, FormL9GeneralInformationContinueCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FormL9GeneralInformationContinueCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FormL9GeneralInformationContinue.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationContinueAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FormL9GeneralInformationContinueAggregateArgs>(args: Subset<T, FormL9GeneralInformationContinueAggregateArgs>): Prisma.PrismaPromise<GetFormL9GeneralInformationContinueAggregateType<T>>
+
+    /**
+     * Group by FormL9GeneralInformationContinue.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9GeneralInformationContinueGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FormL9GeneralInformationContinueGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FormL9GeneralInformationContinueGroupByArgs['orderBy'] }
+        : { orderBy?: FormL9GeneralInformationContinueGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FormL9GeneralInformationContinueGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFormL9GeneralInformationContinueGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FormL9GeneralInformationContinue model
+   */
+  readonly fields: FormL9GeneralInformationContinueFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FormL9GeneralInformationContinue.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FormL9GeneralInformationContinueClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    generalInformation<T extends FormL9GeneralInformationDefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9GeneralInformationDefaultArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FormL9GeneralInformationContinue model
+   */
+  interface FormL9GeneralInformationContinueFieldRefs {
+    readonly formL9GeneralInformationContinueId: FieldRef<"FormL9GeneralInformationContinue", 'String'>
+    readonly formGeneralInformationId: FieldRef<"FormL9GeneralInformationContinue", 'String'>
+    readonly permitsHeld: FieldRef<"FormL9GeneralInformationContinue", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FormL9GeneralInformationContinue findUnique
+   */
+  export type FormL9GeneralInformationContinueFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformationContinue to fetch.
+     */
+    where: FormL9GeneralInformationContinueWhereUniqueInput
+  }
+
+  /**
+   * FormL9GeneralInformationContinue findUniqueOrThrow
+   */
+  export type FormL9GeneralInformationContinueFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformationContinue to fetch.
+     */
+    where: FormL9GeneralInformationContinueWhereUniqueInput
+  }
+
+  /**
+   * FormL9GeneralInformationContinue findFirst
+   */
+  export type FormL9GeneralInformationContinueFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformationContinue to fetch.
+     */
+    where?: FormL9GeneralInformationContinueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9GeneralInformationContinues to fetch.
+     */
+    orderBy?: FormL9GeneralInformationContinueOrderByWithRelationInput | FormL9GeneralInformationContinueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9GeneralInformationContinues.
+     */
+    cursor?: FormL9GeneralInformationContinueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9GeneralInformationContinues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9GeneralInformationContinues.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9GeneralInformationContinues.
+     */
+    distinct?: FormL9GeneralInformationContinueScalarFieldEnum | FormL9GeneralInformationContinueScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9GeneralInformationContinue findFirstOrThrow
+   */
+  export type FormL9GeneralInformationContinueFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformationContinue to fetch.
+     */
+    where?: FormL9GeneralInformationContinueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9GeneralInformationContinues to fetch.
+     */
+    orderBy?: FormL9GeneralInformationContinueOrderByWithRelationInput | FormL9GeneralInformationContinueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9GeneralInformationContinues.
+     */
+    cursor?: FormL9GeneralInformationContinueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9GeneralInformationContinues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9GeneralInformationContinues.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9GeneralInformationContinues.
+     */
+    distinct?: FormL9GeneralInformationContinueScalarFieldEnum | FormL9GeneralInformationContinueScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9GeneralInformationContinue findMany
+   */
+  export type FormL9GeneralInformationContinueFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9GeneralInformationContinues to fetch.
+     */
+    where?: FormL9GeneralInformationContinueWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9GeneralInformationContinues to fetch.
+     */
+    orderBy?: FormL9GeneralInformationContinueOrderByWithRelationInput | FormL9GeneralInformationContinueOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FormL9GeneralInformationContinues.
+     */
+    cursor?: FormL9GeneralInformationContinueWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9GeneralInformationContinues from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9GeneralInformationContinues.
+     */
+    skip?: number
+    distinct?: FormL9GeneralInformationContinueScalarFieldEnum | FormL9GeneralInformationContinueScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9GeneralInformationContinue create
+   */
+  export type FormL9GeneralInformationContinueCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FormL9GeneralInformationContinue.
+     */
+    data: XOR<FormL9GeneralInformationContinueCreateInput, FormL9GeneralInformationContinueUncheckedCreateInput>
+  }
+
+  /**
+   * FormL9GeneralInformationContinue createMany
+   */
+  export type FormL9GeneralInformationContinueCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FormL9GeneralInformationContinues.
+     */
+    data: FormL9GeneralInformationContinueCreateManyInput | FormL9GeneralInformationContinueCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FormL9GeneralInformationContinue createManyAndReturn
+   */
+  export type FormL9GeneralInformationContinueCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * The data used to create many FormL9GeneralInformationContinues.
+     */
+    data: FormL9GeneralInformationContinueCreateManyInput | FormL9GeneralInformationContinueCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9GeneralInformationContinue update
+   */
+  export type FormL9GeneralInformationContinueUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FormL9GeneralInformationContinue.
+     */
+    data: XOR<FormL9GeneralInformationContinueUpdateInput, FormL9GeneralInformationContinueUncheckedUpdateInput>
+    /**
+     * Choose, which FormL9GeneralInformationContinue to update.
+     */
+    where: FormL9GeneralInformationContinueWhereUniqueInput
+  }
+
+  /**
+   * FormL9GeneralInformationContinue updateMany
+   */
+  export type FormL9GeneralInformationContinueUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FormL9GeneralInformationContinues.
+     */
+    data: XOR<FormL9GeneralInformationContinueUpdateManyMutationInput, FormL9GeneralInformationContinueUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9GeneralInformationContinues to update
+     */
+    where?: FormL9GeneralInformationContinueWhereInput
+    /**
+     * Limit how many FormL9GeneralInformationContinues to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9GeneralInformationContinue updateManyAndReturn
+   */
+  export type FormL9GeneralInformationContinueUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * The data used to update FormL9GeneralInformationContinues.
+     */
+    data: XOR<FormL9GeneralInformationContinueUpdateManyMutationInput, FormL9GeneralInformationContinueUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9GeneralInformationContinues to update
+     */
+    where?: FormL9GeneralInformationContinueWhereInput
+    /**
+     * Limit how many FormL9GeneralInformationContinues to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9GeneralInformationContinue upsert
+   */
+  export type FormL9GeneralInformationContinueUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FormL9GeneralInformationContinue to update in case it exists.
+     */
+    where: FormL9GeneralInformationContinueWhereUniqueInput
+    /**
+     * In case the FormL9GeneralInformationContinue found by the `where` argument doesn't exist, create a new FormL9GeneralInformationContinue with this data.
+     */
+    create: XOR<FormL9GeneralInformationContinueCreateInput, FormL9GeneralInformationContinueUncheckedCreateInput>
+    /**
+     * In case the FormL9GeneralInformationContinue was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FormL9GeneralInformationContinueUpdateInput, FormL9GeneralInformationContinueUncheckedUpdateInput>
+  }
+
+  /**
+   * FormL9GeneralInformationContinue delete
+   */
+  export type FormL9GeneralInformationContinueDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+    /**
+     * Filter which FormL9GeneralInformationContinue to delete.
+     */
+    where: FormL9GeneralInformationContinueWhereUniqueInput
+  }
+
+  /**
+   * FormL9GeneralInformationContinue deleteMany
+   */
+  export type FormL9GeneralInformationContinueDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9GeneralInformationContinues to delete
+     */
+    where?: FormL9GeneralInformationContinueWhereInput
+    /**
+     * Limit how many FormL9GeneralInformationContinues to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9GeneralInformationContinue without action
+   */
+  export type FormL9GeneralInformationContinueDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9GeneralInformationContinue
+     */
+    select?: FormL9GeneralInformationContinueSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9GeneralInformationContinue
+     */
+    omit?: FormL9GeneralInformationContinueOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9GeneralInformationContinueInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FormL9Management
+   */
+
+  export type AggregateFormL9Management = {
+    _count: FormL9ManagementCountAggregateOutputType | null
+    _min: FormL9ManagementMinAggregateOutputType | null
+    _max: FormL9ManagementMaxAggregateOutputType | null
+  }
+
+  export type FormL9ManagementMinAggregateOutputType = {
+    formL9ManagementId: string | null
+    formL9Id: string | null
+    position: string | null
+    name: string | null
+    noTelpFaxHp: string | null
+  }
+
+  export type FormL9ManagementMaxAggregateOutputType = {
+    formL9ManagementId: string | null
+    formL9Id: string | null
+    position: string | null
+    name: string | null
+    noTelpFaxHp: string | null
+  }
+
+  export type FormL9ManagementCountAggregateOutputType = {
+    formL9ManagementId: number
+    formL9Id: number
+    position: number
+    name: number
+    noTelpFaxHp: number
+    _all: number
+  }
+
+
+  export type FormL9ManagementMinAggregateInputType = {
+    formL9ManagementId?: true
+    formL9Id?: true
+    position?: true
+    name?: true
+    noTelpFaxHp?: true
+  }
+
+  export type FormL9ManagementMaxAggregateInputType = {
+    formL9ManagementId?: true
+    formL9Id?: true
+    position?: true
+    name?: true
+    noTelpFaxHp?: true
+  }
+
+  export type FormL9ManagementCountAggregateInputType = {
+    formL9ManagementId?: true
+    formL9Id?: true
+    position?: true
+    name?: true
+    noTelpFaxHp?: true
+    _all?: true
+  }
+
+  export type FormL9ManagementAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9Management to aggregate.
+     */
+    where?: FormL9ManagementWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Managements to fetch.
+     */
+    orderBy?: FormL9ManagementOrderByWithRelationInput | FormL9ManagementOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FormL9ManagementWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Managements from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Managements.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FormL9Managements
+    **/
+    _count?: true | FormL9ManagementCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FormL9ManagementMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FormL9ManagementMaxAggregateInputType
+  }
+
+  export type GetFormL9ManagementAggregateType<T extends FormL9ManagementAggregateArgs> = {
+        [P in keyof T & keyof AggregateFormL9Management]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFormL9Management[P]>
+      : GetScalarType<T[P], AggregateFormL9Management[P]>
+  }
+
+
+
+
+  export type FormL9ManagementGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9ManagementWhereInput
+    orderBy?: FormL9ManagementOrderByWithAggregationInput | FormL9ManagementOrderByWithAggregationInput[]
+    by: FormL9ManagementScalarFieldEnum[] | FormL9ManagementScalarFieldEnum
+    having?: FormL9ManagementScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FormL9ManagementCountAggregateInputType | true
+    _min?: FormL9ManagementMinAggregateInputType
+    _max?: FormL9ManagementMaxAggregateInputType
+  }
+
+  export type FormL9ManagementGroupByOutputType = {
+    formL9ManagementId: string
+    formL9Id: string
+    position: string
+    name: string
+    noTelpFaxHp: string
+    _count: FormL9ManagementCountAggregateOutputType | null
+    _min: FormL9ManagementMinAggregateOutputType | null
+    _max: FormL9ManagementMaxAggregateOutputType | null
+  }
+
+  type GetFormL9ManagementGroupByPayload<T extends FormL9ManagementGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FormL9ManagementGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FormL9ManagementGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FormL9ManagementGroupByOutputType[P]>
+            : GetScalarType<T[P], FormL9ManagementGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FormL9ManagementSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9ManagementId?: boolean
+    formL9Id?: boolean
+    position?: boolean
+    name?: boolean
+    noTelpFaxHp?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9Management"]>
+
+  export type FormL9ManagementSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9ManagementId?: boolean
+    formL9Id?: boolean
+    position?: boolean
+    name?: boolean
+    noTelpFaxHp?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9Management"]>
+
+  export type FormL9ManagementSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9ManagementId?: boolean
+    formL9Id?: boolean
+    position?: boolean
+    name?: boolean
+    noTelpFaxHp?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9Management"]>
+
+  export type FormL9ManagementSelectScalar = {
+    formL9ManagementId?: boolean
+    formL9Id?: boolean
+    position?: boolean
+    name?: boolean
+    noTelpFaxHp?: boolean
+  }
+
+  export type FormL9ManagementOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9ManagementId" | "formL9Id" | "position" | "name" | "noTelpFaxHp", ExtArgs["result"]["formL9Management"]>
+  export type FormL9ManagementInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9ManagementIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9ManagementIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+
+  export type $FormL9ManagementPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FormL9Management"
+    objects: {
+      formL9: Prisma.$FormL9Payload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      formL9ManagementId: string
+      formL9Id: string
+      position: string
+      name: string
+      noTelpFaxHp: string
+    }, ExtArgs["result"]["formL9Management"]>
+    composites: {}
+  }
+
+  type FormL9ManagementGetPayload<S extends boolean | null | undefined | FormL9ManagementDefaultArgs> = $Result.GetResult<Prisma.$FormL9ManagementPayload, S>
+
+  type FormL9ManagementCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FormL9ManagementFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FormL9ManagementCountAggregateInputType | true
+    }
+
+  export interface FormL9ManagementDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FormL9Management'], meta: { name: 'FormL9Management' } }
+    /**
+     * Find zero or one FormL9Management that matches the filter.
+     * @param {FormL9ManagementFindUniqueArgs} args - Arguments to find a FormL9Management
+     * @example
+     * // Get one FormL9Management
+     * const formL9Management = await prisma.formL9Management.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FormL9ManagementFindUniqueArgs>(args: SelectSubset<T, FormL9ManagementFindUniqueArgs<ExtArgs>>): Prisma__FormL9ManagementClient<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FormL9Management that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FormL9ManagementFindUniqueOrThrowArgs} args - Arguments to find a FormL9Management
+     * @example
+     * // Get one FormL9Management
+     * const formL9Management = await prisma.formL9Management.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FormL9ManagementFindUniqueOrThrowArgs>(args: SelectSubset<T, FormL9ManagementFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FormL9ManagementClient<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9Management that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9ManagementFindFirstArgs} args - Arguments to find a FormL9Management
+     * @example
+     * // Get one FormL9Management
+     * const formL9Management = await prisma.formL9Management.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FormL9ManagementFindFirstArgs>(args?: SelectSubset<T, FormL9ManagementFindFirstArgs<ExtArgs>>): Prisma__FormL9ManagementClient<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9Management that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9ManagementFindFirstOrThrowArgs} args - Arguments to find a FormL9Management
+     * @example
+     * // Get one FormL9Management
+     * const formL9Management = await prisma.formL9Management.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FormL9ManagementFindFirstOrThrowArgs>(args?: SelectSubset<T, FormL9ManagementFindFirstOrThrowArgs<ExtArgs>>): Prisma__FormL9ManagementClient<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FormL9Managements that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9ManagementFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FormL9Managements
+     * const formL9Managements = await prisma.formL9Management.findMany()
+     * 
+     * // Get first 10 FormL9Managements
+     * const formL9Managements = await prisma.formL9Management.findMany({ take: 10 })
+     * 
+     * // Only select the `formL9ManagementId`
+     * const formL9ManagementWithFormL9ManagementIdOnly = await prisma.formL9Management.findMany({ select: { formL9ManagementId: true } })
+     * 
+     */
+    findMany<T extends FormL9ManagementFindManyArgs>(args?: SelectSubset<T, FormL9ManagementFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FormL9Management.
+     * @param {FormL9ManagementCreateArgs} args - Arguments to create a FormL9Management.
+     * @example
+     * // Create one FormL9Management
+     * const FormL9Management = await prisma.formL9Management.create({
+     *   data: {
+     *     // ... data to create a FormL9Management
+     *   }
+     * })
+     * 
+     */
+    create<T extends FormL9ManagementCreateArgs>(args: SelectSubset<T, FormL9ManagementCreateArgs<ExtArgs>>): Prisma__FormL9ManagementClient<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FormL9Managements.
+     * @param {FormL9ManagementCreateManyArgs} args - Arguments to create many FormL9Managements.
+     * @example
+     * // Create many FormL9Managements
+     * const formL9Management = await prisma.formL9Management.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FormL9ManagementCreateManyArgs>(args?: SelectSubset<T, FormL9ManagementCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FormL9Managements and returns the data saved in the database.
+     * @param {FormL9ManagementCreateManyAndReturnArgs} args - Arguments to create many FormL9Managements.
+     * @example
+     * // Create many FormL9Managements
+     * const formL9Management = await prisma.formL9Management.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FormL9Managements and only return the `formL9ManagementId`
+     * const formL9ManagementWithFormL9ManagementIdOnly = await prisma.formL9Management.createManyAndReturn({
+     *   select: { formL9ManagementId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FormL9ManagementCreateManyAndReturnArgs>(args?: SelectSubset<T, FormL9ManagementCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FormL9Management.
+     * @param {FormL9ManagementDeleteArgs} args - Arguments to delete one FormL9Management.
+     * @example
+     * // Delete one FormL9Management
+     * const FormL9Management = await prisma.formL9Management.delete({
+     *   where: {
+     *     // ... filter to delete one FormL9Management
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FormL9ManagementDeleteArgs>(args: SelectSubset<T, FormL9ManagementDeleteArgs<ExtArgs>>): Prisma__FormL9ManagementClient<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FormL9Management.
+     * @param {FormL9ManagementUpdateArgs} args - Arguments to update one FormL9Management.
+     * @example
+     * // Update one FormL9Management
+     * const formL9Management = await prisma.formL9Management.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FormL9ManagementUpdateArgs>(args: SelectSubset<T, FormL9ManagementUpdateArgs<ExtArgs>>): Prisma__FormL9ManagementClient<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FormL9Managements.
+     * @param {FormL9ManagementDeleteManyArgs} args - Arguments to filter FormL9Managements to delete.
+     * @example
+     * // Delete a few FormL9Managements
+     * const { count } = await prisma.formL9Management.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FormL9ManagementDeleteManyArgs>(args?: SelectSubset<T, FormL9ManagementDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9Managements.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9ManagementUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FormL9Managements
+     * const formL9Management = await prisma.formL9Management.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FormL9ManagementUpdateManyArgs>(args: SelectSubset<T, FormL9ManagementUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9Managements and returns the data updated in the database.
+     * @param {FormL9ManagementUpdateManyAndReturnArgs} args - Arguments to update many FormL9Managements.
+     * @example
+     * // Update many FormL9Managements
+     * const formL9Management = await prisma.formL9Management.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FormL9Managements and only return the `formL9ManagementId`
+     * const formL9ManagementWithFormL9ManagementIdOnly = await prisma.formL9Management.updateManyAndReturn({
+     *   select: { formL9ManagementId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FormL9ManagementUpdateManyAndReturnArgs>(args: SelectSubset<T, FormL9ManagementUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FormL9Management.
+     * @param {FormL9ManagementUpsertArgs} args - Arguments to update or create a FormL9Management.
+     * @example
+     * // Update or create a FormL9Management
+     * const formL9Management = await prisma.formL9Management.upsert({
+     *   create: {
+     *     // ... data to create a FormL9Management
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FormL9Management we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FormL9ManagementUpsertArgs>(args: SelectSubset<T, FormL9ManagementUpsertArgs<ExtArgs>>): Prisma__FormL9ManagementClient<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FormL9Managements.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9ManagementCountArgs} args - Arguments to filter FormL9Managements to count.
+     * @example
+     * // Count the number of FormL9Managements
+     * const count = await prisma.formL9Management.count({
+     *   where: {
+     *     // ... the filter for the FormL9Managements we want to count
+     *   }
+     * })
+    **/
+    count<T extends FormL9ManagementCountArgs>(
+      args?: Subset<T, FormL9ManagementCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FormL9ManagementCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FormL9Management.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9ManagementAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FormL9ManagementAggregateArgs>(args: Subset<T, FormL9ManagementAggregateArgs>): Prisma.PrismaPromise<GetFormL9ManagementAggregateType<T>>
+
+    /**
+     * Group by FormL9Management.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9ManagementGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FormL9ManagementGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FormL9ManagementGroupByArgs['orderBy'] }
+        : { orderBy?: FormL9ManagementGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FormL9ManagementGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFormL9ManagementGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FormL9Management model
+   */
+  readonly fields: FormL9ManagementFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FormL9Management.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FormL9ManagementClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    formL9<T extends FormL9DefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9DefaultArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FormL9Management model
+   */
+  interface FormL9ManagementFieldRefs {
+    readonly formL9ManagementId: FieldRef<"FormL9Management", 'String'>
+    readonly formL9Id: FieldRef<"FormL9Management", 'String'>
+    readonly position: FieldRef<"FormL9Management", 'String'>
+    readonly name: FieldRef<"FormL9Management", 'String'>
+    readonly noTelpFaxHp: FieldRef<"FormL9Management", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FormL9Management findUnique
+   */
+  export type FormL9ManagementFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Management to fetch.
+     */
+    where: FormL9ManagementWhereUniqueInput
+  }
+
+  /**
+   * FormL9Management findUniqueOrThrow
+   */
+  export type FormL9ManagementFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Management to fetch.
+     */
+    where: FormL9ManagementWhereUniqueInput
+  }
+
+  /**
+   * FormL9Management findFirst
+   */
+  export type FormL9ManagementFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Management to fetch.
+     */
+    where?: FormL9ManagementWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Managements to fetch.
+     */
+    orderBy?: FormL9ManagementOrderByWithRelationInput | FormL9ManagementOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9Managements.
+     */
+    cursor?: FormL9ManagementWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Managements from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Managements.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9Managements.
+     */
+    distinct?: FormL9ManagementScalarFieldEnum | FormL9ManagementScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Management findFirstOrThrow
+   */
+  export type FormL9ManagementFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Management to fetch.
+     */
+    where?: FormL9ManagementWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Managements to fetch.
+     */
+    orderBy?: FormL9ManagementOrderByWithRelationInput | FormL9ManagementOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9Managements.
+     */
+    cursor?: FormL9ManagementWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Managements from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Managements.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9Managements.
+     */
+    distinct?: FormL9ManagementScalarFieldEnum | FormL9ManagementScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Management findMany
+   */
+  export type FormL9ManagementFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Managements to fetch.
+     */
+    where?: FormL9ManagementWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Managements to fetch.
+     */
+    orderBy?: FormL9ManagementOrderByWithRelationInput | FormL9ManagementOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FormL9Managements.
+     */
+    cursor?: FormL9ManagementWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Managements from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Managements.
+     */
+    skip?: number
+    distinct?: FormL9ManagementScalarFieldEnum | FormL9ManagementScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Management create
+   */
+  export type FormL9ManagementCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FormL9Management.
+     */
+    data: XOR<FormL9ManagementCreateInput, FormL9ManagementUncheckedCreateInput>
+  }
+
+  /**
+   * FormL9Management createMany
+   */
+  export type FormL9ManagementCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FormL9Managements.
+     */
+    data: FormL9ManagementCreateManyInput | FormL9ManagementCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FormL9Management createManyAndReturn
+   */
+  export type FormL9ManagementCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * The data used to create many FormL9Managements.
+     */
+    data: FormL9ManagementCreateManyInput | FormL9ManagementCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9Management update
+   */
+  export type FormL9ManagementUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FormL9Management.
+     */
+    data: XOR<FormL9ManagementUpdateInput, FormL9ManagementUncheckedUpdateInput>
+    /**
+     * Choose, which FormL9Management to update.
+     */
+    where: FormL9ManagementWhereUniqueInput
+  }
+
+  /**
+   * FormL9Management updateMany
+   */
+  export type FormL9ManagementUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FormL9Managements.
+     */
+    data: XOR<FormL9ManagementUpdateManyMutationInput, FormL9ManagementUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9Managements to update
+     */
+    where?: FormL9ManagementWhereInput
+    /**
+     * Limit how many FormL9Managements to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9Management updateManyAndReturn
+   */
+  export type FormL9ManagementUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * The data used to update FormL9Managements.
+     */
+    data: XOR<FormL9ManagementUpdateManyMutationInput, FormL9ManagementUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9Managements to update
+     */
+    where?: FormL9ManagementWhereInput
+    /**
+     * Limit how many FormL9Managements to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9Management upsert
+   */
+  export type FormL9ManagementUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FormL9Management to update in case it exists.
+     */
+    where: FormL9ManagementWhereUniqueInput
+    /**
+     * In case the FormL9Management found by the `where` argument doesn't exist, create a new FormL9Management with this data.
+     */
+    create: XOR<FormL9ManagementCreateInput, FormL9ManagementUncheckedCreateInput>
+    /**
+     * In case the FormL9Management was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FormL9ManagementUpdateInput, FormL9ManagementUncheckedUpdateInput>
+  }
+
+  /**
+   * FormL9Management delete
+   */
+  export type FormL9ManagementDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+    /**
+     * Filter which FormL9Management to delete.
+     */
+    where: FormL9ManagementWhereUniqueInput
+  }
+
+  /**
+   * FormL9Management deleteMany
+   */
+  export type FormL9ManagementDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9Managements to delete
+     */
+    where?: FormL9ManagementWhereInput
+    /**
+     * Limit how many FormL9Managements to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9Management without action
+   */
+  export type FormL9ManagementDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Management
+     */
+    select?: FormL9ManagementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Management
+     */
+    omit?: FormL9ManagementOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9ManagementInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FormL9Employe
+   */
+
+  export type AggregateFormL9Employe = {
+    _count: FormL9EmployeCountAggregateOutputType | null
+    _avg: FormL9EmployeAvgAggregateOutputType | null
+    _sum: FormL9EmployeSumAggregateOutputType | null
+    _min: FormL9EmployeMinAggregateOutputType | null
+    _max: FormL9EmployeMaxAggregateOutputType | null
+  }
+
+  export type FormL9EmployeAvgAggregateOutputType = {
+    totalEmployees: number | null
+    qualityControl: number | null
+    engineering: number | null
+    production: number | null
+    management: number | null
+    other: number | null
+  }
+
+  export type FormL9EmployeSumAggregateOutputType = {
+    totalEmployees: number | null
+    qualityControl: number | null
+    engineering: number | null
+    production: number | null
+    management: number | null
+    other: number | null
+  }
+
+  export type FormL9EmployeMinAggregateOutputType = {
+    formL9EmployeId: string | null
+    formL9Id: string | null
+    totalEmployees: number | null
+    qualityControl: number | null
+    engineering: number | null
+    production: number | null
+    management: number | null
+    other: number | null
+  }
+
+  export type FormL9EmployeMaxAggregateOutputType = {
+    formL9EmployeId: string | null
+    formL9Id: string | null
+    totalEmployees: number | null
+    qualityControl: number | null
+    engineering: number | null
+    production: number | null
+    management: number | null
+    other: number | null
+  }
+
+  export type FormL9EmployeCountAggregateOutputType = {
+    formL9EmployeId: number
+    formL9Id: number
+    totalEmployees: number
+    qualityControl: number
+    engineering: number
+    production: number
+    management: number
+    other: number
+    _all: number
+  }
+
+
+  export type FormL9EmployeAvgAggregateInputType = {
+    totalEmployees?: true
+    qualityControl?: true
+    engineering?: true
+    production?: true
+    management?: true
+    other?: true
+  }
+
+  export type FormL9EmployeSumAggregateInputType = {
+    totalEmployees?: true
+    qualityControl?: true
+    engineering?: true
+    production?: true
+    management?: true
+    other?: true
+  }
+
+  export type FormL9EmployeMinAggregateInputType = {
+    formL9EmployeId?: true
+    formL9Id?: true
+    totalEmployees?: true
+    qualityControl?: true
+    engineering?: true
+    production?: true
+    management?: true
+    other?: true
+  }
+
+  export type FormL9EmployeMaxAggregateInputType = {
+    formL9EmployeId?: true
+    formL9Id?: true
+    totalEmployees?: true
+    qualityControl?: true
+    engineering?: true
+    production?: true
+    management?: true
+    other?: true
+  }
+
+  export type FormL9EmployeCountAggregateInputType = {
+    formL9EmployeId?: true
+    formL9Id?: true
+    totalEmployees?: true
+    qualityControl?: true
+    engineering?: true
+    production?: true
+    management?: true
+    other?: true
+    _all?: true
+  }
+
+  export type FormL9EmployeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9Employe to aggregate.
+     */
+    where?: FormL9EmployeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Employes to fetch.
+     */
+    orderBy?: FormL9EmployeOrderByWithRelationInput | FormL9EmployeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FormL9EmployeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Employes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Employes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FormL9Employes
+    **/
+    _count?: true | FormL9EmployeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FormL9EmployeAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FormL9EmployeSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FormL9EmployeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FormL9EmployeMaxAggregateInputType
+  }
+
+  export type GetFormL9EmployeAggregateType<T extends FormL9EmployeAggregateArgs> = {
+        [P in keyof T & keyof AggregateFormL9Employe]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFormL9Employe[P]>
+      : GetScalarType<T[P], AggregateFormL9Employe[P]>
+  }
+
+
+
+
+  export type FormL9EmployeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9EmployeWhereInput
+    orderBy?: FormL9EmployeOrderByWithAggregationInput | FormL9EmployeOrderByWithAggregationInput[]
+    by: FormL9EmployeScalarFieldEnum[] | FormL9EmployeScalarFieldEnum
+    having?: FormL9EmployeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FormL9EmployeCountAggregateInputType | true
+    _avg?: FormL9EmployeAvgAggregateInputType
+    _sum?: FormL9EmployeSumAggregateInputType
+    _min?: FormL9EmployeMinAggregateInputType
+    _max?: FormL9EmployeMaxAggregateInputType
+  }
+
+  export type FormL9EmployeGroupByOutputType = {
+    formL9EmployeId: string
+    formL9Id: string
+    totalEmployees: number
+    qualityControl: number
+    engineering: number
+    production: number
+    management: number
+    other: number
+    _count: FormL9EmployeCountAggregateOutputType | null
+    _avg: FormL9EmployeAvgAggregateOutputType | null
+    _sum: FormL9EmployeSumAggregateOutputType | null
+    _min: FormL9EmployeMinAggregateOutputType | null
+    _max: FormL9EmployeMaxAggregateOutputType | null
+  }
+
+  type GetFormL9EmployeGroupByPayload<T extends FormL9EmployeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FormL9EmployeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FormL9EmployeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FormL9EmployeGroupByOutputType[P]>
+            : GetScalarType<T[P], FormL9EmployeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FormL9EmployeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9EmployeId?: boolean
+    formL9Id?: boolean
+    totalEmployees?: boolean
+    qualityControl?: boolean
+    engineering?: boolean
+    production?: boolean
+    management?: boolean
+    other?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9Employe"]>
+
+  export type FormL9EmployeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9EmployeId?: boolean
+    formL9Id?: boolean
+    totalEmployees?: boolean
+    qualityControl?: boolean
+    engineering?: boolean
+    production?: boolean
+    management?: boolean
+    other?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9Employe"]>
+
+  export type FormL9EmployeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9EmployeId?: boolean
+    formL9Id?: boolean
+    totalEmployees?: boolean
+    qualityControl?: boolean
+    engineering?: boolean
+    production?: boolean
+    management?: boolean
+    other?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9Employe"]>
+
+  export type FormL9EmployeSelectScalar = {
+    formL9EmployeId?: boolean
+    formL9Id?: boolean
+    totalEmployees?: boolean
+    qualityControl?: boolean
+    engineering?: boolean
+    production?: boolean
+    management?: boolean
+    other?: boolean
+  }
+
+  export type FormL9EmployeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9EmployeId" | "formL9Id" | "totalEmployees" | "qualityControl" | "engineering" | "production" | "management" | "other", ExtArgs["result"]["formL9Employe"]>
+  export type FormL9EmployeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9EmployeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9EmployeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+
+  export type $FormL9EmployePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FormL9Employe"
+    objects: {
+      formL9: Prisma.$FormL9Payload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      formL9EmployeId: string
+      formL9Id: string
+      totalEmployees: number
+      qualityControl: number
+      engineering: number
+      production: number
+      management: number
+      other: number
+    }, ExtArgs["result"]["formL9Employe"]>
+    composites: {}
+  }
+
+  type FormL9EmployeGetPayload<S extends boolean | null | undefined | FormL9EmployeDefaultArgs> = $Result.GetResult<Prisma.$FormL9EmployePayload, S>
+
+  type FormL9EmployeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FormL9EmployeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FormL9EmployeCountAggregateInputType | true
+    }
+
+  export interface FormL9EmployeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FormL9Employe'], meta: { name: 'FormL9Employe' } }
+    /**
+     * Find zero or one FormL9Employe that matches the filter.
+     * @param {FormL9EmployeFindUniqueArgs} args - Arguments to find a FormL9Employe
+     * @example
+     * // Get one FormL9Employe
+     * const formL9Employe = await prisma.formL9Employe.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FormL9EmployeFindUniqueArgs>(args: SelectSubset<T, FormL9EmployeFindUniqueArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FormL9Employe that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FormL9EmployeFindUniqueOrThrowArgs} args - Arguments to find a FormL9Employe
+     * @example
+     * // Get one FormL9Employe
+     * const formL9Employe = await prisma.formL9Employe.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FormL9EmployeFindUniqueOrThrowArgs>(args: SelectSubset<T, FormL9EmployeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9Employe that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9EmployeFindFirstArgs} args - Arguments to find a FormL9Employe
+     * @example
+     * // Get one FormL9Employe
+     * const formL9Employe = await prisma.formL9Employe.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FormL9EmployeFindFirstArgs>(args?: SelectSubset<T, FormL9EmployeFindFirstArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9Employe that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9EmployeFindFirstOrThrowArgs} args - Arguments to find a FormL9Employe
+     * @example
+     * // Get one FormL9Employe
+     * const formL9Employe = await prisma.formL9Employe.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FormL9EmployeFindFirstOrThrowArgs>(args?: SelectSubset<T, FormL9EmployeFindFirstOrThrowArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FormL9Employes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9EmployeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FormL9Employes
+     * const formL9Employes = await prisma.formL9Employe.findMany()
+     * 
+     * // Get first 10 FormL9Employes
+     * const formL9Employes = await prisma.formL9Employe.findMany({ take: 10 })
+     * 
+     * // Only select the `formL9EmployeId`
+     * const formL9EmployeWithFormL9EmployeIdOnly = await prisma.formL9Employe.findMany({ select: { formL9EmployeId: true } })
+     * 
+     */
+    findMany<T extends FormL9EmployeFindManyArgs>(args?: SelectSubset<T, FormL9EmployeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FormL9Employe.
+     * @param {FormL9EmployeCreateArgs} args - Arguments to create a FormL9Employe.
+     * @example
+     * // Create one FormL9Employe
+     * const FormL9Employe = await prisma.formL9Employe.create({
+     *   data: {
+     *     // ... data to create a FormL9Employe
+     *   }
+     * })
+     * 
+     */
+    create<T extends FormL9EmployeCreateArgs>(args: SelectSubset<T, FormL9EmployeCreateArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FormL9Employes.
+     * @param {FormL9EmployeCreateManyArgs} args - Arguments to create many FormL9Employes.
+     * @example
+     * // Create many FormL9Employes
+     * const formL9Employe = await prisma.formL9Employe.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FormL9EmployeCreateManyArgs>(args?: SelectSubset<T, FormL9EmployeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FormL9Employes and returns the data saved in the database.
+     * @param {FormL9EmployeCreateManyAndReturnArgs} args - Arguments to create many FormL9Employes.
+     * @example
+     * // Create many FormL9Employes
+     * const formL9Employe = await prisma.formL9Employe.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FormL9Employes and only return the `formL9EmployeId`
+     * const formL9EmployeWithFormL9EmployeIdOnly = await prisma.formL9Employe.createManyAndReturn({
+     *   select: { formL9EmployeId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FormL9EmployeCreateManyAndReturnArgs>(args?: SelectSubset<T, FormL9EmployeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FormL9Employe.
+     * @param {FormL9EmployeDeleteArgs} args - Arguments to delete one FormL9Employe.
+     * @example
+     * // Delete one FormL9Employe
+     * const FormL9Employe = await prisma.formL9Employe.delete({
+     *   where: {
+     *     // ... filter to delete one FormL9Employe
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FormL9EmployeDeleteArgs>(args: SelectSubset<T, FormL9EmployeDeleteArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FormL9Employe.
+     * @param {FormL9EmployeUpdateArgs} args - Arguments to update one FormL9Employe.
+     * @example
+     * // Update one FormL9Employe
+     * const formL9Employe = await prisma.formL9Employe.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FormL9EmployeUpdateArgs>(args: SelectSubset<T, FormL9EmployeUpdateArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FormL9Employes.
+     * @param {FormL9EmployeDeleteManyArgs} args - Arguments to filter FormL9Employes to delete.
+     * @example
+     * // Delete a few FormL9Employes
+     * const { count } = await prisma.formL9Employe.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FormL9EmployeDeleteManyArgs>(args?: SelectSubset<T, FormL9EmployeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9Employes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9EmployeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FormL9Employes
+     * const formL9Employe = await prisma.formL9Employe.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FormL9EmployeUpdateManyArgs>(args: SelectSubset<T, FormL9EmployeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9Employes and returns the data updated in the database.
+     * @param {FormL9EmployeUpdateManyAndReturnArgs} args - Arguments to update many FormL9Employes.
+     * @example
+     * // Update many FormL9Employes
+     * const formL9Employe = await prisma.formL9Employe.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FormL9Employes and only return the `formL9EmployeId`
+     * const formL9EmployeWithFormL9EmployeIdOnly = await prisma.formL9Employe.updateManyAndReturn({
+     *   select: { formL9EmployeId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FormL9EmployeUpdateManyAndReturnArgs>(args: SelectSubset<T, FormL9EmployeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FormL9Employe.
+     * @param {FormL9EmployeUpsertArgs} args - Arguments to update or create a FormL9Employe.
+     * @example
+     * // Update or create a FormL9Employe
+     * const formL9Employe = await prisma.formL9Employe.upsert({
+     *   create: {
+     *     // ... data to create a FormL9Employe
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FormL9Employe we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FormL9EmployeUpsertArgs>(args: SelectSubset<T, FormL9EmployeUpsertArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FormL9Employes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9EmployeCountArgs} args - Arguments to filter FormL9Employes to count.
+     * @example
+     * // Count the number of FormL9Employes
+     * const count = await prisma.formL9Employe.count({
+     *   where: {
+     *     // ... the filter for the FormL9Employes we want to count
+     *   }
+     * })
+    **/
+    count<T extends FormL9EmployeCountArgs>(
+      args?: Subset<T, FormL9EmployeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FormL9EmployeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FormL9Employe.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9EmployeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FormL9EmployeAggregateArgs>(args: Subset<T, FormL9EmployeAggregateArgs>): Prisma.PrismaPromise<GetFormL9EmployeAggregateType<T>>
+
+    /**
+     * Group by FormL9Employe.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9EmployeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FormL9EmployeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FormL9EmployeGroupByArgs['orderBy'] }
+        : { orderBy?: FormL9EmployeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FormL9EmployeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFormL9EmployeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FormL9Employe model
+   */
+  readonly fields: FormL9EmployeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FormL9Employe.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FormL9EmployeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    formL9<T extends FormL9DefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9DefaultArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FormL9Employe model
+   */
+  interface FormL9EmployeFieldRefs {
+    readonly formL9EmployeId: FieldRef<"FormL9Employe", 'String'>
+    readonly formL9Id: FieldRef<"FormL9Employe", 'String'>
+    readonly totalEmployees: FieldRef<"FormL9Employe", 'Int'>
+    readonly qualityControl: FieldRef<"FormL9Employe", 'Int'>
+    readonly engineering: FieldRef<"FormL9Employe", 'Int'>
+    readonly production: FieldRef<"FormL9Employe", 'Int'>
+    readonly management: FieldRef<"FormL9Employe", 'Int'>
+    readonly other: FieldRef<"FormL9Employe", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FormL9Employe findUnique
+   */
+  export type FormL9EmployeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Employe to fetch.
+     */
+    where: FormL9EmployeWhereUniqueInput
+  }
+
+  /**
+   * FormL9Employe findUniqueOrThrow
+   */
+  export type FormL9EmployeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Employe to fetch.
+     */
+    where: FormL9EmployeWhereUniqueInput
+  }
+
+  /**
+   * FormL9Employe findFirst
+   */
+  export type FormL9EmployeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Employe to fetch.
+     */
+    where?: FormL9EmployeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Employes to fetch.
+     */
+    orderBy?: FormL9EmployeOrderByWithRelationInput | FormL9EmployeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9Employes.
+     */
+    cursor?: FormL9EmployeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Employes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Employes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9Employes.
+     */
+    distinct?: FormL9EmployeScalarFieldEnum | FormL9EmployeScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Employe findFirstOrThrow
+   */
+  export type FormL9EmployeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Employe to fetch.
+     */
+    where?: FormL9EmployeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Employes to fetch.
+     */
+    orderBy?: FormL9EmployeOrderByWithRelationInput | FormL9EmployeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9Employes.
+     */
+    cursor?: FormL9EmployeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Employes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Employes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9Employes.
+     */
+    distinct?: FormL9EmployeScalarFieldEnum | FormL9EmployeScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Employe findMany
+   */
+  export type FormL9EmployeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Employes to fetch.
+     */
+    where?: FormL9EmployeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Employes to fetch.
+     */
+    orderBy?: FormL9EmployeOrderByWithRelationInput | FormL9EmployeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FormL9Employes.
+     */
+    cursor?: FormL9EmployeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Employes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Employes.
+     */
+    skip?: number
+    distinct?: FormL9EmployeScalarFieldEnum | FormL9EmployeScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Employe create
+   */
+  export type FormL9EmployeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FormL9Employe.
+     */
+    data: XOR<FormL9EmployeCreateInput, FormL9EmployeUncheckedCreateInput>
+  }
+
+  /**
+   * FormL9Employe createMany
+   */
+  export type FormL9EmployeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FormL9Employes.
+     */
+    data: FormL9EmployeCreateManyInput | FormL9EmployeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FormL9Employe createManyAndReturn
+   */
+  export type FormL9EmployeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * The data used to create many FormL9Employes.
+     */
+    data: FormL9EmployeCreateManyInput | FormL9EmployeCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9Employe update
+   */
+  export type FormL9EmployeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FormL9Employe.
+     */
+    data: XOR<FormL9EmployeUpdateInput, FormL9EmployeUncheckedUpdateInput>
+    /**
+     * Choose, which FormL9Employe to update.
+     */
+    where: FormL9EmployeWhereUniqueInput
+  }
+
+  /**
+   * FormL9Employe updateMany
+   */
+  export type FormL9EmployeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FormL9Employes.
+     */
+    data: XOR<FormL9EmployeUpdateManyMutationInput, FormL9EmployeUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9Employes to update
+     */
+    where?: FormL9EmployeWhereInput
+    /**
+     * Limit how many FormL9Employes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9Employe updateManyAndReturn
+   */
+  export type FormL9EmployeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * The data used to update FormL9Employes.
+     */
+    data: XOR<FormL9EmployeUpdateManyMutationInput, FormL9EmployeUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9Employes to update
+     */
+    where?: FormL9EmployeWhereInput
+    /**
+     * Limit how many FormL9Employes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9Employe upsert
+   */
+  export type FormL9EmployeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FormL9Employe to update in case it exists.
+     */
+    where: FormL9EmployeWhereUniqueInput
+    /**
+     * In case the FormL9Employe found by the `where` argument doesn't exist, create a new FormL9Employe with this data.
+     */
+    create: XOR<FormL9EmployeCreateInput, FormL9EmployeUncheckedCreateInput>
+    /**
+     * In case the FormL9Employe was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FormL9EmployeUpdateInput, FormL9EmployeUncheckedUpdateInput>
+  }
+
+  /**
+   * FormL9Employe delete
+   */
+  export type FormL9EmployeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+    /**
+     * Filter which FormL9Employe to delete.
+     */
+    where: FormL9EmployeWhereUniqueInput
+  }
+
+  /**
+   * FormL9Employe deleteMany
+   */
+  export type FormL9EmployeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9Employes to delete
+     */
+    where?: FormL9EmployeWhereInput
+    /**
+     * Limit how many FormL9Employes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9Employe without action
+   */
+  export type FormL9EmployeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Employe
+     */
+    select?: FormL9EmployeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Employe
+     */
+    omit?: FormL9EmployeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9EmployeInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FormL9WorkExperience
+   */
+
+  export type AggregateFormL9WorkExperience = {
+    _count: FormL9WorkExperienceCountAggregateOutputType | null
+    _avg: FormL9WorkExperienceAvgAggregateOutputType | null
+    _sum: FormL9WorkExperienceSumAggregateOutputType | null
+    _min: FormL9WorkExperienceMinAggregateOutputType | null
+    _max: FormL9WorkExperienceMaxAggregateOutputType | null
+  }
+
+  export type FormL9WorkExperienceAvgAggregateOutputType = {
+    score: number | null
+  }
+
+  export type FormL9WorkExperienceSumAggregateOutputType = {
+    score: number | null
+  }
+
+  export type FormL9WorkExperienceMinAggregateOutputType = {
+    formL9WorkExperienceId: string | null
+    formL9Id: string | null
+    customerOrLocation: string | null
+    typeOfWork: string | null
+    score: number | null
+    customerContactPerson: string | null
+    customerTelpFaxHp: string | null
+  }
+
+  export type FormL9WorkExperienceMaxAggregateOutputType = {
+    formL9WorkExperienceId: string | null
+    formL9Id: string | null
+    customerOrLocation: string | null
+    typeOfWork: string | null
+    score: number | null
+    customerContactPerson: string | null
+    customerTelpFaxHp: string | null
+  }
+
+  export type FormL9WorkExperienceCountAggregateOutputType = {
+    formL9WorkExperienceId: number
+    formL9Id: number
+    customerOrLocation: number
+    typeOfWork: number
+    score: number
+    customerContactPerson: number
+    customerTelpFaxHp: number
+    _all: number
+  }
+
+
+  export type FormL9WorkExperienceAvgAggregateInputType = {
+    score?: true
+  }
+
+  export type FormL9WorkExperienceSumAggregateInputType = {
+    score?: true
+  }
+
+  export type FormL9WorkExperienceMinAggregateInputType = {
+    formL9WorkExperienceId?: true
+    formL9Id?: true
+    customerOrLocation?: true
+    typeOfWork?: true
+    score?: true
+    customerContactPerson?: true
+    customerTelpFaxHp?: true
+  }
+
+  export type FormL9WorkExperienceMaxAggregateInputType = {
+    formL9WorkExperienceId?: true
+    formL9Id?: true
+    customerOrLocation?: true
+    typeOfWork?: true
+    score?: true
+    customerContactPerson?: true
+    customerTelpFaxHp?: true
+  }
+
+  export type FormL9WorkExperienceCountAggregateInputType = {
+    formL9WorkExperienceId?: true
+    formL9Id?: true
+    customerOrLocation?: true
+    typeOfWork?: true
+    score?: true
+    customerContactPerson?: true
+    customerTelpFaxHp?: true
+    _all?: true
+  }
+
+  export type FormL9WorkExperienceAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9WorkExperience to aggregate.
+     */
+    where?: FormL9WorkExperienceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9WorkExperiences to fetch.
+     */
+    orderBy?: FormL9WorkExperienceOrderByWithRelationInput | FormL9WorkExperienceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FormL9WorkExperienceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9WorkExperiences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9WorkExperiences.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FormL9WorkExperiences
+    **/
+    _count?: true | FormL9WorkExperienceCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: FormL9WorkExperienceAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: FormL9WorkExperienceSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FormL9WorkExperienceMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FormL9WorkExperienceMaxAggregateInputType
+  }
+
+  export type GetFormL9WorkExperienceAggregateType<T extends FormL9WorkExperienceAggregateArgs> = {
+        [P in keyof T & keyof AggregateFormL9WorkExperience]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFormL9WorkExperience[P]>
+      : GetScalarType<T[P], AggregateFormL9WorkExperience[P]>
+  }
+
+
+
+
+  export type FormL9WorkExperienceGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9WorkExperienceWhereInput
+    orderBy?: FormL9WorkExperienceOrderByWithAggregationInput | FormL9WorkExperienceOrderByWithAggregationInput[]
+    by: FormL9WorkExperienceScalarFieldEnum[] | FormL9WorkExperienceScalarFieldEnum
+    having?: FormL9WorkExperienceScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FormL9WorkExperienceCountAggregateInputType | true
+    _avg?: FormL9WorkExperienceAvgAggregateInputType
+    _sum?: FormL9WorkExperienceSumAggregateInputType
+    _min?: FormL9WorkExperienceMinAggregateInputType
+    _max?: FormL9WorkExperienceMaxAggregateInputType
+  }
+
+  export type FormL9WorkExperienceGroupByOutputType = {
+    formL9WorkExperienceId: string
+    formL9Id: string
+    customerOrLocation: string
+    typeOfWork: string
+    score: number
+    customerContactPerson: string
+    customerTelpFaxHp: string
+    _count: FormL9WorkExperienceCountAggregateOutputType | null
+    _avg: FormL9WorkExperienceAvgAggregateOutputType | null
+    _sum: FormL9WorkExperienceSumAggregateOutputType | null
+    _min: FormL9WorkExperienceMinAggregateOutputType | null
+    _max: FormL9WorkExperienceMaxAggregateOutputType | null
+  }
+
+  type GetFormL9WorkExperienceGroupByPayload<T extends FormL9WorkExperienceGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FormL9WorkExperienceGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FormL9WorkExperienceGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FormL9WorkExperienceGroupByOutputType[P]>
+            : GetScalarType<T[P], FormL9WorkExperienceGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FormL9WorkExperienceSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9WorkExperienceId?: boolean
+    formL9Id?: boolean
+    customerOrLocation?: boolean
+    typeOfWork?: boolean
+    score?: boolean
+    customerContactPerson?: boolean
+    customerTelpFaxHp?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9WorkExperience"]>
+
+  export type FormL9WorkExperienceSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9WorkExperienceId?: boolean
+    formL9Id?: boolean
+    customerOrLocation?: boolean
+    typeOfWork?: boolean
+    score?: boolean
+    customerContactPerson?: boolean
+    customerTelpFaxHp?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9WorkExperience"]>
+
+  export type FormL9WorkExperienceSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9WorkExperienceId?: boolean
+    formL9Id?: boolean
+    customerOrLocation?: boolean
+    typeOfWork?: boolean
+    score?: boolean
+    customerContactPerson?: boolean
+    customerTelpFaxHp?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9WorkExperience"]>
+
+  export type FormL9WorkExperienceSelectScalar = {
+    formL9WorkExperienceId?: boolean
+    formL9Id?: boolean
+    customerOrLocation?: boolean
+    typeOfWork?: boolean
+    score?: boolean
+    customerContactPerson?: boolean
+    customerTelpFaxHp?: boolean
+  }
+
+  export type FormL9WorkExperienceOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9WorkExperienceId" | "formL9Id" | "customerOrLocation" | "typeOfWork" | "score" | "customerContactPerson" | "customerTelpFaxHp", ExtArgs["result"]["formL9WorkExperience"]>
+  export type FormL9WorkExperienceInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9WorkExperienceIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9WorkExperienceIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+
+  export type $FormL9WorkExperiencePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FormL9WorkExperience"
+    objects: {
+      formL9: Prisma.$FormL9Payload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      formL9WorkExperienceId: string
+      formL9Id: string
+      customerOrLocation: string
+      typeOfWork: string
+      score: number
+      customerContactPerson: string
+      customerTelpFaxHp: string
+    }, ExtArgs["result"]["formL9WorkExperience"]>
+    composites: {}
+  }
+
+  type FormL9WorkExperienceGetPayload<S extends boolean | null | undefined | FormL9WorkExperienceDefaultArgs> = $Result.GetResult<Prisma.$FormL9WorkExperiencePayload, S>
+
+  type FormL9WorkExperienceCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FormL9WorkExperienceFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FormL9WorkExperienceCountAggregateInputType | true
+    }
+
+  export interface FormL9WorkExperienceDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FormL9WorkExperience'], meta: { name: 'FormL9WorkExperience' } }
+    /**
+     * Find zero or one FormL9WorkExperience that matches the filter.
+     * @param {FormL9WorkExperienceFindUniqueArgs} args - Arguments to find a FormL9WorkExperience
+     * @example
+     * // Get one FormL9WorkExperience
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FormL9WorkExperienceFindUniqueArgs>(args: SelectSubset<T, FormL9WorkExperienceFindUniqueArgs<ExtArgs>>): Prisma__FormL9WorkExperienceClient<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FormL9WorkExperience that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FormL9WorkExperienceFindUniqueOrThrowArgs} args - Arguments to find a FormL9WorkExperience
+     * @example
+     * // Get one FormL9WorkExperience
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FormL9WorkExperienceFindUniqueOrThrowArgs>(args: SelectSubset<T, FormL9WorkExperienceFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FormL9WorkExperienceClient<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9WorkExperience that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9WorkExperienceFindFirstArgs} args - Arguments to find a FormL9WorkExperience
+     * @example
+     * // Get one FormL9WorkExperience
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FormL9WorkExperienceFindFirstArgs>(args?: SelectSubset<T, FormL9WorkExperienceFindFirstArgs<ExtArgs>>): Prisma__FormL9WorkExperienceClient<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9WorkExperience that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9WorkExperienceFindFirstOrThrowArgs} args - Arguments to find a FormL9WorkExperience
+     * @example
+     * // Get one FormL9WorkExperience
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FormL9WorkExperienceFindFirstOrThrowArgs>(args?: SelectSubset<T, FormL9WorkExperienceFindFirstOrThrowArgs<ExtArgs>>): Prisma__FormL9WorkExperienceClient<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FormL9WorkExperiences that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9WorkExperienceFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FormL9WorkExperiences
+     * const formL9WorkExperiences = await prisma.formL9WorkExperience.findMany()
+     * 
+     * // Get first 10 FormL9WorkExperiences
+     * const formL9WorkExperiences = await prisma.formL9WorkExperience.findMany({ take: 10 })
+     * 
+     * // Only select the `formL9WorkExperienceId`
+     * const formL9WorkExperienceWithFormL9WorkExperienceIdOnly = await prisma.formL9WorkExperience.findMany({ select: { formL9WorkExperienceId: true } })
+     * 
+     */
+    findMany<T extends FormL9WorkExperienceFindManyArgs>(args?: SelectSubset<T, FormL9WorkExperienceFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FormL9WorkExperience.
+     * @param {FormL9WorkExperienceCreateArgs} args - Arguments to create a FormL9WorkExperience.
+     * @example
+     * // Create one FormL9WorkExperience
+     * const FormL9WorkExperience = await prisma.formL9WorkExperience.create({
+     *   data: {
+     *     // ... data to create a FormL9WorkExperience
+     *   }
+     * })
+     * 
+     */
+    create<T extends FormL9WorkExperienceCreateArgs>(args: SelectSubset<T, FormL9WorkExperienceCreateArgs<ExtArgs>>): Prisma__FormL9WorkExperienceClient<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FormL9WorkExperiences.
+     * @param {FormL9WorkExperienceCreateManyArgs} args - Arguments to create many FormL9WorkExperiences.
+     * @example
+     * // Create many FormL9WorkExperiences
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FormL9WorkExperienceCreateManyArgs>(args?: SelectSubset<T, FormL9WorkExperienceCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FormL9WorkExperiences and returns the data saved in the database.
+     * @param {FormL9WorkExperienceCreateManyAndReturnArgs} args - Arguments to create many FormL9WorkExperiences.
+     * @example
+     * // Create many FormL9WorkExperiences
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FormL9WorkExperiences and only return the `formL9WorkExperienceId`
+     * const formL9WorkExperienceWithFormL9WorkExperienceIdOnly = await prisma.formL9WorkExperience.createManyAndReturn({
+     *   select: { formL9WorkExperienceId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FormL9WorkExperienceCreateManyAndReturnArgs>(args?: SelectSubset<T, FormL9WorkExperienceCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FormL9WorkExperience.
+     * @param {FormL9WorkExperienceDeleteArgs} args - Arguments to delete one FormL9WorkExperience.
+     * @example
+     * // Delete one FormL9WorkExperience
+     * const FormL9WorkExperience = await prisma.formL9WorkExperience.delete({
+     *   where: {
+     *     // ... filter to delete one FormL9WorkExperience
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FormL9WorkExperienceDeleteArgs>(args: SelectSubset<T, FormL9WorkExperienceDeleteArgs<ExtArgs>>): Prisma__FormL9WorkExperienceClient<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FormL9WorkExperience.
+     * @param {FormL9WorkExperienceUpdateArgs} args - Arguments to update one FormL9WorkExperience.
+     * @example
+     * // Update one FormL9WorkExperience
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FormL9WorkExperienceUpdateArgs>(args: SelectSubset<T, FormL9WorkExperienceUpdateArgs<ExtArgs>>): Prisma__FormL9WorkExperienceClient<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FormL9WorkExperiences.
+     * @param {FormL9WorkExperienceDeleteManyArgs} args - Arguments to filter FormL9WorkExperiences to delete.
+     * @example
+     * // Delete a few FormL9WorkExperiences
+     * const { count } = await prisma.formL9WorkExperience.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FormL9WorkExperienceDeleteManyArgs>(args?: SelectSubset<T, FormL9WorkExperienceDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9WorkExperiences.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9WorkExperienceUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FormL9WorkExperiences
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FormL9WorkExperienceUpdateManyArgs>(args: SelectSubset<T, FormL9WorkExperienceUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9WorkExperiences and returns the data updated in the database.
+     * @param {FormL9WorkExperienceUpdateManyAndReturnArgs} args - Arguments to update many FormL9WorkExperiences.
+     * @example
+     * // Update many FormL9WorkExperiences
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FormL9WorkExperiences and only return the `formL9WorkExperienceId`
+     * const formL9WorkExperienceWithFormL9WorkExperienceIdOnly = await prisma.formL9WorkExperience.updateManyAndReturn({
+     *   select: { formL9WorkExperienceId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FormL9WorkExperienceUpdateManyAndReturnArgs>(args: SelectSubset<T, FormL9WorkExperienceUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FormL9WorkExperience.
+     * @param {FormL9WorkExperienceUpsertArgs} args - Arguments to update or create a FormL9WorkExperience.
+     * @example
+     * // Update or create a FormL9WorkExperience
+     * const formL9WorkExperience = await prisma.formL9WorkExperience.upsert({
+     *   create: {
+     *     // ... data to create a FormL9WorkExperience
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FormL9WorkExperience we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FormL9WorkExperienceUpsertArgs>(args: SelectSubset<T, FormL9WorkExperienceUpsertArgs<ExtArgs>>): Prisma__FormL9WorkExperienceClient<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FormL9WorkExperiences.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9WorkExperienceCountArgs} args - Arguments to filter FormL9WorkExperiences to count.
+     * @example
+     * // Count the number of FormL9WorkExperiences
+     * const count = await prisma.formL9WorkExperience.count({
+     *   where: {
+     *     // ... the filter for the FormL9WorkExperiences we want to count
+     *   }
+     * })
+    **/
+    count<T extends FormL9WorkExperienceCountArgs>(
+      args?: Subset<T, FormL9WorkExperienceCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FormL9WorkExperienceCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FormL9WorkExperience.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9WorkExperienceAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FormL9WorkExperienceAggregateArgs>(args: Subset<T, FormL9WorkExperienceAggregateArgs>): Prisma.PrismaPromise<GetFormL9WorkExperienceAggregateType<T>>
+
+    /**
+     * Group by FormL9WorkExperience.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9WorkExperienceGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FormL9WorkExperienceGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FormL9WorkExperienceGroupByArgs['orderBy'] }
+        : { orderBy?: FormL9WorkExperienceGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FormL9WorkExperienceGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFormL9WorkExperienceGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FormL9WorkExperience model
+   */
+  readonly fields: FormL9WorkExperienceFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FormL9WorkExperience.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FormL9WorkExperienceClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    formL9<T extends FormL9DefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9DefaultArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FormL9WorkExperience model
+   */
+  interface FormL9WorkExperienceFieldRefs {
+    readonly formL9WorkExperienceId: FieldRef<"FormL9WorkExperience", 'String'>
+    readonly formL9Id: FieldRef<"FormL9WorkExperience", 'String'>
+    readonly customerOrLocation: FieldRef<"FormL9WorkExperience", 'String'>
+    readonly typeOfWork: FieldRef<"FormL9WorkExperience", 'String'>
+    readonly score: FieldRef<"FormL9WorkExperience", 'Int'>
+    readonly customerContactPerson: FieldRef<"FormL9WorkExperience", 'String'>
+    readonly customerTelpFaxHp: FieldRef<"FormL9WorkExperience", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FormL9WorkExperience findUnique
+   */
+  export type FormL9WorkExperienceFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9WorkExperience to fetch.
+     */
+    where: FormL9WorkExperienceWhereUniqueInput
+  }
+
+  /**
+   * FormL9WorkExperience findUniqueOrThrow
+   */
+  export type FormL9WorkExperienceFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9WorkExperience to fetch.
+     */
+    where: FormL9WorkExperienceWhereUniqueInput
+  }
+
+  /**
+   * FormL9WorkExperience findFirst
+   */
+  export type FormL9WorkExperienceFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9WorkExperience to fetch.
+     */
+    where?: FormL9WorkExperienceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9WorkExperiences to fetch.
+     */
+    orderBy?: FormL9WorkExperienceOrderByWithRelationInput | FormL9WorkExperienceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9WorkExperiences.
+     */
+    cursor?: FormL9WorkExperienceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9WorkExperiences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9WorkExperiences.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9WorkExperiences.
+     */
+    distinct?: FormL9WorkExperienceScalarFieldEnum | FormL9WorkExperienceScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9WorkExperience findFirstOrThrow
+   */
+  export type FormL9WorkExperienceFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9WorkExperience to fetch.
+     */
+    where?: FormL9WorkExperienceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9WorkExperiences to fetch.
+     */
+    orderBy?: FormL9WorkExperienceOrderByWithRelationInput | FormL9WorkExperienceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9WorkExperiences.
+     */
+    cursor?: FormL9WorkExperienceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9WorkExperiences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9WorkExperiences.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9WorkExperiences.
+     */
+    distinct?: FormL9WorkExperienceScalarFieldEnum | FormL9WorkExperienceScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9WorkExperience findMany
+   */
+  export type FormL9WorkExperienceFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9WorkExperiences to fetch.
+     */
+    where?: FormL9WorkExperienceWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9WorkExperiences to fetch.
+     */
+    orderBy?: FormL9WorkExperienceOrderByWithRelationInput | FormL9WorkExperienceOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FormL9WorkExperiences.
+     */
+    cursor?: FormL9WorkExperienceWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9WorkExperiences from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9WorkExperiences.
+     */
+    skip?: number
+    distinct?: FormL9WorkExperienceScalarFieldEnum | FormL9WorkExperienceScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9WorkExperience create
+   */
+  export type FormL9WorkExperienceCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FormL9WorkExperience.
+     */
+    data: XOR<FormL9WorkExperienceCreateInput, FormL9WorkExperienceUncheckedCreateInput>
+  }
+
+  /**
+   * FormL9WorkExperience createMany
+   */
+  export type FormL9WorkExperienceCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FormL9WorkExperiences.
+     */
+    data: FormL9WorkExperienceCreateManyInput | FormL9WorkExperienceCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FormL9WorkExperience createManyAndReturn
+   */
+  export type FormL9WorkExperienceCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * The data used to create many FormL9WorkExperiences.
+     */
+    data: FormL9WorkExperienceCreateManyInput | FormL9WorkExperienceCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9WorkExperience update
+   */
+  export type FormL9WorkExperienceUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FormL9WorkExperience.
+     */
+    data: XOR<FormL9WorkExperienceUpdateInput, FormL9WorkExperienceUncheckedUpdateInput>
+    /**
+     * Choose, which FormL9WorkExperience to update.
+     */
+    where: FormL9WorkExperienceWhereUniqueInput
+  }
+
+  /**
+   * FormL9WorkExperience updateMany
+   */
+  export type FormL9WorkExperienceUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FormL9WorkExperiences.
+     */
+    data: XOR<FormL9WorkExperienceUpdateManyMutationInput, FormL9WorkExperienceUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9WorkExperiences to update
+     */
+    where?: FormL9WorkExperienceWhereInput
+    /**
+     * Limit how many FormL9WorkExperiences to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9WorkExperience updateManyAndReturn
+   */
+  export type FormL9WorkExperienceUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * The data used to update FormL9WorkExperiences.
+     */
+    data: XOR<FormL9WorkExperienceUpdateManyMutationInput, FormL9WorkExperienceUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9WorkExperiences to update
+     */
+    where?: FormL9WorkExperienceWhereInput
+    /**
+     * Limit how many FormL9WorkExperiences to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9WorkExperience upsert
+   */
+  export type FormL9WorkExperienceUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FormL9WorkExperience to update in case it exists.
+     */
+    where: FormL9WorkExperienceWhereUniqueInput
+    /**
+     * In case the FormL9WorkExperience found by the `where` argument doesn't exist, create a new FormL9WorkExperience with this data.
+     */
+    create: XOR<FormL9WorkExperienceCreateInput, FormL9WorkExperienceUncheckedCreateInput>
+    /**
+     * In case the FormL9WorkExperience was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FormL9WorkExperienceUpdateInput, FormL9WorkExperienceUncheckedUpdateInput>
+  }
+
+  /**
+   * FormL9WorkExperience delete
+   */
+  export type FormL9WorkExperienceDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+    /**
+     * Filter which FormL9WorkExperience to delete.
+     */
+    where: FormL9WorkExperienceWhereUniqueInput
+  }
+
+  /**
+   * FormL9WorkExperience deleteMany
+   */
+  export type FormL9WorkExperienceDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9WorkExperiences to delete
+     */
+    where?: FormL9WorkExperienceWhereInput
+    /**
+     * Limit how many FormL9WorkExperiences to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9WorkExperience without action
+   */
+  export type FormL9WorkExperienceDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9WorkExperience
+     */
+    select?: FormL9WorkExperienceSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9WorkExperience
+     */
+    omit?: FormL9WorkExperienceOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9WorkExperienceInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FormL9Others
+   */
+
+  export type AggregateFormL9Others = {
+    _count: FormL9OthersCountAggregateOutputType | null
+    _min: FormL9OthersMinAggregateOutputType | null
+    _max: FormL9OthersMaxAggregateOutputType | null
+  }
+
+  export type FormL9OthersMinAggregateOutputType = {
+    formL9OthersId: string | null
+    formL9Id: string | null
+    haveCertificateISO: boolean | null
+    haveCompanyOrganizationalStructure: boolean | null
+    haveQualityControlOrganizationalStructure: boolean | null
+    haveProductWarranty: boolean | null
+    haveExpiryDate: boolean | null
+    haveAPD: boolean | null
+    haveAPDRegulation: boolean | null
+    isTopApplicable: boolean | null
+    paymentTime: string | null
+    agreeToConfidentialInformation: boolean | null
+    understandingBreachesOfConfidentiality: boolean | null
+    signConfidentialityAgreement: boolean | null
+  }
+
+  export type FormL9OthersMaxAggregateOutputType = {
+    formL9OthersId: string | null
+    formL9Id: string | null
+    haveCertificateISO: boolean | null
+    haveCompanyOrganizationalStructure: boolean | null
+    haveQualityControlOrganizationalStructure: boolean | null
+    haveProductWarranty: boolean | null
+    haveExpiryDate: boolean | null
+    haveAPD: boolean | null
+    haveAPDRegulation: boolean | null
+    isTopApplicable: boolean | null
+    paymentTime: string | null
+    agreeToConfidentialInformation: boolean | null
+    understandingBreachesOfConfidentiality: boolean | null
+    signConfidentialityAgreement: boolean | null
+  }
+
+  export type FormL9OthersCountAggregateOutputType = {
+    formL9OthersId: number
+    formL9Id: number
+    haveCertificateISO: number
+    haveCompanyOrganizationalStructure: number
+    haveQualityControlOrganizationalStructure: number
+    haveProductWarranty: number
+    haveExpiryDate: number
+    haveAPD: number
+    haveAPDRegulation: number
+    isTopApplicable: number
+    paymentTime: number
+    agreeToConfidentialInformation: number
+    understandingBreachesOfConfidentiality: number
+    signConfidentialityAgreement: number
+    _all: number
+  }
+
+
+  export type FormL9OthersMinAggregateInputType = {
+    formL9OthersId?: true
+    formL9Id?: true
+    haveCertificateISO?: true
+    haveCompanyOrganizationalStructure?: true
+    haveQualityControlOrganizationalStructure?: true
+    haveProductWarranty?: true
+    haveExpiryDate?: true
+    haveAPD?: true
+    haveAPDRegulation?: true
+    isTopApplicable?: true
+    paymentTime?: true
+    agreeToConfidentialInformation?: true
+    understandingBreachesOfConfidentiality?: true
+    signConfidentialityAgreement?: true
+  }
+
+  export type FormL9OthersMaxAggregateInputType = {
+    formL9OthersId?: true
+    formL9Id?: true
+    haveCertificateISO?: true
+    haveCompanyOrganizationalStructure?: true
+    haveQualityControlOrganizationalStructure?: true
+    haveProductWarranty?: true
+    haveExpiryDate?: true
+    haveAPD?: true
+    haveAPDRegulation?: true
+    isTopApplicable?: true
+    paymentTime?: true
+    agreeToConfidentialInformation?: true
+    understandingBreachesOfConfidentiality?: true
+    signConfidentialityAgreement?: true
+  }
+
+  export type FormL9OthersCountAggregateInputType = {
+    formL9OthersId?: true
+    formL9Id?: true
+    haveCertificateISO?: true
+    haveCompanyOrganizationalStructure?: true
+    haveQualityControlOrganizationalStructure?: true
+    haveProductWarranty?: true
+    haveExpiryDate?: true
+    haveAPD?: true
+    haveAPDRegulation?: true
+    isTopApplicable?: true
+    paymentTime?: true
+    agreeToConfidentialInformation?: true
+    understandingBreachesOfConfidentiality?: true
+    signConfidentialityAgreement?: true
+    _all?: true
+  }
+
+  export type FormL9OthersAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9Others to aggregate.
+     */
+    where?: FormL9OthersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Others to fetch.
+     */
+    orderBy?: FormL9OthersOrderByWithRelationInput | FormL9OthersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FormL9OthersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Others from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Others.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FormL9Others
+    **/
+    _count?: true | FormL9OthersCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FormL9OthersMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FormL9OthersMaxAggregateInputType
+  }
+
+  export type GetFormL9OthersAggregateType<T extends FormL9OthersAggregateArgs> = {
+        [P in keyof T & keyof AggregateFormL9Others]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFormL9Others[P]>
+      : GetScalarType<T[P], AggregateFormL9Others[P]>
+  }
+
+
+
+
+  export type FormL9OthersGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9OthersWhereInput
+    orderBy?: FormL9OthersOrderByWithAggregationInput | FormL9OthersOrderByWithAggregationInput[]
+    by: FormL9OthersScalarFieldEnum[] | FormL9OthersScalarFieldEnum
+    having?: FormL9OthersScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FormL9OthersCountAggregateInputType | true
+    _min?: FormL9OthersMinAggregateInputType
+    _max?: FormL9OthersMaxAggregateInputType
+  }
+
+  export type FormL9OthersGroupByOutputType = {
+    formL9OthersId: string
+    formL9Id: string
+    haveCertificateISO: boolean
+    haveCompanyOrganizationalStructure: boolean
+    haveQualityControlOrganizationalStructure: boolean
+    haveProductWarranty: boolean
+    haveExpiryDate: boolean
+    haveAPD: boolean
+    haveAPDRegulation: boolean
+    isTopApplicable: boolean
+    paymentTime: string
+    agreeToConfidentialInformation: boolean
+    understandingBreachesOfConfidentiality: boolean
+    signConfidentialityAgreement: boolean
+    _count: FormL9OthersCountAggregateOutputType | null
+    _min: FormL9OthersMinAggregateOutputType | null
+    _max: FormL9OthersMaxAggregateOutputType | null
+  }
+
+  type GetFormL9OthersGroupByPayload<T extends FormL9OthersGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FormL9OthersGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FormL9OthersGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FormL9OthersGroupByOutputType[P]>
+            : GetScalarType<T[P], FormL9OthersGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FormL9OthersSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9OthersId?: boolean
+    formL9Id?: boolean
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime?: boolean
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+    certificateISOs?: boolean | FormL9Others$certificateISOsArgs<ExtArgs>
+    _count?: boolean | FormL9OthersCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9Others"]>
+
+  export type FormL9OthersSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9OthersId?: boolean
+    formL9Id?: boolean
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime?: boolean
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9Others"]>
+
+  export type FormL9OthersSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    formL9OthersId?: boolean
+    formL9Id?: boolean
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime?: boolean
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9Others"]>
+
+  export type FormL9OthersSelectScalar = {
+    formL9OthersId?: boolean
+    formL9Id?: boolean
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime?: boolean
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+  }
+
+  export type FormL9OthersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9OthersId" | "formL9Id" | "haveCertificateISO" | "haveCompanyOrganizationalStructure" | "haveQualityControlOrganizationalStructure" | "haveProductWarranty" | "haveExpiryDate" | "haveAPD" | "haveAPDRegulation" | "isTopApplicable" | "paymentTime" | "agreeToConfidentialInformation" | "understandingBreachesOfConfidentiality" | "signConfidentialityAgreement", ExtArgs["result"]["formL9Others"]>
+  export type FormL9OthersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+    certificateISOs?: boolean | FormL9Others$certificateISOsArgs<ExtArgs>
+    _count?: boolean | FormL9OthersCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type FormL9OthersIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+  export type FormL9OthersIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
+  }
+
+  export type $FormL9OthersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FormL9Others"
+    objects: {
+      formL9: Prisma.$FormL9Payload<ExtArgs>
+      certificateISOs: Prisma.$FormL9CertificateISOPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      formL9OthersId: string
+      formL9Id: string
+      haveCertificateISO: boolean
+      haveCompanyOrganizationalStructure: boolean
+      haveQualityControlOrganizationalStructure: boolean
+      haveProductWarranty: boolean
+      haveExpiryDate: boolean
+      haveAPD: boolean
+      haveAPDRegulation: boolean
+      isTopApplicable: boolean
+      paymentTime: string
+      agreeToConfidentialInformation: boolean
+      understandingBreachesOfConfidentiality: boolean
+      signConfidentialityAgreement: boolean
+    }, ExtArgs["result"]["formL9Others"]>
+    composites: {}
+  }
+
+  type FormL9OthersGetPayload<S extends boolean | null | undefined | FormL9OthersDefaultArgs> = $Result.GetResult<Prisma.$FormL9OthersPayload, S>
+
+  type FormL9OthersCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FormL9OthersFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FormL9OthersCountAggregateInputType | true
+    }
+
+  export interface FormL9OthersDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FormL9Others'], meta: { name: 'FormL9Others' } }
+    /**
+     * Find zero or one FormL9Others that matches the filter.
+     * @param {FormL9OthersFindUniqueArgs} args - Arguments to find a FormL9Others
+     * @example
+     * // Get one FormL9Others
+     * const formL9Others = await prisma.formL9Others.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FormL9OthersFindUniqueArgs>(args: SelectSubset<T, FormL9OthersFindUniqueArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FormL9Others that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FormL9OthersFindUniqueOrThrowArgs} args - Arguments to find a FormL9Others
+     * @example
+     * // Get one FormL9Others
+     * const formL9Others = await prisma.formL9Others.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FormL9OthersFindUniqueOrThrowArgs>(args: SelectSubset<T, FormL9OthersFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9Others that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9OthersFindFirstArgs} args - Arguments to find a FormL9Others
+     * @example
+     * // Get one FormL9Others
+     * const formL9Others = await prisma.formL9Others.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FormL9OthersFindFirstArgs>(args?: SelectSubset<T, FormL9OthersFindFirstArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9Others that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9OthersFindFirstOrThrowArgs} args - Arguments to find a FormL9Others
+     * @example
+     * // Get one FormL9Others
+     * const formL9Others = await prisma.formL9Others.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FormL9OthersFindFirstOrThrowArgs>(args?: SelectSubset<T, FormL9OthersFindFirstOrThrowArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FormL9Others that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9OthersFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FormL9Others
+     * const formL9Others = await prisma.formL9Others.findMany()
+     * 
+     * // Get first 10 FormL9Others
+     * const formL9Others = await prisma.formL9Others.findMany({ take: 10 })
+     * 
+     * // Only select the `formL9OthersId`
+     * const formL9OthersWithFormL9OthersIdOnly = await prisma.formL9Others.findMany({ select: { formL9OthersId: true } })
+     * 
+     */
+    findMany<T extends FormL9OthersFindManyArgs>(args?: SelectSubset<T, FormL9OthersFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FormL9Others.
+     * @param {FormL9OthersCreateArgs} args - Arguments to create a FormL9Others.
+     * @example
+     * // Create one FormL9Others
+     * const FormL9Others = await prisma.formL9Others.create({
+     *   data: {
+     *     // ... data to create a FormL9Others
+     *   }
+     * })
+     * 
+     */
+    create<T extends FormL9OthersCreateArgs>(args: SelectSubset<T, FormL9OthersCreateArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FormL9Others.
+     * @param {FormL9OthersCreateManyArgs} args - Arguments to create many FormL9Others.
+     * @example
+     * // Create many FormL9Others
+     * const formL9Others = await prisma.formL9Others.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FormL9OthersCreateManyArgs>(args?: SelectSubset<T, FormL9OthersCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FormL9Others and returns the data saved in the database.
+     * @param {FormL9OthersCreateManyAndReturnArgs} args - Arguments to create many FormL9Others.
+     * @example
+     * // Create many FormL9Others
+     * const formL9Others = await prisma.formL9Others.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FormL9Others and only return the `formL9OthersId`
+     * const formL9OthersWithFormL9OthersIdOnly = await prisma.formL9Others.createManyAndReturn({
+     *   select: { formL9OthersId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FormL9OthersCreateManyAndReturnArgs>(args?: SelectSubset<T, FormL9OthersCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FormL9Others.
+     * @param {FormL9OthersDeleteArgs} args - Arguments to delete one FormL9Others.
+     * @example
+     * // Delete one FormL9Others
+     * const FormL9Others = await prisma.formL9Others.delete({
+     *   where: {
+     *     // ... filter to delete one FormL9Others
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FormL9OthersDeleteArgs>(args: SelectSubset<T, FormL9OthersDeleteArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FormL9Others.
+     * @param {FormL9OthersUpdateArgs} args - Arguments to update one FormL9Others.
+     * @example
+     * // Update one FormL9Others
+     * const formL9Others = await prisma.formL9Others.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FormL9OthersUpdateArgs>(args: SelectSubset<T, FormL9OthersUpdateArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FormL9Others.
+     * @param {FormL9OthersDeleteManyArgs} args - Arguments to filter FormL9Others to delete.
+     * @example
+     * // Delete a few FormL9Others
+     * const { count } = await prisma.formL9Others.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FormL9OthersDeleteManyArgs>(args?: SelectSubset<T, FormL9OthersDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9Others.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9OthersUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FormL9Others
+     * const formL9Others = await prisma.formL9Others.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FormL9OthersUpdateManyArgs>(args: SelectSubset<T, FormL9OthersUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9Others and returns the data updated in the database.
+     * @param {FormL9OthersUpdateManyAndReturnArgs} args - Arguments to update many FormL9Others.
+     * @example
+     * // Update many FormL9Others
+     * const formL9Others = await prisma.formL9Others.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FormL9Others and only return the `formL9OthersId`
+     * const formL9OthersWithFormL9OthersIdOnly = await prisma.formL9Others.updateManyAndReturn({
+     *   select: { formL9OthersId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FormL9OthersUpdateManyAndReturnArgs>(args: SelectSubset<T, FormL9OthersUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FormL9Others.
+     * @param {FormL9OthersUpsertArgs} args - Arguments to update or create a FormL9Others.
+     * @example
+     * // Update or create a FormL9Others
+     * const formL9Others = await prisma.formL9Others.upsert({
+     *   create: {
+     *     // ... data to create a FormL9Others
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FormL9Others we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FormL9OthersUpsertArgs>(args: SelectSubset<T, FormL9OthersUpsertArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FormL9Others.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9OthersCountArgs} args - Arguments to filter FormL9Others to count.
+     * @example
+     * // Count the number of FormL9Others
+     * const count = await prisma.formL9Others.count({
+     *   where: {
+     *     // ... the filter for the FormL9Others we want to count
+     *   }
+     * })
+    **/
+    count<T extends FormL9OthersCountArgs>(
+      args?: Subset<T, FormL9OthersCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FormL9OthersCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FormL9Others.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9OthersAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FormL9OthersAggregateArgs>(args: Subset<T, FormL9OthersAggregateArgs>): Prisma.PrismaPromise<GetFormL9OthersAggregateType<T>>
+
+    /**
+     * Group by FormL9Others.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9OthersGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FormL9OthersGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FormL9OthersGroupByArgs['orderBy'] }
+        : { orderBy?: FormL9OthersGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FormL9OthersGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFormL9OthersGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FormL9Others model
+   */
+  readonly fields: FormL9OthersFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FormL9Others.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FormL9OthersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    formL9<T extends FormL9DefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9DefaultArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    certificateISOs<T extends FormL9Others$certificateISOsArgs<ExtArgs> = {}>(args?: Subset<T, FormL9Others$certificateISOsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FormL9Others model
+   */
+  interface FormL9OthersFieldRefs {
+    readonly formL9OthersId: FieldRef<"FormL9Others", 'String'>
+    readonly formL9Id: FieldRef<"FormL9Others", 'String'>
+    readonly haveCertificateISO: FieldRef<"FormL9Others", 'Boolean'>
+    readonly haveCompanyOrganizationalStructure: FieldRef<"FormL9Others", 'Boolean'>
+    readonly haveQualityControlOrganizationalStructure: FieldRef<"FormL9Others", 'Boolean'>
+    readonly haveProductWarranty: FieldRef<"FormL9Others", 'Boolean'>
+    readonly haveExpiryDate: FieldRef<"FormL9Others", 'Boolean'>
+    readonly haveAPD: FieldRef<"FormL9Others", 'Boolean'>
+    readonly haveAPDRegulation: FieldRef<"FormL9Others", 'Boolean'>
+    readonly isTopApplicable: FieldRef<"FormL9Others", 'Boolean'>
+    readonly paymentTime: FieldRef<"FormL9Others", 'String'>
+    readonly agreeToConfidentialInformation: FieldRef<"FormL9Others", 'Boolean'>
+    readonly understandingBreachesOfConfidentiality: FieldRef<"FormL9Others", 'Boolean'>
+    readonly signConfidentialityAgreement: FieldRef<"FormL9Others", 'Boolean'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FormL9Others findUnique
+   */
+  export type FormL9OthersFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Others to fetch.
+     */
+    where: FormL9OthersWhereUniqueInput
+  }
+
+  /**
+   * FormL9Others findUniqueOrThrow
+   */
+  export type FormL9OthersFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Others to fetch.
+     */
+    where: FormL9OthersWhereUniqueInput
+  }
+
+  /**
+   * FormL9Others findFirst
+   */
+  export type FormL9OthersFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Others to fetch.
+     */
+    where?: FormL9OthersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Others to fetch.
+     */
+    orderBy?: FormL9OthersOrderByWithRelationInput | FormL9OthersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9Others.
+     */
+    cursor?: FormL9OthersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Others from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Others.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9Others.
+     */
+    distinct?: FormL9OthersScalarFieldEnum | FormL9OthersScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Others findFirstOrThrow
+   */
+  export type FormL9OthersFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Others to fetch.
+     */
+    where?: FormL9OthersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Others to fetch.
+     */
+    orderBy?: FormL9OthersOrderByWithRelationInput | FormL9OthersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9Others.
+     */
+    cursor?: FormL9OthersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Others from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Others.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9Others.
+     */
+    distinct?: FormL9OthersScalarFieldEnum | FormL9OthersScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Others findMany
+   */
+  export type FormL9OthersFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9Others to fetch.
+     */
+    where?: FormL9OthersWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9Others to fetch.
+     */
+    orderBy?: FormL9OthersOrderByWithRelationInput | FormL9OthersOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FormL9Others.
+     */
+    cursor?: FormL9OthersWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9Others from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9Others.
+     */
+    skip?: number
+    distinct?: FormL9OthersScalarFieldEnum | FormL9OthersScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Others create
+   */
+  export type FormL9OthersCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FormL9Others.
+     */
+    data: XOR<FormL9OthersCreateInput, FormL9OthersUncheckedCreateInput>
+  }
+
+  /**
+   * FormL9Others createMany
+   */
+  export type FormL9OthersCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FormL9Others.
+     */
+    data: FormL9OthersCreateManyInput | FormL9OthersCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FormL9Others createManyAndReturn
+   */
+  export type FormL9OthersCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * The data used to create many FormL9Others.
+     */
+    data: FormL9OthersCreateManyInput | FormL9OthersCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9Others update
+   */
+  export type FormL9OthersUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FormL9Others.
+     */
+    data: XOR<FormL9OthersUpdateInput, FormL9OthersUncheckedUpdateInput>
+    /**
+     * Choose, which FormL9Others to update.
+     */
+    where: FormL9OthersWhereUniqueInput
+  }
+
+  /**
+   * FormL9Others updateMany
+   */
+  export type FormL9OthersUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FormL9Others.
+     */
+    data: XOR<FormL9OthersUpdateManyMutationInput, FormL9OthersUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9Others to update
+     */
+    where?: FormL9OthersWhereInput
+    /**
+     * Limit how many FormL9Others to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9Others updateManyAndReturn
+   */
+  export type FormL9OthersUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * The data used to update FormL9Others.
+     */
+    data: XOR<FormL9OthersUpdateManyMutationInput, FormL9OthersUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9Others to update
+     */
+    where?: FormL9OthersWhereInput
+    /**
+     * Limit how many FormL9Others to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9Others upsert
+   */
+  export type FormL9OthersUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FormL9Others to update in case it exists.
+     */
+    where: FormL9OthersWhereUniqueInput
+    /**
+     * In case the FormL9Others found by the `where` argument doesn't exist, create a new FormL9Others with this data.
+     */
+    create: XOR<FormL9OthersCreateInput, FormL9OthersUncheckedCreateInput>
+    /**
+     * In case the FormL9Others was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FormL9OthersUpdateInput, FormL9OthersUncheckedUpdateInput>
+  }
+
+  /**
+   * FormL9Others delete
+   */
+  export type FormL9OthersDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    /**
+     * Filter which FormL9Others to delete.
+     */
+    where: FormL9OthersWhereUniqueInput
+  }
+
+  /**
+   * FormL9Others deleteMany
+   */
+  export type FormL9OthersDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9Others to delete
+     */
+    where?: FormL9OthersWhereInput
+    /**
+     * Limit how many FormL9Others to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9Others.certificateISOs
+   */
+  export type FormL9Others$certificateISOsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    where?: FormL9CertificateISOWhereInput
+    orderBy?: FormL9CertificateISOOrderByWithRelationInput | FormL9CertificateISOOrderByWithRelationInput[]
+    cursor?: FormL9CertificateISOWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: FormL9CertificateISOScalarFieldEnum | FormL9CertificateISOScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9Others without action
+   */
+  export type FormL9OthersDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model FormL9CertificateISO
+   */
+
+  export type AggregateFormL9CertificateISO = {
+    _count: FormL9CertificateISOCountAggregateOutputType | null
+    _min: FormL9CertificateISOMinAggregateOutputType | null
+    _max: FormL9CertificateISOMaxAggregateOutputType | null
+  }
+
+  export type FormL9CertificateISOMinAggregateOutputType = {
+    certificateISOId: string | null
+    formL9OthersId: string | null
+    isoName: string | null
+    validityPeriodFrom: Date | null
+    validityPeriodTo: Date | null
+    remakes: string | null
+  }
+
+  export type FormL9CertificateISOMaxAggregateOutputType = {
+    certificateISOId: string | null
+    formL9OthersId: string | null
+    isoName: string | null
+    validityPeriodFrom: Date | null
+    validityPeriodTo: Date | null
+    remakes: string | null
+  }
+
+  export type FormL9CertificateISOCountAggregateOutputType = {
+    certificateISOId: number
+    formL9OthersId: number
+    isoName: number
+    validityPeriodFrom: number
+    validityPeriodTo: number
+    remakes: number
+    _all: number
+  }
+
+
+  export type FormL9CertificateISOMinAggregateInputType = {
+    certificateISOId?: true
+    formL9OthersId?: true
+    isoName?: true
+    validityPeriodFrom?: true
+    validityPeriodTo?: true
+    remakes?: true
+  }
+
+  export type FormL9CertificateISOMaxAggregateInputType = {
+    certificateISOId?: true
+    formL9OthersId?: true
+    isoName?: true
+    validityPeriodFrom?: true
+    validityPeriodTo?: true
+    remakes?: true
+  }
+
+  export type FormL9CertificateISOCountAggregateInputType = {
+    certificateISOId?: true
+    formL9OthersId?: true
+    isoName?: true
+    validityPeriodFrom?: true
+    validityPeriodTo?: true
+    remakes?: true
+    _all?: true
+  }
+
+  export type FormL9CertificateISOAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9CertificateISO to aggregate.
+     */
+    where?: FormL9CertificateISOWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9CertificateISOS to fetch.
+     */
+    orderBy?: FormL9CertificateISOOrderByWithRelationInput | FormL9CertificateISOOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: FormL9CertificateISOWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9CertificateISOS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9CertificateISOS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned FormL9CertificateISOS
+    **/
+    _count?: true | FormL9CertificateISOCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: FormL9CertificateISOMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: FormL9CertificateISOMaxAggregateInputType
+  }
+
+  export type GetFormL9CertificateISOAggregateType<T extends FormL9CertificateISOAggregateArgs> = {
+        [P in keyof T & keyof AggregateFormL9CertificateISO]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateFormL9CertificateISO[P]>
+      : GetScalarType<T[P], AggregateFormL9CertificateISO[P]>
+  }
+
+
+
+
+  export type FormL9CertificateISOGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: FormL9CertificateISOWhereInput
+    orderBy?: FormL9CertificateISOOrderByWithAggregationInput | FormL9CertificateISOOrderByWithAggregationInput[]
+    by: FormL9CertificateISOScalarFieldEnum[] | FormL9CertificateISOScalarFieldEnum
+    having?: FormL9CertificateISOScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: FormL9CertificateISOCountAggregateInputType | true
+    _min?: FormL9CertificateISOMinAggregateInputType
+    _max?: FormL9CertificateISOMaxAggregateInputType
+  }
+
+  export type FormL9CertificateISOGroupByOutputType = {
+    certificateISOId: string
+    formL9OthersId: string
+    isoName: string
+    validityPeriodFrom: Date
+    validityPeriodTo: Date
+    remakes: string | null
+    _count: FormL9CertificateISOCountAggregateOutputType | null
+    _min: FormL9CertificateISOMinAggregateOutputType | null
+    _max: FormL9CertificateISOMaxAggregateOutputType | null
+  }
+
+  type GetFormL9CertificateISOGroupByPayload<T extends FormL9CertificateISOGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<FormL9CertificateISOGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof FormL9CertificateISOGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], FormL9CertificateISOGroupByOutputType[P]>
+            : GetScalarType<T[P], FormL9CertificateISOGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type FormL9CertificateISOSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    certificateISOId?: boolean
+    formL9OthersId?: boolean
+    isoName?: boolean
+    validityPeriodFrom?: boolean
+    validityPeriodTo?: boolean
+    remakes?: boolean
+    others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9CertificateISO"]>
+
+  export type FormL9CertificateISOSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    certificateISOId?: boolean
+    formL9OthersId?: boolean
+    isoName?: boolean
+    validityPeriodFrom?: boolean
+    validityPeriodTo?: boolean
+    remakes?: boolean
+    others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9CertificateISO"]>
+
+  export type FormL9CertificateISOSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    certificateISOId?: boolean
+    formL9OthersId?: boolean
+    isoName?: boolean
+    validityPeriodFrom?: boolean
+    validityPeriodTo?: boolean
+    remakes?: boolean
+    others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["formL9CertificateISO"]>
+
+  export type FormL9CertificateISOSelectScalar = {
+    certificateISOId?: boolean
+    formL9OthersId?: boolean
+    isoName?: boolean
+    validityPeriodFrom?: boolean
+    validityPeriodTo?: boolean
+    remakes?: boolean
+  }
+
+  export type FormL9CertificateISOOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"certificateISOId" | "formL9OthersId" | "isoName" | "validityPeriodFrom" | "validityPeriodTo" | "remakes", ExtArgs["result"]["formL9CertificateISO"]>
+  export type FormL9CertificateISOInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
+  }
+  export type FormL9CertificateISOIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
+  }
+  export type FormL9CertificateISOIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    others?: boolean | FormL9OthersDefaultArgs<ExtArgs>
+  }
+
+  export type $FormL9CertificateISOPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "FormL9CertificateISO"
+    objects: {
+      others: Prisma.$FormL9OthersPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      certificateISOId: string
+      formL9OthersId: string
+      isoName: string
+      validityPeriodFrom: Date
+      validityPeriodTo: Date
+      remakes: string | null
+    }, ExtArgs["result"]["formL9CertificateISO"]>
+    composites: {}
+  }
+
+  type FormL9CertificateISOGetPayload<S extends boolean | null | undefined | FormL9CertificateISODefaultArgs> = $Result.GetResult<Prisma.$FormL9CertificateISOPayload, S>
+
+  type FormL9CertificateISOCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<FormL9CertificateISOFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: FormL9CertificateISOCountAggregateInputType | true
+    }
+
+  export interface FormL9CertificateISODelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['FormL9CertificateISO'], meta: { name: 'FormL9CertificateISO' } }
+    /**
+     * Find zero or one FormL9CertificateISO that matches the filter.
+     * @param {FormL9CertificateISOFindUniqueArgs} args - Arguments to find a FormL9CertificateISO
+     * @example
+     * // Get one FormL9CertificateISO
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends FormL9CertificateISOFindUniqueArgs>(args: SelectSubset<T, FormL9CertificateISOFindUniqueArgs<ExtArgs>>): Prisma__FormL9CertificateISOClient<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one FormL9CertificateISO that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {FormL9CertificateISOFindUniqueOrThrowArgs} args - Arguments to find a FormL9CertificateISO
+     * @example
+     * // Get one FormL9CertificateISO
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends FormL9CertificateISOFindUniqueOrThrowArgs>(args: SelectSubset<T, FormL9CertificateISOFindUniqueOrThrowArgs<ExtArgs>>): Prisma__FormL9CertificateISOClient<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9CertificateISO that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9CertificateISOFindFirstArgs} args - Arguments to find a FormL9CertificateISO
+     * @example
+     * // Get one FormL9CertificateISO
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends FormL9CertificateISOFindFirstArgs>(args?: SelectSubset<T, FormL9CertificateISOFindFirstArgs<ExtArgs>>): Prisma__FormL9CertificateISOClient<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first FormL9CertificateISO that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9CertificateISOFindFirstOrThrowArgs} args - Arguments to find a FormL9CertificateISO
+     * @example
+     * // Get one FormL9CertificateISO
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends FormL9CertificateISOFindFirstOrThrowArgs>(args?: SelectSubset<T, FormL9CertificateISOFindFirstOrThrowArgs<ExtArgs>>): Prisma__FormL9CertificateISOClient<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more FormL9CertificateISOS that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9CertificateISOFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all FormL9CertificateISOS
+     * const formL9CertificateISOS = await prisma.formL9CertificateISO.findMany()
+     * 
+     * // Get first 10 FormL9CertificateISOS
+     * const formL9CertificateISOS = await prisma.formL9CertificateISO.findMany({ take: 10 })
+     * 
+     * // Only select the `certificateISOId`
+     * const formL9CertificateISOWithCertificateISOIdOnly = await prisma.formL9CertificateISO.findMany({ select: { certificateISOId: true } })
+     * 
+     */
+    findMany<T extends FormL9CertificateISOFindManyArgs>(args?: SelectSubset<T, FormL9CertificateISOFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a FormL9CertificateISO.
+     * @param {FormL9CertificateISOCreateArgs} args - Arguments to create a FormL9CertificateISO.
+     * @example
+     * // Create one FormL9CertificateISO
+     * const FormL9CertificateISO = await prisma.formL9CertificateISO.create({
+     *   data: {
+     *     // ... data to create a FormL9CertificateISO
+     *   }
+     * })
+     * 
+     */
+    create<T extends FormL9CertificateISOCreateArgs>(args: SelectSubset<T, FormL9CertificateISOCreateArgs<ExtArgs>>): Prisma__FormL9CertificateISOClient<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many FormL9CertificateISOS.
+     * @param {FormL9CertificateISOCreateManyArgs} args - Arguments to create many FormL9CertificateISOS.
+     * @example
+     * // Create many FormL9CertificateISOS
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends FormL9CertificateISOCreateManyArgs>(args?: SelectSubset<T, FormL9CertificateISOCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many FormL9CertificateISOS and returns the data saved in the database.
+     * @param {FormL9CertificateISOCreateManyAndReturnArgs} args - Arguments to create many FormL9CertificateISOS.
+     * @example
+     * // Create many FormL9CertificateISOS
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many FormL9CertificateISOS and only return the `certificateISOId`
+     * const formL9CertificateISOWithCertificateISOIdOnly = await prisma.formL9CertificateISO.createManyAndReturn({
+     *   select: { certificateISOId: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends FormL9CertificateISOCreateManyAndReturnArgs>(args?: SelectSubset<T, FormL9CertificateISOCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a FormL9CertificateISO.
+     * @param {FormL9CertificateISODeleteArgs} args - Arguments to delete one FormL9CertificateISO.
+     * @example
+     * // Delete one FormL9CertificateISO
+     * const FormL9CertificateISO = await prisma.formL9CertificateISO.delete({
+     *   where: {
+     *     // ... filter to delete one FormL9CertificateISO
+     *   }
+     * })
+     * 
+     */
+    delete<T extends FormL9CertificateISODeleteArgs>(args: SelectSubset<T, FormL9CertificateISODeleteArgs<ExtArgs>>): Prisma__FormL9CertificateISOClient<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one FormL9CertificateISO.
+     * @param {FormL9CertificateISOUpdateArgs} args - Arguments to update one FormL9CertificateISO.
+     * @example
+     * // Update one FormL9CertificateISO
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends FormL9CertificateISOUpdateArgs>(args: SelectSubset<T, FormL9CertificateISOUpdateArgs<ExtArgs>>): Prisma__FormL9CertificateISOClient<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more FormL9CertificateISOS.
+     * @param {FormL9CertificateISODeleteManyArgs} args - Arguments to filter FormL9CertificateISOS to delete.
+     * @example
+     * // Delete a few FormL9CertificateISOS
+     * const { count } = await prisma.formL9CertificateISO.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends FormL9CertificateISODeleteManyArgs>(args?: SelectSubset<T, FormL9CertificateISODeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9CertificateISOS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9CertificateISOUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many FormL9CertificateISOS
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends FormL9CertificateISOUpdateManyArgs>(args: SelectSubset<T, FormL9CertificateISOUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more FormL9CertificateISOS and returns the data updated in the database.
+     * @param {FormL9CertificateISOUpdateManyAndReturnArgs} args - Arguments to update many FormL9CertificateISOS.
+     * @example
+     * // Update many FormL9CertificateISOS
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more FormL9CertificateISOS and only return the `certificateISOId`
+     * const formL9CertificateISOWithCertificateISOIdOnly = await prisma.formL9CertificateISO.updateManyAndReturn({
+     *   select: { certificateISOId: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends FormL9CertificateISOUpdateManyAndReturnArgs>(args: SelectSubset<T, FormL9CertificateISOUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one FormL9CertificateISO.
+     * @param {FormL9CertificateISOUpsertArgs} args - Arguments to update or create a FormL9CertificateISO.
+     * @example
+     * // Update or create a FormL9CertificateISO
+     * const formL9CertificateISO = await prisma.formL9CertificateISO.upsert({
+     *   create: {
+     *     // ... data to create a FormL9CertificateISO
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the FormL9CertificateISO we want to update
+     *   }
+     * })
+     */
+    upsert<T extends FormL9CertificateISOUpsertArgs>(args: SelectSubset<T, FormL9CertificateISOUpsertArgs<ExtArgs>>): Prisma__FormL9CertificateISOClient<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of FormL9CertificateISOS.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9CertificateISOCountArgs} args - Arguments to filter FormL9CertificateISOS to count.
+     * @example
+     * // Count the number of FormL9CertificateISOS
+     * const count = await prisma.formL9CertificateISO.count({
+     *   where: {
+     *     // ... the filter for the FormL9CertificateISOS we want to count
+     *   }
+     * })
+    **/
+    count<T extends FormL9CertificateISOCountArgs>(
+      args?: Subset<T, FormL9CertificateISOCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], FormL9CertificateISOCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a FormL9CertificateISO.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9CertificateISOAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends FormL9CertificateISOAggregateArgs>(args: Subset<T, FormL9CertificateISOAggregateArgs>): Prisma.PrismaPromise<GetFormL9CertificateISOAggregateType<T>>
+
+    /**
+     * Group by FormL9CertificateISO.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {FormL9CertificateISOGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends FormL9CertificateISOGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: FormL9CertificateISOGroupByArgs['orderBy'] }
+        : { orderBy?: FormL9CertificateISOGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, FormL9CertificateISOGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetFormL9CertificateISOGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the FormL9CertificateISO model
+   */
+  readonly fields: FormL9CertificateISOFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for FormL9CertificateISO.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__FormL9CertificateISOClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    others<T extends FormL9OthersDefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9OthersDefaultArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the FormL9CertificateISO model
+   */
+  interface FormL9CertificateISOFieldRefs {
+    readonly certificateISOId: FieldRef<"FormL9CertificateISO", 'String'>
+    readonly formL9OthersId: FieldRef<"FormL9CertificateISO", 'String'>
+    readonly isoName: FieldRef<"FormL9CertificateISO", 'String'>
+    readonly validityPeriodFrom: FieldRef<"FormL9CertificateISO", 'DateTime'>
+    readonly validityPeriodTo: FieldRef<"FormL9CertificateISO", 'DateTime'>
+    readonly remakes: FieldRef<"FormL9CertificateISO", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * FormL9CertificateISO findUnique
+   */
+  export type FormL9CertificateISOFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9CertificateISO to fetch.
+     */
+    where: FormL9CertificateISOWhereUniqueInput
+  }
+
+  /**
+   * FormL9CertificateISO findUniqueOrThrow
+   */
+  export type FormL9CertificateISOFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9CertificateISO to fetch.
+     */
+    where: FormL9CertificateISOWhereUniqueInput
+  }
+
+  /**
+   * FormL9CertificateISO findFirst
+   */
+  export type FormL9CertificateISOFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9CertificateISO to fetch.
+     */
+    where?: FormL9CertificateISOWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9CertificateISOS to fetch.
+     */
+    orderBy?: FormL9CertificateISOOrderByWithRelationInput | FormL9CertificateISOOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9CertificateISOS.
+     */
+    cursor?: FormL9CertificateISOWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9CertificateISOS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9CertificateISOS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9CertificateISOS.
+     */
+    distinct?: FormL9CertificateISOScalarFieldEnum | FormL9CertificateISOScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9CertificateISO findFirstOrThrow
+   */
+  export type FormL9CertificateISOFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9CertificateISO to fetch.
+     */
+    where?: FormL9CertificateISOWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9CertificateISOS to fetch.
+     */
+    orderBy?: FormL9CertificateISOOrderByWithRelationInput | FormL9CertificateISOOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for FormL9CertificateISOS.
+     */
+    cursor?: FormL9CertificateISOWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9CertificateISOS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9CertificateISOS.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of FormL9CertificateISOS.
+     */
+    distinct?: FormL9CertificateISOScalarFieldEnum | FormL9CertificateISOScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9CertificateISO findMany
+   */
+  export type FormL9CertificateISOFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    /**
+     * Filter, which FormL9CertificateISOS to fetch.
+     */
+    where?: FormL9CertificateISOWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of FormL9CertificateISOS to fetch.
+     */
+    orderBy?: FormL9CertificateISOOrderByWithRelationInput | FormL9CertificateISOOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing FormL9CertificateISOS.
+     */
+    cursor?: FormL9CertificateISOWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` FormL9CertificateISOS from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` FormL9CertificateISOS.
+     */
+    skip?: number
+    distinct?: FormL9CertificateISOScalarFieldEnum | FormL9CertificateISOScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9CertificateISO create
+   */
+  export type FormL9CertificateISOCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    /**
+     * The data needed to create a FormL9CertificateISO.
+     */
+    data: XOR<FormL9CertificateISOCreateInput, FormL9CertificateISOUncheckedCreateInput>
+  }
+
+  /**
+   * FormL9CertificateISO createMany
+   */
+  export type FormL9CertificateISOCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many FormL9CertificateISOS.
+     */
+    data: FormL9CertificateISOCreateManyInput | FormL9CertificateISOCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * FormL9CertificateISO createManyAndReturn
+   */
+  export type FormL9CertificateISOCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * The data used to create many FormL9CertificateISOS.
+     */
+    data: FormL9CertificateISOCreateManyInput | FormL9CertificateISOCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9CertificateISO update
+   */
+  export type FormL9CertificateISOUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    /**
+     * The data needed to update a FormL9CertificateISO.
+     */
+    data: XOR<FormL9CertificateISOUpdateInput, FormL9CertificateISOUncheckedUpdateInput>
+    /**
+     * Choose, which FormL9CertificateISO to update.
+     */
+    where: FormL9CertificateISOWhereUniqueInput
+  }
+
+  /**
+   * FormL9CertificateISO updateMany
+   */
+  export type FormL9CertificateISOUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update FormL9CertificateISOS.
+     */
+    data: XOR<FormL9CertificateISOUpdateManyMutationInput, FormL9CertificateISOUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9CertificateISOS to update
+     */
+    where?: FormL9CertificateISOWhereInput
+    /**
+     * Limit how many FormL9CertificateISOS to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9CertificateISO updateManyAndReturn
+   */
+  export type FormL9CertificateISOUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * The data used to update FormL9CertificateISOS.
+     */
+    data: XOR<FormL9CertificateISOUpdateManyMutationInput, FormL9CertificateISOUncheckedUpdateManyInput>
+    /**
+     * Filter which FormL9CertificateISOS to update
+     */
+    where?: FormL9CertificateISOWhereInput
+    /**
+     * Limit how many FormL9CertificateISOS to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * FormL9CertificateISO upsert
+   */
+  export type FormL9CertificateISOUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    /**
+     * The filter to search for the FormL9CertificateISO to update in case it exists.
+     */
+    where: FormL9CertificateISOWhereUniqueInput
+    /**
+     * In case the FormL9CertificateISO found by the `where` argument doesn't exist, create a new FormL9CertificateISO with this data.
+     */
+    create: XOR<FormL9CertificateISOCreateInput, FormL9CertificateISOUncheckedCreateInput>
+    /**
+     * In case the FormL9CertificateISO was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<FormL9CertificateISOUpdateInput, FormL9CertificateISOUncheckedUpdateInput>
+  }
+
+  /**
+   * FormL9CertificateISO delete
+   */
+  export type FormL9CertificateISODeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
+    /**
+     * Filter which FormL9CertificateISO to delete.
+     */
+    where: FormL9CertificateISOWhereUniqueInput
+  }
+
+  /**
+   * FormL9CertificateISO deleteMany
+   */
+  export type FormL9CertificateISODeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which FormL9CertificateISOS to delete
+     */
+    where?: FormL9CertificateISOWhereInput
+    /**
+     * Limit how many FormL9CertificateISOS to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * FormL9CertificateISO without action
+   */
+  export type FormL9CertificateISODefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9CertificateISO
+     */
+    select?: FormL9CertificateISOSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9CertificateISO
+     */
+    omit?: FormL9CertificateISOOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9CertificateISOInclude<ExtArgs> | null
   }
 
 
@@ -12766,6 +25020,7 @@ export namespace Prisma {
     email: 'email',
     password: 'password',
     isActive: 'isActive',
+    isVerified: 'isVerified',
     sessionExpireDate: 'sessionExpireDate',
     createdDate: 'createdDate',
     updateDate: 'updateDate'
@@ -12843,24 +25098,156 @@ export namespace Prisma {
 
   export const ProfileScalarFieldEnum: {
     userId: 'userId',
+    companyId: 'companyId',
     fullName: 'fullName',
     urlImage: 'urlImage',
-    companyName: 'companyName',
-    npwp: 'npwp',
-    deedNumber: 'deedNumber',
-    establishedDate: 'establishedDate',
-    npwpUrl: 'npwpUrl',
-    deedUrl: 'deedUrl',
-    description: 'description',
-    segmentId: 'segmentId',
-    companyAddress: 'companyAddress',
-    companyPhone: 'companyPhone',
-    website: 'website',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
 
   export type ProfileScalarFieldEnum = (typeof ProfileScalarFieldEnum)[keyof typeof ProfileScalarFieldEnum]
+
+
+  export const CompanyScalarFieldEnum: {
+    companyId: 'companyId',
+    segmentId: 'segmentId',
+    urlImage: 'urlImage',
+    companyName: 'companyName',
+    companyFoundingDate: 'companyFoundingDate',
+    companyStatus: 'companyStatus',
+    companyTelpFax: 'companyTelpFax',
+    companyAddress: 'companyAddress',
+    companyEmail: 'companyEmail',
+    npwp: 'npwp',
+    website: 'website',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    totalCapital: 'totalCapital'
+  };
+
+  export type CompanyScalarFieldEnum = (typeof CompanyScalarFieldEnum)[keyof typeof CompanyScalarFieldEnum]
+
+
+  export const FormL9ScalarFieldEnum: {
+    formL9Id: 'formL9Id',
+    companyId: 'companyId',
+    status: 'status',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type FormL9ScalarFieldEnum = (typeof FormL9ScalarFieldEnum)[keyof typeof FormL9ScalarFieldEnum]
+
+
+  export const FormL9BankInfoScalarFieldEnum: {
+    formL9BankInfoid: 'formL9BankInfoid',
+    formL9Id: 'formL9Id',
+    beneficiaryName: 'beneficiaryName',
+    beneficiaryAddress: 'beneficiaryAddress',
+    bankName: 'bankName',
+    bankAddress: 'bankAddress',
+    noRek: 'noRek',
+    swiftCode: 'swiftCode',
+    IBAN: 'IBAN'
+  };
+
+  export type FormL9BankInfoScalarFieldEnum = (typeof FormL9BankInfoScalarFieldEnum)[keyof typeof FormL9BankInfoScalarFieldEnum]
+
+
+  export const FormL9GeneralInformationScalarFieldEnum: {
+    formGeneralInformationId: 'formGeneralInformationId',
+    formL9Id: 'formL9Id',
+    companyName: 'companyName',
+    companyFoundingDate: 'companyFoundingDate',
+    companyStatus: 'companyStatus',
+    companyTelpFax: 'companyTelpFax',
+    companyAddress: 'companyAddress',
+    companyEmail: 'companyEmail',
+    npwp: 'npwp',
+    totalCapital: 'totalCapital',
+    segmentId: 'segmentId'
+  };
+
+  export type FormL9GeneralInformationScalarFieldEnum = (typeof FormL9GeneralInformationScalarFieldEnum)[keyof typeof FormL9GeneralInformationScalarFieldEnum]
+
+
+  export const FormL9GeneralInformationContinueScalarFieldEnum: {
+    formL9GeneralInformationContinueId: 'formL9GeneralInformationContinueId',
+    formGeneralInformationId: 'formGeneralInformationId',
+    permitsHeld: 'permitsHeld'
+  };
+
+  export type FormL9GeneralInformationContinueScalarFieldEnum = (typeof FormL9GeneralInformationContinueScalarFieldEnum)[keyof typeof FormL9GeneralInformationContinueScalarFieldEnum]
+
+
+  export const FormL9ManagementScalarFieldEnum: {
+    formL9ManagementId: 'formL9ManagementId',
+    formL9Id: 'formL9Id',
+    position: 'position',
+    name: 'name',
+    noTelpFaxHp: 'noTelpFaxHp'
+  };
+
+  export type FormL9ManagementScalarFieldEnum = (typeof FormL9ManagementScalarFieldEnum)[keyof typeof FormL9ManagementScalarFieldEnum]
+
+
+  export const FormL9EmployeScalarFieldEnum: {
+    formL9EmployeId: 'formL9EmployeId',
+    formL9Id: 'formL9Id',
+    totalEmployees: 'totalEmployees',
+    qualityControl: 'qualityControl',
+    engineering: 'engineering',
+    production: 'production',
+    management: 'management',
+    other: 'other'
+  };
+
+  export type FormL9EmployeScalarFieldEnum = (typeof FormL9EmployeScalarFieldEnum)[keyof typeof FormL9EmployeScalarFieldEnum]
+
+
+  export const FormL9WorkExperienceScalarFieldEnum: {
+    formL9WorkExperienceId: 'formL9WorkExperienceId',
+    formL9Id: 'formL9Id',
+    customerOrLocation: 'customerOrLocation',
+    typeOfWork: 'typeOfWork',
+    score: 'score',
+    customerContactPerson: 'customerContactPerson',
+    customerTelpFaxHp: 'customerTelpFaxHp'
+  };
+
+  export type FormL9WorkExperienceScalarFieldEnum = (typeof FormL9WorkExperienceScalarFieldEnum)[keyof typeof FormL9WorkExperienceScalarFieldEnum]
+
+
+  export const FormL9OthersScalarFieldEnum: {
+    formL9OthersId: 'formL9OthersId',
+    formL9Id: 'formL9Id',
+    haveCertificateISO: 'haveCertificateISO',
+    haveCompanyOrganizationalStructure: 'haveCompanyOrganizationalStructure',
+    haveQualityControlOrganizationalStructure: 'haveQualityControlOrganizationalStructure',
+    haveProductWarranty: 'haveProductWarranty',
+    haveExpiryDate: 'haveExpiryDate',
+    haveAPD: 'haveAPD',
+    haveAPDRegulation: 'haveAPDRegulation',
+    isTopApplicable: 'isTopApplicable',
+    paymentTime: 'paymentTime',
+    agreeToConfidentialInformation: 'agreeToConfidentialInformation',
+    understandingBreachesOfConfidentiality: 'understandingBreachesOfConfidentiality',
+    signConfidentialityAgreement: 'signConfidentialityAgreement'
+  };
+
+  export type FormL9OthersScalarFieldEnum = (typeof FormL9OthersScalarFieldEnum)[keyof typeof FormL9OthersScalarFieldEnum]
+
+
+  export const FormL9CertificateISOScalarFieldEnum: {
+    certificateISOId: 'certificateISOId',
+    formL9OthersId: 'formL9OthersId',
+    isoName: 'isoName',
+    validityPeriodFrom: 'validityPeriodFrom',
+    validityPeriodTo: 'validityPeriodTo',
+    remakes: 'remakes'
+  };
+
+  export type FormL9CertificateISOScalarFieldEnum = (typeof FormL9CertificateISOScalarFieldEnum)[keyof typeof FormL9CertificateISOScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -12998,6 +25385,7 @@ export namespace Prisma {
     email?: StringFilter<"User"> | string
     password?: StringFilter<"User"> | string
     isActive?: BoolFilter<"User"> | boolean
+    isVerified?: BoolFilter<"User"> | boolean
     sessionExpireDate?: DateTimeFilter<"User"> | Date | string
     createdDate?: DateTimeFilter<"User"> | Date | string
     updateDate?: DateTimeFilter<"User"> | Date | string
@@ -13013,6 +25401,7 @@ export namespace Prisma {
     email?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
+    isVerified?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
@@ -13031,6 +25420,7 @@ export namespace Prisma {
     NOT?: UserWhereInput | UserWhereInput[]
     password?: StringFilter<"User"> | string
     isActive?: BoolFilter<"User"> | boolean
+    isVerified?: BoolFilter<"User"> | boolean
     sessionExpireDate?: DateTimeFilter<"User"> | Date | string
     createdDate?: DateTimeFilter<"User"> | Date | string
     updateDate?: DateTimeFilter<"User"> | Date | string
@@ -13046,6 +25436,7 @@ export namespace Prisma {
     email?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
+    isVerified?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
@@ -13062,6 +25453,7 @@ export namespace Prisma {
     email?: StringWithAggregatesFilter<"User"> | string
     password?: StringWithAggregatesFilter<"User"> | string
     isActive?: BoolWithAggregatesFilter<"User"> | boolean
+    isVerified?: BoolWithAggregatesFilter<"User"> | boolean
     sessionExpireDate?: DateTimeWithAggregatesFilter<"User"> | Date | string
     createdDate?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updateDate?: DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -13379,14 +25771,14 @@ export namespace Prisma {
     segmentId?: IntFilter<"CompanySegment"> | number
     segmentName?: StringFilter<"CompanySegment"> | string
     description?: StringNullableFilter<"CompanySegment"> | string | null
-    profile?: ProfileListRelationFilter
+    company?: CompanyListRelationFilter
   }
 
   export type CompanySegmentOrderByWithRelationInput = {
     segmentId?: SortOrder
     segmentName?: SortOrder
     description?: SortOrderInput | SortOrder
-    profile?: ProfileOrderByRelationAggregateInput
+    company?: CompanyOrderByRelationAggregateInput
   }
 
   export type CompanySegmentWhereUniqueInput = Prisma.AtLeast<{
@@ -13396,7 +25788,7 @@ export namespace Prisma {
     NOT?: CompanySegmentWhereInput | CompanySegmentWhereInput[]
     segmentName?: StringFilter<"CompanySegment"> | string
     description?: StringNullableFilter<"CompanySegment"> | string | null
-    profile?: ProfileListRelationFilter
+    company?: CompanyListRelationFilter
   }, "segmentId">
 
   export type CompanySegmentOrderByWithAggregationInput = {
@@ -13424,44 +25816,24 @@ export namespace Prisma {
     OR?: ProfileWhereInput[]
     NOT?: ProfileWhereInput | ProfileWhereInput[]
     userId?: UuidFilter<"Profile"> | string
-    fullName?: StringNullableFilter<"Profile"> | string | null
+    companyId?: UuidNullableFilter<"Profile"> | string | null
+    fullName?: StringFilter<"Profile"> | string
     urlImage?: StringNullableFilter<"Profile"> | string | null
-    companyName?: StringFilter<"Profile"> | string
-    npwp?: StringFilter<"Profile"> | string
-    deedNumber?: StringNullableFilter<"Profile"> | string | null
-    establishedDate?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    npwpUrl?: StringFilter<"Profile"> | string
-    deedUrl?: StringFilter<"Profile"> | string
-    description?: StringNullableFilter<"Profile"> | string | null
-    segmentId?: IntNullableFilter<"Profile"> | number | null
-    companyAddress?: StringNullableFilter<"Profile"> | string | null
-    companyPhone?: StringNullableFilter<"Profile"> | string | null
-    website?: StringNullableFilter<"Profile"> | string | null
     createdAt?: DateTimeFilter<"Profile"> | Date | string
     updatedAt?: DateTimeFilter<"Profile"> | Date | string
-    segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    company?: XOR<CompanyNullableScalarRelationFilter, CompanyWhereInput> | null
   }
 
   export type ProfileOrderByWithRelationInput = {
     userId?: SortOrder
-    fullName?: SortOrderInput | SortOrder
+    companyId?: SortOrderInput | SortOrder
+    fullName?: SortOrder
     urlImage?: SortOrderInput | SortOrder
-    companyName?: SortOrder
-    npwp?: SortOrder
-    deedNumber?: SortOrderInput | SortOrder
-    establishedDate?: SortOrderInput | SortOrder
-    npwpUrl?: SortOrder
-    deedUrl?: SortOrder
-    description?: SortOrderInput | SortOrder
-    segmentId?: SortOrderInput | SortOrder
-    companyAddress?: SortOrderInput | SortOrder
-    companyPhone?: SortOrderInput | SortOrder
-    website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    segment?: CompanySegmentOrderByWithRelationInput
     user?: UserOrderByWithRelationInput
+    company?: CompanyOrderByWithRelationInput
   }
 
   export type ProfileWhereUniqueInput = Prisma.AtLeast<{
@@ -13469,47 +25841,25 @@ export namespace Prisma {
     AND?: ProfileWhereInput | ProfileWhereInput[]
     OR?: ProfileWhereInput[]
     NOT?: ProfileWhereInput | ProfileWhereInput[]
-    fullName?: StringNullableFilter<"Profile"> | string | null
+    companyId?: UuidNullableFilter<"Profile"> | string | null
+    fullName?: StringFilter<"Profile"> | string
     urlImage?: StringNullableFilter<"Profile"> | string | null
-    companyName?: StringFilter<"Profile"> | string
-    npwp?: StringFilter<"Profile"> | string
-    deedNumber?: StringNullableFilter<"Profile"> | string | null
-    establishedDate?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    npwpUrl?: StringFilter<"Profile"> | string
-    deedUrl?: StringFilter<"Profile"> | string
-    description?: StringNullableFilter<"Profile"> | string | null
-    segmentId?: IntNullableFilter<"Profile"> | number | null
-    companyAddress?: StringNullableFilter<"Profile"> | string | null
-    companyPhone?: StringNullableFilter<"Profile"> | string | null
-    website?: StringNullableFilter<"Profile"> | string | null
     createdAt?: DateTimeFilter<"Profile"> | Date | string
     updatedAt?: DateTimeFilter<"Profile"> | Date | string
-    segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
+    company?: XOR<CompanyNullableScalarRelationFilter, CompanyWhereInput> | null
   }, "userId">
 
   export type ProfileOrderByWithAggregationInput = {
     userId?: SortOrder
-    fullName?: SortOrderInput | SortOrder
+    companyId?: SortOrderInput | SortOrder
+    fullName?: SortOrder
     urlImage?: SortOrderInput | SortOrder
-    companyName?: SortOrder
-    npwp?: SortOrder
-    deedNumber?: SortOrderInput | SortOrder
-    establishedDate?: SortOrderInput | SortOrder
-    npwpUrl?: SortOrder
-    deedUrl?: SortOrder
-    description?: SortOrderInput | SortOrder
-    segmentId?: SortOrderInput | SortOrder
-    companyAddress?: SortOrderInput | SortOrder
-    companyPhone?: SortOrderInput | SortOrder
-    website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: ProfileCountOrderByAggregateInput
-    _avg?: ProfileAvgOrderByAggregateInput
     _max?: ProfileMaxOrderByAggregateInput
     _min?: ProfileMinOrderByAggregateInput
-    _sum?: ProfileSumOrderByAggregateInput
   }
 
   export type ProfileScalarWhereWithAggregatesInput = {
@@ -13517,21 +25867,757 @@ export namespace Prisma {
     OR?: ProfileScalarWhereWithAggregatesInput[]
     NOT?: ProfileScalarWhereWithAggregatesInput | ProfileScalarWhereWithAggregatesInput[]
     userId?: UuidWithAggregatesFilter<"Profile"> | string
-    fullName?: StringNullableWithAggregatesFilter<"Profile"> | string | null
+    companyId?: UuidNullableWithAggregatesFilter<"Profile"> | string | null
+    fullName?: StringWithAggregatesFilter<"Profile"> | string
     urlImage?: StringNullableWithAggregatesFilter<"Profile"> | string | null
-    companyName?: StringWithAggregatesFilter<"Profile"> | string
-    npwp?: StringWithAggregatesFilter<"Profile"> | string
-    deedNumber?: StringNullableWithAggregatesFilter<"Profile"> | string | null
-    establishedDate?: DateTimeNullableWithAggregatesFilter<"Profile"> | Date | string | null
-    npwpUrl?: StringWithAggregatesFilter<"Profile"> | string
-    deedUrl?: StringWithAggregatesFilter<"Profile"> | string
-    description?: StringNullableWithAggregatesFilter<"Profile"> | string | null
-    segmentId?: IntNullableWithAggregatesFilter<"Profile"> | number | null
-    companyAddress?: StringNullableWithAggregatesFilter<"Profile"> | string | null
-    companyPhone?: StringNullableWithAggregatesFilter<"Profile"> | string | null
-    website?: StringNullableWithAggregatesFilter<"Profile"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Profile"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Profile"> | Date | string
+  }
+
+  export type CompanyWhereInput = {
+    AND?: CompanyWhereInput | CompanyWhereInput[]
+    OR?: CompanyWhereInput[]
+    NOT?: CompanyWhereInput | CompanyWhereInput[]
+    companyId?: UuidFilter<"Company"> | string
+    segmentId?: IntFilter<"Company"> | number
+    urlImage?: StringNullableFilter<"Company"> | string | null
+    companyName?: StringFilter<"Company"> | string
+    companyFoundingDate?: DateTimeFilter<"Company"> | Date | string
+    companyStatus?: StringFilter<"Company"> | string
+    companyTelpFax?: StringFilter<"Company"> | string
+    companyAddress?: StringFilter<"Company"> | string
+    companyEmail?: StringFilter<"Company"> | string
+    npwp?: StringFilter<"Company"> | string
+    website?: StringNullableFilter<"Company"> | string | null
+    createdAt?: DateTimeFilter<"Company"> | Date | string
+    updatedAt?: DateTimeFilter<"Company"> | Date | string
+    totalCapital?: StringNullableFilter<"Company"> | string | null
+    profile?: ProfileListRelationFilter
+    segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
+    formL9?: XOR<FormL9NullableScalarRelationFilter, FormL9WhereInput> | null
+  }
+
+  export type CompanyOrderByWithRelationInput = {
+    companyId?: SortOrder
+    segmentId?: SortOrder
+    urlImage?: SortOrderInput | SortOrder
+    companyName?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
+    companyAddress?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
+    website?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    totalCapital?: SortOrderInput | SortOrder
+    profile?: ProfileOrderByRelationAggregateInput
+    segment?: CompanySegmentOrderByWithRelationInput
+    formL9?: FormL9OrderByWithRelationInput
+  }
+
+  export type CompanyWhereUniqueInput = Prisma.AtLeast<{
+    companyId?: string
+    AND?: CompanyWhereInput | CompanyWhereInput[]
+    OR?: CompanyWhereInput[]
+    NOT?: CompanyWhereInput | CompanyWhereInput[]
+    segmentId?: IntFilter<"Company"> | number
+    urlImage?: StringNullableFilter<"Company"> | string | null
+    companyName?: StringFilter<"Company"> | string
+    companyFoundingDate?: DateTimeFilter<"Company"> | Date | string
+    companyStatus?: StringFilter<"Company"> | string
+    companyTelpFax?: StringFilter<"Company"> | string
+    companyAddress?: StringFilter<"Company"> | string
+    companyEmail?: StringFilter<"Company"> | string
+    npwp?: StringFilter<"Company"> | string
+    website?: StringNullableFilter<"Company"> | string | null
+    createdAt?: DateTimeFilter<"Company"> | Date | string
+    updatedAt?: DateTimeFilter<"Company"> | Date | string
+    totalCapital?: StringNullableFilter<"Company"> | string | null
+    profile?: ProfileListRelationFilter
+    segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
+    formL9?: XOR<FormL9NullableScalarRelationFilter, FormL9WhereInput> | null
+  }, "companyId">
+
+  export type CompanyOrderByWithAggregationInput = {
+    companyId?: SortOrder
+    segmentId?: SortOrder
+    urlImage?: SortOrderInput | SortOrder
+    companyName?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
+    companyAddress?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
+    website?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    totalCapital?: SortOrderInput | SortOrder
+    _count?: CompanyCountOrderByAggregateInput
+    _avg?: CompanyAvgOrderByAggregateInput
+    _max?: CompanyMaxOrderByAggregateInput
+    _min?: CompanyMinOrderByAggregateInput
+    _sum?: CompanySumOrderByAggregateInput
+  }
+
+  export type CompanyScalarWhereWithAggregatesInput = {
+    AND?: CompanyScalarWhereWithAggregatesInput | CompanyScalarWhereWithAggregatesInput[]
+    OR?: CompanyScalarWhereWithAggregatesInput[]
+    NOT?: CompanyScalarWhereWithAggregatesInput | CompanyScalarWhereWithAggregatesInput[]
+    companyId?: UuidWithAggregatesFilter<"Company"> | string
+    segmentId?: IntWithAggregatesFilter<"Company"> | number
+    urlImage?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    companyName?: StringWithAggregatesFilter<"Company"> | string
+    companyFoundingDate?: DateTimeWithAggregatesFilter<"Company"> | Date | string
+    companyStatus?: StringWithAggregatesFilter<"Company"> | string
+    companyTelpFax?: StringWithAggregatesFilter<"Company"> | string
+    companyAddress?: StringWithAggregatesFilter<"Company"> | string
+    companyEmail?: StringWithAggregatesFilter<"Company"> | string
+    npwp?: StringWithAggregatesFilter<"Company"> | string
+    website?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
+    totalCapital?: StringNullableWithAggregatesFilter<"Company"> | string | null
+  }
+
+  export type FormL9WhereInput = {
+    AND?: FormL9WhereInput | FormL9WhereInput[]
+    OR?: FormL9WhereInput[]
+    NOT?: FormL9WhereInput | FormL9WhereInput[]
+    formL9Id?: UuidFilter<"FormL9"> | string
+    companyId?: UuidFilter<"FormL9"> | string
+    status?: StringFilter<"FormL9"> | string
+    createdAt?: DateTimeFilter<"FormL9"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9"> | Date | string
+    company?: XOR<CompanyScalarRelationFilter, CompanyWhereInput>
+    bankInfo?: XOR<FormL9BankInfoNullableScalarRelationFilter, FormL9BankInfoWhereInput> | null
+    generalInformation?: XOR<FormL9GeneralInformationNullableScalarRelationFilter, FormL9GeneralInformationWhereInput> | null
+    employeeInfo?: XOR<FormL9EmployeNullableScalarRelationFilter, FormL9EmployeWhereInput> | null
+    others?: XOR<FormL9OthersNullableScalarRelationFilter, FormL9OthersWhereInput> | null
+    managements?: FormL9ManagementListRelationFilter
+    workExperiences?: FormL9WorkExperienceListRelationFilter
+  }
+
+  export type FormL9OrderByWithRelationInput = {
+    formL9Id?: SortOrder
+    companyId?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    company?: CompanyOrderByWithRelationInput
+    bankInfo?: FormL9BankInfoOrderByWithRelationInput
+    generalInformation?: FormL9GeneralInformationOrderByWithRelationInput
+    employeeInfo?: FormL9EmployeOrderByWithRelationInput
+    others?: FormL9OthersOrderByWithRelationInput
+    managements?: FormL9ManagementOrderByRelationAggregateInput
+    workExperiences?: FormL9WorkExperienceOrderByRelationAggregateInput
+  }
+
+  export type FormL9WhereUniqueInput = Prisma.AtLeast<{
+    formL9Id?: string
+    companyId?: string
+    AND?: FormL9WhereInput | FormL9WhereInput[]
+    OR?: FormL9WhereInput[]
+    NOT?: FormL9WhereInput | FormL9WhereInput[]
+    status?: StringFilter<"FormL9"> | string
+    createdAt?: DateTimeFilter<"FormL9"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9"> | Date | string
+    company?: XOR<CompanyScalarRelationFilter, CompanyWhereInput>
+    bankInfo?: XOR<FormL9BankInfoNullableScalarRelationFilter, FormL9BankInfoWhereInput> | null
+    generalInformation?: XOR<FormL9GeneralInformationNullableScalarRelationFilter, FormL9GeneralInformationWhereInput> | null
+    employeeInfo?: XOR<FormL9EmployeNullableScalarRelationFilter, FormL9EmployeWhereInput> | null
+    others?: XOR<FormL9OthersNullableScalarRelationFilter, FormL9OthersWhereInput> | null
+    managements?: FormL9ManagementListRelationFilter
+    workExperiences?: FormL9WorkExperienceListRelationFilter
+  }, "formL9Id" | "companyId">
+
+  export type FormL9OrderByWithAggregationInput = {
+    formL9Id?: SortOrder
+    companyId?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: FormL9CountOrderByAggregateInput
+    _max?: FormL9MaxOrderByAggregateInput
+    _min?: FormL9MinOrderByAggregateInput
+  }
+
+  export type FormL9ScalarWhereWithAggregatesInput = {
+    AND?: FormL9ScalarWhereWithAggregatesInput | FormL9ScalarWhereWithAggregatesInput[]
+    OR?: FormL9ScalarWhereWithAggregatesInput[]
+    NOT?: FormL9ScalarWhereWithAggregatesInput | FormL9ScalarWhereWithAggregatesInput[]
+    formL9Id?: UuidWithAggregatesFilter<"FormL9"> | string
+    companyId?: UuidWithAggregatesFilter<"FormL9"> | string
+    status?: StringWithAggregatesFilter<"FormL9"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"FormL9"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"FormL9"> | Date | string
+  }
+
+  export type FormL9BankInfoWhereInput = {
+    AND?: FormL9BankInfoWhereInput | FormL9BankInfoWhereInput[]
+    OR?: FormL9BankInfoWhereInput[]
+    NOT?: FormL9BankInfoWhereInput | FormL9BankInfoWhereInput[]
+    formL9BankInfoid?: UuidFilter<"FormL9BankInfo"> | string
+    formL9Id?: UuidFilter<"FormL9BankInfo"> | string
+    beneficiaryName?: StringFilter<"FormL9BankInfo"> | string
+    beneficiaryAddress?: StringFilter<"FormL9BankInfo"> | string
+    bankName?: StringFilter<"FormL9BankInfo"> | string
+    bankAddress?: StringFilter<"FormL9BankInfo"> | string
+    noRek?: StringFilter<"FormL9BankInfo"> | string
+    swiftCode?: StringFilter<"FormL9BankInfo"> | string
+    IBAN?: StringFilter<"FormL9BankInfo"> | string
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+  }
+
+  export type FormL9BankInfoOrderByWithRelationInput = {
+    formL9BankInfoid?: SortOrder
+    formL9Id?: SortOrder
+    beneficiaryName?: SortOrder
+    beneficiaryAddress?: SortOrder
+    bankName?: SortOrder
+    bankAddress?: SortOrder
+    noRek?: SortOrder
+    swiftCode?: SortOrder
+    IBAN?: SortOrder
+    formL9?: FormL9OrderByWithRelationInput
+  }
+
+  export type FormL9BankInfoWhereUniqueInput = Prisma.AtLeast<{
+    formL9BankInfoid?: string
+    formL9Id?: string
+    AND?: FormL9BankInfoWhereInput | FormL9BankInfoWhereInput[]
+    OR?: FormL9BankInfoWhereInput[]
+    NOT?: FormL9BankInfoWhereInput | FormL9BankInfoWhereInput[]
+    beneficiaryName?: StringFilter<"FormL9BankInfo"> | string
+    beneficiaryAddress?: StringFilter<"FormL9BankInfo"> | string
+    bankName?: StringFilter<"FormL9BankInfo"> | string
+    bankAddress?: StringFilter<"FormL9BankInfo"> | string
+    noRek?: StringFilter<"FormL9BankInfo"> | string
+    swiftCode?: StringFilter<"FormL9BankInfo"> | string
+    IBAN?: StringFilter<"FormL9BankInfo"> | string
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+  }, "formL9BankInfoid" | "formL9Id">
+
+  export type FormL9BankInfoOrderByWithAggregationInput = {
+    formL9BankInfoid?: SortOrder
+    formL9Id?: SortOrder
+    beneficiaryName?: SortOrder
+    beneficiaryAddress?: SortOrder
+    bankName?: SortOrder
+    bankAddress?: SortOrder
+    noRek?: SortOrder
+    swiftCode?: SortOrder
+    IBAN?: SortOrder
+    _count?: FormL9BankInfoCountOrderByAggregateInput
+    _max?: FormL9BankInfoMaxOrderByAggregateInput
+    _min?: FormL9BankInfoMinOrderByAggregateInput
+  }
+
+  export type FormL9BankInfoScalarWhereWithAggregatesInput = {
+    AND?: FormL9BankInfoScalarWhereWithAggregatesInput | FormL9BankInfoScalarWhereWithAggregatesInput[]
+    OR?: FormL9BankInfoScalarWhereWithAggregatesInput[]
+    NOT?: FormL9BankInfoScalarWhereWithAggregatesInput | FormL9BankInfoScalarWhereWithAggregatesInput[]
+    formL9BankInfoid?: UuidWithAggregatesFilter<"FormL9BankInfo"> | string
+    formL9Id?: UuidWithAggregatesFilter<"FormL9BankInfo"> | string
+    beneficiaryName?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
+    beneficiaryAddress?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
+    bankName?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
+    bankAddress?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
+    noRek?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
+    swiftCode?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
+    IBAN?: StringWithAggregatesFilter<"FormL9BankInfo"> | string
+  }
+
+  export type FormL9GeneralInformationWhereInput = {
+    AND?: FormL9GeneralInformationWhereInput | FormL9GeneralInformationWhereInput[]
+    OR?: FormL9GeneralInformationWhereInput[]
+    NOT?: FormL9GeneralInformationWhereInput | FormL9GeneralInformationWhereInput[]
+    formGeneralInformationId?: UuidFilter<"FormL9GeneralInformation"> | string
+    formL9Id?: UuidFilter<"FormL9GeneralInformation"> | string
+    companyName?: StringFilter<"FormL9GeneralInformation"> | string
+    companyFoundingDate?: DateTimeFilter<"FormL9GeneralInformation"> | Date | string
+    companyStatus?: StringFilter<"FormL9GeneralInformation"> | string
+    companyTelpFax?: StringFilter<"FormL9GeneralInformation"> | string
+    companyAddress?: StringFilter<"FormL9GeneralInformation"> | string
+    companyEmail?: StringFilter<"FormL9GeneralInformation"> | string
+    npwp?: StringFilter<"FormL9GeneralInformation"> | string
+    totalCapital?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    segmentId?: StringFilter<"FormL9GeneralInformation"> | string
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+    generalInfoContinue?: XOR<FormL9GeneralInformationContinueNullableScalarRelationFilter, FormL9GeneralInformationContinueWhereInput> | null
+  }
+
+  export type FormL9GeneralInformationOrderByWithRelationInput = {
+    formGeneralInformationId?: SortOrder
+    formL9Id?: SortOrder
+    companyName?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
+    companyAddress?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
+    totalCapital?: SortOrderInput | SortOrder
+    segmentId?: SortOrder
+    formL9?: FormL9OrderByWithRelationInput
+    generalInfoContinue?: FormL9GeneralInformationContinueOrderByWithRelationInput
+  }
+
+  export type FormL9GeneralInformationWhereUniqueInput = Prisma.AtLeast<{
+    formGeneralInformationId?: string
+    formL9Id?: string
+    AND?: FormL9GeneralInformationWhereInput | FormL9GeneralInformationWhereInput[]
+    OR?: FormL9GeneralInformationWhereInput[]
+    NOT?: FormL9GeneralInformationWhereInput | FormL9GeneralInformationWhereInput[]
+    companyName?: StringFilter<"FormL9GeneralInformation"> | string
+    companyFoundingDate?: DateTimeFilter<"FormL9GeneralInformation"> | Date | string
+    companyStatus?: StringFilter<"FormL9GeneralInformation"> | string
+    companyTelpFax?: StringFilter<"FormL9GeneralInformation"> | string
+    companyAddress?: StringFilter<"FormL9GeneralInformation"> | string
+    companyEmail?: StringFilter<"FormL9GeneralInformation"> | string
+    npwp?: StringFilter<"FormL9GeneralInformation"> | string
+    totalCapital?: StringNullableFilter<"FormL9GeneralInformation"> | string | null
+    segmentId?: StringFilter<"FormL9GeneralInformation"> | string
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+    generalInfoContinue?: XOR<FormL9GeneralInformationContinueNullableScalarRelationFilter, FormL9GeneralInformationContinueWhereInput> | null
+  }, "formGeneralInformationId" | "formL9Id">
+
+  export type FormL9GeneralInformationOrderByWithAggregationInput = {
+    formGeneralInformationId?: SortOrder
+    formL9Id?: SortOrder
+    companyName?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
+    companyAddress?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
+    totalCapital?: SortOrderInput | SortOrder
+    segmentId?: SortOrder
+    _count?: FormL9GeneralInformationCountOrderByAggregateInput
+    _max?: FormL9GeneralInformationMaxOrderByAggregateInput
+    _min?: FormL9GeneralInformationMinOrderByAggregateInput
+  }
+
+  export type FormL9GeneralInformationScalarWhereWithAggregatesInput = {
+    AND?: FormL9GeneralInformationScalarWhereWithAggregatesInput | FormL9GeneralInformationScalarWhereWithAggregatesInput[]
+    OR?: FormL9GeneralInformationScalarWhereWithAggregatesInput[]
+    NOT?: FormL9GeneralInformationScalarWhereWithAggregatesInput | FormL9GeneralInformationScalarWhereWithAggregatesInput[]
+    formGeneralInformationId?: UuidWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    formL9Id?: UuidWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    companyName?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    companyFoundingDate?: DateTimeWithAggregatesFilter<"FormL9GeneralInformation"> | Date | string
+    companyStatus?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    companyTelpFax?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    companyAddress?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    companyEmail?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    npwp?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
+    totalCapital?: StringNullableWithAggregatesFilter<"FormL9GeneralInformation"> | string | null
+    segmentId?: StringWithAggregatesFilter<"FormL9GeneralInformation"> | string
+  }
+
+  export type FormL9GeneralInformationContinueWhereInput = {
+    AND?: FormL9GeneralInformationContinueWhereInput | FormL9GeneralInformationContinueWhereInput[]
+    OR?: FormL9GeneralInformationContinueWhereInput[]
+    NOT?: FormL9GeneralInformationContinueWhereInput | FormL9GeneralInformationContinueWhereInput[]
+    formL9GeneralInformationContinueId?: UuidFilter<"FormL9GeneralInformationContinue"> | string
+    formGeneralInformationId?: UuidFilter<"FormL9GeneralInformationContinue"> | string
+    permitsHeld?: StringFilter<"FormL9GeneralInformationContinue"> | string
+    generalInformation?: XOR<FormL9GeneralInformationScalarRelationFilter, FormL9GeneralInformationWhereInput>
+  }
+
+  export type FormL9GeneralInformationContinueOrderByWithRelationInput = {
+    formL9GeneralInformationContinueId?: SortOrder
+    formGeneralInformationId?: SortOrder
+    permitsHeld?: SortOrder
+    generalInformation?: FormL9GeneralInformationOrderByWithRelationInput
+  }
+
+  export type FormL9GeneralInformationContinueWhereUniqueInput = Prisma.AtLeast<{
+    formL9GeneralInformationContinueId?: string
+    formGeneralInformationId?: string
+    AND?: FormL9GeneralInformationContinueWhereInput | FormL9GeneralInformationContinueWhereInput[]
+    OR?: FormL9GeneralInformationContinueWhereInput[]
+    NOT?: FormL9GeneralInformationContinueWhereInput | FormL9GeneralInformationContinueWhereInput[]
+    permitsHeld?: StringFilter<"FormL9GeneralInformationContinue"> | string
+    generalInformation?: XOR<FormL9GeneralInformationScalarRelationFilter, FormL9GeneralInformationWhereInput>
+  }, "formL9GeneralInformationContinueId" | "formGeneralInformationId">
+
+  export type FormL9GeneralInformationContinueOrderByWithAggregationInput = {
+    formL9GeneralInformationContinueId?: SortOrder
+    formGeneralInformationId?: SortOrder
+    permitsHeld?: SortOrder
+    _count?: FormL9GeneralInformationContinueCountOrderByAggregateInput
+    _max?: FormL9GeneralInformationContinueMaxOrderByAggregateInput
+    _min?: FormL9GeneralInformationContinueMinOrderByAggregateInput
+  }
+
+  export type FormL9GeneralInformationContinueScalarWhereWithAggregatesInput = {
+    AND?: FormL9GeneralInformationContinueScalarWhereWithAggregatesInput | FormL9GeneralInformationContinueScalarWhereWithAggregatesInput[]
+    OR?: FormL9GeneralInformationContinueScalarWhereWithAggregatesInput[]
+    NOT?: FormL9GeneralInformationContinueScalarWhereWithAggregatesInput | FormL9GeneralInformationContinueScalarWhereWithAggregatesInput[]
+    formL9GeneralInformationContinueId?: UuidWithAggregatesFilter<"FormL9GeneralInformationContinue"> | string
+    formGeneralInformationId?: UuidWithAggregatesFilter<"FormL9GeneralInformationContinue"> | string
+    permitsHeld?: StringWithAggregatesFilter<"FormL9GeneralInformationContinue"> | string
+  }
+
+  export type FormL9ManagementWhereInput = {
+    AND?: FormL9ManagementWhereInput | FormL9ManagementWhereInput[]
+    OR?: FormL9ManagementWhereInput[]
+    NOT?: FormL9ManagementWhereInput | FormL9ManagementWhereInput[]
+    formL9ManagementId?: UuidFilter<"FormL9Management"> | string
+    formL9Id?: UuidFilter<"FormL9Management"> | string
+    position?: StringFilter<"FormL9Management"> | string
+    name?: StringFilter<"FormL9Management"> | string
+    noTelpFaxHp?: StringFilter<"FormL9Management"> | string
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+  }
+
+  export type FormL9ManagementOrderByWithRelationInput = {
+    formL9ManagementId?: SortOrder
+    formL9Id?: SortOrder
+    position?: SortOrder
+    name?: SortOrder
+    noTelpFaxHp?: SortOrder
+    formL9?: FormL9OrderByWithRelationInput
+  }
+
+  export type FormL9ManagementWhereUniqueInput = Prisma.AtLeast<{
+    formL9ManagementId?: string
+    AND?: FormL9ManagementWhereInput | FormL9ManagementWhereInput[]
+    OR?: FormL9ManagementWhereInput[]
+    NOT?: FormL9ManagementWhereInput | FormL9ManagementWhereInput[]
+    formL9Id?: UuidFilter<"FormL9Management"> | string
+    position?: StringFilter<"FormL9Management"> | string
+    name?: StringFilter<"FormL9Management"> | string
+    noTelpFaxHp?: StringFilter<"FormL9Management"> | string
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+  }, "formL9ManagementId">
+
+  export type FormL9ManagementOrderByWithAggregationInput = {
+    formL9ManagementId?: SortOrder
+    formL9Id?: SortOrder
+    position?: SortOrder
+    name?: SortOrder
+    noTelpFaxHp?: SortOrder
+    _count?: FormL9ManagementCountOrderByAggregateInput
+    _max?: FormL9ManagementMaxOrderByAggregateInput
+    _min?: FormL9ManagementMinOrderByAggregateInput
+  }
+
+  export type FormL9ManagementScalarWhereWithAggregatesInput = {
+    AND?: FormL9ManagementScalarWhereWithAggregatesInput | FormL9ManagementScalarWhereWithAggregatesInput[]
+    OR?: FormL9ManagementScalarWhereWithAggregatesInput[]
+    NOT?: FormL9ManagementScalarWhereWithAggregatesInput | FormL9ManagementScalarWhereWithAggregatesInput[]
+    formL9ManagementId?: UuidWithAggregatesFilter<"FormL9Management"> | string
+    formL9Id?: UuidWithAggregatesFilter<"FormL9Management"> | string
+    position?: StringWithAggregatesFilter<"FormL9Management"> | string
+    name?: StringWithAggregatesFilter<"FormL9Management"> | string
+    noTelpFaxHp?: StringWithAggregatesFilter<"FormL9Management"> | string
+  }
+
+  export type FormL9EmployeWhereInput = {
+    AND?: FormL9EmployeWhereInput | FormL9EmployeWhereInput[]
+    OR?: FormL9EmployeWhereInput[]
+    NOT?: FormL9EmployeWhereInput | FormL9EmployeWhereInput[]
+    formL9EmployeId?: UuidFilter<"FormL9Employe"> | string
+    formL9Id?: UuidFilter<"FormL9Employe"> | string
+    totalEmployees?: IntFilter<"FormL9Employe"> | number
+    qualityControl?: IntFilter<"FormL9Employe"> | number
+    engineering?: IntFilter<"FormL9Employe"> | number
+    production?: IntFilter<"FormL9Employe"> | number
+    management?: IntFilter<"FormL9Employe"> | number
+    other?: IntFilter<"FormL9Employe"> | number
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+  }
+
+  export type FormL9EmployeOrderByWithRelationInput = {
+    formL9EmployeId?: SortOrder
+    formL9Id?: SortOrder
+    totalEmployees?: SortOrder
+    qualityControl?: SortOrder
+    engineering?: SortOrder
+    production?: SortOrder
+    management?: SortOrder
+    other?: SortOrder
+    formL9?: FormL9OrderByWithRelationInput
+  }
+
+  export type FormL9EmployeWhereUniqueInput = Prisma.AtLeast<{
+    formL9EmployeId?: string
+    formL9Id?: string
+    AND?: FormL9EmployeWhereInput | FormL9EmployeWhereInput[]
+    OR?: FormL9EmployeWhereInput[]
+    NOT?: FormL9EmployeWhereInput | FormL9EmployeWhereInput[]
+    totalEmployees?: IntFilter<"FormL9Employe"> | number
+    qualityControl?: IntFilter<"FormL9Employe"> | number
+    engineering?: IntFilter<"FormL9Employe"> | number
+    production?: IntFilter<"FormL9Employe"> | number
+    management?: IntFilter<"FormL9Employe"> | number
+    other?: IntFilter<"FormL9Employe"> | number
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+  }, "formL9EmployeId" | "formL9Id">
+
+  export type FormL9EmployeOrderByWithAggregationInput = {
+    formL9EmployeId?: SortOrder
+    formL9Id?: SortOrder
+    totalEmployees?: SortOrder
+    qualityControl?: SortOrder
+    engineering?: SortOrder
+    production?: SortOrder
+    management?: SortOrder
+    other?: SortOrder
+    _count?: FormL9EmployeCountOrderByAggregateInput
+    _avg?: FormL9EmployeAvgOrderByAggregateInput
+    _max?: FormL9EmployeMaxOrderByAggregateInput
+    _min?: FormL9EmployeMinOrderByAggregateInput
+    _sum?: FormL9EmployeSumOrderByAggregateInput
+  }
+
+  export type FormL9EmployeScalarWhereWithAggregatesInput = {
+    AND?: FormL9EmployeScalarWhereWithAggregatesInput | FormL9EmployeScalarWhereWithAggregatesInput[]
+    OR?: FormL9EmployeScalarWhereWithAggregatesInput[]
+    NOT?: FormL9EmployeScalarWhereWithAggregatesInput | FormL9EmployeScalarWhereWithAggregatesInput[]
+    formL9EmployeId?: UuidWithAggregatesFilter<"FormL9Employe"> | string
+    formL9Id?: UuidWithAggregatesFilter<"FormL9Employe"> | string
+    totalEmployees?: IntWithAggregatesFilter<"FormL9Employe"> | number
+    qualityControl?: IntWithAggregatesFilter<"FormL9Employe"> | number
+    engineering?: IntWithAggregatesFilter<"FormL9Employe"> | number
+    production?: IntWithAggregatesFilter<"FormL9Employe"> | number
+    management?: IntWithAggregatesFilter<"FormL9Employe"> | number
+    other?: IntWithAggregatesFilter<"FormL9Employe"> | number
+  }
+
+  export type FormL9WorkExperienceWhereInput = {
+    AND?: FormL9WorkExperienceWhereInput | FormL9WorkExperienceWhereInput[]
+    OR?: FormL9WorkExperienceWhereInput[]
+    NOT?: FormL9WorkExperienceWhereInput | FormL9WorkExperienceWhereInput[]
+    formL9WorkExperienceId?: UuidFilter<"FormL9WorkExperience"> | string
+    formL9Id?: UuidFilter<"FormL9WorkExperience"> | string
+    customerOrLocation?: StringFilter<"FormL9WorkExperience"> | string
+    typeOfWork?: StringFilter<"FormL9WorkExperience"> | string
+    score?: IntFilter<"FormL9WorkExperience"> | number
+    customerContactPerson?: StringFilter<"FormL9WorkExperience"> | string
+    customerTelpFaxHp?: StringFilter<"FormL9WorkExperience"> | string
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+  }
+
+  export type FormL9WorkExperienceOrderByWithRelationInput = {
+    formL9WorkExperienceId?: SortOrder
+    formL9Id?: SortOrder
+    customerOrLocation?: SortOrder
+    typeOfWork?: SortOrder
+    score?: SortOrder
+    customerContactPerson?: SortOrder
+    customerTelpFaxHp?: SortOrder
+    formL9?: FormL9OrderByWithRelationInput
+  }
+
+  export type FormL9WorkExperienceWhereUniqueInput = Prisma.AtLeast<{
+    formL9WorkExperienceId?: string
+    AND?: FormL9WorkExperienceWhereInput | FormL9WorkExperienceWhereInput[]
+    OR?: FormL9WorkExperienceWhereInput[]
+    NOT?: FormL9WorkExperienceWhereInput | FormL9WorkExperienceWhereInput[]
+    formL9Id?: UuidFilter<"FormL9WorkExperience"> | string
+    customerOrLocation?: StringFilter<"FormL9WorkExperience"> | string
+    typeOfWork?: StringFilter<"FormL9WorkExperience"> | string
+    score?: IntFilter<"FormL9WorkExperience"> | number
+    customerContactPerson?: StringFilter<"FormL9WorkExperience"> | string
+    customerTelpFaxHp?: StringFilter<"FormL9WorkExperience"> | string
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+  }, "formL9WorkExperienceId">
+
+  export type FormL9WorkExperienceOrderByWithAggregationInput = {
+    formL9WorkExperienceId?: SortOrder
+    formL9Id?: SortOrder
+    customerOrLocation?: SortOrder
+    typeOfWork?: SortOrder
+    score?: SortOrder
+    customerContactPerson?: SortOrder
+    customerTelpFaxHp?: SortOrder
+    _count?: FormL9WorkExperienceCountOrderByAggregateInput
+    _avg?: FormL9WorkExperienceAvgOrderByAggregateInput
+    _max?: FormL9WorkExperienceMaxOrderByAggregateInput
+    _min?: FormL9WorkExperienceMinOrderByAggregateInput
+    _sum?: FormL9WorkExperienceSumOrderByAggregateInput
+  }
+
+  export type FormL9WorkExperienceScalarWhereWithAggregatesInput = {
+    AND?: FormL9WorkExperienceScalarWhereWithAggregatesInput | FormL9WorkExperienceScalarWhereWithAggregatesInput[]
+    OR?: FormL9WorkExperienceScalarWhereWithAggregatesInput[]
+    NOT?: FormL9WorkExperienceScalarWhereWithAggregatesInput | FormL9WorkExperienceScalarWhereWithAggregatesInput[]
+    formL9WorkExperienceId?: UuidWithAggregatesFilter<"FormL9WorkExperience"> | string
+    formL9Id?: UuidWithAggregatesFilter<"FormL9WorkExperience"> | string
+    customerOrLocation?: StringWithAggregatesFilter<"FormL9WorkExperience"> | string
+    typeOfWork?: StringWithAggregatesFilter<"FormL9WorkExperience"> | string
+    score?: IntWithAggregatesFilter<"FormL9WorkExperience"> | number
+    customerContactPerson?: StringWithAggregatesFilter<"FormL9WorkExperience"> | string
+    customerTelpFaxHp?: StringWithAggregatesFilter<"FormL9WorkExperience"> | string
+  }
+
+  export type FormL9OthersWhereInput = {
+    AND?: FormL9OthersWhereInput | FormL9OthersWhereInput[]
+    OR?: FormL9OthersWhereInput[]
+    NOT?: FormL9OthersWhereInput | FormL9OthersWhereInput[]
+    formL9OthersId?: UuidFilter<"FormL9Others"> | string
+    formL9Id?: UuidFilter<"FormL9Others"> | string
+    haveCertificateISO?: BoolFilter<"FormL9Others"> | boolean
+    haveCompanyOrganizationalStructure?: BoolFilter<"FormL9Others"> | boolean
+    haveQualityControlOrganizationalStructure?: BoolFilter<"FormL9Others"> | boolean
+    haveProductWarranty?: BoolFilter<"FormL9Others"> | boolean
+    haveExpiryDate?: BoolFilter<"FormL9Others"> | boolean
+    haveAPD?: BoolFilter<"FormL9Others"> | boolean
+    haveAPDRegulation?: BoolFilter<"FormL9Others"> | boolean
+    isTopApplicable?: BoolFilter<"FormL9Others"> | boolean
+    paymentTime?: StringFilter<"FormL9Others"> | string
+    agreeToConfidentialInformation?: BoolFilter<"FormL9Others"> | boolean
+    understandingBreachesOfConfidentiality?: BoolFilter<"FormL9Others"> | boolean
+    signConfidentialityAgreement?: BoolFilter<"FormL9Others"> | boolean
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+    certificateISOs?: FormL9CertificateISOListRelationFilter
+  }
+
+  export type FormL9OthersOrderByWithRelationInput = {
+    formL9OthersId?: SortOrder
+    formL9Id?: SortOrder
+    haveCertificateISO?: SortOrder
+    haveCompanyOrganizationalStructure?: SortOrder
+    haveQualityControlOrganizationalStructure?: SortOrder
+    haveProductWarranty?: SortOrder
+    haveExpiryDate?: SortOrder
+    haveAPD?: SortOrder
+    haveAPDRegulation?: SortOrder
+    isTopApplicable?: SortOrder
+    paymentTime?: SortOrder
+    agreeToConfidentialInformation?: SortOrder
+    understandingBreachesOfConfidentiality?: SortOrder
+    signConfidentialityAgreement?: SortOrder
+    formL9?: FormL9OrderByWithRelationInput
+    certificateISOs?: FormL9CertificateISOOrderByRelationAggregateInput
+  }
+
+  export type FormL9OthersWhereUniqueInput = Prisma.AtLeast<{
+    formL9OthersId?: string
+    formL9Id?: string
+    AND?: FormL9OthersWhereInput | FormL9OthersWhereInput[]
+    OR?: FormL9OthersWhereInput[]
+    NOT?: FormL9OthersWhereInput | FormL9OthersWhereInput[]
+    haveCertificateISO?: BoolFilter<"FormL9Others"> | boolean
+    haveCompanyOrganizationalStructure?: BoolFilter<"FormL9Others"> | boolean
+    haveQualityControlOrganizationalStructure?: BoolFilter<"FormL9Others"> | boolean
+    haveProductWarranty?: BoolFilter<"FormL9Others"> | boolean
+    haveExpiryDate?: BoolFilter<"FormL9Others"> | boolean
+    haveAPD?: BoolFilter<"FormL9Others"> | boolean
+    haveAPDRegulation?: BoolFilter<"FormL9Others"> | boolean
+    isTopApplicable?: BoolFilter<"FormL9Others"> | boolean
+    paymentTime?: StringFilter<"FormL9Others"> | string
+    agreeToConfidentialInformation?: BoolFilter<"FormL9Others"> | boolean
+    understandingBreachesOfConfidentiality?: BoolFilter<"FormL9Others"> | boolean
+    signConfidentialityAgreement?: BoolFilter<"FormL9Others"> | boolean
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
+    certificateISOs?: FormL9CertificateISOListRelationFilter
+  }, "formL9OthersId" | "formL9Id">
+
+  export type FormL9OthersOrderByWithAggregationInput = {
+    formL9OthersId?: SortOrder
+    formL9Id?: SortOrder
+    haveCertificateISO?: SortOrder
+    haveCompanyOrganizationalStructure?: SortOrder
+    haveQualityControlOrganizationalStructure?: SortOrder
+    haveProductWarranty?: SortOrder
+    haveExpiryDate?: SortOrder
+    haveAPD?: SortOrder
+    haveAPDRegulation?: SortOrder
+    isTopApplicable?: SortOrder
+    paymentTime?: SortOrder
+    agreeToConfidentialInformation?: SortOrder
+    understandingBreachesOfConfidentiality?: SortOrder
+    signConfidentialityAgreement?: SortOrder
+    _count?: FormL9OthersCountOrderByAggregateInput
+    _max?: FormL9OthersMaxOrderByAggregateInput
+    _min?: FormL9OthersMinOrderByAggregateInput
+  }
+
+  export type FormL9OthersScalarWhereWithAggregatesInput = {
+    AND?: FormL9OthersScalarWhereWithAggregatesInput | FormL9OthersScalarWhereWithAggregatesInput[]
+    OR?: FormL9OthersScalarWhereWithAggregatesInput[]
+    NOT?: FormL9OthersScalarWhereWithAggregatesInput | FormL9OthersScalarWhereWithAggregatesInput[]
+    formL9OthersId?: UuidWithAggregatesFilter<"FormL9Others"> | string
+    formL9Id?: UuidWithAggregatesFilter<"FormL9Others"> | string
+    haveCertificateISO?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    haveCompanyOrganizationalStructure?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    haveQualityControlOrganizationalStructure?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    haveProductWarranty?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    haveExpiryDate?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    haveAPD?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    haveAPDRegulation?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    isTopApplicable?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    paymentTime?: StringWithAggregatesFilter<"FormL9Others"> | string
+    agreeToConfidentialInformation?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    understandingBreachesOfConfidentiality?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+    signConfidentialityAgreement?: BoolWithAggregatesFilter<"FormL9Others"> | boolean
+  }
+
+  export type FormL9CertificateISOWhereInput = {
+    AND?: FormL9CertificateISOWhereInput | FormL9CertificateISOWhereInput[]
+    OR?: FormL9CertificateISOWhereInput[]
+    NOT?: FormL9CertificateISOWhereInput | FormL9CertificateISOWhereInput[]
+    certificateISOId?: UuidFilter<"FormL9CertificateISO"> | string
+    formL9OthersId?: UuidFilter<"FormL9CertificateISO"> | string
+    isoName?: StringFilter<"FormL9CertificateISO"> | string
+    validityPeriodFrom?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    validityPeriodTo?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    remakes?: StringNullableFilter<"FormL9CertificateISO"> | string | null
+    others?: XOR<FormL9OthersScalarRelationFilter, FormL9OthersWhereInput>
+  }
+
+  export type FormL9CertificateISOOrderByWithRelationInput = {
+    certificateISOId?: SortOrder
+    formL9OthersId?: SortOrder
+    isoName?: SortOrder
+    validityPeriodFrom?: SortOrder
+    validityPeriodTo?: SortOrder
+    remakes?: SortOrderInput | SortOrder
+    others?: FormL9OthersOrderByWithRelationInput
+  }
+
+  export type FormL9CertificateISOWhereUniqueInput = Prisma.AtLeast<{
+    certificateISOId?: string
+    AND?: FormL9CertificateISOWhereInput | FormL9CertificateISOWhereInput[]
+    OR?: FormL9CertificateISOWhereInput[]
+    NOT?: FormL9CertificateISOWhereInput | FormL9CertificateISOWhereInput[]
+    formL9OthersId?: UuidFilter<"FormL9CertificateISO"> | string
+    isoName?: StringFilter<"FormL9CertificateISO"> | string
+    validityPeriodFrom?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    validityPeriodTo?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    remakes?: StringNullableFilter<"FormL9CertificateISO"> | string | null
+    others?: XOR<FormL9OthersScalarRelationFilter, FormL9OthersWhereInput>
+  }, "certificateISOId">
+
+  export type FormL9CertificateISOOrderByWithAggregationInput = {
+    certificateISOId?: SortOrder
+    formL9OthersId?: SortOrder
+    isoName?: SortOrder
+    validityPeriodFrom?: SortOrder
+    validityPeriodTo?: SortOrder
+    remakes?: SortOrderInput | SortOrder
+    _count?: FormL9CertificateISOCountOrderByAggregateInput
+    _max?: FormL9CertificateISOMaxOrderByAggregateInput
+    _min?: FormL9CertificateISOMinOrderByAggregateInput
+  }
+
+  export type FormL9CertificateISOScalarWhereWithAggregatesInput = {
+    AND?: FormL9CertificateISOScalarWhereWithAggregatesInput | FormL9CertificateISOScalarWhereWithAggregatesInput[]
+    OR?: FormL9CertificateISOScalarWhereWithAggregatesInput[]
+    NOT?: FormL9CertificateISOScalarWhereWithAggregatesInput | FormL9CertificateISOScalarWhereWithAggregatesInput[]
+    certificateISOId?: UuidWithAggregatesFilter<"FormL9CertificateISO"> | string
+    formL9OthersId?: UuidWithAggregatesFilter<"FormL9CertificateISO"> | string
+    isoName?: StringWithAggregatesFilter<"FormL9CertificateISO"> | string
+    validityPeriodFrom?: DateTimeWithAggregatesFilter<"FormL9CertificateISO"> | Date | string
+    validityPeriodTo?: DateTimeWithAggregatesFilter<"FormL9CertificateISO"> | Date | string
+    remakes?: StringNullableWithAggregatesFilter<"FormL9CertificateISO"> | string | null
   }
 
   export type AllowedIpCorsCreateInput = {
@@ -13567,6 +26653,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -13582,6 +26669,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -13597,6 +26685,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13612,6 +26701,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13627,6 +26717,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -13637,6 +26728,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13647,6 +26739,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -13929,27 +27022,27 @@ export namespace Prisma {
   export type CompanySegmentCreateInput = {
     segmentName: string
     description?: string | null
-    profile?: ProfileCreateNestedManyWithoutSegmentInput
+    company?: CompanyCreateNestedManyWithoutSegmentInput
   }
 
   export type CompanySegmentUncheckedCreateInput = {
     segmentId?: number
     segmentName: string
     description?: string | null
-    profile?: ProfileUncheckedCreateNestedManyWithoutSegmentInput
+    company?: CompanyUncheckedCreateNestedManyWithoutSegmentInput
   }
 
   export type CompanySegmentUpdateInput = {
     segmentName?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUpdateManyWithoutSegmentNestedInput
+    company?: CompanyUpdateManyWithoutSegmentNestedInput
   }
 
   export type CompanySegmentUncheckedUpdateInput = {
     segmentId?: IntFieldUpdateOperationsInput | number
     segmentName?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUncheckedUpdateManyWithoutSegmentNestedInput
+    company?: CompanyUncheckedUpdateManyWithoutSegmentNestedInput
   }
 
   export type CompanySegmentCreateManyInput = {
@@ -13970,134 +27063,878 @@ export namespace Prisma {
   }
 
   export type ProfileCreateInput = {
-    fullName?: string | null
+    fullName: string
     urlImage?: string | null
-    companyName: string
-    npwp: string
-    deedNumber?: string | null
-    establishedDate?: Date | string | null
-    npwpUrl: string
-    deedUrl: string
-    description?: string | null
-    companyAddress?: string | null
-    companyPhone?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    segment?: CompanySegmentCreateNestedOneWithoutProfileInput
     user: UserCreateNestedOneWithoutProfileInput
+    company?: CompanyCreateNestedOneWithoutProfileInput
   }
 
   export type ProfileUncheckedCreateInput = {
     userId: string
-    fullName?: string | null
+    companyId?: string | null
+    fullName: string
     urlImage?: string | null
-    companyName: string
-    npwp: string
-    deedNumber?: string | null
-    establishedDate?: Date | string | null
-    npwpUrl: string
-    deedUrl: string
-    description?: string | null
-    segmentId?: number | null
-    companyAddress?: string | null
-    companyPhone?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type ProfileUpdateInput = {
-    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
-    deedNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    establishedDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    npwpUrl?: StringFieldUpdateOperationsInput | string
-    deedUrl?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyPhone?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    segment?: CompanySegmentUpdateOneWithoutProfileNestedInput
     user?: UserUpdateOneRequiredWithoutProfileNestedInput
+    company?: CompanyUpdateOneWithoutProfileNestedInput
   }
 
   export type ProfileUncheckedUpdateInput = {
     userId?: StringFieldUpdateOperationsInput | string
-    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyId?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
-    deedNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    establishedDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    npwpUrl?: StringFieldUpdateOperationsInput | string
-    deedUrl?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyPhone?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProfileCreateManyInput = {
     userId: string
-    fullName?: string | null
+    companyId?: string | null
+    fullName: string
     urlImage?: string | null
-    companyName: string
-    npwp: string
-    deedNumber?: string | null
-    establishedDate?: Date | string | null
-    npwpUrl: string
-    deedUrl: string
-    description?: string | null
-    segmentId?: number | null
-    companyAddress?: string | null
-    companyPhone?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type ProfileUpdateManyMutationInput = {
-    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
-    deedNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    establishedDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    npwpUrl?: StringFieldUpdateOperationsInput | string
-    deedUrl?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyPhone?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ProfileUncheckedUpdateManyInput = {
     userId?: StringFieldUpdateOperationsInput | string
-    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyId?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CompanyCreateInput = {
+    companyId?: string
+    urlImage?: string | null
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    totalCapital?: string | null
+    profile?: ProfileCreateNestedManyWithoutCompanyInput
+    segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
+    formL9?: FormL9CreateNestedOneWithoutCompanyInput
+  }
+
+  export type CompanyUncheckedCreateInput = {
+    companyId?: string
+    segmentId: number
+    urlImage?: string | null
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    totalCapital?: string | null
+    profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
+    formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
+  }
+
+  export type CompanyUpdateInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
     npwp?: StringFieldUpdateOperationsInput | string
-    deedNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    establishedDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    npwpUrl?: StringFieldUpdateOperationsInput | string
-    deedUrl?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyPhone?: NullableStringFieldUpdateOperationsInput | string | null
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    profile?: ProfileUpdateManyWithoutCompanyNestedInput
+    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+    formL9?: FormL9UpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanyUncheckedUpdateInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    segmentId?: IntFieldUpdateOperationsInput | number
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
+    formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanyCreateManyInput = {
+    companyId?: string
+    segmentId: number
+    urlImage?: string | null
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    totalCapital?: string | null
+  }
+
+  export type CompanyUpdateManyMutationInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type CompanyUncheckedUpdateManyInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    segmentId?: IntFieldUpdateOperationsInput | number
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type FormL9CreateInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    company: CompanyCreateNestedOneWithoutFormL9Input
+    bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UncheckedCreateInput = {
+    formL9Id?: string
+    companyId: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UpdateInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
+    bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9UncheckedUpdateInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9CreateManyInput = {
+    formL9Id?: string
+    companyId: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type FormL9UpdateManyMutationInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FormL9UncheckedUpdateManyInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FormL9BankInfoCreateInput = {
+    formL9BankInfoid?: string
+    beneficiaryName: string
+    beneficiaryAddress: string
+    bankName: string
+    bankAddress: string
+    noRek: string
+    swiftCode: string
+    IBAN: string
+    formL9: FormL9CreateNestedOneWithoutBankInfoInput
+  }
+
+  export type FormL9BankInfoUncheckedCreateInput = {
+    formL9BankInfoid?: string
+    formL9Id: string
+    beneficiaryName: string
+    beneficiaryAddress: string
+    bankName: string
+    bankAddress: string
+    noRek: string
+    swiftCode: string
+    IBAN: string
+  }
+
+  export type FormL9BankInfoUpdateInput = {
+    formL9BankInfoid?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: StringFieldUpdateOperationsInput | string
+    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
+    bankName?: StringFieldUpdateOperationsInput | string
+    bankAddress?: StringFieldUpdateOperationsInput | string
+    noRek?: StringFieldUpdateOperationsInput | string
+    swiftCode?: StringFieldUpdateOperationsInput | string
+    IBAN?: StringFieldUpdateOperationsInput | string
+    formL9?: FormL9UpdateOneRequiredWithoutBankInfoNestedInput
+  }
+
+  export type FormL9BankInfoUncheckedUpdateInput = {
+    formL9BankInfoid?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: StringFieldUpdateOperationsInput | string
+    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
+    bankName?: StringFieldUpdateOperationsInput | string
+    bankAddress?: StringFieldUpdateOperationsInput | string
+    noRek?: StringFieldUpdateOperationsInput | string
+    swiftCode?: StringFieldUpdateOperationsInput | string
+    IBAN?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9BankInfoCreateManyInput = {
+    formL9BankInfoid?: string
+    formL9Id: string
+    beneficiaryName: string
+    beneficiaryAddress: string
+    bankName: string
+    bankAddress: string
+    noRek: string
+    swiftCode: string
+    IBAN: string
+  }
+
+  export type FormL9BankInfoUpdateManyMutationInput = {
+    formL9BankInfoid?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: StringFieldUpdateOperationsInput | string
+    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
+    bankName?: StringFieldUpdateOperationsInput | string
+    bankAddress?: StringFieldUpdateOperationsInput | string
+    noRek?: StringFieldUpdateOperationsInput | string
+    swiftCode?: StringFieldUpdateOperationsInput | string
+    IBAN?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9BankInfoUncheckedUpdateManyInput = {
+    formL9BankInfoid?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: StringFieldUpdateOperationsInput | string
+    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
+    bankName?: StringFieldUpdateOperationsInput | string
+    bankAddress?: StringFieldUpdateOperationsInput | string
+    noRek?: StringFieldUpdateOperationsInput | string
+    swiftCode?: StringFieldUpdateOperationsInput | string
+    IBAN?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9GeneralInformationCreateInput = {
+    formGeneralInformationId?: string
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    totalCapital?: string | null
+    segmentId: string
+    formL9: FormL9CreateNestedOneWithoutGeneralInformationInput
+    generalInfoContinue?: FormL9GeneralInformationContinueCreateNestedOneWithoutGeneralInformationInput
+  }
+
+  export type FormL9GeneralInformationUncheckedCreateInput = {
+    formGeneralInformationId?: string
+    formL9Id: string
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    totalCapital?: string | null
+    segmentId: string
+    generalInfoContinue?: FormL9GeneralInformationContinueUncheckedCreateNestedOneWithoutGeneralInformationInput
+  }
+
+  export type FormL9GeneralInformationUpdateInput = {
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segmentId?: StringFieldUpdateOperationsInput | string
+    formL9?: FormL9UpdateOneRequiredWithoutGeneralInformationNestedInput
+    generalInfoContinue?: FormL9GeneralInformationContinueUpdateOneWithoutGeneralInformationNestedInput
+  }
+
+  export type FormL9GeneralInformationUncheckedUpdateInput = {
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segmentId?: StringFieldUpdateOperationsInput | string
+    generalInfoContinue?: FormL9GeneralInformationContinueUncheckedUpdateOneWithoutGeneralInformationNestedInput
+  }
+
+  export type FormL9GeneralInformationCreateManyInput = {
+    formGeneralInformationId?: string
+    formL9Id: string
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    totalCapital?: string | null
+    segmentId: string
+  }
+
+  export type FormL9GeneralInformationUpdateManyMutationInput = {
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segmentId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9GeneralInformationUncheckedUpdateManyInput = {
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segmentId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9GeneralInformationContinueCreateInput = {
+    formL9GeneralInformationContinueId?: string
+    permitsHeld: string
+    generalInformation: FormL9GeneralInformationCreateNestedOneWithoutGeneralInfoContinueInput
+  }
+
+  export type FormL9GeneralInformationContinueUncheckedCreateInput = {
+    formL9GeneralInformationContinueId?: string
+    formGeneralInformationId: string
+    permitsHeld: string
+  }
+
+  export type FormL9GeneralInformationContinueUpdateInput = {
+    formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: StringFieldUpdateOperationsInput | string
+    generalInformation?: FormL9GeneralInformationUpdateOneRequiredWithoutGeneralInfoContinueNestedInput
+  }
+
+  export type FormL9GeneralInformationContinueUncheckedUpdateInput = {
+    formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9GeneralInformationContinueCreateManyInput = {
+    formL9GeneralInformationContinueId?: string
+    formGeneralInformationId: string
+    permitsHeld: string
+  }
+
+  export type FormL9GeneralInformationContinueUpdateManyMutationInput = {
+    formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9GeneralInformationContinueUncheckedUpdateManyInput = {
+    formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9ManagementCreateInput = {
+    formL9ManagementId?: string
+    position: string
+    name: string
+    noTelpFaxHp: string
+    formL9: FormL9CreateNestedOneWithoutManagementsInput
+  }
+
+  export type FormL9ManagementUncheckedCreateInput = {
+    formL9ManagementId?: string
+    formL9Id: string
+    position: string
+    name: string
+    noTelpFaxHp: string
+  }
+
+  export type FormL9ManagementUpdateInput = {
+    formL9ManagementId?: StringFieldUpdateOperationsInput | string
+    position?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    formL9?: FormL9UpdateOneRequiredWithoutManagementsNestedInput
+  }
+
+  export type FormL9ManagementUncheckedUpdateInput = {
+    formL9ManagementId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    position?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9ManagementCreateManyInput = {
+    formL9ManagementId?: string
+    formL9Id: string
+    position: string
+    name: string
+    noTelpFaxHp: string
+  }
+
+  export type FormL9ManagementUpdateManyMutationInput = {
+    formL9ManagementId?: StringFieldUpdateOperationsInput | string
+    position?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9ManagementUncheckedUpdateManyInput = {
+    formL9ManagementId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    position?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9EmployeCreateInput = {
+    formL9EmployeId?: string
+    totalEmployees: number
+    qualityControl: number
+    engineering: number
+    production: number
+    management: number
+    other: number
+    formL9: FormL9CreateNestedOneWithoutEmployeeInfoInput
+  }
+
+  export type FormL9EmployeUncheckedCreateInput = {
+    formL9EmployeId?: string
+    formL9Id: string
+    totalEmployees: number
+    qualityControl: number
+    engineering: number
+    production: number
+    management: number
+    other: number
+  }
+
+  export type FormL9EmployeUpdateInput = {
+    formL9EmployeId?: StringFieldUpdateOperationsInput | string
+    totalEmployees?: IntFieldUpdateOperationsInput | number
+    qualityControl?: IntFieldUpdateOperationsInput | number
+    engineering?: IntFieldUpdateOperationsInput | number
+    production?: IntFieldUpdateOperationsInput | number
+    management?: IntFieldUpdateOperationsInput | number
+    other?: IntFieldUpdateOperationsInput | number
+    formL9?: FormL9UpdateOneRequiredWithoutEmployeeInfoNestedInput
+  }
+
+  export type FormL9EmployeUncheckedUpdateInput = {
+    formL9EmployeId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    totalEmployees?: IntFieldUpdateOperationsInput | number
+    qualityControl?: IntFieldUpdateOperationsInput | number
+    engineering?: IntFieldUpdateOperationsInput | number
+    production?: IntFieldUpdateOperationsInput | number
+    management?: IntFieldUpdateOperationsInput | number
+    other?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type FormL9EmployeCreateManyInput = {
+    formL9EmployeId?: string
+    formL9Id: string
+    totalEmployees: number
+    qualityControl: number
+    engineering: number
+    production: number
+    management: number
+    other: number
+  }
+
+  export type FormL9EmployeUpdateManyMutationInput = {
+    formL9EmployeId?: StringFieldUpdateOperationsInput | string
+    totalEmployees?: IntFieldUpdateOperationsInput | number
+    qualityControl?: IntFieldUpdateOperationsInput | number
+    engineering?: IntFieldUpdateOperationsInput | number
+    production?: IntFieldUpdateOperationsInput | number
+    management?: IntFieldUpdateOperationsInput | number
+    other?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type FormL9EmployeUncheckedUpdateManyInput = {
+    formL9EmployeId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    totalEmployees?: IntFieldUpdateOperationsInput | number
+    qualityControl?: IntFieldUpdateOperationsInput | number
+    engineering?: IntFieldUpdateOperationsInput | number
+    production?: IntFieldUpdateOperationsInput | number
+    management?: IntFieldUpdateOperationsInput | number
+    other?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type FormL9WorkExperienceCreateInput = {
+    formL9WorkExperienceId?: string
+    customerOrLocation: string
+    typeOfWork: string
+    score: number
+    customerContactPerson: string
+    customerTelpFaxHp: string
+    formL9: FormL9CreateNestedOneWithoutWorkExperiencesInput
+  }
+
+  export type FormL9WorkExperienceUncheckedCreateInput = {
+    formL9WorkExperienceId?: string
+    formL9Id: string
+    customerOrLocation: string
+    typeOfWork: string
+    score: number
+    customerContactPerson: string
+    customerTelpFaxHp: string
+  }
+
+  export type FormL9WorkExperienceUpdateInput = {
+    formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: StringFieldUpdateOperationsInput | string
+    typeOfWork?: StringFieldUpdateOperationsInput | string
+    score?: IntFieldUpdateOperationsInput | number
+    customerContactPerson?: StringFieldUpdateOperationsInput | string
+    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+    formL9?: FormL9UpdateOneRequiredWithoutWorkExperiencesNestedInput
+  }
+
+  export type FormL9WorkExperienceUncheckedUpdateInput = {
+    formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: StringFieldUpdateOperationsInput | string
+    typeOfWork?: StringFieldUpdateOperationsInput | string
+    score?: IntFieldUpdateOperationsInput | number
+    customerContactPerson?: StringFieldUpdateOperationsInput | string
+    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9WorkExperienceCreateManyInput = {
+    formL9WorkExperienceId?: string
+    formL9Id: string
+    customerOrLocation: string
+    typeOfWork: string
+    score: number
+    customerContactPerson: string
+    customerTelpFaxHp: string
+  }
+
+  export type FormL9WorkExperienceUpdateManyMutationInput = {
+    formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: StringFieldUpdateOperationsInput | string
+    typeOfWork?: StringFieldUpdateOperationsInput | string
+    score?: IntFieldUpdateOperationsInput | number
+    customerContactPerson?: StringFieldUpdateOperationsInput | string
+    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9WorkExperienceUncheckedUpdateManyInput = {
+    formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: StringFieldUpdateOperationsInput | string
+    typeOfWork?: StringFieldUpdateOperationsInput | string
+    score?: IntFieldUpdateOperationsInput | number
+    customerContactPerson?: StringFieldUpdateOperationsInput | string
+    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9OthersCreateInput = {
+    formL9OthersId?: string
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime: string
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+    formL9: FormL9CreateNestedOneWithoutOthersInput
+    certificateISOs?: FormL9CertificateISOCreateNestedManyWithoutOthersInput
+  }
+
+  export type FormL9OthersUncheckedCreateInput = {
+    formL9OthersId?: string
+    formL9Id: string
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime: string
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+    certificateISOs?: FormL9CertificateISOUncheckedCreateNestedManyWithoutOthersInput
+  }
+
+  export type FormL9OthersUpdateInput = {
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    haveCertificateISO?: BoolFieldUpdateOperationsInput | boolean
+    haveCompanyOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveQualityControlOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveProductWarranty?: BoolFieldUpdateOperationsInput | boolean
+    haveExpiryDate?: BoolFieldUpdateOperationsInput | boolean
+    haveAPD?: BoolFieldUpdateOperationsInput | boolean
+    haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
+    isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
+    paymentTime?: StringFieldUpdateOperationsInput | string
+    agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
+    understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
+    signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    formL9?: FormL9UpdateOneRequiredWithoutOthersNestedInput
+    certificateISOs?: FormL9CertificateISOUpdateManyWithoutOthersNestedInput
+  }
+
+  export type FormL9OthersUncheckedUpdateInput = {
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    haveCertificateISO?: BoolFieldUpdateOperationsInput | boolean
+    haveCompanyOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveQualityControlOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveProductWarranty?: BoolFieldUpdateOperationsInput | boolean
+    haveExpiryDate?: BoolFieldUpdateOperationsInput | boolean
+    haveAPD?: BoolFieldUpdateOperationsInput | boolean
+    haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
+    isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
+    paymentTime?: StringFieldUpdateOperationsInput | string
+    agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
+    understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
+    signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    certificateISOs?: FormL9CertificateISOUncheckedUpdateManyWithoutOthersNestedInput
+  }
+
+  export type FormL9OthersCreateManyInput = {
+    formL9OthersId?: string
+    formL9Id: string
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime: string
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+  }
+
+  export type FormL9OthersUpdateManyMutationInput = {
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    haveCertificateISO?: BoolFieldUpdateOperationsInput | boolean
+    haveCompanyOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveQualityControlOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveProductWarranty?: BoolFieldUpdateOperationsInput | boolean
+    haveExpiryDate?: BoolFieldUpdateOperationsInput | boolean
+    haveAPD?: BoolFieldUpdateOperationsInput | boolean
+    haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
+    isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
+    paymentTime?: StringFieldUpdateOperationsInput | string
+    agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
+    understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
+    signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type FormL9OthersUncheckedUpdateManyInput = {
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    haveCertificateISO?: BoolFieldUpdateOperationsInput | boolean
+    haveCompanyOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveQualityControlOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveProductWarranty?: BoolFieldUpdateOperationsInput | boolean
+    haveExpiryDate?: BoolFieldUpdateOperationsInput | boolean
+    haveAPD?: BoolFieldUpdateOperationsInput | boolean
+    haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
+    isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
+    paymentTime?: StringFieldUpdateOperationsInput | string
+    agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
+    understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
+    signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+  }
+
+  export type FormL9CertificateISOCreateInput = {
+    certificateISOId?: string
+    isoName: string
+    validityPeriodFrom: Date | string
+    validityPeriodTo: Date | string
+    remakes?: string | null
+    others: FormL9OthersCreateNestedOneWithoutCertificateISOsInput
+  }
+
+  export type FormL9CertificateISOUncheckedCreateInput = {
+    certificateISOId?: string
+    formL9OthersId: string
+    isoName: string
+    validityPeriodFrom: Date | string
+    validityPeriodTo: Date | string
+    remakes?: string | null
+  }
+
+  export type FormL9CertificateISOUpdateInput = {
+    certificateISOId?: StringFieldUpdateOperationsInput | string
+    isoName?: StringFieldUpdateOperationsInput | string
+    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    remakes?: NullableStringFieldUpdateOperationsInput | string | null
+    others?: FormL9OthersUpdateOneRequiredWithoutCertificateISOsNestedInput
+  }
+
+  export type FormL9CertificateISOUncheckedUpdateInput = {
+    certificateISOId?: StringFieldUpdateOperationsInput | string
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    isoName?: StringFieldUpdateOperationsInput | string
+    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    remakes?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type FormL9CertificateISOCreateManyInput = {
+    certificateISOId?: string
+    formL9OthersId: string
+    isoName: string
+    validityPeriodFrom: Date | string
+    validityPeriodTo: Date | string
+    remakes?: string | null
+  }
+
+  export type FormL9CertificateISOUpdateManyMutationInput = {
+    certificateISOId?: StringFieldUpdateOperationsInput | string
+    isoName?: StringFieldUpdateOperationsInput | string
+    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    remakes?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type FormL9CertificateISOUncheckedUpdateManyInput = {
+    certificateISOId?: StringFieldUpdateOperationsInput | string
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    isoName?: StringFieldUpdateOperationsInput | string
+    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    remakes?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -14223,6 +28060,7 @@ export namespace Prisma {
     email?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
+    isVerified?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
@@ -14233,6 +28071,7 @@ export namespace Prisma {
     email?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
+    isVerified?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
@@ -14243,6 +28082,7 @@ export namespace Prisma {
     email?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
+    isVerified?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
@@ -14525,13 +28365,13 @@ export namespace Prisma {
     userId?: SortOrder
   }
 
-  export type ProfileListRelationFilter = {
-    every?: ProfileWhereInput
-    some?: ProfileWhereInput
-    none?: ProfileWhereInput
+  export type CompanyListRelationFilter = {
+    every?: CompanyWhereInput
+    some?: CompanyWhereInput
+    none?: CompanyWhereInput
   }
 
-  export type ProfileOrderByRelationAggregateInput = {
+  export type CompanyOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -14561,26 +28401,69 @@ export namespace Prisma {
     segmentId?: SortOrder
   }
 
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  export type UuidNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedUuidNullableFilter<$PrismaModel> | string | null
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  export type CompanyNullableScalarRelationFilter = {
+    is?: CompanyWhereInput | null
+    isNot?: CompanyWhereInput | null
+  }
+
+  export type ProfileCountOrderByAggregateInput = {
+    userId?: SortOrder
+    companyId?: SortOrder
+    fullName?: SortOrder
+    urlImage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProfileMaxOrderByAggregateInput = {
+    userId?: SortOrder
+    companyId?: SortOrder
+    fullName?: SortOrder
+    urlImage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProfileMinOrderByAggregateInput = {
+    userId?: SortOrder
+    companyId?: SortOrder
+    fullName?: SortOrder
+    urlImage?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type UuidNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    mode?: QueryMode
+    not?: NestedUuidNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type ProfileListRelationFilter = {
+    every?: ProfileWhereInput
+    some?: ProfileWhereInput
+    none?: ProfileWhereInput
   }
 
   export type CompanySegmentNullableScalarRelationFilter = {
@@ -14588,99 +28471,458 @@ export namespace Prisma {
     isNot?: CompanySegmentWhereInput | null
   }
 
-  export type ProfileCountOrderByAggregateInput = {
-    userId?: SortOrder
-    fullName?: SortOrder
+  export type FormL9NullableScalarRelationFilter = {
+    is?: FormL9WhereInput | null
+    isNot?: FormL9WhereInput | null
+  }
+
+  export type ProfileOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type CompanyCountOrderByAggregateInput = {
+    companyId?: SortOrder
+    segmentId?: SortOrder
     urlImage?: SortOrder
     companyName?: SortOrder
-    npwp?: SortOrder
-    deedNumber?: SortOrder
-    establishedDate?: SortOrder
-    npwpUrl?: SortOrder
-    deedUrl?: SortOrder
-    description?: SortOrder
-    segmentId?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
     companyAddress?: SortOrder
-    companyPhone?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
     website?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    totalCapital?: SortOrder
+  }
+
+  export type CompanyAvgOrderByAggregateInput = {
+    segmentId?: SortOrder
+  }
+
+  export type CompanyMaxOrderByAggregateInput = {
+    companyId?: SortOrder
+    segmentId?: SortOrder
+    urlImage?: SortOrder
+    companyName?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
+    companyAddress?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
+    website?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    totalCapital?: SortOrder
+  }
+
+  export type CompanyMinOrderByAggregateInput = {
+    companyId?: SortOrder
+    segmentId?: SortOrder
+    urlImage?: SortOrder
+    companyName?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
+    companyAddress?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
+    website?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    totalCapital?: SortOrder
+  }
+
+  export type CompanySumOrderByAggregateInput = {
+    segmentId?: SortOrder
+  }
+
+  export type CompanyScalarRelationFilter = {
+    is?: CompanyWhereInput
+    isNot?: CompanyWhereInput
+  }
+
+  export type FormL9BankInfoNullableScalarRelationFilter = {
+    is?: FormL9BankInfoWhereInput | null
+    isNot?: FormL9BankInfoWhereInput | null
+  }
+
+  export type FormL9GeneralInformationNullableScalarRelationFilter = {
+    is?: FormL9GeneralInformationWhereInput | null
+    isNot?: FormL9GeneralInformationWhereInput | null
+  }
+
+  export type FormL9EmployeNullableScalarRelationFilter = {
+    is?: FormL9EmployeWhereInput | null
+    isNot?: FormL9EmployeWhereInput | null
+  }
+
+  export type FormL9OthersNullableScalarRelationFilter = {
+    is?: FormL9OthersWhereInput | null
+    isNot?: FormL9OthersWhereInput | null
+  }
+
+  export type FormL9ManagementListRelationFilter = {
+    every?: FormL9ManagementWhereInput
+    some?: FormL9ManagementWhereInput
+    none?: FormL9ManagementWhereInput
+  }
+
+  export type FormL9WorkExperienceListRelationFilter = {
+    every?: FormL9WorkExperienceWhereInput
+    some?: FormL9WorkExperienceWhereInput
+    none?: FormL9WorkExperienceWhereInput
+  }
+
+  export type FormL9ManagementOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type FormL9WorkExperienceOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type FormL9CountOrderByAggregateInput = {
+    formL9Id?: SortOrder
+    companyId?: SortOrder
+    status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type ProfileAvgOrderByAggregateInput = {
-    segmentId?: SortOrder
-  }
-
-  export type ProfileMaxOrderByAggregateInput = {
-    userId?: SortOrder
-    fullName?: SortOrder
-    urlImage?: SortOrder
-    companyName?: SortOrder
-    npwp?: SortOrder
-    deedNumber?: SortOrder
-    establishedDate?: SortOrder
-    npwpUrl?: SortOrder
-    deedUrl?: SortOrder
-    description?: SortOrder
-    segmentId?: SortOrder
-    companyAddress?: SortOrder
-    companyPhone?: SortOrder
-    website?: SortOrder
+  export type FormL9MaxOrderByAggregateInput = {
+    formL9Id?: SortOrder
+    companyId?: SortOrder
+    status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type ProfileMinOrderByAggregateInput = {
-    userId?: SortOrder
-    fullName?: SortOrder
-    urlImage?: SortOrder
-    companyName?: SortOrder
-    npwp?: SortOrder
-    deedNumber?: SortOrder
-    establishedDate?: SortOrder
-    npwpUrl?: SortOrder
-    deedUrl?: SortOrder
-    description?: SortOrder
-    segmentId?: SortOrder
-    companyAddress?: SortOrder
-    companyPhone?: SortOrder
-    website?: SortOrder
+  export type FormL9MinOrderByAggregateInput = {
+    formL9Id?: SortOrder
+    companyId?: SortOrder
+    status?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
-  export type ProfileSumOrderByAggregateInput = {
+  export type FormL9ScalarRelationFilter = {
+    is?: FormL9WhereInput
+    isNot?: FormL9WhereInput
+  }
+
+  export type FormL9BankInfoCountOrderByAggregateInput = {
+    formL9BankInfoid?: SortOrder
+    formL9Id?: SortOrder
+    beneficiaryName?: SortOrder
+    beneficiaryAddress?: SortOrder
+    bankName?: SortOrder
+    bankAddress?: SortOrder
+    noRek?: SortOrder
+    swiftCode?: SortOrder
+    IBAN?: SortOrder
+  }
+
+  export type FormL9BankInfoMaxOrderByAggregateInput = {
+    formL9BankInfoid?: SortOrder
+    formL9Id?: SortOrder
+    beneficiaryName?: SortOrder
+    beneficiaryAddress?: SortOrder
+    bankName?: SortOrder
+    bankAddress?: SortOrder
+    noRek?: SortOrder
+    swiftCode?: SortOrder
+    IBAN?: SortOrder
+  }
+
+  export type FormL9BankInfoMinOrderByAggregateInput = {
+    formL9BankInfoid?: SortOrder
+    formL9Id?: SortOrder
+    beneficiaryName?: SortOrder
+    beneficiaryAddress?: SortOrder
+    bankName?: SortOrder
+    bankAddress?: SortOrder
+    noRek?: SortOrder
+    swiftCode?: SortOrder
+    IBAN?: SortOrder
+  }
+
+  export type FormL9GeneralInformationContinueNullableScalarRelationFilter = {
+    is?: FormL9GeneralInformationContinueWhereInput | null
+    isNot?: FormL9GeneralInformationContinueWhereInput | null
+  }
+
+  export type FormL9GeneralInformationCountOrderByAggregateInput = {
+    formGeneralInformationId?: SortOrder
+    formL9Id?: SortOrder
+    companyName?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
+    companyAddress?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
+    totalCapital?: SortOrder
     segmentId?: SortOrder
   }
 
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  export type FormL9GeneralInformationMaxOrderByAggregateInput = {
+    formGeneralInformationId?: SortOrder
+    formL9Id?: SortOrder
+    companyName?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
+    companyAddress?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
+    totalCapital?: SortOrder
+    segmentId?: SortOrder
   }
 
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
+  export type FormL9GeneralInformationMinOrderByAggregateInput = {
+    formGeneralInformationId?: SortOrder
+    formL9Id?: SortOrder
+    companyName?: SortOrder
+    companyFoundingDate?: SortOrder
+    companyStatus?: SortOrder
+    companyTelpFax?: SortOrder
+    companyAddress?: SortOrder
+    companyEmail?: SortOrder
+    npwp?: SortOrder
+    totalCapital?: SortOrder
+    segmentId?: SortOrder
+  }
+
+  export type FormL9GeneralInformationScalarRelationFilter = {
+    is?: FormL9GeneralInformationWhereInput
+    isNot?: FormL9GeneralInformationWhereInput
+  }
+
+  export type FormL9GeneralInformationContinueCountOrderByAggregateInput = {
+    formL9GeneralInformationContinueId?: SortOrder
+    formGeneralInformationId?: SortOrder
+    permitsHeld?: SortOrder
+  }
+
+  export type FormL9GeneralInformationContinueMaxOrderByAggregateInput = {
+    formL9GeneralInformationContinueId?: SortOrder
+    formGeneralInformationId?: SortOrder
+    permitsHeld?: SortOrder
+  }
+
+  export type FormL9GeneralInformationContinueMinOrderByAggregateInput = {
+    formL9GeneralInformationContinueId?: SortOrder
+    formGeneralInformationId?: SortOrder
+    permitsHeld?: SortOrder
+  }
+
+  export type FormL9ManagementCountOrderByAggregateInput = {
+    formL9ManagementId?: SortOrder
+    formL9Id?: SortOrder
+    position?: SortOrder
+    name?: SortOrder
+    noTelpFaxHp?: SortOrder
+  }
+
+  export type FormL9ManagementMaxOrderByAggregateInput = {
+    formL9ManagementId?: SortOrder
+    formL9Id?: SortOrder
+    position?: SortOrder
+    name?: SortOrder
+    noTelpFaxHp?: SortOrder
+  }
+
+  export type FormL9ManagementMinOrderByAggregateInput = {
+    formL9ManagementId?: SortOrder
+    formL9Id?: SortOrder
+    position?: SortOrder
+    name?: SortOrder
+    noTelpFaxHp?: SortOrder
+  }
+
+  export type FormL9EmployeCountOrderByAggregateInput = {
+    formL9EmployeId?: SortOrder
+    formL9Id?: SortOrder
+    totalEmployees?: SortOrder
+    qualityControl?: SortOrder
+    engineering?: SortOrder
+    production?: SortOrder
+    management?: SortOrder
+    other?: SortOrder
+  }
+
+  export type FormL9EmployeAvgOrderByAggregateInput = {
+    totalEmployees?: SortOrder
+    qualityControl?: SortOrder
+    engineering?: SortOrder
+    production?: SortOrder
+    management?: SortOrder
+    other?: SortOrder
+  }
+
+  export type FormL9EmployeMaxOrderByAggregateInput = {
+    formL9EmployeId?: SortOrder
+    formL9Id?: SortOrder
+    totalEmployees?: SortOrder
+    qualityControl?: SortOrder
+    engineering?: SortOrder
+    production?: SortOrder
+    management?: SortOrder
+    other?: SortOrder
+  }
+
+  export type FormL9EmployeMinOrderByAggregateInput = {
+    formL9EmployeId?: SortOrder
+    formL9Id?: SortOrder
+    totalEmployees?: SortOrder
+    qualityControl?: SortOrder
+    engineering?: SortOrder
+    production?: SortOrder
+    management?: SortOrder
+    other?: SortOrder
+  }
+
+  export type FormL9EmployeSumOrderByAggregateInput = {
+    totalEmployees?: SortOrder
+    qualityControl?: SortOrder
+    engineering?: SortOrder
+    production?: SortOrder
+    management?: SortOrder
+    other?: SortOrder
+  }
+
+  export type FormL9WorkExperienceCountOrderByAggregateInput = {
+    formL9WorkExperienceId?: SortOrder
+    formL9Id?: SortOrder
+    customerOrLocation?: SortOrder
+    typeOfWork?: SortOrder
+    score?: SortOrder
+    customerContactPerson?: SortOrder
+    customerTelpFaxHp?: SortOrder
+  }
+
+  export type FormL9WorkExperienceAvgOrderByAggregateInput = {
+    score?: SortOrder
+  }
+
+  export type FormL9WorkExperienceMaxOrderByAggregateInput = {
+    formL9WorkExperienceId?: SortOrder
+    formL9Id?: SortOrder
+    customerOrLocation?: SortOrder
+    typeOfWork?: SortOrder
+    score?: SortOrder
+    customerContactPerson?: SortOrder
+    customerTelpFaxHp?: SortOrder
+  }
+
+  export type FormL9WorkExperienceMinOrderByAggregateInput = {
+    formL9WorkExperienceId?: SortOrder
+    formL9Id?: SortOrder
+    customerOrLocation?: SortOrder
+    typeOfWork?: SortOrder
+    score?: SortOrder
+    customerContactPerson?: SortOrder
+    customerTelpFaxHp?: SortOrder
+  }
+
+  export type FormL9WorkExperienceSumOrderByAggregateInput = {
+    score?: SortOrder
+  }
+
+  export type FormL9CertificateISOListRelationFilter = {
+    every?: FormL9CertificateISOWhereInput
+    some?: FormL9CertificateISOWhereInput
+    none?: FormL9CertificateISOWhereInput
+  }
+
+  export type FormL9CertificateISOOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type FormL9OthersCountOrderByAggregateInput = {
+    formL9OthersId?: SortOrder
+    formL9Id?: SortOrder
+    haveCertificateISO?: SortOrder
+    haveCompanyOrganizationalStructure?: SortOrder
+    haveQualityControlOrganizationalStructure?: SortOrder
+    haveProductWarranty?: SortOrder
+    haveExpiryDate?: SortOrder
+    haveAPD?: SortOrder
+    haveAPDRegulation?: SortOrder
+    isTopApplicable?: SortOrder
+    paymentTime?: SortOrder
+    agreeToConfidentialInformation?: SortOrder
+    understandingBreachesOfConfidentiality?: SortOrder
+    signConfidentialityAgreement?: SortOrder
+  }
+
+  export type FormL9OthersMaxOrderByAggregateInput = {
+    formL9OthersId?: SortOrder
+    formL9Id?: SortOrder
+    haveCertificateISO?: SortOrder
+    haveCompanyOrganizationalStructure?: SortOrder
+    haveQualityControlOrganizationalStructure?: SortOrder
+    haveProductWarranty?: SortOrder
+    haveExpiryDate?: SortOrder
+    haveAPD?: SortOrder
+    haveAPDRegulation?: SortOrder
+    isTopApplicable?: SortOrder
+    paymentTime?: SortOrder
+    agreeToConfidentialInformation?: SortOrder
+    understandingBreachesOfConfidentiality?: SortOrder
+    signConfidentialityAgreement?: SortOrder
+  }
+
+  export type FormL9OthersMinOrderByAggregateInput = {
+    formL9OthersId?: SortOrder
+    formL9Id?: SortOrder
+    haveCertificateISO?: SortOrder
+    haveCompanyOrganizationalStructure?: SortOrder
+    haveQualityControlOrganizationalStructure?: SortOrder
+    haveProductWarranty?: SortOrder
+    haveExpiryDate?: SortOrder
+    haveAPD?: SortOrder
+    haveAPDRegulation?: SortOrder
+    isTopApplicable?: SortOrder
+    paymentTime?: SortOrder
+    agreeToConfidentialInformation?: SortOrder
+    understandingBreachesOfConfidentiality?: SortOrder
+    signConfidentialityAgreement?: SortOrder
+  }
+
+  export type FormL9OthersScalarRelationFilter = {
+    is?: FormL9OthersWhereInput
+    isNot?: FormL9OthersWhereInput
+  }
+
+  export type FormL9CertificateISOCountOrderByAggregateInput = {
+    certificateISOId?: SortOrder
+    formL9OthersId?: SortOrder
+    isoName?: SortOrder
+    validityPeriodFrom?: SortOrder
+    validityPeriodTo?: SortOrder
+    remakes?: SortOrder
+  }
+
+  export type FormL9CertificateISOMaxOrderByAggregateInput = {
+    certificateISOId?: SortOrder
+    formL9OthersId?: SortOrder
+    isoName?: SortOrder
+    validityPeriodFrom?: SortOrder
+    validityPeriodTo?: SortOrder
+    remakes?: SortOrder
+  }
+
+  export type FormL9CertificateISOMinOrderByAggregateInput = {
+    certificateISOId?: SortOrder
+    formL9OthersId?: SortOrder
+    isoName?: SortOrder
+    validityPeriodFrom?: SortOrder
+    validityPeriodTo?: SortOrder
+    remakes?: SortOrder
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -15075,52 +29317,46 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutLinkedDeviceInput, UserUpdateWithoutLinkedDeviceInput>, UserUncheckedUpdateWithoutLinkedDeviceInput>
   }
 
-  export type ProfileCreateNestedManyWithoutSegmentInput = {
-    create?: XOR<ProfileCreateWithoutSegmentInput, ProfileUncheckedCreateWithoutSegmentInput> | ProfileCreateWithoutSegmentInput[] | ProfileUncheckedCreateWithoutSegmentInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutSegmentInput | ProfileCreateOrConnectWithoutSegmentInput[]
-    createMany?: ProfileCreateManySegmentInputEnvelope
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+  export type CompanyCreateNestedManyWithoutSegmentInput = {
+    create?: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput> | CompanyCreateWithoutSegmentInput[] | CompanyUncheckedCreateWithoutSegmentInput[]
+    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentInput | CompanyCreateOrConnectWithoutSegmentInput[]
+    createMany?: CompanyCreateManySegmentInputEnvelope
+    connect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
   }
 
-  export type ProfileUncheckedCreateNestedManyWithoutSegmentInput = {
-    create?: XOR<ProfileCreateWithoutSegmentInput, ProfileUncheckedCreateWithoutSegmentInput> | ProfileCreateWithoutSegmentInput[] | ProfileUncheckedCreateWithoutSegmentInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutSegmentInput | ProfileCreateOrConnectWithoutSegmentInput[]
-    createMany?: ProfileCreateManySegmentInputEnvelope
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+  export type CompanyUncheckedCreateNestedManyWithoutSegmentInput = {
+    create?: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput> | CompanyCreateWithoutSegmentInput[] | CompanyUncheckedCreateWithoutSegmentInput[]
+    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentInput | CompanyCreateOrConnectWithoutSegmentInput[]
+    createMany?: CompanyCreateManySegmentInputEnvelope
+    connect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
   }
 
-  export type ProfileUpdateManyWithoutSegmentNestedInput = {
-    create?: XOR<ProfileCreateWithoutSegmentInput, ProfileUncheckedCreateWithoutSegmentInput> | ProfileCreateWithoutSegmentInput[] | ProfileUncheckedCreateWithoutSegmentInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutSegmentInput | ProfileCreateOrConnectWithoutSegmentInput[]
-    upsert?: ProfileUpsertWithWhereUniqueWithoutSegmentInput | ProfileUpsertWithWhereUniqueWithoutSegmentInput[]
-    createMany?: ProfileCreateManySegmentInputEnvelope
-    set?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    disconnect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    delete?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    update?: ProfileUpdateWithWhereUniqueWithoutSegmentInput | ProfileUpdateWithWhereUniqueWithoutSegmentInput[]
-    updateMany?: ProfileUpdateManyWithWhereWithoutSegmentInput | ProfileUpdateManyWithWhereWithoutSegmentInput[]
-    deleteMany?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
+  export type CompanyUpdateManyWithoutSegmentNestedInput = {
+    create?: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput> | CompanyCreateWithoutSegmentInput[] | CompanyUncheckedCreateWithoutSegmentInput[]
+    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentInput | CompanyCreateOrConnectWithoutSegmentInput[]
+    upsert?: CompanyUpsertWithWhereUniqueWithoutSegmentInput | CompanyUpsertWithWhereUniqueWithoutSegmentInput[]
+    createMany?: CompanyCreateManySegmentInputEnvelope
+    set?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+    disconnect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+    delete?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+    connect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+    update?: CompanyUpdateWithWhereUniqueWithoutSegmentInput | CompanyUpdateWithWhereUniqueWithoutSegmentInput[]
+    updateMany?: CompanyUpdateManyWithWhereWithoutSegmentInput | CompanyUpdateManyWithWhereWithoutSegmentInput[]
+    deleteMany?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
   }
 
-  export type ProfileUncheckedUpdateManyWithoutSegmentNestedInput = {
-    create?: XOR<ProfileCreateWithoutSegmentInput, ProfileUncheckedCreateWithoutSegmentInput> | ProfileCreateWithoutSegmentInput[] | ProfileUncheckedCreateWithoutSegmentInput[]
-    connectOrCreate?: ProfileCreateOrConnectWithoutSegmentInput | ProfileCreateOrConnectWithoutSegmentInput[]
-    upsert?: ProfileUpsertWithWhereUniqueWithoutSegmentInput | ProfileUpsertWithWhereUniqueWithoutSegmentInput[]
-    createMany?: ProfileCreateManySegmentInputEnvelope
-    set?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    disconnect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    delete?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-    update?: ProfileUpdateWithWhereUniqueWithoutSegmentInput | ProfileUpdateWithWhereUniqueWithoutSegmentInput[]
-    updateMany?: ProfileUpdateManyWithWhereWithoutSegmentInput | ProfileUpdateManyWithWhereWithoutSegmentInput[]
-    deleteMany?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
-  }
-
-  export type CompanySegmentCreateNestedOneWithoutProfileInput = {
-    create?: XOR<CompanySegmentCreateWithoutProfileInput, CompanySegmentUncheckedCreateWithoutProfileInput>
-    connectOrCreate?: CompanySegmentCreateOrConnectWithoutProfileInput
-    connect?: CompanySegmentWhereUniqueInput
+  export type CompanyUncheckedUpdateManyWithoutSegmentNestedInput = {
+    create?: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput> | CompanyCreateWithoutSegmentInput[] | CompanyUncheckedCreateWithoutSegmentInput[]
+    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentInput | CompanyCreateOrConnectWithoutSegmentInput[]
+    upsert?: CompanyUpsertWithWhereUniqueWithoutSegmentInput | CompanyUpsertWithWhereUniqueWithoutSegmentInput[]
+    createMany?: CompanyCreateManySegmentInputEnvelope
+    set?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+    disconnect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+    delete?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+    connect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+    update?: CompanyUpdateWithWhereUniqueWithoutSegmentInput | CompanyUpdateWithWhereUniqueWithoutSegmentInput[]
+    updateMany?: CompanyUpdateManyWithWhereWithoutSegmentInput | CompanyUpdateManyWithWhereWithoutSegmentInput[]
+    deleteMany?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutProfileInput = {
@@ -15129,18 +29365,10 @@ export namespace Prisma {
     connect?: UserWhereUniqueInput
   }
 
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
-  }
-
-  export type CompanySegmentUpdateOneWithoutProfileNestedInput = {
-    create?: XOR<CompanySegmentCreateWithoutProfileInput, CompanySegmentUncheckedCreateWithoutProfileInput>
-    connectOrCreate?: CompanySegmentCreateOrConnectWithoutProfileInput
-    upsert?: CompanySegmentUpsertWithoutProfileInput
-    disconnect?: CompanySegmentWhereInput | boolean
-    delete?: CompanySegmentWhereInput | boolean
-    connect?: CompanySegmentWhereUniqueInput
-    update?: XOR<XOR<CompanySegmentUpdateToOneWithWhereWithoutProfileInput, CompanySegmentUpdateWithoutProfileInput>, CompanySegmentUncheckedUpdateWithoutProfileInput>
+  export type CompanyCreateNestedOneWithoutProfileInput = {
+    create?: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
+    connectOrCreate?: CompanyCreateOrConnectWithoutProfileInput
+    connect?: CompanyWhereUniqueInput
   }
 
   export type UserUpdateOneRequiredWithoutProfileNestedInput = {
@@ -15151,12 +29379,516 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProfileInput, UserUpdateWithoutProfileInput>, UserUncheckedUpdateWithoutProfileInput>
   }
 
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
+  export type CompanyUpdateOneWithoutProfileNestedInput = {
+    create?: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
+    connectOrCreate?: CompanyCreateOrConnectWithoutProfileInput
+    upsert?: CompanyUpsertWithoutProfileInput
+    disconnect?: CompanyWhereInput | boolean
+    delete?: CompanyWhereInput | boolean
+    connect?: CompanyWhereUniqueInput
+    update?: XOR<XOR<CompanyUpdateToOneWithWhereWithoutProfileInput, CompanyUpdateWithoutProfileInput>, CompanyUncheckedUpdateWithoutProfileInput>
+  }
+
+  export type ProfileCreateNestedManyWithoutCompanyInput = {
+    create?: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput> | ProfileCreateWithoutCompanyInput[] | ProfileUncheckedCreateWithoutCompanyInput[]
+    connectOrCreate?: ProfileCreateOrConnectWithoutCompanyInput | ProfileCreateOrConnectWithoutCompanyInput[]
+    createMany?: ProfileCreateManyCompanyInputEnvelope
+    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+  }
+
+  export type CompanySegmentCreateNestedOneWithoutCompanyInput = {
+    create?: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
+    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompanyInput
+    connect?: CompanySegmentWhereUniqueInput
+  }
+
+  export type FormL9CreateNestedOneWithoutCompanyInput = {
+    create?: XOR<FormL9CreateWithoutCompanyInput, FormL9UncheckedCreateWithoutCompanyInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutCompanyInput
+    connect?: FormL9WhereUniqueInput
+  }
+
+  export type ProfileUncheckedCreateNestedManyWithoutCompanyInput = {
+    create?: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput> | ProfileCreateWithoutCompanyInput[] | ProfileUncheckedCreateWithoutCompanyInput[]
+    connectOrCreate?: ProfileCreateOrConnectWithoutCompanyInput | ProfileCreateOrConnectWithoutCompanyInput[]
+    createMany?: ProfileCreateManyCompanyInputEnvelope
+    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+  }
+
+  export type FormL9UncheckedCreateNestedOneWithoutCompanyInput = {
+    create?: XOR<FormL9CreateWithoutCompanyInput, FormL9UncheckedCreateWithoutCompanyInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutCompanyInput
+    connect?: FormL9WhereUniqueInput
+  }
+
+  export type ProfileUpdateManyWithoutCompanyNestedInput = {
+    create?: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput> | ProfileCreateWithoutCompanyInput[] | ProfileUncheckedCreateWithoutCompanyInput[]
+    connectOrCreate?: ProfileCreateOrConnectWithoutCompanyInput | ProfileCreateOrConnectWithoutCompanyInput[]
+    upsert?: ProfileUpsertWithWhereUniqueWithoutCompanyInput | ProfileUpsertWithWhereUniqueWithoutCompanyInput[]
+    createMany?: ProfileCreateManyCompanyInputEnvelope
+    set?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+    disconnect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+    delete?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+    update?: ProfileUpdateWithWhereUniqueWithoutCompanyInput | ProfileUpdateWithWhereUniqueWithoutCompanyInput[]
+    updateMany?: ProfileUpdateManyWithWhereWithoutCompanyInput | ProfileUpdateManyWithWhereWithoutCompanyInput[]
+    deleteMany?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
+  }
+
+  export type CompanySegmentUpdateOneWithoutCompanyNestedInput = {
+    create?: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
+    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompanyInput
+    upsert?: CompanySegmentUpsertWithoutCompanyInput
+    disconnect?: CompanySegmentWhereInput | boolean
+    delete?: CompanySegmentWhereInput | boolean
+    connect?: CompanySegmentWhereUniqueInput
+    update?: XOR<XOR<CompanySegmentUpdateToOneWithWhereWithoutCompanyInput, CompanySegmentUpdateWithoutCompanyInput>, CompanySegmentUncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type FormL9UpdateOneWithoutCompanyNestedInput = {
+    create?: XOR<FormL9CreateWithoutCompanyInput, FormL9UncheckedCreateWithoutCompanyInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutCompanyInput
+    upsert?: FormL9UpsertWithoutCompanyInput
+    disconnect?: FormL9WhereInput | boolean
+    delete?: FormL9WhereInput | boolean
+    connect?: FormL9WhereUniqueInput
+    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutCompanyInput, FormL9UpdateWithoutCompanyInput>, FormL9UncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type ProfileUncheckedUpdateManyWithoutCompanyNestedInput = {
+    create?: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput> | ProfileCreateWithoutCompanyInput[] | ProfileUncheckedCreateWithoutCompanyInput[]
+    connectOrCreate?: ProfileCreateOrConnectWithoutCompanyInput | ProfileCreateOrConnectWithoutCompanyInput[]
+    upsert?: ProfileUpsertWithWhereUniqueWithoutCompanyInput | ProfileUpsertWithWhereUniqueWithoutCompanyInput[]
+    createMany?: ProfileCreateManyCompanyInputEnvelope
+    set?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+    disconnect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+    delete?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+    connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
+    update?: ProfileUpdateWithWhereUniqueWithoutCompanyInput | ProfileUpdateWithWhereUniqueWithoutCompanyInput[]
+    updateMany?: ProfileUpdateManyWithWhereWithoutCompanyInput | ProfileUpdateManyWithWhereWithoutCompanyInput[]
+    deleteMany?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
+  }
+
+  export type FormL9UncheckedUpdateOneWithoutCompanyNestedInput = {
+    create?: XOR<FormL9CreateWithoutCompanyInput, FormL9UncheckedCreateWithoutCompanyInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutCompanyInput
+    upsert?: FormL9UpsertWithoutCompanyInput
+    disconnect?: FormL9WhereInput | boolean
+    delete?: FormL9WhereInput | boolean
+    connect?: FormL9WhereUniqueInput
+    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutCompanyInput, FormL9UpdateWithoutCompanyInput>, FormL9UncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type CompanyCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<CompanyCreateWithoutFormL9Input, CompanyUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: CompanyCreateOrConnectWithoutFormL9Input
+    connect?: CompanyWhereUniqueInput
+  }
+
+  export type FormL9BankInfoCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9BankInfoCreateWithoutFormL9Input, FormL9BankInfoUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9BankInfoCreateOrConnectWithoutFormL9Input
+    connect?: FormL9BankInfoWhereUniqueInput
+  }
+
+  export type FormL9GeneralInformationCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
+    connect?: FormL9GeneralInformationWhereUniqueInput
+  }
+
+  export type FormL9EmployeCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9EmployeCreateOrConnectWithoutFormL9Input
+    connect?: FormL9EmployeWhereUniqueInput
+  }
+
+  export type FormL9OthersCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
+    connect?: FormL9OthersWhereUniqueInput
+  }
+
+  export type FormL9ManagementCreateNestedManyWithoutFormL9Input = {
+    create?: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input> | FormL9ManagementCreateWithoutFormL9Input[] | FormL9ManagementUncheckedCreateWithoutFormL9Input[]
+    connectOrCreate?: FormL9ManagementCreateOrConnectWithoutFormL9Input | FormL9ManagementCreateOrConnectWithoutFormL9Input[]
+    createMany?: FormL9ManagementCreateManyFormL9InputEnvelope
+    connect?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+  }
+
+  export type FormL9WorkExperienceCreateNestedManyWithoutFormL9Input = {
+    create?: XOR<FormL9WorkExperienceCreateWithoutFormL9Input, FormL9WorkExperienceUncheckedCreateWithoutFormL9Input> | FormL9WorkExperienceCreateWithoutFormL9Input[] | FormL9WorkExperienceUncheckedCreateWithoutFormL9Input[]
+    connectOrCreate?: FormL9WorkExperienceCreateOrConnectWithoutFormL9Input | FormL9WorkExperienceCreateOrConnectWithoutFormL9Input[]
+    createMany?: FormL9WorkExperienceCreateManyFormL9InputEnvelope
+    connect?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+  }
+
+  export type FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9BankInfoCreateWithoutFormL9Input, FormL9BankInfoUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9BankInfoCreateOrConnectWithoutFormL9Input
+    connect?: FormL9BankInfoWhereUniqueInput
+  }
+
+  export type FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
+    connect?: FormL9GeneralInformationWhereUniqueInput
+  }
+
+  export type FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9EmployeCreateOrConnectWithoutFormL9Input
+    connect?: FormL9EmployeWhereUniqueInput
+  }
+
+  export type FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
+    connect?: FormL9OthersWhereUniqueInput
+  }
+
+  export type FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input = {
+    create?: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input> | FormL9ManagementCreateWithoutFormL9Input[] | FormL9ManagementUncheckedCreateWithoutFormL9Input[]
+    connectOrCreate?: FormL9ManagementCreateOrConnectWithoutFormL9Input | FormL9ManagementCreateOrConnectWithoutFormL9Input[]
+    createMany?: FormL9ManagementCreateManyFormL9InputEnvelope
+    connect?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+  }
+
+  export type FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input = {
+    create?: XOR<FormL9WorkExperienceCreateWithoutFormL9Input, FormL9WorkExperienceUncheckedCreateWithoutFormL9Input> | FormL9WorkExperienceCreateWithoutFormL9Input[] | FormL9WorkExperienceUncheckedCreateWithoutFormL9Input[]
+    connectOrCreate?: FormL9WorkExperienceCreateOrConnectWithoutFormL9Input | FormL9WorkExperienceCreateOrConnectWithoutFormL9Input[]
+    createMany?: FormL9WorkExperienceCreateManyFormL9InputEnvelope
+    connect?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+  }
+
+  export type CompanyUpdateOneRequiredWithoutFormL9NestedInput = {
+    create?: XOR<CompanyCreateWithoutFormL9Input, CompanyUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: CompanyCreateOrConnectWithoutFormL9Input
+    upsert?: CompanyUpsertWithoutFormL9Input
+    connect?: CompanyWhereUniqueInput
+    update?: XOR<XOR<CompanyUpdateToOneWithWhereWithoutFormL9Input, CompanyUpdateWithoutFormL9Input>, CompanyUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9BankInfoUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9BankInfoCreateWithoutFormL9Input, FormL9BankInfoUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9BankInfoCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9BankInfoUpsertWithoutFormL9Input
+    disconnect?: FormL9BankInfoWhereInput | boolean
+    delete?: FormL9BankInfoWhereInput | boolean
+    connect?: FormL9BankInfoWhereUniqueInput
+    update?: XOR<XOR<FormL9BankInfoUpdateToOneWithWhereWithoutFormL9Input, FormL9BankInfoUpdateWithoutFormL9Input>, FormL9BankInfoUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9GeneralInformationUpsertWithoutFormL9Input
+    disconnect?: FormL9GeneralInformationWhereInput | boolean
+    delete?: FormL9GeneralInformationWhereInput | boolean
+    connect?: FormL9GeneralInformationWhereUniqueInput
+    update?: XOR<XOR<FormL9GeneralInformationUpdateToOneWithWhereWithoutFormL9Input, FormL9GeneralInformationUpdateWithoutFormL9Input>, FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9EmployeUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9EmployeCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9EmployeUpsertWithoutFormL9Input
+    disconnect?: FormL9EmployeWhereInput | boolean
+    delete?: FormL9EmployeWhereInput | boolean
+    connect?: FormL9EmployeWhereUniqueInput
+    update?: XOR<XOR<FormL9EmployeUpdateToOneWithWhereWithoutFormL9Input, FormL9EmployeUpdateWithoutFormL9Input>, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9OthersUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9OthersUpsertWithoutFormL9Input
+    disconnect?: FormL9OthersWhereInput | boolean
+    delete?: FormL9OthersWhereInput | boolean
+    connect?: FormL9OthersWhereUniqueInput
+    update?: XOR<XOR<FormL9OthersUpdateToOneWithWhereWithoutFormL9Input, FormL9OthersUpdateWithoutFormL9Input>, FormL9OthersUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9ManagementUpdateManyWithoutFormL9NestedInput = {
+    create?: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input> | FormL9ManagementCreateWithoutFormL9Input[] | FormL9ManagementUncheckedCreateWithoutFormL9Input[]
+    connectOrCreate?: FormL9ManagementCreateOrConnectWithoutFormL9Input | FormL9ManagementCreateOrConnectWithoutFormL9Input[]
+    upsert?: FormL9ManagementUpsertWithWhereUniqueWithoutFormL9Input | FormL9ManagementUpsertWithWhereUniqueWithoutFormL9Input[]
+    createMany?: FormL9ManagementCreateManyFormL9InputEnvelope
+    set?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+    disconnect?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+    delete?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+    connect?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+    update?: FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input | FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input[]
+    updateMany?: FormL9ManagementUpdateManyWithWhereWithoutFormL9Input | FormL9ManagementUpdateManyWithWhereWithoutFormL9Input[]
+    deleteMany?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
+  }
+
+  export type FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput = {
+    create?: XOR<FormL9WorkExperienceCreateWithoutFormL9Input, FormL9WorkExperienceUncheckedCreateWithoutFormL9Input> | FormL9WorkExperienceCreateWithoutFormL9Input[] | FormL9WorkExperienceUncheckedCreateWithoutFormL9Input[]
+    connectOrCreate?: FormL9WorkExperienceCreateOrConnectWithoutFormL9Input | FormL9WorkExperienceCreateOrConnectWithoutFormL9Input[]
+    upsert?: FormL9WorkExperienceUpsertWithWhereUniqueWithoutFormL9Input | FormL9WorkExperienceUpsertWithWhereUniqueWithoutFormL9Input[]
+    createMany?: FormL9WorkExperienceCreateManyFormL9InputEnvelope
+    set?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+    disconnect?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+    delete?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+    connect?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+    update?: FormL9WorkExperienceUpdateWithWhereUniqueWithoutFormL9Input | FormL9WorkExperienceUpdateWithWhereUniqueWithoutFormL9Input[]
+    updateMany?: FormL9WorkExperienceUpdateManyWithWhereWithoutFormL9Input | FormL9WorkExperienceUpdateManyWithWhereWithoutFormL9Input[]
+    deleteMany?: FormL9WorkExperienceScalarWhereInput | FormL9WorkExperienceScalarWhereInput[]
+  }
+
+  export type FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9BankInfoCreateWithoutFormL9Input, FormL9BankInfoUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9BankInfoCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9BankInfoUpsertWithoutFormL9Input
+    disconnect?: FormL9BankInfoWhereInput | boolean
+    delete?: FormL9BankInfoWhereInput | boolean
+    connect?: FormL9BankInfoWhereUniqueInput
+    update?: XOR<XOR<FormL9BankInfoUpdateToOneWithWhereWithoutFormL9Input, FormL9BankInfoUpdateWithoutFormL9Input>, FormL9BankInfoUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9GeneralInformationUpsertWithoutFormL9Input
+    disconnect?: FormL9GeneralInformationWhereInput | boolean
+    delete?: FormL9GeneralInformationWhereInput | boolean
+    connect?: FormL9GeneralInformationWhereUniqueInput
+    update?: XOR<XOR<FormL9GeneralInformationUpdateToOneWithWhereWithoutFormL9Input, FormL9GeneralInformationUpdateWithoutFormL9Input>, FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9EmployeCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9EmployeUpsertWithoutFormL9Input
+    disconnect?: FormL9EmployeWhereInput | boolean
+    delete?: FormL9EmployeWhereInput | boolean
+    connect?: FormL9EmployeWhereUniqueInput
+    update?: XOR<XOR<FormL9EmployeUpdateToOneWithWhereWithoutFormL9Input, FormL9EmployeUpdateWithoutFormL9Input>, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9OthersUpsertWithoutFormL9Input
+    disconnect?: FormL9OthersWhereInput | boolean
+    delete?: FormL9OthersWhereInput | boolean
+    connect?: FormL9OthersWhereUniqueInput
+    update?: XOR<XOR<FormL9OthersUpdateToOneWithWhereWithoutFormL9Input, FormL9OthersUpdateWithoutFormL9Input>, FormL9OthersUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput = {
+    create?: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input> | FormL9ManagementCreateWithoutFormL9Input[] | FormL9ManagementUncheckedCreateWithoutFormL9Input[]
+    connectOrCreate?: FormL9ManagementCreateOrConnectWithoutFormL9Input | FormL9ManagementCreateOrConnectWithoutFormL9Input[]
+    upsert?: FormL9ManagementUpsertWithWhereUniqueWithoutFormL9Input | FormL9ManagementUpsertWithWhereUniqueWithoutFormL9Input[]
+    createMany?: FormL9ManagementCreateManyFormL9InputEnvelope
+    set?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+    disconnect?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+    delete?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+    connect?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+    update?: FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input | FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input[]
+    updateMany?: FormL9ManagementUpdateManyWithWhereWithoutFormL9Input | FormL9ManagementUpdateManyWithWhereWithoutFormL9Input[]
+    deleteMany?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
+  }
+
+  export type FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput = {
+    create?: XOR<FormL9WorkExperienceCreateWithoutFormL9Input, FormL9WorkExperienceUncheckedCreateWithoutFormL9Input> | FormL9WorkExperienceCreateWithoutFormL9Input[] | FormL9WorkExperienceUncheckedCreateWithoutFormL9Input[]
+    connectOrCreate?: FormL9WorkExperienceCreateOrConnectWithoutFormL9Input | FormL9WorkExperienceCreateOrConnectWithoutFormL9Input[]
+    upsert?: FormL9WorkExperienceUpsertWithWhereUniqueWithoutFormL9Input | FormL9WorkExperienceUpsertWithWhereUniqueWithoutFormL9Input[]
+    createMany?: FormL9WorkExperienceCreateManyFormL9InputEnvelope
+    set?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+    disconnect?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+    delete?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+    connect?: FormL9WorkExperienceWhereUniqueInput | FormL9WorkExperienceWhereUniqueInput[]
+    update?: FormL9WorkExperienceUpdateWithWhereUniqueWithoutFormL9Input | FormL9WorkExperienceUpdateWithWhereUniqueWithoutFormL9Input[]
+    updateMany?: FormL9WorkExperienceUpdateManyWithWhereWithoutFormL9Input | FormL9WorkExperienceUpdateManyWithWhereWithoutFormL9Input[]
+    deleteMany?: FormL9WorkExperienceScalarWhereInput | FormL9WorkExperienceScalarWhereInput[]
+  }
+
+  export type FormL9CreateNestedOneWithoutBankInfoInput = {
+    create?: XOR<FormL9CreateWithoutBankInfoInput, FormL9UncheckedCreateWithoutBankInfoInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutBankInfoInput
+    connect?: FormL9WhereUniqueInput
+  }
+
+  export type FormL9UpdateOneRequiredWithoutBankInfoNestedInput = {
+    create?: XOR<FormL9CreateWithoutBankInfoInput, FormL9UncheckedCreateWithoutBankInfoInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutBankInfoInput
+    upsert?: FormL9UpsertWithoutBankInfoInput
+    connect?: FormL9WhereUniqueInput
+    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutBankInfoInput, FormL9UpdateWithoutBankInfoInput>, FormL9UncheckedUpdateWithoutBankInfoInput>
+  }
+
+  export type FormL9CreateNestedOneWithoutGeneralInformationInput = {
+    create?: XOR<FormL9CreateWithoutGeneralInformationInput, FormL9UncheckedCreateWithoutGeneralInformationInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutGeneralInformationInput
+    connect?: FormL9WhereUniqueInput
+  }
+
+  export type FormL9GeneralInformationContinueCreateNestedOneWithoutGeneralInformationInput = {
+    create?: XOR<FormL9GeneralInformationContinueCreateWithoutGeneralInformationInput, FormL9GeneralInformationContinueUncheckedCreateWithoutGeneralInformationInput>
+    connectOrCreate?: FormL9GeneralInformationContinueCreateOrConnectWithoutGeneralInformationInput
+    connect?: FormL9GeneralInformationContinueWhereUniqueInput
+  }
+
+  export type FormL9GeneralInformationContinueUncheckedCreateNestedOneWithoutGeneralInformationInput = {
+    create?: XOR<FormL9GeneralInformationContinueCreateWithoutGeneralInformationInput, FormL9GeneralInformationContinueUncheckedCreateWithoutGeneralInformationInput>
+    connectOrCreate?: FormL9GeneralInformationContinueCreateOrConnectWithoutGeneralInformationInput
+    connect?: FormL9GeneralInformationContinueWhereUniqueInput
+  }
+
+  export type FormL9UpdateOneRequiredWithoutGeneralInformationNestedInput = {
+    create?: XOR<FormL9CreateWithoutGeneralInformationInput, FormL9UncheckedCreateWithoutGeneralInformationInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutGeneralInformationInput
+    upsert?: FormL9UpsertWithoutGeneralInformationInput
+    connect?: FormL9WhereUniqueInput
+    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutGeneralInformationInput, FormL9UpdateWithoutGeneralInformationInput>, FormL9UncheckedUpdateWithoutGeneralInformationInput>
+  }
+
+  export type FormL9GeneralInformationContinueUpdateOneWithoutGeneralInformationNestedInput = {
+    create?: XOR<FormL9GeneralInformationContinueCreateWithoutGeneralInformationInput, FormL9GeneralInformationContinueUncheckedCreateWithoutGeneralInformationInput>
+    connectOrCreate?: FormL9GeneralInformationContinueCreateOrConnectWithoutGeneralInformationInput
+    upsert?: FormL9GeneralInformationContinueUpsertWithoutGeneralInformationInput
+    disconnect?: FormL9GeneralInformationContinueWhereInput | boolean
+    delete?: FormL9GeneralInformationContinueWhereInput | boolean
+    connect?: FormL9GeneralInformationContinueWhereUniqueInput
+    update?: XOR<XOR<FormL9GeneralInformationContinueUpdateToOneWithWhereWithoutGeneralInformationInput, FormL9GeneralInformationContinueUpdateWithoutGeneralInformationInput>, FormL9GeneralInformationContinueUncheckedUpdateWithoutGeneralInformationInput>
+  }
+
+  export type FormL9GeneralInformationContinueUncheckedUpdateOneWithoutGeneralInformationNestedInput = {
+    create?: XOR<FormL9GeneralInformationContinueCreateWithoutGeneralInformationInput, FormL9GeneralInformationContinueUncheckedCreateWithoutGeneralInformationInput>
+    connectOrCreate?: FormL9GeneralInformationContinueCreateOrConnectWithoutGeneralInformationInput
+    upsert?: FormL9GeneralInformationContinueUpsertWithoutGeneralInformationInput
+    disconnect?: FormL9GeneralInformationContinueWhereInput | boolean
+    delete?: FormL9GeneralInformationContinueWhereInput | boolean
+    connect?: FormL9GeneralInformationContinueWhereUniqueInput
+    update?: XOR<XOR<FormL9GeneralInformationContinueUpdateToOneWithWhereWithoutGeneralInformationInput, FormL9GeneralInformationContinueUpdateWithoutGeneralInformationInput>, FormL9GeneralInformationContinueUncheckedUpdateWithoutGeneralInformationInput>
+  }
+
+  export type FormL9GeneralInformationCreateNestedOneWithoutGeneralInfoContinueInput = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutGeneralInfoContinueInput, FormL9GeneralInformationUncheckedCreateWithoutGeneralInfoContinueInput>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutGeneralInfoContinueInput
+    connect?: FormL9GeneralInformationWhereUniqueInput
+  }
+
+  export type FormL9GeneralInformationUpdateOneRequiredWithoutGeneralInfoContinueNestedInput = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutGeneralInfoContinueInput, FormL9GeneralInformationUncheckedCreateWithoutGeneralInfoContinueInput>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutGeneralInfoContinueInput
+    upsert?: FormL9GeneralInformationUpsertWithoutGeneralInfoContinueInput
+    connect?: FormL9GeneralInformationWhereUniqueInput
+    update?: XOR<XOR<FormL9GeneralInformationUpdateToOneWithWhereWithoutGeneralInfoContinueInput, FormL9GeneralInformationUpdateWithoutGeneralInfoContinueInput>, FormL9GeneralInformationUncheckedUpdateWithoutGeneralInfoContinueInput>
+  }
+
+  export type FormL9CreateNestedOneWithoutManagementsInput = {
+    create?: XOR<FormL9CreateWithoutManagementsInput, FormL9UncheckedCreateWithoutManagementsInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutManagementsInput
+    connect?: FormL9WhereUniqueInput
+  }
+
+  export type FormL9UpdateOneRequiredWithoutManagementsNestedInput = {
+    create?: XOR<FormL9CreateWithoutManagementsInput, FormL9UncheckedCreateWithoutManagementsInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutManagementsInput
+    upsert?: FormL9UpsertWithoutManagementsInput
+    connect?: FormL9WhereUniqueInput
+    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutManagementsInput, FormL9UpdateWithoutManagementsInput>, FormL9UncheckedUpdateWithoutManagementsInput>
+  }
+
+  export type FormL9CreateNestedOneWithoutEmployeeInfoInput = {
+    create?: XOR<FormL9CreateWithoutEmployeeInfoInput, FormL9UncheckedCreateWithoutEmployeeInfoInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutEmployeeInfoInput
+    connect?: FormL9WhereUniqueInput
+  }
+
+  export type FormL9UpdateOneRequiredWithoutEmployeeInfoNestedInput = {
+    create?: XOR<FormL9CreateWithoutEmployeeInfoInput, FormL9UncheckedCreateWithoutEmployeeInfoInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutEmployeeInfoInput
+    upsert?: FormL9UpsertWithoutEmployeeInfoInput
+    connect?: FormL9WhereUniqueInput
+    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutEmployeeInfoInput, FormL9UpdateWithoutEmployeeInfoInput>, FormL9UncheckedUpdateWithoutEmployeeInfoInput>
+  }
+
+  export type FormL9CreateNestedOneWithoutWorkExperiencesInput = {
+    create?: XOR<FormL9CreateWithoutWorkExperiencesInput, FormL9UncheckedCreateWithoutWorkExperiencesInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutWorkExperiencesInput
+    connect?: FormL9WhereUniqueInput
+  }
+
+  export type FormL9UpdateOneRequiredWithoutWorkExperiencesNestedInput = {
+    create?: XOR<FormL9CreateWithoutWorkExperiencesInput, FormL9UncheckedCreateWithoutWorkExperiencesInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutWorkExperiencesInput
+    upsert?: FormL9UpsertWithoutWorkExperiencesInput
+    connect?: FormL9WhereUniqueInput
+    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutWorkExperiencesInput, FormL9UpdateWithoutWorkExperiencesInput>, FormL9UncheckedUpdateWithoutWorkExperiencesInput>
+  }
+
+  export type FormL9CreateNestedOneWithoutOthersInput = {
+    create?: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutOthersInput
+    connect?: FormL9WhereUniqueInput
+  }
+
+  export type FormL9CertificateISOCreateNestedManyWithoutOthersInput = {
+    create?: XOR<FormL9CertificateISOCreateWithoutOthersInput, FormL9CertificateISOUncheckedCreateWithoutOthersInput> | FormL9CertificateISOCreateWithoutOthersInput[] | FormL9CertificateISOUncheckedCreateWithoutOthersInput[]
+    connectOrCreate?: FormL9CertificateISOCreateOrConnectWithoutOthersInput | FormL9CertificateISOCreateOrConnectWithoutOthersInput[]
+    createMany?: FormL9CertificateISOCreateManyOthersInputEnvelope
+    connect?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+  }
+
+  export type FormL9CertificateISOUncheckedCreateNestedManyWithoutOthersInput = {
+    create?: XOR<FormL9CertificateISOCreateWithoutOthersInput, FormL9CertificateISOUncheckedCreateWithoutOthersInput> | FormL9CertificateISOCreateWithoutOthersInput[] | FormL9CertificateISOUncheckedCreateWithoutOthersInput[]
+    connectOrCreate?: FormL9CertificateISOCreateOrConnectWithoutOthersInput | FormL9CertificateISOCreateOrConnectWithoutOthersInput[]
+    createMany?: FormL9CertificateISOCreateManyOthersInputEnvelope
+    connect?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+  }
+
+  export type FormL9UpdateOneRequiredWithoutOthersNestedInput = {
+    create?: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutOthersInput
+    upsert?: FormL9UpsertWithoutOthersInput
+    connect?: FormL9WhereUniqueInput
+    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutOthersInput, FormL9UpdateWithoutOthersInput>, FormL9UncheckedUpdateWithoutOthersInput>
+  }
+
+  export type FormL9CertificateISOUpdateManyWithoutOthersNestedInput = {
+    create?: XOR<FormL9CertificateISOCreateWithoutOthersInput, FormL9CertificateISOUncheckedCreateWithoutOthersInput> | FormL9CertificateISOCreateWithoutOthersInput[] | FormL9CertificateISOUncheckedCreateWithoutOthersInput[]
+    connectOrCreate?: FormL9CertificateISOCreateOrConnectWithoutOthersInput | FormL9CertificateISOCreateOrConnectWithoutOthersInput[]
+    upsert?: FormL9CertificateISOUpsertWithWhereUniqueWithoutOthersInput | FormL9CertificateISOUpsertWithWhereUniqueWithoutOthersInput[]
+    createMany?: FormL9CertificateISOCreateManyOthersInputEnvelope
+    set?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+    disconnect?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+    delete?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+    connect?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+    update?: FormL9CertificateISOUpdateWithWhereUniqueWithoutOthersInput | FormL9CertificateISOUpdateWithWhereUniqueWithoutOthersInput[]
+    updateMany?: FormL9CertificateISOUpdateManyWithWhereWithoutOthersInput | FormL9CertificateISOUpdateManyWithWhereWithoutOthersInput[]
+    deleteMany?: FormL9CertificateISOScalarWhereInput | FormL9CertificateISOScalarWhereInput[]
+  }
+
+  export type FormL9CertificateISOUncheckedUpdateManyWithoutOthersNestedInput = {
+    create?: XOR<FormL9CertificateISOCreateWithoutOthersInput, FormL9CertificateISOUncheckedCreateWithoutOthersInput> | FormL9CertificateISOCreateWithoutOthersInput[] | FormL9CertificateISOUncheckedCreateWithoutOthersInput[]
+    connectOrCreate?: FormL9CertificateISOCreateOrConnectWithoutOthersInput | FormL9CertificateISOCreateOrConnectWithoutOthersInput[]
+    upsert?: FormL9CertificateISOUpsertWithWhereUniqueWithoutOthersInput | FormL9CertificateISOUpsertWithWhereUniqueWithoutOthersInput[]
+    createMany?: FormL9CertificateISOCreateManyOthersInputEnvelope
+    set?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+    disconnect?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+    delete?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+    connect?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
+    update?: FormL9CertificateISOUpdateWithWhereUniqueWithoutOthersInput | FormL9CertificateISOUpdateWithWhereUniqueWithoutOthersInput[]
+    updateMany?: FormL9CertificateISOUpdateManyWithWhereWithoutOthersInput | FormL9CertificateISOUpdateManyWithWhereWithoutOthersInput[]
+    deleteMany?: FormL9CertificateISOScalarWhereInput | FormL9CertificateISOScalarWhereInput[]
+  }
+
+  export type FormL9OthersCreateNestedOneWithoutCertificateISOsInput = {
+    create?: XOR<FormL9OthersCreateWithoutCertificateISOsInput, FormL9OthersUncheckedCreateWithoutCertificateISOsInput>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutCertificateISOsInput
+    connect?: FormL9OthersWhereUniqueInput
+  }
+
+  export type FormL9OthersUpdateOneRequiredWithoutCertificateISOsNestedInput = {
+    create?: XOR<FormL9OthersCreateWithoutCertificateISOsInput, FormL9OthersUncheckedCreateWithoutCertificateISOsInput>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutCertificateISOsInput
+    upsert?: FormL9OthersUpsertWithoutCertificateISOsInput
+    connect?: FormL9OthersWhereUniqueInput
+    update?: XOR<XOR<FormL9OthersUpdateToOneWithWhereWithoutCertificateISOsInput, FormL9OthersUpdateWithoutCertificateISOsInput>, FormL9OthersUncheckedUpdateWithoutCertificateISOsInput>
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -15333,56 +30065,29 @@ export namespace Prisma {
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  export type NestedUuidNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedUuidNullableFilter<$PrismaModel> | string | null
   }
 
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+  export type NestedUuidNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    notIn?: string[] | ListStringFieldRefInput<$PrismaModel> | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedUuidNullableWithAggregatesFilter<$PrismaModel> | string | null
     _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type LogsLoginCreateWithoutUserInput = {
@@ -15436,37 +30141,17 @@ export namespace Prisma {
   }
 
   export type ProfileCreateWithoutUserInput = {
-    fullName?: string | null
+    fullName: string
     urlImage?: string | null
-    companyName: string
-    npwp: string
-    deedNumber?: string | null
-    establishedDate?: Date | string | null
-    npwpUrl: string
-    deedUrl: string
-    description?: string | null
-    companyAddress?: string | null
-    companyPhone?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    segment?: CompanySegmentCreateNestedOneWithoutProfileInput
+    company?: CompanyCreateNestedOneWithoutProfileInput
   }
 
   export type ProfileUncheckedCreateWithoutUserInput = {
-    fullName?: string | null
+    companyId?: string | null
+    fullName: string
     urlImage?: string | null
-    companyName: string
-    npwp: string
-    deedNumber?: string | null
-    establishedDate?: Date | string | null
-    npwpUrl: string
-    deedUrl: string
-    description?: string | null
-    segmentId?: number | null
-    companyAddress?: string | null
-    companyPhone?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -15584,37 +30269,17 @@ export namespace Prisma {
   }
 
   export type ProfileUpdateWithoutUserInput = {
-    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
-    deedNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    establishedDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    npwpUrl?: StringFieldUpdateOperationsInput | string
-    deedUrl?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyPhone?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    segment?: CompanySegmentUpdateOneWithoutProfileNestedInput
+    company?: CompanyUpdateOneWithoutProfileNestedInput
   }
 
   export type ProfileUncheckedUpdateWithoutUserInput = {
-    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyId?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
-    deedNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    establishedDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    npwpUrl?: StringFieldUpdateOperationsInput | string
-    deedUrl?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyPhone?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -15675,6 +30340,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -15689,6 +30355,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -15719,6 +30386,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -15733,6 +30401,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -15747,6 +30416,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -15761,6 +30431,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -15791,6 +30462,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -15805,6 +30477,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -15891,6 +30564,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -15905,6 +30579,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -15963,6 +30638,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -15977,6 +30653,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16031,6 +30708,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -16045,6 +30723,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -16075,6 +30754,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16089,6 +30769,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16098,104 +30779,86 @@ export namespace Prisma {
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type ProfileCreateWithoutSegmentInput = {
-    fullName?: string | null
+  export type CompanyCreateWithoutSegmentInput = {
+    companyId?: string
     urlImage?: string | null
     companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
     npwp: string
-    deedNumber?: string | null
-    establishedDate?: Date | string | null
-    npwpUrl: string
-    deedUrl: string
-    description?: string | null
-    companyAddress?: string | null
-    companyPhone?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    user: UserCreateNestedOneWithoutProfileInput
+    totalCapital?: string | null
+    profile?: ProfileCreateNestedManyWithoutCompanyInput
+    formL9?: FormL9CreateNestedOneWithoutCompanyInput
   }
 
-  export type ProfileUncheckedCreateWithoutSegmentInput = {
-    userId: string
-    fullName?: string | null
+  export type CompanyUncheckedCreateWithoutSegmentInput = {
+    companyId?: string
     urlImage?: string | null
     companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
     npwp: string
-    deedNumber?: string | null
-    establishedDate?: Date | string | null
-    npwpUrl: string
-    deedUrl: string
-    description?: string | null
-    companyAddress?: string | null
-    companyPhone?: string | null
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
+    totalCapital?: string | null
+    profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
+    formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
 
-  export type ProfileCreateOrConnectWithoutSegmentInput = {
-    where: ProfileWhereUniqueInput
-    create: XOR<ProfileCreateWithoutSegmentInput, ProfileUncheckedCreateWithoutSegmentInput>
+  export type CompanyCreateOrConnectWithoutSegmentInput = {
+    where: CompanyWhereUniqueInput
+    create: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput>
   }
 
-  export type ProfileCreateManySegmentInputEnvelope = {
-    data: ProfileCreateManySegmentInput | ProfileCreateManySegmentInput[]
+  export type CompanyCreateManySegmentInputEnvelope = {
+    data: CompanyCreateManySegmentInput | CompanyCreateManySegmentInput[]
     skipDuplicates?: boolean
   }
 
-  export type ProfileUpsertWithWhereUniqueWithoutSegmentInput = {
-    where: ProfileWhereUniqueInput
-    update: XOR<ProfileUpdateWithoutSegmentInput, ProfileUncheckedUpdateWithoutSegmentInput>
-    create: XOR<ProfileCreateWithoutSegmentInput, ProfileUncheckedCreateWithoutSegmentInput>
+  export type CompanyUpsertWithWhereUniqueWithoutSegmentInput = {
+    where: CompanyWhereUniqueInput
+    update: XOR<CompanyUpdateWithoutSegmentInput, CompanyUncheckedUpdateWithoutSegmentInput>
+    create: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput>
   }
 
-  export type ProfileUpdateWithWhereUniqueWithoutSegmentInput = {
-    where: ProfileWhereUniqueInput
-    data: XOR<ProfileUpdateWithoutSegmentInput, ProfileUncheckedUpdateWithoutSegmentInput>
+  export type CompanyUpdateWithWhereUniqueWithoutSegmentInput = {
+    where: CompanyWhereUniqueInput
+    data: XOR<CompanyUpdateWithoutSegmentInput, CompanyUncheckedUpdateWithoutSegmentInput>
   }
 
-  export type ProfileUpdateManyWithWhereWithoutSegmentInput = {
-    where: ProfileScalarWhereInput
-    data: XOR<ProfileUpdateManyMutationInput, ProfileUncheckedUpdateManyWithoutSegmentInput>
+  export type CompanyUpdateManyWithWhereWithoutSegmentInput = {
+    where: CompanyScalarWhereInput
+    data: XOR<CompanyUpdateManyMutationInput, CompanyUncheckedUpdateManyWithoutSegmentInput>
   }
 
-  export type ProfileScalarWhereInput = {
-    AND?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
-    OR?: ProfileScalarWhereInput[]
-    NOT?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
-    userId?: UuidFilter<"Profile"> | string
-    fullName?: StringNullableFilter<"Profile"> | string | null
-    urlImage?: StringNullableFilter<"Profile"> | string | null
-    companyName?: StringFilter<"Profile"> | string
-    npwp?: StringFilter<"Profile"> | string
-    deedNumber?: StringNullableFilter<"Profile"> | string | null
-    establishedDate?: DateTimeNullableFilter<"Profile"> | Date | string | null
-    npwpUrl?: StringFilter<"Profile"> | string
-    deedUrl?: StringFilter<"Profile"> | string
-    description?: StringNullableFilter<"Profile"> | string | null
-    segmentId?: IntNullableFilter<"Profile"> | number | null
-    companyAddress?: StringNullableFilter<"Profile"> | string | null
-    companyPhone?: StringNullableFilter<"Profile"> | string | null
-    website?: StringNullableFilter<"Profile"> | string | null
-    createdAt?: DateTimeFilter<"Profile"> | Date | string
-    updatedAt?: DateTimeFilter<"Profile"> | Date | string
-  }
-
-  export type CompanySegmentCreateWithoutProfileInput = {
-    segmentName: string
-    description?: string | null
-  }
-
-  export type CompanySegmentUncheckedCreateWithoutProfileInput = {
-    segmentId?: number
-    segmentName: string
-    description?: string | null
-  }
-
-  export type CompanySegmentCreateOrConnectWithoutProfileInput = {
-    where: CompanySegmentWhereUniqueInput
-    create: XOR<CompanySegmentCreateWithoutProfileInput, CompanySegmentUncheckedCreateWithoutProfileInput>
+  export type CompanyScalarWhereInput = {
+    AND?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
+    OR?: CompanyScalarWhereInput[]
+    NOT?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
+    companyId?: UuidFilter<"Company"> | string
+    segmentId?: IntFilter<"Company"> | number
+    urlImage?: StringNullableFilter<"Company"> | string | null
+    companyName?: StringFilter<"Company"> | string
+    companyFoundingDate?: DateTimeFilter<"Company"> | Date | string
+    companyStatus?: StringFilter<"Company"> | string
+    companyTelpFax?: StringFilter<"Company"> | string
+    companyAddress?: StringFilter<"Company"> | string
+    companyEmail?: StringFilter<"Company"> | string
+    npwp?: StringFilter<"Company"> | string
+    website?: StringNullableFilter<"Company"> | string | null
+    createdAt?: DateTimeFilter<"Company"> | Date | string
+    updatedAt?: DateTimeFilter<"Company"> | Date | string
+    totalCapital?: StringNullableFilter<"Company"> | string | null
   }
 
   export type UserCreateWithoutProfileInput = {
@@ -16203,6 +30866,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -16217,6 +30881,7 @@ export namespace Prisma {
     email: string
     password: string
     isActive?: boolean
+    isVerified?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
@@ -16231,26 +30896,45 @@ export namespace Prisma {
     create: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
   }
 
-  export type CompanySegmentUpsertWithoutProfileInput = {
-    update: XOR<CompanySegmentUpdateWithoutProfileInput, CompanySegmentUncheckedUpdateWithoutProfileInput>
-    create: XOR<CompanySegmentCreateWithoutProfileInput, CompanySegmentUncheckedCreateWithoutProfileInput>
-    where?: CompanySegmentWhereInput
+  export type CompanyCreateWithoutProfileInput = {
+    companyId?: string
+    urlImage?: string | null
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    totalCapital?: string | null
+    segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
+    formL9?: FormL9CreateNestedOneWithoutCompanyInput
   }
 
-  export type CompanySegmentUpdateToOneWithWhereWithoutProfileInput = {
-    where?: CompanySegmentWhereInput
-    data: XOR<CompanySegmentUpdateWithoutProfileInput, CompanySegmentUncheckedUpdateWithoutProfileInput>
+  export type CompanyUncheckedCreateWithoutProfileInput = {
+    companyId?: string
+    segmentId: number
+    urlImage?: string | null
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    totalCapital?: string | null
+    formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
 
-  export type CompanySegmentUpdateWithoutProfileInput = {
-    segmentName?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type CompanySegmentUncheckedUpdateWithoutProfileInput = {
-    segmentId?: IntFieldUpdateOperationsInput | number
-    segmentName?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+  export type CompanyCreateOrConnectWithoutProfileInput = {
+    where: CompanyWhereUniqueInput
+    create: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
   }
 
   export type UserUpsertWithoutProfileInput = {
@@ -16269,6 +30953,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16283,6 +30968,7 @@ export namespace Prisma {
     email?: StringFieldUpdateOperationsInput | string
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isVerified?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -16290,6 +30976,1335 @@ export namespace Prisma {
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type CompanyUpsertWithoutProfileInput = {
+    update: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
+    create: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
+    where?: CompanyWhereInput
+  }
+
+  export type CompanyUpdateToOneWithWhereWithoutProfileInput = {
+    where?: CompanyWhereInput
+    data: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
+  }
+
+  export type CompanyUpdateWithoutProfileInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+    formL9?: FormL9UpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanyUncheckedUpdateWithoutProfileInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    segmentId?: IntFieldUpdateOperationsInput | number
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
+  }
+
+  export type ProfileCreateWithoutCompanyInput = {
+    fullName: string
+    urlImage?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    user: UserCreateNestedOneWithoutProfileInput
+  }
+
+  export type ProfileUncheckedCreateWithoutCompanyInput = {
+    userId: string
+    fullName: string
+    urlImage?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProfileCreateOrConnectWithoutCompanyInput = {
+    where: ProfileWhereUniqueInput
+    create: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput>
+  }
+
+  export type ProfileCreateManyCompanyInputEnvelope = {
+    data: ProfileCreateManyCompanyInput | ProfileCreateManyCompanyInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type CompanySegmentCreateWithoutCompanyInput = {
+    segmentName: string
+    description?: string | null
+  }
+
+  export type CompanySegmentUncheckedCreateWithoutCompanyInput = {
+    segmentId?: number
+    segmentName: string
+    description?: string | null
+  }
+
+  export type CompanySegmentCreateOrConnectWithoutCompanyInput = {
+    where: CompanySegmentWhereUniqueInput
+    create: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
+  }
+
+  export type FormL9CreateWithoutCompanyInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UncheckedCreateWithoutCompanyInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9CreateOrConnectWithoutCompanyInput = {
+    where: FormL9WhereUniqueInput
+    create: XOR<FormL9CreateWithoutCompanyInput, FormL9UncheckedCreateWithoutCompanyInput>
+  }
+
+  export type ProfileUpsertWithWhereUniqueWithoutCompanyInput = {
+    where: ProfileWhereUniqueInput
+    update: XOR<ProfileUpdateWithoutCompanyInput, ProfileUncheckedUpdateWithoutCompanyInput>
+    create: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput>
+  }
+
+  export type ProfileUpdateWithWhereUniqueWithoutCompanyInput = {
+    where: ProfileWhereUniqueInput
+    data: XOR<ProfileUpdateWithoutCompanyInput, ProfileUncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type ProfileUpdateManyWithWhereWithoutCompanyInput = {
+    where: ProfileScalarWhereInput
+    data: XOR<ProfileUpdateManyMutationInput, ProfileUncheckedUpdateManyWithoutCompanyInput>
+  }
+
+  export type ProfileScalarWhereInput = {
+    AND?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
+    OR?: ProfileScalarWhereInput[]
+    NOT?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
+    userId?: UuidFilter<"Profile"> | string
+    companyId?: UuidNullableFilter<"Profile"> | string | null
+    fullName?: StringFilter<"Profile"> | string
+    urlImage?: StringNullableFilter<"Profile"> | string | null
+    createdAt?: DateTimeFilter<"Profile"> | Date | string
+    updatedAt?: DateTimeFilter<"Profile"> | Date | string
+  }
+
+  export type CompanySegmentUpsertWithoutCompanyInput = {
+    update: XOR<CompanySegmentUpdateWithoutCompanyInput, CompanySegmentUncheckedUpdateWithoutCompanyInput>
+    create: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
+    where?: CompanySegmentWhereInput
+  }
+
+  export type CompanySegmentUpdateToOneWithWhereWithoutCompanyInput = {
+    where?: CompanySegmentWhereInput
+    data: XOR<CompanySegmentUpdateWithoutCompanyInput, CompanySegmentUncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type CompanySegmentUpdateWithoutCompanyInput = {
+    segmentName?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type CompanySegmentUncheckedUpdateWithoutCompanyInput = {
+    segmentId?: IntFieldUpdateOperationsInput | number
+    segmentName?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type FormL9UpsertWithoutCompanyInput = {
+    update: XOR<FormL9UpdateWithoutCompanyInput, FormL9UncheckedUpdateWithoutCompanyInput>
+    create: XOR<FormL9CreateWithoutCompanyInput, FormL9UncheckedCreateWithoutCompanyInput>
+    where?: FormL9WhereInput
+  }
+
+  export type FormL9UpdateToOneWithWhereWithoutCompanyInput = {
+    where?: FormL9WhereInput
+    data: XOR<FormL9UpdateWithoutCompanyInput, FormL9UncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type FormL9UpdateWithoutCompanyInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9UncheckedUpdateWithoutCompanyInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type CompanyCreateWithoutFormL9Input = {
+    companyId?: string
+    urlImage?: string | null
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    totalCapital?: string | null
+    profile?: ProfileCreateNestedManyWithoutCompanyInput
+    segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
+  }
+
+  export type CompanyUncheckedCreateWithoutFormL9Input = {
+    companyId?: string
+    segmentId: number
+    urlImage?: string | null
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    totalCapital?: string | null
+    profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
+  }
+
+  export type CompanyCreateOrConnectWithoutFormL9Input = {
+    where: CompanyWhereUniqueInput
+    create: XOR<CompanyCreateWithoutFormL9Input, CompanyUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9BankInfoCreateWithoutFormL9Input = {
+    formL9BankInfoid?: string
+    beneficiaryName: string
+    beneficiaryAddress: string
+    bankName: string
+    bankAddress: string
+    noRek: string
+    swiftCode: string
+    IBAN: string
+  }
+
+  export type FormL9BankInfoUncheckedCreateWithoutFormL9Input = {
+    formL9BankInfoid?: string
+    beneficiaryName: string
+    beneficiaryAddress: string
+    bankName: string
+    bankAddress: string
+    noRek: string
+    swiftCode: string
+    IBAN: string
+  }
+
+  export type FormL9BankInfoCreateOrConnectWithoutFormL9Input = {
+    where: FormL9BankInfoWhereUniqueInput
+    create: XOR<FormL9BankInfoCreateWithoutFormL9Input, FormL9BankInfoUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9GeneralInformationCreateWithoutFormL9Input = {
+    formGeneralInformationId?: string
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    totalCapital?: string | null
+    segmentId: string
+    generalInfoContinue?: FormL9GeneralInformationContinueCreateNestedOneWithoutGeneralInformationInput
+  }
+
+  export type FormL9GeneralInformationUncheckedCreateWithoutFormL9Input = {
+    formGeneralInformationId?: string
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    totalCapital?: string | null
+    segmentId: string
+    generalInfoContinue?: FormL9GeneralInformationContinueUncheckedCreateNestedOneWithoutGeneralInformationInput
+  }
+
+  export type FormL9GeneralInformationCreateOrConnectWithoutFormL9Input = {
+    where: FormL9GeneralInformationWhereUniqueInput
+    create: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9EmployeCreateWithoutFormL9Input = {
+    formL9EmployeId?: string
+    totalEmployees: number
+    qualityControl: number
+    engineering: number
+    production: number
+    management: number
+    other: number
+  }
+
+  export type FormL9EmployeUncheckedCreateWithoutFormL9Input = {
+    formL9EmployeId?: string
+    totalEmployees: number
+    qualityControl: number
+    engineering: number
+    production: number
+    management: number
+    other: number
+  }
+
+  export type FormL9EmployeCreateOrConnectWithoutFormL9Input = {
+    where: FormL9EmployeWhereUniqueInput
+    create: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9OthersCreateWithoutFormL9Input = {
+    formL9OthersId?: string
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime: string
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+    certificateISOs?: FormL9CertificateISOCreateNestedManyWithoutOthersInput
+  }
+
+  export type FormL9OthersUncheckedCreateWithoutFormL9Input = {
+    formL9OthersId?: string
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime: string
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+    certificateISOs?: FormL9CertificateISOUncheckedCreateNestedManyWithoutOthersInput
+  }
+
+  export type FormL9OthersCreateOrConnectWithoutFormL9Input = {
+    where: FormL9OthersWhereUniqueInput
+    create: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9ManagementCreateWithoutFormL9Input = {
+    formL9ManagementId?: string
+    position: string
+    name: string
+    noTelpFaxHp: string
+  }
+
+  export type FormL9ManagementUncheckedCreateWithoutFormL9Input = {
+    formL9ManagementId?: string
+    position: string
+    name: string
+    noTelpFaxHp: string
+  }
+
+  export type FormL9ManagementCreateOrConnectWithoutFormL9Input = {
+    where: FormL9ManagementWhereUniqueInput
+    create: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9ManagementCreateManyFormL9InputEnvelope = {
+    data: FormL9ManagementCreateManyFormL9Input | FormL9ManagementCreateManyFormL9Input[]
+    skipDuplicates?: boolean
+  }
+
+  export type FormL9WorkExperienceCreateWithoutFormL9Input = {
+    formL9WorkExperienceId?: string
+    customerOrLocation: string
+    typeOfWork: string
+    score: number
+    customerContactPerson: string
+    customerTelpFaxHp: string
+  }
+
+  export type FormL9WorkExperienceUncheckedCreateWithoutFormL9Input = {
+    formL9WorkExperienceId?: string
+    customerOrLocation: string
+    typeOfWork: string
+    score: number
+    customerContactPerson: string
+    customerTelpFaxHp: string
+  }
+
+  export type FormL9WorkExperienceCreateOrConnectWithoutFormL9Input = {
+    where: FormL9WorkExperienceWhereUniqueInput
+    create: XOR<FormL9WorkExperienceCreateWithoutFormL9Input, FormL9WorkExperienceUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9WorkExperienceCreateManyFormL9InputEnvelope = {
+    data: FormL9WorkExperienceCreateManyFormL9Input | FormL9WorkExperienceCreateManyFormL9Input[]
+    skipDuplicates?: boolean
+  }
+
+  export type CompanyUpsertWithoutFormL9Input = {
+    update: XOR<CompanyUpdateWithoutFormL9Input, CompanyUncheckedUpdateWithoutFormL9Input>
+    create: XOR<CompanyCreateWithoutFormL9Input, CompanyUncheckedCreateWithoutFormL9Input>
+    where?: CompanyWhereInput
+  }
+
+  export type CompanyUpdateToOneWithWhereWithoutFormL9Input = {
+    where?: CompanyWhereInput
+    data: XOR<CompanyUpdateWithoutFormL9Input, CompanyUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type CompanyUpdateWithoutFormL9Input = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    profile?: ProfileUpdateManyWithoutCompanyNestedInput
+    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanyUncheckedUpdateWithoutFormL9Input = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    segmentId?: IntFieldUpdateOperationsInput | number
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
+  }
+
+  export type FormL9BankInfoUpsertWithoutFormL9Input = {
+    update: XOR<FormL9BankInfoUpdateWithoutFormL9Input, FormL9BankInfoUncheckedUpdateWithoutFormL9Input>
+    create: XOR<FormL9BankInfoCreateWithoutFormL9Input, FormL9BankInfoUncheckedCreateWithoutFormL9Input>
+    where?: FormL9BankInfoWhereInput
+  }
+
+  export type FormL9BankInfoUpdateToOneWithWhereWithoutFormL9Input = {
+    where?: FormL9BankInfoWhereInput
+    data: XOR<FormL9BankInfoUpdateWithoutFormL9Input, FormL9BankInfoUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9BankInfoUpdateWithoutFormL9Input = {
+    formL9BankInfoid?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: StringFieldUpdateOperationsInput | string
+    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
+    bankName?: StringFieldUpdateOperationsInput | string
+    bankAddress?: StringFieldUpdateOperationsInput | string
+    noRek?: StringFieldUpdateOperationsInput | string
+    swiftCode?: StringFieldUpdateOperationsInput | string
+    IBAN?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9BankInfoUncheckedUpdateWithoutFormL9Input = {
+    formL9BankInfoid?: StringFieldUpdateOperationsInput | string
+    beneficiaryName?: StringFieldUpdateOperationsInput | string
+    beneficiaryAddress?: StringFieldUpdateOperationsInput | string
+    bankName?: StringFieldUpdateOperationsInput | string
+    bankAddress?: StringFieldUpdateOperationsInput | string
+    noRek?: StringFieldUpdateOperationsInput | string
+    swiftCode?: StringFieldUpdateOperationsInput | string
+    IBAN?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9GeneralInformationUpsertWithoutFormL9Input = {
+    update: XOR<FormL9GeneralInformationUpdateWithoutFormL9Input, FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input>
+    create: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+    where?: FormL9GeneralInformationWhereInput
+  }
+
+  export type FormL9GeneralInformationUpdateToOneWithWhereWithoutFormL9Input = {
+    where?: FormL9GeneralInformationWhereInput
+    data: XOR<FormL9GeneralInformationUpdateWithoutFormL9Input, FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9GeneralInformationUpdateWithoutFormL9Input = {
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segmentId?: StringFieldUpdateOperationsInput | string
+    generalInfoContinue?: FormL9GeneralInformationContinueUpdateOneWithoutGeneralInformationNestedInput
+  }
+
+  export type FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input = {
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segmentId?: StringFieldUpdateOperationsInput | string
+    generalInfoContinue?: FormL9GeneralInformationContinueUncheckedUpdateOneWithoutGeneralInformationNestedInput
+  }
+
+  export type FormL9EmployeUpsertWithoutFormL9Input = {
+    update: XOR<FormL9EmployeUpdateWithoutFormL9Input, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
+    create: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
+    where?: FormL9EmployeWhereInput
+  }
+
+  export type FormL9EmployeUpdateToOneWithWhereWithoutFormL9Input = {
+    where?: FormL9EmployeWhereInput
+    data: XOR<FormL9EmployeUpdateWithoutFormL9Input, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9EmployeUpdateWithoutFormL9Input = {
+    formL9EmployeId?: StringFieldUpdateOperationsInput | string
+    totalEmployees?: IntFieldUpdateOperationsInput | number
+    qualityControl?: IntFieldUpdateOperationsInput | number
+    engineering?: IntFieldUpdateOperationsInput | number
+    production?: IntFieldUpdateOperationsInput | number
+    management?: IntFieldUpdateOperationsInput | number
+    other?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type FormL9EmployeUncheckedUpdateWithoutFormL9Input = {
+    formL9EmployeId?: StringFieldUpdateOperationsInput | string
+    totalEmployees?: IntFieldUpdateOperationsInput | number
+    qualityControl?: IntFieldUpdateOperationsInput | number
+    engineering?: IntFieldUpdateOperationsInput | number
+    production?: IntFieldUpdateOperationsInput | number
+    management?: IntFieldUpdateOperationsInput | number
+    other?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type FormL9OthersUpsertWithoutFormL9Input = {
+    update: XOR<FormL9OthersUpdateWithoutFormL9Input, FormL9OthersUncheckedUpdateWithoutFormL9Input>
+    create: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+    where?: FormL9OthersWhereInput
+  }
+
+  export type FormL9OthersUpdateToOneWithWhereWithoutFormL9Input = {
+    where?: FormL9OthersWhereInput
+    data: XOR<FormL9OthersUpdateWithoutFormL9Input, FormL9OthersUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9OthersUpdateWithoutFormL9Input = {
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    haveCertificateISO?: BoolFieldUpdateOperationsInput | boolean
+    haveCompanyOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveQualityControlOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveProductWarranty?: BoolFieldUpdateOperationsInput | boolean
+    haveExpiryDate?: BoolFieldUpdateOperationsInput | boolean
+    haveAPD?: BoolFieldUpdateOperationsInput | boolean
+    haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
+    isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
+    paymentTime?: StringFieldUpdateOperationsInput | string
+    agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
+    understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
+    signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    certificateISOs?: FormL9CertificateISOUpdateManyWithoutOthersNestedInput
+  }
+
+  export type FormL9OthersUncheckedUpdateWithoutFormL9Input = {
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    haveCertificateISO?: BoolFieldUpdateOperationsInput | boolean
+    haveCompanyOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveQualityControlOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveProductWarranty?: BoolFieldUpdateOperationsInput | boolean
+    haveExpiryDate?: BoolFieldUpdateOperationsInput | boolean
+    haveAPD?: BoolFieldUpdateOperationsInput | boolean
+    haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
+    isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
+    paymentTime?: StringFieldUpdateOperationsInput | string
+    agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
+    understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
+    signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    certificateISOs?: FormL9CertificateISOUncheckedUpdateManyWithoutOthersNestedInput
+  }
+
+  export type FormL9ManagementUpsertWithWhereUniqueWithoutFormL9Input = {
+    where: FormL9ManagementWhereUniqueInput
+    update: XOR<FormL9ManagementUpdateWithoutFormL9Input, FormL9ManagementUncheckedUpdateWithoutFormL9Input>
+    create: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input = {
+    where: FormL9ManagementWhereUniqueInput
+    data: XOR<FormL9ManagementUpdateWithoutFormL9Input, FormL9ManagementUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9ManagementUpdateManyWithWhereWithoutFormL9Input = {
+    where: FormL9ManagementScalarWhereInput
+    data: XOR<FormL9ManagementUpdateManyMutationInput, FormL9ManagementUncheckedUpdateManyWithoutFormL9Input>
+  }
+
+  export type FormL9ManagementScalarWhereInput = {
+    AND?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
+    OR?: FormL9ManagementScalarWhereInput[]
+    NOT?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
+    formL9ManagementId?: UuidFilter<"FormL9Management"> | string
+    formL9Id?: UuidFilter<"FormL9Management"> | string
+    position?: StringFilter<"FormL9Management"> | string
+    name?: StringFilter<"FormL9Management"> | string
+    noTelpFaxHp?: StringFilter<"FormL9Management"> | string
+  }
+
+  export type FormL9WorkExperienceUpsertWithWhereUniqueWithoutFormL9Input = {
+    where: FormL9WorkExperienceWhereUniqueInput
+    update: XOR<FormL9WorkExperienceUpdateWithoutFormL9Input, FormL9WorkExperienceUncheckedUpdateWithoutFormL9Input>
+    create: XOR<FormL9WorkExperienceCreateWithoutFormL9Input, FormL9WorkExperienceUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9WorkExperienceUpdateWithWhereUniqueWithoutFormL9Input = {
+    where: FormL9WorkExperienceWhereUniqueInput
+    data: XOR<FormL9WorkExperienceUpdateWithoutFormL9Input, FormL9WorkExperienceUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9WorkExperienceUpdateManyWithWhereWithoutFormL9Input = {
+    where: FormL9WorkExperienceScalarWhereInput
+    data: XOR<FormL9WorkExperienceUpdateManyMutationInput, FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9Input>
+  }
+
+  export type FormL9WorkExperienceScalarWhereInput = {
+    AND?: FormL9WorkExperienceScalarWhereInput | FormL9WorkExperienceScalarWhereInput[]
+    OR?: FormL9WorkExperienceScalarWhereInput[]
+    NOT?: FormL9WorkExperienceScalarWhereInput | FormL9WorkExperienceScalarWhereInput[]
+    formL9WorkExperienceId?: UuidFilter<"FormL9WorkExperience"> | string
+    formL9Id?: UuidFilter<"FormL9WorkExperience"> | string
+    customerOrLocation?: StringFilter<"FormL9WorkExperience"> | string
+    typeOfWork?: StringFilter<"FormL9WorkExperience"> | string
+    score?: IntFilter<"FormL9WorkExperience"> | number
+    customerContactPerson?: StringFilter<"FormL9WorkExperience"> | string
+    customerTelpFaxHp?: StringFilter<"FormL9WorkExperience"> | string
+  }
+
+  export type FormL9CreateWithoutBankInfoInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    company: CompanyCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UncheckedCreateWithoutBankInfoInput = {
+    formL9Id?: string
+    companyId: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9CreateOrConnectWithoutBankInfoInput = {
+    where: FormL9WhereUniqueInput
+    create: XOR<FormL9CreateWithoutBankInfoInput, FormL9UncheckedCreateWithoutBankInfoInput>
+  }
+
+  export type FormL9UpsertWithoutBankInfoInput = {
+    update: XOR<FormL9UpdateWithoutBankInfoInput, FormL9UncheckedUpdateWithoutBankInfoInput>
+    create: XOR<FormL9CreateWithoutBankInfoInput, FormL9UncheckedCreateWithoutBankInfoInput>
+    where?: FormL9WhereInput
+  }
+
+  export type FormL9UpdateToOneWithWhereWithoutBankInfoInput = {
+    where?: FormL9WhereInput
+    data: XOR<FormL9UpdateWithoutBankInfoInput, FormL9UncheckedUpdateWithoutBankInfoInput>
+  }
+
+  export type FormL9UpdateWithoutBankInfoInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9UncheckedUpdateWithoutBankInfoInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9CreateWithoutGeneralInformationInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    company: CompanyCreateNestedOneWithoutFormL9Input
+    bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UncheckedCreateWithoutGeneralInformationInput = {
+    formL9Id?: string
+    companyId: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9CreateOrConnectWithoutGeneralInformationInput = {
+    where: FormL9WhereUniqueInput
+    create: XOR<FormL9CreateWithoutGeneralInformationInput, FormL9UncheckedCreateWithoutGeneralInformationInput>
+  }
+
+  export type FormL9GeneralInformationContinueCreateWithoutGeneralInformationInput = {
+    formL9GeneralInformationContinueId?: string
+    permitsHeld: string
+  }
+
+  export type FormL9GeneralInformationContinueUncheckedCreateWithoutGeneralInformationInput = {
+    formL9GeneralInformationContinueId?: string
+    permitsHeld: string
+  }
+
+  export type FormL9GeneralInformationContinueCreateOrConnectWithoutGeneralInformationInput = {
+    where: FormL9GeneralInformationContinueWhereUniqueInput
+    create: XOR<FormL9GeneralInformationContinueCreateWithoutGeneralInformationInput, FormL9GeneralInformationContinueUncheckedCreateWithoutGeneralInformationInput>
+  }
+
+  export type FormL9UpsertWithoutGeneralInformationInput = {
+    update: XOR<FormL9UpdateWithoutGeneralInformationInput, FormL9UncheckedUpdateWithoutGeneralInformationInput>
+    create: XOR<FormL9CreateWithoutGeneralInformationInput, FormL9UncheckedCreateWithoutGeneralInformationInput>
+    where?: FormL9WhereInput
+  }
+
+  export type FormL9UpdateToOneWithWhereWithoutGeneralInformationInput = {
+    where?: FormL9WhereInput
+    data: XOR<FormL9UpdateWithoutGeneralInformationInput, FormL9UncheckedUpdateWithoutGeneralInformationInput>
+  }
+
+  export type FormL9UpdateWithoutGeneralInformationInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
+    bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9UncheckedUpdateWithoutGeneralInformationInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9GeneralInformationContinueUpsertWithoutGeneralInformationInput = {
+    update: XOR<FormL9GeneralInformationContinueUpdateWithoutGeneralInformationInput, FormL9GeneralInformationContinueUncheckedUpdateWithoutGeneralInformationInput>
+    create: XOR<FormL9GeneralInformationContinueCreateWithoutGeneralInformationInput, FormL9GeneralInformationContinueUncheckedCreateWithoutGeneralInformationInput>
+    where?: FormL9GeneralInformationContinueWhereInput
+  }
+
+  export type FormL9GeneralInformationContinueUpdateToOneWithWhereWithoutGeneralInformationInput = {
+    where?: FormL9GeneralInformationContinueWhereInput
+    data: XOR<FormL9GeneralInformationContinueUpdateWithoutGeneralInformationInput, FormL9GeneralInformationContinueUncheckedUpdateWithoutGeneralInformationInput>
+  }
+
+  export type FormL9GeneralInformationContinueUpdateWithoutGeneralInformationInput = {
+    formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9GeneralInformationContinueUncheckedUpdateWithoutGeneralInformationInput = {
+    formL9GeneralInformationContinueId?: StringFieldUpdateOperationsInput | string
+    permitsHeld?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9GeneralInformationCreateWithoutGeneralInfoContinueInput = {
+    formGeneralInformationId?: string
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    totalCapital?: string | null
+    segmentId: string
+    formL9: FormL9CreateNestedOneWithoutGeneralInformationInput
+  }
+
+  export type FormL9GeneralInformationUncheckedCreateWithoutGeneralInfoContinueInput = {
+    formGeneralInformationId?: string
+    formL9Id: string
+    companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
+    npwp: string
+    totalCapital?: string | null
+    segmentId: string
+  }
+
+  export type FormL9GeneralInformationCreateOrConnectWithoutGeneralInfoContinueInput = {
+    where: FormL9GeneralInformationWhereUniqueInput
+    create: XOR<FormL9GeneralInformationCreateWithoutGeneralInfoContinueInput, FormL9GeneralInformationUncheckedCreateWithoutGeneralInfoContinueInput>
+  }
+
+  export type FormL9GeneralInformationUpsertWithoutGeneralInfoContinueInput = {
+    update: XOR<FormL9GeneralInformationUpdateWithoutGeneralInfoContinueInput, FormL9GeneralInformationUncheckedUpdateWithoutGeneralInfoContinueInput>
+    create: XOR<FormL9GeneralInformationCreateWithoutGeneralInfoContinueInput, FormL9GeneralInformationUncheckedCreateWithoutGeneralInfoContinueInput>
+    where?: FormL9GeneralInformationWhereInput
+  }
+
+  export type FormL9GeneralInformationUpdateToOneWithWhereWithoutGeneralInfoContinueInput = {
+    where?: FormL9GeneralInformationWhereInput
+    data: XOR<FormL9GeneralInformationUpdateWithoutGeneralInfoContinueInput, FormL9GeneralInformationUncheckedUpdateWithoutGeneralInfoContinueInput>
+  }
+
+  export type FormL9GeneralInformationUpdateWithoutGeneralInfoContinueInput = {
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segmentId?: StringFieldUpdateOperationsInput | string
+    formL9?: FormL9UpdateOneRequiredWithoutGeneralInformationNestedInput
+  }
+
+  export type FormL9GeneralInformationUncheckedUpdateWithoutGeneralInfoContinueInput = {
+    formGeneralInformationId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segmentId?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9CreateWithoutManagementsInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    company: CompanyCreateNestedOneWithoutFormL9Input
+    bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UncheckedCreateWithoutManagementsInput = {
+    formL9Id?: string
+    companyId: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9CreateOrConnectWithoutManagementsInput = {
+    where: FormL9WhereUniqueInput
+    create: XOR<FormL9CreateWithoutManagementsInput, FormL9UncheckedCreateWithoutManagementsInput>
+  }
+
+  export type FormL9UpsertWithoutManagementsInput = {
+    update: XOR<FormL9UpdateWithoutManagementsInput, FormL9UncheckedUpdateWithoutManagementsInput>
+    create: XOR<FormL9CreateWithoutManagementsInput, FormL9UncheckedCreateWithoutManagementsInput>
+    where?: FormL9WhereInput
+  }
+
+  export type FormL9UpdateToOneWithWhereWithoutManagementsInput = {
+    where?: FormL9WhereInput
+    data: XOR<FormL9UpdateWithoutManagementsInput, FormL9UncheckedUpdateWithoutManagementsInput>
+  }
+
+  export type FormL9UpdateWithoutManagementsInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
+    bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9UncheckedUpdateWithoutManagementsInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9CreateWithoutEmployeeInfoInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    company: CompanyCreateNestedOneWithoutFormL9Input
+    bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UncheckedCreateWithoutEmployeeInfoInput = {
+    formL9Id?: string
+    companyId: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9CreateOrConnectWithoutEmployeeInfoInput = {
+    where: FormL9WhereUniqueInput
+    create: XOR<FormL9CreateWithoutEmployeeInfoInput, FormL9UncheckedCreateWithoutEmployeeInfoInput>
+  }
+
+  export type FormL9UpsertWithoutEmployeeInfoInput = {
+    update: XOR<FormL9UpdateWithoutEmployeeInfoInput, FormL9UncheckedUpdateWithoutEmployeeInfoInput>
+    create: XOR<FormL9CreateWithoutEmployeeInfoInput, FormL9UncheckedCreateWithoutEmployeeInfoInput>
+    where?: FormL9WhereInput
+  }
+
+  export type FormL9UpdateToOneWithWhereWithoutEmployeeInfoInput = {
+    where?: FormL9WhereInput
+    data: XOR<FormL9UpdateWithoutEmployeeInfoInput, FormL9UncheckedUpdateWithoutEmployeeInfoInput>
+  }
+
+  export type FormL9UpdateWithoutEmployeeInfoInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
+    bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9UncheckedUpdateWithoutEmployeeInfoInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9CreateWithoutWorkExperiencesInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    company: CompanyCreateNestedOneWithoutFormL9Input
+    bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UncheckedCreateWithoutWorkExperiencesInput = {
+    formL9Id?: string
+    companyId: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9CreateOrConnectWithoutWorkExperiencesInput = {
+    where: FormL9WhereUniqueInput
+    create: XOR<FormL9CreateWithoutWorkExperiencesInput, FormL9UncheckedCreateWithoutWorkExperiencesInput>
+  }
+
+  export type FormL9UpsertWithoutWorkExperiencesInput = {
+    update: XOR<FormL9UpdateWithoutWorkExperiencesInput, FormL9UncheckedUpdateWithoutWorkExperiencesInput>
+    create: XOR<FormL9CreateWithoutWorkExperiencesInput, FormL9UncheckedCreateWithoutWorkExperiencesInput>
+    where?: FormL9WhereInput
+  }
+
+  export type FormL9UpdateToOneWithWhereWithoutWorkExperiencesInput = {
+    where?: FormL9WhereInput
+    data: XOR<FormL9UpdateWithoutWorkExperiencesInput, FormL9UncheckedUpdateWithoutWorkExperiencesInput>
+  }
+
+  export type FormL9UpdateWithoutWorkExperiencesInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
+    bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9UncheckedUpdateWithoutWorkExperiencesInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9CreateWithoutOthersInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    company: CompanyCreateNestedOneWithoutFormL9Input
+    bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UncheckedCreateWithoutOthersInput = {
+    formL9Id?: string
+    companyId: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9CreateOrConnectWithoutOthersInput = {
+    where: FormL9WhereUniqueInput
+    create: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
+  }
+
+  export type FormL9CertificateISOCreateWithoutOthersInput = {
+    certificateISOId?: string
+    isoName: string
+    validityPeriodFrom: Date | string
+    validityPeriodTo: Date | string
+    remakes?: string | null
+  }
+
+  export type FormL9CertificateISOUncheckedCreateWithoutOthersInput = {
+    certificateISOId?: string
+    isoName: string
+    validityPeriodFrom: Date | string
+    validityPeriodTo: Date | string
+    remakes?: string | null
+  }
+
+  export type FormL9CertificateISOCreateOrConnectWithoutOthersInput = {
+    where: FormL9CertificateISOWhereUniqueInput
+    create: XOR<FormL9CertificateISOCreateWithoutOthersInput, FormL9CertificateISOUncheckedCreateWithoutOthersInput>
+  }
+
+  export type FormL9CertificateISOCreateManyOthersInputEnvelope = {
+    data: FormL9CertificateISOCreateManyOthersInput | FormL9CertificateISOCreateManyOthersInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type FormL9UpsertWithoutOthersInput = {
+    update: XOR<FormL9UpdateWithoutOthersInput, FormL9UncheckedUpdateWithoutOthersInput>
+    create: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
+    where?: FormL9WhereInput
+  }
+
+  export type FormL9UpdateToOneWithWhereWithoutOthersInput = {
+    where?: FormL9WhereInput
+    data: XOR<FormL9UpdateWithoutOthersInput, FormL9UncheckedUpdateWithoutOthersInput>
+  }
+
+  export type FormL9UpdateWithoutOthersInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
+    bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9UncheckedUpdateWithoutOthersInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9CertificateISOUpsertWithWhereUniqueWithoutOthersInput = {
+    where: FormL9CertificateISOWhereUniqueInput
+    update: XOR<FormL9CertificateISOUpdateWithoutOthersInput, FormL9CertificateISOUncheckedUpdateWithoutOthersInput>
+    create: XOR<FormL9CertificateISOCreateWithoutOthersInput, FormL9CertificateISOUncheckedCreateWithoutOthersInput>
+  }
+
+  export type FormL9CertificateISOUpdateWithWhereUniqueWithoutOthersInput = {
+    where: FormL9CertificateISOWhereUniqueInput
+    data: XOR<FormL9CertificateISOUpdateWithoutOthersInput, FormL9CertificateISOUncheckedUpdateWithoutOthersInput>
+  }
+
+  export type FormL9CertificateISOUpdateManyWithWhereWithoutOthersInput = {
+    where: FormL9CertificateISOScalarWhereInput
+    data: XOR<FormL9CertificateISOUpdateManyMutationInput, FormL9CertificateISOUncheckedUpdateManyWithoutOthersInput>
+  }
+
+  export type FormL9CertificateISOScalarWhereInput = {
+    AND?: FormL9CertificateISOScalarWhereInput | FormL9CertificateISOScalarWhereInput[]
+    OR?: FormL9CertificateISOScalarWhereInput[]
+    NOT?: FormL9CertificateISOScalarWhereInput | FormL9CertificateISOScalarWhereInput[]
+    certificateISOId?: UuidFilter<"FormL9CertificateISO"> | string
+    formL9OthersId?: UuidFilter<"FormL9CertificateISO"> | string
+    isoName?: StringFilter<"FormL9CertificateISO"> | string
+    validityPeriodFrom?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    validityPeriodTo?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+    remakes?: StringNullableFilter<"FormL9CertificateISO"> | string | null
+  }
+
+  export type FormL9OthersCreateWithoutCertificateISOsInput = {
+    formL9OthersId?: string
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime: string
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+    formL9: FormL9CreateNestedOneWithoutOthersInput
+  }
+
+  export type FormL9OthersUncheckedCreateWithoutCertificateISOsInput = {
+    formL9OthersId?: string
+    formL9Id: string
+    haveCertificateISO?: boolean
+    haveCompanyOrganizationalStructure?: boolean
+    haveQualityControlOrganizationalStructure?: boolean
+    haveProductWarranty?: boolean
+    haveExpiryDate?: boolean
+    haveAPD?: boolean
+    haveAPDRegulation?: boolean
+    isTopApplicable?: boolean
+    paymentTime: string
+    agreeToConfidentialInformation?: boolean
+    understandingBreachesOfConfidentiality?: boolean
+    signConfidentialityAgreement?: boolean
+  }
+
+  export type FormL9OthersCreateOrConnectWithoutCertificateISOsInput = {
+    where: FormL9OthersWhereUniqueInput
+    create: XOR<FormL9OthersCreateWithoutCertificateISOsInput, FormL9OthersUncheckedCreateWithoutCertificateISOsInput>
+  }
+
+  export type FormL9OthersUpsertWithoutCertificateISOsInput = {
+    update: XOR<FormL9OthersUpdateWithoutCertificateISOsInput, FormL9OthersUncheckedUpdateWithoutCertificateISOsInput>
+    create: XOR<FormL9OthersCreateWithoutCertificateISOsInput, FormL9OthersUncheckedCreateWithoutCertificateISOsInput>
+    where?: FormL9OthersWhereInput
+  }
+
+  export type FormL9OthersUpdateToOneWithWhereWithoutCertificateISOsInput = {
+    where?: FormL9OthersWhereInput
+    data: XOR<FormL9OthersUpdateWithoutCertificateISOsInput, FormL9OthersUncheckedUpdateWithoutCertificateISOsInput>
+  }
+
+  export type FormL9OthersUpdateWithoutCertificateISOsInput = {
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    haveCertificateISO?: BoolFieldUpdateOperationsInput | boolean
+    haveCompanyOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveQualityControlOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveProductWarranty?: BoolFieldUpdateOperationsInput | boolean
+    haveExpiryDate?: BoolFieldUpdateOperationsInput | boolean
+    haveAPD?: BoolFieldUpdateOperationsInput | boolean
+    haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
+    isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
+    paymentTime?: StringFieldUpdateOperationsInput | string
+    agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
+    understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
+    signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
+    formL9?: FormL9UpdateOneRequiredWithoutOthersNestedInput
+  }
+
+  export type FormL9OthersUncheckedUpdateWithoutCertificateISOsInput = {
+    formL9OthersId?: StringFieldUpdateOperationsInput | string
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    haveCertificateISO?: BoolFieldUpdateOperationsInput | boolean
+    haveCompanyOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveQualityControlOrganizationalStructure?: BoolFieldUpdateOperationsInput | boolean
+    haveProductWarranty?: BoolFieldUpdateOperationsInput | boolean
+    haveExpiryDate?: BoolFieldUpdateOperationsInput | boolean
+    haveAPD?: BoolFieldUpdateOperationsInput | boolean
+    haveAPDRegulation?: BoolFieldUpdateOperationsInput | boolean
+    isTopApplicable?: BoolFieldUpdateOperationsInput | boolean
+    paymentTime?: StringFieldUpdateOperationsInput | string
+    agreeToConfidentialInformation?: BoolFieldUpdateOperationsInput | boolean
+    understandingBreachesOfConfidentiality?: BoolFieldUpdateOperationsInput | boolean
+    signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type LogsLoginCreateManyUserInput = {
@@ -16435,76 +32450,200 @@ export namespace Prisma {
     roleId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type ProfileCreateManySegmentInput = {
-    userId: string
-    fullName?: string | null
+  export type CompanyCreateManySegmentInput = {
+    companyId?: string
     urlImage?: string | null
     companyName: string
+    companyFoundingDate: Date | string
+    companyStatus: string
+    companyTelpFax: string
+    companyAddress: string
+    companyEmail: string
     npwp: string
-    deedNumber?: string | null
-    establishedDate?: Date | string | null
-    npwpUrl: string
-    deedUrl: string
-    description?: string | null
-    companyAddress?: string | null
-    companyPhone?: string | null
     website?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    totalCapital?: string | null
+  }
+
+  export type CompanyUpdateWithoutSegmentInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    profile?: ProfileUpdateManyWithoutCompanyNestedInput
+    formL9?: FormL9UpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanyUncheckedUpdateWithoutSegmentInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
+    formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanyUncheckedUpdateManyWithoutSegmentInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: StringFieldUpdateOperationsInput | string
+    companyFoundingDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyStatus?: StringFieldUpdateOperationsInput | string
+    companyTelpFax?: StringFieldUpdateOperationsInput | string
+    companyAddress?: StringFieldUpdateOperationsInput | string
+    companyEmail?: StringFieldUpdateOperationsInput | string
+    npwp?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ProfileCreateManyCompanyInput = {
+    userId: string
+    fullName: string
+    urlImage?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type ProfileUpdateWithoutSegmentInput = {
-    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+  export type ProfileUpdateWithoutCompanyInput = {
+    fullName?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
-    deedNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    establishedDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    npwpUrl?: StringFieldUpdateOperationsInput | string
-    deedUrl?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyPhone?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutProfileNestedInput
   }
 
-  export type ProfileUncheckedUpdateWithoutSegmentInput = {
+  export type ProfileUncheckedUpdateWithoutCompanyInput = {
     userId?: StringFieldUpdateOperationsInput | string
-    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
-    deedNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    establishedDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    npwpUrl?: StringFieldUpdateOperationsInput | string
-    deedUrl?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyPhone?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ProfileUncheckedUpdateManyWithoutSegmentInput = {
+  export type ProfileUncheckedUpdateManyWithoutCompanyInput = {
     userId?: StringFieldUpdateOperationsInput | string
-    fullName?: NullableStringFieldUpdateOperationsInput | string | null
+    fullName?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: StringFieldUpdateOperationsInput | string
-    npwp?: StringFieldUpdateOperationsInput | string
-    deedNumber?: NullableStringFieldUpdateOperationsInput | string | null
-    establishedDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    npwpUrl?: StringFieldUpdateOperationsInput | string
-    deedUrl?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyPhone?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FormL9ManagementCreateManyFormL9Input = {
+    formL9ManagementId?: string
+    position: string
+    name: string
+    noTelpFaxHp: string
+  }
+
+  export type FormL9WorkExperienceCreateManyFormL9Input = {
+    formL9WorkExperienceId?: string
+    customerOrLocation: string
+    typeOfWork: string
+    score: number
+    customerContactPerson: string
+    customerTelpFaxHp: string
+  }
+
+  export type FormL9ManagementUpdateWithoutFormL9Input = {
+    formL9ManagementId?: StringFieldUpdateOperationsInput | string
+    position?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9ManagementUncheckedUpdateWithoutFormL9Input = {
+    formL9ManagementId?: StringFieldUpdateOperationsInput | string
+    position?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9ManagementUncheckedUpdateManyWithoutFormL9Input = {
+    formL9ManagementId?: StringFieldUpdateOperationsInput | string
+    position?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    noTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9WorkExperienceUpdateWithoutFormL9Input = {
+    formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: StringFieldUpdateOperationsInput | string
+    typeOfWork?: StringFieldUpdateOperationsInput | string
+    score?: IntFieldUpdateOperationsInput | number
+    customerContactPerson?: StringFieldUpdateOperationsInput | string
+    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9WorkExperienceUncheckedUpdateWithoutFormL9Input = {
+    formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: StringFieldUpdateOperationsInput | string
+    typeOfWork?: StringFieldUpdateOperationsInput | string
+    score?: IntFieldUpdateOperationsInput | number
+    customerContactPerson?: StringFieldUpdateOperationsInput | string
+    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9Input = {
+    formL9WorkExperienceId?: StringFieldUpdateOperationsInput | string
+    customerOrLocation?: StringFieldUpdateOperationsInput | string
+    typeOfWork?: StringFieldUpdateOperationsInput | string
+    score?: IntFieldUpdateOperationsInput | number
+    customerContactPerson?: StringFieldUpdateOperationsInput | string
+    customerTelpFaxHp?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type FormL9CertificateISOCreateManyOthersInput = {
+    certificateISOId?: string
+    isoName: string
+    validityPeriodFrom: Date | string
+    validityPeriodTo: Date | string
+    remakes?: string | null
+  }
+
+  export type FormL9CertificateISOUpdateWithoutOthersInput = {
+    certificateISOId?: StringFieldUpdateOperationsInput | string
+    isoName?: StringFieldUpdateOperationsInput | string
+    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    remakes?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type FormL9CertificateISOUncheckedUpdateWithoutOthersInput = {
+    certificateISOId?: StringFieldUpdateOperationsInput | string
+    isoName?: StringFieldUpdateOperationsInput | string
+    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    remakes?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type FormL9CertificateISOUncheckedUpdateManyWithoutOthersInput = {
+    certificateISOId?: StringFieldUpdateOperationsInput | string
+    isoName?: StringFieldUpdateOperationsInput | string
+    validityPeriodFrom?: DateTimeFieldUpdateOperationsInput | Date | string
+    validityPeriodTo?: DateTimeFieldUpdateOperationsInput | Date | string
+    remakes?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
 

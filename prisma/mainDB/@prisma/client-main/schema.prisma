@@ -25,6 +25,7 @@ model User {
   email             String   @unique @db.VarChar(150)
   password          String   @db.VarChar(255)
   isActive          Boolean  @default(false)
+  isVerified        Boolean  @default(false)
   sessionExpireDate DateTime
   createdDate       DateTime @default(now())
   updateDate        DateTime @updatedAt
@@ -110,30 +111,214 @@ model CompanySegment {
   segmentName String  @db.VarChar(100)
   description String? @db.VarChar(255)
 
-  profile Profile[]
+  company Company[]
 }
 
 model Profile {
-  userId          String    @id @db.Uuid
-  fullName        String?   @db.VarChar(150)
-  urlImage        String?   @db.Text
-  companyName     String    @db.VarChar(150)
-  npwp            String    @db.VarChar(50)
-  deedNumber      String?   @db.VarChar(100)
-  establishedDate DateTime? @db.Date
-  npwpUrl         String    @db.Text
-  deedUrl         String    @db.Text
-  description     String?   @db.Text
-  segmentId       Int?
-  companyAddress  String?   @db.VarChar(255)
-  companyPhone    String?   @db.VarChar(50)
-  website         String?   @db.VarChar(100)
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
+  userId    String   @id @db.Uuid
+  companyId String?  @db.Uuid
+  fullName  String   @db.VarChar(150)
+  urlImage  String?  @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
+  user    User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  company Company? @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
+
+  @@index([userId, companyId])
+  @@index([companyId])
+  @@index([fullName])
+}
+
+model Company {
+  companyId           String   @id @default(uuid()) @db.Uuid
+  segmentId           Int
+  urlImage            String?  @db.Text
+  companyName         String
+  companyFoundingDate DateTime
+  companyStatus       String
+  companyTelpFax      String
+  companyAddress      String
+  companyEmail        String
+  npwp                String
+  website             String?  @db.VarChar(100)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+  totalCapital        String?
+
+  profile Profile[]
   segment CompanySegment? @relation(fields: [segmentId], references: [segmentId])
-  user    User            @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  formL9  FormL9?
 
-  @@index([userId, segmentId])
+  @@index([companyName])
+  @@index([npwp])
+  @@index([companyEmail])
   @@index([segmentId])
+}
+
+model FormL9 {
+  formL9Id  String   @id @default(uuid()) @db.Uuid
+  companyId String   @unique @db.Uuid
+  status    String   @db.VarChar(50)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  company Company @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
+
+  bankInfo           FormL9BankInfo?
+  generalInformation FormL9GeneralInformation?
+  employeeInfo       FormL9Employe?
+  others             FormL9Others?
+
+  managements     FormL9Management[]
+  workExperiences FormL9WorkExperience[]
+
+  @@index([companyId])
+  @@map("ebidding_form_l9")
+}
+
+model FormL9BankInfo {
+  formL9BankInfoid String @id @default(uuid()) @db.Uuid
+
+  formL9Id String @unique @db.Uuid
+  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
+
+  beneficiaryName    String
+  beneficiaryAddress String
+  bankName           String
+  bankAddress        String
+  noRek              String
+  swiftCode          String
+  IBAN               String
+
+  @@index([noRek])
+  @@map("ebidding_form_l9_bank_info")
+}
+
+model FormL9GeneralInformation {
+  formGeneralInformationId String @id @default(uuid()) @db.Uuid
+
+  formL9Id String @unique @db.Uuid
+  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
+
+  companyName         String
+  companyFoundingDate DateTime
+  companyStatus       String
+  companyTelpFax      String
+  companyAddress      String
+  companyEmail        String
+  npwp                String
+  totalCapital        String?
+  segmentId           String
+
+  generalInfoContinue FormL9GeneralInformationContinue?
+
+  @@index([companyName])
+  @@index([npwp])
+  @@map("ebidding_form_l9_general_information")
+}
+
+model FormL9GeneralInformationContinue {
+  formL9GeneralInformationContinueId String @id @default(uuid()) @db.Uuid
+
+  formGeneralInformationId String                   @unique @db.Uuid
+  generalInformation       FormL9GeneralInformation @relation(fields: [formGeneralInformationId], references: [formGeneralInformationId], onDelete: Cascade)
+
+  permitsHeld String
+
+  @@map("ebidding_form_l9_general_information_continue")
+}
+
+model FormL9Management {
+  formL9ManagementId String @id @default(uuid()) @db.Uuid
+
+  formL9Id String @db.Uuid
+  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
+
+  position    String
+  name        String
+  noTelpFaxHp String
+
+  @@index([formL9Id])
+  @@index([name])
+  @@index([position])
+  @@map("ebidding_form_l9_management")
+}
+
+model FormL9Employe {
+  formL9EmployeId String @id @default(uuid()) @db.Uuid
+
+  formL9Id String @unique @db.Uuid
+  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
+
+  totalEmployees Int
+  qualityControl Int
+  engineering    Int
+  production     Int
+  management     Int
+  other          Int
+
+  @@map("ebidding_form_l9_employe")
+}
+
+model FormL9WorkExperience {
+  formL9WorkExperienceId String @id @default(uuid()) @db.Uuid
+
+  formL9Id String @db.Uuid
+  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
+
+  customerOrLocation    String
+  typeOfWork            String
+  score                 Int
+  customerContactPerson String
+  customerTelpFaxHp     String
+
+  @@index([formL9Id])
+  @@index([customerOrLocation])
+  @@index([typeOfWork])
+  @@map("ebidding_form_l9_work_experience")
+}
+
+model FormL9Others {
+  formL9OthersId String @id @default(uuid()) @db.Uuid
+
+  formL9Id String @unique @db.Uuid
+  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
+
+  haveCertificateISO                        Boolean @default(false)
+  haveCompanyOrganizationalStructure        Boolean @default(false)
+  haveQualityControlOrganizationalStructure Boolean @default(false)
+  haveProductWarranty                       Boolean @default(false)
+  haveExpiryDate                            Boolean @default(false)
+  haveAPD                                   Boolean @default(false)
+  haveAPDRegulation                         Boolean @default(false)
+  isTopApplicable                           Boolean @default(false)
+
+  paymentTime String
+
+  agreeToConfidentialInformation         Boolean @default(false)
+  understandingBreachesOfConfidentiality Boolean @default(false)
+  signConfidentialityAgreement           Boolean @default(false)
+
+  certificateISOs FormL9CertificateISO[]
+
+  @@map("ebidding_form_l9_others")
+}
+
+model FormL9CertificateISO {
+  certificateISOId String @id @default(uuid()) @db.Uuid
+
+  formL9OthersId String @db.Uuid
+
+  others FormL9Others @relation(fields: [formL9OthersId], references: [formL9OthersId], onDelete: Cascade)
+
+  isoName            String
+  validityPeriodFrom DateTime
+  validityPeriodTo   DateTime
+
+  remakes String? @db.Text
+
+  @@index([formL9OthersId])
+  @@index([isoName])
+  @@map("ebidding_form_l9_certificate_iso")
 }

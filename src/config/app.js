@@ -4,7 +4,7 @@ import http from 'http';
 import { Server } from 'socket.io';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import {publicRouter} from '../routes/globalRoute.js'
+import {globalRouter} from '../routes/globalRoute.js'
 import {adminRouter} from '../routes/adminRoute.js'
 import {userRouter} from '../routes/userRoute.js'
 import cors from 'cors';
@@ -36,7 +36,7 @@ app.use(express.static(join(__dirname, 'public')));
 app.use(express.json());
 app.use(sanitizeInputMiddleware);
 app.use(express.urlencoded({ extended: true }));
-app.use(publicRouter);
+app.use(globalRouter);
 app.use('/api/users',userRouter);
 app.use('/api/admin',adminRouter);
 

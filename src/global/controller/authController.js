@@ -1,30 +1,14 @@
-import authService from '../service/authService.js'
-import { generateUrlPath } from '../../utils/generateUrl.js';
+import authService from '../service/authService.js';
 
 
 const register = async (req, res, next) => {
   try {
-    const npwpFile = req.files.npwpImage ? req.files.npwpImage[0] : null;
-    const deedFile = req.files.deedImage ? req.files.deedImage[0] : null;
-    const npwpUrl = generateUrlPath(npwpFile);
-    const deedUrl = generateUrlPath(deedFile);
     const payload = {
       email: req.body.email?.trim().toLowerCase() || null,
       password: req.body.password || null,
       passwordConfirm : req.body.passwordConfirm || null,
       urlImage : '/public/images/profile/default.jpg',
       fullName: req.body.fullName || null,
-      companyName: req.body.companyName || null,
-      description : req.body.description || null,
-      npwp : req.body.npwp || null,
-      deedNumber : req.body.deedNumber || null,
-      establishedDate : req.body.establishedDate || null,
-      npwpUrl :npwpUrl || null,
-      deedUrl :deedUrl || null,
-      segmentId : req.body.segmentId || null,
-      companyAddress: req.body.companyAddress|| null,
-      companyPhone : req.body.companyPhone || null,
-      website : req.body.website || null
     };
     await authService.register(payload);
     res.status(200).json({
@@ -100,6 +84,20 @@ const otpVerification = async (req, res, next) => {
     next(e);
   }
 };
+const otpRegistrationVerification = async (req, res, next) => {
+  try {
+    console.log(req.user);
+    const userId = req.user.userId;
+    const otp = req.body.otp;
+    const result = await authService.otpRegistrationVerification(userId, otp);
+    res.status(200).json({
+      message: result,
+      status: "Success",
+    });
+  } catch (e) {
+    next(e);
+  }
+};
 
 const logout = async (req, res, next) => {
     try {
@@ -139,5 +137,6 @@ export default {
     login,
     otpSending,
     otpVerification,
+    otpRegistrationVerification,
     logout
 }

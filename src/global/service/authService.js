@@ -10,9 +10,6 @@ const register = async (payload) => {
   await registerValidation.validateAsync(payload, {
       abortEarly: false, 
     });
-  
-    
-
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(payload.password, salt);
 
@@ -28,17 +25,6 @@ const register = async (payload) => {
         userId : newUser.userId,
         urlImage: payload.urlImage,
         fullName: payload.fullName,
-        companyName: payload.companyName,
-        description: payload.description,
-        npwp: payload.npwp,
-        deedNumber: payload.deedNumber,
-        establishedDate: new Date(payload.establishedDate),
-        npwpUrl: payload.npwpUrl,
-        deedUrl: payload.deedUrl,
-        segmentId: parseInt(payload.segmentId, 10),
-        companyAddress : payload.companyAddress,
-        companyPhone : payload.companyPhone,
-        website : payload.website
     }
   });
   await ebidding.userHasRoleAccess.create({
@@ -50,6 +36,8 @@ const register = async (payload) => {
   })
 
   await mailerTemplate.verifikasiRegistrasi(newUser.userId,payload.email);
+
+
   
   return newUser;
 };
@@ -76,7 +64,7 @@ try {
       }
     }
   });
-  if (!user || user.isActive == false) {
+  if (!user) {
     const authError = !user ? 'Invalid email or password' : 'Your account is not active.';
      throw new ResponseError(401,authError);
   }
@@ -98,7 +86,6 @@ try {
 
     
     if (existingDevice == null) {
-      console.log(existingDevice);
       await ebidding.LinkedDevice.create({
         data: {
           clientDeviceUuid: deviceUuid,
@@ -106,7 +93,6 @@ try {
         }
       });
       
-      //triger agar session langsung berakhir => authMiddleware sending Email verifikasi ulang
       await ebidding.user.update({
         where : { userId : userId},
         data : {
@@ -156,7 +142,7 @@ try {
   }, { role: [], access: [] });
 
   const {role,access} = roleAccess
-  
+  await mailerTemplate.verifikasiLogin(userId,payload.email,requestContext.userAgent,requestContext.ip);
   return { token, role, access };
 }
 
@@ -167,6 +153,30 @@ const otpSending = async (userId, email) => {
   }catch(e){
     throw new ResponseError(424,'Failed to send OTP verification code.')
   }
+}
+
+const otpRegistrationVerification = async (userId,otp) => {
+
+  const verifikasi = await ebidding.otpVerifikasi.findFirst({
+      where: {
+          userId: userId,
+          code : otp, 
+      },
+  });
+  if(!verifikasi || verifikasi == null || verifikasi.expireDate <= new Date() ){
+    throw new ResponseError(401, 'OTP verification failed. Please check the code.');
+  }
+
+  await ebidding.user.update({
+    where: {
+      userId : userId,
+    },
+    data : {
+      isActive : true, 
+      sessionExpireDate : verifikasi.expireDate
+    }
+  })
+  return true;
 }
 
 const otpVerification = async (userId,otp)=>{
@@ -188,7 +198,7 @@ const otpVerification = async (userId,otp)=>{
       sessionExpireDate : verifikasi.expireDate
     }
   })
-  return true
+  return true;
 }
 
 const logout = async (token) => {
@@ -211,5 +221,6 @@ export default {
   login,
   otpSending,
   otpVerification,
+  otpRegistrationVerification,
   logout
 };

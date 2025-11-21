@@ -1,6 +1,6 @@
 import {ebidding} from "../config/database.js";
 
-export const authMiddleware = async (req, res, next) => {
+export const verifikasiMiddleware = async (req, res, next) => {
   const token = req.cookies.auth_token;
   if (!token) {
     return res
@@ -33,7 +33,6 @@ export const authMiddleware = async (req, res, next) => {
     }
   }
   });
-  console.log(log);
   if (!log || new Date() > log.expireDate) {
     if (log) {
     //   await ebidding.logsLogin.delete({ where: { token: token } });
@@ -48,23 +47,6 @@ export const authMiddleware = async (req, res, next) => {
             .end();
   
           }
-    if(log.user.sessionExpireDate <= new Date()){
-      if(log.user.isActive == false){
-          return res
-          .status(401)
-          .json({
-            errors: "Account is not active",
-          })
-          .end();
-      }
-
-      return res
-        .status(401)
-        .json({
-          errors: "Session Expired!!",
-        })
-        .end();
-        }
 
   const data = {
     ...log.user,

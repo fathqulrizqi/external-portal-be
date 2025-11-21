@@ -130,6 +130,7 @@ exports.Prisma.UserScalarFieldEnum = {
   email: 'email',
   password: 'password',
   isActive: 'isActive',
+  isVerified: 'isVerified',
   sessionExpireDate: 'sessionExpireDate',
   createdDate: 'createdDate',
   updateDate: 'updateDate'
@@ -183,21 +184,123 @@ exports.Prisma.CompanySegmentScalarFieldEnum = {
 
 exports.Prisma.ProfileScalarFieldEnum = {
   userId: 'userId',
+  companyId: 'companyId',
   fullName: 'fullName',
   urlImage: 'urlImage',
-  companyName: 'companyName',
-  npwp: 'npwp',
-  deedNumber: 'deedNumber',
-  establishedDate: 'establishedDate',
-  npwpUrl: 'npwpUrl',
-  deedUrl: 'deedUrl',
-  description: 'description',
-  segmentId: 'segmentId',
-  companyAddress: 'companyAddress',
-  companyPhone: 'companyPhone',
-  website: 'website',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
+};
+
+exports.Prisma.CompanyScalarFieldEnum = {
+  companyId: 'companyId',
+  segmentId: 'segmentId',
+  urlImage: 'urlImage',
+  companyName: 'companyName',
+  companyFoundingDate: 'companyFoundingDate',
+  companyStatus: 'companyStatus',
+  companyTelpFax: 'companyTelpFax',
+  companyAddress: 'companyAddress',
+  companyEmail: 'companyEmail',
+  npwp: 'npwp',
+  website: 'website',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  totalCapital: 'totalCapital'
+};
+
+exports.Prisma.FormL9ScalarFieldEnum = {
+  formL9Id: 'formL9Id',
+  companyId: 'companyId',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.FormL9BankInfoScalarFieldEnum = {
+  formL9BankInfoid: 'formL9BankInfoid',
+  formL9Id: 'formL9Id',
+  beneficiaryName: 'beneficiaryName',
+  beneficiaryAddress: 'beneficiaryAddress',
+  bankName: 'bankName',
+  bankAddress: 'bankAddress',
+  noRek: 'noRek',
+  swiftCode: 'swiftCode',
+  IBAN: 'IBAN'
+};
+
+exports.Prisma.FormL9GeneralInformationScalarFieldEnum = {
+  formGeneralInformationId: 'formGeneralInformationId',
+  formL9Id: 'formL9Id',
+  companyName: 'companyName',
+  companyFoundingDate: 'companyFoundingDate',
+  companyStatus: 'companyStatus',
+  companyTelpFax: 'companyTelpFax',
+  companyAddress: 'companyAddress',
+  companyEmail: 'companyEmail',
+  npwp: 'npwp',
+  totalCapital: 'totalCapital',
+  segmentId: 'segmentId'
+};
+
+exports.Prisma.FormL9GeneralInformationContinueScalarFieldEnum = {
+  formL9GeneralInformationContinueId: 'formL9GeneralInformationContinueId',
+  formGeneralInformationId: 'formGeneralInformationId',
+  permitsHeld: 'permitsHeld'
+};
+
+exports.Prisma.FormL9ManagementScalarFieldEnum = {
+  formL9ManagementId: 'formL9ManagementId',
+  formL9Id: 'formL9Id',
+  position: 'position',
+  name: 'name',
+  noTelpFaxHp: 'noTelpFaxHp'
+};
+
+exports.Prisma.FormL9EmployeScalarFieldEnum = {
+  formL9EmployeId: 'formL9EmployeId',
+  formL9Id: 'formL9Id',
+  totalEmployees: 'totalEmployees',
+  qualityControl: 'qualityControl',
+  engineering: 'engineering',
+  production: 'production',
+  management: 'management',
+  other: 'other'
+};
+
+exports.Prisma.FormL9WorkExperienceScalarFieldEnum = {
+  formL9WorkExperienceId: 'formL9WorkExperienceId',
+  formL9Id: 'formL9Id',
+  customerOrLocation: 'customerOrLocation',
+  typeOfWork: 'typeOfWork',
+  score: 'score',
+  customerContactPerson: 'customerContactPerson',
+  customerTelpFaxHp: 'customerTelpFaxHp'
+};
+
+exports.Prisma.FormL9OthersScalarFieldEnum = {
+  formL9OthersId: 'formL9OthersId',
+  formL9Id: 'formL9Id',
+  haveCertificateISO: 'haveCertificateISO',
+  haveCompanyOrganizationalStructure: 'haveCompanyOrganizationalStructure',
+  haveQualityControlOrganizationalStructure: 'haveQualityControlOrganizationalStructure',
+  haveProductWarranty: 'haveProductWarranty',
+  haveExpiryDate: 'haveExpiryDate',
+  haveAPD: 'haveAPD',
+  haveAPDRegulation: 'haveAPDRegulation',
+  isTopApplicable: 'isTopApplicable',
+  paymentTime: 'paymentTime',
+  agreeToConfidentialInformation: 'agreeToConfidentialInformation',
+  understandingBreachesOfConfidentiality: 'understandingBreachesOfConfidentiality',
+  signConfidentialityAgreement: 'signConfidentialityAgreement'
+};
+
+exports.Prisma.FormL9CertificateISOScalarFieldEnum = {
+  certificateISOId: 'certificateISOId',
+  formL9OthersId: 'formL9OthersId',
+  isoName: 'isoName',
+  validityPeriodFrom: 'validityPeriodFrom',
+  validityPeriodTo: 'validityPeriodTo',
+  remakes: 'remakes'
 };
 
 exports.Prisma.SortOrder = {
@@ -226,7 +329,17 @@ exports.Prisma.ModelName = {
   UserHasRoleAccess: 'UserHasRoleAccess',
   LinkedDevice: 'LinkedDevice',
   CompanySegment: 'CompanySegment',
-  Profile: 'Profile'
+  Profile: 'Profile',
+  Company: 'Company',
+  FormL9: 'FormL9',
+  FormL9BankInfo: 'FormL9BankInfo',
+  FormL9GeneralInformation: 'FormL9GeneralInformation',
+  FormL9GeneralInformationContinue: 'FormL9GeneralInformationContinue',
+  FormL9Management: 'FormL9Management',
+  FormL9Employe: 'FormL9Employe',
+  FormL9WorkExperience: 'FormL9WorkExperience',
+  FormL9Others: 'FormL9Others',
+  FormL9CertificateISO: 'FormL9CertificateISO'
 };
 
 /**
