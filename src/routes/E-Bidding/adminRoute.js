@@ -8,7 +8,7 @@ import accessController from '../../areas/user/controller/accessController.js';
 import formL9Controller from '../../areas/form/controller/formL9Controller.js';
 
 const adminRouter = new express.Router();
-adminRouter.use(authMiddleware,roleMiddleware.isAdmin);
+// adminRouter.use(authMiddleware,roleMiddleware.isAdmin);
 
 adminRouter.post("/companySegments", companySegmentController.createCompanySegment);
 adminRouter.get("/companySegments", companySegmentController.getAllCompanySegments);

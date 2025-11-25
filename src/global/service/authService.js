@@ -7,39 +7,67 @@ import { ResponseError } from '../../error/responseError.js';
 
 
 const register = async (payload) => {
+  
+  try {
   await registerValidation.validateAsync(payload, {
-      abortEarly: false, 
-    });
+    abortEarly: false,
+  });
+  } catch (error) {
+    const firstError = error.details[0].message;
+    throw new ResponseError(401,firstError);
+  }
+
+
+  const existingUser = await ebidding.User.findUnique({
+    where: { email: payload.email }
+  });
+  
+  if (existingUser) {
+    throw new Error('Email already registered'); 
+  }
+
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(payload.password, salt);
 
-  const newUser = await ebidding.User.create({
-    data : {
+  const result = await ebidding.$transaction(async (tx) => {
+    const newUser = await tx.User.create({
+      data: {
         email: payload.email,
         password: hashedPassword,
-        sessionExpireDate : new Date()
-    }
+        sessionExpireDate: new Date(), 
+      },
     });
-  await ebidding.Profile.create({
-    data : {
-        userId : newUser.userId,
+    await tx.Profile.create({
+      data: {
+        userId: newUser.userId,
         urlImage: payload.urlImage,
         fullName: payload.fullName,
-    }
+        phone: payload.phone,
+      },
+    });
+
+    const DEFAULT_ROLE_ID = 1; 
+    const DEFAULT_ACCESS_ID = 1;
+
+    await tx.userHasRoleAccess.create({
+      data: {
+        userId: newUser.userId,
+        roleId: DEFAULT_ROLE_ID,
+        accessId: DEFAULT_ACCESS_ID,
+      },
+    });
+
+    return newUser;
   });
-  await ebidding.userHasRoleAccess.create({
-    data :{
-      userId : newUser.userId,
-      roleId : 1,
-      accessId : 1,
-    }
-  })
-
-  await mailerTemplate.verifikasiRegistrasi(newUser.userId,payload.email);
-
-
   
-  return newUser;
+  try {
+    await mailerTemplate.verifikasiRegistrasi(result.userId, payload.email);
+  } catch (error) {
+    console.error("Gagal mengirim email verifikasi:", error);
+  }
+  const { password, ...userWithoutPassword } = result;
+
+  return userWithoutPassword;
 };
 
 const login = async (payload,requestContext) => {

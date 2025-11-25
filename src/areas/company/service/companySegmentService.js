@@ -7,8 +7,8 @@ import {
 
 import { ResponseError } from '../../../error/responseError.js';
 
-// Helper untuk penanganan error validasi
 const handleValidationError = (error) => {
+    const firstError = error.details[0].message;
     throw new ResponseError(404,firstError);
 }
 
@@ -87,12 +87,12 @@ const remove = async (payload) => {
         handleValidationError(error);
     }
 
-    const profiles = await ebidding.Profile.count({
+    const companys = await ebidding.company.count({
         where: { segmentId: payload.segmentId }
     });
 
-    if (profiles > 0) {
-        throw new ResponseError(400,'Cannot delete segment: it is currently used by one or more profiles');
+    if (companys > 0) {
+        throw new ResponseError(400,'Cannot delete segment: it is currently used by one or more companies');
     }
 
     try {

@@ -102,8 +102,6 @@ const remove = async (payload) => {
         handleValidationError(error);
     }
 
-    // Cek apakah peran (role) ini digunakan oleh user manapun (asumsi ada tabel User)
-    // Berdasarkan skema Anda, kita cek relasi UserHasRoleAccess
     const relations = await ebidding.UserHasRoleAccess.count({
         where: { roleId: payload.roleId }
     });

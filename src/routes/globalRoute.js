@@ -3,6 +3,7 @@ import authController from '../global/controller/authController.js'
 import {authMiddleware} from "../middleware/authMiddleware.js"
 import {verifikasiMiddleware} from "../middleware/verifikasiMiddleware.js"
 import upload from "../middleware/multerMiddleware.js"
+import sidebarController from '../global/controller/sidebarController.js'
 
 
 const globalRouter = new express.Router();
@@ -27,6 +28,7 @@ const globalRouter = new express.Router();
   globalRouter.post("/api/users/OTPRegistrationVerification", authController.otpRegistrationVerification);
 
   globalRouter.use(authMiddleware)
+  globalRouter.get("/api/sidebar", sidebarController.getMenuSidebar);
   globalRouter.post("/api/users/logout", authController.logout);
 
 export { globalRouter };

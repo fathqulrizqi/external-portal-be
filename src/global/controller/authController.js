@@ -5,6 +5,7 @@ const register = async (req, res, next) => {
   try {
     const payload = {
       email: req.body.email?.trim().toLowerCase() || null,
+      phone :  req.body.phone?.trim().toLowerCase() || null,
       password: req.body.password || null,
       passwordConfirm : req.body.passwordConfirm || null,
       urlImage : '/public/images/profile/default.jpg',
@@ -47,10 +48,6 @@ const login = async (req, res, next) => {
     res.status(200).json({
       status: 'Success',
       message: 'Login successful',
-      data: {
-        role: role,
-        access: access,
-      },
     })
   } catch (e) {
     next(e);

@@ -25,7 +25,6 @@ model User {
   email             String   @unique @db.VarChar(150)
   password          String   @db.VarChar(255)
   isActive          Boolean  @default(false)
-  isVerified        Boolean  @default(false)
   sessionExpireDate DateTime
   createdDate       DateTime @default(now())
   updateDate        DateTime @updatedAt
@@ -81,19 +80,41 @@ model Access {
   UserHasRoleAccess UserHasRoleAccess[]
 }
 
+model Menu {
+  menuId   Int     @id @default(autoincrement())
+  sequence Int
+  parentId Int
+  icon     String  @db.VarChar(50)
+  menuName String  @db.VarChar(50)
+  redirect String  @db.Text
+  isGlobal Boolean @default(false)
+  isShow   Boolean @default(true)
+  isActive Boolean @default(true)
+
+  UserHasRoleAccess UserHasRoleAccess[]
+}
+
 model UserHasRoleAccess {
   userId   String @db.Uuid
   roleId   Int
   accessId Int
+  menuId   Int?
 
   user   User   @relation(fields: [userId], references: [userId], onDelete: Cascade)
   role   Role   @relation(fields: [roleId], references: [roleId], onDelete: Cascade)
   access Access @relation(fields: [accessId], references: [accessId], onDelete: Cascade)
+  menu   Menu?  @relation(fields: [menuId], references: [menuId], onDelete: Cascade)
 
   @@id([userId, roleId, accessId])
-  @@index([userId, accessId])
+  @@index([userId, accessId, menuId])
+  @@index([userId, roleId, menuId])
+  @@index([roleId, menuId])
+  @@index([accessId, menuId])
+  @@index([userId, menuId])
   @@index([roleId])
   @@index([userId])
+  @@index([accessId])
+  @@index([menuId])
 }
 
 model LinkedDevice {
@@ -119,6 +140,7 @@ model Profile {
   companyId String?  @db.Uuid
   fullName  String   @db.VarChar(150)
   urlImage  String?  @db.Text
+  phone     String   @db.VarChar(15)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 

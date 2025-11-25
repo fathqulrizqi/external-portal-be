@@ -1,0 +1,104 @@
+
+import { ebidding } from "../../../config/database";
+import { createMenuValidation,updateMenuValidation } from "../validation/menuValidation";
+import { ResponseError } from "../../../error/responseError";
+
+const handleValidationError = (error) => {
+    const firstError = error.details[0].message;
+    throw new ResponseError(404,firstError);
+}
+
+const create = async (payload) =>{
+    try {
+        await createMenuValidation.validateAsync(payload, { abortEarly: false });
+    } catch (error) {
+        handleValidationError(error);
+    }
+    const existing = await ebidding.menu.findFirst({
+        where : {menuName : payload.menuName}
+    })
+
+    if(!existing){
+        throw new ResponseError(409,'Menu name already exists');
+    }
+
+    await ebidding.menu.create({
+        data: {
+            sequence : payload.sequence,
+            parentId : payload.parentId,
+            icon     : payload.icon,
+            menuName : payload.menuName,
+            redirect : payload.redirect,
+            isGlobal : payload.isGlobal,
+            isShow   : payload.isShow,
+            isActive : payload.isActive
+        }
+    })
+
+    return true;
+}
+const getAll = async () =>{
+    const menu = await ebidding.menu.findMany();
+    return menu;
+}
+
+const update = async (menuId,payload) =>{
+    try {
+        await updateMenuValidation.validateAsync(payload, { abortEarly: false });
+    } catch (error) {
+        handleValidationError(error);
+    }
+
+    const existing = await ebidding.menu.findFirst({
+        where : {menuId : menuId}
+    })
+
+    if(existing){
+        throw new ResponseError(404,'Menu Not Found');
+    }
+
+    await ebidding.menu.update({
+        where : {menuId : menuId},
+        data : {
+            sequence : payload.sequence,
+            parentId : payload.parentId,
+            icon     : payload.icon,
+            menuName : payload.menuName,
+            redirect : payload.redirect,
+            isGlobal : payload.isGlobal,
+            isShow   : payload.isShow,
+            isActive : payload.isActive
+        }
+    })
+
+    return true;
+    
+}
+const remove = async (menuId) =>{
+    
+    const menu = await ebidding.menu.findUnique({
+        where : {menuId : menuId}
+    })
+
+    if(!menu){
+        throw new ResponseError(404,'Menu not found');
+    }
+
+    try {
+        await ebidding.menu.delete({
+            where: { menuId: menuId }
+        });
+    } catch (error) {
+        if (error.code === 'P2025') { 
+            throw new ResponseError(404,'Menu not found');
+        }
+        throw error;
+    }
+}
+
+export default {
+    create,
+    getAll,
+    update,
+    remove
+}

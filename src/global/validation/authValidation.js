@@ -19,6 +19,19 @@ const registerValidation = Joi.object({
      }
    }, 'Email Database Check'),
   
+  phone : Joi.string()
+    .pattern(/^[0-9\-\+\s]+$/)
+    .min(9)  
+    .max(15)
+    .required()
+    .messages({
+        'string.pattern.base': 'Phone number must only contain numbers, spaces, (+), or (-)',
+        'string.min': 'Phone number must be at least 9 characters',
+        'string.max': 'Phone number must not exceed 15 characters',
+        'string.empty': 'Phone number is required',
+        'any.required': 'Phone number is required'
+    }),
+  
   password: Joi.string()
   .min(8) 
   .pattern(new RegExp('[A-Z]'), { name: 'uppercase' }) 

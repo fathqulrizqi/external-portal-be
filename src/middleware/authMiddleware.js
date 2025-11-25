@@ -1,4 +1,5 @@
 import {ebidding} from "../config/database.js";
+import mailerTemplate from "../utils/mailerTemplate.js";
 
 export const authMiddleware = async (req, res, next) => {
   const token = req.cookies.auth_token;
@@ -67,8 +68,8 @@ export const authMiddleware = async (req, res, next) => {
     }
 
     const deviceUuid = req.headers['client-device-uuid'];
-    const existingDevice = await ebidding.linkedDevice.findUnique({
-      where: { userId: userId, clientDeviceUuid: deviceUuid }
+    const existingDevice = await ebidding.linkedDevice.findFirst({
+      where: { userId: log.user.userId, clientDeviceUuid: deviceUuid }
     });
   
       

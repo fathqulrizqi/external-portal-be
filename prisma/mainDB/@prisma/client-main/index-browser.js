@@ -130,7 +130,6 @@ exports.Prisma.UserScalarFieldEnum = {
   email: 'email',
   password: 'password',
   isActive: 'isActive',
-  isVerified: 'isVerified',
   sessionExpireDate: 'sessionExpireDate',
   createdDate: 'createdDate',
   updateDate: 'updateDate'
@@ -164,10 +163,23 @@ exports.Prisma.AccessScalarFieldEnum = {
   accessName: 'accessName'
 };
 
+exports.Prisma.MenuScalarFieldEnum = {
+  menuId: 'menuId',
+  sequence: 'sequence',
+  parentId: 'parentId',
+  icon: 'icon',
+  menuName: 'menuName',
+  redirect: 'redirect',
+  isGlobal: 'isGlobal',
+  isShow: 'isShow',
+  isActive: 'isActive'
+};
+
 exports.Prisma.UserHasRoleAccessScalarFieldEnum = {
   userId: 'userId',
   roleId: 'roleId',
-  accessId: 'accessId'
+  accessId: 'accessId',
+  menuId: 'menuId'
 };
 
 exports.Prisma.LinkedDeviceScalarFieldEnum = {
@@ -187,6 +199,7 @@ exports.Prisma.ProfileScalarFieldEnum = {
   companyId: 'companyId',
   fullName: 'fullName',
   urlImage: 'urlImage',
+  phone: 'phone',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -342,6 +355,7 @@ exports.Prisma.ModelName = {
   LogsLogin: 'LogsLogin',
   Role: 'Role',
   Access: 'Access',
+  Menu: 'Menu',
   UserHasRoleAccess: 'UserHasRoleAccess',
   LinkedDevice: 'LinkedDevice',
   CompanySegment: 'CompanySegment',

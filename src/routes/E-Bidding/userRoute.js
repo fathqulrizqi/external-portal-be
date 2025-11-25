@@ -3,14 +3,14 @@ import upload from "../../middleware/multerMiddleware.js";
 import roleMiddleware from '../../middleware/roleMiddleware.js';
 import { authMiddleware } from '../../middleware/authMiddleware.js';
 import formL9Controller from '../../areas/form/controller/formL9Controller.js';
-// import companyController from '../../areas/company/controller/companyController.js';
+import companyController from '../../areas/company/controller/companyController.js';
 
 const userRouter = new express.Router();
-userRouter.use(authMiddleware,roleMiddleware.isUser);
+// userRouter.use(authMiddleware,roleMiddleware.isUser);
 
-// userRouter.post("/company",upload.single("companyImage"), companyController.create);
-// userRouter.put("/company/:companyId",upload.single("companyImage"), companyController.update);
-// userRouter.get("/company/me", companyController.getCompanyByUserId)
+userRouter.post("/company",upload.single("companyImage"), companyController.create);
+userRouter.put("/company/:companyId",upload.single("companyImage"), companyController.update);
+userRouter.get("/company/me", companyController.getCompanyByUserId)
 //formL9
 userRouter.post("/form-l9", formL9Controller.create);
 userRouter.get("/form-l9/me", formL9Controller.getByUserId);
