@@ -6,7 +6,7 @@ import formL9Controller from '../../areas/form/controller/formL9Controller.js';
 import companyController from '../../areas/company/controller/companyController.js';
 
 const userRouter = new express.Router();
-// userRouter.use(authMiddleware,roleMiddleware.isUser);
+userRouter.use(authMiddleware,roleMiddleware.isUser);
 
 userRouter.post("/company",upload.single("companyImage"), companyController.create);
 userRouter.put("/company/:companyId",upload.single("companyImage"), companyController.update);

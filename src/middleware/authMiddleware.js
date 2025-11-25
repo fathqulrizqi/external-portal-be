@@ -58,6 +58,8 @@ export const authMiddleware = async (req, res, next) => {
           })
           .end();
       }
+      console.log('sini 2');
+      console.log(new Date());
       await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
       return res
         .status(401)
@@ -67,7 +69,7 @@ export const authMiddleware = async (req, res, next) => {
         .end();
     }
 
-    const deviceUuid = req.headers['client-device-uuid'];
+    const deviceUuid = req.headers['Client-Device-Uuid'];
     const existingDevice = await ebidding.linkedDevice.findFirst({
       where: { userId: log.user.userId, clientDeviceUuid: deviceUuid }
     });
@@ -87,6 +89,8 @@ export const authMiddleware = async (req, res, next) => {
           sessionExpireDate : new Date()
         }
       })
+      console.log('sini');
+      console.log(new Date());
       await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
       return res
         .status(401)

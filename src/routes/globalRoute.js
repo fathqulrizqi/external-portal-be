@@ -28,7 +28,7 @@ const globalRouter = new express.Router();
   globalRouter.post("/api/users/OTPRegistrationVerification", authController.otpRegistrationVerification);
 
   globalRouter.use(authMiddleware)
-  globalRouter.get("/api/sidebar", sidebarController.getMenuSidebar);
+  globalRouter.get("/api/user/sidebar", sidebarController.getMenuSidebar);
   globalRouter.post("/api/users/logout", authController.logout);
 
 export { globalRouter };

@@ -21,7 +21,7 @@ const register = async (payload) => {
   const existingUser = await ebidding.User.findUnique({
     where: { email: payload.email }
   });
-  
+
   if (existingUser) {
     throw new Error('Email already registered'); 
   }
@@ -195,7 +195,7 @@ const otpVerification = async (userId,otp)=>{
       userId : userId,
     },
     data : {
-      sessionExpireDate : verifikasi.expireDate
+      sessionExpireDate : new Date(Date.now() + 6 * 60 * 60 * 1000)
     }
   })
   return true;
