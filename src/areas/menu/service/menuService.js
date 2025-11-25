@@ -1,7 +1,7 @@
 
-import { ebidding } from "../../../config/database";
-import { createMenuValidation,updateMenuValidation } from "../validation/menuValidation";
-import { ResponseError } from "../../../error/responseError";
+import { ebidding } from "../../../config/database.js";
+import { createMenuValidation,updateMenuValidation } from "../validation/menuValidation.js";
+import { ResponseError } from "../../../error/responseError.js";
 
 const handleValidationError = (error) => {
     const firstError = error.details[0].message;
@@ -18,7 +18,7 @@ const create = async (payload) =>{
         where : {menuName : payload.menuName}
     })
 
-    if(!existing){
+    if(existing){
         throw new ResponseError(409,'Menu name already exists');
     }
 
@@ -53,7 +53,7 @@ const update = async (menuId,payload) =>{
         where : {menuId : menuId}
     })
 
-    if(existing){
+    if(!existing){
         throw new ResponseError(404,'Menu Not Found');
     }
 

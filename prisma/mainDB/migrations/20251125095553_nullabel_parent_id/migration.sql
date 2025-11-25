@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Menu" ALTER COLUMN "parentId" DROP NOT NULL,
+ALTER COLUMN "icon" DROP NOT NULL;

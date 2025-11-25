@@ -3,6 +3,7 @@ import mailerTemplate from "../utils/mailerTemplate.js";
 
 export const authMiddleware = async (req, res, next) => {
   const token = req.cookies.auth_token;
+  console.log(token);
   if (!token) {
     return res
       .status(401)
@@ -11,7 +12,7 @@ export const authMiddleware = async (req, res, next) => {
       })
       .end();
   }
-
+  
   const log = await ebidding.logsLogin.findUnique({
     where: {
       token: token,

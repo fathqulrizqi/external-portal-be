@@ -9616,8 +9616,8 @@ export namespace Prisma {
   export type MenuGroupByOutputType = {
     menuId: number
     sequence: number
-    parentId: number
-    icon: string
+    parentId: number | null
+    icon: string | null
     menuName: string
     redirect: string
     isGlobal: boolean
@@ -9710,8 +9710,8 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       menuId: number
       sequence: number
-      parentId: number
-      icon: string
+      parentId: number | null
+      icon: string | null
       menuName: string
       redirect: string
       isGlobal: boolean
@@ -27236,8 +27236,8 @@ export namespace Prisma {
     NOT?: MenuWhereInput | MenuWhereInput[]
     menuId?: IntFilter<"Menu"> | number
     sequence?: IntFilter<"Menu"> | number
-    parentId?: IntFilter<"Menu"> | number
-    icon?: StringFilter<"Menu"> | string
+    parentId?: IntNullableFilter<"Menu"> | number | null
+    icon?: StringNullableFilter<"Menu"> | string | null
     menuName?: StringFilter<"Menu"> | string
     redirect?: StringFilter<"Menu"> | string
     isGlobal?: BoolFilter<"Menu"> | boolean
@@ -27249,8 +27249,8 @@ export namespace Prisma {
   export type MenuOrderByWithRelationInput = {
     menuId?: SortOrder
     sequence?: SortOrder
-    parentId?: SortOrder
-    icon?: SortOrder
+    parentId?: SortOrderInput | SortOrder
+    icon?: SortOrderInput | SortOrder
     menuName?: SortOrder
     redirect?: SortOrder
     isGlobal?: SortOrder
@@ -27265,8 +27265,8 @@ export namespace Prisma {
     OR?: MenuWhereInput[]
     NOT?: MenuWhereInput | MenuWhereInput[]
     sequence?: IntFilter<"Menu"> | number
-    parentId?: IntFilter<"Menu"> | number
-    icon?: StringFilter<"Menu"> | string
+    parentId?: IntNullableFilter<"Menu"> | number | null
+    icon?: StringNullableFilter<"Menu"> | string | null
     menuName?: StringFilter<"Menu"> | string
     redirect?: StringFilter<"Menu"> | string
     isGlobal?: BoolFilter<"Menu"> | boolean
@@ -27278,8 +27278,8 @@ export namespace Prisma {
   export type MenuOrderByWithAggregationInput = {
     menuId?: SortOrder
     sequence?: SortOrder
-    parentId?: SortOrder
-    icon?: SortOrder
+    parentId?: SortOrderInput | SortOrder
+    icon?: SortOrderInput | SortOrder
     menuName?: SortOrder
     redirect?: SortOrder
     isGlobal?: SortOrder
@@ -27298,8 +27298,8 @@ export namespace Prisma {
     NOT?: MenuScalarWhereWithAggregatesInput | MenuScalarWhereWithAggregatesInput[]
     menuId?: IntWithAggregatesFilter<"Menu"> | number
     sequence?: IntWithAggregatesFilter<"Menu"> | number
-    parentId?: IntWithAggregatesFilter<"Menu"> | number
-    icon?: StringWithAggregatesFilter<"Menu"> | string
+    parentId?: IntNullableWithAggregatesFilter<"Menu"> | number | null
+    icon?: StringNullableWithAggregatesFilter<"Menu"> | string | null
     menuName?: StringWithAggregatesFilter<"Menu"> | string
     redirect?: StringWithAggregatesFilter<"Menu"> | string
     isGlobal?: BoolWithAggregatesFilter<"Menu"> | boolean
@@ -28668,8 +28668,8 @@ export namespace Prisma {
 
   export type MenuCreateInput = {
     sequence: number
-    parentId: number
-    icon: string
+    parentId?: number | null
+    icon?: string | null
     menuName: string
     redirect: string
     isGlobal?: boolean
@@ -28681,8 +28681,8 @@ export namespace Prisma {
   export type MenuUncheckedCreateInput = {
     menuId?: number
     sequence: number
-    parentId: number
-    icon: string
+    parentId?: number | null
+    icon?: string | null
     menuName: string
     redirect: string
     isGlobal?: boolean
@@ -28693,8 +28693,8 @@ export namespace Prisma {
 
   export type MenuUpdateInput = {
     sequence?: IntFieldUpdateOperationsInput | number
-    parentId?: IntFieldUpdateOperationsInput | number
-    icon?: StringFieldUpdateOperationsInput | string
+    parentId?: NullableIntFieldUpdateOperationsInput | number | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
     menuName?: StringFieldUpdateOperationsInput | string
     redirect?: StringFieldUpdateOperationsInput | string
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
@@ -28706,8 +28706,8 @@ export namespace Prisma {
   export type MenuUncheckedUpdateInput = {
     menuId?: IntFieldUpdateOperationsInput | number
     sequence?: IntFieldUpdateOperationsInput | number
-    parentId?: IntFieldUpdateOperationsInput | number
-    icon?: StringFieldUpdateOperationsInput | string
+    parentId?: NullableIntFieldUpdateOperationsInput | number | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
     menuName?: StringFieldUpdateOperationsInput | string
     redirect?: StringFieldUpdateOperationsInput | string
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
@@ -28719,8 +28719,8 @@ export namespace Prisma {
   export type MenuCreateManyInput = {
     menuId?: number
     sequence: number
-    parentId: number
-    icon: string
+    parentId?: number | null
+    icon?: string | null
     menuName: string
     redirect: string
     isGlobal?: boolean
@@ -28730,8 +28730,8 @@ export namespace Prisma {
 
   export type MenuUpdateManyMutationInput = {
     sequence?: IntFieldUpdateOperationsInput | number
-    parentId?: IntFieldUpdateOperationsInput | number
-    icon?: StringFieldUpdateOperationsInput | string
+    parentId?: NullableIntFieldUpdateOperationsInput | number | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
     menuName?: StringFieldUpdateOperationsInput | string
     redirect?: StringFieldUpdateOperationsInput | string
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
@@ -28742,8 +28742,8 @@ export namespace Prisma {
   export type MenuUncheckedUpdateManyInput = {
     menuId?: IntFieldUpdateOperationsInput | number
     sequence?: IntFieldUpdateOperationsInput | number
-    parentId?: IntFieldUpdateOperationsInput | number
-    icon?: StringFieldUpdateOperationsInput | string
+    parentId?: NullableIntFieldUpdateOperationsInput | number | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
     menuName?: StringFieldUpdateOperationsInput | string
     redirect?: StringFieldUpdateOperationsInput | string
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
@@ -30238,6 +30238,17 @@ export namespace Prisma {
     accessId?: SortOrder
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type MenuCountOrderByAggregateInput = {
     menuId?: SortOrder
     sequence?: SortOrder
@@ -30286,7 +30297,7 @@ export namespace Prisma {
     parentId?: SortOrder
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
@@ -30294,7 +30305,12 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type RoleScalarRelationFilter = {
@@ -30349,22 +30365,6 @@ export namespace Prisma {
     roleId?: SortOrder
     accessId?: SortOrder
     menuId?: SortOrder
-  }
-
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type LinkedDeviceCountOrderByAggregateInput = {
@@ -31371,6 +31371,14 @@ export namespace Prisma {
     connect?: UserHasRoleAccessWhereUniqueInput | UserHasRoleAccessWhereUniqueInput[]
   }
 
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
   export type UserHasRoleAccessUpdateManyWithoutMenuNestedInput = {
     create?: XOR<UserHasRoleAccessCreateWithoutMenuInput, UserHasRoleAccessUncheckedCreateWithoutMenuInput> | UserHasRoleAccessCreateWithoutMenuInput[] | UserHasRoleAccessUncheckedCreateWithoutMenuInput[]
     connectOrCreate?: UserHasRoleAccessCreateOrConnectWithoutMenuInput | UserHasRoleAccessCreateOrConnectWithoutMenuInput[]
@@ -31455,14 +31463,6 @@ export namespace Prisma {
     delete?: MenuWhereInput | boolean
     connect?: MenuWhereUniqueInput
     update?: XOR<XOR<MenuUpdateToOneWithWhereWithoutUserHasRoleAccessInput, MenuUpdateWithoutUserHasRoleAccessInput>, MenuUncheckedUpdateWithoutUserHasRoleAccessInput>
-  }
-
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
   }
 
   export type UserCreateNestedOneWithoutLinkedDeviceInput = {
@@ -32881,8 +32881,8 @@ export namespace Prisma {
 
   export type MenuCreateWithoutUserHasRoleAccessInput = {
     sequence: number
-    parentId: number
-    icon: string
+    parentId?: number | null
+    icon?: string | null
     menuName: string
     redirect: string
     isGlobal?: boolean
@@ -32893,8 +32893,8 @@ export namespace Prisma {
   export type MenuUncheckedCreateWithoutUserHasRoleAccessInput = {
     menuId?: number
     sequence: number
-    parentId: number
-    icon: string
+    parentId?: number | null
+    icon?: string | null
     menuName: string
     redirect: string
     isGlobal?: boolean
@@ -32999,8 +32999,8 @@ export namespace Prisma {
 
   export type MenuUpdateWithoutUserHasRoleAccessInput = {
     sequence?: IntFieldUpdateOperationsInput | number
-    parentId?: IntFieldUpdateOperationsInput | number
-    icon?: StringFieldUpdateOperationsInput | string
+    parentId?: NullableIntFieldUpdateOperationsInput | number | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
     menuName?: StringFieldUpdateOperationsInput | string
     redirect?: StringFieldUpdateOperationsInput | string
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
@@ -33011,8 +33011,8 @@ export namespace Prisma {
   export type MenuUncheckedUpdateWithoutUserHasRoleAccessInput = {
     menuId?: IntFieldUpdateOperationsInput | number
     sequence?: IntFieldUpdateOperationsInput | number
-    parentId?: IntFieldUpdateOperationsInput | number
-    icon?: StringFieldUpdateOperationsInput | string
+    parentId?: NullableIntFieldUpdateOperationsInput | number | null
+    icon?: NullableStringFieldUpdateOperationsInput | string | null
     menuName?: StringFieldUpdateOperationsInput | string
     redirect?: StringFieldUpdateOperationsInput | string
     isGlobal?: BoolFieldUpdateOperationsInput | boolean

@@ -81,8 +81,8 @@ model Access{
 model Menu{
   menuId      Int     @id @default(autoincrement())
   sequence    Int
-  parentId    Int
-  icon        String  @db.VarChar(50)  
+  parentId    Int?
+  icon        String?  @db.VarChar(50)  
   menuName    String  @db.VarChar(50)
   redirect    String  @db.Text
   isGlobal    Boolean @default(false)
