@@ -57,10 +57,5 @@ const loginValidation = Joi.object({
     'string.empty': 'Password is required',
     'any.required': 'Password is required',
   }),
-  clientDeviceUuid: Joi.string().uuid().required().messages({
-    'string.empty': 'Client device UUID is required',
-    'string.uuid': 'Client device UUID must be a valid UUID',
-    'any.required': 'Client device UUID is required',
-  }),
 });
 export { registerValidation,loginValidation };
