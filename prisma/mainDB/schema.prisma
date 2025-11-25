@@ -339,6 +339,9 @@ model FormL9CertificateISO {
   @@index([isoName])
 }
 
+model test{
+  
+}
 
 
 

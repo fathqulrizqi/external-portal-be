@@ -6,6 +6,7 @@ const createCompanySegment = async (req, res, next) => {
             segmentName: req.body.segmentName || null,
             description: req.body.description || null,
         };
+        
         const result = await companySegmentService.create(payload);
         res.status(201).json({
             status: "Success",

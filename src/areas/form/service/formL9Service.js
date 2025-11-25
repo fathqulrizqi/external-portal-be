@@ -14,31 +14,21 @@ const create = async (userId, payload) => {
 
         await ebidding.$transaction(async (tx) => {
             
-            const company = await tx.company.create({
-                data: {
-                    companyName: payload.companyName,
-                    companyFoundingDate: payload.companyFoundingDate,
-                    companyStatus: payload.companyStatus,
-                    companyTelpFax: payload.companyTelpFax,
-                    companyAddress: payload.companyAddress,
-                    companyEmail: payload.companyEmail,
-                    npwp: payload.npwp,
-                    totalCapital: payload.totalCapital,
-                    segmentId: payload.segmentId,
-                }
-            });
-
-            const user = tx.profile.update({
+            const user = await tx.profile.findUnique({
                 where : {userId : userId},
-                data : {
-                    companyId : company.companyId
+                select : {
+                    companyId : true
                 }
             })
 
+            if(user.companyId == null || user.companyId == ''){
+                throw ResponseError(404, 'User must complete company details first.')
+            }
+
             const formL9 = await tx.formL9.create({
                 data: {
-                    companyId: company.companyId,
-                    status: 'not verified'
+                    companyId: user.companyId,
+                    status: 'Not Verified'
                 }
             });
 

@@ -25,8 +25,8 @@ const login = async (req, res, next) => {
     const payload = {
       email: req.body.email?.trim().toLowerCase() || "",
       password: req.body.password || "",
-      clientDeviceUuid : req.body.clientDeviceUuid || "",
     };
+
     const requestContext = {
       ip: req.ip,
       userAgent: req.headers['user-agent']
@@ -103,7 +103,6 @@ const logout = async (req, res, next) => {
     try {
         const token = req.cookies.jwt;
         if (!token) {
-            // Jika tidak ada token di cookie, anggap sudah logout
             res.clearCookie('jwt', {
                 httpOnly: true,
                 secure: process.env.NODE_ENV === 'production',

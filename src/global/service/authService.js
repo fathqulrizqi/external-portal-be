@@ -76,34 +76,7 @@ try {
     throw new ResponseError(401,'Invalid email or password');
   }
 
-  const deviceUuid = payload.clientDeviceUuid;
   const userId = user.userId;
-
-  try {
-    const existingDevice = await ebidding.LinkedDevice.findUnique({
-      where: { userId: userId, clientDeviceUuid: deviceUuid }
-    });
-
-    
-    if (existingDevice == null) {
-      await ebidding.LinkedDevice.create({
-        data: {
-          clientDeviceUuid: deviceUuid,
-          userId: userId
-        }
-      });
-      
-      await ebidding.user.update({
-        where : { userId : userId},
-        data : {
-          sessionExpireDate : new Date()
-        }
-      })
-
-    }
-  } catch (error) {
-    throw new ResponseError(500,'Failed to verify device.'+ error);
-  }
 
   const jwtPayload = { userId: user.userId };
   const token = jwt.sign(
@@ -141,8 +114,7 @@ try {
     return accumulator;
   }, { role: [], access: [] });
 
-  const {role,access} = roleAccess
-  await mailerTemplate.verifikasiLogin(userId,payload.email,requestContext.userAgent,requestContext.ip);
+  const {role,access} = roleAccess;
   return { token, role, access };
 }
 

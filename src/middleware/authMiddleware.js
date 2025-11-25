@@ -33,9 +33,8 @@ export const authMiddleware = async (req, res, next) => {
     }
   }
   });
-  console.log(log);
   if (!log || new Date() > log.expireDate) {
-    if (log) {
+        if (log) {
     //   await ebidding.logsLogin.delete({ where: { token: token } });
         }
     res.clearCookie("auth_token");
@@ -48,6 +47,7 @@ export const authMiddleware = async (req, res, next) => {
             .end();
   
           }
+          
     if(log.user.sessionExpireDate <= new Date()){
       if(log.user.isActive == false){
           return res
@@ -57,14 +57,43 @@ export const authMiddleware = async (req, res, next) => {
           })
           .end();
       }
-
+      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
       return res
         .status(401)
         .json({
           errors: "Session Expired!!",
         })
         .end();
+    }
+
+    const deviceUuid = req.headers['client-device-uuid'];
+    const existingDevice = await ebidding.linkedDevice.findUnique({
+      where: { userId: userId, clientDeviceUuid: deviceUuid }
+    });
+  
+      
+    if (existingDevice == null) {
+      await ebidding.linkedDevice.create({
+        data: {
+          clientDeviceUuid: deviceUuid,
+          userId: log.user.userId
         }
+      });
+      
+      await ebidding.user.update({
+        where : { userId : log.user.userId},
+        data : {
+          sessionExpireDate : new Date()
+        }
+      })
+      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
+      return res
+        .status(401)
+        .json({
+          errors: "Session Expired!!",
+        })
+        .end();
+    }
 
   const data = {
     ...log.user,

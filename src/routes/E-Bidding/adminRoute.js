@@ -1,11 +1,11 @@
 import express from 'express'
-import upload from "../middleware/multerMiddleware.js";
-import roleMiddleware from '../middleware/roleMiddleware.js';
-import { authMiddleware } from '../middleware/authMiddleware.js';
-import companySegmentController from '../areas/company/controller/companySegmentController.js';
-import roleController from '../areas/user/controller/roleController.js';
-import accessController from '../areas/user/controller/accessController.js';
-import formL9Controller from '../areas/form/controller/formL9Controller.js';
+import upload from "../../middleware/multerMiddleware.js";
+import roleMiddleware from '../../middleware/roleMiddleware.js';
+import { authMiddleware } from '../../middleware/authMiddleware.js';
+import companySegmentController from '../../areas/company/controller/companySegmentController.js';
+import roleController from '../../areas/user/controller/roleController.js';
+import accessController from '../../areas/user/controller/accessController.js';
+import formL9Controller from '../../areas/form/controller/formL9Controller.js';
 
 const adminRouter = new express.Router();
 adminRouter.use(authMiddleware,roleMiddleware.isAdmin);

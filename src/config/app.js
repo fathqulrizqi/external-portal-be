@@ -5,8 +5,8 @@ import { Server } from 'socket.io';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import {globalRouter} from '../routes/globalRoute.js'
-import {adminRouter} from '../routes/adminRoute.js'
-import {userRouter} from '../routes/userRoute.js'
+import {adminRouter} from '../routes/E-Bidding/adminRoute.js'
+import {userRouter} from '../routes/E-Bidding/userRoute.js'
 import cors from 'cors';
 import sanitizeInputMiddleware from "../middleware/SanitizeInputMiddleware.js";
 import { errorMiddleware } from '../middleware/errorMiddleware.js';
