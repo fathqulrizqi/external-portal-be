@@ -4,6 +4,7 @@ import {authMiddleware} from "../middleware/authMiddleware.js"
 import {verifikasiMiddleware} from "../middleware/verifikasiMiddleware.js"
 import upload from "../middleware/multerMiddleware.js"
 import sidebarController from '../global/controller/sidebarController.js'
+import accountController from '../global/controller/accountController.js'
 
 
 const globalRouter = new express.Router();
@@ -15,10 +16,7 @@ const globalRouter = new express.Router();
   });
   });
   
-  globalRouter.post("/api/users/register",upload.fields([
-    { name: "npwpImage", maxCount: 1 },
-    { name: "deedImage", maxCount: 1 },
-  ]), authController.register);
+  globalRouter.post("/api/users/register", authController.register);
 
 
   globalRouter.post("/api/users/login", authController.login);
@@ -29,6 +27,8 @@ const globalRouter = new express.Router();
 
   globalRouter.use(authMiddleware)
   globalRouter.get("/api/user/sidebar", sidebarController.getMenuSidebar);
+  globalRouter.get("/api/users/profile", accountController.getProfile);
+  globalRouter.patch("/api/users/profile",upload.single("profileImage"), accountController.updateProfile);
   globalRouter.post("/api/users/logout", authController.logout);
 
 export { globalRouter };

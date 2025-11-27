@@ -11,7 +11,6 @@ const createCompanySegment = async (req, res, next) => {
         res.status(201).json({
             status: "Success",
             message: "Company segment created successfully",
-            data: result,
         });
     } catch (e) {
         next(e);
@@ -58,7 +57,6 @@ const updateCompanySegment = async (req, res, next) => {
         res.status(200).json({
             status: "Success",
             message: "Company segment updated successfully",
-            data: result,
         });
     } catch (e) {
         next(e);

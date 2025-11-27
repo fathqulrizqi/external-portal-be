@@ -4,12 +4,12 @@ import authService from '../service/authService.js';
 const register = async (req, res, next) => {
   try {
     const payload = {
-      email: req.body.email?.trim().toLowerCase() || null,
-      phone :  req.body.phone?.trim().toLowerCase() || null,
-      password: req.body.password || null,
-      passwordConfirm : req.body.passwordConfirm || null,
+      email: req.body.email?.trim().toLowerCase() ,
+      phone :  req.body.phone?.trim().toLowerCase() ,
+      password: req.body.password ,
+      passwordConfirm : req.body.passwordConfirm ,
       urlImage : '/public/images/profile/default.jpg',
-      fullName: req.body.fullName || null,
+      fullName: req.body.fullName ,
     };
     await authService.register(payload);
     res.status(200).json({
@@ -45,8 +45,13 @@ const login = async (req, res, next) => {
       sameSite: 'strict', 
     });
 
+
+
     res.status(200).json({
       status: 'Success',
+      data : {
+        role : [...new Set(role)]
+      },
       message: 'Login successful',
     })
   } catch (e) {

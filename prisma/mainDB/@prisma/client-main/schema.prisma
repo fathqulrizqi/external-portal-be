@@ -34,6 +34,7 @@ model User {
   profile           Profile?
   UserHasRoleAccess UserHasRoleAccess[]
   otp               otpVerifikasi[]
+  ResetPassword     ResetPassword[]
 
   @@index([email])
   @@index([isActive])
@@ -78,6 +79,16 @@ model Access {
   accessName String @db.VarChar(50)
 
   UserHasRoleAccess UserHasRoleAccess[]
+}
+
+model ResetPassword {
+  resetId     String   @id @default(uuid()) @db.Uuid
+  userId      String   @db.Uuid
+  token       String   @default(uuid()) @db.Uuid
+  createdDate DateTime @default(now())
+  expireDate  DateTime
+
+  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
 }
 
 model Menu {

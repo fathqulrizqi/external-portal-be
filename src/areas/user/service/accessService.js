@@ -19,7 +19,6 @@ const create = async (payload) => {
         handleValidationError(error);
     }
     
-    // Cek duplikasi accessName (gunakan findFirst karena accessName non-unique)
     const existingAccess = await ebidding.Access.findFirst({
         where: { accessName: payload.accessName }
     });

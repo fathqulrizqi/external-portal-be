@@ -169,27 +169,22 @@ const destroy = async (req, res, next) => {
 
 const getAll = async (req, res, next) => {
     try {
-        // Memanggil service
         const result = await formL9Service.getAll();
 
-        // Mengirim response sukses
         res.status(200).json({
             status: "Success",
             message: "All forms retrieved successfully",
             data: result
         });
     } catch (e) {
-        // Mengirim error ke middleware error handling
         next(e);
     }
 };
 
 const getByUserId = async (req, res, next) => {
     try {
-        // Ambil userId dari token/session (Middleware Auth)
-        const userId = req.user.userIdd; 
+        const userId = req.user.userId; 
 
-        // Memanggil service (Pastikan service menerima parameter userId)
         const result = await formL9Service.getByUserId(userId);
 
         res.status(200).json({

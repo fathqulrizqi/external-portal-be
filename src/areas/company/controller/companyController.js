@@ -21,7 +21,6 @@ const create = async (req, res, next) => {
         res.status(201).json({
             status: "Success",
             message: "Company  created successfully",
-            data: result,
         });
     } catch (e) {
         next(e);
@@ -90,7 +89,6 @@ const update = async (req, res, next) => {
         res.status(200).json({
             status: "Success",
             message: "Company  updated successfully",
-            data: result,
         });
     } catch (e) {
         next(e);

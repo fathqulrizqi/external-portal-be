@@ -3,7 +3,6 @@ import mailerTemplate from "../utils/mailerTemplate.js";
 
 export const authMiddleware = async (req, res, next) => {
   const token = req.cookies.auth_token;
-  console.log(token);
   if (!token) {
     return res
       .status(401)
@@ -53,17 +52,16 @@ export const authMiddleware = async (req, res, next) => {
     if(log.user.sessionExpireDate <= new Date()){
       if(log.user.isActive == false){
           return res
-          .status(401)
+          .status(402)
           .json({
             errors: "Account is not active",
           })
           .end();
       }
-      console.log('sini 2');
-      console.log(new Date());
+      
       await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
       return res
-        .status(401)
+        .status(403)
         .json({
           errors: "Session Expired!!",
         })
@@ -72,11 +70,11 @@ export const authMiddleware = async (req, res, next) => {
 
     const deviceUuid = req.headers['Client-Device-Uuid'];
     const existingDevice = await ebidding.linkedDevice.findFirst({
-      where: { userId: log.user.userId, clientDeviceUuid: deviceUuid }
+      where: { userId: log.user.userId }
     });
   
       
-    if (existingDevice == null) {
+    if (existingDevice == null || deviceUuid != existingDevice.clientDeviceUuid) {
       await ebidding.linkedDevice.create({
         data: {
           clientDeviceUuid: deviceUuid,
@@ -90,13 +88,11 @@ export const authMiddleware = async (req, res, next) => {
           sessionExpireDate : new Date()
         }
       })
-      console.log('sini');
-      console.log(new Date());
       await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
       return res
-        .status(401)
+        .status(403)
         .json({
-          errors: "Session Expired!!",
+          errors: "New Device Detected/Session Device Expired. Please verify login via email.",
         })
         .end();
     }

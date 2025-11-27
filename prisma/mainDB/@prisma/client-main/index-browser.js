@@ -163,6 +163,14 @@ exports.Prisma.AccessScalarFieldEnum = {
   accessName: 'accessName'
 };
 
+exports.Prisma.ResetPasswordScalarFieldEnum = {
+  resetId: 'resetId',
+  userId: 'userId',
+  token: 'token',
+  createdDate: 'createdDate',
+  expireDate: 'expireDate'
+};
+
 exports.Prisma.MenuScalarFieldEnum = {
   menuId: 'menuId',
   sequence: 'sequence',
@@ -355,6 +363,7 @@ exports.Prisma.ModelName = {
   LogsLogin: 'LogsLogin',
   Role: 'Role',
   Access: 'Access',
+  ResetPassword: 'ResetPassword',
   Menu: 'Menu',
   UserHasRoleAccess: 'UserHasRoleAccess',
   LinkedDevice: 'LinkedDevice',

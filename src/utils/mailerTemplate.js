@@ -151,6 +151,96 @@ const verifikasiLogin = async (userId,email,deviceName,ipAddress)=> {
     return true;
 }
 
-export default {verifikasiLogin,verifikasiRegistrasi}
+const resetPassword = async (email, token) => {
+    
+    const base_url = process.env.URL_RESET_PASSWORD;
+    const fullResetLink = `${base_url}?token=${token}`;
+
+    const Template = `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Password Reset Request - Niterra E-Bidding</title>
+        <style>
+            /* Basic CSS for email clients */
+            .button {
+                display: inline-block;
+                padding: 12px 25px;
+                margin: 20px 0;
+                font-size: 16px;
+                font-weight: bold;
+                color: #ffffff !important;
+                background-color: #4a90e2; /* Blue button color */
+                border-radius: 4px;
+                text-decoration: none; /* Crucial for links */
+                border: 1px solid #4a90e2;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        </style>
+    </head>
+    <body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;">
+
+        <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); margin: 30px auto;">
+            <tr>
+                <td style="padding: 40px; text-align: center;">
+                    <img src='https://lokerbumn.com/wp-content/uploads/2023/06/PT-Niterra-Mobility-Indonesia-02.jpg' style='width:180px; margin-bottom: 20px;' alt="Niterra Logo" />
+                    
+                    <h1 style="color: #333333; font-size: 24px; margin-bottom: 20px;">Password Reset Request</h1>
+                    
+                    <p style="color: #555555; font-size: 16px; line-height: 1.5;">
+                        You recently requested to reset the password for your Niterra E-Bidding account.
+                        Please click the button below to set a new password.
+                    </p>
+
+                    <table role="presentation" align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin: 25px 0;">
+                        <tr>
+                            <td align="center">
+                                <a href="${fullResetLink}" class="button" target="_blank" style="color: #ffffff !important; text-decoration: none;">
+                                    Reset My Password
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <p style="color: #555555; font-size: 16px; line-height: 1.5; margin-top: 30px;">
+                        If you did not request a password reset, you can safely ignore this email. Your password will remain unchanged.
+                    </p>
+
+                    <p style="color: #777777; font-size: 14px; margin-top: 20px;">
+                        This link is valid for a limited time (e.g., 60 minutes).
+                    </p>
+                    
+                    <hr style="border: none; border-top: 1px solid #eeeeee; margin: 30px 0;">
+                    
+                    <p style="color: #999999; font-size: 12px; line-height: 1.5;">
+                        If the button above does not work, copy and paste the following link into your web browser:
+                        <br><a href="${fullResetLink}" style="color: #4a90e2; word-break: break-all;">${fullResetLink}</a>
+                    </p>
+
+                </td>
+            </tr>
+        </table>
+
+    </body>
+    </html>
+    `;
+
+    try {
+        await mailer.sendVerificationEmail(
+            'Niterra E-Bidding', 
+            email, 
+            'Action Required: Password Reset Link', 
+            Template
+        );
+        return true;
+    } catch (error) {
+        console.error("Error sending password reset email:", error);
+        throw new Error('Failed to send password reset email.'); 
+    }
+}
+
+export default {verifikasiLogin,verifikasiRegistrasi,resetPassword }
 
 

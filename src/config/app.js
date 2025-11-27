@@ -10,6 +10,7 @@ import {userRouter} from '../routes/E-Bidding/userRoute.js'
 import cors from 'cors';
 import sanitizeInputMiddleware from "../middleware/sanitizeInputMiddleware.js";
 import { errorMiddleware } from '../middleware/errorMiddleware.js';
+import { ebidding } from './database.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -17,20 +18,21 @@ const __dirname = dirname(__filename);
 const app = express();
 app.use(cookieParser());
 
-const allowedOrigins = [
-  "http://192.168.0.16:3000",
-  "http://localhost:3000",
-];
 
-// table ip
+const allowedOriginsObjects = await ebidding.allowedIpCors.findMany({
+  select : {
+    ip : true
+  }
+})
 
 
+const allowedOrigins = allowedOriginsObjects.map(item => item.ip);
 app.use(
   cors({
     origin: allowedOrigins,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
+    allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With","Client-Device-Uuid"],
   })
 );
 app.use(express.static(join(__dirname, 'public')));

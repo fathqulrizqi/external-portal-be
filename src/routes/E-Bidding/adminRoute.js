@@ -7,6 +7,7 @@ import roleController from '../../areas/user/controller/roleController.js';
 import accessController from '../../areas/user/controller/accessController.js';
 import menuController from '../../areas/menu/controller/menuController.js';
 import formL9Controller from '../../areas/form/controller/formL9Controller.js';
+import userManagementController from '../../areas/user/controller/userManagementController.js';
 
 const adminRouter = new express.Router();
 adminRouter.use(authMiddleware,roleMiddleware.isAdmin);
@@ -42,4 +43,12 @@ adminRouter.post("/menus", menuController.create);
 adminRouter.get("/menus", menuController.getAll);
 adminRouter.put("/menus/:menuId", menuController.update);
 adminRouter.delete("/menus/:menuId", menuController.remove);
+
+//Manage User
+adminRouter.get('/manageUser',userManagementController.getAllUser);
+adminRouter.get('/manageUser/:userId',userManagementController.getUserByid);
+
+//Manage User
+adminRouter.get('/manageAdmin',userManagementController.getAllAdmin);
+adminRouter.get('/manageAdmin/:userId',userManagementController.getAdminByid);
 export {adminRouter};
