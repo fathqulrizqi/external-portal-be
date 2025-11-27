@@ -121,7 +121,7 @@ try {
     await ebidding.LogsLogin.create({
       data: {
         userId: userId,
-        token: token,
+        token: 'Bearer ' + token,
         isActive: true,
         device: requestContext.userAgent || 'Unknown',
         ip: requestContext.ip || 'Unknown',

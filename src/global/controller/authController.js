@@ -33,24 +33,12 @@ const login = async (req, res, next) => {
       userAgent: req.headers['user-agent']
     };
     const { token, role, access } = await authService.login(payload, requestContext);
-
-    const expiresInString = process.env.JWT_EXPIRES_IN || '1d';
-    const days = parseInt(expiresInString.replace('d', ''));
-    const maxAgeInMs = days * 24 * 60 * 60 * 1000;
-
-    res.cookie('auth_token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      maxAge: maxAgeInMs,
-      sameSite: 'lax', 
-    });
-
-
-
+    
     res.status(200).json({
       status: 'Success',
       data : {
-        role : [...new Set(role)]
+        role : [...new Set(role)],
+        token : token
       },
       message: 'Login successful',
     })

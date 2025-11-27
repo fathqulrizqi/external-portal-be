@@ -2,7 +2,7 @@ import {ebidding} from "../config/database.js";
 import mailerTemplate from "../utils/mailerTemplate.js";
 
 export const authMiddleware = async (req, res, next) => {
-  const token = req.cookies.auth_token;
+  const token = req.get("Authorization");
   if (!token) {
     return res
       .status(401)
@@ -38,7 +38,6 @@ export const authMiddleware = async (req, res, next) => {
         if (log) {
     //   await ebidding.logsLogin.delete({ where: { token: token } });
         }
-    res.clearCookie("auth_token");
 
     return res
             .status(401)
@@ -68,7 +67,7 @@ export const authMiddleware = async (req, res, next) => {
         .end();
     }
 
-    const deviceUuid = req.headers['Client-Device-Uuid'];
+    const deviceUuid = req.headers['client-device-uuid'];
     const existingDevice = await ebidding.linkedDevice.findFirst({
       where: { userId: log.user.userId }
     });

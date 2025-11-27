@@ -1,7 +1,7 @@
 import {ebidding} from "../config/database.js";
 
 export const verifikasiMiddleware = async (req, res, next) => {
-  const token = req.cookies.auth_token;
+  const token = req.get("Authorization");
 
   console.log(token);
   if (!token) {
