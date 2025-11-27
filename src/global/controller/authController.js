@@ -42,7 +42,7 @@ const login = async (req, res, next) => {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       maxAge: maxAgeInMs,
-      sameSite: 'strict', 
+      sameSite: 'lax', 
     });
 
 
