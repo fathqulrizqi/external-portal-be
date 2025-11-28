@@ -68,9 +68,8 @@ export const authMiddleware = async (req, res, next) => {
         .end();
     }
 
-    const deviceUuid = req.headers['Client-Device-Uuid'];
+    const deviceUuid = req.get("Client-Device-Uuid");
 
-    logger.info(deviceUuid);
     const existingDevice = await ebidding.linkedDevice.findFirst({
       where: { userId: log.user.userId }
     });
