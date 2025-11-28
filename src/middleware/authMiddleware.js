@@ -70,33 +70,42 @@ export const authMiddleware = async (req, res, next) => {
 
     const deviceUuid = req.get("Client-Device-Uuid");
 
-    const existingDevice = await ebidding.linkedDevice.findFirst({
-      where: { userId: log.user.userId }
+  const existingDevice = await ebidding.linkedDevice.findFirst({
+    where: { userId: log.user.userId }
+  });
+
+  if (existingDevice === null || deviceUuid !== existingDevice.clientDeviceUuid) {
+    
+    await ebidding.linkedDevice.deleteMany({
+      where: {
+        userId: log.user.userId,
+      },
     });
-  
-      
-    if (existingDevice == null || deviceUuid != existingDevice.clientDeviceUuid) {
-      await ebidding.linkedDevice.create({
-        data: {
-          clientDeviceUuid: deviceUuid,
-          userId: log.user.userId
-        }
-      });
-      
-      await ebidding.user.update({
-        where : { userId : log.user.userId},
-        data : {
-          sessionExpireDate : new Date()
-        }
+    
+    // --- Create the NEW Device Link ---
+    await ebidding.linkedDevice.create({
+      data: {
+        clientDeviceUuid: deviceUuid,
+        userId: log.user.userId
+      }
+    });
+    
+    await ebidding.user.update({
+      where : { userId : log.user.userId},
+      data : {
+        sessionExpireDate : new Date()
+      }
+    });
+    
+    await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
+    
+    return res
+      .status(403)
+      .json({
+        errors: "New Device Detected/Session Device Expired. Please verify login via email.",
       })
-      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
-      return res
-        .status(403)
-        .json({
-          errors: "New Device Detected/Session Device Expired. Please verify login via email.",
-        })
-        .end();
-    }
+      .end();
+  }
 
   const data = {
     ...log.user,
