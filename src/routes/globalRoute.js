@@ -16,9 +16,8 @@ const globalRouter = new express.Router();
   });
   });
   
+  globalRouter.post("/api/forgotPassword/" , accountController.sendingEmailResetPassword);
   globalRouter.post("/api/users/register", authController.register);
-
-
   globalRouter.post("/api/users/login", authController.login);
   globalRouter.use(verifikasiMiddleware);
   globalRouter.post("/api/users/OTP", authController.otpSending);

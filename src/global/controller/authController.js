@@ -33,7 +33,7 @@ const login = async (req, res, next) => {
       userAgent: req.headers['user-agent']
     };
     const { token, role, access } = await authService.login(payload, requestContext);
-    
+     
     res.status(200).json({
       status: 'Success',
       data : {
