@@ -1,4 +1,5 @@
 import {ebidding} from "../config/database.js";
+import { logger } from "../config/logging.js";
 import mailerTemplate from "../utils/mailerTemplate.js";
 
 export const authMiddleware = async (req, res, next) => {
@@ -68,6 +69,8 @@ export const authMiddleware = async (req, res, next) => {
     }
 
     const deviceUuid = req.headers['Client-Device-Uuid'];
+
+    logger.info(deviceUuid);
     const existingDevice = await ebidding.linkedDevice.findFirst({
       where: { userId: log.user.userId }
     });
