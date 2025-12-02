@@ -10,7 +10,11 @@ const handleValidationError = (error) => {
 
 const create = async (userId, payload) => {
     try {
-        await createValidation.validateAsync(payload, { abortEarly: false });
+        try{
+            await createValidation.validateAsync(payload, { abortEarly: false });
+        }catch(error){
+            handleValidationError(error)
+        }
 
         await ebidding.$transaction(async (tx) => {
             
@@ -145,15 +149,17 @@ const create = async (userId, payload) => {
         return true;
 
     } catch (error) {
-        if (error.isJoi) handleValidationError(error);
-        throw new error; 
+        throw new ResponseError(500,error); 
     }
 };
 
 const update = async (userId,formL9Id, payload) => {
     try {
-
-        await updateValidation.validateAsync(payload, { abortEarly: false });
+        try{
+            await updateValidation.validateAsync(payload, { abortEarly: false });
+        }catch(error){
+            handleValidationError(error)
+        }
 
         const existingForm = await ebidding.formL9.findUnique({
             where: { formL9Id: formL9Id },
@@ -373,8 +379,7 @@ const update = async (userId,formL9Id, payload) => {
         return true;
 
     } catch (error) {
-        if (error.isJoi) handleValidationError(error); 
-        throw error;
+        throw new ResponseError(500,error);
     }
 };
 
@@ -403,8 +408,8 @@ const destroy = async (userId, formL9Id) => {
         })
 
         return true;
-    }catch(e){
-        next(e)
+    }catch(error){
+        throw new ResponseError(500,error);
     }
 }
 
@@ -415,8 +420,8 @@ const getAll = async () => {
         })
 
         return data;
-    }catch(e){
-        next(e)
+    }catch(error){
+        throw new ResponseError(500,error);
     }
 }
 
@@ -435,8 +440,8 @@ const getByUserId = async () => {
         })
 
         return data;
-    }catch(e){
-        next(e)
+    }catch(error){
+        throw new ResponseError(500,error);
     }
 }
 
@@ -486,8 +491,8 @@ const getDetailByIdForUser = async (userId, formL9Id) => {
         })
 
         return data;
-    }catch(e){
-        next(e)
+    }catch(error){
+        throw new ResponseError(500,error);
     }
 }
 const getDetailByIdForAdmin = async (formL9Id) => {
@@ -527,8 +532,8 @@ const getDetailByIdForAdmin = async (formL9Id) => {
         })
 
         return data;
-    }catch(e){
-        next(e)
+    }catch(error){
+        throw new ResponseError(500,error);
     }
 }
 
