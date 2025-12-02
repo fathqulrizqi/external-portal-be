@@ -26,7 +26,7 @@ const create = async (userId, payload) => {
             })
 
             if(user.companyId == null || user.companyId == ''){
-                throw ResponseError(404, 'User must complete company details first.')
+                throw new ResponseError(404, 'User must complete company details first.')
             }
 
             const formL9 = await tx.formL9.create({
