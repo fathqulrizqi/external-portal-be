@@ -69,6 +69,14 @@ export const authMiddleware = async (req, res, next) => {
     }
 
     const deviceUuid = req.get("Client-Device-Uuid");
+    if(!deviceUuid){
+       return res
+      .status(405)
+      .json({
+        errors: "Device Not Allowed.",
+      })
+      .end();
+    }
 
   const existingDevice = await ebidding.linkedDevice.findFirst({
     where: { userId: log.user.userId }
@@ -82,7 +90,6 @@ export const authMiddleware = async (req, res, next) => {
       },
     });
     
-    // --- Create the NEW Device Link ---
     await ebidding.linkedDevice.create({
       data: {
         clientDeviceUuid: deviceUuid,

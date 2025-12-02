@@ -93,8 +93,7 @@ try {
     }
   });
   if (!user) {
-    const authError = !user ? 'Invalid email or password' : 'Your account is not active.';
-     throw new ResponseError(401,authError);
+     throw new ResponseError(404,"You don't have an account,please register!!");
   }
 
 

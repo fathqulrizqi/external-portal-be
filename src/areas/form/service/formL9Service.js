@@ -146,7 +146,7 @@ const create = async (userId, payload) => {
 
     } catch (error) {
         if (error.isJoi) handleValidationError(error);
-        throw error; 
+        throw new error; 
     }
 };
 
