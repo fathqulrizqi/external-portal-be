@@ -28643,13 +28643,14 @@ export namespace Prisma {
 
   export type LinkedDeviceWhereUniqueInput = Prisma.AtLeast<{
     deviceId?: string
-    clientDeviceUuid?: string
+    userId_clientDeviceUuid?: LinkedDeviceUserIdClientDeviceUuidCompoundUniqueInput
     AND?: LinkedDeviceWhereInput | LinkedDeviceWhereInput[]
     OR?: LinkedDeviceWhereInput[]
     NOT?: LinkedDeviceWhereInput | LinkedDeviceWhereInput[]
+    clientDeviceUuid?: UuidFilter<"LinkedDevice"> | string
     userId?: UuidFilter<"LinkedDevice"> | string
     user?: XOR<UserScalarRelationFilter, UserWhereInput>
-  }, "deviceId" | "clientDeviceUuid">
+  }, "deviceId" | "userId_clientDeviceUuid">
 
   export type LinkedDeviceOrderByWithAggregationInput = {
     deviceId?: SortOrder
@@ -31713,6 +31714,11 @@ export namespace Prisma {
     roleId?: SortOrder
     accessId?: SortOrder
     menuId?: SortOrder
+  }
+
+  export type LinkedDeviceUserIdClientDeviceUuidCompoundUniqueInput = {
+    userId: string
+    clientDeviceUuid: string
   }
 
   export type LinkedDeviceCountOrderByAggregateInput = {

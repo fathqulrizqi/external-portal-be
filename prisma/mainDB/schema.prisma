@@ -127,11 +127,12 @@ model UserHasRoleAccess{
 
 model LinkedDevice {
   deviceId         String   @id @default(uuid()) @db.Uuid
-  clientDeviceUuid String   @unique @db.Uuid
+  clientDeviceUuid String   @db.Uuid
   userId           String   @db.Uuid
 
   user         User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
   @@index([userId])
+  @@unique([userId,clientDeviceUuid])
 }
 
 model CompanySegment {
