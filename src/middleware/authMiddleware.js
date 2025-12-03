@@ -48,7 +48,61 @@ export const authMiddleware = async (req, res, next) => {
             .end();
   
           }
-          
+    
+    if(log.user.isActive == false){
+        return res
+        .status(402)
+        .json({
+          errors: "Account is not active",
+        })
+        .end();
+    }
+    const deviceUuid = req.get("Client-Device-Uuid");
+    if(!deviceUuid){
+        return res
+      .status(405)
+      .json({
+        errors: "Device Not Allowed.",
+      })
+      .end();
+    }
+
+    const existingDevice = await ebidding.linkedDevice.findFirst({
+      where: { userId: log.user.userId }
+    });
+
+    if (existingDevice === null || deviceUuid !== existingDevice.clientDeviceUuid) {
+      
+      await ebidding.linkedDevice.deleteMany({
+        where: {
+          userId: log.user.userId,
+        },
+      });
+      
+      await ebidding.linkedDevice.create({
+        data: {
+          clientDeviceUuid: deviceUuid,
+          userId: log.user.userId
+        }
+      });
+      
+      await ebidding.user.update({
+        where : { userId : log.user.userId},
+        data : {
+          sessionExpireDate : new Date()
+        }
+      });
+      
+      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
+      
+      return res
+        .status(403)
+        .json({
+          errors: "New Device Detected/Session Device Expired. Please verify login via email.",
+        })
+        .end();
+    }
+
     if(log.user.sessionExpireDate <= new Date()){
       if(log.user.isActive == false){
           return res
@@ -67,52 +121,6 @@ export const authMiddleware = async (req, res, next) => {
         })
         .end();
     }
-
-    const deviceUuid = req.get("Client-Device-Uuid");
-    if(!deviceUuid){
-       return res
-      .status(405)
-      .json({
-        errors: "Device Not Allowed.",
-      })
-      .end();
-    }
-
-  const existingDevice = await ebidding.linkedDevice.findFirst({
-    where: { userId: log.user.userId }
-  });
-
-  if (existingDevice === null || deviceUuid !== existingDevice.clientDeviceUuid) {
-    
-    await ebidding.linkedDevice.deleteMany({
-      where: {
-        userId: log.user.userId,
-      },
-    });
-    
-    await ebidding.linkedDevice.create({
-      data: {
-        clientDeviceUuid: deviceUuid,
-        userId: log.user.userId
-      }
-    });
-    
-    await ebidding.user.update({
-      where : { userId : log.user.userId},
-      data : {
-        sessionExpireDate : new Date()
-      }
-    });
-    
-    await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
-    
-    return res
-      .status(403)
-      .json({
-        errors: "New Device Detected/Session Device Expired. Please verify login via email.",
-      })
-      .end();
-  }
 
   const data = {
     ...log.user,
