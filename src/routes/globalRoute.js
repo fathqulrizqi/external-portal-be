@@ -28,6 +28,7 @@ const globalRouter = new express.Router();
   globalRouter.get("/api/user/sidebar", sidebarController.getMenuSidebar);
   globalRouter.get("/api/users/profile", accountController.getProfile);
   globalRouter.patch("/api/users/profile",upload.single("profileImage"), accountController.updateProfile);
+  globalRouter.patch("/api/users/changePassword", accountController.updatePassword);
   globalRouter.post("/api/users/logout", authController.logout);
 
 export { globalRouter };

@@ -39,7 +39,8 @@ const updatePassword = async(req,res,next)=>{
             password : req.body.password,
             passwordConfirm : req.body.passwordConfirm,
         }
-        await accountService.updatePassword(userId,payload);
+        const oldPassword = req.body.oldPassword;
+        await accountService.updatePassword(userId,oldPassword,payload);
         res.status(200).json({
             status: "Success",
             message: "Password updated successfully",

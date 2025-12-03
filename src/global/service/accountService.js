@@ -47,13 +47,24 @@ const updateProfile = async(userId, payload) => {
     }
 }
 
-const updatePassword = async(userId,payload)=>{
+const updatePassword = async(userId,oldPassword,payload)=>{
     try{
         try {
             await updatePasswordValidation.validateAsync(payload,{abortEarly: false})
         } catch (error) {
             const firstError = error.details[0].message;
             throw new ResponseError(401,firstError);
+        }
+        const user = ebidding.user.findFirst({
+            where:{
+                userId : userId
+            }
+        })
+
+        const isMatch = await bcrypt.compare(oldPassword, user.password);
+
+        if (!isMatch) {
+            throw new ResponseError(401,'Invalid old password');
         }
 
         await ebidding.user.update({
