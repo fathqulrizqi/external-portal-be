@@ -97,7 +97,7 @@ const sendingEmailResetPassword = async(email)=>{
 const resetPassword = async(token,payload)=>{
     try {
         try {
-            await updateProfileValidation.validateAsync(payload, {
+            await updatePasswordValidation.validateAsync(payload, {
                 abortEarly: false,
             });
         } catch (error) {
@@ -112,18 +112,17 @@ const resetPassword = async(token,payload)=>{
         if(!existing || existing.expireDate < new Date.now()){
             throw new ResponseError(404,'Token Invalid');
         }
-        const updatedProfile = await prisma.profile.update({
+
+        const updatedUser = await prisma.user.update({
             where: {
-                userId: userId,
+                userId: existing.userId,
             },
             data: {
-                fullName: payload.fullName,
-                urlImage: payload.urlImage,
-                phone: payload.phone,
+                password: payload.password,
             },
         });
 
-        return updatedProfile; 
+        return updatedUser; 
     }catch(e){
         logger.error("Error completing password reset:", e);
         throw new ResponseError(500, 'Failed to complete the password reset process.');
