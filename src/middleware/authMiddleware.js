@@ -36,18 +36,18 @@ export const authMiddleware = async (req, res, next) => {
   }
   });
   if (!log || new Date() > log.expireDate) {
-        if (log) {
-    //   await ebidding.logsLogin.delete({ where: { token: token } });
-        }
+    //     if (log) {
+    // //   await ebidding.logsLogin.delete({ where: { token: token } });
+    //     }
 
-    return res
-            .status(401)
-            .json({
-                errors: "Unauthorized",
-            })
-            .end();
-  
-          }
+  return res
+    .status(401)
+    .json({
+        errors: "Unauthorized",
+    })
+    .end();
+
+  }
     
     if(log.user.isActive == false){
         return res
