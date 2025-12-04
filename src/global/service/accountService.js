@@ -2,6 +2,7 @@ import { ebidding } from "../../config/database.js";
 import { ResponseError } from "../../error/responseError.js";
 import { updatePasswordValidation, updateProfileValidation } from "../validation/accountValidation.js";
 import mailerTemplate from "../../utils/mailerTemplate.js";
+import { logger } from "../../config/logging.js";
 const getProfile = async(userId)=>{
     try{
         const profile = await ebidding.profile.findFirst({
