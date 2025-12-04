@@ -25,7 +25,7 @@ const updateProfile = async(userId, payload) => {
             const firstError = error.details[0].message;
             throw new ResponseError(401,firstError);
         }
-        const updatedProfile = await prisma.profile.update({
+        const updatedProfile = await ebidding.profile.update({
             where: {
                 userId: userId,
             },
@@ -113,7 +113,7 @@ const resetPassword = async(token,payload)=>{
             throw new ResponseError(404,'Token Invalid');
         }
 
-        const updatedUser = await prisma.user.update({
+        const updatedUser = await ebidding.user.update({
             where: {
                 userId: existing.userId,
             },
