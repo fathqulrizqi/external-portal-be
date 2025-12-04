@@ -109,7 +109,7 @@ const resetPassword = async(token,payload)=>{
             where : {token : token}
         })
 
-        if(!existing || existing.expireDate < new Date.now()){
+        if(!existing || existing.expireDate < new Date()){
             throw new ResponseError(404,'Token Invalid');
         }
 
