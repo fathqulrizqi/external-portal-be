@@ -1,4 +1,5 @@
 import { ebidding } from "../../config/database.js";
+import bcrypt from 'bcryptjs';
 import { ResponseError } from "../../error/responseError.js";
 import { updatePasswordValidation, updateProfileValidation } from "../validation/accountValidation.js";
 import mailerTemplate from "../../utils/mailerTemplate.js";
@@ -113,12 +114,15 @@ const resetPassword = async(token,payload)=>{
             throw new ResponseError(404,'Token Invalid');
         }
 
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(payload.password, salt);
+
         const updatedUser = await ebidding.user.update({
             where: {
                 userId: existing.userId,
             },
             data: {
-                password: payload.password,
+                password: hashedPassword,
             },
         });
 
