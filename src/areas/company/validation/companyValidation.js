@@ -54,12 +54,6 @@ const createCompanyValidation = Joi.object({
 });
 
 const updateCompanyValidation = Joi.object({
-    companyId: Joi.number().integer().min(1).required().messages({
-        'number.base': 'Company ID must be a number',
-        'number.integer': 'Company ID must be an integer',
-        'number.min': 'Company ID must be greater than or equal to 1',
-        'any.required': 'Company ID is required for update',
-    }),
     companyName: Joi.string().max(100).optional().messages({
         'string.max': 'Company Name must not exceed 100 characters',
     }),

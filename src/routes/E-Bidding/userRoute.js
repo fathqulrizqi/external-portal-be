@@ -9,7 +9,7 @@ const userRouter = new express.Router();
 userRouter.use(authMiddleware,roleMiddleware.isUser);
 
 userRouter.post("/company",upload.single("companyImage"), companyController.create);
-userRouter.put("/company/:companyId",upload.single("companyImage"), companyController.update);
+userRouter.patch("/company",upload.single("companyImage"), companyController.update);
 userRouter.get("/company/me", companyController.getCompanyByUserId)
 //formL9
 userRouter.post("/form-l9", formL9Controller.create);

@@ -84,28 +84,16 @@ const update = async (userId,payload) => {
         handleValidationError(error);
     }
 
-    const existing = await ebidding.Company.findUnique({
-        where: { companyId: payload.companyId }
-    });
-
-    if (!existing) {
-        throw new ResponseError(404,'Company not found');
+    const profile = await ebidding.profile.findUnique({
+        where :{userId : userId}
+    })
+    
+    if(!profile.companyId){
+        throw new ResponseError(404, 'You do not have company, Please Input Company Form First!')
     }
-
-    const isAuthorized = await ebidding.profile.findFirst({
-        where: {
-            companyId: existingCompany.companyId,
-            userId: userId
-        }
-    });
-
-    if (!isAuthorized) {
-        throw new ResponseError(403, 'Forbidden: You do not have access to update this company');
-    }
-
 
     return ebidding.Company.update({
-        where: { companyId: payload.companyId },
+        where: { companyId: profile.companyId },
         data: {
             companyName         : payload.companyName,
             companyFoundingDate : payload.companyFoundingDate,

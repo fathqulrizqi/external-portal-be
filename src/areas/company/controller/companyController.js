@@ -73,7 +73,6 @@ const update = async (req, res, next) => {
         const companyImage = req.files.companyImage ? req.files.companyImage[0] : null;
         const userId = req.user.userId;
         const payload = {
-            companyId           : req.params.companyId,
             companyName         : req.body.companyName ,
             companyFoundingDate : req.body.companyFoundingDate ,
             companyStatus       : req.body.companyStatus ,
@@ -98,7 +97,7 @@ const update = async (req, res, next) => {
 const deleteCompany = async (req, res, next) => {
     try {
         const payload = {
-            Id: parseInt(req.params.Id, 10) || null,
+            companyId: parseInt(req.params.companyId, 10) || null,
         };
         await companyService.remove(payload);
         res.status(200).json({

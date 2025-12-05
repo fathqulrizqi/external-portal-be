@@ -8,6 +8,7 @@ import accessController from '../../areas/user/controller/accessController.js';
 import menuController from '../../areas/menu/controller/menuController.js';
 import formL9Controller from '../../areas/form/controller/formL9Controller.js';
 import userManagementController from '../../areas/user/controller/userManagementController.js';
+import companyController from '../../areas/company/controller/companyController.js';
 
 const adminRouter = new express.Router();
 adminRouter.use(authMiddleware,roleMiddleware.isAdmin);
@@ -18,6 +19,11 @@ adminRouter.get("/companySegments", companySegmentController.getAllCompanySegmen
 adminRouter.get("/companySegments/:segmentId", companySegmentController.getCompanySegmentById); 
 adminRouter.put("/companySegments/:segmentId", companySegmentController.updateCompanySegment); 
 adminRouter.delete("/companySegments/:segmentId", companySegmentController.deleteCompanySegment);
+
+//Company
+adminRouter.get("/company", companyController.getAllCompany);
+adminRouter.get("/company/:companyId", companyController.getCompanyById)
+adminRouter.delete("/company/:companyId", companyController.deleteCompany)
 
 //Role
 adminRouter.post("/roles", roleController.createRole);
