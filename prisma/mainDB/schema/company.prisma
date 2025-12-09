@@ -10,6 +10,7 @@ model Company {
   companyId           String    @id @default(uuid()) @db.Uuid
   segmentId           Int?      
   urlImage            String?   @db.Text
+  companyCode        String?
   companyName         String?   
   companyFoundingDate DateTime? 
   companyStatus       String?   

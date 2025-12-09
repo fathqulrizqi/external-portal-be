@@ -11,6 +11,7 @@ const register = async (req, res, next) => {
       passwordConfirm : req.body.passwordConfirm ,
       urlImage : '/public/images/profile/default.jpg',
       fullName: req.body.fullName ,
+      application : req.body.application
     };
     await authService.register(payload);
     res.status(200).json({

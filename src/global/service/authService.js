@@ -4,6 +4,7 @@ import { registerValidation, loginValidation } from '../validation/authValidatio
 import { niterraappdb } from '../../config/database.js';
 import mailerTemplate from '../../utils/mailerTemplate.js';
 import { ResponseError } from '../../error/responseError.js';
+import { application } from 'express';
 
 
 const register = async (payload) => {
@@ -18,7 +19,7 @@ const register = async (payload) => {
   }
 
 
-  const existingUser = await niterraappdb.User.findUnique({
+  const existingUser = await niterraappdb.User.findFirst({
     where: { email: payload.email, application : payload.application }
   });
 
@@ -34,7 +35,8 @@ const register = async (payload) => {
       data: {
         email: payload.email,
         password: hashedPassword,
-        sessionExpireDate: new Date(), 
+        sessionExpireDate: new Date(),
+        application : payload.application 
       },
     });
     await tx.Profile.create({
@@ -81,7 +83,7 @@ try {
     throw new ResponseError(401,firstError);
   }
 
-  const user = await niterraappdb.User.findUnique({
+  const user = await niterraappdb.User.findFirst({
     where: { email: payload.email , application: payload.application},
     include : { 
       UserHasRoleAccess : {

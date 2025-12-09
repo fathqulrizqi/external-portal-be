@@ -73,6 +73,7 @@ const update = async (req, res, next) => {
         const companyImage = req.files.companyImage ? req.files.companyImage[0] : null;
         const userId = req.user.userId;
         const payload = {
+            companyCode        : req.body.companyCode,
             companyName         : req.body.companyName ,
             companyFoundingDate : req.body.companyFoundingDate ,
             companyStatus       : req.body.companyStatus ,

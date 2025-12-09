@@ -95,6 +95,7 @@ const update = async (userId,payload) => {
     return niterraappdb.Company.update({
         where: { companyId: profile.companyId },
         data: {
+            companyCode        : payload.companyCode,
             companyName         : payload.companyName,
             companyFoundingDate : payload.companyFoundingDate,
             companyStatus       : payload.companyStatus,

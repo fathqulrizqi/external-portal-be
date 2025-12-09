@@ -34,6 +34,56 @@ model Company {
   @@index([segmentId])
 }
 
+// ------------------------------------------
+// MODEL 1: The PO Header (Top part of form)
+// ------------------------------------------
+model Distro_PO_Header {
+  id Int @id @default(autoincrement())
+
+  // Unique Identifier from the form "Nomor PO Distro"
+  poNumber String @unique
+
+  // Header Info
+  distributorName String // "Nama Distro"
+  customerCode    String // "Cust Code"
+  poDate          DateTime // "Tanggal PO"
+
+  // Signatures / Workflow
+  createdBy  String? // Optional until signed
+  approvedBy String? // Optional until signed
+
+  // Relation: A PO has many line items
+  items Distro_PO_Line[]
+
+  // Standard timestamps for record keeping
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("Distro_PO_Header") // Optional: Custom table name in DB
+}
+
+// ------------------------------------------
+// MODEL 2: The Line Items (Table rows)
+// ------------------------------------------
+model Distro_PO_Line {
+  id Int @id @default(autoincrement())
+
+  // Item Details
+  vehicleCategory String // "2W Ni", "4W PM", etc.
+  spType          String // "YL", "GP", etc.
+  partName        String // "Part 1"
+  partNumber      String // "Part Number 1"
+
+  // The crucial input field
+  qty Int @default(0)
+
+  // Foreign Key linking back to the PO Header
+  purchaseOrderId Int
+  purchaseOrder   Distro_PO_Header @relation(fields: [purchaseOrderId], references: [id], onDelete: Cascade)
+
+  @@map("Distro_PO_Line")
+}
+
 model FormL9 {
   formL9Id  String   @id @default(uuid()) @db.Uuid
   companyId String   @unique @db.Uuid

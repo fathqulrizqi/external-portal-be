@@ -24,6 +24,16 @@ export type CompanySegment = $Result.DefaultSelection<Prisma.$CompanySegmentPayl
  */
 export type Company = $Result.DefaultSelection<Prisma.$CompanyPayload>
 /**
+ * Model Distro_PO_Header
+ * 
+ */
+export type Distro_PO_Header = $Result.DefaultSelection<Prisma.$Distro_PO_HeaderPayload>
+/**
+ * Model Distro_PO_Line
+ * 
+ */
+export type Distro_PO_Line = $Result.DefaultSelection<Prisma.$Distro_PO_LinePayload>
+/**
  * Model FormL9
  * 
  */
@@ -261,6 +271,26 @@ export class PrismaClient<
     * ```
     */
   get company(): Prisma.CompanyDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.distro_PO_Header`: Exposes CRUD operations for the **Distro_PO_Header** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Distro_PO_Headers
+    * const distro_PO_Headers = await prisma.distro_PO_Header.findMany()
+    * ```
+    */
+  get distro_PO_Header(): Prisma.Distro_PO_HeaderDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.distro_PO_Line`: Exposes CRUD operations for the **Distro_PO_Line** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Distro_PO_Lines
+    * const distro_PO_Lines = await prisma.distro_PO_Line.findMany()
+    * ```
+    */
+  get distro_PO_Line(): Prisma.Distro_PO_LineDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.formL9`: Exposes CRUD operations for the **FormL9** model.
@@ -904,6 +934,8 @@ export namespace Prisma {
   export const ModelName: {
     CompanySegment: 'CompanySegment',
     Company: 'Company',
+    Distro_PO_Header: 'Distro_PO_Header',
+    Distro_PO_Line: 'Distro_PO_Line',
     FormL9: 'FormL9',
     FormL9BankInfo: 'FormL9BankInfo',
     FormL9GeneralInformation: 'FormL9GeneralInformation',
@@ -942,7 +974,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "companySegment" | "company" | "formL9" | "formL9BankInfo" | "formL9GeneralInformation" | "formL9GeneralInformationContinue" | "formL9Management" | "formL9Employe" | "formL9WorkExperience" | "formL9Others" | "formL9CertificateISO" | "allowedIpCors" | "menu" | "user" | "otpVerifikasi" | "logsLogin" | "role" | "access" | "resetPassword" | "userHasRoleAccess" | "linkedDevice" | "profile"
+      modelProps: "companySegment" | "company" | "distro_PO_Header" | "distro_PO_Line" | "formL9" | "formL9BankInfo" | "formL9GeneralInformation" | "formL9GeneralInformationContinue" | "formL9Management" | "formL9Employe" | "formL9WorkExperience" | "formL9Others" | "formL9CertificateISO" | "allowedIpCors" | "menu" | "user" | "otpVerifikasi" | "logsLogin" | "role" | "access" | "resetPassword" | "userHasRoleAccess" | "linkedDevice" | "profile"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1091,6 +1123,154 @@ export namespace Prisma {
           count: {
             args: Prisma.CompanyCountArgs<ExtArgs>
             result: $Utils.Optional<CompanyCountAggregateOutputType> | number
+          }
+        }
+      }
+      Distro_PO_Header: {
+        payload: Prisma.$Distro_PO_HeaderPayload<ExtArgs>
+        fields: Prisma.Distro_PO_HeaderFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.Distro_PO_HeaderFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.Distro_PO_HeaderFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload>
+          }
+          findFirst: {
+            args: Prisma.Distro_PO_HeaderFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.Distro_PO_HeaderFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload>
+          }
+          findMany: {
+            args: Prisma.Distro_PO_HeaderFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload>[]
+          }
+          create: {
+            args: Prisma.Distro_PO_HeaderCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload>
+          }
+          createMany: {
+            args: Prisma.Distro_PO_HeaderCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.Distro_PO_HeaderCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload>[]
+          }
+          delete: {
+            args: Prisma.Distro_PO_HeaderDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload>
+          }
+          update: {
+            args: Prisma.Distro_PO_HeaderUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload>
+          }
+          deleteMany: {
+            args: Prisma.Distro_PO_HeaderDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.Distro_PO_HeaderUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.Distro_PO_HeaderUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload>[]
+          }
+          upsert: {
+            args: Prisma.Distro_PO_HeaderUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_HeaderPayload>
+          }
+          aggregate: {
+            args: Prisma.Distro_PO_HeaderAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDistro_PO_Header>
+          }
+          groupBy: {
+            args: Prisma.Distro_PO_HeaderGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_HeaderGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.Distro_PO_HeaderCountArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_HeaderCountAggregateOutputType> | number
+          }
+        }
+      }
+      Distro_PO_Line: {
+        payload: Prisma.$Distro_PO_LinePayload<ExtArgs>
+        fields: Prisma.Distro_PO_LineFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.Distro_PO_LineFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.Distro_PO_LineFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload>
+          }
+          findFirst: {
+            args: Prisma.Distro_PO_LineFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.Distro_PO_LineFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload>
+          }
+          findMany: {
+            args: Prisma.Distro_PO_LineFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload>[]
+          }
+          create: {
+            args: Prisma.Distro_PO_LineCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload>
+          }
+          createMany: {
+            args: Prisma.Distro_PO_LineCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.Distro_PO_LineCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload>[]
+          }
+          delete: {
+            args: Prisma.Distro_PO_LineDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload>
+          }
+          update: {
+            args: Prisma.Distro_PO_LineUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload>
+          }
+          deleteMany: {
+            args: Prisma.Distro_PO_LineDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.Distro_PO_LineUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.Distro_PO_LineUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload>[]
+          }
+          upsert: {
+            args: Prisma.Distro_PO_LineUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_LinePayload>
+          }
+          aggregate: {
+            args: Prisma.Distro_PO_LineAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDistro_PO_Line>
+          }
+          groupBy: {
+            args: Prisma.Distro_PO_LineGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_LineGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.Distro_PO_LineCountArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_LineCountAggregateOutputType> | number
           }
         }
       }
@@ -2672,6 +2852,8 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     companySegment?: CompanySegmentOmit
     company?: CompanyOmit
+    distro_PO_Header?: Distro_PO_HeaderOmit
+    distro_PO_Line?: Distro_PO_LineOmit
     formL9?: FormL9Omit
     formL9BankInfo?: FormL9BankInfoOmit
     formL9GeneralInformation?: FormL9GeneralInformationOmit
@@ -2826,6 +3008,37 @@ export namespace Prisma {
    */
   export type CompanyCountOutputTypeCountProfileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ProfileWhereInput
+  }
+
+
+  /**
+   * Count Type Distro_PO_HeaderCountOutputType
+   */
+
+  export type Distro_PO_HeaderCountOutputType = {
+    items: number
+  }
+
+  export type Distro_PO_HeaderCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    items?: boolean | Distro_PO_HeaderCountOutputTypeCountItemsArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Distro_PO_HeaderCountOutputType without action
+   */
+  export type Distro_PO_HeaderCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_HeaderCountOutputType
+     */
+    select?: Distro_PO_HeaderCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Distro_PO_HeaderCountOutputType without action
+   */
+  export type Distro_PO_HeaderCountOutputTypeCountItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Distro_PO_LineWhereInput
   }
 
 
@@ -5420,6 +5633,2288 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: CompanyInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Distro_PO_Header
+   */
+
+  export type AggregateDistro_PO_Header = {
+    _count: Distro_PO_HeaderCountAggregateOutputType | null
+    _avg: Distro_PO_HeaderAvgAggregateOutputType | null
+    _sum: Distro_PO_HeaderSumAggregateOutputType | null
+    _min: Distro_PO_HeaderMinAggregateOutputType | null
+    _max: Distro_PO_HeaderMaxAggregateOutputType | null
+  }
+
+  export type Distro_PO_HeaderAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type Distro_PO_HeaderSumAggregateOutputType = {
+    id: number | null
+  }
+
+  export type Distro_PO_HeaderMinAggregateOutputType = {
+    id: number | null
+    poNumber: string | null
+    distributorName: string | null
+    customerCode: string | null
+    poDate: Date | null
+    createdBy: string | null
+    approvedBy: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_HeaderMaxAggregateOutputType = {
+    id: number | null
+    poNumber: string | null
+    distributorName: string | null
+    customerCode: string | null
+    poDate: Date | null
+    createdBy: string | null
+    approvedBy: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_HeaderCountAggregateOutputType = {
+    id: number
+    poNumber: number
+    distributorName: number
+    customerCode: number
+    poDate: number
+    createdBy: number
+    approvedBy: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type Distro_PO_HeaderAvgAggregateInputType = {
+    id?: true
+  }
+
+  export type Distro_PO_HeaderSumAggregateInputType = {
+    id?: true
+  }
+
+  export type Distro_PO_HeaderMinAggregateInputType = {
+    id?: true
+    poNumber?: true
+    distributorName?: true
+    customerCode?: true
+    poDate?: true
+    createdBy?: true
+    approvedBy?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_HeaderMaxAggregateInputType = {
+    id?: true
+    poNumber?: true
+    distributorName?: true
+    customerCode?: true
+    poDate?: true
+    createdBy?: true
+    approvedBy?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_HeaderCountAggregateInputType = {
+    id?: true
+    poNumber?: true
+    distributorName?: true
+    customerCode?: true
+    poDate?: true
+    createdBy?: true
+    approvedBy?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type Distro_PO_HeaderAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_Header to aggregate.
+     */
+    where?: Distro_PO_HeaderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Headers to fetch.
+     */
+    orderBy?: Distro_PO_HeaderOrderByWithRelationInput | Distro_PO_HeaderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: Distro_PO_HeaderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Headers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Headers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Distro_PO_Headers
+    **/
+    _count?: true | Distro_PO_HeaderCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Distro_PO_HeaderAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Distro_PO_HeaderSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Distro_PO_HeaderMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Distro_PO_HeaderMaxAggregateInputType
+  }
+
+  export type GetDistro_PO_HeaderAggregateType<T extends Distro_PO_HeaderAggregateArgs> = {
+        [P in keyof T & keyof AggregateDistro_PO_Header]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDistro_PO_Header[P]>
+      : GetScalarType<T[P], AggregateDistro_PO_Header[P]>
+  }
+
+
+
+
+  export type Distro_PO_HeaderGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Distro_PO_HeaderWhereInput
+    orderBy?: Distro_PO_HeaderOrderByWithAggregationInput | Distro_PO_HeaderOrderByWithAggregationInput[]
+    by: Distro_PO_HeaderScalarFieldEnum[] | Distro_PO_HeaderScalarFieldEnum
+    having?: Distro_PO_HeaderScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Distro_PO_HeaderCountAggregateInputType | true
+    _avg?: Distro_PO_HeaderAvgAggregateInputType
+    _sum?: Distro_PO_HeaderSumAggregateInputType
+    _min?: Distro_PO_HeaderMinAggregateInputType
+    _max?: Distro_PO_HeaderMaxAggregateInputType
+  }
+
+  export type Distro_PO_HeaderGroupByOutputType = {
+    id: number
+    poNumber: string
+    distributorName: string
+    customerCode: string
+    poDate: Date
+    createdBy: string | null
+    approvedBy: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: Distro_PO_HeaderCountAggregateOutputType | null
+    _avg: Distro_PO_HeaderAvgAggregateOutputType | null
+    _sum: Distro_PO_HeaderSumAggregateOutputType | null
+    _min: Distro_PO_HeaderMinAggregateOutputType | null
+    _max: Distro_PO_HeaderMaxAggregateOutputType | null
+  }
+
+  type GetDistro_PO_HeaderGroupByPayload<T extends Distro_PO_HeaderGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Distro_PO_HeaderGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Distro_PO_HeaderGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Distro_PO_HeaderGroupByOutputType[P]>
+            : GetScalarType<T[P], Distro_PO_HeaderGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type Distro_PO_HeaderSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    poNumber?: boolean
+    distributorName?: boolean
+    customerCode?: boolean
+    poDate?: boolean
+    createdBy?: boolean
+    approvedBy?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    items?: boolean | Distro_PO_Header$itemsArgs<ExtArgs>
+    _count?: boolean | Distro_PO_HeaderCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["distro_PO_Header"]>
+
+  export type Distro_PO_HeaderSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    poNumber?: boolean
+    distributorName?: boolean
+    customerCode?: boolean
+    poDate?: boolean
+    createdBy?: boolean
+    approvedBy?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_Header"]>
+
+  export type Distro_PO_HeaderSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    poNumber?: boolean
+    distributorName?: boolean
+    customerCode?: boolean
+    poDate?: boolean
+    createdBy?: boolean
+    approvedBy?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_Header"]>
+
+  export type Distro_PO_HeaderSelectScalar = {
+    id?: boolean
+    poNumber?: boolean
+    distributorName?: boolean
+    customerCode?: boolean
+    poDate?: boolean
+    createdBy?: boolean
+    approvedBy?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type Distro_PO_HeaderOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "poNumber" | "distributorName" | "customerCode" | "poDate" | "createdBy" | "approvedBy" | "createdAt" | "updatedAt", ExtArgs["result"]["distro_PO_Header"]>
+  export type Distro_PO_HeaderInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    items?: boolean | Distro_PO_Header$itemsArgs<ExtArgs>
+    _count?: boolean | Distro_PO_HeaderCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type Distro_PO_HeaderIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type Distro_PO_HeaderIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $Distro_PO_HeaderPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Distro_PO_Header"
+    objects: {
+      items: Prisma.$Distro_PO_LinePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      poNumber: string
+      distributorName: string
+      customerCode: string
+      poDate: Date
+      createdBy: string | null
+      approvedBy: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["distro_PO_Header"]>
+    composites: {}
+  }
+
+  type Distro_PO_HeaderGetPayload<S extends boolean | null | undefined | Distro_PO_HeaderDefaultArgs> = $Result.GetResult<Prisma.$Distro_PO_HeaderPayload, S>
+
+  type Distro_PO_HeaderCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<Distro_PO_HeaderFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Distro_PO_HeaderCountAggregateInputType | true
+    }
+
+  export interface Distro_PO_HeaderDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Distro_PO_Header'], meta: { name: 'Distro_PO_Header' } }
+    /**
+     * Find zero or one Distro_PO_Header that matches the filter.
+     * @param {Distro_PO_HeaderFindUniqueArgs} args - Arguments to find a Distro_PO_Header
+     * @example
+     * // Get one Distro_PO_Header
+     * const distro_PO_Header = await prisma.distro_PO_Header.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends Distro_PO_HeaderFindUniqueArgs>(args: SelectSubset<T, Distro_PO_HeaderFindUniqueArgs<ExtArgs>>): Prisma__Distro_PO_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Distro_PO_Header that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {Distro_PO_HeaderFindUniqueOrThrowArgs} args - Arguments to find a Distro_PO_Header
+     * @example
+     * // Get one Distro_PO_Header
+     * const distro_PO_Header = await prisma.distro_PO_Header.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends Distro_PO_HeaderFindUniqueOrThrowArgs>(args: SelectSubset<T, Distro_PO_HeaderFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_Header that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_HeaderFindFirstArgs} args - Arguments to find a Distro_PO_Header
+     * @example
+     * // Get one Distro_PO_Header
+     * const distro_PO_Header = await prisma.distro_PO_Header.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends Distro_PO_HeaderFindFirstArgs>(args?: SelectSubset<T, Distro_PO_HeaderFindFirstArgs<ExtArgs>>): Prisma__Distro_PO_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_Header that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_HeaderFindFirstOrThrowArgs} args - Arguments to find a Distro_PO_Header
+     * @example
+     * // Get one Distro_PO_Header
+     * const distro_PO_Header = await prisma.distro_PO_Header.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends Distro_PO_HeaderFindFirstOrThrowArgs>(args?: SelectSubset<T, Distro_PO_HeaderFindFirstOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Distro_PO_Headers that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_HeaderFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Distro_PO_Headers
+     * const distro_PO_Headers = await prisma.distro_PO_Header.findMany()
+     * 
+     * // Get first 10 Distro_PO_Headers
+     * const distro_PO_Headers = await prisma.distro_PO_Header.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const distro_PO_HeaderWithIdOnly = await prisma.distro_PO_Header.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends Distro_PO_HeaderFindManyArgs>(args?: SelectSubset<T, Distro_PO_HeaderFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Distro_PO_Header.
+     * @param {Distro_PO_HeaderCreateArgs} args - Arguments to create a Distro_PO_Header.
+     * @example
+     * // Create one Distro_PO_Header
+     * const Distro_PO_Header = await prisma.distro_PO_Header.create({
+     *   data: {
+     *     // ... data to create a Distro_PO_Header
+     *   }
+     * })
+     * 
+     */
+    create<T extends Distro_PO_HeaderCreateArgs>(args: SelectSubset<T, Distro_PO_HeaderCreateArgs<ExtArgs>>): Prisma__Distro_PO_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Distro_PO_Headers.
+     * @param {Distro_PO_HeaderCreateManyArgs} args - Arguments to create many Distro_PO_Headers.
+     * @example
+     * // Create many Distro_PO_Headers
+     * const distro_PO_Header = await prisma.distro_PO_Header.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends Distro_PO_HeaderCreateManyArgs>(args?: SelectSubset<T, Distro_PO_HeaderCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Distro_PO_Headers and returns the data saved in the database.
+     * @param {Distro_PO_HeaderCreateManyAndReturnArgs} args - Arguments to create many Distro_PO_Headers.
+     * @example
+     * // Create many Distro_PO_Headers
+     * const distro_PO_Header = await prisma.distro_PO_Header.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Distro_PO_Headers and only return the `id`
+     * const distro_PO_HeaderWithIdOnly = await prisma.distro_PO_Header.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends Distro_PO_HeaderCreateManyAndReturnArgs>(args?: SelectSubset<T, Distro_PO_HeaderCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Distro_PO_Header.
+     * @param {Distro_PO_HeaderDeleteArgs} args - Arguments to delete one Distro_PO_Header.
+     * @example
+     * // Delete one Distro_PO_Header
+     * const Distro_PO_Header = await prisma.distro_PO_Header.delete({
+     *   where: {
+     *     // ... filter to delete one Distro_PO_Header
+     *   }
+     * })
+     * 
+     */
+    delete<T extends Distro_PO_HeaderDeleteArgs>(args: SelectSubset<T, Distro_PO_HeaderDeleteArgs<ExtArgs>>): Prisma__Distro_PO_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Distro_PO_Header.
+     * @param {Distro_PO_HeaderUpdateArgs} args - Arguments to update one Distro_PO_Header.
+     * @example
+     * // Update one Distro_PO_Header
+     * const distro_PO_Header = await prisma.distro_PO_Header.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends Distro_PO_HeaderUpdateArgs>(args: SelectSubset<T, Distro_PO_HeaderUpdateArgs<ExtArgs>>): Prisma__Distro_PO_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Distro_PO_Headers.
+     * @param {Distro_PO_HeaderDeleteManyArgs} args - Arguments to filter Distro_PO_Headers to delete.
+     * @example
+     * // Delete a few Distro_PO_Headers
+     * const { count } = await prisma.distro_PO_Header.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends Distro_PO_HeaderDeleteManyArgs>(args?: SelectSubset<T, Distro_PO_HeaderDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_Headers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_HeaderUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Distro_PO_Headers
+     * const distro_PO_Header = await prisma.distro_PO_Header.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends Distro_PO_HeaderUpdateManyArgs>(args: SelectSubset<T, Distro_PO_HeaderUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_Headers and returns the data updated in the database.
+     * @param {Distro_PO_HeaderUpdateManyAndReturnArgs} args - Arguments to update many Distro_PO_Headers.
+     * @example
+     * // Update many Distro_PO_Headers
+     * const distro_PO_Header = await prisma.distro_PO_Header.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Distro_PO_Headers and only return the `id`
+     * const distro_PO_HeaderWithIdOnly = await prisma.distro_PO_Header.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends Distro_PO_HeaderUpdateManyAndReturnArgs>(args: SelectSubset<T, Distro_PO_HeaderUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Distro_PO_Header.
+     * @param {Distro_PO_HeaderUpsertArgs} args - Arguments to update or create a Distro_PO_Header.
+     * @example
+     * // Update or create a Distro_PO_Header
+     * const distro_PO_Header = await prisma.distro_PO_Header.upsert({
+     *   create: {
+     *     // ... data to create a Distro_PO_Header
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Distro_PO_Header we want to update
+     *   }
+     * })
+     */
+    upsert<T extends Distro_PO_HeaderUpsertArgs>(args: SelectSubset<T, Distro_PO_HeaderUpsertArgs<ExtArgs>>): Prisma__Distro_PO_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Distro_PO_Headers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_HeaderCountArgs} args - Arguments to filter Distro_PO_Headers to count.
+     * @example
+     * // Count the number of Distro_PO_Headers
+     * const count = await prisma.distro_PO_Header.count({
+     *   where: {
+     *     // ... the filter for the Distro_PO_Headers we want to count
+     *   }
+     * })
+    **/
+    count<T extends Distro_PO_HeaderCountArgs>(
+      args?: Subset<T, Distro_PO_HeaderCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Distro_PO_HeaderCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Distro_PO_Header.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_HeaderAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Distro_PO_HeaderAggregateArgs>(args: Subset<T, Distro_PO_HeaderAggregateArgs>): Prisma.PrismaPromise<GetDistro_PO_HeaderAggregateType<T>>
+
+    /**
+     * Group by Distro_PO_Header.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_HeaderGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends Distro_PO_HeaderGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: Distro_PO_HeaderGroupByArgs['orderBy'] }
+        : { orderBy?: Distro_PO_HeaderGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, Distro_PO_HeaderGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDistro_PO_HeaderGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Distro_PO_Header model
+   */
+  readonly fields: Distro_PO_HeaderFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Distro_PO_Header.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__Distro_PO_HeaderClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    items<T extends Distro_PO_Header$itemsArgs<ExtArgs> = {}>(args?: Subset<T, Distro_PO_Header$itemsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Distro_PO_Header model
+   */
+  interface Distro_PO_HeaderFieldRefs {
+    readonly id: FieldRef<"Distro_PO_Header", 'Int'>
+    readonly poNumber: FieldRef<"Distro_PO_Header", 'String'>
+    readonly distributorName: FieldRef<"Distro_PO_Header", 'String'>
+    readonly customerCode: FieldRef<"Distro_PO_Header", 'String'>
+    readonly poDate: FieldRef<"Distro_PO_Header", 'DateTime'>
+    readonly createdBy: FieldRef<"Distro_PO_Header", 'String'>
+    readonly approvedBy: FieldRef<"Distro_PO_Header", 'String'>
+    readonly createdAt: FieldRef<"Distro_PO_Header", 'DateTime'>
+    readonly updatedAt: FieldRef<"Distro_PO_Header", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Distro_PO_Header findUnique
+   */
+  export type Distro_PO_HeaderFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Header to fetch.
+     */
+    where: Distro_PO_HeaderWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Header findUniqueOrThrow
+   */
+  export type Distro_PO_HeaderFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Header to fetch.
+     */
+    where: Distro_PO_HeaderWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Header findFirst
+   */
+  export type Distro_PO_HeaderFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Header to fetch.
+     */
+    where?: Distro_PO_HeaderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Headers to fetch.
+     */
+    orderBy?: Distro_PO_HeaderOrderByWithRelationInput | Distro_PO_HeaderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_Headers.
+     */
+    cursor?: Distro_PO_HeaderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Headers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Headers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_Headers.
+     */
+    distinct?: Distro_PO_HeaderScalarFieldEnum | Distro_PO_HeaderScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Header findFirstOrThrow
+   */
+  export type Distro_PO_HeaderFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Header to fetch.
+     */
+    where?: Distro_PO_HeaderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Headers to fetch.
+     */
+    orderBy?: Distro_PO_HeaderOrderByWithRelationInput | Distro_PO_HeaderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_Headers.
+     */
+    cursor?: Distro_PO_HeaderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Headers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Headers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_Headers.
+     */
+    distinct?: Distro_PO_HeaderScalarFieldEnum | Distro_PO_HeaderScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Header findMany
+   */
+  export type Distro_PO_HeaderFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Headers to fetch.
+     */
+    where?: Distro_PO_HeaderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Headers to fetch.
+     */
+    orderBy?: Distro_PO_HeaderOrderByWithRelationInput | Distro_PO_HeaderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Distro_PO_Headers.
+     */
+    cursor?: Distro_PO_HeaderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Headers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Headers.
+     */
+    skip?: number
+    distinct?: Distro_PO_HeaderScalarFieldEnum | Distro_PO_HeaderScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Header create
+   */
+  export type Distro_PO_HeaderCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Distro_PO_Header.
+     */
+    data: XOR<Distro_PO_HeaderCreateInput, Distro_PO_HeaderUncheckedCreateInput>
+  }
+
+  /**
+   * Distro_PO_Header createMany
+   */
+  export type Distro_PO_HeaderCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Distro_PO_Headers.
+     */
+    data: Distro_PO_HeaderCreateManyInput | Distro_PO_HeaderCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_Header createManyAndReturn
+   */
+  export type Distro_PO_HeaderCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * The data used to create many Distro_PO_Headers.
+     */
+    data: Distro_PO_HeaderCreateManyInput | Distro_PO_HeaderCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_Header update
+   */
+  export type Distro_PO_HeaderUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Distro_PO_Header.
+     */
+    data: XOR<Distro_PO_HeaderUpdateInput, Distro_PO_HeaderUncheckedUpdateInput>
+    /**
+     * Choose, which Distro_PO_Header to update.
+     */
+    where: Distro_PO_HeaderWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Header updateMany
+   */
+  export type Distro_PO_HeaderUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Distro_PO_Headers.
+     */
+    data: XOR<Distro_PO_HeaderUpdateManyMutationInput, Distro_PO_HeaderUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_Headers to update
+     */
+    where?: Distro_PO_HeaderWhereInput
+    /**
+     * Limit how many Distro_PO_Headers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_Header updateManyAndReturn
+   */
+  export type Distro_PO_HeaderUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * The data used to update Distro_PO_Headers.
+     */
+    data: XOR<Distro_PO_HeaderUpdateManyMutationInput, Distro_PO_HeaderUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_Headers to update
+     */
+    where?: Distro_PO_HeaderWhereInput
+    /**
+     * Limit how many Distro_PO_Headers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_Header upsert
+   */
+  export type Distro_PO_HeaderUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Distro_PO_Header to update in case it exists.
+     */
+    where: Distro_PO_HeaderWhereUniqueInput
+    /**
+     * In case the Distro_PO_Header found by the `where` argument doesn't exist, create a new Distro_PO_Header with this data.
+     */
+    create: XOR<Distro_PO_HeaderCreateInput, Distro_PO_HeaderUncheckedCreateInput>
+    /**
+     * In case the Distro_PO_Header was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<Distro_PO_HeaderUpdateInput, Distro_PO_HeaderUncheckedUpdateInput>
+  }
+
+  /**
+   * Distro_PO_Header delete
+   */
+  export type Distro_PO_HeaderDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter which Distro_PO_Header to delete.
+     */
+    where: Distro_PO_HeaderWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Header deleteMany
+   */
+  export type Distro_PO_HeaderDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_Headers to delete
+     */
+    where?: Distro_PO_HeaderWhereInput
+    /**
+     * Limit how many Distro_PO_Headers to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_Header.items
+   */
+  export type Distro_PO_Header$itemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    where?: Distro_PO_LineWhereInput
+    orderBy?: Distro_PO_LineOrderByWithRelationInput | Distro_PO_LineOrderByWithRelationInput[]
+    cursor?: Distro_PO_LineWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Distro_PO_LineScalarFieldEnum | Distro_PO_LineScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Header without action
+   */
+  export type Distro_PO_HeaderDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Header
+     */
+    select?: Distro_PO_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Header
+     */
+    omit?: Distro_PO_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_HeaderInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Distro_PO_Line
+   */
+
+  export type AggregateDistro_PO_Line = {
+    _count: Distro_PO_LineCountAggregateOutputType | null
+    _avg: Distro_PO_LineAvgAggregateOutputType | null
+    _sum: Distro_PO_LineSumAggregateOutputType | null
+    _min: Distro_PO_LineMinAggregateOutputType | null
+    _max: Distro_PO_LineMaxAggregateOutputType | null
+  }
+
+  export type Distro_PO_LineAvgAggregateOutputType = {
+    id: number | null
+    qty: number | null
+    purchaseOrderId: number | null
+  }
+
+  export type Distro_PO_LineSumAggregateOutputType = {
+    id: number | null
+    qty: number | null
+    purchaseOrderId: number | null
+  }
+
+  export type Distro_PO_LineMinAggregateOutputType = {
+    id: number | null
+    vehicleCategory: string | null
+    spType: string | null
+    partName: string | null
+    partNumber: string | null
+    qty: number | null
+    purchaseOrderId: number | null
+  }
+
+  export type Distro_PO_LineMaxAggregateOutputType = {
+    id: number | null
+    vehicleCategory: string | null
+    spType: string | null
+    partName: string | null
+    partNumber: string | null
+    qty: number | null
+    purchaseOrderId: number | null
+  }
+
+  export type Distro_PO_LineCountAggregateOutputType = {
+    id: number
+    vehicleCategory: number
+    spType: number
+    partName: number
+    partNumber: number
+    qty: number
+    purchaseOrderId: number
+    _all: number
+  }
+
+
+  export type Distro_PO_LineAvgAggregateInputType = {
+    id?: true
+    qty?: true
+    purchaseOrderId?: true
+  }
+
+  export type Distro_PO_LineSumAggregateInputType = {
+    id?: true
+    qty?: true
+    purchaseOrderId?: true
+  }
+
+  export type Distro_PO_LineMinAggregateInputType = {
+    id?: true
+    vehicleCategory?: true
+    spType?: true
+    partName?: true
+    partNumber?: true
+    qty?: true
+    purchaseOrderId?: true
+  }
+
+  export type Distro_PO_LineMaxAggregateInputType = {
+    id?: true
+    vehicleCategory?: true
+    spType?: true
+    partName?: true
+    partNumber?: true
+    qty?: true
+    purchaseOrderId?: true
+  }
+
+  export type Distro_PO_LineCountAggregateInputType = {
+    id?: true
+    vehicleCategory?: true
+    spType?: true
+    partName?: true
+    partNumber?: true
+    qty?: true
+    purchaseOrderId?: true
+    _all?: true
+  }
+
+  export type Distro_PO_LineAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_Line to aggregate.
+     */
+    where?: Distro_PO_LineWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Lines to fetch.
+     */
+    orderBy?: Distro_PO_LineOrderByWithRelationInput | Distro_PO_LineOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: Distro_PO_LineWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Lines from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Lines.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Distro_PO_Lines
+    **/
+    _count?: true | Distro_PO_LineCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Distro_PO_LineAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Distro_PO_LineSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Distro_PO_LineMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Distro_PO_LineMaxAggregateInputType
+  }
+
+  export type GetDistro_PO_LineAggregateType<T extends Distro_PO_LineAggregateArgs> = {
+        [P in keyof T & keyof AggregateDistro_PO_Line]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDistro_PO_Line[P]>
+      : GetScalarType<T[P], AggregateDistro_PO_Line[P]>
+  }
+
+
+
+
+  export type Distro_PO_LineGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Distro_PO_LineWhereInput
+    orderBy?: Distro_PO_LineOrderByWithAggregationInput | Distro_PO_LineOrderByWithAggregationInput[]
+    by: Distro_PO_LineScalarFieldEnum[] | Distro_PO_LineScalarFieldEnum
+    having?: Distro_PO_LineScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Distro_PO_LineCountAggregateInputType | true
+    _avg?: Distro_PO_LineAvgAggregateInputType
+    _sum?: Distro_PO_LineSumAggregateInputType
+    _min?: Distro_PO_LineMinAggregateInputType
+    _max?: Distro_PO_LineMaxAggregateInputType
+  }
+
+  export type Distro_PO_LineGroupByOutputType = {
+    id: number
+    vehicleCategory: string
+    spType: string
+    partName: string
+    partNumber: string
+    qty: number
+    purchaseOrderId: number
+    _count: Distro_PO_LineCountAggregateOutputType | null
+    _avg: Distro_PO_LineAvgAggregateOutputType | null
+    _sum: Distro_PO_LineSumAggregateOutputType | null
+    _min: Distro_PO_LineMinAggregateOutputType | null
+    _max: Distro_PO_LineMaxAggregateOutputType | null
+  }
+
+  type GetDistro_PO_LineGroupByPayload<T extends Distro_PO_LineGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Distro_PO_LineGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Distro_PO_LineGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Distro_PO_LineGroupByOutputType[P]>
+            : GetScalarType<T[P], Distro_PO_LineGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type Distro_PO_LineSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    vehicleCategory?: boolean
+    spType?: boolean
+    partName?: boolean
+    partNumber?: boolean
+    qty?: boolean
+    purchaseOrderId?: boolean
+    purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["distro_PO_Line"]>
+
+  export type Distro_PO_LineSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    vehicleCategory?: boolean
+    spType?: boolean
+    partName?: boolean
+    partNumber?: boolean
+    qty?: boolean
+    purchaseOrderId?: boolean
+    purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["distro_PO_Line"]>
+
+  export type Distro_PO_LineSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    vehicleCategory?: boolean
+    spType?: boolean
+    partName?: boolean
+    partNumber?: boolean
+    qty?: boolean
+    purchaseOrderId?: boolean
+    purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["distro_PO_Line"]>
+
+  export type Distro_PO_LineSelectScalar = {
+    id?: boolean
+    vehicleCategory?: boolean
+    spType?: boolean
+    partName?: boolean
+    partNumber?: boolean
+    qty?: boolean
+    purchaseOrderId?: boolean
+  }
+
+  export type Distro_PO_LineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "vehicleCategory" | "spType" | "partName" | "partNumber" | "qty" | "purchaseOrderId", ExtArgs["result"]["distro_PO_Line"]>
+  export type Distro_PO_LineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
+  }
+  export type Distro_PO_LineIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
+  }
+  export type Distro_PO_LineIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
+  }
+
+  export type $Distro_PO_LinePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Distro_PO_Line"
+    objects: {
+      purchaseOrder: Prisma.$Distro_PO_HeaderPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      vehicleCategory: string
+      spType: string
+      partName: string
+      partNumber: string
+      qty: number
+      purchaseOrderId: number
+    }, ExtArgs["result"]["distro_PO_Line"]>
+    composites: {}
+  }
+
+  type Distro_PO_LineGetPayload<S extends boolean | null | undefined | Distro_PO_LineDefaultArgs> = $Result.GetResult<Prisma.$Distro_PO_LinePayload, S>
+
+  type Distro_PO_LineCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<Distro_PO_LineFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Distro_PO_LineCountAggregateInputType | true
+    }
+
+  export interface Distro_PO_LineDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Distro_PO_Line'], meta: { name: 'Distro_PO_Line' } }
+    /**
+     * Find zero or one Distro_PO_Line that matches the filter.
+     * @param {Distro_PO_LineFindUniqueArgs} args - Arguments to find a Distro_PO_Line
+     * @example
+     * // Get one Distro_PO_Line
+     * const distro_PO_Line = await prisma.distro_PO_Line.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends Distro_PO_LineFindUniqueArgs>(args: SelectSubset<T, Distro_PO_LineFindUniqueArgs<ExtArgs>>): Prisma__Distro_PO_LineClient<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Distro_PO_Line that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {Distro_PO_LineFindUniqueOrThrowArgs} args - Arguments to find a Distro_PO_Line
+     * @example
+     * // Get one Distro_PO_Line
+     * const distro_PO_Line = await prisma.distro_PO_Line.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends Distro_PO_LineFindUniqueOrThrowArgs>(args: SelectSubset<T, Distro_PO_LineFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_LineClient<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_Line that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_LineFindFirstArgs} args - Arguments to find a Distro_PO_Line
+     * @example
+     * // Get one Distro_PO_Line
+     * const distro_PO_Line = await prisma.distro_PO_Line.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends Distro_PO_LineFindFirstArgs>(args?: SelectSubset<T, Distro_PO_LineFindFirstArgs<ExtArgs>>): Prisma__Distro_PO_LineClient<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_Line that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_LineFindFirstOrThrowArgs} args - Arguments to find a Distro_PO_Line
+     * @example
+     * // Get one Distro_PO_Line
+     * const distro_PO_Line = await prisma.distro_PO_Line.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends Distro_PO_LineFindFirstOrThrowArgs>(args?: SelectSubset<T, Distro_PO_LineFindFirstOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_LineClient<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Distro_PO_Lines that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_LineFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Distro_PO_Lines
+     * const distro_PO_Lines = await prisma.distro_PO_Line.findMany()
+     * 
+     * // Get first 10 Distro_PO_Lines
+     * const distro_PO_Lines = await prisma.distro_PO_Line.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const distro_PO_LineWithIdOnly = await prisma.distro_PO_Line.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends Distro_PO_LineFindManyArgs>(args?: SelectSubset<T, Distro_PO_LineFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Distro_PO_Line.
+     * @param {Distro_PO_LineCreateArgs} args - Arguments to create a Distro_PO_Line.
+     * @example
+     * // Create one Distro_PO_Line
+     * const Distro_PO_Line = await prisma.distro_PO_Line.create({
+     *   data: {
+     *     // ... data to create a Distro_PO_Line
+     *   }
+     * })
+     * 
+     */
+    create<T extends Distro_PO_LineCreateArgs>(args: SelectSubset<T, Distro_PO_LineCreateArgs<ExtArgs>>): Prisma__Distro_PO_LineClient<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Distro_PO_Lines.
+     * @param {Distro_PO_LineCreateManyArgs} args - Arguments to create many Distro_PO_Lines.
+     * @example
+     * // Create many Distro_PO_Lines
+     * const distro_PO_Line = await prisma.distro_PO_Line.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends Distro_PO_LineCreateManyArgs>(args?: SelectSubset<T, Distro_PO_LineCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Distro_PO_Lines and returns the data saved in the database.
+     * @param {Distro_PO_LineCreateManyAndReturnArgs} args - Arguments to create many Distro_PO_Lines.
+     * @example
+     * // Create many Distro_PO_Lines
+     * const distro_PO_Line = await prisma.distro_PO_Line.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Distro_PO_Lines and only return the `id`
+     * const distro_PO_LineWithIdOnly = await prisma.distro_PO_Line.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends Distro_PO_LineCreateManyAndReturnArgs>(args?: SelectSubset<T, Distro_PO_LineCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Distro_PO_Line.
+     * @param {Distro_PO_LineDeleteArgs} args - Arguments to delete one Distro_PO_Line.
+     * @example
+     * // Delete one Distro_PO_Line
+     * const Distro_PO_Line = await prisma.distro_PO_Line.delete({
+     *   where: {
+     *     // ... filter to delete one Distro_PO_Line
+     *   }
+     * })
+     * 
+     */
+    delete<T extends Distro_PO_LineDeleteArgs>(args: SelectSubset<T, Distro_PO_LineDeleteArgs<ExtArgs>>): Prisma__Distro_PO_LineClient<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Distro_PO_Line.
+     * @param {Distro_PO_LineUpdateArgs} args - Arguments to update one Distro_PO_Line.
+     * @example
+     * // Update one Distro_PO_Line
+     * const distro_PO_Line = await prisma.distro_PO_Line.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends Distro_PO_LineUpdateArgs>(args: SelectSubset<T, Distro_PO_LineUpdateArgs<ExtArgs>>): Prisma__Distro_PO_LineClient<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Distro_PO_Lines.
+     * @param {Distro_PO_LineDeleteManyArgs} args - Arguments to filter Distro_PO_Lines to delete.
+     * @example
+     * // Delete a few Distro_PO_Lines
+     * const { count } = await prisma.distro_PO_Line.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends Distro_PO_LineDeleteManyArgs>(args?: SelectSubset<T, Distro_PO_LineDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_Lines.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_LineUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Distro_PO_Lines
+     * const distro_PO_Line = await prisma.distro_PO_Line.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends Distro_PO_LineUpdateManyArgs>(args: SelectSubset<T, Distro_PO_LineUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_Lines and returns the data updated in the database.
+     * @param {Distro_PO_LineUpdateManyAndReturnArgs} args - Arguments to update many Distro_PO_Lines.
+     * @example
+     * // Update many Distro_PO_Lines
+     * const distro_PO_Line = await prisma.distro_PO_Line.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Distro_PO_Lines and only return the `id`
+     * const distro_PO_LineWithIdOnly = await prisma.distro_PO_Line.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends Distro_PO_LineUpdateManyAndReturnArgs>(args: SelectSubset<T, Distro_PO_LineUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Distro_PO_Line.
+     * @param {Distro_PO_LineUpsertArgs} args - Arguments to update or create a Distro_PO_Line.
+     * @example
+     * // Update or create a Distro_PO_Line
+     * const distro_PO_Line = await prisma.distro_PO_Line.upsert({
+     *   create: {
+     *     // ... data to create a Distro_PO_Line
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Distro_PO_Line we want to update
+     *   }
+     * })
+     */
+    upsert<T extends Distro_PO_LineUpsertArgs>(args: SelectSubset<T, Distro_PO_LineUpsertArgs<ExtArgs>>): Prisma__Distro_PO_LineClient<$Result.GetResult<Prisma.$Distro_PO_LinePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Distro_PO_Lines.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_LineCountArgs} args - Arguments to filter Distro_PO_Lines to count.
+     * @example
+     * // Count the number of Distro_PO_Lines
+     * const count = await prisma.distro_PO_Line.count({
+     *   where: {
+     *     // ... the filter for the Distro_PO_Lines we want to count
+     *   }
+     * })
+    **/
+    count<T extends Distro_PO_LineCountArgs>(
+      args?: Subset<T, Distro_PO_LineCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Distro_PO_LineCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Distro_PO_Line.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_LineAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Distro_PO_LineAggregateArgs>(args: Subset<T, Distro_PO_LineAggregateArgs>): Prisma.PrismaPromise<GetDistro_PO_LineAggregateType<T>>
+
+    /**
+     * Group by Distro_PO_Line.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_LineGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends Distro_PO_LineGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: Distro_PO_LineGroupByArgs['orderBy'] }
+        : { orderBy?: Distro_PO_LineGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, Distro_PO_LineGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDistro_PO_LineGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Distro_PO_Line model
+   */
+  readonly fields: Distro_PO_LineFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Distro_PO_Line.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__Distro_PO_LineClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    purchaseOrder<T extends Distro_PO_HeaderDefaultArgs<ExtArgs> = {}>(args?: Subset<T, Distro_PO_HeaderDefaultArgs<ExtArgs>>): Prisma__Distro_PO_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_HeaderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Distro_PO_Line model
+   */
+  interface Distro_PO_LineFieldRefs {
+    readonly id: FieldRef<"Distro_PO_Line", 'Int'>
+    readonly vehicleCategory: FieldRef<"Distro_PO_Line", 'String'>
+    readonly spType: FieldRef<"Distro_PO_Line", 'String'>
+    readonly partName: FieldRef<"Distro_PO_Line", 'String'>
+    readonly partNumber: FieldRef<"Distro_PO_Line", 'String'>
+    readonly qty: FieldRef<"Distro_PO_Line", 'Int'>
+    readonly purchaseOrderId: FieldRef<"Distro_PO_Line", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Distro_PO_Line findUnique
+   */
+  export type Distro_PO_LineFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Line to fetch.
+     */
+    where: Distro_PO_LineWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Line findUniqueOrThrow
+   */
+  export type Distro_PO_LineFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Line to fetch.
+     */
+    where: Distro_PO_LineWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Line findFirst
+   */
+  export type Distro_PO_LineFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Line to fetch.
+     */
+    where?: Distro_PO_LineWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Lines to fetch.
+     */
+    orderBy?: Distro_PO_LineOrderByWithRelationInput | Distro_PO_LineOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_Lines.
+     */
+    cursor?: Distro_PO_LineWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Lines from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Lines.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_Lines.
+     */
+    distinct?: Distro_PO_LineScalarFieldEnum | Distro_PO_LineScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Line findFirstOrThrow
+   */
+  export type Distro_PO_LineFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Line to fetch.
+     */
+    where?: Distro_PO_LineWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Lines to fetch.
+     */
+    orderBy?: Distro_PO_LineOrderByWithRelationInput | Distro_PO_LineOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_Lines.
+     */
+    cursor?: Distro_PO_LineWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Lines from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Lines.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_Lines.
+     */
+    distinct?: Distro_PO_LineScalarFieldEnum | Distro_PO_LineScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Line findMany
+   */
+  export type Distro_PO_LineFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Lines to fetch.
+     */
+    where?: Distro_PO_LineWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Lines to fetch.
+     */
+    orderBy?: Distro_PO_LineOrderByWithRelationInput | Distro_PO_LineOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Distro_PO_Lines.
+     */
+    cursor?: Distro_PO_LineWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Lines from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Lines.
+     */
+    skip?: number
+    distinct?: Distro_PO_LineScalarFieldEnum | Distro_PO_LineScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Line create
+   */
+  export type Distro_PO_LineCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Distro_PO_Line.
+     */
+    data: XOR<Distro_PO_LineCreateInput, Distro_PO_LineUncheckedCreateInput>
+  }
+
+  /**
+   * Distro_PO_Line createMany
+   */
+  export type Distro_PO_LineCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Distro_PO_Lines.
+     */
+    data: Distro_PO_LineCreateManyInput | Distro_PO_LineCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_Line createManyAndReturn
+   */
+  export type Distro_PO_LineCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * The data used to create many Distro_PO_Lines.
+     */
+    data: Distro_PO_LineCreateManyInput | Distro_PO_LineCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Distro_PO_Line update
+   */
+  export type Distro_PO_LineUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Distro_PO_Line.
+     */
+    data: XOR<Distro_PO_LineUpdateInput, Distro_PO_LineUncheckedUpdateInput>
+    /**
+     * Choose, which Distro_PO_Line to update.
+     */
+    where: Distro_PO_LineWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Line updateMany
+   */
+  export type Distro_PO_LineUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Distro_PO_Lines.
+     */
+    data: XOR<Distro_PO_LineUpdateManyMutationInput, Distro_PO_LineUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_Lines to update
+     */
+    where?: Distro_PO_LineWhereInput
+    /**
+     * Limit how many Distro_PO_Lines to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_Line updateManyAndReturn
+   */
+  export type Distro_PO_LineUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * The data used to update Distro_PO_Lines.
+     */
+    data: XOR<Distro_PO_LineUpdateManyMutationInput, Distro_PO_LineUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_Lines to update
+     */
+    where?: Distro_PO_LineWhereInput
+    /**
+     * Limit how many Distro_PO_Lines to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Distro_PO_Line upsert
+   */
+  export type Distro_PO_LineUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Distro_PO_Line to update in case it exists.
+     */
+    where: Distro_PO_LineWhereUniqueInput
+    /**
+     * In case the Distro_PO_Line found by the `where` argument doesn't exist, create a new Distro_PO_Line with this data.
+     */
+    create: XOR<Distro_PO_LineCreateInput, Distro_PO_LineUncheckedCreateInput>
+    /**
+     * In case the Distro_PO_Line was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<Distro_PO_LineUpdateInput, Distro_PO_LineUncheckedUpdateInput>
+  }
+
+  /**
+   * Distro_PO_Line delete
+   */
+  export type Distro_PO_LineDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
+    /**
+     * Filter which Distro_PO_Line to delete.
+     */
+    where: Distro_PO_LineWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Line deleteMany
+   */
+  export type Distro_PO_LineDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_Lines to delete
+     */
+    where?: Distro_PO_LineWhereInput
+    /**
+     * Limit how many Distro_PO_Lines to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_Line without action
+   */
+  export type Distro_PO_LineDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Line
+     */
+    select?: Distro_PO_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Line
+     */
+    omit?: Distro_PO_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_LineInclude<ExtArgs> | null
   }
 
 
@@ -27787,6 +30282,34 @@ export namespace Prisma {
   export type CompanyScalarFieldEnum = (typeof CompanyScalarFieldEnum)[keyof typeof CompanyScalarFieldEnum]
 
 
+  export const Distro_PO_HeaderScalarFieldEnum: {
+    id: 'id',
+    poNumber: 'poNumber',
+    distributorName: 'distributorName',
+    customerCode: 'customerCode',
+    poDate: 'poDate',
+    createdBy: 'createdBy',
+    approvedBy: 'approvedBy',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type Distro_PO_HeaderScalarFieldEnum = (typeof Distro_PO_HeaderScalarFieldEnum)[keyof typeof Distro_PO_HeaderScalarFieldEnum]
+
+
+  export const Distro_PO_LineScalarFieldEnum: {
+    id: 'id',
+    vehicleCategory: 'vehicleCategory',
+    spType: 'spType',
+    partName: 'partName',
+    partNumber: 'partNumber',
+    qty: 'qty',
+    purchaseOrderId: 'purchaseOrderId'
+  };
+
+  export type Distro_PO_LineScalarFieldEnum = (typeof Distro_PO_LineScalarFieldEnum)[keyof typeof Distro_PO_LineScalarFieldEnum]
+
+
   export const FormL9ScalarFieldEnum: {
     formL9Id: 'formL9Id',
     companyId: 'companyId',
@@ -28293,6 +30816,150 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
     totalCapital?: StringNullableWithAggregatesFilter<"Company"> | string | null
+  }
+
+  export type Distro_PO_HeaderWhereInput = {
+    AND?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
+    OR?: Distro_PO_HeaderWhereInput[]
+    NOT?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
+    id?: IntFilter<"Distro_PO_Header"> | number
+    poNumber?: StringFilter<"Distro_PO_Header"> | string
+    distributorName?: StringFilter<"Distro_PO_Header"> | string
+    customerCode?: StringFilter<"Distro_PO_Header"> | string
+    poDate?: DateTimeFilter<"Distro_PO_Header"> | Date | string
+    createdBy?: StringNullableFilter<"Distro_PO_Header"> | string | null
+    approvedBy?: StringNullableFilter<"Distro_PO_Header"> | string | null
+    createdAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
+    updatedAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
+    items?: Distro_PO_LineListRelationFilter
+  }
+
+  export type Distro_PO_HeaderOrderByWithRelationInput = {
+    id?: SortOrder
+    poNumber?: SortOrder
+    distributorName?: SortOrder
+    customerCode?: SortOrder
+    poDate?: SortOrder
+    createdBy?: SortOrderInput | SortOrder
+    approvedBy?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    items?: Distro_PO_LineOrderByRelationAggregateInput
+  }
+
+  export type Distro_PO_HeaderWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    poNumber?: string
+    AND?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
+    OR?: Distro_PO_HeaderWhereInput[]
+    NOT?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
+    distributorName?: StringFilter<"Distro_PO_Header"> | string
+    customerCode?: StringFilter<"Distro_PO_Header"> | string
+    poDate?: DateTimeFilter<"Distro_PO_Header"> | Date | string
+    createdBy?: StringNullableFilter<"Distro_PO_Header"> | string | null
+    approvedBy?: StringNullableFilter<"Distro_PO_Header"> | string | null
+    createdAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
+    updatedAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
+    items?: Distro_PO_LineListRelationFilter
+  }, "id" | "poNumber">
+
+  export type Distro_PO_HeaderOrderByWithAggregationInput = {
+    id?: SortOrder
+    poNumber?: SortOrder
+    distributorName?: SortOrder
+    customerCode?: SortOrder
+    poDate?: SortOrder
+    createdBy?: SortOrderInput | SortOrder
+    approvedBy?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: Distro_PO_HeaderCountOrderByAggregateInput
+    _avg?: Distro_PO_HeaderAvgOrderByAggregateInput
+    _max?: Distro_PO_HeaderMaxOrderByAggregateInput
+    _min?: Distro_PO_HeaderMinOrderByAggregateInput
+    _sum?: Distro_PO_HeaderSumOrderByAggregateInput
+  }
+
+  export type Distro_PO_HeaderScalarWhereWithAggregatesInput = {
+    AND?: Distro_PO_HeaderScalarWhereWithAggregatesInput | Distro_PO_HeaderScalarWhereWithAggregatesInput[]
+    OR?: Distro_PO_HeaderScalarWhereWithAggregatesInput[]
+    NOT?: Distro_PO_HeaderScalarWhereWithAggregatesInput | Distro_PO_HeaderScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Distro_PO_Header"> | number
+    poNumber?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
+    distributorName?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
+    customerCode?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
+    poDate?: DateTimeWithAggregatesFilter<"Distro_PO_Header"> | Date | string
+    createdBy?: StringNullableWithAggregatesFilter<"Distro_PO_Header"> | string | null
+    approvedBy?: StringNullableWithAggregatesFilter<"Distro_PO_Header"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Distro_PO_Header"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Distro_PO_Header"> | Date | string
+  }
+
+  export type Distro_PO_LineWhereInput = {
+    AND?: Distro_PO_LineWhereInput | Distro_PO_LineWhereInput[]
+    OR?: Distro_PO_LineWhereInput[]
+    NOT?: Distro_PO_LineWhereInput | Distro_PO_LineWhereInput[]
+    id?: IntFilter<"Distro_PO_Line"> | number
+    vehicleCategory?: StringFilter<"Distro_PO_Line"> | string
+    spType?: StringFilter<"Distro_PO_Line"> | string
+    partName?: StringFilter<"Distro_PO_Line"> | string
+    partNumber?: StringFilter<"Distro_PO_Line"> | string
+    qty?: IntFilter<"Distro_PO_Line"> | number
+    purchaseOrderId?: IntFilter<"Distro_PO_Line"> | number
+    purchaseOrder?: XOR<Distro_PO_HeaderScalarRelationFilter, Distro_PO_HeaderWhereInput>
+  }
+
+  export type Distro_PO_LineOrderByWithRelationInput = {
+    id?: SortOrder
+    vehicleCategory?: SortOrder
+    spType?: SortOrder
+    partName?: SortOrder
+    partNumber?: SortOrder
+    qty?: SortOrder
+    purchaseOrderId?: SortOrder
+    purchaseOrder?: Distro_PO_HeaderOrderByWithRelationInput
+  }
+
+  export type Distro_PO_LineWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: Distro_PO_LineWhereInput | Distro_PO_LineWhereInput[]
+    OR?: Distro_PO_LineWhereInput[]
+    NOT?: Distro_PO_LineWhereInput | Distro_PO_LineWhereInput[]
+    vehicleCategory?: StringFilter<"Distro_PO_Line"> | string
+    spType?: StringFilter<"Distro_PO_Line"> | string
+    partName?: StringFilter<"Distro_PO_Line"> | string
+    partNumber?: StringFilter<"Distro_PO_Line"> | string
+    qty?: IntFilter<"Distro_PO_Line"> | number
+    purchaseOrderId?: IntFilter<"Distro_PO_Line"> | number
+    purchaseOrder?: XOR<Distro_PO_HeaderScalarRelationFilter, Distro_PO_HeaderWhereInput>
+  }, "id">
+
+  export type Distro_PO_LineOrderByWithAggregationInput = {
+    id?: SortOrder
+    vehicleCategory?: SortOrder
+    spType?: SortOrder
+    partName?: SortOrder
+    partNumber?: SortOrder
+    qty?: SortOrder
+    purchaseOrderId?: SortOrder
+    _count?: Distro_PO_LineCountOrderByAggregateInput
+    _avg?: Distro_PO_LineAvgOrderByAggregateInput
+    _max?: Distro_PO_LineMaxOrderByAggregateInput
+    _min?: Distro_PO_LineMinOrderByAggregateInput
+    _sum?: Distro_PO_LineSumOrderByAggregateInput
+  }
+
+  export type Distro_PO_LineScalarWhereWithAggregatesInput = {
+    AND?: Distro_PO_LineScalarWhereWithAggregatesInput | Distro_PO_LineScalarWhereWithAggregatesInput[]
+    OR?: Distro_PO_LineScalarWhereWithAggregatesInput[]
+    NOT?: Distro_PO_LineScalarWhereWithAggregatesInput | Distro_PO_LineScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Distro_PO_Line"> | number
+    vehicleCategory?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
+    spType?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
+    partName?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
+    partNumber?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
+    qty?: IntWithAggregatesFilter<"Distro_PO_Line"> | number
+    purchaseOrderId?: IntWithAggregatesFilter<"Distro_PO_Line"> | number
   }
 
   export type FormL9WhereInput = {
@@ -29817,6 +32484,157 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type Distro_PO_HeaderCreateInput = {
+    poNumber: string
+    distributorName: string
+    customerCode: string
+    poDate: Date | string
+    createdBy?: string | null
+    approvedBy?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    items?: Distro_PO_LineCreateNestedManyWithoutPurchaseOrderInput
+  }
+
+  export type Distro_PO_HeaderUncheckedCreateInput = {
+    id?: number
+    poNumber: string
+    distributorName: string
+    customerCode: string
+    poDate: Date | string
+    createdBy?: string | null
+    approvedBy?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    items?: Distro_PO_LineUncheckedCreateNestedManyWithoutPurchaseOrderInput
+  }
+
+  export type Distro_PO_HeaderUpdateInput = {
+    poNumber?: StringFieldUpdateOperationsInput | string
+    distributorName?: StringFieldUpdateOperationsInput | string
+    customerCode?: StringFieldUpdateOperationsInput | string
+    poDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
+    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    items?: Distro_PO_LineUpdateManyWithoutPurchaseOrderNestedInput
+  }
+
+  export type Distro_PO_HeaderUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    poNumber?: StringFieldUpdateOperationsInput | string
+    distributorName?: StringFieldUpdateOperationsInput | string
+    customerCode?: StringFieldUpdateOperationsInput | string
+    poDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
+    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    items?: Distro_PO_LineUncheckedUpdateManyWithoutPurchaseOrderNestedInput
+  }
+
+  export type Distro_PO_HeaderCreateManyInput = {
+    id?: number
+    poNumber: string
+    distributorName: string
+    customerCode: string
+    poDate: Date | string
+    createdBy?: string | null
+    approvedBy?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_HeaderUpdateManyMutationInput = {
+    poNumber?: StringFieldUpdateOperationsInput | string
+    distributorName?: StringFieldUpdateOperationsInput | string
+    customerCode?: StringFieldUpdateOperationsInput | string
+    poDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
+    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_HeaderUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    poNumber?: StringFieldUpdateOperationsInput | string
+    distributorName?: StringFieldUpdateOperationsInput | string
+    customerCode?: StringFieldUpdateOperationsInput | string
+    poDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
+    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_LineCreateInput = {
+    vehicleCategory: string
+    spType: string
+    partName: string
+    partNumber: string
+    qty?: number
+    purchaseOrder: Distro_PO_HeaderCreateNestedOneWithoutItemsInput
+  }
+
+  export type Distro_PO_LineUncheckedCreateInput = {
+    id?: number
+    vehicleCategory: string
+    spType: string
+    partName: string
+    partNumber: string
+    qty?: number
+    purchaseOrderId: number
+  }
+
+  export type Distro_PO_LineUpdateInput = {
+    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    spType?: StringFieldUpdateOperationsInput | string
+    partName?: StringFieldUpdateOperationsInput | string
+    partNumber?: StringFieldUpdateOperationsInput | string
+    qty?: IntFieldUpdateOperationsInput | number
+    purchaseOrder?: Distro_PO_HeaderUpdateOneRequiredWithoutItemsNestedInput
+  }
+
+  export type Distro_PO_LineUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    spType?: StringFieldUpdateOperationsInput | string
+    partName?: StringFieldUpdateOperationsInput | string
+    partNumber?: StringFieldUpdateOperationsInput | string
+    qty?: IntFieldUpdateOperationsInput | number
+    purchaseOrderId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type Distro_PO_LineCreateManyInput = {
+    id?: number
+    vehicleCategory: string
+    spType: string
+    partName: string
+    partNumber: string
+    qty?: number
+    purchaseOrderId: number
+  }
+
+  export type Distro_PO_LineUpdateManyMutationInput = {
+    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    spType?: StringFieldUpdateOperationsInput | string
+    partName?: StringFieldUpdateOperationsInput | string
+    partNumber?: StringFieldUpdateOperationsInput | string
+    qty?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type Distro_PO_LineUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    spType?: StringFieldUpdateOperationsInput | string
+    partName?: StringFieldUpdateOperationsInput | string
+    partNumber?: StringFieldUpdateOperationsInput | string
+    qty?: IntFieldUpdateOperationsInput | number
+    purchaseOrderId?: IntFieldUpdateOperationsInput | number
   }
 
   export type FormL9CreateInput = {
@@ -31560,6 +34378,107 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type Distro_PO_LineListRelationFilter = {
+    every?: Distro_PO_LineWhereInput
+    some?: Distro_PO_LineWhereInput
+    none?: Distro_PO_LineWhereInput
+  }
+
+  export type Distro_PO_LineOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type Distro_PO_HeaderCountOrderByAggregateInput = {
+    id?: SortOrder
+    poNumber?: SortOrder
+    distributorName?: SortOrder
+    customerCode?: SortOrder
+    poDate?: SortOrder
+    createdBy?: SortOrder
+    approvedBy?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_HeaderAvgOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type Distro_PO_HeaderMaxOrderByAggregateInput = {
+    id?: SortOrder
+    poNumber?: SortOrder
+    distributorName?: SortOrder
+    customerCode?: SortOrder
+    poDate?: SortOrder
+    createdBy?: SortOrder
+    approvedBy?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_HeaderMinOrderByAggregateInput = {
+    id?: SortOrder
+    poNumber?: SortOrder
+    distributorName?: SortOrder
+    customerCode?: SortOrder
+    poDate?: SortOrder
+    createdBy?: SortOrder
+    approvedBy?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_HeaderSumOrderByAggregateInput = {
+    id?: SortOrder
+  }
+
+  export type Distro_PO_HeaderScalarRelationFilter = {
+    is?: Distro_PO_HeaderWhereInput
+    isNot?: Distro_PO_HeaderWhereInput
+  }
+
+  export type Distro_PO_LineCountOrderByAggregateInput = {
+    id?: SortOrder
+    vehicleCategory?: SortOrder
+    spType?: SortOrder
+    partName?: SortOrder
+    partNumber?: SortOrder
+    qty?: SortOrder
+    purchaseOrderId?: SortOrder
+  }
+
+  export type Distro_PO_LineAvgOrderByAggregateInput = {
+    id?: SortOrder
+    qty?: SortOrder
+    purchaseOrderId?: SortOrder
+  }
+
+  export type Distro_PO_LineMaxOrderByAggregateInput = {
+    id?: SortOrder
+    vehicleCategory?: SortOrder
+    spType?: SortOrder
+    partName?: SortOrder
+    partNumber?: SortOrder
+    qty?: SortOrder
+    purchaseOrderId?: SortOrder
+  }
+
+  export type Distro_PO_LineMinOrderByAggregateInput = {
+    id?: SortOrder
+    vehicleCategory?: SortOrder
+    spType?: SortOrder
+    partName?: SortOrder
+    partNumber?: SortOrder
+    qty?: SortOrder
+    purchaseOrderId?: SortOrder
+  }
+
+  export type Distro_PO_LineSumOrderByAggregateInput = {
+    id?: SortOrder
+    qty?: SortOrder
+    purchaseOrderId?: SortOrder
+  }
+
   export type CompanyScalarRelationFilter = {
     is?: CompanyWhereInput
     isNot?: CompanyWhereInput
@@ -32601,6 +35520,62 @@ export namespace Prisma {
     delete?: FormL9WhereInput | boolean
     connect?: FormL9WhereUniqueInput
     update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutCompanyInput, FormL9UpdateWithoutCompanyInput>, FormL9UncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type Distro_PO_LineCreateNestedManyWithoutPurchaseOrderInput = {
+    create?: XOR<Distro_PO_LineCreateWithoutPurchaseOrderInput, Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput> | Distro_PO_LineCreateWithoutPurchaseOrderInput[] | Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput[]
+    connectOrCreate?: Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput | Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput[]
+    createMany?: Distro_PO_LineCreateManyPurchaseOrderInputEnvelope
+    connect?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+  }
+
+  export type Distro_PO_LineUncheckedCreateNestedManyWithoutPurchaseOrderInput = {
+    create?: XOR<Distro_PO_LineCreateWithoutPurchaseOrderInput, Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput> | Distro_PO_LineCreateWithoutPurchaseOrderInput[] | Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput[]
+    connectOrCreate?: Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput | Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput[]
+    createMany?: Distro_PO_LineCreateManyPurchaseOrderInputEnvelope
+    connect?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+  }
+
+  export type Distro_PO_LineUpdateManyWithoutPurchaseOrderNestedInput = {
+    create?: XOR<Distro_PO_LineCreateWithoutPurchaseOrderInput, Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput> | Distro_PO_LineCreateWithoutPurchaseOrderInput[] | Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput[]
+    connectOrCreate?: Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput | Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput[]
+    upsert?: Distro_PO_LineUpsertWithWhereUniqueWithoutPurchaseOrderInput | Distro_PO_LineUpsertWithWhereUniqueWithoutPurchaseOrderInput[]
+    createMany?: Distro_PO_LineCreateManyPurchaseOrderInputEnvelope
+    set?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+    disconnect?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+    delete?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+    connect?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+    update?: Distro_PO_LineUpdateWithWhereUniqueWithoutPurchaseOrderInput | Distro_PO_LineUpdateWithWhereUniqueWithoutPurchaseOrderInput[]
+    updateMany?: Distro_PO_LineUpdateManyWithWhereWithoutPurchaseOrderInput | Distro_PO_LineUpdateManyWithWhereWithoutPurchaseOrderInput[]
+    deleteMany?: Distro_PO_LineScalarWhereInput | Distro_PO_LineScalarWhereInput[]
+  }
+
+  export type Distro_PO_LineUncheckedUpdateManyWithoutPurchaseOrderNestedInput = {
+    create?: XOR<Distro_PO_LineCreateWithoutPurchaseOrderInput, Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput> | Distro_PO_LineCreateWithoutPurchaseOrderInput[] | Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput[]
+    connectOrCreate?: Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput | Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput[]
+    upsert?: Distro_PO_LineUpsertWithWhereUniqueWithoutPurchaseOrderInput | Distro_PO_LineUpsertWithWhereUniqueWithoutPurchaseOrderInput[]
+    createMany?: Distro_PO_LineCreateManyPurchaseOrderInputEnvelope
+    set?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+    disconnect?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+    delete?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+    connect?: Distro_PO_LineWhereUniqueInput | Distro_PO_LineWhereUniqueInput[]
+    update?: Distro_PO_LineUpdateWithWhereUniqueWithoutPurchaseOrderInput | Distro_PO_LineUpdateWithWhereUniqueWithoutPurchaseOrderInput[]
+    updateMany?: Distro_PO_LineUpdateManyWithWhereWithoutPurchaseOrderInput | Distro_PO_LineUpdateManyWithWhereWithoutPurchaseOrderInput[]
+    deleteMany?: Distro_PO_LineScalarWhereInput | Distro_PO_LineScalarWhereInput[]
+  }
+
+  export type Distro_PO_HeaderCreateNestedOneWithoutItemsInput = {
+    create?: XOR<Distro_PO_HeaderCreateWithoutItemsInput, Distro_PO_HeaderUncheckedCreateWithoutItemsInput>
+    connectOrCreate?: Distro_PO_HeaderCreateOrConnectWithoutItemsInput
+    connect?: Distro_PO_HeaderWhereUniqueInput
+  }
+
+  export type Distro_PO_HeaderUpdateOneRequiredWithoutItemsNestedInput = {
+    create?: XOR<Distro_PO_HeaderCreateWithoutItemsInput, Distro_PO_HeaderUncheckedCreateWithoutItemsInput>
+    connectOrCreate?: Distro_PO_HeaderCreateOrConnectWithoutItemsInput
+    upsert?: Distro_PO_HeaderUpsertWithoutItemsInput
+    connect?: Distro_PO_HeaderWhereUniqueInput
+    update?: XOR<XOR<Distro_PO_HeaderUpdateToOneWithWhereWithoutItemsInput, Distro_PO_HeaderUpdateWithoutItemsInput>, Distro_PO_HeaderUncheckedUpdateWithoutItemsInput>
   }
 
   export type CompanyCreateNestedOneWithoutFormL9Input = {
@@ -34025,6 +37000,124 @@ export namespace Prisma {
     others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type Distro_PO_LineCreateWithoutPurchaseOrderInput = {
+    vehicleCategory: string
+    spType: string
+    partName: string
+    partNumber: string
+    qty?: number
+  }
+
+  export type Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput = {
+    id?: number
+    vehicleCategory: string
+    spType: string
+    partName: string
+    partNumber: string
+    qty?: number
+  }
+
+  export type Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput = {
+    where: Distro_PO_LineWhereUniqueInput
+    create: XOR<Distro_PO_LineCreateWithoutPurchaseOrderInput, Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput>
+  }
+
+  export type Distro_PO_LineCreateManyPurchaseOrderInputEnvelope = {
+    data: Distro_PO_LineCreateManyPurchaseOrderInput | Distro_PO_LineCreateManyPurchaseOrderInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type Distro_PO_LineUpsertWithWhereUniqueWithoutPurchaseOrderInput = {
+    where: Distro_PO_LineWhereUniqueInput
+    update: XOR<Distro_PO_LineUpdateWithoutPurchaseOrderInput, Distro_PO_LineUncheckedUpdateWithoutPurchaseOrderInput>
+    create: XOR<Distro_PO_LineCreateWithoutPurchaseOrderInput, Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput>
+  }
+
+  export type Distro_PO_LineUpdateWithWhereUniqueWithoutPurchaseOrderInput = {
+    where: Distro_PO_LineWhereUniqueInput
+    data: XOR<Distro_PO_LineUpdateWithoutPurchaseOrderInput, Distro_PO_LineUncheckedUpdateWithoutPurchaseOrderInput>
+  }
+
+  export type Distro_PO_LineUpdateManyWithWhereWithoutPurchaseOrderInput = {
+    where: Distro_PO_LineScalarWhereInput
+    data: XOR<Distro_PO_LineUpdateManyMutationInput, Distro_PO_LineUncheckedUpdateManyWithoutPurchaseOrderInput>
+  }
+
+  export type Distro_PO_LineScalarWhereInput = {
+    AND?: Distro_PO_LineScalarWhereInput | Distro_PO_LineScalarWhereInput[]
+    OR?: Distro_PO_LineScalarWhereInput[]
+    NOT?: Distro_PO_LineScalarWhereInput | Distro_PO_LineScalarWhereInput[]
+    id?: IntFilter<"Distro_PO_Line"> | number
+    vehicleCategory?: StringFilter<"Distro_PO_Line"> | string
+    spType?: StringFilter<"Distro_PO_Line"> | string
+    partName?: StringFilter<"Distro_PO_Line"> | string
+    partNumber?: StringFilter<"Distro_PO_Line"> | string
+    qty?: IntFilter<"Distro_PO_Line"> | number
+    purchaseOrderId?: IntFilter<"Distro_PO_Line"> | number
+  }
+
+  export type Distro_PO_HeaderCreateWithoutItemsInput = {
+    poNumber: string
+    distributorName: string
+    customerCode: string
+    poDate: Date | string
+    createdBy?: string | null
+    approvedBy?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_HeaderUncheckedCreateWithoutItemsInput = {
+    id?: number
+    poNumber: string
+    distributorName: string
+    customerCode: string
+    poDate: Date | string
+    createdBy?: string | null
+    approvedBy?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_HeaderCreateOrConnectWithoutItemsInput = {
+    where: Distro_PO_HeaderWhereUniqueInput
+    create: XOR<Distro_PO_HeaderCreateWithoutItemsInput, Distro_PO_HeaderUncheckedCreateWithoutItemsInput>
+  }
+
+  export type Distro_PO_HeaderUpsertWithoutItemsInput = {
+    update: XOR<Distro_PO_HeaderUpdateWithoutItemsInput, Distro_PO_HeaderUncheckedUpdateWithoutItemsInput>
+    create: XOR<Distro_PO_HeaderCreateWithoutItemsInput, Distro_PO_HeaderUncheckedCreateWithoutItemsInput>
+    where?: Distro_PO_HeaderWhereInput
+  }
+
+  export type Distro_PO_HeaderUpdateToOneWithWhereWithoutItemsInput = {
+    where?: Distro_PO_HeaderWhereInput
+    data: XOR<Distro_PO_HeaderUpdateWithoutItemsInput, Distro_PO_HeaderUncheckedUpdateWithoutItemsInput>
+  }
+
+  export type Distro_PO_HeaderUpdateWithoutItemsInput = {
+    poNumber?: StringFieldUpdateOperationsInput | string
+    distributorName?: StringFieldUpdateOperationsInput | string
+    customerCode?: StringFieldUpdateOperationsInput | string
+    poDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
+    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_HeaderUncheckedUpdateWithoutItemsInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    poNumber?: StringFieldUpdateOperationsInput | string
+    distributorName?: StringFieldUpdateOperationsInput | string
+    customerCode?: StringFieldUpdateOperationsInput | string
+    poDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
+    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CompanyCreateWithoutFormL9Input = {
@@ -36444,6 +39537,41 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_LineCreateManyPurchaseOrderInput = {
+    id?: number
+    vehicleCategory: string
+    spType: string
+    partName: string
+    partNumber: string
+    qty?: number
+  }
+
+  export type Distro_PO_LineUpdateWithoutPurchaseOrderInput = {
+    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    spType?: StringFieldUpdateOperationsInput | string
+    partName?: StringFieldUpdateOperationsInput | string
+    partNumber?: StringFieldUpdateOperationsInput | string
+    qty?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type Distro_PO_LineUncheckedUpdateWithoutPurchaseOrderInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    spType?: StringFieldUpdateOperationsInput | string
+    partName?: StringFieldUpdateOperationsInput | string
+    partNumber?: StringFieldUpdateOperationsInput | string
+    qty?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type Distro_PO_LineUncheckedUpdateManyWithoutPurchaseOrderInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    spType?: StringFieldUpdateOperationsInput | string
+    partName?: StringFieldUpdateOperationsInput | string
+    partNumber?: StringFieldUpdateOperationsInput | string
+    qty?: IntFieldUpdateOperationsInput | number
   }
 
   export type FormL9ManagementCreateManyFormL9Input = {
