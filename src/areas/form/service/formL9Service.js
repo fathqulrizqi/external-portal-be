@@ -1,4 +1,4 @@
-import { ebidding } from '../../../config/database.js';
+import { niterraappdb } from '../../../config/database.js';
 import { ResponseError } from '../../../error/responseError.js';
 import {createValidation , updateValidation} from '../validation/formL9Validation.js'
 
@@ -16,7 +16,7 @@ const create = async (userId, payload) => {
             handleValidationError(error)
         }
 
-        await ebidding.$transaction(async (tx) => {
+        await niterraappdb.$transaction(async (tx) => {
             
             const user = await tx.profile.findUnique({
                 where : {userId : userId},
@@ -161,7 +161,7 @@ const update = async (userId,formL9Id, payload) => {
             handleValidationError(error)
         }
 
-        const existingForm = await ebidding.formL9.findUnique({
+        const existingForm = await niterraappdb.formL9.findUnique({
             where: { formL9Id: formL9Id },
             select: { companyId: true } 
         });
@@ -170,7 +170,7 @@ const update = async (userId,formL9Id, payload) => {
             throw new ResponseError(404,"Form L9 not found");
         }
 
-        const user = await ebidding.profile.findUnique({
+        const user = await niterraappdb.profile.findUnique({
             where : {userId : userId },
             select: {companyId: true}
         })
@@ -179,7 +179,7 @@ const update = async (userId,formL9Id, payload) => {
             throw new ResponseError(403, "Forbidden: You do not have permission to access this form");
         }
 
-        await ebidding.$transaction(async (tx) => {
+        await niterraappdb.$transaction(async (tx) => {
             
             const parallelTasks = [];
 
@@ -385,7 +385,7 @@ const update = async (userId,formL9Id, payload) => {
 
 const destroy = async (userId, formL9Id) => {
     try{
-        const existingForm = await ebidding.formL9.findUnique({
+        const existingForm = await niterraappdb.formL9.findUnique({
             where: { formL9Id: formL9Id },
             select: { companyId: true } 
         });
@@ -394,7 +394,7 @@ const destroy = async (userId, formL9Id) => {
             throw new ResponseError(404,"Form L9 not found");
         }
 
-        const user = await ebidding.profile.findUnique({
+        const user = await niterraappdb.profile.findUnique({
             where : {userId : userId },
             select: {companyId: true}
         })
@@ -403,7 +403,7 @@ const destroy = async (userId, formL9Id) => {
             throw new ResponseError(403, "Forbidden: You do not have permission to access this form");
         }
 
-        await ebidding.formL9.delete({
+        await niterraappdb.formL9.delete({
             where : { formL9Id : formL9Id}
         })
 
@@ -415,7 +415,7 @@ const destroy = async (userId, formL9Id) => {
 
 const getAll = async () => {
     try{
-        const data = await ebidding.formL9.findMany({
+        const data = await niterraappdb.formL9.findMany({
             orderBy: { segmentId: 'asc' }
         })
 
@@ -427,14 +427,14 @@ const getAll = async () => {
 
 const getByUserId = async () => {
     try{
-        const profile = await ebidding.profile.findFirst({
+        const profile = await niterraappdb.profile.findFirst({
             where : {userId : userId},
             select : {
                 companyId : true
             }
         })
 
-        const data = await ebidding.formL9.findFirst({
+        const data = await niterraappdb.formL9.findFirst({
             where  : {companyId : profile.companyId}, 
             orderBy: { createdAt : 'asc' }
         })
@@ -448,7 +448,7 @@ const getByUserId = async () => {
 const getDetailByIdForUser = async (userId, formL9Id) => {
     try{
 
-        const existingForm = await ebidding.formL9.findUnique({
+        const existingForm = await niterraappdb.formL9.findUnique({
             where: { formL9Id: formL9Id },
             select: { companyId: true } 
         });
@@ -457,7 +457,7 @@ const getDetailByIdForUser = async (userId, formL9Id) => {
             throw new ResponseError(404,"Form L9 not found");
         }
 
-        const user = await ebidding.profile.findUnique({
+        const user = await niterraappdb.profile.findUnique({
             where : {userId : userId },
             select: {companyId: true}
         })
@@ -466,7 +466,7 @@ const getDetailByIdForUser = async (userId, formL9Id) => {
             throw new ResponseError(403, "Forbidden: You do not have permission to access this form");
         }
 
-        const data = ebidding.formL9.findUnique({
+        const data = niterraappdb.formL9.findUnique({
             where : {formL9Id : formL9Id},
             include: {
                 generalInformation: {
@@ -497,7 +497,7 @@ const getDetailByIdForUser = async (userId, formL9Id) => {
 }
 const getDetailByIdForAdmin = async (formL9Id) => {
     try{
-        const existingForm = await ebidding.formL9.findUnique({
+        const existingForm = await niterraappdb.formL9.findUnique({
             where: { formL9Id: formL9Id },
             select: { companyId: true } 
         });
@@ -507,7 +507,7 @@ const getDetailByIdForAdmin = async (formL9Id) => {
         }
 
 
-        const data = ebidding.formL9.findUnique({
+        const data = niterraappdb.formL9.findUnique({
             where : {formL9Id : formL9Id},
             include: {
                 generalInformation: {

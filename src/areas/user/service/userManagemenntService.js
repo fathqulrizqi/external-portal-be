@@ -1,10 +1,10 @@
 import { ResponseError } from "../../../error/responseError.js"
-import { ebidding } from "../../../config/database.js"
+import { niterraappdb } from "../../../config/database.js"
 import { logger } from "../../../config/logging.js";
 
 const getAllUser = async () => {
     try {
-        const usersWithRoleUser = await ebidding.user.findMany({
+        const usersWithRoleUser = await niterraappdb.user.findMany({
             where: {
                 UserHasRoleAccess: {
                     some: {
@@ -40,7 +40,7 @@ const getAllUser = async () => {
 
 const getUserByid = async(userId)=>{
     try {
-        const usersWithRoleUser = await ebidding.user.findMany({
+        const usersWithRoleUser = await niterraappdb.user.findMany({
             where: {
                 userId : userId,
                 UserHasRoleAccess: {
@@ -77,7 +77,7 @@ const getUserByid = async(userId)=>{
 
 const getAllAdmin = async () => {
     try {
-        const usersWithOtherRoles = await ebidding.user.findMany({
+        const usersWithOtherRoles = await niterraappdb.user.findMany({
             where: {
                 UserHasRoleAccess: {
                     some: {
@@ -114,7 +114,7 @@ const getAllAdmin = async () => {
 
 const getAdminById = async(userId) => {
     try {
-        const adminUser = await ebidding.user.findMany({ 
+        const adminUser = await niterraappdb.user.findMany({ 
             where: {
                 userId: userId,
                 UserHasRoleAccess: {

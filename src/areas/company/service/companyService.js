@@ -1,4 +1,4 @@
-import { ebidding } from '../../../config/database.js';
+import { niterraappdb } from '../../../config/database.js';
 import {
     createCompanyValidation,
     updateCompanyValidation,
@@ -18,7 +18,7 @@ const create = async (userId,payload) => {
         handleValidationError(error);
     }
     
-    const existing = await ebidding.Company.findFirst({
+    const existing = await niterraappdb.Company.findFirst({
         where: { companyName: payload.companyName }
     });
 
@@ -26,11 +26,11 @@ const create = async (userId,payload) => {
         throw new ResponseError(409,'Company name already exists');
     }
 
-    const company = await ebidding.Company.create({
+    const company = await niterraappdb.Company.create({
         data: payload
     });
 
-    await ebidding.profile.update({
+    await niterraappdb.profile.update({
         where: {userId : userId},
         data :{
             companyId: company.companyId
@@ -40,14 +40,14 @@ const create = async (userId,payload) => {
 };
 
 const getAll = async () => {
-    return ebidding.Company.findMany({
+    return niterraappdb.Company.findMany({
         orderBy: { segmentId: 'asc' }
     });
 };
 
 const getById = async (payload) => {
 
-    const company = await ebidding.Company.findUnique({
+    const company = await niterraappdb.Company.findUnique({
         where: { companyId: payload.companyId }
     });
 
@@ -60,13 +60,13 @@ const getById = async (payload) => {
 
 const getByUserId = async (userId) => {
 
-    const user = await ebidding.profile.findUnique({
+    const user = await niterraappdb.profile.findUnique({
         where : {userId : userId},
         select : {
             companyId : true
         }
     })
-    const company = await ebidding.Company.findUnique({
+    const company = await niterraappdb.Company.findUnique({
         where: { companyId: user.companyId }
     });
 
@@ -84,7 +84,7 @@ const update = async (userId,payload) => {
         handleValidationError(error);
     }
 
-    const profile = await ebidding.profile.findUnique({
+    const profile = await niterraappdb.profile.findUnique({
         where :{userId : userId}
     })
     
@@ -92,7 +92,7 @@ const update = async (userId,payload) => {
         throw new ResponseError(404, 'You do not have company, Please Input Company Form First!')
     }
 
-    return ebidding.Company.update({
+    return niterraappdb.Company.update({
         where: { companyId: profile.companyId },
         data: {
             companyName         : payload.companyName,
@@ -111,7 +111,7 @@ const update = async (userId,payload) => {
 
 const remove = async (payload) => {
 
-    const profiles = await ebidding.Profile.count({
+    const profiles = await niterraappdb.Profile.count({
         where: { companyId: payload.companyId }
     });
 
@@ -120,7 +120,7 @@ const remove = async (payload) => {
     }
 
     try {
-        await ebidding.Company.delete({
+        await niterraappdb.Company.delete({
             where: { companyId: payload.companyId }
         });
     } catch (error) {

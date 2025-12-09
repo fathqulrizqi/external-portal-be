@@ -1,4 +1,4 @@
-import { ebidding } from "../../config/database.js";
+import { niterraappdb } from "../../config/database.js";
 import bcrypt from 'bcryptjs';
 import { ResponseError } from "../../error/responseError.js";
 import { updatePasswordValidation, updateProfileValidation } from "../validation/accountValidation.js";
@@ -6,7 +6,7 @@ import mailerTemplate from "../../utils/mailerTemplate.js";
 import { logger } from "../../config/logging.js";
 const getProfile = async(userId)=>{
     try{
-        const profile = await ebidding.profile.findFirst({
+        const profile = await niterraappdb.profile.findFirst({
             where : {userId: userId}
         })
         return profile;
@@ -26,7 +26,7 @@ const updateProfile = async(userId, payload) => {
             const firstError = error.details[0].message;
             throw new ResponseError(401,firstError);
         }
-        const updatedProfile = await ebidding.profile.update({
+        const updatedProfile = await niterraappdb.profile.update({
             where: {
                 userId: userId,
             },
@@ -57,7 +57,7 @@ const updatePassword = async(userId,oldPassword,payload)=>{
             const firstError = error.details[0].message;
             throw new ResponseError(401,firstError);
         }
-        const user = ebidding.user.findFirst({
+        const user = niterraappdb.user.findFirst({
             where:{
                 userId : userId
             }
@@ -69,7 +69,7 @@ const updatePassword = async(userId,oldPassword,payload)=>{
             throw new ResponseError(401,'Invalid old password');
         }
 
-        await ebidding.user.update({
+        await niterraappdb.user.update({
             where : {userId : userId},
             data : {password : payload.password}
         })
@@ -82,8 +82,8 @@ const updatePassword = async(userId,oldPassword,payload)=>{
 
 const sendingEmailResetPassword = async(email)=>{
     try{
-        const user = await ebidding.user.findFirst({where : {email: email}})
-        const token = await ebidding.resetPassword.create({data: {
+        const user = await niterraappdb.user.findFirst({where : {email: email}})
+        const token = await niterraappdb.resetPassword.create({data: {
             userId : user.userId,
             expireDate : new Date(Date.now() + 6 * 60 * 60 * 1000) 
         }})
@@ -106,7 +106,7 @@ const resetPassword = async(token,payload)=>{
             throw new ResponseError(401,firstError);
         }
         
-        const existing = await ebidding.resetPassword.findFirst({
+        const existing = await niterraappdb.resetPassword.findFirst({
             where : {token : token}
         })
 
@@ -117,7 +117,7 @@ const resetPassword = async(token,payload)=>{
         const salt = await bcrypt.genSalt(10);
         const hashedPassword = await bcrypt.hash(payload.password, salt);
 
-        const updatedUser = await ebidding.user.update({
+        const updatedUser = await niterraappdb.user.update({
             where: {
                 userId: existing.userId,
             },

@@ -1,4 +1,4 @@
-import {ebidding} from "../config/database.js";
+import {niterraappdb} from "../config/database.js";
 
 export const verifikasiMiddleware = async (req, res, next) => {
   const token = req.get("Authorization");
@@ -13,7 +13,7 @@ export const verifikasiMiddleware = async (req, res, next) => {
       .end();
   }
 
-  const log = await ebidding.logsLogin.findUnique({
+  const log = await niterraappdb.logsLogin.findUnique({
     where: {
       token: token,
       isActive : true
@@ -37,7 +37,7 @@ export const verifikasiMiddleware = async (req, res, next) => {
   });
   if (!log || new Date() > log.expireDate) {
     if (log) {
-    //   await ebidding.logsLogin.delete({ where: { token: token } });
+    //   await niterraappdb.logsLogin.delete({ where: { token: token } });
         }
     res.clearCookie("auth_token");
 

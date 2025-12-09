@@ -1,23 +1,11 @@
 import Joi from 'joi';
-import { ebidding } from '../../config/database.js';
 
 const registerValidation = Joi.object({
   email: Joi.string().email().required().messages({
     'string.empty': 'Email is required',
     'string.email': 'Must be a valid email',
     'any.required': 'Email is required',
-  }).custom(async (value, helpers) => {
-     try {
-        const existingUser = await ebidding.user.findUnique({ where: { email: value } });
-    
-        if (existingUser) {
-          return helpers.error('any.custom', { message: 'Email already exists' });
-        }
-        return value;
-     } catch (dbError) {
-        return helpers.error('any.invalid', { message: 'Error checking email validity' });
-     }
-   }, 'Email Database Check'),
+  }),
   
   phone : Joi.string()
     .pattern(/^[0-9\-\+\s]+$/)
@@ -57,6 +45,10 @@ const registerValidation = Joi.object({
     'string.empty': 'Full name is required',
     'any.required': 'Full name is required',
   }),
+  application : Joi.string().required().messages({
+    'string.empty': 'Invalid application Register',
+    'any.required': 'Invalid application Register',
+  })
 });
 
 const loginValidation = Joi.object({
@@ -69,6 +61,11 @@ const loginValidation = Joi.object({
   password: Joi.string().required().messages({
     'string.empty': 'Password is required',
     'any.required': 'Password is required',
+  }),
+
+  application: Joi.string().required().messages({
+    'string.empty': 'Invalid application login',
+    'any.required': 'Invalid application login',
   }),
 });
 export { registerValidation,loginValidation };

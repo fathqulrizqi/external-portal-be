@@ -1,6 +1,6 @@
 import mailer from './mailer.js'
 import crypto from 'crypto';
-import { ebidding } from '../config/database.js';
+import { niterraappdb } from '../config/database.js';
 
 function generateOTP() {
     const min = 100000; 
@@ -16,7 +16,7 @@ const createOTP = async (userId)=> {
     expiryTime.setMinutes(expiryTime.getMinutes() + 5);
 
     try {
-        await ebidding.otpVerifikasi.deleteMany({
+        await niterraappdb.otpVerifikasi.deleteMany({
             where: {
                 userId: userId,
             },
@@ -24,7 +24,7 @@ const createOTP = async (userId)=> {
     } catch (error) {
     }
     const OTP = await generateOTP();
-    await ebidding.otpVerifikasi.create({
+    await niterraappdb.otpVerifikasi.create({
                     data: {
                         userId : userId,
                         code : OTP,

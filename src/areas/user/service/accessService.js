@@ -1,4 +1,4 @@
-import { ebidding } from '../../../config/database.js';
+import { niterraappdb } from '../../../config/database.js';
 import {
     createAccessValidation,
     updateAccessValidation,
@@ -19,7 +19,7 @@ const create = async (payload) => {
         handleValidationError(error);
     }
     
-    const existingAccess = await ebidding.Access.findFirst({
+    const existingAccess = await niterraappdb.Access.findFirst({
         where: { accessName: payload.accessName }
     });
 
@@ -27,13 +27,13 @@ const create = async (payload) => {
         throw new ResponseError(409,`Access name '${payload.accessName}' already exists`);
     }
 
-    return ebidding.Access.create({
+    return niterraappdb.Access.create({
         data: payload
     });
 };
 
 const getAll = async () => {
-    return ebidding.Access.findMany({
+    return niterraappdb.Access.findMany({
         orderBy: { accessId: 'asc' }
     });
 };
@@ -45,7 +45,7 @@ const getById = async (payload) => {
         handleValidationError(error);
     }
 
-    const access = await ebidding.Access.findUnique({
+    const access = await niterraappdb.Access.findUnique({
         where: { accessId: payload.accessId }
     });
 
@@ -64,7 +64,7 @@ const update = async (payload) => {
     }
 
     // Cek keberadaan access
-    const existingAccess = await ebidding.Access.findUnique({
+    const existingAccess = await niterraappdb.Access.findUnique({
         where: { accessId: payload.accessId }
     });
 
@@ -75,7 +75,7 @@ const update = async (payload) => {
     
     // Cek duplikasi accessName baru (jika diubah)
     if (payload.accessName) {
-        const duplicateAccess = await ebidding.Access.findFirst({
+        const duplicateAccess = await niterraappdb.Access.findFirst({
             where: {
                 accessName: payload.accessName,
                 accessId: { not: payload.accessId } // Kecualikan ID yang sedang diupdate
@@ -86,7 +86,7 @@ const update = async (payload) => {
         }
     }
 
-    return ebidding.Access.update({
+    return niterraappdb.Access.update({
         where: { accessId: payload.accessId },
         data: {
             accessName: payload.accessName,
@@ -102,7 +102,7 @@ const remove = async (payload) => {
     }
 
     // Cek apakah hak akses ini digunakan oleh Role manapun (relasi UserHasRoleAccess)
-    const relations = await ebidding.UserHasRoleAccess.count({
+    const relations = await niterraappdb.UserHasRoleAccess.count({
         where: { accessId: payload.accessId }
     });
 
@@ -111,7 +111,7 @@ const remove = async (payload) => {
     }
 
     try {
-        await ebidding.Access.delete({
+        await niterraappdb.Access.delete({
             where: { accessId: payload.accessId }
         });
     } catch (error) {

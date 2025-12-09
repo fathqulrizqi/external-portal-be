@@ -1,5 +1,5 @@
 
-import { ebidding } from "../../../config/database.js";
+import { niterraappdb } from "../../../config/database.js";
 import { createMenuValidation,updateMenuValidation } from "../validation/menuValidation.js";
 import { ResponseError } from "../../../error/responseError.js";
 
@@ -14,7 +14,7 @@ const create = async (payload) =>{
     } catch (error) {
         handleValidationError(error);
     }
-    const existing = await ebidding.menu.findFirst({
+    const existing = await niterraappdb.menu.findFirst({
         where : {menuName : payload.menuName}
     })
 
@@ -22,7 +22,7 @@ const create = async (payload) =>{
         throw new ResponseError(409,'Menu name already exists');
     }
 
-    await ebidding.menu.create({
+    await niterraappdb.menu.create({
         data: {
             sequence : payload.sequence,
             parentId : payload.parentId,
@@ -38,7 +38,7 @@ const create = async (payload) =>{
     return true;
 }
 const getAll = async () =>{
-    const menu = await ebidding.menu.findMany();
+    const menu = await niterraappdb.menu.findMany();
     return menu;
 }
 
@@ -49,7 +49,7 @@ const update = async (menuId,payload) =>{
         handleValidationError(error);
     }
 
-    const existing = await ebidding.menu.findFirst({
+    const existing = await niterraappdb.menu.findFirst({
         where : {menuId : menuId}
     })
 
@@ -57,7 +57,7 @@ const update = async (menuId,payload) =>{
         throw new ResponseError(404,'Menu Not Found');
     }
 
-    await ebidding.menu.update({
+    await niterraappdb.menu.update({
         where : {menuId : menuId},
         data : {
             sequence : payload.sequence,
@@ -76,7 +76,7 @@ const update = async (menuId,payload) =>{
 }
 const remove = async (menuId) =>{
     
-    const menu = await ebidding.menu.findUnique({
+    const menu = await niterraappdb.menu.findUnique({
         where : {menuId : menuId}
     })
 
@@ -85,7 +85,7 @@ const remove = async (menuId) =>{
     }
 
     try {
-        await ebidding.menu.delete({
+        await niterraappdb.menu.delete({
             where: { menuId: menuId }
         });
     } catch (error) {

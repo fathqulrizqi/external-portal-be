@@ -1,4 +1,4 @@
-import { ebidding } from '../../../config/database.js';
+import { niterraappdb } from '../../../config/database.js';
 import {
     createRoleValidation,
     updateRoleValidation,
@@ -21,7 +21,7 @@ const create = async (payload) => {
     }
     
     // Cek duplikasi roleName
-    const existingRole = await ebidding.Role.findFirst({
+    const existingRole = await niterraappdb.Role.findFirst({
         where: { roleName: payload.roleName }
     });
 
@@ -29,13 +29,13 @@ const create = async (payload) => {
         throw new ResponseError(409,`Role name '${payload.roleName}' already exists`);
     }
 
-    return ebidding.Role.create({
+    return niterraappdb.Role.create({
         data: payload
     });
 };
 
 const getAll = async () => {
-    return ebidding.Role.findMany({
+    return niterraappdb.Role.findMany({
         orderBy: { roleId: 'asc' }
     });
 };
@@ -47,7 +47,7 @@ const getById = async (payload) => {
         handleValidationError(error);
     }
 
-    const role = await ebidding.Role.findUnique({
+    const role = await niterraappdb.Role.findUnique({
         where: { roleId: payload.roleId }
     });
 
@@ -66,7 +66,7 @@ const update = async (payload) => {
     }
 
     // Cek keberadaan role
-    const existingRole = await ebidding.Role.findUnique({
+    const existingRole = await niterraappdb.Role.findUnique({
         where: { roleId: payload.roleId }
     });
 
@@ -76,7 +76,7 @@ const update = async (payload) => {
     
     // Cek duplikasi roleName baru (jika diubah)
     if (payload.roleName) {
-        const duplicateRole = await ebidding.Role.findFirst({
+        const duplicateRole = await niterraappdb.Role.findFirst({
             where: {
                 roleName: payload.roleName,
                 roleId: { not: payload.roleId } // Kecualikan ID yang sedang diupdate
@@ -87,7 +87,7 @@ const update = async (payload) => {
         }
     }
 
-    return ebidding.Role.update({
+    return niterraappdb.Role.update({
         where: { roleId: payload.roleId },
         data: {
             roleName: payload.roleName,
@@ -102,7 +102,7 @@ const remove = async (payload) => {
         handleValidationError(error);
     }
 
-    const relations = await ebidding.UserHasRoleAccess.count({
+    const relations = await niterraappdb.UserHasRoleAccess.count({
         where: { roleId: payload.roleId }
     });
 
@@ -112,7 +112,7 @@ const remove = async (payload) => {
     }
 
     try {
-        await ebidding.Role.delete({
+        await niterraappdb.Role.delete({
             where: { roleId: payload.roleId }
         });
     } catch (error) {

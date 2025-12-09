@@ -1,4 +1,4 @@
-import {ebidding} from "../config/database.js";
+import {niterraappdb} from "../config/database.js";
 import { logger } from "../config/logging.js";
 import mailerTemplate from "../utils/mailerTemplate.js";
 
@@ -13,7 +13,7 @@ export const authMiddleware = async (req, res, next) => {
       .end();
   }
   
-  const log = await ebidding.logsLogin.findUnique({
+  const log = await niterraappdb.logsLogin.findUnique({
     where: {
       token: token,
       isActive : true
@@ -37,7 +37,7 @@ export const authMiddleware = async (req, res, next) => {
   });
   if (!log || new Date() > log.expireDate) {
     //     if (log) {
-    // //   await ebidding.logsLogin.delete({ where: { token: token } });
+    // //   await niterraappdb.logsLogin.delete({ where: { token: token } });
     //     }
 
   return res
@@ -67,26 +67,26 @@ export const authMiddleware = async (req, res, next) => {
       .end();
     }
 
-    const existingDevice = await ebidding.linkedDevice.findFirst({
+    const existingDevice = await niterraappdb.linkedDevice.findFirst({
       where: { userId: log.user.userId }
     });
 
     if (existingDevice === null || deviceUuid !== existingDevice.clientDeviceUuid) {
       
-      await ebidding.linkedDevice.deleteMany({
+      await niterraappdb.linkedDevice.deleteMany({
         where: {
           userId: log.user.userId,
         },
       });
       
-      await ebidding.linkedDevice.create({
+      await niterraappdb.linkedDevice.create({
         data: {
           clientDeviceUuid: deviceUuid,
           userId: log.user.userId
         }
       });
       
-      await ebidding.user.update({
+      await niterraappdb.user.update({
         where : { userId : log.user.userId},
         data : {
           sessionExpireDate : new Date()

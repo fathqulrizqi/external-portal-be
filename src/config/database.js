@@ -3,7 +3,7 @@ import pkgNGK from "../../prisma/NGKbusi/@prisma/client-NGKbusi/index.js";
 const PrismaClientNGK = pkgNGK.PrismaClient;
 import { logger } from "./logging.js";
 
-const ebidding = new PrismaClient({
+const niterraappdb = new PrismaClient({
   log: [
     {
       emit: "event",
@@ -24,19 +24,19 @@ const ebidding = new PrismaClient({
   ],
 });
 
-ebidding.$on("error", (e) => {
+niterraappdb.$on("error", (e) => {
   logger.error(e);
 });
 
-ebidding.$on("warn", (e) => {
+niterraappdb.$on("warn", (e) => {
   logger.warn(e);
 });
 
-ebidding.$on("info", (e) => {
+niterraappdb.$on("info", (e) => {
   logger.info(e);
 });
 
-ebidding.$on("query", (e) => {
+niterraappdb.$on("query", (e) => {
   logger.info(e);
 });
 
@@ -77,4 +77,4 @@ NGKbusi.$on("query", (e) => {
   logger.info(e);
 });
 
-export {ebidding,NGKbusi};
+export {niterraappdb,NGKbusi};

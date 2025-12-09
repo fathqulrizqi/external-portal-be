@@ -1,4 +1,4 @@
-import { ebidding } from "../../config/database.js"
+import { niterraappdb } from "../../config/database.js"
 
 const buildMenuHierarchy = (menus, parentId = null) => {
     return menus
@@ -20,13 +20,17 @@ const buildMenuHierarchy = (menus, parentId = null) => {
 
 const getMenuSidebar = async(userId) => {
 
-    const userAccesses = await ebidding.userHasRoleAccess.findMany({
+    const userAccesses = await niterraappdb.userHasRoleAccess.findMany({
         where: { userId: userId },
         include: { access: true }
     });
 
-    const allMenus = await ebidding.menu.findMany({
-        where: { isShow: true, isActive: true },
+    const user = await niterraappdb.user.findUnique({
+        where: {userId : userId}
+    })
+
+    const allMenus = await niterraappdb.menu.findMany({
+        where: { isShow: true, isActive: true, application : user.application },
         orderBy: { sequence: 'asc' }
     });
 

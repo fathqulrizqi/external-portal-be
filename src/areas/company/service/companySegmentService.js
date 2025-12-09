@@ -1,4 +1,4 @@
-import { ebidding } from '../../../config/database.js';
+import { niterraappdb } from '../../../config/database.js';
 import {
     createCompanySegmentValidation,
     updateCompanySegmentValidation,
@@ -19,7 +19,7 @@ const create = async (payload) => {
         handleValidationError(error);
     }
     
-    const existingSegment = await ebidding.CompanySegment.findFirst({
+    const existingSegment = await niterraappdb.CompanySegment.findFirst({
         where: { segmentName: payload.segmentName }
     });
 
@@ -27,13 +27,13 @@ const create = async (payload) => {
         throw new ResponseError(409,'Company segment name already exists');
     }
 
-    return ebidding.CompanySegment.create({
+    return niterraappdb.CompanySegment.create({
         data: payload
     });
 };
 
 const getAll = async () => {
-    return ebidding.CompanySegment.findMany({
+    return niterraappdb.CompanySegment.findMany({
         orderBy: { segmentId: 'asc' }
     });
 };
@@ -45,7 +45,7 @@ const getById = async (payload) => {
         handleValidationError(error);
     }
 
-    const segment = await ebidding.CompanySegment.findUnique({
+    const segment = await niterraappdb.CompanySegment.findUnique({
         where: { segmentId: payload.segmentId }
     });
 
@@ -63,7 +63,7 @@ const update = async (payload) => {
         handleValidationError(error);
     }
 
-    const existingSegment = await ebidding.CompanySegment.findUnique({
+    const existingSegment = await niterraappdb.CompanySegment.findUnique({
         where: { segmentId: payload.segmentId }
     });
 
@@ -71,7 +71,7 @@ const update = async (payload) => {
         throw new ResponseError(404,'Company segment not found');
     }
 
-    return ebidding.CompanySegment.update({
+    return niterraappdb.CompanySegment.update({
         where: { segmentId: payload.segmentId },
         data: {
             segmentName: payload.segmentName,
@@ -87,7 +87,7 @@ const remove = async (payload) => {
         handleValidationError(error);
     }
 
-    const companys = await ebidding.company.count({
+    const companys = await niterraappdb.company.count({
         where: { segmentId: payload.segmentId }
     });
 
@@ -96,7 +96,7 @@ const remove = async (payload) => {
     }
 
     try {
-        await ebidding.CompanySegment.delete({
+        await niterraappdb.CompanySegment.delete({
             where: { segmentId: payload.segmentId }
         });
     } catch (error) {

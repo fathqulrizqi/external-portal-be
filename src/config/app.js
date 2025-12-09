@@ -10,7 +10,7 @@ import {userRouter} from '../routes/E-Bidding/userRoute.js'
 import cors from 'cors';
 import sanitizeInputMiddleware from "../middleware/sanitizeInputMiddleware.js";
 import { errorMiddleware } from '../middleware/errorMiddleware.js';
-import { ebidding } from './database.js';
+import { niterraappdb } from './database.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,7 +19,7 @@ const app = express();
 app.use(cookieParser());
 
 
-const allowedOriginsObjects = await ebidding.allowedIpCors.findMany({
+const allowedOriginsObjects = await niterraappdb.allowedIpCors.findMany({
   select : {
     ip : true
   }

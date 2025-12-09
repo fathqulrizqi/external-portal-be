@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { registerValidation, loginValidation } from '../validation/authValidation.js'; 
-import { ebidding } from '../../config/database.js';
+import { niterraappdb } from '../../config/database.js';
 import mailerTemplate from '../../utils/mailerTemplate.js';
 import { ResponseError } from '../../error/responseError.js';
 
@@ -18,8 +18,8 @@ const register = async (payload) => {
   }
 
 
-  const existingUser = await ebidding.User.findUnique({
-    where: { email: payload.email }
+  const existingUser = await niterraappdb.User.findUnique({
+    where: { email: payload.email, application : payload.application }
   });
 
   if (existingUser) {
@@ -29,7 +29,7 @@ const register = async (payload) => {
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(payload.password, salt);
 
-  const result = await ebidding.$transaction(async (tx) => {
+  const result = await niterraappdb.$transaction(async (tx) => {
     const newUser = await tx.User.create({
       data: {
         email: payload.email,
@@ -81,8 +81,8 @@ try {
     throw new ResponseError(401,firstError);
   }
 
-  const user = await ebidding.User.findUnique({
-    where: { email: payload.email },
+  const user = await niterraappdb.User.findUnique({
+    where: { email: payload.email , application: payload.application},
     include : { 
       UserHasRoleAccess : {
         include :{
@@ -117,7 +117,7 @@ try {
   expireDate.setHours(expireDate.getHours() + 6);
 
   try {
-    await ebidding.LogsLogin.create({
+    await niterraappdb.LogsLogin.create({
       data: {
         userId: userId,
         token: 'Bearer ' + token,
@@ -156,7 +156,7 @@ const otpSending = async (userId, email) => {
 
 const otpRegistrationVerification = async (userId,otp) => {
 
-  const verifikasi = await ebidding.otpVerifikasi.findFirst({
+  const verifikasi = await niterraappdb.otpVerifikasi.findFirst({
       where: {
           userId: userId,
           code : otp, 
@@ -166,7 +166,7 @@ const otpRegistrationVerification = async (userId,otp) => {
     throw new ResponseError(401, 'OTP verification failed. Please check the code.');
   }
 
-  await ebidding.user.update({
+  await niterraappdb.user.update({
     where: {
       userId : userId,
     },
@@ -179,7 +179,7 @@ const otpRegistrationVerification = async (userId,otp) => {
 }
 
 const otpVerification = async (userId,otp)=>{
-  const verifikasi = await ebidding.otpVerifikasi.findFirst({
+  const verifikasi = await niterraappdb.otpVerifikasi.findFirst({
       where: {
           userId: userId,
           code : otp, 
@@ -189,7 +189,7 @@ const otpVerification = async (userId,otp)=>{
     throw new ResponseError(401, 'OTP verification failed. Please check the code.');
   }
 
-  await ebidding.user.update({
+  await niterraappdb.user.update({
     where: {
       userId : userId,
     },
@@ -201,7 +201,7 @@ const otpVerification = async (userId,otp)=>{
 }
 
 const logout = async (token) => {
-    await ebidding.LogsLogin.updateMany({
+    await niterraappdb.LogsLogin.updateMany({
         where: {
             token: token,
             isActive: true,

@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../@prisma/client-main"
+  previewFeatures = ["prismaSchemaFolder"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model AllowedIpCors{
+  ip          String    @db.VarChar(50) @unique
+  @@index([ip])
+}
+
+model Menu{
+  menuId      Int     @id @default(autoincrement())
+  sequence    Int
+  parentId    Int?
+  icon        String?  @db.VarChar(50)
+  application String  @db.VarChar(50)  @default("E-Bidding")
+  menuName    String  @db.VarChar(50)
+  redirect    String  @db.Text
+  isGlobal    Boolean @default(false)
+  isShow      Boolean @default(true)
+  isActive    Boolean @default(true)
+
+  UserHasRoleAccess UserHasRoleAccess[]
+}

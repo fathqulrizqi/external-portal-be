@@ -121,95 +121,10 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
-exports.Prisma.AllowedIpCorsScalarFieldEnum = {
-  ip: 'ip'
-};
-
-exports.Prisma.UserScalarFieldEnum = {
-  userId: 'userId',
-  email: 'email',
-  password: 'password',
-  isActive: 'isActive',
-  sessionExpireDate: 'sessionExpireDate',
-  createdDate: 'createdDate',
-  updateDate: 'updateDate'
-};
-
-exports.Prisma.OtpVerifikasiScalarFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  code: 'code',
-  expireDate: 'expireDate'
-};
-
-exports.Prisma.LogsLoginScalarFieldEnum = {
-  logsId: 'logsId',
-  userId: 'userId',
-  token: 'token',
-  isActive: 'isActive',
-  device: 'device',
-  ip: 'ip',
-  createdDate: 'createdDate',
-  expireDate: 'expireDate'
-};
-
-exports.Prisma.RoleScalarFieldEnum = {
-  roleId: 'roleId',
-  roleName: 'roleName'
-};
-
-exports.Prisma.AccessScalarFieldEnum = {
-  accessId: 'accessId',
-  accessName: 'accessName'
-};
-
-exports.Prisma.ResetPasswordScalarFieldEnum = {
-  resetId: 'resetId',
-  userId: 'userId',
-  token: 'token',
-  createdDate: 'createdDate',
-  expireDate: 'expireDate'
-};
-
-exports.Prisma.MenuScalarFieldEnum = {
-  menuId: 'menuId',
-  sequence: 'sequence',
-  parentId: 'parentId',
-  icon: 'icon',
-  menuName: 'menuName',
-  redirect: 'redirect',
-  isGlobal: 'isGlobal',
-  isShow: 'isShow',
-  isActive: 'isActive'
-};
-
-exports.Prisma.UserHasRoleAccessScalarFieldEnum = {
-  userId: 'userId',
-  roleId: 'roleId',
-  accessId: 'accessId',
-  menuId: 'menuId'
-};
-
-exports.Prisma.LinkedDeviceScalarFieldEnum = {
-  deviceId: 'deviceId',
-  clientDeviceUuid: 'clientDeviceUuid',
-  userId: 'userId'
-};
-
 exports.Prisma.CompanySegmentScalarFieldEnum = {
   segmentId: 'segmentId',
   segmentName: 'segmentName',
   description: 'description'
-};
-
-exports.Prisma.ProfileScalarFieldEnum = {
-  userId: 'userId',
-  companyId: 'companyId',
-  fullName: 'fullName',
-  urlImage: 'urlImage',
-  phone: 'phone',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.CompanyScalarFieldEnum = {
@@ -340,6 +255,93 @@ exports.Prisma.FormL9CertificateISOScalarFieldEnum = {
   updatedAt: 'updatedAt'
 };
 
+exports.Prisma.AllowedIpCorsScalarFieldEnum = {
+  ip: 'ip'
+};
+
+exports.Prisma.MenuScalarFieldEnum = {
+  menuId: 'menuId',
+  sequence: 'sequence',
+  parentId: 'parentId',
+  icon: 'icon',
+  application: 'application',
+  menuName: 'menuName',
+  redirect: 'redirect',
+  isGlobal: 'isGlobal',
+  isShow: 'isShow',
+  isActive: 'isActive'
+};
+
+exports.Prisma.UserScalarFieldEnum = {
+  userId: 'userId',
+  email: 'email',
+  application: 'application',
+  password: 'password',
+  isActive: 'isActive',
+  sessionExpireDate: 'sessionExpireDate',
+  createdDate: 'createdDate',
+  updateDate: 'updateDate'
+};
+
+exports.Prisma.OtpVerifikasiScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  code: 'code',
+  expireDate: 'expireDate'
+};
+
+exports.Prisma.LogsLoginScalarFieldEnum = {
+  logsId: 'logsId',
+  userId: 'userId',
+  token: 'token',
+  isActive: 'isActive',
+  device: 'device',
+  ip: 'ip',
+  createdDate: 'createdDate',
+  expireDate: 'expireDate'
+};
+
+exports.Prisma.RoleScalarFieldEnum = {
+  roleId: 'roleId',
+  roleName: 'roleName'
+};
+
+exports.Prisma.AccessScalarFieldEnum = {
+  accessId: 'accessId',
+  accessName: 'accessName'
+};
+
+exports.Prisma.ResetPasswordScalarFieldEnum = {
+  resetId: 'resetId',
+  userId: 'userId',
+  token: 'token',
+  createdDate: 'createdDate',
+  expireDate: 'expireDate'
+};
+
+exports.Prisma.UserHasRoleAccessScalarFieldEnum = {
+  userId: 'userId',
+  roleId: 'roleId',
+  accessId: 'accessId',
+  menuId: 'menuId'
+};
+
+exports.Prisma.LinkedDeviceScalarFieldEnum = {
+  deviceId: 'deviceId',
+  clientDeviceUuid: 'clientDeviceUuid',
+  userId: 'userId'
+};
+
+exports.Prisma.ProfileScalarFieldEnum = {
+  userId: 'userId',
+  companyId: 'companyId',
+  fullName: 'fullName',
+  urlImage: 'urlImage',
+  phone: 'phone',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -357,18 +359,7 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  AllowedIpCors: 'AllowedIpCors',
-  User: 'User',
-  otpVerifikasi: 'otpVerifikasi',
-  LogsLogin: 'LogsLogin',
-  Role: 'Role',
-  Access: 'Access',
-  ResetPassword: 'ResetPassword',
-  Menu: 'Menu',
-  UserHasRoleAccess: 'UserHasRoleAccess',
-  LinkedDevice: 'LinkedDevice',
   CompanySegment: 'CompanySegment',
-  Profile: 'Profile',
   Company: 'Company',
   FormL9: 'FormL9',
   FormL9BankInfo: 'FormL9BankInfo',
@@ -378,7 +369,18 @@ exports.Prisma.ModelName = {
   FormL9Employe: 'FormL9Employe',
   FormL9WorkExperience: 'FormL9WorkExperience',
   FormL9Others: 'FormL9Others',
-  FormL9CertificateISO: 'FormL9CertificateISO'
+  FormL9CertificateISO: 'FormL9CertificateISO',
+  AllowedIpCors: 'AllowedIpCors',
+  Menu: 'Menu',
+  User: 'User',
+  otpVerifikasi: 'otpVerifikasi',
+  LogsLogin: 'LogsLogin',
+  Role: 'Role',
+  Access: 'Access',
+  ResetPassword: 'ResetPassword',
+  UserHasRoleAccess: 'UserHasRoleAccess',
+  LinkedDevice: 'LinkedDevice',
+  Profile: 'Profile'
 };
 
 /**

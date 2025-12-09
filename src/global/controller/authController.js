@@ -1,3 +1,4 @@
+import { application } from 'express';
 import authService from '../service/authService.js';
 
 
@@ -26,6 +27,7 @@ const login = async (req, res, next) => {
     const payload = {
       email: req.body.email?.trim().toLowerCase() || "",
       password: req.body.password || "",
+      application : req.body.application
     };
 
     const requestContext = {
@@ -105,12 +107,6 @@ const logout = async (req, res, next) => {
         }
         
         await authService.logout(token);
-
-        res.clearCookie('jwt', {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: 'strict',
-        });
 
         res.status(200).json({
             status: 'Success',
