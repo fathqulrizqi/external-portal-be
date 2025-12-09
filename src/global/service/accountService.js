@@ -80,9 +80,12 @@ const updatePassword = async(userId,oldPassword,payload)=>{
     }
 }
 
-const sendingEmailResetPassword = async(email)=>{
+const sendingEmailResetPassword = async(email, application)=>{
     try{
-        const user = await niterraappdb.user.findFirst({where : {email: email}})
+        if(!application){
+            throw new ResponseError(400,"Application Not Found")
+        }
+        const user = await niterraappdb.user.findFirst({where : {email: email, application: application}})
         const token = await niterraappdb.resetPassword.create({data: {
             userId : user.userId,
             expireDate : new Date(Date.now() + 6 * 60 * 60 * 1000) 

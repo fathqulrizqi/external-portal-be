@@ -53,7 +53,8 @@ const updatePassword = async(req,res,next)=>{
 const sendingEmailResetPassword = async(req,res,next)=>{
     try{
         const email = req.body.email;
-        await accountService.sendingEmailResetPassword(email);
+        const application = req.body.application;
+        await accountService.sendingEmailResetPassword(email,application);
         res.status(200).json({
             status: "Success",
             message: "A password reset link has been sent to your email.",
