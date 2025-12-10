@@ -73,10 +73,51 @@ async function deletePO(id) {
   return prisma.Distro_PO_Header.delete({ where: { uuid: id } });
 }
 
+// SUMMARY: PO by distributor, vehicleID, month/year
+async function getPOSummary({ year, month }) {
+  // Aggregate by distributor, month, year, and sum qty for each vehicleID
+  const vehicleIDs = ["2W Ni", "2W PM", "4W Ni", "4W PM"];
+  const where = {
+    poDate: {
+      gte: new Date(`${year}-01-01`),
+      lt: new Date(`${Number(year) + 1}-01-01`)
+    }
+  };
+  if (month) {
+    where.poDate.gte = new Date(`${year}-${String(month).padStart(2, '0')}-01`);
+    where.poDate.lt = new Date(`${year}-${String(Number(month) + 1).padStart(2, '0')}-01`);
+  }
+  const headers = await prisma.Distro_PO_Header.findMany({
+    where,
+    include: { items: true }
+  });
+  const summaryMap = {};
+  headers.forEach(header => {
+    const key = `${header.distributorName}|${month || ''}|${year}`;
+    if (!summaryMap[key]) {
+      summaryMap[key] = {
+        distributorName: header.distributorName,
+        month: month || '',
+        year: year,
+      };
+      vehicleIDs.forEach(vID => {
+        summaryMap[key][vID] = 0;
+      });
+    }
+    header.items.forEach(item => {
+      if (vehicleIDs.includes(item.vehicleCategory)) {
+        summaryMap[key][item.vehicleCategory] += Number(item.qty) || 0;
+      }
+    });
+  });
+  return Object.values(summaryMap);
+}
+
 export {
   createPO,
   getAllPOs,
   getPOById,
   updatePO,
-  deletePO
+  deletePO,
+  getPOSummary
 };

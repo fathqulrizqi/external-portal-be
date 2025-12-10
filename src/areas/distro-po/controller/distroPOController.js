@@ -1,6 +1,15 @@
-import { createPO, getAllPOs, getPOById, updatePO, deletePO } from '../service/distroPOService.js';
+import { createPO, getAllPOs, getPOById, updatePO, deletePO, getPOSummary } from '../service/distroPOService.js';
 
 const distroPOController = {
+  async getPOSummary(req, res) {
+    try {
+      const { year, month } = req.query;
+      const result = await getPOSummary({ year, month });
+      res.json(result);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  },
   async createPO(req, res) {
     try {
       const { header, items } = req.body;

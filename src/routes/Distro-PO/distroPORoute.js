@@ -9,6 +9,7 @@ router.use('/masteritem', masteritemRoute);
 // PO CRUD routes
 router.post('/', distroPOController.createPO);
 router.get('/', distroPOController.getAllPOs);
+router.get('/summary', distroPOController.getPOSummary);
 router.put('/:id', distroPOController.updatePO);
 router.delete('/:id', distroPOController.deletePO);
 // Get PO by id (must be last)
