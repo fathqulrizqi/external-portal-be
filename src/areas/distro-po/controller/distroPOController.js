@@ -20,7 +20,7 @@ const distroPOController = {
   },
   async getPOById(req, res) {
     try {
-      const id = parseInt(req.params.id);
+      const id = req.params.id;
       const result = await getPOById(id);
       if (!result) return res.status(404).json({ error: 'Not found' });
       res.json(result);
@@ -30,7 +30,7 @@ const distroPOController = {
   },
   async updatePO(req, res) {
     try {
-      const id = parseInt(req.params.id);
+      const id = req.params.id;
       const { header, items } = req.body;
       const result = await updatePO(id, header, items);
       res.json(result);
@@ -40,7 +40,7 @@ const distroPOController = {
   },
   async deletePO(req, res) {
     try {
-      const id = parseInt(req.params.id);
+      const id = req.params.id;
       await deletePO(id);
       res.json({ success: true });
     } catch (err) {

@@ -3,6 +3,7 @@
 // ------------------------------------------
 model Distro_PO_Header {
   id              Int      @id @default(autoincrement())
+  uuid            String   @unique @default(uuid())
   
   // Unique Identifier from the form "Nomor PO Distro"
   poNumber        String   @unique 
@@ -11,10 +12,10 @@ model Distro_PO_Header {
   distributorName String   // "Nama Distro"
   customerCode    String   // "Cust Code"
   poDate          DateTime // "Tanggal PO"
+  niterraSO       String   @unique
   
-  // Signatures / Workflow
-  createdBy       String?  // Optional until signed
-  approvedBy      String?  // Optional until signed
+  // Auto-generated Niterra PO Number
+  niterraPO       String   @unique // Format: Niterra/PO/yyyyMM/xxx
   
   // Relation: A PO has many line items
   items           Distro_PO_Line[]

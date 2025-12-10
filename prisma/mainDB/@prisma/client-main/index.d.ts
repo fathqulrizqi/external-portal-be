@@ -5762,36 +5762,39 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderMinAggregateOutputType = {
     id: number | null
+    uuid: string | null
     poNumber: string | null
     distributorName: string | null
     customerCode: string | null
     poDate: Date | null
-    createdBy: string | null
-    approvedBy: string | null
+    niterraSO: string | null
+    niterraPO: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
   export type Distro_PO_HeaderMaxAggregateOutputType = {
     id: number | null
+    uuid: string | null
     poNumber: string | null
     distributorName: string | null
     customerCode: string | null
     poDate: Date | null
-    createdBy: string | null
-    approvedBy: string | null
+    niterraSO: string | null
+    niterraPO: string | null
     createdAt: Date | null
     updatedAt: Date | null
   }
 
   export type Distro_PO_HeaderCountAggregateOutputType = {
     id: number
+    uuid: number
     poNumber: number
     distributorName: number
     customerCode: number
     poDate: number
-    createdBy: number
-    approvedBy: number
+    niterraSO: number
+    niterraPO: number
     createdAt: number
     updatedAt: number
     _all: number
@@ -5808,36 +5811,39 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderMinAggregateInputType = {
     id?: true
+    uuid?: true
     poNumber?: true
     distributorName?: true
     customerCode?: true
     poDate?: true
-    createdBy?: true
-    approvedBy?: true
+    niterraSO?: true
+    niterraPO?: true
     createdAt?: true
     updatedAt?: true
   }
 
   export type Distro_PO_HeaderMaxAggregateInputType = {
     id?: true
+    uuid?: true
     poNumber?: true
     distributorName?: true
     customerCode?: true
     poDate?: true
-    createdBy?: true
-    approvedBy?: true
+    niterraSO?: true
+    niterraPO?: true
     createdAt?: true
     updatedAt?: true
   }
 
   export type Distro_PO_HeaderCountAggregateInputType = {
     id?: true
+    uuid?: true
     poNumber?: true
     distributorName?: true
     customerCode?: true
     poDate?: true
-    createdBy?: true
-    approvedBy?: true
+    niterraSO?: true
+    niterraPO?: true
     createdAt?: true
     updatedAt?: true
     _all?: true
@@ -5931,12 +5937,13 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderGroupByOutputType = {
     id: number
+    uuid: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date
-    createdBy: string | null
-    approvedBy: string | null
+    niterraSO: string
+    niterraPO: string
     createdAt: Date
     updatedAt: Date
     _count: Distro_PO_HeaderCountAggregateOutputType | null
@@ -5962,12 +5969,13 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    uuid?: boolean
     poNumber?: boolean
     distributorName?: boolean
     customerCode?: boolean
     poDate?: boolean
-    createdBy?: boolean
-    approvedBy?: boolean
+    niterraSO?: boolean
+    niterraPO?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     items?: boolean | Distro_PO_Header$itemsArgs<ExtArgs>
@@ -5976,41 +5984,44 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    uuid?: boolean
     poNumber?: boolean
     distributorName?: boolean
     customerCode?: boolean
     poDate?: boolean
-    createdBy?: boolean
-    approvedBy?: boolean
+    niterraSO?: boolean
+    niterraPO?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["distro_PO_Header"]>
 
   export type Distro_PO_HeaderSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    uuid?: boolean
     poNumber?: boolean
     distributorName?: boolean
     customerCode?: boolean
     poDate?: boolean
-    createdBy?: boolean
-    approvedBy?: boolean
+    niterraSO?: boolean
+    niterraPO?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }, ExtArgs["result"]["distro_PO_Header"]>
 
   export type Distro_PO_HeaderSelectScalar = {
     id?: boolean
+    uuid?: boolean
     poNumber?: boolean
     distributorName?: boolean
     customerCode?: boolean
     poDate?: boolean
-    createdBy?: boolean
-    approvedBy?: boolean
+    niterraSO?: boolean
+    niterraPO?: boolean
     createdAt?: boolean
     updatedAt?: boolean
   }
 
-  export type Distro_PO_HeaderOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "poNumber" | "distributorName" | "customerCode" | "poDate" | "createdBy" | "approvedBy" | "createdAt" | "updatedAt", ExtArgs["result"]["distro_PO_Header"]>
+  export type Distro_PO_HeaderOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "uuid" | "poNumber" | "distributorName" | "customerCode" | "poDate" | "niterraSO" | "niterraPO" | "createdAt" | "updatedAt", ExtArgs["result"]["distro_PO_Header"]>
   export type Distro_PO_HeaderInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     items?: boolean | Distro_PO_Header$itemsArgs<ExtArgs>
     _count?: boolean | Distro_PO_HeaderCountOutputTypeDefaultArgs<ExtArgs>
@@ -6025,12 +6036,13 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
+      uuid: string
       poNumber: string
       distributorName: string
       customerCode: string
       poDate: Date
-      createdBy: string | null
-      approvedBy: string | null
+      niterraSO: string
+      niterraPO: string
       createdAt: Date
       updatedAt: Date
     }, ExtArgs["result"]["distro_PO_Header"]>
@@ -6458,12 +6470,13 @@ export namespace Prisma {
    */
   interface Distro_PO_HeaderFieldRefs {
     readonly id: FieldRef<"Distro_PO_Header", 'Int'>
+    readonly uuid: FieldRef<"Distro_PO_Header", 'String'>
     readonly poNumber: FieldRef<"Distro_PO_Header", 'String'>
     readonly distributorName: FieldRef<"Distro_PO_Header", 'String'>
     readonly customerCode: FieldRef<"Distro_PO_Header", 'String'>
     readonly poDate: FieldRef<"Distro_PO_Header", 'DateTime'>
-    readonly createdBy: FieldRef<"Distro_PO_Header", 'String'>
-    readonly approvedBy: FieldRef<"Distro_PO_Header", 'String'>
+    readonly niterraSO: FieldRef<"Distro_PO_Header", 'String'>
+    readonly niterraPO: FieldRef<"Distro_PO_Header", 'String'>
     readonly createdAt: FieldRef<"Distro_PO_Header", 'DateTime'>
     readonly updatedAt: FieldRef<"Distro_PO_Header", 'DateTime'>
   }
@@ -31474,12 +31487,13 @@ export namespace Prisma {
 
   export const Distro_PO_HeaderScalarFieldEnum: {
     id: 'id',
+    uuid: 'uuid',
     poNumber: 'poNumber',
     distributorName: 'distributorName',
     customerCode: 'customerCode',
     poDate: 'poDate',
-    createdBy: 'createdBy',
-    approvedBy: 'approvedBy',
+    niterraSO: 'niterraSO',
+    niterraPO: 'niterraPO',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt'
   };
@@ -32033,12 +32047,13 @@ export namespace Prisma {
     OR?: Distro_PO_HeaderWhereInput[]
     NOT?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
     id?: IntFilter<"Distro_PO_Header"> | number
+    uuid?: StringFilter<"Distro_PO_Header"> | string
     poNumber?: StringFilter<"Distro_PO_Header"> | string
     distributorName?: StringFilter<"Distro_PO_Header"> | string
     customerCode?: StringFilter<"Distro_PO_Header"> | string
     poDate?: DateTimeFilter<"Distro_PO_Header"> | Date | string
-    createdBy?: StringNullableFilter<"Distro_PO_Header"> | string | null
-    approvedBy?: StringNullableFilter<"Distro_PO_Header"> | string | null
+    niterraSO?: StringFilter<"Distro_PO_Header"> | string
+    niterraPO?: StringFilter<"Distro_PO_Header"> | string
     createdAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
     updatedAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
     items?: Distro_PO_LineListRelationFilter
@@ -32046,12 +32061,13 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderOrderByWithRelationInput = {
     id?: SortOrder
+    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    createdBy?: SortOrderInput | SortOrder
-    approvedBy?: SortOrderInput | SortOrder
+    niterraSO?: SortOrder
+    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     items?: Distro_PO_LineOrderByRelationAggregateInput
@@ -32059,28 +32075,30 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderWhereUniqueInput = Prisma.AtLeast<{
     id?: number
+    uuid?: string
     poNumber?: string
+    niterraSO?: string
+    niterraPO?: string
     AND?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
     OR?: Distro_PO_HeaderWhereInput[]
     NOT?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
     distributorName?: StringFilter<"Distro_PO_Header"> | string
     customerCode?: StringFilter<"Distro_PO_Header"> | string
     poDate?: DateTimeFilter<"Distro_PO_Header"> | Date | string
-    createdBy?: StringNullableFilter<"Distro_PO_Header"> | string | null
-    approvedBy?: StringNullableFilter<"Distro_PO_Header"> | string | null
     createdAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
     updatedAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
     items?: Distro_PO_LineListRelationFilter
-  }, "id" | "poNumber">
+  }, "id" | "uuid" | "poNumber" | "niterraSO" | "niterraPO">
 
   export type Distro_PO_HeaderOrderByWithAggregationInput = {
     id?: SortOrder
+    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    createdBy?: SortOrderInput | SortOrder
-    approvedBy?: SortOrderInput | SortOrder
+    niterraSO?: SortOrder
+    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     _count?: Distro_PO_HeaderCountOrderByAggregateInput
@@ -32095,12 +32113,13 @@ export namespace Prisma {
     OR?: Distro_PO_HeaderScalarWhereWithAggregatesInput[]
     NOT?: Distro_PO_HeaderScalarWhereWithAggregatesInput | Distro_PO_HeaderScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Distro_PO_Header"> | number
+    uuid?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     poNumber?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     distributorName?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     customerCode?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     poDate?: DateTimeWithAggregatesFilter<"Distro_PO_Header"> | Date | string
-    createdBy?: StringNullableWithAggregatesFilter<"Distro_PO_Header"> | string | null
-    approvedBy?: StringNullableWithAggregatesFilter<"Distro_PO_Header"> | string | null
+    niterraSO?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
+    niterraPO?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Distro_PO_Header"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Distro_PO_Header"> | Date | string
   }
@@ -33778,12 +33797,13 @@ export namespace Prisma {
   }
 
   export type Distro_PO_HeaderCreateInput = {
+    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    createdBy?: string | null
-    approvedBy?: string | null
+    niterraSO: string
+    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
     items?: Distro_PO_LineCreateNestedManyWithoutPurchaseOrderInput
@@ -33791,24 +33811,26 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderUncheckedCreateInput = {
     id?: number
+    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    createdBy?: string | null
-    approvedBy?: string | null
+    niterraSO: string
+    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
     items?: Distro_PO_LineUncheckedCreateNestedManyWithoutPurchaseOrderInput
   }
 
   export type Distro_PO_HeaderUpdateInput = {
+    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
-    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     items?: Distro_PO_LineUpdateManyWithoutPurchaseOrderNestedInput
@@ -33816,12 +33838,13 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
+    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
-    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     items?: Distro_PO_LineUncheckedUpdateManyWithoutPurchaseOrderNestedInput
@@ -33829,35 +33852,38 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderCreateManyInput = {
     id?: number
+    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    createdBy?: string | null
-    approvedBy?: string | null
+    niterraSO: string
+    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type Distro_PO_HeaderUpdateManyMutationInput = {
+    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
-    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type Distro_PO_HeaderUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
+    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
-    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -35765,12 +35791,13 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderCountOrderByAggregateInput = {
     id?: SortOrder
+    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    createdBy?: SortOrder
-    approvedBy?: SortOrder
+    niterraSO?: SortOrder
+    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -35781,24 +35808,26 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderMaxOrderByAggregateInput = {
     id?: SortOrder
+    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    createdBy?: SortOrder
-    approvedBy?: SortOrder
+    niterraSO?: SortOrder
+    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
 
   export type Distro_PO_HeaderMinOrderByAggregateInput = {
     id?: SortOrder
+    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    createdBy?: SortOrder
-    approvedBy?: SortOrder
+    niterraSO?: SortOrder
+    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
   }
@@ -38483,24 +38512,26 @@ export namespace Prisma {
   }
 
   export type Distro_PO_HeaderCreateWithoutItemsInput = {
+    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    createdBy?: string | null
-    approvedBy?: string | null
+    niterraSO: string
+    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
   export type Distro_PO_HeaderUncheckedCreateWithoutItemsInput = {
     id?: number
+    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    createdBy?: string | null
-    approvedBy?: string | null
+    niterraSO: string
+    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -38522,24 +38553,26 @@ export namespace Prisma {
   }
 
   export type Distro_PO_HeaderUpdateWithoutItemsInput = {
+    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
-    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type Distro_PO_HeaderUncheckedUpdateWithoutItemsInput = {
     id?: IntFieldUpdateOperationsInput | number
+    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdBy?: NullableStringFieldUpdateOperationsInput | string | null
-    approvedBy?: NullableStringFieldUpdateOperationsInput | string | null
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

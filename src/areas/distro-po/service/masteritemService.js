@@ -3,20 +3,9 @@ import { PrismaClient } from '../../../../prisma/mainDB/@prisma/client-main/inde
 const prisma = new PrismaClient();
 
 export async function getAll() {
-  // Example: add pagination, sorting, and filtering
-  // Accept options via arguments if needed
-  // For now, hardcoded example values
-  const page = 1; // page number
-  const pageSize = 20; // items per page
-  const sortBy = 'id'; // sort field
-  const sortOrder = 'asc'; // 'asc' or 'desc'
-  const filter = {}; // e.g. { isActive: true }
-
+  // Return all items, sorted by id ascending
   return prisma.Distro_PO_MasterItem.findMany({
-    where: filter,
-    orderBy: { [sortBy]: sortOrder },
-    skip: (page - 1) * pageSize,
-    take: pageSize,
+    orderBy: { id: 'asc' },
     select: {
       id: true,
       vehicle: true,

@@ -147,12 +147,13 @@ exports.Prisma.CompanyScalarFieldEnum = {
 
 exports.Prisma.Distro_PO_HeaderScalarFieldEnum = {
   id: 'id',
+  uuid: 'uuid',
   poNumber: 'poNumber',
   distributorName: 'distributorName',
   customerCode: 'customerCode',
   poDate: 'poDate',
-  createdBy: 'createdBy',
-  approvedBy: 'approvedBy',
+  niterraSO: 'niterraSO',
+  niterraPO: 'niterraPO',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
