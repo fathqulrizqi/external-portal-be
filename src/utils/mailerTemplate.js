@@ -10,35 +10,45 @@ function generateOTP() {
 }
 
 
-const createOTP = async (userId)=> {
 
-    const expiryTime = new Date();
-    expiryTime.setMinutes(expiryTime.getMinutes() + 5);
 
+const createOTP = async (userId) => {
+    const now = new Date();
+    const expiryTime = new Date(now.getTime() + 5 * 60000); // 5 minutes
+
+    // Check for existing, unexpired OTP
+    const existingOtp = await niterraappdb.otpVerifikasi.findFirst({
+        where: {
+            userId: userId,
+            expireDate: { gt: now }
+        }
+    });
+    if (existingOtp) {
+        return { code: existingOtp.code, isNew: false };
+    }
+
+    // Remove old OTPs
     try {
         await niterraappdb.otpVerifikasi.deleteMany({
-            where: {
-                userId: userId,
-            },
+            where: { userId: userId }
         });
-    } catch (error) {
-    }
+    } catch (error) {}
+
     const OTP = await generateOTP();
     await niterraappdb.otpVerifikasi.create({
-                    data: {
-                        userId : userId,
-                        code : OTP,
-                        expireDate : expiryTime
-                    }
-                })
-
-    return OTP;
-}
+        data: {
+            userId: userId,
+            code: OTP,
+            expireDate: expiryTime
+        }
+    });
+    return { code: OTP, isNew: true };
+};
 
 
 const verifikasiRegistrasi = async (userId,email)=> {
-
-    const OTP = await createOTP(userId);
+    const { code: OTP, isNew } = await createOTP(userId);
+    if (!isNew) return true; // Only send email if new OTP
 
     const Template = `
     <!DOCTYPE html>
@@ -87,9 +97,8 @@ const verifikasiRegistrasi = async (userId,email)=> {
     return true;
 }
 const verifikasiLogin = async (userId,email,deviceName,ipAddress)=> {
-
-    const OTP = await createOTP(userId);
-
+    const { code: OTP, isNew } = await createOTP(userId);
+    if (!isNew) return true; // Only send email if new OTP
 
     const Template = `
     <!DOCTYPE html>

@@ -5,7 +5,8 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "postinstall": "npx prisma generate --schema=./prisma/mainDB/schema && npx prisma generate --schema=./prisma/NGKbusi/schema.prisma",
+     "start": "node ./src/main.js",
+     "postinstall": "npx prisma generate --schema=./prisma/mainDB/schema && npx prisma generate --schema=./prisma/NGKbusi/schema.prisma",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prisma": "npx prisma introspect --schema=./prisma/NGKbusi/schema.prisma && npx prisma migrate dev --schema ./prisma/mainDB/schema",
     "prisma-migrate": "npx prisma migrate dev --schema ./prisma/mainDB/schema"

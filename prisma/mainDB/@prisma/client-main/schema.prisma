@@ -10,6 +10,7 @@ model Company {
   companyId           String    @id @default(uuid()) @db.Uuid
   segmentId           Int?
   urlImage            String?   @db.Text
+  companyCode         String?
   companyName         String?
   companyFoundingDate DateTime?
   companyStatus       String?
@@ -82,6 +83,20 @@ model Distro_PO_Line {
   purchaseOrder   Distro_PO_Header @relation(fields: [purchaseOrderId], references: [id], onDelete: Cascade)
 
   @@map("Distro_PO_Line")
+}
+
+model Distro_PO_MasterItem {
+  id          Int     @id @default(autoincrement())
+  vehicle     String  @map("Vehicle")
+  vehicleId   String  @map("VehicleID")
+  category    String  @map("Category")
+  productName String  @map("PRODUCT NAME")
+  spType      String? @map("S_P_type")
+  itemId      String  @unique @map("ITEMID")
+  isActive    Boolean @default(true) @map("IsActive")
+  price       Int?    @map("PRICE")
+
+  @@map("Distro_PO_MasterItem")
 }
 
 model FormL9 {

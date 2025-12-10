@@ -47,3 +47,17 @@ model Distro_PO_Line {
 
   @@map("Distro_PO_Line")
 }
+
+model Distro_PO_MasterItem {
+  id          Int      @id @default(autoincrement())
+  vehicle     String   @map("Vehicle")
+  vehicleId   String   @map("VehicleID")
+  category    String   @map("Category")
+  productName String   @map("PRODUCT NAME")
+  spType      String?  @map("S_P_type")
+  itemId      String   @unique @map("ITEMID")
+  isActive    Boolean  @default(true) @map("IsActive")
+  price       Int?     @map("PRICE")
+
+  @@map("Distro_PO_MasterItem")
+}

@@ -34,6 +34,11 @@ export type Distro_PO_Header = $Result.DefaultSelection<Prisma.$Distro_PO_Header
  */
 export type Distro_PO_Line = $Result.DefaultSelection<Prisma.$Distro_PO_LinePayload>
 /**
+ * Model Distro_PO_MasterItem
+ * 
+ */
+export type Distro_PO_MasterItem = $Result.DefaultSelection<Prisma.$Distro_PO_MasterItemPayload>
+/**
  * Model FormL9
  * 
  */
@@ -291,6 +296,16 @@ export class PrismaClient<
     * ```
     */
   get distro_PO_Line(): Prisma.Distro_PO_LineDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.distro_PO_MasterItem`: Exposes CRUD operations for the **Distro_PO_MasterItem** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Distro_PO_MasterItems
+    * const distro_PO_MasterItems = await prisma.distro_PO_MasterItem.findMany()
+    * ```
+    */
+  get distro_PO_MasterItem(): Prisma.Distro_PO_MasterItemDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.formL9`: Exposes CRUD operations for the **FormL9** model.
@@ -936,6 +951,7 @@ export namespace Prisma {
     Company: 'Company',
     Distro_PO_Header: 'Distro_PO_Header',
     Distro_PO_Line: 'Distro_PO_Line',
+    Distro_PO_MasterItem: 'Distro_PO_MasterItem',
     FormL9: 'FormL9',
     FormL9BankInfo: 'FormL9BankInfo',
     FormL9GeneralInformation: 'FormL9GeneralInformation',
@@ -974,7 +990,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "companySegment" | "company" | "distro_PO_Header" | "distro_PO_Line" | "formL9" | "formL9BankInfo" | "formL9GeneralInformation" | "formL9GeneralInformationContinue" | "formL9Management" | "formL9Employe" | "formL9WorkExperience" | "formL9Others" | "formL9CertificateISO" | "allowedIpCors" | "menu" | "user" | "otpVerifikasi" | "logsLogin" | "role" | "access" | "resetPassword" | "userHasRoleAccess" | "linkedDevice" | "profile"
+      modelProps: "companySegment" | "company" | "distro_PO_Header" | "distro_PO_Line" | "distro_PO_MasterItem" | "formL9" | "formL9BankInfo" | "formL9GeneralInformation" | "formL9GeneralInformationContinue" | "formL9Management" | "formL9Employe" | "formL9WorkExperience" | "formL9Others" | "formL9CertificateISO" | "allowedIpCors" | "menu" | "user" | "otpVerifikasi" | "logsLogin" | "role" | "access" | "resetPassword" | "userHasRoleAccess" | "linkedDevice" | "profile"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1271,6 +1287,80 @@ export namespace Prisma {
           count: {
             args: Prisma.Distro_PO_LineCountArgs<ExtArgs>
             result: $Utils.Optional<Distro_PO_LineCountAggregateOutputType> | number
+          }
+        }
+      }
+      Distro_PO_MasterItem: {
+        payload: Prisma.$Distro_PO_MasterItemPayload<ExtArgs>
+        fields: Prisma.Distro_PO_MasterItemFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.Distro_PO_MasterItemFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.Distro_PO_MasterItemFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload>
+          }
+          findFirst: {
+            args: Prisma.Distro_PO_MasterItemFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.Distro_PO_MasterItemFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload>
+          }
+          findMany: {
+            args: Prisma.Distro_PO_MasterItemFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload>[]
+          }
+          create: {
+            args: Prisma.Distro_PO_MasterItemCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload>
+          }
+          createMany: {
+            args: Prisma.Distro_PO_MasterItemCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.Distro_PO_MasterItemCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload>[]
+          }
+          delete: {
+            args: Prisma.Distro_PO_MasterItemDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload>
+          }
+          update: {
+            args: Prisma.Distro_PO_MasterItemUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload>
+          }
+          deleteMany: {
+            args: Prisma.Distro_PO_MasterItemDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.Distro_PO_MasterItemUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.Distro_PO_MasterItemUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload>[]
+          }
+          upsert: {
+            args: Prisma.Distro_PO_MasterItemUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItemPayload>
+          }
+          aggregate: {
+            args: Prisma.Distro_PO_MasterItemAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDistro_PO_MasterItem>
+          }
+          groupBy: {
+            args: Prisma.Distro_PO_MasterItemGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_MasterItemGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.Distro_PO_MasterItemCountArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_MasterItemCountAggregateOutputType> | number
           }
         }
       }
@@ -2854,6 +2944,7 @@ export namespace Prisma {
     company?: CompanyOmit
     distro_PO_Header?: Distro_PO_HeaderOmit
     distro_PO_Line?: Distro_PO_LineOmit
+    distro_PO_MasterItem?: Distro_PO_MasterItemOmit
     formL9?: FormL9Omit
     formL9BankInfo?: FormL9BankInfoOmit
     formL9GeneralInformation?: FormL9GeneralInformationOmit
@@ -4379,6 +4470,7 @@ export namespace Prisma {
     companyId: string | null
     segmentId: number | null
     urlImage: string | null
+    companyCode: string | null
     companyName: string | null
     companyFoundingDate: Date | null
     companyStatus: string | null
@@ -4396,6 +4488,7 @@ export namespace Prisma {
     companyId: string | null
     segmentId: number | null
     urlImage: string | null
+    companyCode: string | null
     companyName: string | null
     companyFoundingDate: Date | null
     companyStatus: string | null
@@ -4413,6 +4506,7 @@ export namespace Prisma {
     companyId: number
     segmentId: number
     urlImage: number
+    companyCode: number
     companyName: number
     companyFoundingDate: number
     companyStatus: number
@@ -4440,6 +4534,7 @@ export namespace Prisma {
     companyId?: true
     segmentId?: true
     urlImage?: true
+    companyCode?: true
     companyName?: true
     companyFoundingDate?: true
     companyStatus?: true
@@ -4457,6 +4552,7 @@ export namespace Prisma {
     companyId?: true
     segmentId?: true
     urlImage?: true
+    companyCode?: true
     companyName?: true
     companyFoundingDate?: true
     companyStatus?: true
@@ -4474,6 +4570,7 @@ export namespace Prisma {
     companyId?: true
     segmentId?: true
     urlImage?: true
+    companyCode?: true
     companyName?: true
     companyFoundingDate?: true
     companyStatus?: true
@@ -4578,6 +4675,7 @@ export namespace Prisma {
     companyId: string
     segmentId: number | null
     urlImage: string | null
+    companyCode: string | null
     companyName: string | null
     companyFoundingDate: Date | null
     companyStatus: string | null
@@ -4614,6 +4712,7 @@ export namespace Prisma {
     companyId?: boolean
     segmentId?: boolean
     urlImage?: boolean
+    companyCode?: boolean
     companyName?: boolean
     companyFoundingDate?: boolean
     companyStatus?: boolean
@@ -4635,6 +4734,7 @@ export namespace Prisma {
     companyId?: boolean
     segmentId?: boolean
     urlImage?: boolean
+    companyCode?: boolean
     companyName?: boolean
     companyFoundingDate?: boolean
     companyStatus?: boolean
@@ -4653,6 +4753,7 @@ export namespace Prisma {
     companyId?: boolean
     segmentId?: boolean
     urlImage?: boolean
+    companyCode?: boolean
     companyName?: boolean
     companyFoundingDate?: boolean
     companyStatus?: boolean
@@ -4671,6 +4772,7 @@ export namespace Prisma {
     companyId?: boolean
     segmentId?: boolean
     urlImage?: boolean
+    companyCode?: boolean
     companyName?: boolean
     companyFoundingDate?: boolean
     companyStatus?: boolean
@@ -4684,7 +4786,7 @@ export namespace Prisma {
     totalCapital?: boolean
   }
 
-  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "website" | "createdAt" | "updatedAt" | "totalCapital", ExtArgs["result"]["company"]>
+  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyCode" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "website" | "createdAt" | "updatedAt" | "totalCapital", ExtArgs["result"]["company"]>
   export type CompanyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     profile?: boolean | Company$profileArgs<ExtArgs>
     segment?: boolean | Company$segmentArgs<ExtArgs>
@@ -4709,6 +4811,7 @@ export namespace Prisma {
       companyId: string
       segmentId: number | null
       urlImage: string | null
+      companyCode: string | null
       companyName: string | null
       companyFoundingDate: Date | null
       companyStatus: string | null
@@ -5149,6 +5252,7 @@ export namespace Prisma {
     readonly companyId: FieldRef<"Company", 'String'>
     readonly segmentId: FieldRef<"Company", 'Int'>
     readonly urlImage: FieldRef<"Company", 'String'>
+    readonly companyCode: FieldRef<"Company", 'String'>
     readonly companyName: FieldRef<"Company", 'String'>
     readonly companyFoundingDate: FieldRef<"Company", 'DateTime'>
     readonly companyStatus: FieldRef<"Company", 'String'>
@@ -7915,6 +8019,1091 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: Distro_PO_LineInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Distro_PO_MasterItem
+   */
+
+  export type AggregateDistro_PO_MasterItem = {
+    _count: Distro_PO_MasterItemCountAggregateOutputType | null
+    _avg: Distro_PO_MasterItemAvgAggregateOutputType | null
+    _sum: Distro_PO_MasterItemSumAggregateOutputType | null
+    _min: Distro_PO_MasterItemMinAggregateOutputType | null
+    _max: Distro_PO_MasterItemMaxAggregateOutputType | null
+  }
+
+  export type Distro_PO_MasterItemAvgAggregateOutputType = {
+    id: number | null
+    price: number | null
+  }
+
+  export type Distro_PO_MasterItemSumAggregateOutputType = {
+    id: number | null
+    price: number | null
+  }
+
+  export type Distro_PO_MasterItemMinAggregateOutputType = {
+    id: number | null
+    vehicle: string | null
+    vehicleId: string | null
+    category: string | null
+    productName: string | null
+    spType: string | null
+    itemId: string | null
+    isActive: boolean | null
+    price: number | null
+  }
+
+  export type Distro_PO_MasterItemMaxAggregateOutputType = {
+    id: number | null
+    vehicle: string | null
+    vehicleId: string | null
+    category: string | null
+    productName: string | null
+    spType: string | null
+    itemId: string | null
+    isActive: boolean | null
+    price: number | null
+  }
+
+  export type Distro_PO_MasterItemCountAggregateOutputType = {
+    id: number
+    vehicle: number
+    vehicleId: number
+    category: number
+    productName: number
+    spType: number
+    itemId: number
+    isActive: number
+    price: number
+    _all: number
+  }
+
+
+  export type Distro_PO_MasterItemAvgAggregateInputType = {
+    id?: true
+    price?: true
+  }
+
+  export type Distro_PO_MasterItemSumAggregateInputType = {
+    id?: true
+    price?: true
+  }
+
+  export type Distro_PO_MasterItemMinAggregateInputType = {
+    id?: true
+    vehicle?: true
+    vehicleId?: true
+    category?: true
+    productName?: true
+    spType?: true
+    itemId?: true
+    isActive?: true
+    price?: true
+  }
+
+  export type Distro_PO_MasterItemMaxAggregateInputType = {
+    id?: true
+    vehicle?: true
+    vehicleId?: true
+    category?: true
+    productName?: true
+    spType?: true
+    itemId?: true
+    isActive?: true
+    price?: true
+  }
+
+  export type Distro_PO_MasterItemCountAggregateInputType = {
+    id?: true
+    vehicle?: true
+    vehicleId?: true
+    category?: true
+    productName?: true
+    spType?: true
+    itemId?: true
+    isActive?: true
+    price?: true
+    _all?: true
+  }
+
+  export type Distro_PO_MasterItemAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_MasterItem to aggregate.
+     */
+    where?: Distro_PO_MasterItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItems to fetch.
+     */
+    orderBy?: Distro_PO_MasterItemOrderByWithRelationInput | Distro_PO_MasterItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: Distro_PO_MasterItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Distro_PO_MasterItems
+    **/
+    _count?: true | Distro_PO_MasterItemCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Distro_PO_MasterItemAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Distro_PO_MasterItemSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Distro_PO_MasterItemMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Distro_PO_MasterItemMaxAggregateInputType
+  }
+
+  export type GetDistro_PO_MasterItemAggregateType<T extends Distro_PO_MasterItemAggregateArgs> = {
+        [P in keyof T & keyof AggregateDistro_PO_MasterItem]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDistro_PO_MasterItem[P]>
+      : GetScalarType<T[P], AggregateDistro_PO_MasterItem[P]>
+  }
+
+
+
+
+  export type Distro_PO_MasterItemGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Distro_PO_MasterItemWhereInput
+    orderBy?: Distro_PO_MasterItemOrderByWithAggregationInput | Distro_PO_MasterItemOrderByWithAggregationInput[]
+    by: Distro_PO_MasterItemScalarFieldEnum[] | Distro_PO_MasterItemScalarFieldEnum
+    having?: Distro_PO_MasterItemScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Distro_PO_MasterItemCountAggregateInputType | true
+    _avg?: Distro_PO_MasterItemAvgAggregateInputType
+    _sum?: Distro_PO_MasterItemSumAggregateInputType
+    _min?: Distro_PO_MasterItemMinAggregateInputType
+    _max?: Distro_PO_MasterItemMaxAggregateInputType
+  }
+
+  export type Distro_PO_MasterItemGroupByOutputType = {
+    id: number
+    vehicle: string
+    vehicleId: string
+    category: string
+    productName: string
+    spType: string | null
+    itemId: string
+    isActive: boolean
+    price: number | null
+    _count: Distro_PO_MasterItemCountAggregateOutputType | null
+    _avg: Distro_PO_MasterItemAvgAggregateOutputType | null
+    _sum: Distro_PO_MasterItemSumAggregateOutputType | null
+    _min: Distro_PO_MasterItemMinAggregateOutputType | null
+    _max: Distro_PO_MasterItemMaxAggregateOutputType | null
+  }
+
+  type GetDistro_PO_MasterItemGroupByPayload<T extends Distro_PO_MasterItemGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Distro_PO_MasterItemGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Distro_PO_MasterItemGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Distro_PO_MasterItemGroupByOutputType[P]>
+            : GetScalarType<T[P], Distro_PO_MasterItemGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type Distro_PO_MasterItemSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    category?: boolean
+    productName?: boolean
+    spType?: boolean
+    itemId?: boolean
+    isActive?: boolean
+    price?: boolean
+  }, ExtArgs["result"]["distro_PO_MasterItem"]>
+
+  export type Distro_PO_MasterItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    category?: boolean
+    productName?: boolean
+    spType?: boolean
+    itemId?: boolean
+    isActive?: boolean
+    price?: boolean
+  }, ExtArgs["result"]["distro_PO_MasterItem"]>
+
+  export type Distro_PO_MasterItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    category?: boolean
+    productName?: boolean
+    spType?: boolean
+    itemId?: boolean
+    isActive?: boolean
+    price?: boolean
+  }, ExtArgs["result"]["distro_PO_MasterItem"]>
+
+  export type Distro_PO_MasterItemSelectScalar = {
+    id?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    category?: boolean
+    productName?: boolean
+    spType?: boolean
+    itemId?: boolean
+    isActive?: boolean
+    price?: boolean
+  }
+
+  export type Distro_PO_MasterItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "vehicle" | "vehicleId" | "category" | "productName" | "spType" | "itemId" | "isActive" | "price", ExtArgs["result"]["distro_PO_MasterItem"]>
+
+  export type $Distro_PO_MasterItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Distro_PO_MasterItem"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      vehicle: string
+      vehicleId: string
+      category: string
+      productName: string
+      spType: string | null
+      itemId: string
+      isActive: boolean
+      price: number | null
+    }, ExtArgs["result"]["distro_PO_MasterItem"]>
+    composites: {}
+  }
+
+  type Distro_PO_MasterItemGetPayload<S extends boolean | null | undefined | Distro_PO_MasterItemDefaultArgs> = $Result.GetResult<Prisma.$Distro_PO_MasterItemPayload, S>
+
+  type Distro_PO_MasterItemCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<Distro_PO_MasterItemFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Distro_PO_MasterItemCountAggregateInputType | true
+    }
+
+  export interface Distro_PO_MasterItemDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Distro_PO_MasterItem'], meta: { name: 'Distro_PO_MasterItem' } }
+    /**
+     * Find zero or one Distro_PO_MasterItem that matches the filter.
+     * @param {Distro_PO_MasterItemFindUniqueArgs} args - Arguments to find a Distro_PO_MasterItem
+     * @example
+     * // Get one Distro_PO_MasterItem
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends Distro_PO_MasterItemFindUniqueArgs>(args: SelectSubset<T, Distro_PO_MasterItemFindUniqueArgs<ExtArgs>>): Prisma__Distro_PO_MasterItemClient<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Distro_PO_MasterItem that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {Distro_PO_MasterItemFindUniqueOrThrowArgs} args - Arguments to find a Distro_PO_MasterItem
+     * @example
+     * // Get one Distro_PO_MasterItem
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends Distro_PO_MasterItemFindUniqueOrThrowArgs>(args: SelectSubset<T, Distro_PO_MasterItemFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_MasterItemClient<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_MasterItem that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItemFindFirstArgs} args - Arguments to find a Distro_PO_MasterItem
+     * @example
+     * // Get one Distro_PO_MasterItem
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends Distro_PO_MasterItemFindFirstArgs>(args?: SelectSubset<T, Distro_PO_MasterItemFindFirstArgs<ExtArgs>>): Prisma__Distro_PO_MasterItemClient<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_MasterItem that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItemFindFirstOrThrowArgs} args - Arguments to find a Distro_PO_MasterItem
+     * @example
+     * // Get one Distro_PO_MasterItem
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends Distro_PO_MasterItemFindFirstOrThrowArgs>(args?: SelectSubset<T, Distro_PO_MasterItemFindFirstOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_MasterItemClient<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Distro_PO_MasterItems that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItemFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Distro_PO_MasterItems
+     * const distro_PO_MasterItems = await prisma.distro_PO_MasterItem.findMany()
+     * 
+     * // Get first 10 Distro_PO_MasterItems
+     * const distro_PO_MasterItems = await prisma.distro_PO_MasterItem.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const distro_PO_MasterItemWithIdOnly = await prisma.distro_PO_MasterItem.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends Distro_PO_MasterItemFindManyArgs>(args?: SelectSubset<T, Distro_PO_MasterItemFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Distro_PO_MasterItem.
+     * @param {Distro_PO_MasterItemCreateArgs} args - Arguments to create a Distro_PO_MasterItem.
+     * @example
+     * // Create one Distro_PO_MasterItem
+     * const Distro_PO_MasterItem = await prisma.distro_PO_MasterItem.create({
+     *   data: {
+     *     // ... data to create a Distro_PO_MasterItem
+     *   }
+     * })
+     * 
+     */
+    create<T extends Distro_PO_MasterItemCreateArgs>(args: SelectSubset<T, Distro_PO_MasterItemCreateArgs<ExtArgs>>): Prisma__Distro_PO_MasterItemClient<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Distro_PO_MasterItems.
+     * @param {Distro_PO_MasterItemCreateManyArgs} args - Arguments to create many Distro_PO_MasterItems.
+     * @example
+     * // Create many Distro_PO_MasterItems
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends Distro_PO_MasterItemCreateManyArgs>(args?: SelectSubset<T, Distro_PO_MasterItemCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Distro_PO_MasterItems and returns the data saved in the database.
+     * @param {Distro_PO_MasterItemCreateManyAndReturnArgs} args - Arguments to create many Distro_PO_MasterItems.
+     * @example
+     * // Create many Distro_PO_MasterItems
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Distro_PO_MasterItems and only return the `id`
+     * const distro_PO_MasterItemWithIdOnly = await prisma.distro_PO_MasterItem.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends Distro_PO_MasterItemCreateManyAndReturnArgs>(args?: SelectSubset<T, Distro_PO_MasterItemCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Distro_PO_MasterItem.
+     * @param {Distro_PO_MasterItemDeleteArgs} args - Arguments to delete one Distro_PO_MasterItem.
+     * @example
+     * // Delete one Distro_PO_MasterItem
+     * const Distro_PO_MasterItem = await prisma.distro_PO_MasterItem.delete({
+     *   where: {
+     *     // ... filter to delete one Distro_PO_MasterItem
+     *   }
+     * })
+     * 
+     */
+    delete<T extends Distro_PO_MasterItemDeleteArgs>(args: SelectSubset<T, Distro_PO_MasterItemDeleteArgs<ExtArgs>>): Prisma__Distro_PO_MasterItemClient<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Distro_PO_MasterItem.
+     * @param {Distro_PO_MasterItemUpdateArgs} args - Arguments to update one Distro_PO_MasterItem.
+     * @example
+     * // Update one Distro_PO_MasterItem
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends Distro_PO_MasterItemUpdateArgs>(args: SelectSubset<T, Distro_PO_MasterItemUpdateArgs<ExtArgs>>): Prisma__Distro_PO_MasterItemClient<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Distro_PO_MasterItems.
+     * @param {Distro_PO_MasterItemDeleteManyArgs} args - Arguments to filter Distro_PO_MasterItems to delete.
+     * @example
+     * // Delete a few Distro_PO_MasterItems
+     * const { count } = await prisma.distro_PO_MasterItem.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends Distro_PO_MasterItemDeleteManyArgs>(args?: SelectSubset<T, Distro_PO_MasterItemDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_MasterItems.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItemUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Distro_PO_MasterItems
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends Distro_PO_MasterItemUpdateManyArgs>(args: SelectSubset<T, Distro_PO_MasterItemUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_MasterItems and returns the data updated in the database.
+     * @param {Distro_PO_MasterItemUpdateManyAndReturnArgs} args - Arguments to update many Distro_PO_MasterItems.
+     * @example
+     * // Update many Distro_PO_MasterItems
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Distro_PO_MasterItems and only return the `id`
+     * const distro_PO_MasterItemWithIdOnly = await prisma.distro_PO_MasterItem.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends Distro_PO_MasterItemUpdateManyAndReturnArgs>(args: SelectSubset<T, Distro_PO_MasterItemUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Distro_PO_MasterItem.
+     * @param {Distro_PO_MasterItemUpsertArgs} args - Arguments to update or create a Distro_PO_MasterItem.
+     * @example
+     * // Update or create a Distro_PO_MasterItem
+     * const distro_PO_MasterItem = await prisma.distro_PO_MasterItem.upsert({
+     *   create: {
+     *     // ... data to create a Distro_PO_MasterItem
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Distro_PO_MasterItem we want to update
+     *   }
+     * })
+     */
+    upsert<T extends Distro_PO_MasterItemUpsertArgs>(args: SelectSubset<T, Distro_PO_MasterItemUpsertArgs<ExtArgs>>): Prisma__Distro_PO_MasterItemClient<$Result.GetResult<Prisma.$Distro_PO_MasterItemPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Distro_PO_MasterItems.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItemCountArgs} args - Arguments to filter Distro_PO_MasterItems to count.
+     * @example
+     * // Count the number of Distro_PO_MasterItems
+     * const count = await prisma.distro_PO_MasterItem.count({
+     *   where: {
+     *     // ... the filter for the Distro_PO_MasterItems we want to count
+     *   }
+     * })
+    **/
+    count<T extends Distro_PO_MasterItemCountArgs>(
+      args?: Subset<T, Distro_PO_MasterItemCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Distro_PO_MasterItemCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Distro_PO_MasterItem.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItemAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Distro_PO_MasterItemAggregateArgs>(args: Subset<T, Distro_PO_MasterItemAggregateArgs>): Prisma.PrismaPromise<GetDistro_PO_MasterItemAggregateType<T>>
+
+    /**
+     * Group by Distro_PO_MasterItem.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItemGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends Distro_PO_MasterItemGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: Distro_PO_MasterItemGroupByArgs['orderBy'] }
+        : { orderBy?: Distro_PO_MasterItemGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, Distro_PO_MasterItemGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDistro_PO_MasterItemGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Distro_PO_MasterItem model
+   */
+  readonly fields: Distro_PO_MasterItemFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Distro_PO_MasterItem.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__Distro_PO_MasterItemClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Distro_PO_MasterItem model
+   */
+  interface Distro_PO_MasterItemFieldRefs {
+    readonly id: FieldRef<"Distro_PO_MasterItem", 'Int'>
+    readonly vehicle: FieldRef<"Distro_PO_MasterItem", 'String'>
+    readonly vehicleId: FieldRef<"Distro_PO_MasterItem", 'String'>
+    readonly category: FieldRef<"Distro_PO_MasterItem", 'String'>
+    readonly productName: FieldRef<"Distro_PO_MasterItem", 'String'>
+    readonly spType: FieldRef<"Distro_PO_MasterItem", 'String'>
+    readonly itemId: FieldRef<"Distro_PO_MasterItem", 'String'>
+    readonly isActive: FieldRef<"Distro_PO_MasterItem", 'Boolean'>
+    readonly price: FieldRef<"Distro_PO_MasterItem", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Distro_PO_MasterItem findUnique
+   */
+  export type Distro_PO_MasterItemFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem to fetch.
+     */
+    where: Distro_PO_MasterItemWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem findUniqueOrThrow
+   */
+  export type Distro_PO_MasterItemFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem to fetch.
+     */
+    where: Distro_PO_MasterItemWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem findFirst
+   */
+  export type Distro_PO_MasterItemFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem to fetch.
+     */
+    where?: Distro_PO_MasterItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItems to fetch.
+     */
+    orderBy?: Distro_PO_MasterItemOrderByWithRelationInput | Distro_PO_MasterItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_MasterItems.
+     */
+    cursor?: Distro_PO_MasterItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_MasterItems.
+     */
+    distinct?: Distro_PO_MasterItemScalarFieldEnum | Distro_PO_MasterItemScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem findFirstOrThrow
+   */
+  export type Distro_PO_MasterItemFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem to fetch.
+     */
+    where?: Distro_PO_MasterItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItems to fetch.
+     */
+    orderBy?: Distro_PO_MasterItemOrderByWithRelationInput | Distro_PO_MasterItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_MasterItems.
+     */
+    cursor?: Distro_PO_MasterItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItems.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_MasterItems.
+     */
+    distinct?: Distro_PO_MasterItemScalarFieldEnum | Distro_PO_MasterItemScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem findMany
+   */
+  export type Distro_PO_MasterItemFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItems to fetch.
+     */
+    where?: Distro_PO_MasterItemWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItems to fetch.
+     */
+    orderBy?: Distro_PO_MasterItemOrderByWithRelationInput | Distro_PO_MasterItemOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Distro_PO_MasterItems.
+     */
+    cursor?: Distro_PO_MasterItemWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItems from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItems.
+     */
+    skip?: number
+    distinct?: Distro_PO_MasterItemScalarFieldEnum | Distro_PO_MasterItemScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem create
+   */
+  export type Distro_PO_MasterItemCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * The data needed to create a Distro_PO_MasterItem.
+     */
+    data: XOR<Distro_PO_MasterItemCreateInput, Distro_PO_MasterItemUncheckedCreateInput>
+  }
+
+  /**
+   * Distro_PO_MasterItem createMany
+   */
+  export type Distro_PO_MasterItemCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Distro_PO_MasterItems.
+     */
+    data: Distro_PO_MasterItemCreateManyInput | Distro_PO_MasterItemCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_MasterItem createManyAndReturn
+   */
+  export type Distro_PO_MasterItemCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * The data used to create many Distro_PO_MasterItems.
+     */
+    data: Distro_PO_MasterItemCreateManyInput | Distro_PO_MasterItemCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_MasterItem update
+   */
+  export type Distro_PO_MasterItemUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * The data needed to update a Distro_PO_MasterItem.
+     */
+    data: XOR<Distro_PO_MasterItemUpdateInput, Distro_PO_MasterItemUncheckedUpdateInput>
+    /**
+     * Choose, which Distro_PO_MasterItem to update.
+     */
+    where: Distro_PO_MasterItemWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem updateMany
+   */
+  export type Distro_PO_MasterItemUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Distro_PO_MasterItems.
+     */
+    data: XOR<Distro_PO_MasterItemUpdateManyMutationInput, Distro_PO_MasterItemUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_MasterItems to update
+     */
+    where?: Distro_PO_MasterItemWhereInput
+    /**
+     * Limit how many Distro_PO_MasterItems to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterItem updateManyAndReturn
+   */
+  export type Distro_PO_MasterItemUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * The data used to update Distro_PO_MasterItems.
+     */
+    data: XOR<Distro_PO_MasterItemUpdateManyMutationInput, Distro_PO_MasterItemUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_MasterItems to update
+     */
+    where?: Distro_PO_MasterItemWhereInput
+    /**
+     * Limit how many Distro_PO_MasterItems to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterItem upsert
+   */
+  export type Distro_PO_MasterItemUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * The filter to search for the Distro_PO_MasterItem to update in case it exists.
+     */
+    where: Distro_PO_MasterItemWhereUniqueInput
+    /**
+     * In case the Distro_PO_MasterItem found by the `where` argument doesn't exist, create a new Distro_PO_MasterItem with this data.
+     */
+    create: XOR<Distro_PO_MasterItemCreateInput, Distro_PO_MasterItemUncheckedCreateInput>
+    /**
+     * In case the Distro_PO_MasterItem was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<Distro_PO_MasterItemUpdateInput, Distro_PO_MasterItemUncheckedUpdateInput>
+  }
+
+  /**
+   * Distro_PO_MasterItem delete
+   */
+  export type Distro_PO_MasterItemDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+    /**
+     * Filter which Distro_PO_MasterItem to delete.
+     */
+    where: Distro_PO_MasterItemWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem deleteMany
+   */
+  export type Distro_PO_MasterItemDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_MasterItems to delete
+     */
+    where?: Distro_PO_MasterItemWhereInput
+    /**
+     * Limit how many Distro_PO_MasterItems to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterItem without action
+   */
+  export type Distro_PO_MasterItemDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem
+     */
+    select?: Distro_PO_MasterItemSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem
+     */
+    omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
   }
 
 
@@ -30266,6 +31455,7 @@ export namespace Prisma {
     companyId: 'companyId',
     segmentId: 'segmentId',
     urlImage: 'urlImage',
+    companyCode: 'companyCode',
     companyName: 'companyName',
     companyFoundingDate: 'companyFoundingDate',
     companyStatus: 'companyStatus',
@@ -30308,6 +31498,21 @@ export namespace Prisma {
   };
 
   export type Distro_PO_LineScalarFieldEnum = (typeof Distro_PO_LineScalarFieldEnum)[keyof typeof Distro_PO_LineScalarFieldEnum]
+
+
+  export const Distro_PO_MasterItemScalarFieldEnum: {
+    id: 'id',
+    vehicle: 'vehicle',
+    vehicleId: 'vehicleId',
+    category: 'category',
+    productName: 'productName',
+    spType: 'spType',
+    itemId: 'itemId',
+    isActive: 'isActive',
+    price: 'price'
+  };
+
+  export type Distro_PO_MasterItemScalarFieldEnum = (typeof Distro_PO_MasterItemScalarFieldEnum)[keyof typeof Distro_PO_MasterItemScalarFieldEnum]
 
 
   export const FormL9ScalarFieldEnum: {
@@ -30717,6 +31922,7 @@ export namespace Prisma {
     companyId?: UuidFilter<"Company"> | string
     segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
+    companyCode?: StringNullableFilter<"Company"> | string | null
     companyName?: StringNullableFilter<"Company"> | string | null
     companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableFilter<"Company"> | string | null
@@ -30737,6 +31943,7 @@ export namespace Prisma {
     companyId?: SortOrder
     segmentId?: SortOrderInput | SortOrder
     urlImage?: SortOrderInput | SortOrder
+    companyCode?: SortOrderInput | SortOrder
     companyName?: SortOrderInput | SortOrder
     companyFoundingDate?: SortOrderInput | SortOrder
     companyStatus?: SortOrderInput | SortOrder
@@ -30760,6 +31967,7 @@ export namespace Prisma {
     NOT?: CompanyWhereInput | CompanyWhereInput[]
     segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
+    companyCode?: StringNullableFilter<"Company"> | string | null
     companyName?: StringNullableFilter<"Company"> | string | null
     companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableFilter<"Company"> | string | null
@@ -30780,6 +31988,7 @@ export namespace Prisma {
     companyId?: SortOrder
     segmentId?: SortOrderInput | SortOrder
     urlImage?: SortOrderInput | SortOrder
+    companyCode?: SortOrderInput | SortOrder
     companyName?: SortOrderInput | SortOrder
     companyFoundingDate?: SortOrderInput | SortOrder
     companyStatus?: SortOrderInput | SortOrder
@@ -30805,6 +32014,7 @@ export namespace Prisma {
     companyId?: UuidWithAggregatesFilter<"Company"> | string
     segmentId?: IntNullableWithAggregatesFilter<"Company"> | number | null
     urlImage?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    companyCode?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyName?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyFoundingDate?: DateTimeNullableWithAggregatesFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableWithAggregatesFilter<"Company"> | string | null
@@ -30960,6 +32170,80 @@ export namespace Prisma {
     partNumber?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
     qty?: IntWithAggregatesFilter<"Distro_PO_Line"> | number
     purchaseOrderId?: IntWithAggregatesFilter<"Distro_PO_Line"> | number
+  }
+
+  export type Distro_PO_MasterItemWhereInput = {
+    AND?: Distro_PO_MasterItemWhereInput | Distro_PO_MasterItemWhereInput[]
+    OR?: Distro_PO_MasterItemWhereInput[]
+    NOT?: Distro_PO_MasterItemWhereInput | Distro_PO_MasterItemWhereInput[]
+    id?: IntFilter<"Distro_PO_MasterItem"> | number
+    vehicle?: StringFilter<"Distro_PO_MasterItem"> | string
+    vehicleId?: StringFilter<"Distro_PO_MasterItem"> | string
+    category?: StringFilter<"Distro_PO_MasterItem"> | string
+    productName?: StringFilter<"Distro_PO_MasterItem"> | string
+    spType?: StringNullableFilter<"Distro_PO_MasterItem"> | string | null
+    itemId?: StringFilter<"Distro_PO_MasterItem"> | string
+    isActive?: BoolFilter<"Distro_PO_MasterItem"> | boolean
+    price?: IntNullableFilter<"Distro_PO_MasterItem"> | number | null
+  }
+
+  export type Distro_PO_MasterItemOrderByWithRelationInput = {
+    id?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
+    productName?: SortOrder
+    spType?: SortOrderInput | SortOrder
+    itemId?: SortOrder
+    isActive?: SortOrder
+    price?: SortOrderInput | SortOrder
+  }
+
+  export type Distro_PO_MasterItemWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    itemId?: string
+    AND?: Distro_PO_MasterItemWhereInput | Distro_PO_MasterItemWhereInput[]
+    OR?: Distro_PO_MasterItemWhereInput[]
+    NOT?: Distro_PO_MasterItemWhereInput | Distro_PO_MasterItemWhereInput[]
+    vehicle?: StringFilter<"Distro_PO_MasterItem"> | string
+    vehicleId?: StringFilter<"Distro_PO_MasterItem"> | string
+    category?: StringFilter<"Distro_PO_MasterItem"> | string
+    productName?: StringFilter<"Distro_PO_MasterItem"> | string
+    spType?: StringNullableFilter<"Distro_PO_MasterItem"> | string | null
+    isActive?: BoolFilter<"Distro_PO_MasterItem"> | boolean
+    price?: IntNullableFilter<"Distro_PO_MasterItem"> | number | null
+  }, "id" | "itemId">
+
+  export type Distro_PO_MasterItemOrderByWithAggregationInput = {
+    id?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
+    productName?: SortOrder
+    spType?: SortOrderInput | SortOrder
+    itemId?: SortOrder
+    isActive?: SortOrder
+    price?: SortOrderInput | SortOrder
+    _count?: Distro_PO_MasterItemCountOrderByAggregateInput
+    _avg?: Distro_PO_MasterItemAvgOrderByAggregateInput
+    _max?: Distro_PO_MasterItemMaxOrderByAggregateInput
+    _min?: Distro_PO_MasterItemMinOrderByAggregateInput
+    _sum?: Distro_PO_MasterItemSumOrderByAggregateInput
+  }
+
+  export type Distro_PO_MasterItemScalarWhereWithAggregatesInput = {
+    AND?: Distro_PO_MasterItemScalarWhereWithAggregatesInput | Distro_PO_MasterItemScalarWhereWithAggregatesInput[]
+    OR?: Distro_PO_MasterItemScalarWhereWithAggregatesInput[]
+    NOT?: Distro_PO_MasterItemScalarWhereWithAggregatesInput | Distro_PO_MasterItemScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Distro_PO_MasterItem"> | number
+    vehicle?: StringWithAggregatesFilter<"Distro_PO_MasterItem"> | string
+    vehicleId?: StringWithAggregatesFilter<"Distro_PO_MasterItem"> | string
+    category?: StringWithAggregatesFilter<"Distro_PO_MasterItem"> | string
+    productName?: StringWithAggregatesFilter<"Distro_PO_MasterItem"> | string
+    spType?: StringNullableWithAggregatesFilter<"Distro_PO_MasterItem"> | string | null
+    itemId?: StringWithAggregatesFilter<"Distro_PO_MasterItem"> | string
+    isActive?: BoolWithAggregatesFilter<"Distro_PO_MasterItem"> | boolean
+    price?: IntNullableWithAggregatesFilter<"Distro_PO_MasterItem"> | number | null
   }
 
   export type FormL9WhereInput = {
@@ -32363,6 +33647,7 @@ export namespace Prisma {
   export type CompanyCreateInput = {
     companyId?: string
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -32383,6 +33668,7 @@ export namespace Prisma {
     companyId?: string
     segmentId?: number | null
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -32401,6 +33687,7 @@ export namespace Prisma {
   export type CompanyUpdateInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32421,6 +33708,7 @@ export namespace Prisma {
     companyId?: StringFieldUpdateOperationsInput | string
     segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32440,6 +33728,7 @@ export namespace Prisma {
     companyId?: string
     segmentId?: number | null
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -32456,6 +33745,7 @@ export namespace Prisma {
   export type CompanyUpdateManyMutationInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32473,6 +33763,7 @@ export namespace Prisma {
     companyId?: StringFieldUpdateOperationsInput | string
     segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -32635,6 +33926,87 @@ export namespace Prisma {
     partNumber?: StringFieldUpdateOperationsInput | string
     qty?: IntFieldUpdateOperationsInput | number
     purchaseOrderId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type Distro_PO_MasterItemCreateInput = {
+    vehicle: string
+    vehicleId: string
+    category: string
+    productName: string
+    spType?: string | null
+    itemId: string
+    isActive?: boolean
+    price?: number | null
+  }
+
+  export type Distro_PO_MasterItemUncheckedCreateInput = {
+    id?: number
+    vehicle: string
+    vehicleId: string
+    category: string
+    productName: string
+    spType?: string | null
+    itemId: string
+    isActive?: boolean
+    price?: number | null
+  }
+
+  export type Distro_PO_MasterItemUpdateInput = {
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
+    productName?: StringFieldUpdateOperationsInput | string
+    spType?: NullableStringFieldUpdateOperationsInput | string | null
+    itemId?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    price?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type Distro_PO_MasterItemUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
+    productName?: StringFieldUpdateOperationsInput | string
+    spType?: NullableStringFieldUpdateOperationsInput | string | null
+    itemId?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    price?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type Distro_PO_MasterItemCreateManyInput = {
+    id?: number
+    vehicle: string
+    vehicleId: string
+    category: string
+    productName: string
+    spType?: string | null
+    itemId: string
+    isActive?: boolean
+    price?: number | null
+  }
+
+  export type Distro_PO_MasterItemUpdateManyMutationInput = {
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
+    productName?: StringFieldUpdateOperationsInput | string
+    spType?: NullableStringFieldUpdateOperationsInput | string | null
+    itemId?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    price?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type Distro_PO_MasterItemUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
+    productName?: StringFieldUpdateOperationsInput | string
+    spType?: NullableStringFieldUpdateOperationsInput | string | null
+    itemId?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    price?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type FormL9CreateInput = {
@@ -34264,6 +35636,7 @@ export namespace Prisma {
     companyId?: SortOrder
     segmentId?: SortOrder
     urlImage?: SortOrder
+    companyCode?: SortOrder
     companyName?: SortOrder
     companyFoundingDate?: SortOrder
     companyStatus?: SortOrder
@@ -34285,6 +35658,7 @@ export namespace Prisma {
     companyId?: SortOrder
     segmentId?: SortOrder
     urlImage?: SortOrder
+    companyCode?: SortOrder
     companyName?: SortOrder
     companyFoundingDate?: SortOrder
     companyStatus?: SortOrder
@@ -34302,6 +35676,7 @@ export namespace Prisma {
     companyId?: SortOrder
     segmentId?: SortOrder
     urlImage?: SortOrder
+    companyCode?: SortOrder
     companyName?: SortOrder
     companyFoundingDate?: SortOrder
     companyStatus?: SortOrder
@@ -34477,6 +35852,65 @@ export namespace Prisma {
     id?: SortOrder
     qty?: SortOrder
     purchaseOrderId?: SortOrder
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type Distro_PO_MasterItemCountOrderByAggregateInput = {
+    id?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
+    productName?: SortOrder
+    spType?: SortOrder
+    itemId?: SortOrder
+    isActive?: SortOrder
+    price?: SortOrder
+  }
+
+  export type Distro_PO_MasterItemAvgOrderByAggregateInput = {
+    id?: SortOrder
+    price?: SortOrder
+  }
+
+  export type Distro_PO_MasterItemMaxOrderByAggregateInput = {
+    id?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
+    productName?: SortOrder
+    spType?: SortOrder
+    itemId?: SortOrder
+    isActive?: SortOrder
+    price?: SortOrder
+  }
+
+  export type Distro_PO_MasterItemMinOrderByAggregateInput = {
+    id?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
+    productName?: SortOrder
+    spType?: SortOrder
+    itemId?: SortOrder
+    isActive?: SortOrder
+    price?: SortOrder
+  }
+
+  export type Distro_PO_MasterItemSumOrderByAggregateInput = {
+    id?: SortOrder
+    price?: SortOrder
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type CompanyScalarRelationFilter = {
@@ -34808,11 +36242,6 @@ export namespace Prisma {
     score?: SortOrder
   }
 
-  export type BoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
   export type FormL9CertificateISOListRelationFilter = {
     every?: FormL9CertificateISOWhereInput
     some?: FormL9CertificateISOWhereInput
@@ -34878,14 +36307,6 @@ export namespace Prisma {
     signConfidentialityAgreement?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-  }
-
-  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type FormL9OthersScalarRelationFilter = {
@@ -35578,6 +36999,10 @@ export namespace Prisma {
     update?: XOR<XOR<Distro_PO_HeaderUpdateToOneWithWhereWithoutItemsInput, Distro_PO_HeaderUpdateWithoutItemsInput>, Distro_PO_HeaderUncheckedUpdateWithoutItemsInput>
   }
 
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
   export type CompanyCreateNestedOneWithoutFormL9Input = {
     create?: XOR<CompanyCreateWithoutFormL9Input, CompanyUncheckedCreateWithoutFormL9Input>
     connectOrCreate?: CompanyCreateOrConnectWithoutFormL9Input
@@ -35938,10 +37363,6 @@ export namespace Prisma {
     connectOrCreate?: FormL9CertificateISOCreateOrConnectWithoutOthersInput | FormL9CertificateISOCreateOrConnectWithoutOthersInput[]
     createMany?: FormL9CertificateISOCreateManyOthersInputEnvelope
     connect?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
-  }
-
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
   }
 
   export type FormL9UpdateOneRequiredWithoutOthersNestedInput = {
@@ -36760,6 +38181,7 @@ export namespace Prisma {
   export type CompanyCreateWithoutSegmentInput = {
     companyId?: string
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -36778,6 +38200,7 @@ export namespace Prisma {
   export type CompanyUncheckedCreateWithoutSegmentInput = {
     companyId?: string
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -36826,6 +38249,7 @@ export namespace Prisma {
     companyId?: UuidFilter<"Company"> | string
     segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
+    companyCode?: StringNullableFilter<"Company"> | string | null
     companyName?: StringNullableFilter<"Company"> | string | null
     companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableFilter<"Company"> | string | null
@@ -37123,6 +38547,7 @@ export namespace Prisma {
   export type CompanyCreateWithoutFormL9Input = {
     companyId?: string
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -37142,6 +38567,7 @@ export namespace Prisma {
     companyId?: string
     segmentId?: number | null
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -37375,6 +38801,7 @@ export namespace Prisma {
   export type CompanyUpdateWithoutFormL9Input = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -37394,6 +38821,7 @@ export namespace Prisma {
     companyId?: StringFieldUpdateOperationsInput | string
     segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -39307,6 +40735,7 @@ export namespace Prisma {
   export type CompanyCreateWithoutProfileInput = {
     companyId?: string
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -39326,6 +40755,7 @@ export namespace Prisma {
     companyId?: string
     segmentId?: number | null
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -39402,6 +40832,7 @@ export namespace Prisma {
   export type CompanyUpdateWithoutProfileInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -39421,6 +40852,7 @@ export namespace Prisma {
     companyId?: StringFieldUpdateOperationsInput | string
     segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -39438,6 +40870,7 @@ export namespace Prisma {
   export type CompanyCreateManySegmentInput = {
     companyId?: string
     urlImage?: string | null
+    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -39454,6 +40887,7 @@ export namespace Prisma {
   export type CompanyUpdateWithoutSegmentInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -39472,6 +40906,7 @@ export namespace Prisma {
   export type CompanyUncheckedUpdateWithoutSegmentInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -39490,6 +40925,7 @@ export namespace Prisma {
   export type CompanyUncheckedUpdateManyWithoutSegmentInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null

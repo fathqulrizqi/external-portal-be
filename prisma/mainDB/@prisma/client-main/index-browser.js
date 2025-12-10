@@ -131,6 +131,7 @@ exports.Prisma.CompanyScalarFieldEnum = {
   companyId: 'companyId',
   segmentId: 'segmentId',
   urlImage: 'urlImage',
+  companyCode: 'companyCode',
   companyName: 'companyName',
   companyFoundingDate: 'companyFoundingDate',
   companyStatus: 'companyStatus',
@@ -164,6 +165,18 @@ exports.Prisma.Distro_PO_LineScalarFieldEnum = {
   partNumber: 'partNumber',
   qty: 'qty',
   purchaseOrderId: 'purchaseOrderId'
+};
+
+exports.Prisma.Distro_PO_MasterItemScalarFieldEnum = {
+  id: 'id',
+  vehicle: 'vehicle',
+  vehicleId: 'vehicleId',
+  category: 'category',
+  productName: 'productName',
+  spType: 'spType',
+  itemId: 'itemId',
+  isActive: 'isActive',
+  price: 'price'
 };
 
 exports.Prisma.FormL9ScalarFieldEnum = {
@@ -385,6 +398,7 @@ exports.Prisma.ModelName = {
   Company: 'Company',
   Distro_PO_Header: 'Distro_PO_Header',
   Distro_PO_Line: 'Distro_PO_Line',
+  Distro_PO_MasterItem: 'Distro_PO_MasterItem',
   FormL9: 'FormL9',
   FormL9BankInfo: 'FormL9BankInfo',
   FormL9GeneralInformation: 'FormL9GeneralInformation',

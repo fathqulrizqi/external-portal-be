@@ -11,6 +11,7 @@ import cors from 'cors';
 import sanitizeInputMiddleware from "../middleware/sanitizeInputMiddleware.js";
 import { errorMiddleware } from '../middleware/errorMiddleware.js';
 import { niterraappdb } from './database.js';
+import distroPORouter from '../routes/Distro-PO/distroPORoute.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -42,6 +43,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(globalRouter);
 app.use('/api/users',userRouter);
 app.use('/api/admin',adminRouter);
+app.use('/api/distro-po', distroPORouter);
 app.use(errorMiddleware);
 
 const server = http.createServer(app);
