@@ -3,7 +3,7 @@ import { logger } from "../config/logging.js";
 import mailerTemplate from "../utils/mailerTemplate.js";
 
 export const authMiddleware = async (req, res, next) => {
-  const token = req.get("Authorization");
+  let token = req.get("Authorization");
   if (!token) {
     return res
       .status(401)
@@ -11,6 +11,10 @@ export const authMiddleware = async (req, res, next) => {
         errors: "Unauthorized",
       })
       .end();
+  }
+  // Accept 'Bearer <token>' format
+  if (token.startsWith('Bearer ')) {
+    token = token.slice(7);
   }
   
   const log = await niterraappdb.logsLogin.findUnique({

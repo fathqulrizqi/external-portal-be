@@ -1,0 +1,9 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./@prisma/client-NGKAX"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_NGKAX_URL")
+}
