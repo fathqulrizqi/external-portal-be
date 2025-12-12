@@ -138,12 +138,12 @@ exports.Prisma.CompanyScalarFieldEnum = {
   companyAddress: 'companyAddress',
   companyEmail: 'companyEmail',
   npwp: 'npwp',
-  application: 'application',
   website: 'website',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   totalCapital: 'totalCapital',
-  companyCode: 'companyCode'
+  companyCode: 'companyCode',
+  application: 'application'
 };
 
 exports.Prisma.Distro_PO_HeaderScalarFieldEnum = {
@@ -317,7 +317,9 @@ exports.Prisma.UserScalarFieldEnum = {
   isActive: 'isActive',
   sessionExpireDate: 'sessionExpireDate',
   createdDate: 'createdDate',
-  updateDate: 'updateDate'
+  updateDate: 'updateDate',
+  blockedUntil: 'blockedUntil',
+  failedLoginAttempts: 'failedLoginAttempts'
 };
 
 exports.Prisma.OtpVerifikasiScalarFieldEnum = {

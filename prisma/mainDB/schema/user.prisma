@@ -1,18 +1,20 @@
 model User {
-  userId            String              @id @default(uuid()) @db.Uuid
-  email             String              @db.VarChar(150)
-  application       String              @default("E-Bidding") @db.VarChar(150)
-  password          String              @db.VarChar(255)
-  isActive          Boolean             @default(false)
-  sessionExpireDate DateTime
-  createdDate       DateTime            @default(now())
-  updateDate        DateTime            @updatedAt
-  linkedDevice      LinkedDevice[]
-  logs              LogsLogin[]
-  profile           Profile?
-  ResetPassword     ResetPassword[]
-  UserHasRoleAccess UserHasRoleAccess[]
-  otp               otpVerifikasi[]
+  userId              String              @id @default(uuid()) @db.Uuid
+  email               String              @db.VarChar(150)
+  application         String              @default("E-Bidding") @db.VarChar(150)
+  password            String              @db.VarChar(255)
+  isActive            Boolean             @default(false)
+  sessionExpireDate   DateTime
+  createdDate         DateTime            @default(now())
+  updateDate          DateTime            @updatedAt
+  blockedUntil        DateTime?
+  failedLoginAttempts Int                 @default(0)
+  linkedDevice        LinkedDevice[]
+  logs                LogsLogin[]
+  profile             Profile?
+  ResetPassword       ResetPassword[]
+  UserHasRoleAccess   UserHasRoleAccess[]
+  otp                 otpVerifikasi[]
 
   @@unique([email, application])
   @@index([email])

@@ -4477,12 +4477,12 @@ export namespace Prisma {
     companyAddress: string | null
     companyEmail: string | null
     npwp: string | null
-    application: string | null
     website: string | null
     createdAt: Date | null
     updatedAt: Date | null
     totalCapital: string | null
     companyCode: string | null
+    application: string | null
   }
 
   export type CompanyMaxAggregateOutputType = {
@@ -4496,12 +4496,12 @@ export namespace Prisma {
     companyAddress: string | null
     companyEmail: string | null
     npwp: string | null
-    application: string | null
     website: string | null
     createdAt: Date | null
     updatedAt: Date | null
     totalCapital: string | null
     companyCode: string | null
+    application: string | null
   }
 
   export type CompanyCountAggregateOutputType = {
@@ -4515,12 +4515,12 @@ export namespace Prisma {
     companyAddress: number
     companyEmail: number
     npwp: number
-    application: number
     website: number
     createdAt: number
     updatedAt: number
     totalCapital: number
     companyCode: number
+    application: number
     _all: number
   }
 
@@ -4544,12 +4544,12 @@ export namespace Prisma {
     companyAddress?: true
     companyEmail?: true
     npwp?: true
-    application?: true
     website?: true
     createdAt?: true
     updatedAt?: true
     totalCapital?: true
     companyCode?: true
+    application?: true
   }
 
   export type CompanyMaxAggregateInputType = {
@@ -4563,12 +4563,12 @@ export namespace Prisma {
     companyAddress?: true
     companyEmail?: true
     npwp?: true
-    application?: true
     website?: true
     createdAt?: true
     updatedAt?: true
     totalCapital?: true
     companyCode?: true
+    application?: true
   }
 
   export type CompanyCountAggregateInputType = {
@@ -4582,12 +4582,12 @@ export namespace Prisma {
     companyAddress?: true
     companyEmail?: true
     npwp?: true
-    application?: true
     website?: true
     createdAt?: true
     updatedAt?: true
     totalCapital?: true
     companyCode?: true
+    application?: true
     _all?: true
   }
 
@@ -4688,12 +4688,12 @@ export namespace Prisma {
     companyAddress: string | null
     companyEmail: string | null
     npwp: string | null
-    application: string
     website: string | null
     createdAt: Date
     updatedAt: Date
     totalCapital: string | null
     companyCode: string | null
+    application: string
     _count: CompanyCountAggregateOutputType | null
     _avg: CompanyAvgAggregateOutputType | null
     _sum: CompanySumAggregateOutputType | null
@@ -4726,12 +4726,12 @@ export namespace Prisma {
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
-    application?: boolean
     website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     totalCapital?: boolean
     companyCode?: boolean
+    application?: boolean
     segment?: boolean | Company$segmentArgs<ExtArgs>
     profile?: boolean | Company$profileArgs<ExtArgs>
     formL9?: boolean | Company$formL9Args<ExtArgs>
@@ -4749,12 +4749,12 @@ export namespace Prisma {
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
-    application?: boolean
     website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     totalCapital?: boolean
     companyCode?: boolean
+    application?: boolean
     segment?: boolean | Company$segmentArgs<ExtArgs>
   }, ExtArgs["result"]["company"]>
 
@@ -4769,12 +4769,12 @@ export namespace Prisma {
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
-    application?: boolean
     website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     totalCapital?: boolean
     companyCode?: boolean
+    application?: boolean
     segment?: boolean | Company$segmentArgs<ExtArgs>
   }, ExtArgs["result"]["company"]>
 
@@ -4789,19 +4789,15 @@ export namespace Prisma {
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
-    application?: boolean
     website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     totalCapital?: boolean
     companyCode?: boolean
+    application?: boolean
   }
 
-<<<<<<< HEAD
-  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "website" | "createdAt" | "updatedAt" | "totalCapital" | "companyCode", ExtArgs["result"]["company"]>
-=======
-  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyCode" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "application" | "website" | "createdAt" | "updatedAt" | "totalCapital", ExtArgs["result"]["company"]>
->>>>>>> bee435698a86cbf14eab39201ddb358f3397fca8
+  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "website" | "createdAt" | "updatedAt" | "totalCapital" | "companyCode" | "application", ExtArgs["result"]["company"]>
   export type CompanyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     segment?: boolean | Company$segmentArgs<ExtArgs>
     profile?: boolean | Company$profileArgs<ExtArgs>
@@ -4833,12 +4829,12 @@ export namespace Prisma {
       companyAddress: string | null
       companyEmail: string | null
       npwp: string | null
-      application: string
       website: string | null
       createdAt: Date
       updatedAt: Date
       totalCapital: string | null
       companyCode: string | null
+      application: string
     }, ExtArgs["result"]["company"]>
     composites: {}
   }
@@ -5275,12 +5271,12 @@ export namespace Prisma {
     readonly companyAddress: FieldRef<"Company", 'String'>
     readonly companyEmail: FieldRef<"Company", 'String'>
     readonly npwp: FieldRef<"Company", 'String'>
-    readonly application: FieldRef<"Company", 'String'>
     readonly website: FieldRef<"Company", 'String'>
     readonly createdAt: FieldRef<"Company", 'DateTime'>
     readonly updatedAt: FieldRef<"Company", 'DateTime'>
     readonly totalCapital: FieldRef<"Company", 'String'>
     readonly companyCode: FieldRef<"Company", 'String'>
+    readonly application: FieldRef<"Company", 'String'>
   }
     
 
@@ -21583,8 +21579,18 @@ export namespace Prisma {
 
   export type AggregateUser = {
     _count: UserCountAggregateOutputType | null
+    _avg: UserAvgAggregateOutputType | null
+    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
+  }
+
+  export type UserAvgAggregateOutputType = {
+    failedLoginAttempts: number | null
+  }
+
+  export type UserSumAggregateOutputType = {
+    failedLoginAttempts: number | null
   }
 
   export type UserMinAggregateOutputType = {
@@ -21596,6 +21602,8 @@ export namespace Prisma {
     sessionExpireDate: Date | null
     createdDate: Date | null
     updateDate: Date | null
+    blockedUntil: Date | null
+    failedLoginAttempts: number | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -21607,6 +21615,8 @@ export namespace Prisma {
     sessionExpireDate: Date | null
     createdDate: Date | null
     updateDate: Date | null
+    blockedUntil: Date | null
+    failedLoginAttempts: number | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -21618,9 +21628,19 @@ export namespace Prisma {
     sessionExpireDate: number
     createdDate: number
     updateDate: number
+    blockedUntil: number
+    failedLoginAttempts: number
     _all: number
   }
 
+
+  export type UserAvgAggregateInputType = {
+    failedLoginAttempts?: true
+  }
+
+  export type UserSumAggregateInputType = {
+    failedLoginAttempts?: true
+  }
 
   export type UserMinAggregateInputType = {
     userId?: true
@@ -21631,6 +21651,8 @@ export namespace Prisma {
     sessionExpireDate?: true
     createdDate?: true
     updateDate?: true
+    blockedUntil?: true
+    failedLoginAttempts?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -21642,6 +21664,8 @@ export namespace Prisma {
     sessionExpireDate?: true
     createdDate?: true
     updateDate?: true
+    blockedUntil?: true
+    failedLoginAttempts?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -21653,6 +21677,8 @@ export namespace Prisma {
     sessionExpireDate?: true
     createdDate?: true
     updateDate?: true
+    blockedUntil?: true
+    failedLoginAttempts?: true
     _all?: true
   }
 
@@ -21694,6 +21720,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: UserAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: UserSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: UserMinAggregateInputType
@@ -21724,6 +21762,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: UserCountAggregateInputType | true
+    _avg?: UserAvgAggregateInputType
+    _sum?: UserSumAggregateInputType
     _min?: UserMinAggregateInputType
     _max?: UserMaxAggregateInputType
   }
@@ -21737,7 +21777,11 @@ export namespace Prisma {
     sessionExpireDate: Date
     createdDate: Date
     updateDate: Date
+    blockedUntil: Date | null
+    failedLoginAttempts: number
     _count: UserCountAggregateOutputType | null
+    _avg: UserAvgAggregateOutputType | null
+    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
   }
@@ -21765,6 +21809,8 @@ export namespace Prisma {
     sessionExpireDate?: boolean
     createdDate?: boolean
     updateDate?: boolean
+    blockedUntil?: boolean
+    failedLoginAttempts?: boolean
     linkedDevice?: boolean | User$linkedDeviceArgs<ExtArgs>
     logs?: boolean | User$logsArgs<ExtArgs>
     profile?: boolean | User$profileArgs<ExtArgs>
@@ -21783,6 +21829,8 @@ export namespace Prisma {
     sessionExpireDate?: boolean
     createdDate?: boolean
     updateDate?: boolean
+    blockedUntil?: boolean
+    failedLoginAttempts?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -21794,6 +21842,8 @@ export namespace Prisma {
     sessionExpireDate?: boolean
     createdDate?: boolean
     updateDate?: boolean
+    blockedUntil?: boolean
+    failedLoginAttempts?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
@@ -21805,9 +21855,11 @@ export namespace Prisma {
     sessionExpireDate?: boolean
     createdDate?: boolean
     updateDate?: boolean
+    blockedUntil?: boolean
+    failedLoginAttempts?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "email" | "application" | "password" | "isActive" | "sessionExpireDate" | "createdDate" | "updateDate", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "email" | "application" | "password" | "isActive" | "sessionExpireDate" | "createdDate" | "updateDate" | "blockedUntil" | "failedLoginAttempts", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     linkedDevice?: boolean | User$linkedDeviceArgs<ExtArgs>
     logs?: boolean | User$logsArgs<ExtArgs>
@@ -21839,6 +21891,8 @@ export namespace Prisma {
       sessionExpireDate: Date
       createdDate: Date
       updateDate: Date
+      blockedUntil: Date | null
+      failedLoginAttempts: number
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -22276,6 +22330,8 @@ export namespace Prisma {
     readonly sessionExpireDate: FieldRef<"User", 'DateTime'>
     readonly createdDate: FieldRef<"User", 'DateTime'>
     readonly updateDate: FieldRef<"User", 'DateTime'>
+    readonly blockedUntil: FieldRef<"User", 'DateTime'>
+    readonly failedLoginAttempts: FieldRef<"User", 'Int'>
   }
     
 
@@ -31492,12 +31548,12 @@ export namespace Prisma {
     companyAddress: 'companyAddress',
     companyEmail: 'companyEmail',
     npwp: 'npwp',
-    application: 'application',
     website: 'website',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     totalCapital: 'totalCapital',
-    companyCode: 'companyCode'
+    companyCode: 'companyCode',
+    application: 'application'
   };
 
   export type CompanyScalarFieldEnum = (typeof CompanyScalarFieldEnum)[keyof typeof CompanyScalarFieldEnum]
@@ -31716,7 +31772,9 @@ export namespace Prisma {
     isActive: 'isActive',
     sessionExpireDate: 'sessionExpireDate',
     createdDate: 'createdDate',
-    updateDate: 'updateDate'
+    updateDate: 'updateDate',
+    blockedUntil: 'blockedUntil',
+    failedLoginAttempts: 'failedLoginAttempts'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -31961,12 +32019,12 @@ export namespace Prisma {
     companyAddress?: StringNullableFilter<"Company"> | string | null
     companyEmail?: StringNullableFilter<"Company"> | string | null
     npwp?: StringNullableFilter<"Company"> | string | null
-    application?: StringFilter<"Company"> | string
     website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
     totalCapital?: StringNullableFilter<"Company"> | string | null
     companyCode?: StringNullableFilter<"Company"> | string | null
+    application?: StringFilter<"Company"> | string
     segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
     profile?: ProfileListRelationFilter
     formL9?: XOR<FormL9NullableScalarRelationFilter, FormL9WhereInput> | null
@@ -31983,12 +32041,12 @@ export namespace Prisma {
     companyAddress?: SortOrderInput | SortOrder
     companyEmail?: SortOrderInput | SortOrder
     npwp?: SortOrderInput | SortOrder
-    application?: SortOrder
     website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrderInput | SortOrder
     companyCode?: SortOrderInput | SortOrder
+    application?: SortOrder
     segment?: CompanySegmentOrderByWithRelationInput
     profile?: ProfileOrderByRelationAggregateInput
     formL9?: FormL9OrderByWithRelationInput
@@ -32008,12 +32066,12 @@ export namespace Prisma {
     companyAddress?: StringNullableFilter<"Company"> | string | null
     companyEmail?: StringNullableFilter<"Company"> | string | null
     npwp?: StringNullableFilter<"Company"> | string | null
-    application?: StringFilter<"Company"> | string
     website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
     totalCapital?: StringNullableFilter<"Company"> | string | null
     companyCode?: StringNullableFilter<"Company"> | string | null
+    application?: StringFilter<"Company"> | string
     segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
     profile?: ProfileListRelationFilter
     formL9?: XOR<FormL9NullableScalarRelationFilter, FormL9WhereInput> | null
@@ -32030,12 +32088,12 @@ export namespace Prisma {
     companyAddress?: SortOrderInput | SortOrder
     companyEmail?: SortOrderInput | SortOrder
     npwp?: SortOrderInput | SortOrder
-    application?: SortOrder
     website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrderInput | SortOrder
     companyCode?: SortOrderInput | SortOrder
+    application?: SortOrder
     _count?: CompanyCountOrderByAggregateInput
     _avg?: CompanyAvgOrderByAggregateInput
     _max?: CompanyMaxOrderByAggregateInput
@@ -32057,12 +32115,12 @@ export namespace Prisma {
     companyAddress?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyEmail?: StringNullableWithAggregatesFilter<"Company"> | string | null
     npwp?: StringNullableWithAggregatesFilter<"Company"> | string | null
-    application?: StringWithAggregatesFilter<"Company"> | string
     website?: StringNullableWithAggregatesFilter<"Company"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
     totalCapital?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyCode?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    application?: StringWithAggregatesFilter<"Company"> | string
   }
 
   export type Distro_PO_HeaderWhereInput = {
@@ -33132,6 +33190,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFilter<"User"> | Date | string
     createdDate?: DateTimeFilter<"User"> | Date | string
     updateDate?: DateTimeFilter<"User"> | Date | string
+    blockedUntil?: DateTimeNullableFilter<"User"> | Date | string | null
+    failedLoginAttempts?: IntFilter<"User"> | number
     linkedDevice?: LinkedDeviceListRelationFilter
     logs?: LogsLoginListRelationFilter
     profile?: XOR<ProfileNullableScalarRelationFilter, ProfileWhereInput> | null
@@ -33149,6 +33209,8 @@ export namespace Prisma {
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
+    blockedUntil?: SortOrderInput | SortOrder
+    failedLoginAttempts?: SortOrder
     linkedDevice?: LinkedDeviceOrderByRelationAggregateInput
     logs?: LogsLoginOrderByRelationAggregateInput
     profile?: ProfileOrderByWithRelationInput
@@ -33170,6 +33232,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFilter<"User"> | Date | string
     createdDate?: DateTimeFilter<"User"> | Date | string
     updateDate?: DateTimeFilter<"User"> | Date | string
+    blockedUntil?: DateTimeNullableFilter<"User"> | Date | string | null
+    failedLoginAttempts?: IntFilter<"User"> | number
     linkedDevice?: LinkedDeviceListRelationFilter
     logs?: LogsLoginListRelationFilter
     profile?: XOR<ProfileNullableScalarRelationFilter, ProfileWhereInput> | null
@@ -33187,9 +33251,13 @@ export namespace Prisma {
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
+    blockedUntil?: SortOrderInput | SortOrder
+    failedLoginAttempts?: SortOrder
     _count?: UserCountOrderByAggregateInput
+    _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
+    _sum?: UserSumOrderByAggregateInput
   }
 
   export type UserScalarWhereWithAggregatesInput = {
@@ -33204,6 +33272,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeWithAggregatesFilter<"User"> | Date | string
     createdDate?: DateTimeWithAggregatesFilter<"User"> | Date | string
     updateDate?: DateTimeWithAggregatesFilter<"User"> | Date | string
+    blockedUntil?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
+    failedLoginAttempts?: IntWithAggregatesFilter<"User"> | number
   }
 
   export type otpVerifikasiWhereInput = {
@@ -33696,12 +33766,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
     segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
     profile?: ProfileCreateNestedManyWithoutCompanyInput
     formL9?: FormL9CreateNestedOneWithoutCompanyInput
@@ -33718,12 +33788,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
     profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
     formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
@@ -33738,12 +33808,12 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
     profile?: ProfileUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UpdateOneWithoutCompanyNestedInput
@@ -33760,12 +33830,12 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
@@ -33781,12 +33851,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
   }
 
   export type CompanyUpdateManyMutationInput = {
@@ -33799,12 +33869,12 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
   }
 
   export type CompanyUncheckedUpdateManyInput = {
@@ -33818,12 +33888,12 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
   }
 
   export type Distro_PO_HeaderCreateInput = {
@@ -34994,6 +35064,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
     logs?: LogsLoginCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
@@ -35011,6 +35083,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
     logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
@@ -35028,6 +35102,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
@@ -35045,6 +35121,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
@@ -35062,6 +35140,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
   }
 
   export type UserUpdateManyMutationInput = {
@@ -35073,6 +35153,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -35084,6 +35166,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
   }
 
   export type otpVerifikasiCreateInput = {
@@ -35699,12 +35783,12 @@ export namespace Prisma {
     companyAddress?: SortOrder
     companyEmail?: SortOrder
     npwp?: SortOrder
-    application?: SortOrder
     website?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrder
     companyCode?: SortOrder
+    application?: SortOrder
   }
 
   export type CompanyAvgOrderByAggregateInput = {
@@ -35722,12 +35806,12 @@ export namespace Prisma {
     companyAddress?: SortOrder
     companyEmail?: SortOrder
     npwp?: SortOrder
-    application?: SortOrder
     website?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrder
     companyCode?: SortOrder
+    application?: SortOrder
   }
 
   export type CompanyMinOrderByAggregateInput = {
@@ -35741,12 +35825,12 @@ export namespace Prisma {
     companyAddress?: SortOrder
     companyEmail?: SortOrder
     npwp?: SortOrder
-    application?: SortOrder
     website?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrder
     companyCode?: SortOrder
+    application?: SortOrder
   }
 
   export type CompanySumOrderByAggregateInput = {
@@ -36541,6 +36625,12 @@ export namespace Prisma {
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
+    blockedUntil?: SortOrder
+    failedLoginAttempts?: SortOrder
+  }
+
+  export type UserAvgOrderByAggregateInput = {
+    failedLoginAttempts?: SortOrder
   }
 
   export type UserMaxOrderByAggregateInput = {
@@ -36552,6 +36642,8 @@ export namespace Prisma {
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
+    blockedUntil?: SortOrder
+    failedLoginAttempts?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -36563,6 +36655,12 @@ export namespace Prisma {
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
+    blockedUntil?: SortOrder
+    failedLoginAttempts?: SortOrder
+  }
+
+  export type UserSumOrderByAggregateInput = {
+    failedLoginAttempts?: SortOrder
   }
 
   export type UserScalarRelationFilter = {
@@ -38250,12 +38348,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
     profile?: ProfileCreateNestedManyWithoutCompanyInput
     formL9?: FormL9CreateNestedOneWithoutCompanyInput
   }
@@ -38270,12 +38368,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
     profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
     formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
@@ -38320,12 +38418,12 @@ export namespace Prisma {
     companyAddress?: StringNullableFilter<"Company"> | string | null
     companyEmail?: StringNullableFilter<"Company"> | string | null
     npwp?: StringNullableFilter<"Company"> | string | null
-    application?: StringFilter<"Company"> | string
     website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
     totalCapital?: StringNullableFilter<"Company"> | string | null
     companyCode?: StringNullableFilter<"Company"> | string | null
+    application?: StringFilter<"Company"> | string
   }
 
   export type CompanySegmentCreateWithoutCompanyInput = {
@@ -38623,12 +38721,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
     segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
     profile?: ProfileCreateNestedManyWithoutCompanyInput
   }
@@ -38644,12 +38742,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
     profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
   }
 
@@ -38879,12 +38977,12 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
     profile?: ProfileUpdateManyWithoutCompanyNestedInput
   }
@@ -38900,12 +38998,12 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
   }
 
@@ -40167,6 +40265,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
     logs?: LogsLoginCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
@@ -40183,6 +40283,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
     logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
@@ -40215,6 +40317,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
@@ -40231,6 +40335,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
@@ -40247,6 +40353,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
     ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
@@ -40263,6 +40371,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
     ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
@@ -40295,6 +40405,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
     ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
@@ -40311,6 +40423,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
     ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
@@ -40403,6 +40517,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
     logs?: LogsLoginCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
@@ -40419,6 +40535,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
     logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
@@ -40451,6 +40569,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
@@ -40467,6 +40587,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
@@ -40541,6 +40663,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
     logs?: LogsLoginCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
@@ -40557,6 +40681,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
     logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
@@ -40665,6 +40791,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
@@ -40681,6 +40809,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
@@ -40697,6 +40827,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     logs?: LogsLoginCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
     ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
@@ -40713,6 +40845,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
     ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
@@ -40745,6 +40879,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     logs?: LogsLoginUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
     ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
@@ -40761,6 +40897,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
     ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
@@ -40778,12 +40916,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
     segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
     formL9?: FormL9CreateNestedOneWithoutCompanyInput
   }
@@ -40799,12 +40937,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
     formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
 
@@ -40822,6 +40960,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
     logs?: LogsLoginCreateNestedManyWithoutUserInput
     ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
@@ -40838,6 +40978,8 @@ export namespace Prisma {
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
+    blockedUntil?: Date | string | null
+    failedLoginAttempts?: number
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
     logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
@@ -40876,6 +41018,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
     formL9?: FormL9UpdateOneWithoutCompanyNestedInput
   }
@@ -40896,6 +41039,7 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
 
@@ -40919,6 +41063,8 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUpdateManyWithoutUserNestedInput
     ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
@@ -40935,66 +41081,13 @@ export namespace Prisma {
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
     logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
-<<<<<<< HEAD
-=======
-    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type CompanyUpsertWithoutProfileInput = {
-    update: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
-    create: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
-    where?: CompanyWhereInput
-  }
-
-  export type CompanyUpdateToOneWithWhereWithoutProfileInput = {
-    where?: CompanyWhereInput
-    data: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
-  }
-
-  export type CompanyUpdateWithoutProfileInput = {
-    companyId?: StringFieldUpdateOperationsInput | string
-    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
-    npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
-    formL9?: FormL9UpdateOneWithoutCompanyNestedInput
-  }
-
-  export type CompanyUncheckedUpdateWithoutProfileInput = {
-    companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
-    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
-    npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
->>>>>>> bee435698a86cbf14eab39201ddb358f3397fca8
   }
 
   export type CompanyCreateManySegmentInput = {
@@ -41007,12 +41100,12 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
     companyCode?: string | null
+    application?: string
   }
 
   export type CompanyUpdateWithoutSegmentInput = {
@@ -41025,12 +41118,12 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     profile?: ProfileUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UpdateOneWithoutCompanyNestedInput
   }
@@ -41045,12 +41138,12 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
@@ -41065,12 +41158,12 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
   }
 
   export type ProfileCreateManyCompanyInput = {

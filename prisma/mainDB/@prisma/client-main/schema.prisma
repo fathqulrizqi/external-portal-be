@@ -16,17 +16,15 @@ model Company {
   companyAddress      String?
   companyEmail        String?
   npwp                String?
-  application         String    @default("E-Bidding")
-  website             String?   @db.VarChar(100)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  totalCapital String?
-
-  profile Profile[]
-  segment CompanySegment? @relation(fields: [segmentId], references: [segmentId])
-  formL9  FormL9?
+  website             String?         @db.VarChar(100)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+  totalCapital        String?
+  companyCode         String?
+  application         String          @default("E-Bidding")
+  segment             CompanySegment? @relation(fields: [segmentId], references: [segmentId])
+  profile             Profile[]
+  formL9              FormL9?
 
   @@index([companyName])
   @@index([npwp])
@@ -267,20 +265,22 @@ model Menu {
 }
 
 model User {
-  userId            String              @id @default(uuid()) @db.Uuid
-  email             String              @db.VarChar(150)
-  application       String              @default("E-Bidding") @db.VarChar(150)
-  password          String              @db.VarChar(255)
-  isActive          Boolean             @default(false)
-  sessionExpireDate DateTime
-  createdDate       DateTime            @default(now())
-  updateDate        DateTime            @updatedAt
-  linkedDevice      LinkedDevice[]
-  logs              LogsLogin[]
-  profile           Profile?
-  ResetPassword     ResetPassword[]
-  UserHasRoleAccess UserHasRoleAccess[]
-  otp               otpVerifikasi[]
+  userId              String              @id @default(uuid()) @db.Uuid
+  email               String              @db.VarChar(150)
+  application         String              @default("E-Bidding") @db.VarChar(150)
+  password            String              @db.VarChar(255)
+  isActive            Boolean             @default(false)
+  sessionExpireDate   DateTime
+  createdDate         DateTime            @default(now())
+  updateDate          DateTime            @updatedAt
+  blockedUntil        DateTime?
+  failedLoginAttempts Int                 @default(0)
+  linkedDevice        LinkedDevice[]
+  logs                LogsLogin[]
+  profile             Profile?
+  ResetPassword       ResetPassword[]
+  UserHasRoleAccess   UserHasRoleAccess[]
+  otp                 otpVerifikasi[]
 
   @@unique([email, application])
   @@index([email])
