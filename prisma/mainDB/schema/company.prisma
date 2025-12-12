@@ -6,19 +6,23 @@ model CompanySegment {
 }
 
 model Company {
-  companyId           String          @id @default(uuid()) @db.Uuid
-  segmentId           Int?
-  urlImage            String?
-  companyName         String?
-  companyFoundingDate DateTime?
-  companyStatus       String?
-  companyTelpFax      String?
-  companyAddress      String?
-  companyEmail        String?
+  companyId           String    @id @default(uuid()) @db.Uuid
+  segmentId           Int?      
+  urlImage            String?   @db.Text
+  companyCode        String?
+  companyName         String?   
+  companyFoundingDate DateTime? 
+  companyStatus       String?   
+  companyTelpFax      String?   
+  companyAddress      String?   
+  companyEmail        String?   
   npwp                String?
-  website             String?         @db.VarChar(100)
-  createdAt           DateTime        @default(now())
-  updatedAt           DateTime        @updatedAt
+  application         String   @default("E-Bidding")   
+  website             String?   @db.VarChar(100)
+  
+  createdAt           DateTime  @default(now())
+  updatedAt           DateTime  @updatedAt
+  
   totalCapital        String?
   companyCode         String?
   segment             CompanySegment? @relation(fields: [segmentId], references: [segmentId])

@@ -1,3 +1,4 @@
+import { application } from 'express';
 import companyService from '../service/companyService.js';
 
 const create = async (req, res, next) => {
@@ -14,7 +15,8 @@ const create = async (req, res, next) => {
             npwp                : req.body.npwp,
             website             : req.body.website || null,
             segmentId           : req.body.segmentId,
-            urlImage            : companyImage 
+            urlImage            : companyImage ,
+            application         : req.body.application
         }
         
         const result = await companyService.create(userId,payload);

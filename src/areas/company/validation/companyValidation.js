@@ -51,6 +51,10 @@ const createCompanyValidation = Joi.object({
     urlImage: Joi.string().optional().allow(null, '').messages({
         'string.base': 'Image URL must be a string',
     }),
+    application : Joi.string().required().messages({
+        'string.empty': 'Invalid application Register',
+        'any.required': 'Invalid application Register',
+      })
 });
 
 const updateCompanyValidation = Joi.object({

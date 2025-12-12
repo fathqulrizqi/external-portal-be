@@ -16,14 +16,17 @@ model Company {
   companyAddress      String?
   companyEmail        String?
   npwp                String?
-  website             String?         @db.VarChar(100)
-  createdAt           DateTime        @default(now())
-  updatedAt           DateTime        @updatedAt
-  totalCapital        String?
-  companyCode         String?
-  segment             CompanySegment? @relation(fields: [segmentId], references: [segmentId])
-  profile             Profile[]
-  formL9              FormL9?
+  application         String    @default("E-Bidding")
+  website             String?   @db.VarChar(100)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  totalCapital String?
+
+  profile Profile[]
+  segment CompanySegment? @relation(fields: [segmentId], references: [segmentId])
+  formL9  FormL9?
 
   @@index([companyName])
   @@index([npwp])

@@ -4477,6 +4477,7 @@ export namespace Prisma {
     companyAddress: string | null
     companyEmail: string | null
     npwp: string | null
+    application: string | null
     website: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -4495,6 +4496,7 @@ export namespace Prisma {
     companyAddress: string | null
     companyEmail: string | null
     npwp: string | null
+    application: string | null
     website: string | null
     createdAt: Date | null
     updatedAt: Date | null
@@ -4513,6 +4515,7 @@ export namespace Prisma {
     companyAddress: number
     companyEmail: number
     npwp: number
+    application: number
     website: number
     createdAt: number
     updatedAt: number
@@ -4541,6 +4544,7 @@ export namespace Prisma {
     companyAddress?: true
     companyEmail?: true
     npwp?: true
+    application?: true
     website?: true
     createdAt?: true
     updatedAt?: true
@@ -4559,6 +4563,7 @@ export namespace Prisma {
     companyAddress?: true
     companyEmail?: true
     npwp?: true
+    application?: true
     website?: true
     createdAt?: true
     updatedAt?: true
@@ -4577,6 +4582,7 @@ export namespace Prisma {
     companyAddress?: true
     companyEmail?: true
     npwp?: true
+    application?: true
     website?: true
     createdAt?: true
     updatedAt?: true
@@ -4682,6 +4688,7 @@ export namespace Prisma {
     companyAddress: string | null
     companyEmail: string | null
     npwp: string | null
+    application: string
     website: string | null
     createdAt: Date
     updatedAt: Date
@@ -4719,6 +4726,7 @@ export namespace Prisma {
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
+    application?: boolean
     website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -4741,6 +4749,7 @@ export namespace Prisma {
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
+    application?: boolean
     website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -4760,6 +4769,7 @@ export namespace Prisma {
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
+    application?: boolean
     website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -4779,6 +4789,7 @@ export namespace Prisma {
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
+    application?: boolean
     website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
@@ -4786,7 +4797,11 @@ export namespace Prisma {
     companyCode?: boolean
   }
 
+<<<<<<< HEAD
   export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "website" | "createdAt" | "updatedAt" | "totalCapital" | "companyCode", ExtArgs["result"]["company"]>
+=======
+  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyCode" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "application" | "website" | "createdAt" | "updatedAt" | "totalCapital", ExtArgs["result"]["company"]>
+>>>>>>> bee435698a86cbf14eab39201ddb358f3397fca8
   export type CompanyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     segment?: boolean | Company$segmentArgs<ExtArgs>
     profile?: boolean | Company$profileArgs<ExtArgs>
@@ -4818,6 +4833,7 @@ export namespace Prisma {
       companyAddress: string | null
       companyEmail: string | null
       npwp: string | null
+      application: string
       website: string | null
       createdAt: Date
       updatedAt: Date
@@ -5259,6 +5275,7 @@ export namespace Prisma {
     readonly companyAddress: FieldRef<"Company", 'String'>
     readonly companyEmail: FieldRef<"Company", 'String'>
     readonly npwp: FieldRef<"Company", 'String'>
+    readonly application: FieldRef<"Company", 'String'>
     readonly website: FieldRef<"Company", 'String'>
     readonly createdAt: FieldRef<"Company", 'DateTime'>
     readonly updatedAt: FieldRef<"Company", 'DateTime'>
@@ -31475,6 +31492,7 @@ export namespace Prisma {
     companyAddress: 'companyAddress',
     companyEmail: 'companyEmail',
     npwp: 'npwp',
+    application: 'application',
     website: 'website',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
@@ -31943,6 +31961,7 @@ export namespace Prisma {
     companyAddress?: StringNullableFilter<"Company"> | string | null
     companyEmail?: StringNullableFilter<"Company"> | string | null
     npwp?: StringNullableFilter<"Company"> | string | null
+    application?: StringFilter<"Company"> | string
     website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
@@ -31964,6 +31983,7 @@ export namespace Prisma {
     companyAddress?: SortOrderInput | SortOrder
     companyEmail?: SortOrderInput | SortOrder
     npwp?: SortOrderInput | SortOrder
+    application?: SortOrder
     website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -31988,6 +32008,7 @@ export namespace Prisma {
     companyAddress?: StringNullableFilter<"Company"> | string | null
     companyEmail?: StringNullableFilter<"Company"> | string | null
     npwp?: StringNullableFilter<"Company"> | string | null
+    application?: StringFilter<"Company"> | string
     website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
@@ -32009,6 +32030,7 @@ export namespace Prisma {
     companyAddress?: SortOrderInput | SortOrder
     companyEmail?: SortOrderInput | SortOrder
     npwp?: SortOrderInput | SortOrder
+    application?: SortOrder
     website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -32035,6 +32057,7 @@ export namespace Prisma {
     companyAddress?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyEmail?: StringNullableWithAggregatesFilter<"Company"> | string | null
     npwp?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    application?: StringWithAggregatesFilter<"Company"> | string
     website?: StringNullableWithAggregatesFilter<"Company"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
@@ -33673,6 +33696,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -33694,6 +33718,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -33713,6 +33738,7 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -33734,6 +33760,7 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -33754,6 +33781,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -33771,6 +33799,7 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -33789,6 +33818,7 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -35669,6 +35699,7 @@ export namespace Prisma {
     companyAddress?: SortOrder
     companyEmail?: SortOrder
     npwp?: SortOrder
+    application?: SortOrder
     website?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -35691,6 +35722,7 @@ export namespace Prisma {
     companyAddress?: SortOrder
     companyEmail?: SortOrder
     npwp?: SortOrder
+    application?: SortOrder
     website?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -35709,6 +35741,7 @@ export namespace Prisma {
     companyAddress?: SortOrder
     companyEmail?: SortOrder
     npwp?: SortOrder
+    application?: SortOrder
     website?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
@@ -38217,6 +38250,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -38236,6 +38270,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -38285,6 +38320,7 @@ export namespace Prisma {
     companyAddress?: StringNullableFilter<"Company"> | string | null
     companyEmail?: StringNullableFilter<"Company"> | string | null
     npwp?: StringNullableFilter<"Company"> | string | null
+    application?: StringFilter<"Company"> | string
     website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
@@ -38587,6 +38623,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -38607,6 +38644,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -38841,6 +38879,7 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -38861,6 +38900,7 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40738,6 +40778,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -40758,6 +40799,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -40898,6 +40940,61 @@ export namespace Prisma {
     ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
+<<<<<<< HEAD
+=======
+    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
+  }
+
+  export type CompanyUpsertWithoutProfileInput = {
+    update: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
+    create: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
+    where?: CompanyWhereInput
+  }
+
+  export type CompanyUpdateToOneWithWhereWithoutProfileInput = {
+    where?: CompanyWhereInput
+    data: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
+  }
+
+  export type CompanyUpdateWithoutProfileInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+    formL9?: FormL9UpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanyUncheckedUpdateWithoutProfileInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
+>>>>>>> bee435698a86cbf14eab39201ddb358f3397fca8
   }
 
   export type CompanyCreateManySegmentInput = {
@@ -40910,6 +41007,7 @@ export namespace Prisma {
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
+    application?: string
     website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
@@ -40927,6 +41025,7 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40946,6 +41045,7 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40965,6 +41065,7 @@ export namespace Prisma {
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
     website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
