@@ -7,3 +7,2062 @@ datasource db {
   provider = "sqlserver"
   url      = env("DATABASE_NGKAX_URL")
 }
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model AuditCustom_BOMImport {
+  ItemID      String?  @db.VarChar(50)
+  ItemLine1   String?  @db.VarChar(50)
+  ItemLine2   String?  @db.VarChar(50)
+  ItemLine3   String?  @db.VarChar(50)
+  Section     String?  @db.VarChar(50)
+  Level       Int?
+  BOM_Qty     Decimal? @db.Decimal(18, 5)
+  BOMLine_Qty Decimal? @db.Decimal(18, 5)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model AuditCustom_BOMImportTemp {
+  ItemID String? @db.VarChar(50)
+  Unit   String? @db.VarChar(50)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model AX_LedgerPostingType {
+  name        String? @db.VarChar(50)
+  value       Int?
+  description String? @db.VarChar(100)
+
+  @@ignore
+}
+
+model AX_SP_Type {
+  item_prefix String  @id(map: "PK_AX_SP_Type") @db.VarChar(50)
+  S_P_Type    String? @map("S/P Type") @db.VarChar(50)
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model axitemmaster {
+  ITEMID                String  @db.NVarChar(20)
+  ProductName           String? @db.NVarChar(60)
+  ItemDescription       String?
+  SearchNameAll         String? @db.NVarChar(20)
+  SearchNameReleased    String? @db.NVarChar(20)
+  S_PType               String? @map("S/PType") @db.NVarChar(10)
+  VehicleID             String? @db.NVarChar(10)
+  ItemGroup             String? @db.NVarChar(10)
+  ProdcutCateMajor      String? @db.NVarChar(2)
+  ProductCateMajorName  String? @db.NVarChar(60)
+  ProdcutCateMiddle     String? @db.NVarChar(3)
+  ProductCateMiddleName String? @db.NVarChar(60)
+  ProductCateMinor      String? @db.NVarChar(3)
+  ProductCateMinorName  String? @db.NVarChar(60)
+  ProductCategory       String? @db.NVarChar(30)
+  ProCateName           String? @db.NVarChar(60)
+  BusinessType          String? @db.NVarChar(30)
+  BusinessTypeName      String? @db.NVarChar(60)
+  SectionType           String? @db.NVarChar(30)
+  Section               String? @db.NVarChar(60)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model D365_Procate {
+  Procate_Code String? @db.VarChar(10)
+  Procate_Name String? @db.VarChar(50)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model D365ReleasedProduct_ {
+  Item_number                  String?   @map("Item number") @db.NVarChar(255)
+  Product_name                 String?   @map("Product name") @db.NVarChar(255)
+  Search_name                  String?   @map("Search name") @db.NVarChar(255)
+  Description                  String?   @db.NVarChar(255)
+  Item_group                   String?   @map("Item group") @db.NVarChar(255)
+  Product_type                 String?   @map("Product type") @db.NVarChar(255)
+  Product_subtype              String?   @map("Product subtype") @db.NVarChar(255)
+  Vehicle_id                   String?   @map("Vehicle id") @db.NVarChar(255)
+  Net_weight                   Float?    @map("Net weight")
+  Packing_quantity             Float?    @map("Packing quantity")
+  UnitPurc                     String?   @db.NVarChar(255)
+  UnitInvent                   String?   @db.NVarChar(255)
+  UnitSales                    String?   @db.NVarChar(255)
+  BOM_unit                     String?   @map("BOM unit") @db.NVarChar(255)
+  Description_for_Sales_report String?   @map("Description for Sales report") @db.NVarChar(255)
+  Created_date_and_time        DateTime? @map("Created date and time") @db.DateTime
+  Modified_date_and_time       DateTime? @map("Modified date and time") @db.DateTime
+
+  @@map("D365ReleasedProduct$")
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model ecoresproduct {
+  PRODUCTMASTER                         BigInt?
+  RETAITOTALWEIGHT                      Int?
+  VARIANTCONFIGURATIONTECHNOLOGY        Int?
+  RETAILCOLORGROUPID                    String? @db.NVarChar(10)
+  RETAILSIZEGROUPID                     String? @db.NVarChar(10)
+  RETAILSTYLEGROUPID                    String? @db.NVarChar(10)
+  INSTANCERELATIONTYPE                  BigInt
+  DISPLAYPRODUCTNUMBER                  String  @db.NVarChar(70)
+  SEARCHNAME                            String  @db.NVarChar(20)
+  PRODUCTTYPE                           Int
+  PDSCWPRODUCT                          Int
+  MODIFIEDBY                            String  @db.NVarChar(8)
+  RECVERSION                            Int
+  RELATIONTYPE                          BigInt
+  PARTITION                             BigInt
+  RECID                                 BigInt
+  ISPRODUCTVARIANTUNITCONVERSIONENABLED Int?
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model FA_D365_ITS_WAD {
+  Item         String?  @db.VarChar(50)
+  TotalQty     Decimal? @db.Decimal(18, 4)
+  TotalAmount  Decimal? @db.Decimal(18, 4)
+  PeriodeMonth String?  @db.VarChar(5)
+  PeriodeYear  String?  @db.VarChar(10)
+  AmountWAD    Decimal? @db.Decimal(18, 4)
+  EndingQty    Decimal? @db.Decimal(18, 4)
+  Warehouse    String?  @db.VarChar(10)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model FA_D365_WAD {
+  Item         String?  @db.VarChar(50)
+  TotalQty     Decimal? @db.Decimal(18, 4)
+  TotalAmount  Decimal? @db.Decimal(18, 4)
+  PeriodeMonth String?  @db.VarChar(5)
+  PeriodeYear  String?  @db.VarChar(10)
+  AmountWAD    Decimal? @db.Decimal(18, 4)
+  EndingQty    Decimal? @db.Decimal(18, 4)
+  Warehouse    String?  @db.VarChar(10)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model FA_D365ImporForm_StandardCost {
+  ID           Int       @default(autoincrement())
+  Company      String?   @db.VarChar(50)
+  ItemNumber   String?   @db.VarChar(50)
+  ProductName  String?   @db.VarChar(50)
+  Price        Decimal?  @db.Decimal(18, 4)
+  PriceUnit    Decimal?  @db.Decimal(18, 4)
+  At           Decimal?  @db.Decimal(18, 4)
+  ActivateDate DateTime? @db.Date
+  ExtractDate  DateTime? @db.Date
+  UploadBy     String?   @db.VarChar(50)
+  UploadTime   DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model FA_D365ImporForm_StockManagement {
+  ItemGroup                     String?   @db.VarChar(50)
+  Date                          DateTime? @db.Date
+  Warehouse                     String?   @db.VarChar(50)
+  Item                          String?   @db.VarChar(50)
+  Batch                         String?   @db.VarChar(50)
+  InventoryUnit                 String?   @db.VarChar(50)
+  BeginningBalanceQty           Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_BeginningBalanceQty") @db.Decimal(18, 4)
+  BeginningBalanceAmmount       Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_BeginningBalanceAmmount") @db.Decimal(18, 4)
+  TransferQtyPlus               Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_TransferQtyPlus") @db.Decimal(18, 4)
+  TransferAMountPlus            Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_TransferQtyPlus1") @db.Decimal(18, 4)
+  ProductionQtyPlus             Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_ProductionQtyPlus") @db.Decimal(18, 4)
+  ProductionAmountPlus          Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_ProductionQtyPlus1") @db.Decimal(18, 4)
+  PurchasedQtyPlus              Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_PurchasedQtyPlus") @db.Decimal(18, 4)
+  PurchasedAmountPlus           Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_PurchasedQtyPlus1") @db.Decimal(18, 4)
+  AdjustQtyPlus                 Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_AdjustQtyPlus") @db.Decimal(18, 4)
+  AdjustAmountPlus              Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_AdjustQtyPlus1") @db.Decimal(18, 4)
+  CountingQtyPlus               Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_CountingQtyPlus") @db.Decimal(18, 4)
+  CountingAmountPlus            Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_CountingQtyPlus1") @db.Decimal(18, 4)
+  TransferQtyMinus              Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_TransferQtyMinus") @db.Decimal(18, 4)
+  TransferAmountMinus           Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_TransferQtyMinus1") @db.Decimal(18, 4)
+  SalesQtyMinus                 Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_SalesQtyMinus") @db.Decimal(18, 4)
+  SalesAmountMinus              Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_SalesQtyMinus1") @db.Decimal(18, 4)
+  ConsumptionQtyMinus           Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_ConsumptionQtyMinus") @db.Decimal(18, 4)
+  ConsumptionAmountMinus        Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_ConsumptionQtyMinus1") @db.Decimal(18, 4)
+  AdjustQtyMinus                Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_AdjustQtyMinus") @db.Decimal(18, 4)
+  AdjustAmountMinus             Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_AdjustQtyMinus1") @db.Decimal(18, 4)
+  CountingQtyMinus              Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_CountingQtyMinus") @db.Decimal(18, 4)
+  CountingAmountMinus           Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_CountingQtyMinus1") @db.Decimal(18, 4)
+  EndingBalanceQuantity         Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_EndingBalanceQuantity") @db.Decimal(18, 4)
+  EndingBalanceAmount           Decimal?  @default(0, map: "DF_FA_D365ImporForm_StockManagement_EndingBalanceQuantity1") @db.Decimal(18, 4)
+  Procate                       String?   @db.VarChar(50)
+  ProductName                   String?   @db.Text
+  DescriptionFromPurchaseReport String?   @db.Text
+  DescriptionFromSalesReport    String?   @db.Text
+  Periode                       DateTime? @db.Date
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model ItemAX {
+  ItemID     String? @db.NVarChar(50)
+  SearchName String? @db.NVarChar(20)
+  ID         Int     @default(autoincrement())
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_D365BOM {
+  BOMID       String?  @db.VarChar(50)
+  BOMLine     String?  @db.VarChar(50)
+  Warehouse   String?  @db.VarChar(10)
+  Level       Int?
+  Numerator   Decimal? @db.Decimal(18, 5)
+  Denumerator Decimal? @db.Decimal(18, 5)
+  Unit        String?  @db.VarChar(10)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_D365CustExternalItem {
+  ABCCategory      String? @db.NVarChar(255)
+  CustVendRelation String? @db.NVarChar(255)
+  Description      String? @db.NVarChar(255)
+  ExternalItemId   String? @db.NVarChar(255)
+  ExternalItemTxt  String? @db.NVarChar(255)
+  InventDimId      String? @db.NVarChar(255)
+  ItemId           String? @db.NVarChar(255)
+  ModuleType       String? @db.NVarChar(255)
+  modifiedBy       String? @db.NVarChar(255)
+  dataAreaId       String? @db.NVarChar(255)
+  recVersion       Float?
+  Partition        String? @db.NVarChar(255)
+  RecId            String? @db.NVarChar(255)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_D365Customer {
+  Account        String? @db.VarChar(5)
+  AccountName    String? @db.VarChar(100)
+  InvoiceAccount String? @db.VarChar(5)
+  CustomerGroup  String? @db.VarChar(20)
+  Currency       String? @db.VarChar(3)
+  SalesTaxGroup  String? @db.VarChar(10)
+  City           String? @db.VarChar(50)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_D365CustPackingSlipLine {
+  ExternalItemId        String?   @db.NVarChar(255)
+  ItemId                String?   @db.NVarChar(255)
+  Name                  String?   @db.NVarChar(255)
+  OrigSalesId           String?   @db.NVarChar(255)
+  PackingSlipId         String?   @db.NVarChar(255)
+  Created_date_and_time DateTime? @map("Created date and time") @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_D365Item {
+  ItemID                    String?   @db.VarChar(50)
+  ProductName               String?   @db.VarChar(100)
+  SearchName                String?   @db.VarChar(100)
+  Description               String?   @db.VarChar(Max)
+  ItemGroup                 String?   @db.VarChar(50)
+  ProductType               String?   @db.VarChar(50)
+  ProductSubtype            String?   @db.VarChar(50)
+  VehicleID                 String?   @db.VarChar(50)
+  NetWeight                 Decimal?  @db.Decimal(18, 5)
+  PackingQuantity           Decimal?  @db.Decimal(18, 5)
+  UnitPurchase              String?   @db.VarChar(20)
+  UnitInventory             String?   @db.VarChar(20)
+  ProductCategory           String?   @db.VarChar(20)
+  Procate                   String?   @db.VarChar(20)
+  MasterVehicle             String?   @db.VarChar(20)
+  SPType                    String?   @db.VarChar(20)
+  SectionType               String?   @db.VarChar(20)
+  Section                   String?   @db.VarChar(150)
+  UnitSales                 String?   @db.VarChar(20)
+  BOMUnit                   String?   @db.VarChar(20)
+  DescriptionForSalesReport String?   @db.VarChar(Max)
+  CreatedDate               DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_D365Item_Backup {
+  ItemID                    String?   @db.VarChar(50)
+  ProductName               String?   @db.VarChar(100)
+  SearchName                String?   @db.VarChar(100)
+  Description               String?   @db.VarChar(Max)
+  ItemGroup                 String?   @db.VarChar(50)
+  ProductType               String?   @db.VarChar(50)
+  ProductSubtype            String?   @db.VarChar(50)
+  VehicleID                 String?   @db.VarChar(50)
+  NetWeight                 Decimal?  @db.Decimal(18, 5)
+  PackingQuantity           Decimal?  @db.Decimal(18, 5)
+  UnitPurchase              String?   @db.VarChar(20)
+  UnitInventory             String?   @db.VarChar(20)
+  ProductCategory           String?   @db.VarChar(20)
+  Procate                   String?   @db.VarChar(20)
+  MasterVehicle             String?   @db.VarChar(20)
+  SPType                    String?   @db.VarChar(20)
+  SectionType               String?   @db.VarChar(20)
+  Section                   String?   @db.VarChar(150)
+  UnitSales                 String?   @db.VarChar(20)
+  BOMUnit                   String?   @db.VarChar(20)
+  DescriptionForSalesReport String?   @db.VarChar(Max)
+  CreatedDate               DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_D365UnitConversion {
+  UnitFrom    String?  @db.VarChar(50)
+  UnitTo      String?  @db.VarChar(50)
+  Factor      Decimal? @db.Decimal(18, 5)
+  Numerator   Decimal? @db.Decimal(18, 5)
+  Denominator Decimal? @db.Decimal(18, 5)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_D365Vendor {
+  Account        String? @db.VarChar(5)
+  AccountName    String? @db.VarChar(100)
+  InvoiceAccount String? @db.VarChar(5)
+  VendorGroup    String? @db.VarChar(20)
+  Currency       String? @db.VarChar(3)
+  SalesTaxGroup  String? @db.VarChar(10)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_FNBOM {
+  BOMID       String?  @db.VarChar(50)
+  BOMLine     String?  @db.VarChar(50)
+  BOMIDName   String?  @db.VarChar(50)
+  Level       Int?
+  Numerator   Decimal? @db.Decimal(18, 5)
+  Denumerator Decimal? @db.Decimal(18, 5)
+  Unit        String?  @db.VarChar(10)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Master_Rank_Khusus {
+  COMPONENTNO String? @db.NVarChar(Max)
+  GRUP        String? @db.NVarChar(Max)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model NTT_DMFINVENTITEMPRICESIMENTITY_Backup {
+  DEFINITIONGROUP            String   @db.NVarChar(60)
+  EXECUTIONID                String   @db.NVarChar(90)
+  FROMDATE                   DateTime @db.DateTime
+  INVENTDIM_CONFIGID         String   @db.NVarChar(10)
+  INVENTDIM_INVENTBATCHID    String   @db.NVarChar(20)
+  INVENTDIM_INVENTCOLORID    String   @db.NVarChar(10)
+  INVENTDIM_INVENTLOCATIONID String   @db.NVarChar(10)
+  INVENTDIM_INVENTSERIALID   String   @db.NVarChar(20)
+  INVENTDIM_INVENTSITEID     String   @db.NVarChar(10)
+  INVENTDIM_INVENTSIZEID     String   @db.NVarChar(10)
+  INVENTDIM_WMSLOCATIONID    String   @db.NVarChar(10)
+  INVENTDIM_WMSPALLETID      String   @db.NVarChar(18)
+  INVENTDIMID                String   @db.NVarChar(20)
+  ISSELECTED                 Int
+  ITEMID                     String   @db.NVarChar(20)
+  MARKUP                     Decimal
+  MARKUPSECCUR_RU            Decimal
+  NTT_ADJUSTDATE             DateTime @db.DateTime
+  PRICE                      Decimal
+  PRICEALLOCATEMARKUP        String   @db.NVarChar(6)
+  PRICECALCID                String   @db.NVarChar(20)
+  PRICEQTY                   Decimal
+  PRICESECCUR_RU             Decimal
+  PRICETYPE                  String   @db.NVarChar(14)
+  PRICEUNIT                  Decimal
+  TRANSFERSTATUS             Int
+  UNITID                     String   @db.NVarChar(10)
+  VERSIONID                  String   @db.NVarChar(10)
+  MODIFIEDDATETIME           DateTime @db.DateTime
+  RECVERSION                 Int
+  PARTITION                  BigInt
+  RECID                      BigInt
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Sales_AXImporForm_OrderLines_FromAXServer {
+  Sales_order_number       String?   @map("Sales order number") @db.NVarChar(50)
+  Sales_line_number        Decimal?  @map("Sales line number") @db.Decimal(18, 5)
+  Customer_code            String?   @map("Customer code") @db.NVarChar(50)
+  Customer_name            String?   @map("Customer name") @db.NVarChar(100)
+  Customer_reference       String?   @map("Customer reference") @db.NVarChar(200)
+  External_item_number     String?   @map("External item number") @db.Text
+  Item_Id                  String?   @map("Item Id") @db.NVarChar(50)
+  Product_name             String?   @map("Product name") @db.Text
+  Item_description         String?   @map("Item description") @db.NVarChar(Max)
+  Search_name              String?   @map("Search name") @db.NVarChar(150)
+  S_P_Type                 String?   @map("S/P Type") @db.NVarChar(20)
+  Vehicled_Id              String?   @map("Vehicled Id") @db.NVarChar(50)
+  MasterVehicle            String?   @db.NVarChar(20)
+  SO_request_shipping_date DateTime? @map("SO request shipping date") @db.DateTime
+  Salse_ordey_QTY          Decimal?  @map("Salse ordey QTY")
+  Unit_price               Decimal?  @map("Unit price")
+  Discount                 Decimal?
+  Discount_percent         Decimal?  @map("Discount percent")
+  Net_amount               Decimal?  @map("Net amount")
+  Picking_List_Count       Int?      @map("Picking List Count")
+  Packing_Slip_Count       Int?      @map("Packing Slip Count")
+  Sales_Class              String    @map("Sales Class") @db.VarChar(11)
+  Year                     Int?
+  Month                    Int?
+  Procate                  String?   @db.NVarChar(60)
+  City                     String?   @db.NVarChar(50)
+  Helper                   String?   @db.NVarChar(203)
+  ItemGroup                String?   @db.NVarChar(50)
+  SALESDELIVERNOW          Decimal?
+  DeliverRemainder         Decimal?
+  Sales_Order_Qty          Decimal?  @map("Sales Order Qty")
+  SystemUse                String    @db.VarChar(4)
+  CommercialStatus         String    @db.VarChar(10)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Sales_AXImporForm_Sales_FromAXServer {
+  SalesOrder              String?   @db.NVarChar(50)
+  SalesLineNumber         Decimal?  @db.Decimal(18, 5)
+  CustomerCode            String?   @db.NVarChar(150)
+  CustomerName            String?   @db.NVarChar(100)
+  CustomerReference       String?   @db.NVarChar(100)
+  ExternalItemNumber      String?   @db.NVarChar(100)
+  ITEMID                  String?   @db.NVarChar(100)
+  ProductName             String?   @db.NVarChar(100)
+  ItemDescription         String?   @db.NVarChar(Max)
+  SearchNameAll           String?
+  SearchNameReleased      String?   @db.NVarChar(100)
+  S_PType                 String?   @map("S/PType") @db.NVarChar(50)
+  VehicleID               String?   @db.NVarChar(50)
+  MasterVehicle           String?   @db.NVarChar(50)
+  ItemGroup               String?   @db.NVarChar(150)
+  PackingSlipID           String?   @db.NVarChar(50)
+  PackingSlipDeliveryDate DateTime? @db.DateTime
+  PackingQTY              Decimal?
+  Year_DLV                Int?
+  Month_DLV               Int?
+  ProductCategory         String?   @db.NVarChar(50)
+  ProCateName             String?   @db.NVarChar(150)
+  Genuine                 String?   @db.VarChar(50)
+  Motor                   String?   @db.VarChar(50)
+  InvoiceNo               String?   @db.NVarChar(50)
+  SalesPrice              Decimal?  @db.Decimal(38, 6)
+  DiscAmount              Decimal?
+  DiscPercent             Decimal?
+  ExchangeRate            Decimal?  @db.Decimal(36, 20)
+  Currency                String?   @db.NVarChar(50)
+  INVOICEDATE             DateTime? @db.DateTime
+  Sales_Class             String?   @map("Sales Class") @db.VarChar(50)
+  AmountGrossCurrency     Decimal?  @db.Decimal(38, 6)
+  AmountDiscountCurrency  Decimal?  @db.Decimal(38, 6)
+  AmountNetCurrency       Decimal?  @db.Decimal(38, 6)
+  AmountGrossIDR          Decimal?  @db.Decimal(38, 6)
+  AmountDiscountIDR       Decimal?  @db.Decimal(38, 6)
+  AmountNetIDR            Decimal?  @db.Decimal(38, 6)
+  StatusGIT               String?   @db.VarChar(50)
+  Date_Inv                DateTime? @db.DateTime
+  Year_INV                Int?
+  Month_INV               Int?
+  City                    String?   @db.NVarChar(50)
+  Month_ODR               Int?
+  CommercialStatus        String?   @db.VarChar(50)
+  Period_DLV              String?   @db.VarChar(50)
+  Period_INV              String?   @db.VarChar(50)
+  DueDate_Inv             DateTime? @db.DateTime
+  DaysDueDate_Inv         Int?
+  TaxItemGroup            String?   @db.NVarChar(10)
+  Address                 String?   @db.NVarChar(250)
+  LocationName            String?   @db.NVarChar(60)
+  Destination             String?   @db.NVarChar(100)
+
+  @@ignore
+}
+
+model Sales_D365ImporForm_OrderLines {
+  ID                        Int       @id(map: "PK_Sales_D365ImporForm_OrderLines") @default(autoincrement())
+  RequestedReceiptDate      DateTime? @db.Date
+  RequestedShipDate         DateTime? @db.Date
+  Customer                  String?   @db.VarChar(50)
+  DeliveryName              String?   @db.VarChar(50)
+  SalesOrder                String?   @db.VarChar(50)
+  LineStatus                String?   @db.VarChar(50)
+  ItemNumber                String?   @db.VarChar(50)
+  ProductName               String?   @db.VarChar(150)
+  Quantity                  Decimal?  @db.Decimal(18, 2)
+  Unit                      String?   @db.VarChar(10)
+  UnitPrice                 Decimal?  @db.Decimal(18, 5)
+  Discount                  Decimal?  @db.Decimal(18, 5)
+  DiscountPercent           Decimal?  @db.Decimal(18, 5)
+  NetAmount                 Decimal?  @db.Decimal(18, 5)
+  CreatedBy                 String?   @db.VarChar(100)
+  CreatedDateAndTime        DateTime? @db.DateTime
+  CustomerReference         String?   @db.VarChar(200)
+  ItemSalesTaxGroup         String?   @db.VarChar(100)
+  NTT_NonCommercial         String?   @db.VarChar(50)
+  SalesTaxGroup             String?   @db.VarChar(50)
+  LineNumber                Int?
+  DescriptionForSalesReport String?   @db.Text
+  Text                      String?   @db.Text
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Sales_D365ImporForm_OrderLines_backup_15012025 {
+  ID                        Int       @default(autoincrement())
+  RequestedReceiptDate      DateTime? @db.Date
+  RequestedShipDate         DateTime? @db.Date
+  Customer                  String?   @db.VarChar(50)
+  DeliveryName              String?   @db.VarChar(50)
+  SalesOrder                String?   @db.VarChar(50)
+  LineStatus                String?   @db.VarChar(50)
+  ItemNumber                String?   @db.VarChar(50)
+  ProductName               String?   @db.VarChar(150)
+  Quantity                  Int?
+  Unit                      String?   @db.VarChar(10)
+  UnitPrice                 Decimal?  @db.Decimal(18, 5)
+  Discount                  Decimal?  @db.Decimal(18, 5)
+  DiscountPercent           Decimal?  @db.Decimal(18, 5)
+  NetAmount                 Decimal?  @db.Decimal(18, 5)
+  CreatedBy                 String?   @db.VarChar(100)
+  CreatedDateAndTime        DateTime? @db.DateTime
+  CustomerReference         String?   @db.VarChar(200)
+  ItemSalesTaxGroup         String?   @db.VarChar(100)
+  NTT_NonCommercial         String?   @db.VarChar(50)
+  SalesTaxGroup             String?   @db.VarChar(50)
+  LineNumber                Int?
+  DescriptionForSalesReport String?   @db.Text
+  Text                      String?   @db.Text
+
+  @@ignore
+}
+
+model Sales_D365ImporForm_Sales {
+  ID                          Int       @id(map: "PK_Sales_D365ImporForm_Sales") @default(autoincrement())
+  SalesOrder                  String?   @db.VarChar(50)
+  SalesLineNumber             Decimal?  @db.Decimal(18, 5)
+  CustomerCode                String?   @db.VarChar(150)
+  CustomerName                String?   @db.VarChar(100)
+  CustomerReference           String?   @db.VarChar(100)
+  ExternalItemNumber          String?   @db.VarChar(100)
+  ItemID                      String?   @db.VarChar(100)
+  ProductName                 String?   @db.VarChar(100)
+  ItemDescription             String?   @db.VarChar(100)
+  SearchNameAll               String?   @db.VarChar(100)
+  SearchNameReleased          String?   @db.VarChar(100)
+  SPType                      String?   @db.VarChar(50)
+  VehicleID                   String?   @db.VarChar(50)
+  MasterVehicle               String?   @db.VarChar(50)
+  ItemGroup                   String?   @db.VarChar(150)
+  PackingSlipID               String?   @db.VarChar(50)
+  PackingSlipDate             DateTime? @db.Date
+  PackingQty                  Int?
+  YearDlv                     String?   @db.VarChar(5)
+  MonthDlv                    String?   @db.VarChar(2)
+  ProductCategory             String?   @db.VarChar(50)
+  ProcateName                 String?   @db.VarChar(150)
+  Genuine                     String?   @db.VarChar(50)
+  Motor                       String?   @db.VarChar(50)
+  OriginalInvoiceNo           String?   @db.VarChar(50)
+  SalesPrice                  Decimal?  @db.Decimal(18, 5)
+  DiscAmount                  Decimal?  @db.Decimal(18, 5)
+  DiscPercent                 Decimal?  @db.Decimal(18, 5)
+  ExchangeRate                Decimal?  @db.Decimal(18, 5)
+  Currency                    String?   @db.VarChar(50)
+  SalesClass                  String?   @db.VarChar(50)
+  AmountGrossCurrency         Decimal?  @db.Decimal(18, 5)
+  AmountDiscountCurrency      Decimal?  @db.Decimal(18, 5)
+  AmountNetCurrency           Decimal?  @db.Decimal(18, 5)
+  AmountGrossLocalCurrency    Decimal?  @db.Decimal(18, 5)
+  AmountDiscountLocalCurrency Decimal?  @db.Decimal(18, 5)
+  AmountNetLocalCurrency      Decimal?  @db.Decimal(18, 5)
+  Status_GIT                  String?   @db.VarChar(50)
+  Date_Inv                    DateTime? @db.Date
+  Year_Inv                    String?   @db.VarChar(5)
+  Month_Inv                   String?   @db.VarChar(3)
+  City                        String?   @db.VarChar(50)
+  Month_Odr                   String?   @db.VarChar(10)
+  CommercialStatus            String?   @db.VarChar(50)
+  VAT                         Decimal?  @db.Decimal(18, 5)
+  STDCost                     Decimal?  @db.Decimal(18, 5)
+  GITCost                     Decimal?  @db.Decimal(18, 5)
+  PeriodDLV                   String?   @db.VarChar(50)
+  PeriodINV                   String?   @db.VarChar(50)
+  DaysDueDateInv              Int?
+  NPWP                        String?   @db.VarChar(50)
+  TaxInvoiceNo                String?   @db.VarChar(50)
+  DescriptionforSalesReport   String?   @db.VarChar(100)
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Sales_D365ImporForm_Sales_backup_15012025 {
+  ID                          Int       @default(autoincrement())
+  SalesOrder                  String?   @db.VarChar(50)
+  SalesLineNumber             Decimal?  @db.Decimal(18, 5)
+  CustomerCode                String?   @db.VarChar(150)
+  CustomerName                String?   @db.VarChar(100)
+  CustomerReference           String?   @db.VarChar(100)
+  ExternalItemNumber          String?   @db.VarChar(100)
+  ItemID                      String?   @db.VarChar(100)
+  ProductName                 String?   @db.VarChar(100)
+  ItemDescription             String?   @db.VarChar(100)
+  SearchNameAll               String?   @db.VarChar(100)
+  SearchNameReleased          String?   @db.VarChar(100)
+  SPType                      String?   @db.VarChar(50)
+  VehicleID                   String?   @db.VarChar(50)
+  MasterVehicle               String?   @db.VarChar(50)
+  ItemGroup                   String?   @db.VarChar(150)
+  PackingSlipID               String?   @db.VarChar(50)
+  PackingSlipDate             DateTime? @db.Date
+  PackingQty                  Int?
+  YearDlv                     String?   @db.VarChar(5)
+  MonthDlv                    String?   @db.VarChar(2)
+  ProductCategory             String?   @db.VarChar(50)
+  ProcateName                 String?   @db.VarChar(150)
+  Genuine                     String?   @db.VarChar(50)
+  Motor                       String?   @db.VarChar(50)
+  OriginalInvoiceNo           String?   @db.VarChar(50)
+  SalesPrice                  Decimal?  @db.Decimal(18, 5)
+  DiscAmount                  Decimal?  @db.Decimal(18, 5)
+  DiscPercent                 Decimal?  @db.Decimal(18, 5)
+  ExchangeRate                Decimal?  @db.Decimal(18, 5)
+  Currency                    String?   @db.VarChar(50)
+  SalesClass                  String?   @db.VarChar(50)
+  AmountGrossCurrency         Decimal?  @db.Decimal(18, 5)
+  AmountDiscountCurrency      Decimal?  @db.Decimal(18, 5)
+  AmountNetCurrency           Decimal?  @db.Decimal(18, 5)
+  AmountGrossLocalCurrency    Decimal?  @db.Decimal(18, 5)
+  AmountDiscountLocalCurrency Decimal?  @db.Decimal(18, 5)
+  AmountNetLocalCurrency      Decimal?  @db.Decimal(18, 5)
+  Status_GIT                  String?   @db.VarChar(50)
+  Date_Inv                    DateTime? @db.Date
+  Year_Inv                    String?   @db.VarChar(5)
+  Month_Inv                   String?   @db.VarChar(3)
+  City                        String?   @db.VarChar(50)
+  Month_Odr                   String?   @db.VarChar(10)
+  CommercialStatus            String?   @db.VarChar(50)
+  VAT                         Decimal?  @db.Decimal(18, 5)
+  STDCost                     Decimal?  @db.Decimal(18, 5)
+  GITCost                     Decimal?  @db.Decimal(18, 5)
+  PeriodDLV                   String?   @db.VarChar(50)
+  PeriodINV                   String?   @db.VarChar(50)
+  DaysDueDateInv              Int?
+  NPWP                        String?   @db.VarChar(50)
+  TaxInvoiceNo                String?   @db.VarChar(50)
+  DescriptionforSalesReport   String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+model Sales_D365ImporForm_SalesBI {
+  ID                        Int       @id(map: "PK_Sales_D365ImporForm_SalesBI") @default(autoincrement())
+  Company                   String?   @db.VarChar(50)
+  InvoiceDateYYMM           DateTime? @db.Date
+  InvoiceDateYYYYMMDD       DateTime? @db.Date
+  DueDate                   DateTime? @db.Date
+  SOCreateDate              DateTime? @db.Date
+  RequestReceiptDate        DateTime? @db.Date
+  Invoice                   String?   @db.VarChar(50)
+  SONo                      String    @db.VarChar(50)
+  CustomerCode              String?   @db.VarChar(50)
+  CustomerName              String?   @db.VarChar(150)
+  CustomerSearchName        String?   @db.VarChar(50)
+  ItemCode                  String?   @db.VarChar(50)
+  ItemName                  String?   @db.VarChar(150)
+  Division                  String?   @db.VarChar(50)
+  DivisionName              String?   @db.VarChar(50)
+  ProductCategory           String?   @db.VarChar(50)
+  ProductCategoryName       String?   @db.VarChar(50)
+  Country                   String?   @db.VarChar(50)
+  Area                      String?   @db.VarChar(50)
+  SalesPerson               String?   @db.VarChar(50)
+  SalesPersonName           String?   @db.VarChar(50)
+  BusinessType              String?   @db.VarChar(50)
+  BusinessTypeName          String?   @db.VarChar(50)
+  Design                    String?   @db.VarChar(50)
+  Brand                     String?   @db.VarChar(50)
+  ProductCateMajor          String?   @db.VarChar(50)
+  ProductCateMajorName      String?   @db.VarChar(150)
+  ProductCateMiddle         String?   @db.VarChar(50)
+  ProductCateMiddleName     String?   @db.VarChar(150)
+  ProductCateMinor          String?   @db.VarChar(50)
+  ProductCateMinorName      String?   @db.VarChar(150)
+  PackagingCountry          String?   @db.VarChar(50)
+  Quantity                  Int?
+  Currency                  String?   @db.VarChar(50)
+  PriceByIVCurrency         Decimal?  @db.Decimal(18, 5)
+  AmountByIVCurrency        Decimal?  @db.Decimal(18, 5)
+  PriceByLocalCurrency      Decimal?  @db.Decimal(18, 5)
+  AmountByLocalCurrency     Decimal?  @db.Decimal(18, 5)
+  RecID                     String?   @db.VarChar(50)
+  CustomerReference         String?   @db.VarChar(50)
+  DescriptionForSalesReport String?   @db.VarChar(150)
+  ItemGroup                 String?   @db.VarChar(50)
+  TaxPercent                Decimal?  @db.Decimal(18, 5)
+  Tax                       Decimal?  @db.Decimal(18, 5)
+  NetAmount                 Decimal?  @db.Decimal(18, 5)
+  TaxInvoiceId              String?   @db.VarChar(50)
+  NPWP                      String?   @db.VarChar(50)
+  LineDisc                  Decimal?  @db.Decimal(18, 5)
+  InvoiceAddress            String?   @db.Text
+  ExternalItemId            String?   @db.VarChar(50)
+}
+
+model Sales_D365ImporForm_SalesPackingQuantity {
+  ID                          Int       @id(map: "PK_Sales_D365ImporForm_SalesPackingQuantity") @default(autoincrement())
+  SalesOrder                  String?   @db.VarChar(50)
+  SalesLineNumber             Decimal?  @db.Decimal(18, 5)
+  CustomerCode                String?   @db.VarChar(150)
+  CustomerName                String?   @db.VarChar(100)
+  CustomerReference           String?   @db.VarChar(50)
+  ExternalItemNumber          String?   @db.VarChar(50)
+  ItemID                      String?   @db.VarChar(50)
+  ProductName                 String?   @db.VarChar(50)
+  ItemDescription             String?   @db.VarChar(100)
+  DescriptionforSalesReport   String?   @db.VarChar(100)
+  SearchNameAll               String?   @db.VarChar(100)
+  SearchNameReleased          String?   @db.VarChar(100)
+  SPType                      String?   @db.VarChar(50)
+  VehicleID                   String?   @db.VarChar(50)
+  ItemGroup                   String?   @db.VarChar(150)
+  PackingSlipID               String?   @db.VarChar(50)
+  PackingSlipDeliveryDate     DateTime? @db.Date
+  PackingQty                  Int?
+  YearDlv                     String?   @db.VarChar(5)
+  MonthDlv                    String?   @db.VarChar(2)
+  ProductCategory             String?   @db.VarChar(50)
+  ProcateName                 String?   @db.VarChar(50)
+  Genuine                     String?   @db.VarChar(50)
+  Motor                       String?   @db.VarChar(50)
+  InvoiceNo                   String?   @db.VarChar(50)
+  SalesPrice                  Decimal?  @db.Decimal(18, 5)
+  DiscAmount                  Decimal?  @db.Decimal(18, 5)
+  DiscPercent                 Decimal?  @db.Decimal(18, 5)
+  ExchangeRate                Decimal?  @db.Decimal(18, 5)
+  Currency                    String?   @db.VarChar(50)
+  SalesClass                  String?   @db.VarChar(50)
+  AmountGrossCurrency         Decimal?  @db.Decimal(18, 5)
+  AmountDiscountCurrency      Decimal?  @db.Decimal(18, 5)
+  AmountNetCurrency           Decimal?  @db.Decimal(18, 5)
+  AmountGrossLocalCurrency    Decimal?  @db.Decimal(18, 5)
+  AmountDiscountLocalCurrency Decimal?  @db.Decimal(18, 5)
+  AmountNetLocalCurrency      Decimal?  @db.Decimal(18, 5)
+  Status_GIT                  String?   @db.VarChar(50)
+  Date_Inv                    DateTime? @db.Date
+  Year_Inv                    String?   @db.VarChar(5)
+  Month_Inv                   String?   @db.VarChar(3)
+  City                        String?   @db.VarChar(50)
+  Month_Odr                   String?   @db.VarChar(10)
+  CommercialStatus            String?   @db.VarChar(50)
+  GITPrice                    Decimal?  @db.Decimal(18, 5)
+  GITCost                     Decimal?  @db.Decimal(18, 5)
+}
+
+model SCM_D365_Pickinglist {
+  PickingRoute   String?   @db.NVarChar(Max)
+  ItemNumber     String?   @db.NVarChar(Max)
+  HandlingStatus String?   @db.NVarChar(Max)
+  Description    String?   @db.NVarChar(Max)
+  OrderQuantity  Int?
+  OrderUnit      String?   @db.NVarChar(Max)
+  CWQuantity     Int?
+  CWUnit         String?   @db.NVarChar(Max)
+  DeliveryDate   DateTime? @db.DateTime
+  Quantity       Int?
+  Picked         String?   @db.NVarChar(Max)
+  Id             Int       @id(map: "PK_SCM_D365_Pickinglist") @default(autoincrement())
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model SCM_D365ImporForm_ProductReceipt {
+  ID                        Int       @default(autoincrement())
+  PurchaseOrder             String?   @db.VarChar(50)
+  VendorName                String?   @db.VarChar(100)
+  Currency                  String?   @db.VarChar(10)
+  PurchaseType              String?   @db.VarChar(50)
+  InvoiceAccount            String?   @db.VarChar(50)
+  OrderAccount              String?   @db.VarChar(50)
+  Date                      DateTime? @db.Date
+  DocumentDate              DateTime? @db.Date
+  ProductReceipt            String?   @db.VarChar(100)
+  Site                      String?   @db.VarChar(50)
+  Warehouse                 String?   @db.VarChar(50)
+  InternalProductReceipt    String?   @db.VarChar(100)
+  OuterPackageNumber        String?   @db.VarChar(100)
+  LineNumber                String?   @db.VarChar(50)
+  Item                      String?   @db.VarChar(50)
+  Description               String?   @db.VarChar(200)
+  Unit                      String?   @db.VarChar(50)
+  Ordered                   Decimal?  @db.Decimal(18, 5)
+  ReceivedQuantity          Decimal?  @db.Decimal(18, 5)
+  PriceUnit                 Decimal?  @db.Decimal(18, 5)
+  RemainingQuantity         Decimal?  @db.Decimal(18, 5)
+  Value                     Decimal?  @db.Decimal(18, 5)
+  ProductName               String?   @db.VarChar(150)
+  DescriptionPurchaseReport String?   @db.VarChar(200)
+  LocalImport               String?   @db.VarChar(50)
+  ProCateName               String?   @db.VarChar(50)
+  SearchNameAll             String?   @db.VarChar(50)
+  SearchNameReleased        String?   @db.VarChar(50)
+  ItemGroup                 String?   @db.VarChar(50)
+  Year                      String?   @db.VarChar(10)
+  Month                     String?   @db.VarChar(10)
+  Factor                    Decimal?  @db.Decimal(18, 5)
+  Denominator               Decimal?  @db.Decimal(18, 3)
+  Numerator                 Decimal?  @db.Decimal(18, 3)
+  QtyConversion             Decimal?  @db.Decimal(18, 5)
+  UnitPrice                 Decimal?  @db.Decimal(18, 5)
+  RelUnRel                  String?   @db.VarChar(50)
+  ExchangeRate              Decimal?  @db.Decimal(18, 5)
+  CreatedBy                 String?   @db.VarChar(50)
+  CreatedDateTime           DateTime? @db.DateTime
+  DiscAmount                Decimal?  @db.Decimal(18, 5)
+  DiscPercent               Decimal?  @db.Decimal(18, 5)
+  CostLedgerVoucher         String?   @db.VarChar(50)
+  InternalInvoiceId         String?   @db.VarChar(50)
+  LedgerVoucher             String?   @db.VarChar(50)
+  Periode                   String?   @db.VarChar(50)
+  Standard_Cost             Decimal?  @db.Decimal(18, 5)
+  Standard_Cost_Beneran     Decimal?  @db.Decimal(18, 5)
+  UploadTime                DateTime? @db.DateTime
+  ConfirmReceivedStatus     Int?      @db.TinyInt
+
+  @@ignore
+}
+
+model SCM_D365ImporForm_ProductReceipt_2023 {
+  ID                        Int       @id(map: "PK_SCM_D365EImporForm_ProductReceipt_2023") @default(autoincrement())
+  PurchaseOrder             String?   @db.VarChar(50)
+  VendorName                String?   @db.VarChar(100)
+  Currency                  String?   @db.VarChar(10)
+  PurchaseType              String?   @db.VarChar(50)
+  InvoiceAccount            String?   @db.VarChar(50)
+  OrderAccount              String?   @db.VarChar(50)
+  Date                      DateTime? @db.Date
+  DocumentDate              DateTime? @db.Date
+  ProductReceipt            String?   @db.VarChar(100)
+  Site                      String?   @db.VarChar(50)
+  Warehouse                 String?   @db.VarChar(50)
+  InternalProductReceipt    String?   @db.VarChar(100)
+  OuterPackageNumber        String?   @db.VarChar(100)
+  LineNumber                String?   @db.VarChar(50)
+  Item                      String?   @db.VarChar(50)
+  Description               String?   @db.VarChar(150)
+  Unit                      String?   @db.VarChar(50)
+  Ordered                   Decimal?  @db.Decimal(18, 5)
+  ReceivedQuantity          Decimal?  @db.Decimal(18, 5)
+  PriceUnit                 Decimal?  @db.Decimal(18, 5)
+  RemainingQuantity         Decimal?  @db.Decimal(18, 5)
+  Value                     Decimal?  @db.Decimal(18, 5)
+  ProductName               String?   @db.VarChar(150)
+  DescriptionPurchaseReport String?   @db.VarChar(100)
+  LocalImport               String?   @db.VarChar(50)
+  ProCateName               String?   @db.VarChar(50)
+  SearchNameAll             String?   @db.VarChar(50)
+  SearchNameReleased        String?   @db.VarChar(50)
+  ItemGroup                 String?   @db.VarChar(50)
+  Year                      String?   @db.VarChar(10)
+  Month                     String?   @db.VarChar(10)
+  Factor                    Decimal?  @db.Decimal(18, 5)
+  Denominator               Decimal?  @db.Decimal(18, 3)
+  Numerator                 Decimal?  @db.Decimal(18, 3)
+  QtyConversion             Decimal?  @db.Decimal(18, 5)
+  UnitPrice                 Decimal?  @db.Decimal(18, 5)
+  RelUnRel                  String?   @db.VarChar(50)
+  ExchangeRate              Decimal?  @db.Decimal(18, 5)
+  CreatedBy                 String?   @db.VarChar(50)
+  CreatedDateTime           DateTime? @db.DateTime
+  DiscAmount                Decimal?  @db.Decimal(18, 5)
+  DiscPercent               Decimal?  @db.Decimal(18, 5)
+  CostLedgerVoucher         String?   @db.VarChar(50)
+  InternalInvoiceId         String?   @db.VarChar(50)
+  LedgerVoucher             String?   @db.VarChar(50)
+  Periode                   String?   @db.VarChar(50)
+  Standard_Cost             Decimal?  @db.Decimal(18, 5)
+  Standard_Cost_Beneran     Decimal?  @db.Decimal(18, 5)
+  UploadTime                DateTime? @db.DateTime
+  ConfirmReceivedStatus     Int?      @db.TinyInt
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model SCM_D365ImporForm_ProductReceipt_260124 {
+  ID                        Int       @default(autoincrement())
+  PurchaseOrder             String?   @db.VarChar(50)
+  VendorName                String?   @db.VarChar(100)
+  Currency                  String?   @db.VarChar(10)
+  PurchaseType              String?   @db.VarChar(50)
+  InvoiceAccount            String?   @db.VarChar(50)
+  OrderAccount              String?   @db.VarChar(50)
+  Date                      DateTime? @db.Date
+  DocumentDate              DateTime? @db.Date
+  ProductReceipt            String?   @db.VarChar(100)
+  Site                      String?   @db.VarChar(50)
+  Warehouse                 String?   @db.VarChar(50)
+  InternalProductReceipt    String?   @db.VarChar(100)
+  OuterPackageNumber        String?   @db.VarChar(100)
+  LineNumber                String?   @db.VarChar(50)
+  Item                      String?   @db.VarChar(50)
+  Description               String?   @db.VarChar(150)
+  Unit                      String?   @db.VarChar(50)
+  Ordered                   Decimal?  @db.Decimal(18, 5)
+  ReceivedQuantity          Decimal?  @db.Decimal(18, 5)
+  PriceUnit                 Decimal?  @db.Decimal(18, 5)
+  RemainingQuantity         Decimal?  @db.Decimal(18, 5)
+  Value                     Decimal?  @db.Decimal(18, 5)
+  ProductName               String?   @db.VarChar(150)
+  DescriptionPurchaseReport String?   @db.VarChar(100)
+  LocalImport               String?   @db.VarChar(50)
+  ProCateName               String?   @db.VarChar(50)
+  SearchNameAll             String?   @db.VarChar(50)
+  SearchNameReleased        String?   @db.VarChar(50)
+  ItemGroup                 String?   @db.VarChar(50)
+  Year                      String?   @db.VarChar(10)
+  Month                     String?   @db.VarChar(10)
+  Factor                    Decimal?  @db.Decimal(18, 5)
+  Denominator               Decimal?  @db.Decimal(18, 3)
+  Numerator                 Decimal?  @db.Decimal(18, 3)
+  QtyConversion             Decimal?  @db.Decimal(18, 5)
+  UnitPrice                 Decimal?  @db.Decimal(18, 5)
+  RelUnRel                  String?   @db.VarChar(50)
+  ExchangeRate              Decimal?  @db.Decimal(18, 5)
+  CreatedBy                 String?   @db.VarChar(50)
+  CreatedDateTime           DateTime? @db.DateTime
+  DiscAmount                Decimal?  @db.Decimal(18, 5)
+  DiscPercent               Decimal?  @db.Decimal(18, 5)
+  CostLedgerVoucher         String?   @db.VarChar(50)
+  InternalInvoiceId         String?   @db.VarChar(50)
+  LedgerVoucher             String?   @db.VarChar(50)
+  Periode                   String?   @db.VarChar(50)
+  Standard_Cost             Decimal?  @db.Decimal(18, 5)
+  Standard_Cost_Beneran     Decimal?  @db.Decimal(18, 5)
+  UploadTime                DateTime? @db.DateTime
+  ConfirmReceivedStatus     Int?      @db.TinyInt
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model SCM_D365ImporForm_ProductReceipt_backup {
+  ID                        Int       @default(autoincrement())
+  PurchaseOrder             String?   @db.VarChar(50)
+  VendorName                String?   @db.VarChar(100)
+  Currency                  String?   @db.VarChar(10)
+  PurchaseType              String?   @db.VarChar(50)
+  InvoiceAccount            String?   @db.VarChar(50)
+  OrderAccount              String?   @db.VarChar(50)
+  Date                      DateTime? @db.Date
+  DocumentDate              DateTime? @db.Date
+  ProductReceipt            String?   @db.VarChar(100)
+  Site                      String?   @db.VarChar(50)
+  Warehouse                 String?   @db.VarChar(50)
+  InternalProductReceipt    String?   @db.VarChar(100)
+  OuterPackageNumber        String?   @db.VarChar(100)
+  LineNumber                String?   @db.VarChar(50)
+  Item                      String?   @db.VarChar(50)
+  Description               String?   @db.VarChar(150)
+  Unit                      String?   @db.VarChar(50)
+  Ordered                   Decimal?  @db.Decimal(18, 5)
+  ReceivedQuantity          Decimal?  @db.Decimal(18, 5)
+  PriceUnit                 Decimal?  @db.Decimal(18, 5)
+  RemainingQuantity         Decimal?  @db.Decimal(18, 5)
+  Value                     Decimal?  @db.Decimal(18, 5)
+  ProductName               String?   @db.VarChar(150)
+  DescriptionPurchaseReport String?   @db.VarChar(100)
+  LocalImport               String?   @db.VarChar(50)
+  ProCateName               String?   @db.VarChar(50)
+  SearchNameAll             String?   @db.VarChar(50)
+  SearchNameReleased        String?   @db.VarChar(50)
+  ItemGroup                 String?   @db.VarChar(50)
+  Year                      String?   @db.VarChar(10)
+  Month                     String?   @db.VarChar(10)
+  Factor                    Decimal?  @db.Decimal(18, 5)
+  Denominator               Decimal?  @db.Decimal(18, 3)
+  Numerator                 Decimal?  @db.Decimal(18, 3)
+  QtyConversion             Decimal?  @db.Decimal(18, 5)
+  UnitPrice                 Decimal?  @db.Decimal(18, 5)
+  RelUnRel                  String?   @db.VarChar(50)
+  ExchangeRate              Decimal?  @db.Decimal(18, 5)
+  CreatedBy                 String?   @db.VarChar(50)
+  CreatedDateTime           DateTime? @db.DateTime
+  DiscAmount                Decimal?  @db.Decimal(18, 5)
+  DiscPercent               Decimal?  @db.Decimal(18, 5)
+  CostLedgerVoucher         String?   @db.VarChar(50)
+  InternalInvoiceId         String?   @db.VarChar(50)
+  LedgerVoucher             String?   @db.VarChar(50)
+  Periode                   String?   @db.VarChar(50)
+  Standard_Cost             Decimal?  @db.Decimal(18, 5)
+  Standard_Cost_Beneran     Decimal?  @db.Decimal(18, 5)
+  UploadTime                DateTime? @db.DateTime
+  ConfirmReceivedStatus     Int?      @db.TinyInt
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model SCM_D365ImporForm_ProductReceipt_copy {
+  ID                        Int       @default(autoincrement())
+  PurchaseOrder             String?   @db.VarChar(50)
+  VendorName                String?   @db.VarChar(100)
+  Currency                  String?   @db.VarChar(10)
+  PurchaseType              String?   @db.VarChar(50)
+  InvoiceAccount            String?   @db.VarChar(50)
+  OrderAccount              String?   @db.VarChar(50)
+  Date                      DateTime? @db.Date
+  DocumentDate              DateTime? @db.Date
+  ProductReceipt            String?   @db.VarChar(100)
+  Site                      String?   @db.VarChar(50)
+  Warehouse                 String?   @db.VarChar(50)
+  InternalProductReceipt    String?   @db.VarChar(100)
+  OuterPackageNumber        String?   @db.VarChar(100)
+  LineNumber                String?   @db.VarChar(50)
+  Item                      String?   @db.VarChar(50)
+  Description               String?   @db.VarChar(150)
+  Unit                      String?   @db.VarChar(50)
+  Ordered                   Decimal?  @db.Decimal(18, 5)
+  ReceivedQuantity          Decimal?  @db.Decimal(18, 5)
+  PriceUnit                 Decimal?  @db.Decimal(18, 5)
+  RemainingQuantity         Decimal?  @db.Decimal(18, 5)
+  Value                     Decimal?  @db.Decimal(18, 5)
+  ProductName               String?   @db.VarChar(150)
+  DescriptionPurchaseReport String?   @db.VarChar(100)
+  LocalImport               String?   @db.VarChar(50)
+  ProCateName               String?   @db.VarChar(50)
+  SearchNameAll             String?   @db.VarChar(50)
+  SearchNameReleased        String?   @db.VarChar(50)
+  ItemGroup                 String?   @db.VarChar(50)
+  Year                      String?   @db.VarChar(10)
+  Month                     String?   @db.VarChar(10)
+  Factor                    Decimal?  @db.Decimal(18, 5)
+  Denominator               Decimal?  @db.Decimal(18, 3)
+  Numerator                 Decimal?  @db.Decimal(18, 3)
+  QtyConversion             Decimal?  @db.Decimal(18, 5)
+  UnitPrice                 Decimal?  @db.Decimal(18, 5)
+  RelUnRel                  String?   @db.VarChar(50)
+  ExchangeRate              Decimal?  @db.Decimal(18, 5)
+  CreatedBy                 String?   @db.VarChar(50)
+  CreatedDateTime           DateTime? @db.DateTime
+  DiscAmount                Decimal?  @db.Decimal(18, 5)
+  DiscPercent               Decimal?  @db.Decimal(18, 5)
+  CostLedgerVoucher         String?   @db.VarChar(50)
+  InternalInvoiceId         String?   @db.VarChar(50)
+  LedgerVoucher             String?   @db.VarChar(50)
+  Periode                   String?   @db.VarChar(50)
+  Standard_Cost             Decimal?  @db.Decimal(18, 5)
+  Standard_Cost_Beneran     Decimal?  @db.Decimal(18, 5)
+  UploadTime                DateTime? @db.DateTime
+  ConfirmReceivedStatus     Int?      @db.TinyInt
+
+  @@ignore
+}
+
+model SCM_D365ImporForm_ProductReceiptReturn {
+  ID                        Int       @id(map: "PK_SCM_D365EImporForm_ProductReceiptReturn") @default(autoincrement())
+  PurchaseOrder             String?   @db.VarChar(50)
+  VendorName                String?   @db.VarChar(100)
+  Currency                  String?   @db.VarChar(10)
+  PurchaseType              String?   @db.VarChar(50)
+  InvoiceAccount            String?   @db.VarChar(50)
+  OrderAccount              String?   @db.VarChar(50)
+  Date                      DateTime? @db.Date
+  DocumentDate              DateTime? @db.Date
+  ProductReceipt            String?   @db.VarChar(100)
+  Site                      String?   @db.VarChar(50)
+  Warehouse                 String?   @db.VarChar(50)
+  InternalProductReceipt    String?   @db.VarChar(100)
+  OuterPackageNumber        String?   @db.VarChar(100)
+  LineNumber                String?   @db.VarChar(50)
+  Item                      String?   @db.VarChar(50)
+  Description               String?   @db.VarChar(150)
+  Unit                      String?   @db.VarChar(50)
+  Ordered                   Decimal?  @db.Decimal(18, 5)
+  ReceivedQuantity          Decimal?  @db.Decimal(18, 5)
+  PriceUnit                 Decimal?  @db.Decimal(18, 5)
+  RemainingQuantity         Decimal?  @db.Decimal(18, 5)
+  Value                     Decimal?  @db.Decimal(18, 5)
+  ProductName               String?   @db.VarChar(150)
+  DescriptionPurchaseReport String?   @db.VarChar(100)
+  LocalImport               String?   @db.VarChar(50)
+  ProCateName               String?   @db.VarChar(50)
+  SearchNameAll             String?   @db.VarChar(50)
+  SearchNameReleased        String?   @db.VarChar(50)
+  ItemGroup                 String?   @db.VarChar(50)
+  Year                      String?   @db.VarChar(10)
+  Month                     String?   @db.VarChar(10)
+  Factor                    Decimal?  @default(0, map: "DF_SCM_D365ImporForm_ProductReceiptReturn_Factor") @db.Decimal(18, 5)
+  Denominator               Decimal?  @default(0, map: "DF_SCM_D365ImporForm_ProductReceiptReturn_Denominator") @db.Decimal(18, 3)
+  Numerator                 Decimal?  @db.Decimal(18, 3)
+  QtyConversion             Decimal?  @db.Decimal(18, 5)
+  UnitPrice                 Decimal?  @db.Decimal(18, 5)
+  RelUnRel                  String?   @db.VarChar(50)
+  ExchangeRate              Decimal?  @db.Decimal(18, 5)
+  CreatedBy                 String?   @db.VarChar(50)
+  CreatedDateTime           DateTime? @db.DateTime
+  DiscAmount                Decimal?  @db.Decimal(18, 5)
+  DiscPercent               Decimal?  @db.Decimal(18, 5)
+  CostLedgerVoucher         String?   @db.VarChar(50)
+  InternalInvoiceId         String?   @db.VarChar(50)
+  LedgerVoucher             String?   @db.VarChar(50)
+  Periode                   String?   @db.VarChar(50)
+  Standard_Cost             Decimal?  @db.Decimal(18, 5)
+  Standard_Cost_Beneran     Decimal?  @db.Decimal(18, 5)
+  ConfirmReceivedStatus     Int?      @default(0, map: "DF_SCM_D365ImporForm_ProductReceiptReturn_ConfirmReceivedStatus") @db.TinyInt
+}
+
+model SCM_D365ImporForm_PurchaseBI {
+  ID                    Int       @id(map: "PK_SCM_D365ImporForm_PurchaseBI") @default(autoincrement())
+  Company               String?   @db.VarChar(100)
+  VendorCode            String?   @db.VarChar(50)
+  VendorName            String?   @db.VarChar(200)
+  InvoiceDate           DateTime? @db.DateTime
+  InvoiceID             String?   @db.VarChar(50)
+  Line_No               Int?
+  PONo                  String?   @db.VarChar(100)
+  POLineNo              Int?
+  ItemGroup             String?   @db.VarChar(100)
+  ItemId                String?   @db.VarChar(50)
+  Text                  String?   @db.Text
+  Quantity              Decimal?  @db.Decimal(18, 2)
+  PurchaseUnit          String?   @db.VarChar(100)
+  PurchasePrice         Decimal?  @db.Decimal(18, 2)
+  Discount              Decimal?  @db.Decimal(18, 2)
+  DiscountPercent       Decimal?  @db.Decimal(18, 2)
+  Amount                Decimal?  @db.Decimal(18, 2)
+  Currency              String?   @db.VarChar(50)
+  CompanyCurrencyAmount Decimal?  @db.Decimal(18, 2)
+  PurchaseReason        String?   @db.VarChar(100)
+  DeliveryDate          DateTime? @db.DateTime
+  SectionCode           String?   @db.VarChar(100)
+  SectionName           String?   @db.VarChar(150)
+  Voucher               String?   @db.VarChar(100)
+  CostingVoucher        String?   @db.VarChar(100)
+  PRNo                  String?   @db.VarChar(150)
+  CustomerRequisition   String?   @db.VarChar(100)
+}
+
+model SCM_D365ImporForm_PurchaseBI_trial {
+  ID                    Int       @id(map: "PK_SCM_D365ImporForm_PurchaseBI_trial") @default(autoincrement())
+  Company               String?   @db.VarChar(100)
+  VendorCode            String?   @db.VarChar(50)
+  VendorName            String?   @db.VarChar(200)
+  InvoiceDate           DateTime? @db.DateTime
+  InvoiceID             String?   @db.VarChar(50)
+  Line_No               Int?
+  PONo                  String?   @db.VarChar(100)
+  POLineNo              Int?
+  ItemGroup             String?   @db.VarChar(100)
+  ItemId                String?   @db.VarChar(50)
+  Text                  String?   @db.Text
+  Quantity              Decimal?  @db.Decimal(18, 2)
+  PurchaseUnit          String?   @db.VarChar(100)
+  PurchasePrice         Decimal?  @db.Decimal(18, 2)
+  Discount              Int?
+  DiscountPercent       Int?
+  Amount                Decimal?  @db.Decimal(18, 2)
+  Currency              String?   @db.VarChar(50)
+  CompanyCurrencyAmount Decimal?  @db.Decimal(18, 2)
+  PurchaseReason        String?   @db.VarChar(100)
+  DeliveryDate          DateTime? @db.DateTime
+  SectionCode           String?   @db.VarChar(100)
+  SectionName           String?   @db.VarChar(150)
+  Voucher               String?   @db.VarChar(100)
+  CostingVoucher        String?   @db.VarChar(100)
+  PRNo                  String?   @db.VarChar(150)
+  CustomerRequisition   String?   @db.VarChar(100)
+}
+
+model SCM_D365ImporForm_PurchaseLines {
+  ID               Int       @id(map: "PK_SCM_D365ImporForm_PurchaseLines") @default(autoincrement())
+  Purchase_order   String?   @db.NVarChar(255)
+  Vendor_account   String?   @db.NVarChar(255)
+  Line_number      Int?
+  Item_number      String?   @db.NVarChar(255)
+  Product_name     String?   @db.NVarChar(255)
+  Description      String?   @db.NVarChar(255)
+  PRNo             String?   @db.VarChar(150)
+  Line_status      String?   @db.NVarChar(255)
+  Quantity         Decimal?  @db.Decimal(18, 2)
+  Deliver_reminder Decimal?  @db.Decimal(18, 2)
+  Unit             String?   @db.NVarChar(255)
+  Unit_price       Decimal?  @db.Decimal(18, 2)
+  Discount         Decimal?  @db.Decimal(18, 2)
+  Net_amount       Decimal?  @db.Decimal(18, 2)
+  Created_by       String?   @db.NVarChar(255)
+  Created_at       DateTime? @db.DateTime
+}
+
+model SCM_D365ImporForm_StockManagement {
+  ID                            Int       @id(map: "PK_SCM_D365ImporForm_StockManagement") @default(autoincrement())
+  ItemGroup                     String?   @db.VarChar(50)
+  Date                          DateTime? @db.Date
+  Warehouse                     String?   @db.VarChar(50)
+  Item                          String?   @db.VarChar(100)
+  Batch                         String?   @db.VarChar(50)
+  InventoryUnit                 String?   @db.VarChar(50)
+  BeginningBalanceQty           Decimal?  @db.Decimal(18, 3)
+  BeginningBalanceAmount        Decimal?  @db.Decimal(18, 5)
+  TransferQtyPlus               Decimal?  @db.Decimal(18, 3)
+  TransferAmountPlus            Decimal?  @db.Decimal(18, 5)
+  ProductionQtyPlus             Decimal?  @db.Decimal(18, 3)
+  ProductionAmountPlus          Decimal?  @db.Decimal(18, 5)
+  PurchasedQtyPlus              Decimal?  @db.Decimal(18, 3)
+  PurchaseAmountPlus            Decimal?  @db.Decimal(18, 5)
+  AdjustQtyPlus                 Decimal?  @db.Decimal(18, 3)
+  AdjustAmountPlus              Decimal?  @db.Decimal(18, 5)
+  CountingQtyPlus               Decimal?  @db.Decimal(18, 3)
+  CountingAmountPlus            Decimal?  @db.Decimal(18, 5)
+  TransferQtyMinus              Decimal?  @db.Decimal(18, 3)
+  TransferAmountMinus           Decimal?  @db.Decimal(18, 5)
+  SalesQtyMinus                 Decimal?  @db.Decimal(18, 3)
+  SalesAmountMinus              Decimal?  @db.Decimal(18, 5)
+  ConsumptionQtyMinus           Decimal?  @db.Decimal(18, 3)
+  ConsumptionAmountMinus        Decimal?  @db.Decimal(18, 5)
+  AdjustQtyMinus                Decimal?  @db.Decimal(18, 3)
+  AdjustAmountMinus             Decimal?  @db.Decimal(18, 5)
+  CountingQtyMinus              Decimal?  @db.Decimal(18, 3)
+  CountingAmountMinus           Decimal?  @db.Decimal(18, 5)
+  EndingBalanceQuantity         Decimal?  @db.Decimal(18, 3)
+  EndingBalanceAmount           Decimal?  @db.Decimal(18, 5)
+  Procate                       String?   @db.VarChar(50)
+  ProductName                   String?   @db.VarChar(200)
+  DescriptionFromPurchaseReport String?   @db.Text
+  DescriptionFromSalesReport    String?   @db.Text
+  Periode                       DateTime? @db.DateTime
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model Sheet1_ {
+  Item_number                  String?   @map("Item number") @db.NVarChar(255)
+  Product_name                 String?   @map("Product name") @db.NVarChar(255)
+  Search_name                  String?   @map("Search name") @db.NVarChar(255)
+  Description                  String?   @db.NVarChar(255)
+  Item_group                   String?   @map("Item group") @db.NVarChar(255)
+  Product_type                 String?   @map("Product type") @db.NVarChar(255)
+  Product_subtype              String?   @map("Product subtype") @db.NVarChar(255)
+  Vehicle_id                   String?   @map("Vehicle id") @db.NVarChar(255)
+  Net_weight                   Float?    @map("Net weight")
+  Packing_quantity             Float?    @map("Packing quantity")
+  UnitPurc                     String?   @db.NVarChar(255)
+  UnitInvent                   String?   @db.NVarChar(255)
+  ProductCategory              String?   @db.NVarChar(255)
+  Procate                      String?   @db.NVarChar(255)
+  MasterVehicle                String?   @db.NVarChar(255)
+  SPType                       DateTime? @db.DateTime
+  SectionType                  DateTime? @db.DateTime
+  Section                      String?   @db.NVarChar(255)
+  UnitSales                    String?   @db.NVarChar(255)
+  BOM_unit                     String?   @map("BOM unit") @db.NVarChar(255)
+  Description_for_Sales_report String?   @map("Description for Sales report") @db.NVarChar(255)
+  Created_date_and_time        DateTime? @map("Created date and time") @db.DateTime
+
+  @@map("Sheet1$")
+  @@ignore
+}
+
+model sysdiagrams {
+  name         String @db.NVarChar(128)
+  principal_id Int
+  diagram_id   Int    @id(map: "PK__sysdiagr__C2B05B610E6E26BF") @default(autoincrement())
+  version      Int?
+  definition   Bytes?
+
+  @@unique([principal_id, name], map: "UK_principal_name")
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventory {
+  DC                 String?   @db.NVarChar(10)
+  Transaction        String?   @db.NVarChar(20)
+  Status             String?   @db.NVarChar(10)
+  AX_ItemID          String?   @db.VarChar(Max)
+  AX_ProductName     String?   @db.VarChar(Max)
+  AX_ItemDescription String?   @db.VarChar(Max)
+  AX_SearchName      String?   @db.VarChar(Max)
+  AX_NameAlias       String?   @db.VarChar(Max)
+  Batch              String?   @db.NVarChar(10)
+  Site               String?   @db.NVarChar(10)
+  Warehouse          String?   @db.NVarChar(10)
+  Year               Int?
+  Month              Int?
+  Debit              Decimal?  @db.Decimal(18, 5)
+  Credit             Decimal?  @db.Decimal(18, 5)
+  Balance            Decimal?  @db.Decimal(18, 5)
+  DebitAmount        Decimal?  @db.Decimal(18, 5)
+  CreditAmount       Decimal?  @db.Decimal(18, 5)
+  BalanceAmount      Decimal?  @db.Decimal(18, 5)
+  DebitAmountSTD     Decimal?  @db.Decimal(18, 5)
+  CreditAmountSTD    Decimal?  @db.Decimal(18, 5)
+  BalanceAmountSTD   Decimal?  @db.Decimal(18, 5)
+  DateCreated        DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventory_20190727 {
+  DC                 String?   @db.NVarChar(10)
+  Transaction        String?   @db.NVarChar(20)
+  Status             String?   @db.NVarChar(10)
+  AX_ItemID          String?   @db.VarChar(Max)
+  AX_ProductName     String?   @db.VarChar(Max)
+  AX_ItemDescription String?   @db.VarChar(Max)
+  AX_SearchName      String?   @db.VarChar(Max)
+  AX_NameAlias       String?   @db.VarChar(Max)
+  Batch              String?   @db.NVarChar(10)
+  Site               String?   @db.NVarChar(10)
+  Warehouse          String?   @db.NVarChar(10)
+  Year               Int?
+  Month              Int?
+  Debit              Decimal?  @db.Decimal(18, 5)
+  Credit             Decimal?  @db.Decimal(18, 5)
+  Balance            Decimal?  @db.Decimal(18, 5)
+  DateCreated        DateTime? @db.DateTime
+  DebitAmount        Decimal?  @db.Decimal(18, 5)
+  CreditAmount       Decimal?  @db.Decimal(18, 5)
+  BalanceAmount      Decimal?  @db.Decimal(18, 5)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventory_Backup_20200504 {
+  DC                 String?   @db.NVarChar(10)
+  Transaction        String?   @db.NVarChar(20)
+  Status             String?   @db.NVarChar(10)
+  AX_ItemID          String?   @db.VarChar(Max)
+  AX_ProductName     String?   @db.VarChar(Max)
+  AX_ItemDescription String?   @db.VarChar(Max)
+  AX_SearchName      String?   @db.VarChar(Max)
+  AX_NameAlias       String?   @db.VarChar(Max)
+  Batch              String?   @db.NVarChar(10)
+  Site               String?   @db.NVarChar(10)
+  Warehouse          String?   @db.NVarChar(10)
+  Year               Int?
+  Month              Int?
+  Debit              Decimal?  @db.Decimal(18, 5)
+  Credit             Decimal?  @db.Decimal(18, 5)
+  Balance            Decimal?  @db.Decimal(18, 5)
+  DebitAmount        Decimal?  @db.Decimal(18, 5)
+  CreditAmount       Decimal?  @db.Decimal(18, 5)
+  BalanceAmount      Decimal?  @db.Decimal(18, 5)
+  DebitAmountSTD     Decimal?  @db.Decimal(18, 5)
+  CreditAmountSTD    Decimal?  @db.Decimal(18, 5)
+  BalanceAmountSTD   Decimal?  @db.Decimal(18, 5)
+  DateCreated        DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventory_BeforeReRun_09062020 {
+  DC                 String?   @db.NVarChar(10)
+  Transaction        String?   @db.NVarChar(20)
+  Status             String?   @db.NVarChar(10)
+  AX_ItemID          String?   @db.VarChar(Max)
+  AX_ProductName     String?   @db.VarChar(Max)
+  AX_ItemDescription String?   @db.VarChar(Max)
+  AX_SearchName      String?   @db.VarChar(Max)
+  AX_NameAlias       String?   @db.VarChar(Max)
+  Batch              String?   @db.NVarChar(10)
+  Site               String?   @db.NVarChar(10)
+  Warehouse          String?   @db.NVarChar(10)
+  Year               Int?
+  Month              Int?
+  Debit              Decimal?  @db.Decimal(18, 5)
+  Credit             Decimal?  @db.Decimal(18, 5)
+  Balance            Decimal?  @db.Decimal(18, 5)
+  DebitAmount        Decimal?  @db.Decimal(18, 5)
+  CreditAmount       Decimal?  @db.Decimal(18, 5)
+  BalanceAmount      Decimal?  @db.Decimal(18, 5)
+  DebitAmountSTD     Decimal?  @db.Decimal(18, 5)
+  CreditAmountSTD    Decimal?  @db.Decimal(18, 5)
+  BalanceAmountSTD   Decimal?  @db.Decimal(18, 5)
+  DateCreated        DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventory_Fix {
+  DC                 String?   @db.NVarChar(10)
+  Transaction        String?   @db.NVarChar(20)
+  Status             String?   @db.NVarChar(10)
+  AX_ItemID          String?   @db.VarChar(Max)
+  AX_ProductName     String?   @db.VarChar(Max)
+  AX_ItemDescription String?   @db.VarChar(Max)
+  AX_SearchName      String?   @db.VarChar(Max)
+  AX_NameAlias       String?   @db.VarChar(Max)
+  Batch              String?   @db.NVarChar(10)
+  Site               String?   @db.NVarChar(10)
+  Warehouse          String?   @db.NVarChar(10)
+  Year               Int?
+  Month              Int?
+  Debit              Decimal?  @db.Decimal(18, 5)
+  Credit             Decimal?  @db.Decimal(18, 5)
+  Balance            Decimal?  @db.Decimal(18, 5)
+  DebitAmount        Decimal?  @db.Decimal(18, 5)
+  CreditAmount       Decimal?  @db.Decimal(18, 5)
+  BalanceAmount      Decimal?  @db.Decimal(18, 5)
+  DateCreated        DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventory_Old {
+  DC                 String?  @db.NVarChar(10)
+  Transaction        String?  @db.NVarChar(20)
+  Status             String?  @db.NVarChar(10)
+  AX_ItemID          String?  @db.VarChar(Max)
+  AX_ProductName     String?  @db.VarChar(Max)
+  AX_ItemDescription String?  @db.VarChar(Max)
+  AX_SearchName      String?  @db.VarChar(Max)
+  AX_NameAlias       String?  @db.VarChar(Max)
+  Batch              String?  @db.NVarChar(10)
+  Site               String?  @db.NVarChar(10)
+  Warehouse          String?  @db.NVarChar(10)
+  Debit              Decimal? @db.Decimal(18, 5)
+  Year               String?  @db.NVarChar(10)
+  Month              String?  @db.NVarChar(10)
+  Credit             Decimal? @db.Decimal(18, 5)
+  Balance            Decimal? @db.Decimal(18, 5)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventory_StockTake {
+  DC                 String?   @db.NVarChar(10)
+  Transaction        String?   @db.NVarChar(20)
+  Status             String?   @db.NVarChar(10)
+  AX_ItemID          String?   @db.VarChar(Max)
+  AX_ProductName     String?   @db.VarChar(Max)
+  AX_ItemDescription String?   @db.VarChar(Max)
+  AX_SearchName      String?   @db.VarChar(Max)
+  AX_NameAlias       String?   @db.VarChar(Max)
+  Batch              String?   @db.NVarChar(10)
+  Site               String?   @db.NVarChar(10)
+  Warehouse          String?   @db.NVarChar(10)
+  Year               Int?
+  Month              Int?
+  Debit              Decimal?  @db.Decimal(18, 5)
+  Credit             Decimal?  @db.Decimal(18, 5)
+  Balance            Decimal?  @db.Decimal(18, 5)
+  DebitAmount        Decimal?  @db.Decimal(18, 5)
+  CreditAmount       Decimal?  @db.Decimal(18, 5)
+  BalanceAmount      Decimal?  @db.Decimal(18, 5)
+  DebitAmountSTD     Decimal?  @db.Decimal(18, 5)
+  CreditAmountSTD    Decimal?  @db.Decimal(18, 5)
+  BalanceAmountSTD   Decimal?  @db.Decimal(18, 5)
+  DateCreated        DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventoryAprMei {
+  DC                 String?  @db.NVarChar(10)
+  Transaction        String?  @db.NVarChar(20)
+  Status             String?  @db.NVarChar(10)
+  AX_ItemID          String?  @db.VarChar(Max)
+  AX_ProductName     String?  @db.VarChar(Max)
+  AX_ItemDescription String?  @db.VarChar(Max)
+  AX_SearchName      String?  @db.VarChar(Max)
+  AX_NameAlias       String?  @db.VarChar(Max)
+  Batch              String?  @db.NVarChar(10)
+  Site               String?  @db.NVarChar(10)
+  Warehouse          String?  @db.NVarChar(10)
+  Year               String?  @db.NVarChar(10)
+  Month              String?  @db.NVarChar(10)
+  Debit              Decimal? @db.Decimal(18, 5)
+  Credit             Decimal? @db.Decimal(18, 5)
+  Balance            Decimal? @db.Decimal(18, 5)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventoryKPMG {
+  DC                 String?   @db.NVarChar(10)
+  Transaction        String?   @db.NVarChar(20)
+  Status             String?   @db.NVarChar(10)
+  AX_ItemID          String?   @db.VarChar(Max)
+  AX_ProductName     String?   @db.VarChar(Max)
+  AX_ItemDescription String?   @db.VarChar(Max)
+  AX_SearchName      String?   @db.VarChar(Max)
+  AX_NameAlias       String?   @db.VarChar(Max)
+  Batch              String?   @db.NVarChar(10)
+  Site               String?   @db.NVarChar(10)
+  Warehouse          String?   @db.NVarChar(10)
+  Year               Int?
+  Month              Int?
+  Debit              Decimal?  @db.Decimal(18, 5)
+  Credit             Decimal?  @db.Decimal(18, 5)
+  Balance            Decimal?  @db.Decimal(18, 5)
+  DebitAmount        Decimal?  @db.Decimal(18, 5)
+  CreditAmount       Decimal?  @db.Decimal(18, 5)
+  BalanceAmount      Decimal?  @db.Decimal(18, 5)
+  DebitAmountSTD     Decimal?  @db.Decimal(18, 5)
+  CreditAmountSTD    Decimal?  @db.Decimal(18, 5)
+  BalanceAmountSTD   Decimal?  @db.Decimal(18, 5)
+  DateCreated        DateTime? @db.DateTime
+  DebitAmountAct     Decimal?  @db.Decimal(18, 5)
+  CreditAmountAct    Decimal?  @db.Decimal(18, 5)
+  BalanceAmountAct   Decimal?  @db.Decimal(18, 5)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXBegInventoryKPMG_BeforeReRun_09062020 {
+  DC                 String?   @db.NVarChar(10)
+  Transaction        String?   @db.NVarChar(20)
+  Status             String?   @db.NVarChar(10)
+  AX_ItemID          String?   @db.VarChar(Max)
+  AX_ProductName     String?   @db.VarChar(Max)
+  AX_ItemDescription String?   @db.VarChar(Max)
+  AX_SearchName      String?   @db.VarChar(Max)
+  AX_NameAlias       String?   @db.VarChar(Max)
+  Batch              String?   @db.NVarChar(10)
+  Site               String?   @db.NVarChar(10)
+  Warehouse          String?   @db.NVarChar(10)
+  Year               Int?
+  Month              Int?
+  Debit              Decimal?  @db.Decimal(18, 5)
+  Credit             Decimal?  @db.Decimal(18, 5)
+  Balance            Decimal?  @db.Decimal(18, 5)
+  DebitAmount        Decimal?  @db.Decimal(18, 5)
+  CreditAmount       Decimal?  @db.Decimal(18, 5)
+  BalanceAmount      Decimal?  @db.Decimal(18, 5)
+  DebitAmountSTD     Decimal?  @db.Decimal(18, 5)
+  CreditAmountSTD    Decimal?  @db.Decimal(18, 5)
+  BalanceAmountSTD   Decimal?  @db.Decimal(18, 5)
+  DateCreated        DateTime? @db.DateTime
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXInvoiceTransfer {
+  Invoice             String?   @db.VarChar(50)
+  PeriodEDI           String?   @db.NChar(12)
+  DatePhysical        DateTime? @db.Date
+  Status              String?   @db.NChar(10)
+  InvoiceAccount      String?   @db.NVarChar(50)
+  PurchName           String?   @db.VarChar(150)
+  ReceiveDocumentBy   String?   @db.VarChar(150)
+  ReceiveDocumentTime DateTime? @db.DateTime
+  ArriveBy            String?   @db.VarChar(50)
+  ArriveTime          DateTime? @db.DateTime
+  ArriveStatus        Int?      @db.TinyInt
+  JournalNumber       String?   @db.VarChar(50)
+  JournalTransferBy   String?   @db.VarChar(50)
+  JournalTransferTime DateTime? @db.DateTime
+  IsJournal           Int?      @db.TinyInt
+  IsPostingJournal    Int?      @db.TinyInt
+  PostingJournalBy    String?   @db.VarChar(50)
+  PostingJournalTime  DateTime? @db.DateTime
+  IsFlexnetItem       Int?      @default(0, map: "DF_T_AXInvoiceTransfer_IsFlexnetItem") @db.TinyInt
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXItemQID {
+  ItemQID String? @db.VarChar(10)
+  Name    String? @db.VarChar(50)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXReferenceCategory {
+  Name        String? @db.VarChar(50)
+  Value       Int?
+  Description String? @db.VarChar(50)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_AXSalesAVG {
+  AX_ItemID  String?  @db.VarChar(Max)
+  PackingQty Decimal? @db.Decimal(18, 5)
+  Year       Int?
+  Month      Int?
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_D365BOM {
+  BOMId                      String?  @db.VarChar(50)
+  BOMQty                     Decimal? @db.Decimal(18, 2)
+  LineCreationSequenceNumber String?  @db.NChar(10)
+  ItemId                     String?  @db.VarChar(50)
+  ItemIdQty                  Decimal? @db.Decimal(18, 5)
+  UnitID                     String?  @db.NChar(10)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_D365MonthlySO {
+  SalesOrder                  String?   @db.VarChar(20)
+  SalesLineNumber             String?   @db.VarChar(10)
+  CustomerCode                String?   @db.VarChar(20)
+  CustomerName                String?   @db.VarChar(50)
+  CustomerReference           String?   @db.VarChar(50)
+  ExternalItemNumber          String?   @db.VarChar(50)
+  ItemId                      String?   @db.VarChar(50)
+  ProductName                 String?   @db.VarChar(100)
+  ItemDescription             String?   @db.VarChar(100)
+  SearchNameAll               String?   @db.VarChar(100)
+  SearchNameReleased          String?   @db.VarChar(100)
+  SPType                      String?   @db.VarChar(100)
+  VehicleId                   String?   @db.VarChar(100)
+  MasterVehicle               String?   @db.VarChar(100)
+  ItemGroup                   String?   @db.VarChar(20)
+  PackingSlipId               String?   @db.VarChar(20)
+  PackingSlipDeliveryDate     DateTime? @db.Date
+  PackingQty                  Decimal?  @db.Decimal(18, 5)
+  Year_Dlv                    String?   @db.VarChar(4)
+  Month_Dlv                   String?   @db.VarChar(2)
+  ProductCategory             String?   @db.VarChar(20)
+  ProcateName                 String?   @db.VarChar(20)
+  Genuine                     String?   @db.VarChar(20)
+  Motor                       String?   @db.VarChar(20)
+  OriginalInvoiceNo           String?   @db.VarChar(20)
+  SalesPrice                  Decimal?  @db.Decimal(18, 5)
+  DiscAmount                  Decimal?  @db.Decimal(18, 5)
+  DiscPercent                 Decimal?  @db.Decimal(18, 5)
+  ExchangeRate                Decimal?  @db.Decimal(18, 5)
+  Currency                    String?   @db.VarChar(20)
+  SalesClass                  String?   @db.VarChar(20)
+  AmountGrossCurrency         Decimal?  @db.Decimal(18, 5)
+  AmountDiscountCurrency      Decimal?  @db.Decimal(18, 5)
+  AmountNetCurrency           Decimal?  @db.Decimal(18, 5)
+  AmountGrossLocalCurrency    Decimal?  @db.Decimal(18, 5)
+  AmountDiscountLocalCurrency Decimal?  @db.Decimal(18, 5)
+  AmountNetLocalCurrency      Decimal?  @db.Decimal(18, 5)
+  Status_GIT                  String?   @db.VarChar(20)
+  Date_Inv                    DateTime? @db.Date
+  Year_Inv                    String?   @db.VarChar(4)
+  Month_Inv                   String?   @db.VarChar(2)
+  City                        String?   @db.VarChar(50)
+  Month_Odr                   String?   @db.VarChar(2)
+  CommercialStatus            String?   @db.VarChar(50)
+  VAT                         Decimal?  @db.Decimal(18, 5)
+  STDCost                     Decimal?  @db.Decimal(18, 5)
+  GIT_Cost                    Decimal?  @db.Decimal(18, 5)
+  PeriodDLV                   String?   @db.VarChar(7)
+  PeriodINV                   String?   @db.VarChar(7)
+  DaysDueDateInv              Decimal?  @db.Decimal(18, 5)
+  NPWP                        String?   @db.VarChar(50)
+  TaxInvoiceNo                String?   @db.VarChar(50)
+  DescriptionforSalesReport   String?   @db.VarChar(100)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_D365OrderLines {
+  Requestedreceiptdate DateTime? @db.Date
+  Requestedshipdate    DateTime? @db.Date
+  Customer             String?   @db.VarChar(5)
+  Deliveryname         String?   @db.VarChar(100)
+  Salesorder           String?   @db.VarChar(50)
+  Linestatus           String?   @db.VarChar(20)
+  Itemnumber           String?   @db.VarChar(50)
+  Productname          String?   @db.VarChar(Max)
+  Quantity             Decimal?  @db.Decimal(18, 5)
+  Unit                 String?   @db.VarChar(20)
+  Unitprice            Decimal?  @db.Decimal(18, 5)
+  Discount             Decimal?  @db.Decimal(18, 5)
+  Discountpercent      Decimal?  @db.Decimal(18, 5)
+  Netamount            Decimal?  @db.Decimal(18, 5)
+  Createdby            String?   @db.VarChar(20)
+  Createddateandtime   DateTime? @db.Date
+  Customerreference    String?   @db.VarChar(100)
+  Itemsalestaxgroup    String?   @db.VarChar(20)
+  NTT_NonCommercial    String?   @db.VarChar(10)
+  Salestaxgroup        String?   @db.VarChar(20)
+  year                 String?   @db.VarChar(4)
+  month                String?   @db.VarChar(2)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_D365PurchaseBI {
+  Company                 String?   @db.VarChar(10)
+  Vendor_code             String?   @map("Vendor code") @db.VarChar(10)
+  Vendor_name             String?   @map("Vendor name") @db.VarChar(100)
+  Invoice_date            DateTime? @map("Invoice date") @db.Date
+  Invoice_ID              String?   @map("Invoice ID") @db.VarChar(100)
+  Line_no                 String?   @map("Line no") @db.VarChar(10)
+  PO_no                   String?   @map("PO no") @db.VarChar(20)
+  PO_line_no              String?   @map("PO line no") @db.VarChar(10)
+  Item_group              String?   @map("Item group") @db.VarChar(100)
+  Item_id                 String?   @map("Item id") @db.VarChar(100)
+  Text                    String?   @db.VarChar(100)
+  Quantity                Decimal?  @db.Decimal(18, 5)
+  Purchase_unit           String?   @map("Purchase unit") @db.VarChar(10)
+  Purchase_price          Decimal?  @map("Purchase price") @db.Decimal(18, 5)
+  Discount                Decimal?  @db.Decimal(18, 5)
+  Discount_percent        Decimal?  @map("Discount percent") @db.Decimal(18, 5)
+  Amount                  Decimal?  @db.Decimal(18, 5)
+  Currency                String?   @db.VarChar(10)
+  Company_currency_amount Decimal?  @map("Company currency amount") @db.Decimal(18, 5)
+  Purchase_reason         String?   @map("Purchase reason") @db.VarChar(100)
+  Delivery_date           DateTime? @map("Delivery date") @db.Date
+  Section_code            String?   @map("Section code") @db.VarChar(10)
+  Section_name            String?   @map("Section name") @db.VarChar(100)
+  Voucher                 String?   @db.VarChar(50)
+  Costing_voucher         String?   @map("Costing voucher") @db.VarChar(50)
+  PR_No                   String?   @map("PR No") @db.VarChar(100)
+  Customer_requisition    String?   @map("Customer requisition") @db.VarChar(100)
+  Year                    String?   @db.VarChar(4)
+  Month                   String?   @db.VarChar(2)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_D365PurchaseLog {
+  Purchase_order                  String?   @map("Purchase order") @db.VarChar(100)
+  Vendor_name                     String?   @map("Vendor name") @db.VarChar(100)
+  Currency                        String?   @db.VarChar(10)
+  Purchase_type                   String?   @map("Purchase type") @db.VarChar(100)
+  Invoice_account                 String?   @map("Invoice account") @db.VarChar(10)
+  Order_account                   String?   @map("Order account") @db.VarChar(10)
+  Date                            DateTime? @db.Date
+  Document_date                   DateTime? @map("Document date") @db.Date
+  Product_receipt                 String?   @map("Product receipt") @db.VarChar(100)
+  Site                            String?   @db.VarChar(10)
+  Warehouse                       String?   @db.VarChar(10)
+  Internal_product_receipt        String?   @map("Internal product receipt") @db.VarChar(20)
+  Outer_Package_Number            String?   @map("Outer Package Number") @db.VarChar(20)
+  Line_number                     String?   @map("Line number") @db.VarChar(10)
+  Item                            String?   @db.VarChar(100)
+  Description                     String?   @db.VarChar(100)
+  Unit                            String?   @db.VarChar(10)
+  Ordered                         Decimal?  @db.Decimal(18, 5)
+  Received_quantity               Decimal?  @map("Received quantity") @db.Decimal(18, 5)
+  Price_unit                      Decimal?  @map("Price unit") @db.Decimal(18, 5)
+  Remaining_quantity              Decimal?  @map("Remaining quantity") @db.Decimal(18, 5)
+  Value                           Decimal?  @db.Decimal(18, 5)
+  ProductName                     String?   @db.VarChar(100)
+  Description_for_purchase_report String?   @map("Description for purchase report") @db.VarChar(100)
+  LocalImport                     String?   @db.VarChar(10)
+  ProCateName                     String?   @db.VarChar(20)
+  SearchNameAll                   String?   @db.VarChar(100)
+  SearchNameReleased              String?   @db.VarChar(100)
+  ItemGroup                       String?   @db.VarChar(20)
+  Year                            String?   @db.VarChar(10)
+  Month                           String?   @db.VarChar(10)
+  Factor                          Decimal?  @db.Decimal(18, 5)
+  Denominator                     Decimal?  @db.Decimal(18, 5)
+  Qty_Conversion                  Decimal?  @db.Decimal(18, 5)
+  UnitPrice                       Decimal?  @db.Decimal(18, 5)
+  RelUnRel                        String?   @db.VarChar(10)
+  ExchangeRate                    Decimal?  @db.Decimal(18, 5)
+  CreatedBy                       String?   @db.VarChar(20)
+  CreatedDateTime                 DateTime? @db.Date
+  DiscAmount                      Decimal?  @db.Decimal(18, 5)
+  DiscPercent                     Decimal?  @db.Decimal(18, 5)
+  CostLedgerVoucher               String?   @db.VarChar(20)
+  InternalInvoiceId               String?   @db.VarChar(20)
+  LedgerVoucher                   String?   @db.VarChar(20)
+  Period                          String?   @db.VarChar(10)
+  Standard_Cost                   Decimal?  @db.Decimal(18, 5)
+  Standard_Cost_Beneran           Decimal?  @db.Decimal(18, 5)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_D365SalesBI {
+  Company                   String?  @db.VarChar(10)
+  InvoiceDateYYYYMM         String?  @db.VarChar(10)
+  InvoiceDateYYYYMMDD       String?  @db.VarChar(10)
+  Duedate                   String?  @db.VarChar(10)
+  SOCreateDateYYYYMMDD      String?  @db.VarChar(10)
+  Requestreceiptdate        String?  @db.VarChar(10)
+  Invoice                   String?  @db.VarChar(20)
+  SONo                      String?  @db.VarChar(20)
+  Customercode              String?  @db.VarChar(10)
+  Customername              String?  @db.VarChar(100)
+  Customersearchname        String?  @db.VarChar(50)
+  Itemcode                  String?  @db.VarChar(30)
+  Itemname                  String?  @db.VarChar(100)
+  Division                  String?  @db.VarChar(10)
+  Divisionname              String?  @db.VarChar(50)
+  ProductCategory           String?  @db.VarChar(10)
+  Productcategoryname       String?  @db.VarChar(50)
+  Country                   String?  @db.VarChar(50)
+  Area                      String?  @db.VarChar(10)
+  Salesperson               String?  @db.VarChar(30)
+  Salespersonname           String?  @db.VarChar(50)
+  Businesstype              String?  @db.VarChar(10)
+  Businesstypename          String?  @db.VarChar(50)
+  Design                    String?  @db.VarChar(10)
+  Brand                     String?  @db.VarChar(10)
+  Productcatemajor          String?  @db.VarChar(10)
+  Productcatemajorname      String?  @db.VarChar(50)
+  Productcatemiddle         String?  @db.VarChar(10)
+  Productcatemiddlename     String?  @db.VarChar(50)
+  Productcateminor          String?  @db.VarChar(10)
+  Productcateminorname      String?  @db.VarChar(50)
+  Packagingcountry          String?  @db.VarChar(20)
+  Quantity                  Decimal? @db.Decimal(18, 5)
+  Currency                  String?  @db.VarChar(10)
+  PricebyIVcurrency         Decimal? @db.Decimal(18, 5)
+  AmountbyIVcurrency        Decimal? @db.Decimal(18, 5)
+  PricebyLocalcurrency      Decimal? @db.Decimal(18, 5)
+  AmountbyLocalcurrency     Decimal? @db.Decimal(18, 5)
+  Recid                     String?  @db.VarChar(20)
+  Customerreference         String?  @db.VarChar(Max)
+  Descriptionforsalesreport String?  @db.VarChar(Max)
+  ItemGroup                 String?  @db.VarChar(20)
+  TaxPercentage             Decimal? @db.Decimal(18, 5)
+  Tax                       Decimal? @db.Decimal(18, 5)
+  Netamount                 Decimal? @db.Decimal(18, 5)
+  TaxInvoiceId              String?  @db.VarChar(50)
+  NPWP                      String?  @db.VarChar(50)
+  LineDisc                  Decimal? @db.Decimal(18, 5)
+  InvoiceAddress            String?  @db.VarChar(Max)
+  ExternalItemId            String?  @db.VarChar(Max)
+  Year                      String?  @db.VarChar(4)
+  Month                     String?  @db.VarChar(2)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_D365SMGT {
+  ItemGroup                        String?  @db.NVarChar(255)
+  Date                             String?  @db.NVarChar(255)
+  Warehouse                        String?  @db.NVarChar(255)
+  ItemID                           String?  @db.NVarChar(255)
+  Batch                            String?  @db.NVarChar(255)
+  InventoryUnit                    String?  @db.NVarChar(255)
+  Beginning_Qty                    Decimal? @map("Beginning Qty") @db.Decimal(18, 5)
+  Beginning_Amount                 Decimal? @map("Beginning Amount") @db.Decimal(18, 5)
+  Transfer_Qty___                  Decimal? @map("Transfer Qty(+)") @db.Decimal(18, 5)
+  Transfer_Amount___               Decimal? @map("Transfer Amount(+)") @db.Decimal(18, 5)
+  Production_Qty___                Decimal? @map("Production Qty(+)") @db.Decimal(18, 5)
+  Production_Amount___             Decimal? @map("Production Amount(+)") @db.Decimal(18, 5)
+  Purchased_Qty___                 Decimal? @map("Purchased Qty(+)") @db.Decimal(18, 5)
+  Purchased_Amount___              Decimal? @map("Purchased Amount(+)") @db.Decimal(18, 5)
+  Adjust_Qty___                    Decimal? @map("Adjust Qty(+)") @db.Decimal(18, 5)
+  Adjust_Amount___                 Decimal? @map("Adjust Amount(+)") @db.Decimal(18, 5)
+  Counting_Qty___                  Decimal? @map("Counting Qty(+)") @db.Decimal(18, 5)
+  Counting_Amount___               Decimal? @map("Counting Amount(+)") @db.Decimal(18, 5)
+  Sales_Qty___                     Decimal? @map("Sales Qty(-)") @db.Decimal(18, 5)
+  Sales_Amount___                  Decimal? @map("Sales Amount(-)") @db.Decimal(18, 5)
+  Consumption_Qty___               Decimal? @map("Consumption Qty(-)") @db.Decimal(18, 5)
+  Consumption_Amount___            Decimal? @map("Consumption Amount(-)") @db.Decimal(18, 5)
+  Ending_Quantity                  Decimal? @map("Ending Quantity") @db.Decimal(18, 5)
+  Ending_Amount                    Decimal? @map("Ending Amount") @db.Decimal(18, 5)
+  Procate                          String?  @db.NVarChar(255)
+  ProductName                      String?  @db.NVarChar(255)
+  Description_from_purchase_report String?  @map("Description from purchase report") @db.NVarChar(255)
+  Description_from_sales_report    String?  @map("Description from sales report") @db.NVarChar(255)
+  Period                           String?  @db.NVarChar(255)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_D365SMGTBeg {
+  ItemGroup                        String?  @db.NVarChar(255)
+  Warehouse                        String?  @db.NVarChar(255)
+  ItemID                           String?  @db.NVarChar(255)
+  Batch                            String?  @db.NVarChar(255)
+  InventoryUnit                    String?  @db.NVarChar(255)
+  Procate                          String?  @db.NVarChar(255)
+  ProductName                      String?  @db.NVarChar(255)
+  Description_from_purchase_report String?  @map("Description from purchase report") @db.NVarChar(255)
+  Description_from_sales_report    String?  @map("Description from sales report") @db.NVarChar(255)
+  Period                           String?  @db.NVarChar(255)
+  Beginning_Qty                    Decimal? @map("Beginning Qty") @db.Decimal(18, 5)
+  Beginning_Amount                 Decimal? @map("Beginning Amount") @db.Decimal(18, 5)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_FNBOM {
+  BOMId                      String?  @db.VarChar(50)
+  BOMQty                     Decimal? @db.Decimal(18, 2)
+  LineCreationSequenceNumber String?  @db.NChar(10)
+  ItemId                     String?  @db.VarChar(50)
+  ItemIdQty                  Decimal? @db.Decimal(18, 5)
+  UnitID                     String?  @db.NChar(10)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_SO_salah {
+  SO_NO  String? @db.VarChar(50)
+  ITEMID String? @db.VarChar(50)
+  PRICE  String? @db.VarChar(50)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model T_WeightingCalculator_MWeight {
+  ProductName   String? @db.NVarChar(60)
+  ProductWeight Float?  @db.Real
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model TestSTD {
+  Company       String? @db.NVarChar(255)
+  Item_number   String? @map("Item number") @db.NVarChar(255)
+  Product_name  String? @map("Product name") @db.NVarChar(255)
+  Price         Float?  @db.Money
+  Price_unit    Float?  @map("Price unit") @db.Money
+  /// This field was commented out because of an invalid name. Please provide a valid one that matches [a-zA-Z][a-zA-Z0-9_]*
+  // @ Float? @map("@") @db.Money
+  Activate_date Float?  @map("Activate date")
+  Extract_date  String? @map("Extract date") @db.NVarChar(255)
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model V_AXItemMaster_ {
+  ITEMID                 String   @db.NVarChar(20)
+  DisplayProductNumber   String?  @db.NVarChar(70)
+  SearchNameAll_Previous String?  @db.NVarChar(20)
+  SearchNameReleased     String   @db.NVarChar(20)
+  ProductName            String?  @db.NVarChar(60)
+  ItemDescription        String?
+  S_PType                String?  @map("S/PType") @db.NVarChar(10)
+  VehicleID              String?  @db.NVarChar(10)
+  MasterVehicle          String?  @db.NVarChar(2)
+  MasterSubVehicleID     String?  @db.NVarChar(10)
+  ItemGroup              String?  @db.NVarChar(10)
+  ProdcutCateMajor       String?  @db.NVarChar(2)
+  ProductCateMajorName   String?  @db.NVarChar(60)
+  ProdcutCateMiddle      String?  @db.NVarChar(3)
+  ProductCateMiddleName  String?  @db.NVarChar(60)
+  ProductCateMinor       String?  @db.NVarChar(3)
+  ProductCateMinorName   String?  @db.NVarChar(60)
+  ProductCategory        String?  @db.NVarChar(30)
+  ProCateName            String?  @db.NVarChar(60)
+  BusinessType           String?  @db.NVarChar(30)
+  BusinessTypeName       String?  @db.NVarChar(60)
+  SectionType            String?  @db.NVarChar(30)
+  Section                String?  @db.NVarChar(60)
+  UnitIDInv              String?  @db.NVarChar(10)
+  UnitIDPurc             String?  @db.NVarChar(10)
+  UnitIDSales            String?  @db.NVarChar(10)
+  RecID                  String?  @db.VarChar(6)
+  PURMFG                 String?  @db.NVarChar(5)
+  EXTERNALITEMID         String?  @db.NVarChar(20)
+  CUSTVENDRELATION       String?  @db.NVarChar(20)
+  MODELGROUPID           String?  @db.NVarChar(10)
+  FACTOR                 Decimal?
+  DENOMINATOR            Int?
+  itemAXRank             BigInt?
+  SearchNameAll          String?
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model V_AXItemMasterZ {
+  ITEMID                 String   @db.NVarChar(20)
+  DisplayProductNumber   String?  @db.NVarChar(70)
+  SearchNameAll_Previous String?  @db.NVarChar(20)
+  SearchNameReleased     String   @db.NVarChar(20)
+  ProductName            String?  @db.NVarChar(60)
+  ItemDescription        String?
+  S_PType                String?  @map("S/PType") @db.NVarChar(10)
+  VehicleID              String?  @db.NVarChar(10)
+  MasterVehicle          String?  @db.NVarChar(2)
+  MasterSubVehicleID     String?  @db.NVarChar(10)
+  ItemGroup              String?  @db.NVarChar(10)
+  ProdcutCateMajor       String?  @db.NVarChar(2)
+  ProductCateMajorName   String?  @db.NVarChar(60)
+  ProdcutCateMiddle      String?  @db.NVarChar(3)
+  ProductCateMiddleName  String?  @db.NVarChar(60)
+  ProductCateMinor       String?  @db.NVarChar(3)
+  ProductCateMinorName   String?  @db.NVarChar(60)
+  ProductCategory        String?  @db.NVarChar(30)
+  ProCateName            String?  @db.NVarChar(60)
+  BusinessType           String?  @db.NVarChar(30)
+  BusinessTypeName       String?  @db.NVarChar(60)
+  SectionType            String?  @db.NVarChar(30)
+  Section                String?  @db.NVarChar(60)
+  UnitIDInv              String?  @db.NVarChar(10)
+  UnitIDPurc             String?  @db.NVarChar(10)
+  UnitIDSales            String?  @db.NVarChar(10)
+  RecID                  String?  @db.VarChar(6)
+  PURMFG                 String?  @db.NVarChar(5)
+  EXTERNALITEMID         String?  @db.NVarChar(20)
+  CUSTVENDRELATION       String?  @db.NVarChar(20)
+  MODELGROUPID           String?  @db.NVarChar(10)
+  FACTOR                 Decimal?
+  DENOMINATOR            Int?
+  itemAXRank             BigInt?
+  SearchNameAll          String?
+
+  @@ignore
+}
+
+/// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+model V_AXSalesPackingSlipZ {
+  PackingSlipID           String?   @db.NVarChar(20)
+  CustomerCode            String?   @db.NVarChar(20)
+  CustomerName            String?   @db.NVarChar(60)
+  PackingSlipDeliveryDate DateTime? @db.DateTime
+  ItemID                  String?   @db.NVarChar(50)
+  ProductName             String?   @db.NVarChar(100)
+  PackingQty              Decimal?
+  ExternalItemNumber      String?   @db.NVarChar(50)
+  FUploadedDate           DateTime? @db.DateTime
+  FUploadedBy             String?   @db.NVarChar(50)
+  CustomerReference       String?   @db.NVarChar(70)
+
+  @@ignore
+}

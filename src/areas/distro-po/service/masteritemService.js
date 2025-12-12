@@ -3,8 +3,11 @@ import { PrismaClient } from '../../../../prisma/mainDB/@prisma/client-main/inde
 const prisma = new PrismaClient();
 
 export async function getAll() {
-  // Return all items, sorted by id ascending
+  // Return only active items, sorted by id ascending
   return prisma.Distro_PO_MasterItem.findMany({
+    where: {
+      isActive: true
+    },
     orderBy: { id: 'asc' },
     select: {
       id: true,
