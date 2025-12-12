@@ -44,12 +44,12 @@ export const authMiddleware = async (req, res, next) => {
     // //   await niterraappdb.logsLogin.delete({ where: { token: token } });
     //     }
 
-  return res
-    .status(401)
-    .json({
-        errors: "Unauthorized",
-    })
-    .end();
+    return res
+      .status(401)
+      .json({
+          errors: "Unauthorized",
+      })
+      .end();
 
   }
     
@@ -125,6 +125,16 @@ export const authMiddleware = async (req, res, next) => {
         })
         .end();
     }
+
+    if(log.user.blockedUntil != null && log.user.blockedUntil > new Date()){
+      return res
+        .status(406)
+        .json({
+          errors: `Account Blocked Until ${log.user.blockedUntil}`,
+        })
+        .end();
+    }
+    
 
   const data = {
     ...log.user,
