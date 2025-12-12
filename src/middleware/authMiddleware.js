@@ -137,7 +137,7 @@ export const authMiddleware = async (req, res, next) => {
 
   const data = {
     ...log.user,
-  };W
+  };
 
   req.user = data;
   next();
