@@ -2,8 +2,11 @@ model User {
   userId            String    @id @default(uuid()) @db.Uuid
   email             String    @db.VarChar(150)
   application       String    @db.VarChar(150) @default("E-Bidding")
+  failedLoginAttempts Int     @default(0)
+  blockedUntil      DateTime? 
   password          String    @db.VarChar(255)
   isActive          Boolean   @default(false)
+
   sessionExpireDate DateTime   
   createdDate   DateTime  @default(now())
   updateDate    DateTime  @updatedAt

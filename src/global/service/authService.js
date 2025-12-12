@@ -102,6 +102,27 @@ try {
   const isMatch = await bcrypt.compare(payload.password, user.password);
   
   if (!isMatch) {
+    const failedCounts = await niterraappdb.User.update({
+      where : {userId : user.userId},
+      data : {
+        failedLoginAttempts : {
+          increment : 1
+        }
+      }
+    })
+    if(failedCounts >= 3){
+      const BASE_LOCKOUT_DURATION_MS = 5 * 60 * 1000;
+      const multiplier = failedCounts - 2;
+      const lockoutDuration = multiplier * BASE_LOCKOUT_DURATION_MS;
+      const blockedUntilTime = new Date(Date.now() + lockoutDuration);
+
+      await niterraappdb.User.update({
+      where: { userId: user.userId },
+      data: {
+        blockedUntil: blockedUntilTime,
+        }
+      })
+    }
     throw new ResponseError(401,'Invalid email or password');
   }
 
@@ -122,7 +143,7 @@ try {
     await niterraappdb.LogsLogin.create({
       data: {
         userId: userId,
-        token: token, // Save raw token only
+        token: token,
         isActive: true,
         device: requestContext.userAgent || 'Unknown',
         ip: requestContext.ip || 'Unknown',
@@ -142,6 +163,13 @@ try {
     
     return accumulator;
   }, { role: [], access: [] });
+
+  await niterraappdb.User.update({
+    where : {userId : user.userId},
+    data : {
+      failedLoginAttempts : 0 
+    }
+  })
 
   const {role,access} = roleAccess;
   return { token, role, access };

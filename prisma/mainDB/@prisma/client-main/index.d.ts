@@ -21566,14 +21566,26 @@ export namespace Prisma {
 
   export type AggregateUser = {
     _count: UserCountAggregateOutputType | null
+    _avg: UserAvgAggregateOutputType | null
+    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
+  }
+
+  export type UserAvgAggregateOutputType = {
+    failedLoginAttempts: number | null
+  }
+
+  export type UserSumAggregateOutputType = {
+    failedLoginAttempts: number | null
   }
 
   export type UserMinAggregateOutputType = {
     userId: string | null
     email: string | null
     application: string | null
+    failedLoginAttempts: number | null
+    blockedUntil: Date | null
     password: string | null
     isActive: boolean | null
     sessionExpireDate: Date | null
@@ -21585,6 +21597,8 @@ export namespace Prisma {
     userId: string | null
     email: string | null
     application: string | null
+    failedLoginAttempts: number | null
+    blockedUntil: Date | null
     password: string | null
     isActive: boolean | null
     sessionExpireDate: Date | null
@@ -21596,6 +21610,8 @@ export namespace Prisma {
     userId: number
     email: number
     application: number
+    failedLoginAttempts: number
+    blockedUntil: number
     password: number
     isActive: number
     sessionExpireDate: number
@@ -21605,10 +21621,20 @@ export namespace Prisma {
   }
 
 
+  export type UserAvgAggregateInputType = {
+    failedLoginAttempts?: true
+  }
+
+  export type UserSumAggregateInputType = {
+    failedLoginAttempts?: true
+  }
+
   export type UserMinAggregateInputType = {
     userId?: true
     email?: true
     application?: true
+    failedLoginAttempts?: true
+    blockedUntil?: true
     password?: true
     isActive?: true
     sessionExpireDate?: true
@@ -21620,6 +21646,8 @@ export namespace Prisma {
     userId?: true
     email?: true
     application?: true
+    failedLoginAttempts?: true
+    blockedUntil?: true
     password?: true
     isActive?: true
     sessionExpireDate?: true
@@ -21631,6 +21659,8 @@ export namespace Prisma {
     userId?: true
     email?: true
     application?: true
+    failedLoginAttempts?: true
+    blockedUntil?: true
     password?: true
     isActive?: true
     sessionExpireDate?: true
@@ -21677,6 +21707,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: UserAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: UserSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: UserMinAggregateInputType
@@ -21707,6 +21749,8 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: UserCountAggregateInputType | true
+    _avg?: UserAvgAggregateInputType
+    _sum?: UserSumAggregateInputType
     _min?: UserMinAggregateInputType
     _max?: UserMaxAggregateInputType
   }
@@ -21715,12 +21759,16 @@ export namespace Prisma {
     userId: string
     email: string
     application: string
+    failedLoginAttempts: number
+    blockedUntil: Date | null
     password: string
     isActive: boolean
     sessionExpireDate: Date
     createdDate: Date
     updateDate: Date
     _count: UserCountAggregateOutputType | null
+    _avg: UserAvgAggregateOutputType | null
+    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
   }
@@ -21743,6 +21791,8 @@ export namespace Prisma {
     userId?: boolean
     email?: boolean
     application?: boolean
+    failedLoginAttempts?: boolean
+    blockedUntil?: boolean
     password?: boolean
     isActive?: boolean
     sessionExpireDate?: boolean
@@ -21761,6 +21811,8 @@ export namespace Prisma {
     userId?: boolean
     email?: boolean
     application?: boolean
+    failedLoginAttempts?: boolean
+    blockedUntil?: boolean
     password?: boolean
     isActive?: boolean
     sessionExpireDate?: boolean
@@ -21772,6 +21824,8 @@ export namespace Prisma {
     userId?: boolean
     email?: boolean
     application?: boolean
+    failedLoginAttempts?: boolean
+    blockedUntil?: boolean
     password?: boolean
     isActive?: boolean
     sessionExpireDate?: boolean
@@ -21783,6 +21837,8 @@ export namespace Prisma {
     userId?: boolean
     email?: boolean
     application?: boolean
+    failedLoginAttempts?: boolean
+    blockedUntil?: boolean
     password?: boolean
     isActive?: boolean
     sessionExpireDate?: boolean
@@ -21790,7 +21846,7 @@ export namespace Prisma {
     updateDate?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "email" | "application" | "password" | "isActive" | "sessionExpireDate" | "createdDate" | "updateDate", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "email" | "application" | "failedLoginAttempts" | "blockedUntil" | "password" | "isActive" | "sessionExpireDate" | "createdDate" | "updateDate", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     logs?: boolean | User$logsArgs<ExtArgs>
     linkedDevice?: boolean | User$linkedDeviceArgs<ExtArgs>
@@ -21817,6 +21873,8 @@ export namespace Prisma {
       userId: string
       email: string
       application: string
+      failedLoginAttempts: number
+      blockedUntil: Date | null
       password: string
       isActive: boolean
       sessionExpireDate: Date
@@ -22254,6 +22312,8 @@ export namespace Prisma {
     readonly userId: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly application: FieldRef<"User", 'String'>
+    readonly failedLoginAttempts: FieldRef<"User", 'Int'>
+    readonly blockedUntil: FieldRef<"User", 'DateTime'>
     readonly password: FieldRef<"User", 'String'>
     readonly isActive: FieldRef<"User", 'Boolean'>
     readonly sessionExpireDate: FieldRef<"User", 'DateTime'>
@@ -31694,6 +31754,8 @@ export namespace Prisma {
     userId: 'userId',
     email: 'email',
     application: 'application',
+    failedLoginAttempts: 'failedLoginAttempts',
+    blockedUntil: 'blockedUntil',
     password: 'password',
     isActive: 'isActive',
     sessionExpireDate: 'sessionExpireDate',
@@ -33104,6 +33166,8 @@ export namespace Prisma {
     userId?: UuidFilter<"User"> | string
     email?: StringFilter<"User"> | string
     application?: StringFilter<"User"> | string
+    failedLoginAttempts?: IntFilter<"User"> | number
+    blockedUntil?: DateTimeNullableFilter<"User"> | Date | string | null
     password?: StringFilter<"User"> | string
     isActive?: BoolFilter<"User"> | boolean
     sessionExpireDate?: DateTimeFilter<"User"> | Date | string
@@ -33121,6 +33185,8 @@ export namespace Prisma {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
+    failedLoginAttempts?: SortOrder
+    blockedUntil?: SortOrderInput | SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
@@ -33142,6 +33208,8 @@ export namespace Prisma {
     NOT?: UserWhereInput | UserWhereInput[]
     email?: StringFilter<"User"> | string
     application?: StringFilter<"User"> | string
+    failedLoginAttempts?: IntFilter<"User"> | number
+    blockedUntil?: DateTimeNullableFilter<"User"> | Date | string | null
     password?: StringFilter<"User"> | string
     isActive?: BoolFilter<"User"> | boolean
     sessionExpireDate?: DateTimeFilter<"User"> | Date | string
@@ -33159,14 +33227,18 @@ export namespace Prisma {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
+    failedLoginAttempts?: SortOrder
+    blockedUntil?: SortOrderInput | SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
     _count?: UserCountOrderByAggregateInput
+    _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
+    _sum?: UserSumOrderByAggregateInput
   }
 
   export type UserScalarWhereWithAggregatesInput = {
@@ -33176,6 +33248,8 @@ export namespace Prisma {
     userId?: UuidWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     application?: StringWithAggregatesFilter<"User"> | string
+    failedLoginAttempts?: IntWithAggregatesFilter<"User"> | number
+    blockedUntil?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     password?: StringWithAggregatesFilter<"User"> | string
     isActive?: BoolWithAggregatesFilter<"User"> | boolean
     sessionExpireDate?: DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -34959,6 +35033,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -34976,6 +35052,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -34993,6 +35071,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -35010,6 +35090,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -35027,6 +35109,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -35038,6 +35122,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -35049,6 +35135,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -36503,6 +36591,8 @@ export namespace Prisma {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
+    failedLoginAttempts?: SortOrder
+    blockedUntil?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
@@ -36510,10 +36600,16 @@ export namespace Prisma {
     updateDate?: SortOrder
   }
 
+  export type UserAvgOrderByAggregateInput = {
+    failedLoginAttempts?: SortOrder
+  }
+
   export type UserMaxOrderByAggregateInput = {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
+    failedLoginAttempts?: SortOrder
+    blockedUntil?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
@@ -36525,11 +36621,17 @@ export namespace Prisma {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
+    failedLoginAttempts?: SortOrder
+    blockedUntil?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
+  }
+
+  export type UserSumOrderByAggregateInput = {
+    failedLoginAttempts?: SortOrder
   }
 
   export type UserScalarRelationFilter = {
@@ -40122,6 +40224,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40138,6 +40242,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40170,6 +40276,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40186,6 +40294,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40202,6 +40312,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40218,6 +40330,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40250,6 +40364,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40266,6 +40382,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40358,6 +40476,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40374,6 +40494,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40406,6 +40528,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40422,6 +40546,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40438,6 +40564,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40454,6 +40582,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40544,6 +40674,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40560,6 +40692,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40652,6 +40786,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40668,6 +40804,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40700,6 +40838,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40716,6 +40856,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40732,6 +40874,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40748,6 +40892,8 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
+    failedLoginAttempts?: number
+    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40823,6 +40969,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40839,6 +40987,8 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
+    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
+    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string

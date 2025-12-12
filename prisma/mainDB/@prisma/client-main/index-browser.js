@@ -312,6 +312,8 @@ exports.Prisma.UserScalarFieldEnum = {
   userId: 'userId',
   email: 'email',
   application: 'application',
+  failedLoginAttempts: 'failedLoginAttempts',
+  blockedUntil: 'blockedUntil',
   password: 'password',
   isActive: 'isActive',
   sessionExpireDate: 'sessionExpireDate',
