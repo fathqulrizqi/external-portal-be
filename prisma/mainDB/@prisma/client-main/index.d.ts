@@ -3240,19 +3240,19 @@ export namespace Prisma {
    */
 
   export type UserCountOutputType = {
-    logs: number
     linkedDevice: number
+    logs: number
+    ResetPassword: number
     UserHasRoleAccess: number
     otp: number
-    ResetPassword: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    logs?: boolean | UserCountOutputTypeCountLogsArgs
     linkedDevice?: boolean | UserCountOutputTypeCountLinkedDeviceArgs
+    logs?: boolean | UserCountOutputTypeCountLogsArgs
+    ResetPassword?: boolean | UserCountOutputTypeCountResetPasswordArgs
     UserHasRoleAccess?: boolean | UserCountOutputTypeCountUserHasRoleAccessArgs
     otp?: boolean | UserCountOutputTypeCountOtpArgs
-    ResetPassword?: boolean | UserCountOutputTypeCountResetPasswordArgs
   }
 
   // Custom InputTypes
@@ -3269,6 +3269,13 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
+  export type UserCountOutputTypeCountLinkedDeviceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: LinkedDeviceWhereInput
+  }
+
+  /**
+   * UserCountOutputType without action
+   */
   export type UserCountOutputTypeCountLogsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: LogsLoginWhereInput
   }
@@ -3276,8 +3283,8 @@ export namespace Prisma {
   /**
    * UserCountOutputType without action
    */
-  export type UserCountOutputTypeCountLinkedDeviceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: LinkedDeviceWhereInput
+  export type UserCountOutputTypeCountResetPasswordArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ResetPasswordWhereInput
   }
 
   /**
@@ -3292,13 +3299,6 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountOtpArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: otpVerifikasiWhereInput
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountResetPasswordArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: ResetPasswordWhereInput
   }
 
 
@@ -4470,7 +4470,6 @@ export namespace Prisma {
     companyId: string | null
     segmentId: number | null
     urlImage: string | null
-    companyCode: string | null
     companyName: string | null
     companyFoundingDate: Date | null
     companyStatus: string | null
@@ -4482,13 +4481,13 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     totalCapital: string | null
+    companyCode: string | null
   }
 
   export type CompanyMaxAggregateOutputType = {
     companyId: string | null
     segmentId: number | null
     urlImage: string | null
-    companyCode: string | null
     companyName: string | null
     companyFoundingDate: Date | null
     companyStatus: string | null
@@ -4500,13 +4499,13 @@ export namespace Prisma {
     createdAt: Date | null
     updatedAt: Date | null
     totalCapital: string | null
+    companyCode: string | null
   }
 
   export type CompanyCountAggregateOutputType = {
     companyId: number
     segmentId: number
     urlImage: number
-    companyCode: number
     companyName: number
     companyFoundingDate: number
     companyStatus: number
@@ -4518,6 +4517,7 @@ export namespace Prisma {
     createdAt: number
     updatedAt: number
     totalCapital: number
+    companyCode: number
     _all: number
   }
 
@@ -4534,7 +4534,6 @@ export namespace Prisma {
     companyId?: true
     segmentId?: true
     urlImage?: true
-    companyCode?: true
     companyName?: true
     companyFoundingDate?: true
     companyStatus?: true
@@ -4546,13 +4545,13 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     totalCapital?: true
+    companyCode?: true
   }
 
   export type CompanyMaxAggregateInputType = {
     companyId?: true
     segmentId?: true
     urlImage?: true
-    companyCode?: true
     companyName?: true
     companyFoundingDate?: true
     companyStatus?: true
@@ -4564,13 +4563,13 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     totalCapital?: true
+    companyCode?: true
   }
 
   export type CompanyCountAggregateInputType = {
     companyId?: true
     segmentId?: true
     urlImage?: true
-    companyCode?: true
     companyName?: true
     companyFoundingDate?: true
     companyStatus?: true
@@ -4582,6 +4581,7 @@ export namespace Prisma {
     createdAt?: true
     updatedAt?: true
     totalCapital?: true
+    companyCode?: true
     _all?: true
   }
 
@@ -4675,7 +4675,6 @@ export namespace Prisma {
     companyId: string
     segmentId: number | null
     urlImage: string | null
-    companyCode: string | null
     companyName: string | null
     companyFoundingDate: Date | null
     companyStatus: string | null
@@ -4687,6 +4686,7 @@ export namespace Prisma {
     createdAt: Date
     updatedAt: Date
     totalCapital: string | null
+    companyCode: string | null
     _count: CompanyCountAggregateOutputType | null
     _avg: CompanyAvgAggregateOutputType | null
     _sum: CompanySumAggregateOutputType | null
@@ -4712,7 +4712,6 @@ export namespace Prisma {
     companyId?: boolean
     segmentId?: boolean
     urlImage?: boolean
-    companyCode?: boolean
     companyName?: boolean
     companyFoundingDate?: boolean
     companyStatus?: boolean
@@ -4724,8 +4723,9 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     totalCapital?: boolean
-    profile?: boolean | Company$profileArgs<ExtArgs>
+    companyCode?: boolean
     segment?: boolean | Company$segmentArgs<ExtArgs>
+    profile?: boolean | Company$profileArgs<ExtArgs>
     formL9?: boolean | Company$formL9Args<ExtArgs>
     _count?: boolean | CompanyCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["company"]>
@@ -4734,7 +4734,6 @@ export namespace Prisma {
     companyId?: boolean
     segmentId?: boolean
     urlImage?: boolean
-    companyCode?: boolean
     companyName?: boolean
     companyFoundingDate?: boolean
     companyStatus?: boolean
@@ -4746,6 +4745,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     totalCapital?: boolean
+    companyCode?: boolean
     segment?: boolean | Company$segmentArgs<ExtArgs>
   }, ExtArgs["result"]["company"]>
 
@@ -4753,7 +4753,6 @@ export namespace Prisma {
     companyId?: boolean
     segmentId?: boolean
     urlImage?: boolean
-    companyCode?: boolean
     companyName?: boolean
     companyFoundingDate?: boolean
     companyStatus?: boolean
@@ -4765,6 +4764,7 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     totalCapital?: boolean
+    companyCode?: boolean
     segment?: boolean | Company$segmentArgs<ExtArgs>
   }, ExtArgs["result"]["company"]>
 
@@ -4772,7 +4772,6 @@ export namespace Prisma {
     companyId?: boolean
     segmentId?: boolean
     urlImage?: boolean
-    companyCode?: boolean
     companyName?: boolean
     companyFoundingDate?: boolean
     companyStatus?: boolean
@@ -4784,12 +4783,13 @@ export namespace Prisma {
     createdAt?: boolean
     updatedAt?: boolean
     totalCapital?: boolean
+    companyCode?: boolean
   }
 
-  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyCode" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "website" | "createdAt" | "updatedAt" | "totalCapital", ExtArgs["result"]["company"]>
+  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "website" | "createdAt" | "updatedAt" | "totalCapital" | "companyCode", ExtArgs["result"]["company"]>
   export type CompanyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    profile?: boolean | Company$profileArgs<ExtArgs>
     segment?: boolean | Company$segmentArgs<ExtArgs>
+    profile?: boolean | Company$profileArgs<ExtArgs>
     formL9?: boolean | Company$formL9Args<ExtArgs>
     _count?: boolean | CompanyCountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -4803,15 +4803,14 @@ export namespace Prisma {
   export type $CompanyPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Company"
     objects: {
-      profile: Prisma.$ProfilePayload<ExtArgs>[]
       segment: Prisma.$CompanySegmentPayload<ExtArgs> | null
+      profile: Prisma.$ProfilePayload<ExtArgs>[]
       formL9: Prisma.$FormL9Payload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       companyId: string
       segmentId: number | null
       urlImage: string | null
-      companyCode: string | null
       companyName: string | null
       companyFoundingDate: Date | null
       companyStatus: string | null
@@ -4823,6 +4822,7 @@ export namespace Prisma {
       createdAt: Date
       updatedAt: Date
       totalCapital: string | null
+      companyCode: string | null
     }, ExtArgs["result"]["company"]>
     composites: {}
   }
@@ -5217,8 +5217,8 @@ export namespace Prisma {
    */
   export interface Prisma__CompanyClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    profile<T extends Company$profileArgs<ExtArgs> = {}>(args?: Subset<T, Company$profileArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     segment<T extends Company$segmentArgs<ExtArgs> = {}>(args?: Subset<T, Company$segmentArgs<ExtArgs>>): Prisma__CompanySegmentClient<$Result.GetResult<Prisma.$CompanySegmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    profile<T extends Company$profileArgs<ExtArgs> = {}>(args?: Subset<T, Company$profileArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     formL9<T extends Company$formL9Args<ExtArgs> = {}>(args?: Subset<T, Company$formL9Args<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -5252,7 +5252,6 @@ export namespace Prisma {
     readonly companyId: FieldRef<"Company", 'String'>
     readonly segmentId: FieldRef<"Company", 'Int'>
     readonly urlImage: FieldRef<"Company", 'String'>
-    readonly companyCode: FieldRef<"Company", 'String'>
     readonly companyName: FieldRef<"Company", 'String'>
     readonly companyFoundingDate: FieldRef<"Company", 'DateTime'>
     readonly companyStatus: FieldRef<"Company", 'String'>
@@ -5264,6 +5263,7 @@ export namespace Prisma {
     readonly createdAt: FieldRef<"Company", 'DateTime'>
     readonly updatedAt: FieldRef<"Company", 'DateTime'>
     readonly totalCapital: FieldRef<"Company", 'String'>
+    readonly companyCode: FieldRef<"Company", 'String'>
   }
     
 
@@ -5660,6 +5660,25 @@ export namespace Prisma {
   }
 
   /**
+   * Company.segment
+   */
+  export type Company$segmentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegment
+     */
+    select?: CompanySegmentSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegment
+     */
+    omit?: CompanySegmentOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentInclude<ExtArgs> | null
+    where?: CompanySegmentWhereInput
+  }
+
+  /**
    * Company.profile
    */
   export type Company$profileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -5681,25 +5700,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: ProfileScalarFieldEnum | ProfileScalarFieldEnum[]
-  }
-
-  /**
-   * Company.segment
-   */
-  export type Company$segmentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the CompanySegment
-     */
-    select?: CompanySegmentSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the CompanySegment
-     */
-    omit?: CompanySegmentOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: CompanySegmentInclude<ExtArgs> | null
-    where?: CompanySegmentWhereInput
   }
 
   /**
@@ -5762,41 +5762,41 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderMinAggregateOutputType = {
     id: number | null
-    uuid: string | null
     poNumber: string | null
     distributorName: string | null
     customerCode: string | null
     poDate: Date | null
-    niterraSO: string | null
-    niterraPO: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    niterraPO: string | null
+    niterraSO: string | null
+    uuid: string | null
   }
 
   export type Distro_PO_HeaderMaxAggregateOutputType = {
     id: number | null
-    uuid: string | null
     poNumber: string | null
     distributorName: string | null
     customerCode: string | null
     poDate: Date | null
-    niterraSO: string | null
-    niterraPO: string | null
     createdAt: Date | null
     updatedAt: Date | null
+    niterraPO: string | null
+    niterraSO: string | null
+    uuid: string | null
   }
 
   export type Distro_PO_HeaderCountAggregateOutputType = {
     id: number
-    uuid: number
     poNumber: number
     distributorName: number
     customerCode: number
     poDate: number
-    niterraSO: number
-    niterraPO: number
     createdAt: number
     updatedAt: number
+    niterraPO: number
+    niterraSO: number
+    uuid: number
     _all: number
   }
 
@@ -5811,41 +5811,41 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderMinAggregateInputType = {
     id?: true
-    uuid?: true
     poNumber?: true
     distributorName?: true
     customerCode?: true
     poDate?: true
-    niterraSO?: true
-    niterraPO?: true
     createdAt?: true
     updatedAt?: true
+    niterraPO?: true
+    niterraSO?: true
+    uuid?: true
   }
 
   export type Distro_PO_HeaderMaxAggregateInputType = {
     id?: true
-    uuid?: true
     poNumber?: true
     distributorName?: true
     customerCode?: true
     poDate?: true
-    niterraSO?: true
-    niterraPO?: true
     createdAt?: true
     updatedAt?: true
+    niterraPO?: true
+    niterraSO?: true
+    uuid?: true
   }
 
   export type Distro_PO_HeaderCountAggregateInputType = {
     id?: true
-    uuid?: true
     poNumber?: true
     distributorName?: true
     customerCode?: true
     poDate?: true
-    niterraSO?: true
-    niterraPO?: true
     createdAt?: true
     updatedAt?: true
+    niterraPO?: true
+    niterraSO?: true
+    uuid?: true
     _all?: true
   }
 
@@ -5937,15 +5937,15 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderGroupByOutputType = {
     id: number
-    uuid: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date
-    niterraSO: string
-    niterraPO: string
     createdAt: Date
     updatedAt: Date
+    niterraPO: string
+    niterraSO: string
+    uuid: string
     _count: Distro_PO_HeaderCountAggregateOutputType | null
     _avg: Distro_PO_HeaderAvgAggregateOutputType | null
     _sum: Distro_PO_HeaderSumAggregateOutputType | null
@@ -5969,59 +5969,59 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    uuid?: boolean
     poNumber?: boolean
     distributorName?: boolean
     customerCode?: boolean
     poDate?: boolean
-    niterraSO?: boolean
-    niterraPO?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    niterraPO?: boolean
+    niterraSO?: boolean
+    uuid?: boolean
     items?: boolean | Distro_PO_Header$itemsArgs<ExtArgs>
     _count?: boolean | Distro_PO_HeaderCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["distro_PO_Header"]>
 
   export type Distro_PO_HeaderSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    uuid?: boolean
     poNumber?: boolean
     distributorName?: boolean
     customerCode?: boolean
     poDate?: boolean
-    niterraSO?: boolean
-    niterraPO?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    niterraPO?: boolean
+    niterraSO?: boolean
+    uuid?: boolean
   }, ExtArgs["result"]["distro_PO_Header"]>
 
   export type Distro_PO_HeaderSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    uuid?: boolean
     poNumber?: boolean
     distributorName?: boolean
     customerCode?: boolean
     poDate?: boolean
-    niterraSO?: boolean
-    niterraPO?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    niterraPO?: boolean
+    niterraSO?: boolean
+    uuid?: boolean
   }, ExtArgs["result"]["distro_PO_Header"]>
 
   export type Distro_PO_HeaderSelectScalar = {
     id?: boolean
-    uuid?: boolean
     poNumber?: boolean
     distributorName?: boolean
     customerCode?: boolean
     poDate?: boolean
-    niterraSO?: boolean
-    niterraPO?: boolean
     createdAt?: boolean
     updatedAt?: boolean
+    niterraPO?: boolean
+    niterraSO?: boolean
+    uuid?: boolean
   }
 
-  export type Distro_PO_HeaderOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "uuid" | "poNumber" | "distributorName" | "customerCode" | "poDate" | "niterraSO" | "niterraPO" | "createdAt" | "updatedAt", ExtArgs["result"]["distro_PO_Header"]>
+  export type Distro_PO_HeaderOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "poNumber" | "distributorName" | "customerCode" | "poDate" | "createdAt" | "updatedAt" | "niterraPO" | "niterraSO" | "uuid", ExtArgs["result"]["distro_PO_Header"]>
   export type Distro_PO_HeaderInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     items?: boolean | Distro_PO_Header$itemsArgs<ExtArgs>
     _count?: boolean | Distro_PO_HeaderCountOutputTypeDefaultArgs<ExtArgs>
@@ -6036,15 +6036,15 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      uuid: string
       poNumber: string
       distributorName: string
       customerCode: string
       poDate: Date
-      niterraSO: string
-      niterraPO: string
       createdAt: Date
       updatedAt: Date
+      niterraPO: string
+      niterraSO: string
+      uuid: string
     }, ExtArgs["result"]["distro_PO_Header"]>
     composites: {}
   }
@@ -6470,15 +6470,15 @@ export namespace Prisma {
    */
   interface Distro_PO_HeaderFieldRefs {
     readonly id: FieldRef<"Distro_PO_Header", 'Int'>
-    readonly uuid: FieldRef<"Distro_PO_Header", 'String'>
     readonly poNumber: FieldRef<"Distro_PO_Header", 'String'>
     readonly distributorName: FieldRef<"Distro_PO_Header", 'String'>
     readonly customerCode: FieldRef<"Distro_PO_Header", 'String'>
     readonly poDate: FieldRef<"Distro_PO_Header", 'DateTime'>
-    readonly niterraSO: FieldRef<"Distro_PO_Header", 'String'>
-    readonly niterraPO: FieldRef<"Distro_PO_Header", 'String'>
     readonly createdAt: FieldRef<"Distro_PO_Header", 'DateTime'>
     readonly updatedAt: FieldRef<"Distro_PO_Header", 'DateTime'>
+    readonly niterraPO: FieldRef<"Distro_PO_Header", 'String'>
+    readonly niterraSO: FieldRef<"Distro_PO_Header", 'String'>
+    readonly uuid: FieldRef<"Distro_PO_Header", 'String'>
   }
     
 
@@ -9286,10 +9286,10 @@ export namespace Prisma {
     updatedAt?: boolean
     company?: boolean | CompanyDefaultArgs<ExtArgs>
     bankInfo?: boolean | FormL9$bankInfoArgs<ExtArgs>
-    generalInformation?: boolean | FormL9$generalInformationArgs<ExtArgs>
     employeeInfo?: boolean | FormL9$employeeInfoArgs<ExtArgs>
-    others?: boolean | FormL9$othersArgs<ExtArgs>
+    generalInformation?: boolean | FormL9$generalInformationArgs<ExtArgs>
     managements?: boolean | FormL9$managementsArgs<ExtArgs>
+    others?: boolean | FormL9$othersArgs<ExtArgs>
     workExperiences?: boolean | FormL9$workExperiencesArgs<ExtArgs>
     _count?: boolean | FormL9CountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9"]>
@@ -9324,10 +9324,10 @@ export namespace Prisma {
   export type FormL9Include<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     company?: boolean | CompanyDefaultArgs<ExtArgs>
     bankInfo?: boolean | FormL9$bankInfoArgs<ExtArgs>
-    generalInformation?: boolean | FormL9$generalInformationArgs<ExtArgs>
     employeeInfo?: boolean | FormL9$employeeInfoArgs<ExtArgs>
-    others?: boolean | FormL9$othersArgs<ExtArgs>
+    generalInformation?: boolean | FormL9$generalInformationArgs<ExtArgs>
     managements?: boolean | FormL9$managementsArgs<ExtArgs>
+    others?: boolean | FormL9$othersArgs<ExtArgs>
     workExperiences?: boolean | FormL9$workExperiencesArgs<ExtArgs>
     _count?: boolean | FormL9CountOutputTypeDefaultArgs<ExtArgs>
   }
@@ -9343,10 +9343,10 @@ export namespace Prisma {
     objects: {
       company: Prisma.$CompanyPayload<ExtArgs>
       bankInfo: Prisma.$FormL9BankInfoPayload<ExtArgs> | null
-      generalInformation: Prisma.$FormL9GeneralInformationPayload<ExtArgs> | null
       employeeInfo: Prisma.$FormL9EmployePayload<ExtArgs> | null
-      others: Prisma.$FormL9OthersPayload<ExtArgs> | null
+      generalInformation: Prisma.$FormL9GeneralInformationPayload<ExtArgs> | null
       managements: Prisma.$FormL9ManagementPayload<ExtArgs>[]
+      others: Prisma.$FormL9OthersPayload<ExtArgs> | null
       workExperiences: Prisma.$FormL9WorkExperiencePayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
@@ -9751,10 +9751,10 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     company<T extends CompanyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CompanyDefaultArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     bankInfo<T extends FormL9$bankInfoArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$bankInfoArgs<ExtArgs>>): Prisma__FormL9BankInfoClient<$Result.GetResult<Prisma.$FormL9BankInfoPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    generalInformation<T extends FormL9$generalInformationArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$generalInformationArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     employeeInfo<T extends FormL9$employeeInfoArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$employeeInfoArgs<ExtArgs>>): Prisma__FormL9EmployeClient<$Result.GetResult<Prisma.$FormL9EmployePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-    others<T extends FormL9$othersArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$othersArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    generalInformation<T extends FormL9$generalInformationArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$generalInformationArgs<ExtArgs>>): Prisma__FormL9GeneralInformationClient<$Result.GetResult<Prisma.$FormL9GeneralInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     managements<T extends FormL9$managementsArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$managementsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9ManagementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    others<T extends FormL9$othersArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$othersArgs<ExtArgs>>): Prisma__FormL9OthersClient<$Result.GetResult<Prisma.$FormL9OthersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     workExperiences<T extends FormL9$workExperiencesArgs<ExtArgs> = {}>(args?: Subset<T, FormL9$workExperiencesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9WorkExperiencePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -10205,25 +10205,6 @@ export namespace Prisma {
   }
 
   /**
-   * FormL9.generalInformation
-   */
-  export type FormL9$generalInformationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the FormL9GeneralInformation
-     */
-    select?: FormL9GeneralInformationSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the FormL9GeneralInformation
-     */
-    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: FormL9GeneralInformationInclude<ExtArgs> | null
-    where?: FormL9GeneralInformationWhereInput
-  }
-
-  /**
    * FormL9.employeeInfo
    */
   export type FormL9$employeeInfoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10243,22 +10224,22 @@ export namespace Prisma {
   }
 
   /**
-   * FormL9.others
+   * FormL9.generalInformation
    */
-  export type FormL9$othersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type FormL9$generalInformationArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the FormL9Others
+     * Select specific fields to fetch from the FormL9GeneralInformation
      */
-    select?: FormL9OthersSelect<ExtArgs> | null
+    select?: FormL9GeneralInformationSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the FormL9Others
+     * Omit specific fields from the FormL9GeneralInformation
      */
-    omit?: FormL9OthersOmit<ExtArgs> | null
+    omit?: FormL9GeneralInformationOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: FormL9OthersInclude<ExtArgs> | null
-    where?: FormL9OthersWhereInput
+    include?: FormL9GeneralInformationInclude<ExtArgs> | null
+    where?: FormL9GeneralInformationWhereInput
   }
 
   /**
@@ -10283,6 +10264,25 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: FormL9ManagementScalarFieldEnum | FormL9ManagementScalarFieldEnum[]
+  }
+
+  /**
+   * FormL9.others
+   */
+  export type FormL9$othersArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the FormL9Others
+     */
+    select?: FormL9OthersSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the FormL9Others
+     */
+    omit?: FormL9OthersOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: FormL9OthersInclude<ExtArgs> | null
+    where?: FormL9OthersWhereInput
   }
 
   /**
@@ -17364,8 +17364,8 @@ export namespace Prisma {
     signConfidentialityAgreement?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
     certificateISOs?: boolean | FormL9Others$certificateISOsArgs<ExtArgs>
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
     _count?: boolean | FormL9OthersCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["formL9Others"]>
 
@@ -17430,8 +17430,8 @@ export namespace Prisma {
 
   export type FormL9OthersOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"formL9OthersId" | "formL9Id" | "haveCertificateISO" | "haveCompanyOrganizationalStructure" | "haveQualityControlOrganizationalStructure" | "haveProductWarranty" | "haveExpiryDate" | "haveAPD" | "haveAPDRegulation" | "isTopApplicable" | "paymentTime" | "agreeToConfidentialInformation" | "understandingBreachesOfConfidentiality" | "signConfidentialityAgreement" | "createdAt" | "updatedAt", ExtArgs["result"]["formL9Others"]>
   export type FormL9OthersInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
     certificateISOs?: boolean | FormL9Others$certificateISOsArgs<ExtArgs>
+    formL9?: boolean | FormL9DefaultArgs<ExtArgs>
     _count?: boolean | FormL9OthersCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type FormL9OthersIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -17444,8 +17444,8 @@ export namespace Prisma {
   export type $FormL9OthersPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "FormL9Others"
     objects: {
-      formL9: Prisma.$FormL9Payload<ExtArgs>
       certificateISOs: Prisma.$FormL9CertificateISOPayload<ExtArgs>[]
+      formL9: Prisma.$FormL9Payload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       formL9OthersId: string
@@ -17858,8 +17858,8 @@ export namespace Prisma {
    */
   export interface Prisma__FormL9OthersClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    formL9<T extends FormL9DefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9DefaultArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     certificateISOs<T extends FormL9Others$certificateISOsArgs<ExtArgs> = {}>(args?: Subset<T, FormL9Others$certificateISOsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$FormL9CertificateISOPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    formL9<T extends FormL9DefaultArgs<ExtArgs> = {}>(args?: Subset<T, FormL9DefaultArgs<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -21566,26 +21566,14 @@ export namespace Prisma {
 
   export type AggregateUser = {
     _count: UserCountAggregateOutputType | null
-    _avg: UserAvgAggregateOutputType | null
-    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
-  }
-
-  export type UserAvgAggregateOutputType = {
-    failedLoginAttempts: number | null
-  }
-
-  export type UserSumAggregateOutputType = {
-    failedLoginAttempts: number | null
   }
 
   export type UserMinAggregateOutputType = {
     userId: string | null
     email: string | null
     application: string | null
-    failedLoginAttempts: number | null
-    blockedUntil: Date | null
     password: string | null
     isActive: boolean | null
     sessionExpireDate: Date | null
@@ -21597,8 +21585,6 @@ export namespace Prisma {
     userId: string | null
     email: string | null
     application: string | null
-    failedLoginAttempts: number | null
-    blockedUntil: Date | null
     password: string | null
     isActive: boolean | null
     sessionExpireDate: Date | null
@@ -21610,8 +21596,6 @@ export namespace Prisma {
     userId: number
     email: number
     application: number
-    failedLoginAttempts: number
-    blockedUntil: number
     password: number
     isActive: number
     sessionExpireDate: number
@@ -21621,20 +21605,10 @@ export namespace Prisma {
   }
 
 
-  export type UserAvgAggregateInputType = {
-    failedLoginAttempts?: true
-  }
-
-  export type UserSumAggregateInputType = {
-    failedLoginAttempts?: true
-  }
-
   export type UserMinAggregateInputType = {
     userId?: true
     email?: true
     application?: true
-    failedLoginAttempts?: true
-    blockedUntil?: true
     password?: true
     isActive?: true
     sessionExpireDate?: true
@@ -21646,8 +21620,6 @@ export namespace Prisma {
     userId?: true
     email?: true
     application?: true
-    failedLoginAttempts?: true
-    blockedUntil?: true
     password?: true
     isActive?: true
     sessionExpireDate?: true
@@ -21659,8 +21631,6 @@ export namespace Prisma {
     userId?: true
     email?: true
     application?: true
-    failedLoginAttempts?: true
-    blockedUntil?: true
     password?: true
     isActive?: true
     sessionExpireDate?: true
@@ -21707,18 +21677,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: UserAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: UserSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: UserMinAggregateInputType
@@ -21749,8 +21707,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: UserCountAggregateInputType | true
-    _avg?: UserAvgAggregateInputType
-    _sum?: UserSumAggregateInputType
     _min?: UserMinAggregateInputType
     _max?: UserMaxAggregateInputType
   }
@@ -21759,16 +21715,12 @@ export namespace Prisma {
     userId: string
     email: string
     application: string
-    failedLoginAttempts: number
-    blockedUntil: Date | null
     password: string
     isActive: boolean
     sessionExpireDate: Date
     createdDate: Date
     updateDate: Date
     _count: UserCountAggregateOutputType | null
-    _avg: UserAvgAggregateOutputType | null
-    _sum: UserSumAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
   }
@@ -21791,19 +21743,17 @@ export namespace Prisma {
     userId?: boolean
     email?: boolean
     application?: boolean
-    failedLoginAttempts?: boolean
-    blockedUntil?: boolean
     password?: boolean
     isActive?: boolean
     sessionExpireDate?: boolean
     createdDate?: boolean
     updateDate?: boolean
-    logs?: boolean | User$logsArgs<ExtArgs>
     linkedDevice?: boolean | User$linkedDeviceArgs<ExtArgs>
+    logs?: boolean | User$logsArgs<ExtArgs>
     profile?: boolean | User$profileArgs<ExtArgs>
+    ResetPassword?: boolean | User$ResetPasswordArgs<ExtArgs>
     UserHasRoleAccess?: boolean | User$UserHasRoleAccessArgs<ExtArgs>
     otp?: boolean | User$otpArgs<ExtArgs>
-    ResetPassword?: boolean | User$ResetPasswordArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -21811,8 +21761,6 @@ export namespace Prisma {
     userId?: boolean
     email?: boolean
     application?: boolean
-    failedLoginAttempts?: boolean
-    blockedUntil?: boolean
     password?: boolean
     isActive?: boolean
     sessionExpireDate?: boolean
@@ -21824,8 +21772,6 @@ export namespace Prisma {
     userId?: boolean
     email?: boolean
     application?: boolean
-    failedLoginAttempts?: boolean
-    blockedUntil?: boolean
     password?: boolean
     isActive?: boolean
     sessionExpireDate?: boolean
@@ -21837,8 +21783,6 @@ export namespace Prisma {
     userId?: boolean
     email?: boolean
     application?: boolean
-    failedLoginAttempts?: boolean
-    blockedUntil?: boolean
     password?: boolean
     isActive?: boolean
     sessionExpireDate?: boolean
@@ -21846,14 +21790,14 @@ export namespace Prisma {
     updateDate?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "email" | "application" | "failedLoginAttempts" | "blockedUntil" | "password" | "isActive" | "sessionExpireDate" | "createdDate" | "updateDate", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "email" | "application" | "password" | "isActive" | "sessionExpireDate" | "createdDate" | "updateDate", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    logs?: boolean | User$logsArgs<ExtArgs>
     linkedDevice?: boolean | User$linkedDeviceArgs<ExtArgs>
+    logs?: boolean | User$logsArgs<ExtArgs>
     profile?: boolean | User$profileArgs<ExtArgs>
+    ResetPassword?: boolean | User$ResetPasswordArgs<ExtArgs>
     UserHasRoleAccess?: boolean | User$UserHasRoleAccessArgs<ExtArgs>
     otp?: boolean | User$otpArgs<ExtArgs>
-    ResetPassword?: boolean | User$ResetPasswordArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -21862,19 +21806,17 @@ export namespace Prisma {
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
     objects: {
-      logs: Prisma.$LogsLoginPayload<ExtArgs>[]
       linkedDevice: Prisma.$LinkedDevicePayload<ExtArgs>[]
+      logs: Prisma.$LogsLoginPayload<ExtArgs>[]
       profile: Prisma.$ProfilePayload<ExtArgs> | null
+      ResetPassword: Prisma.$ResetPasswordPayload<ExtArgs>[]
       UserHasRoleAccess: Prisma.$UserHasRoleAccessPayload<ExtArgs>[]
       otp: Prisma.$otpVerifikasiPayload<ExtArgs>[]
-      ResetPassword: Prisma.$ResetPasswordPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       userId: string
       email: string
       application: string
-      failedLoginAttempts: number
-      blockedUntil: Date | null
       password: string
       isActive: boolean
       sessionExpireDate: Date
@@ -22274,12 +22216,12 @@ export namespace Prisma {
    */
   export interface Prisma__UserClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    logs<T extends User$logsArgs<ExtArgs> = {}>(args?: Subset<T, User$logsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LogsLoginPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     linkedDevice<T extends User$linkedDeviceArgs<ExtArgs> = {}>(args?: Subset<T, User$linkedDeviceArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LinkedDevicePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    logs<T extends User$logsArgs<ExtArgs> = {}>(args?: Subset<T, User$logsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$LogsLoginPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     profile<T extends User$profileArgs<ExtArgs> = {}>(args?: Subset<T, User$profileArgs<ExtArgs>>): Prisma__ProfileClient<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    ResetPassword<T extends User$ResetPasswordArgs<ExtArgs> = {}>(args?: Subset<T, User$ResetPasswordArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ResetPasswordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     UserHasRoleAccess<T extends User$UserHasRoleAccessArgs<ExtArgs> = {}>(args?: Subset<T, User$UserHasRoleAccessArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$UserHasRoleAccessPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     otp<T extends User$otpArgs<ExtArgs> = {}>(args?: Subset<T, User$otpArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$otpVerifikasiPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    ResetPassword<T extends User$ResetPasswordArgs<ExtArgs> = {}>(args?: Subset<T, User$ResetPasswordArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ResetPasswordPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -22312,8 +22254,6 @@ export namespace Prisma {
     readonly userId: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
     readonly application: FieldRef<"User", 'String'>
-    readonly failedLoginAttempts: FieldRef<"User", 'Int'>
-    readonly blockedUntil: FieldRef<"User", 'DateTime'>
     readonly password: FieldRef<"User", 'String'>
     readonly isActive: FieldRef<"User", 'Boolean'>
     readonly sessionExpireDate: FieldRef<"User", 'DateTime'>
@@ -22707,30 +22647,6 @@ export namespace Prisma {
   }
 
   /**
-   * User.logs
-   */
-  export type User$logsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the LogsLogin
-     */
-    select?: LogsLoginSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the LogsLogin
-     */
-    omit?: LogsLoginOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: LogsLoginInclude<ExtArgs> | null
-    where?: LogsLoginWhereInput
-    orderBy?: LogsLoginOrderByWithRelationInput | LogsLoginOrderByWithRelationInput[]
-    cursor?: LogsLoginWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: LogsLoginScalarFieldEnum | LogsLoginScalarFieldEnum[]
-  }
-
-  /**
    * User.linkedDevice
    */
   export type User$linkedDeviceArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -22755,6 +22671,30 @@ export namespace Prisma {
   }
 
   /**
+   * User.logs
+   */
+  export type User$logsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the LogsLogin
+     */
+    select?: LogsLoginSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the LogsLogin
+     */
+    omit?: LogsLoginOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: LogsLoginInclude<ExtArgs> | null
+    where?: LogsLoginWhereInput
+    orderBy?: LogsLoginOrderByWithRelationInput | LogsLoginOrderByWithRelationInput[]
+    cursor?: LogsLoginWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: LogsLoginScalarFieldEnum | LogsLoginScalarFieldEnum[]
+  }
+
+  /**
    * User.profile
    */
   export type User$profileArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -22771,6 +22711,30 @@ export namespace Prisma {
      */
     include?: ProfileInclude<ExtArgs> | null
     where?: ProfileWhereInput
+  }
+
+  /**
+   * User.ResetPassword
+   */
+  export type User$ResetPasswordArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ResetPassword
+     */
+    select?: ResetPasswordSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ResetPassword
+     */
+    omit?: ResetPasswordOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ResetPasswordInclude<ExtArgs> | null
+    where?: ResetPasswordWhereInput
+    orderBy?: ResetPasswordOrderByWithRelationInput | ResetPasswordOrderByWithRelationInput[]
+    cursor?: ResetPasswordWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ResetPasswordScalarFieldEnum | ResetPasswordScalarFieldEnum[]
   }
 
   /**
@@ -22819,30 +22783,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: OtpVerifikasiScalarFieldEnum | OtpVerifikasiScalarFieldEnum[]
-  }
-
-  /**
-   * User.ResetPassword
-   */
-  export type User$ResetPasswordArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the ResetPassword
-     */
-    select?: ResetPasswordSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the ResetPassword
-     */
-    omit?: ResetPasswordOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: ResetPasswordInclude<ExtArgs> | null
-    where?: ResetPasswordWhereInput
-    orderBy?: ResetPasswordOrderByWithRelationInput | ResetPasswordOrderByWithRelationInput[]
-    cursor?: ResetPasswordWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: ResetPasswordScalarFieldEnum | ResetPasswordScalarFieldEnum[]
   }
 
   /**
@@ -28426,10 +28366,10 @@ export namespace Prisma {
     roleId?: boolean
     accessId?: boolean
     menuId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    role?: boolean | RoleDefaultArgs<ExtArgs>
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
+    role?: boolean | RoleDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userHasRoleAccess"]>
 
   export type UserHasRoleAccessSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -28437,10 +28377,10 @@ export namespace Prisma {
     roleId?: boolean
     accessId?: boolean
     menuId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    role?: boolean | RoleDefaultArgs<ExtArgs>
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
+    role?: boolean | RoleDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userHasRoleAccess"]>
 
   export type UserHasRoleAccessSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -28448,10 +28388,10 @@ export namespace Prisma {
     roleId?: boolean
     accessId?: boolean
     menuId?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    role?: boolean | RoleDefaultArgs<ExtArgs>
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
+    role?: boolean | RoleDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["userHasRoleAccess"]>
 
   export type UserHasRoleAccessSelectScalar = {
@@ -28463,31 +28403,31 @@ export namespace Prisma {
 
   export type UserHasRoleAccessOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "roleId" | "accessId" | "menuId", ExtArgs["result"]["userHasRoleAccess"]>
   export type UserHasRoleAccessInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    role?: boolean | RoleDefaultArgs<ExtArgs>
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
+    role?: boolean | RoleDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type UserHasRoleAccessIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    role?: boolean | RoleDefaultArgs<ExtArgs>
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
+    role?: boolean | RoleDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type UserHasRoleAccessIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
-    role?: boolean | RoleDefaultArgs<ExtArgs>
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
+    role?: boolean | RoleDefaultArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $UserHasRoleAccessPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "UserHasRoleAccess"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
-      role: Prisma.$RolePayload<ExtArgs>
       access: Prisma.$AccessPayload<ExtArgs>
       menu: Prisma.$MenuPayload<ExtArgs> | null
+      role: Prisma.$RolePayload<ExtArgs>
+      user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       userId: string
@@ -28888,10 +28828,10 @@ export namespace Prisma {
    */
   export interface Prisma__UserHasRoleAccessClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-    role<T extends RoleDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RoleDefaultArgs<ExtArgs>>): Prisma__RoleClient<$Result.GetResult<Prisma.$RolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     access<T extends AccessDefaultArgs<ExtArgs> = {}>(args?: Subset<T, AccessDefaultArgs<ExtArgs>>): Prisma__AccessClient<$Result.GetResult<Prisma.$AccessPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     menu<T extends UserHasRoleAccess$menuArgs<ExtArgs> = {}>(args?: Subset<T, UserHasRoleAccess$menuArgs<ExtArgs>>): Prisma__MenuClient<$Result.GetResult<Prisma.$MenuPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    role<T extends RoleDefaultArgs<ExtArgs> = {}>(args?: Subset<T, RoleDefaultArgs<ExtArgs>>): Prisma__RoleClient<$Result.GetResult<Prisma.$RolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -30570,8 +30510,8 @@ export namespace Prisma {
     phone?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     company?: boolean | Profile$companyArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["profile"]>
 
   export type ProfileSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -30582,8 +30522,8 @@ export namespace Prisma {
     phone?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     company?: boolean | Profile$companyArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["profile"]>
 
   export type ProfileSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -30594,8 +30534,8 @@ export namespace Prisma {
     phone?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    user?: boolean | UserDefaultArgs<ExtArgs>
     company?: boolean | Profile$companyArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["profile"]>
 
   export type ProfileSelectScalar = {
@@ -30610,23 +30550,23 @@ export namespace Prisma {
 
   export type ProfileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "companyId" | "fullName" | "urlImage" | "phone" | "createdAt" | "updatedAt", ExtArgs["result"]["profile"]>
   export type ProfileInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     company?: boolean | Profile$companyArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type ProfileIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     company?: boolean | Profile$companyArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
   export type ProfileIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    user?: boolean | UserDefaultArgs<ExtArgs>
     company?: boolean | Profile$companyArgs<ExtArgs>
+    user?: boolean | UserDefaultArgs<ExtArgs>
   }
 
   export type $ProfilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Profile"
     objects: {
-      user: Prisma.$UserPayload<ExtArgs>
       company: Prisma.$CompanyPayload<ExtArgs> | null
+      user: Prisma.$UserPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
       userId: string
@@ -31030,8 +30970,8 @@ export namespace Prisma {
    */
   export interface Prisma__ProfileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     company<T extends Profile$companyArgs<ExtArgs> = {}>(args?: Subset<T, Profile$companyArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    user<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -31528,7 +31468,6 @@ export namespace Prisma {
     companyId: 'companyId',
     segmentId: 'segmentId',
     urlImage: 'urlImage',
-    companyCode: 'companyCode',
     companyName: 'companyName',
     companyFoundingDate: 'companyFoundingDate',
     companyStatus: 'companyStatus',
@@ -31539,7 +31478,8 @@ export namespace Prisma {
     website: 'website',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    totalCapital: 'totalCapital'
+    totalCapital: 'totalCapital',
+    companyCode: 'companyCode'
   };
 
   export type CompanyScalarFieldEnum = (typeof CompanyScalarFieldEnum)[keyof typeof CompanyScalarFieldEnum]
@@ -31547,15 +31487,15 @@ export namespace Prisma {
 
   export const Distro_PO_HeaderScalarFieldEnum: {
     id: 'id',
-    uuid: 'uuid',
     poNumber: 'poNumber',
     distributorName: 'distributorName',
     customerCode: 'customerCode',
     poDate: 'poDate',
-    niterraSO: 'niterraSO',
-    niterraPO: 'niterraPO',
     createdAt: 'createdAt',
-    updatedAt: 'updatedAt'
+    updatedAt: 'updatedAt',
+    niterraPO: 'niterraPO',
+    niterraSO: 'niterraSO',
+    uuid: 'uuid'
   };
 
   export type Distro_PO_HeaderScalarFieldEnum = (typeof Distro_PO_HeaderScalarFieldEnum)[keyof typeof Distro_PO_HeaderScalarFieldEnum]
@@ -31754,8 +31694,6 @@ export namespace Prisma {
     userId: 'userId',
     email: 'email',
     application: 'application',
-    failedLoginAttempts: 'failedLoginAttempts',
-    blockedUntil: 'blockedUntil',
     password: 'password',
     isActive: 'isActive',
     sessionExpireDate: 'sessionExpireDate',
@@ -31998,7 +31936,6 @@ export namespace Prisma {
     companyId?: UuidFilter<"Company"> | string
     segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
-    companyCode?: StringNullableFilter<"Company"> | string | null
     companyName?: StringNullableFilter<"Company"> | string | null
     companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableFilter<"Company"> | string | null
@@ -32010,8 +31947,9 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
     totalCapital?: StringNullableFilter<"Company"> | string | null
-    profile?: ProfileListRelationFilter
+    companyCode?: StringNullableFilter<"Company"> | string | null
     segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
+    profile?: ProfileListRelationFilter
     formL9?: XOR<FormL9NullableScalarRelationFilter, FormL9WhereInput> | null
   }
 
@@ -32019,7 +31957,6 @@ export namespace Prisma {
     companyId?: SortOrder
     segmentId?: SortOrderInput | SortOrder
     urlImage?: SortOrderInput | SortOrder
-    companyCode?: SortOrderInput | SortOrder
     companyName?: SortOrderInput | SortOrder
     companyFoundingDate?: SortOrderInput | SortOrder
     companyStatus?: SortOrderInput | SortOrder
@@ -32031,8 +31968,9 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrderInput | SortOrder
-    profile?: ProfileOrderByRelationAggregateInput
+    companyCode?: SortOrderInput | SortOrder
     segment?: CompanySegmentOrderByWithRelationInput
+    profile?: ProfileOrderByRelationAggregateInput
     formL9?: FormL9OrderByWithRelationInput
   }
 
@@ -32043,7 +31981,6 @@ export namespace Prisma {
     NOT?: CompanyWhereInput | CompanyWhereInput[]
     segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
-    companyCode?: StringNullableFilter<"Company"> | string | null
     companyName?: StringNullableFilter<"Company"> | string | null
     companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableFilter<"Company"> | string | null
@@ -32055,8 +31992,9 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
     totalCapital?: StringNullableFilter<"Company"> | string | null
-    profile?: ProfileListRelationFilter
+    companyCode?: StringNullableFilter<"Company"> | string | null
     segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
+    profile?: ProfileListRelationFilter
     formL9?: XOR<FormL9NullableScalarRelationFilter, FormL9WhereInput> | null
   }, "companyId">
 
@@ -32064,7 +32002,6 @@ export namespace Prisma {
     companyId?: SortOrder
     segmentId?: SortOrderInput | SortOrder
     urlImage?: SortOrderInput | SortOrder
-    companyCode?: SortOrderInput | SortOrder
     companyName?: SortOrderInput | SortOrder
     companyFoundingDate?: SortOrderInput | SortOrder
     companyStatus?: SortOrderInput | SortOrder
@@ -32076,6 +32013,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrderInput | SortOrder
+    companyCode?: SortOrderInput | SortOrder
     _count?: CompanyCountOrderByAggregateInput
     _avg?: CompanyAvgOrderByAggregateInput
     _max?: CompanyMaxOrderByAggregateInput
@@ -32090,7 +32028,6 @@ export namespace Prisma {
     companyId?: UuidWithAggregatesFilter<"Company"> | string
     segmentId?: IntNullableWithAggregatesFilter<"Company"> | number | null
     urlImage?: StringNullableWithAggregatesFilter<"Company"> | string | null
-    companyCode?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyName?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyFoundingDate?: DateTimeNullableWithAggregatesFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableWithAggregatesFilter<"Company"> | string | null
@@ -32102,6 +32039,7 @@ export namespace Prisma {
     createdAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
     totalCapital?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    companyCode?: StringNullableWithAggregatesFilter<"Company"> | string | null
   }
 
   export type Distro_PO_HeaderWhereInput = {
@@ -32109,38 +32047,38 @@ export namespace Prisma {
     OR?: Distro_PO_HeaderWhereInput[]
     NOT?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
     id?: IntFilter<"Distro_PO_Header"> | number
-    uuid?: StringFilter<"Distro_PO_Header"> | string
     poNumber?: StringFilter<"Distro_PO_Header"> | string
     distributorName?: StringFilter<"Distro_PO_Header"> | string
     customerCode?: StringFilter<"Distro_PO_Header"> | string
     poDate?: DateTimeFilter<"Distro_PO_Header"> | Date | string
-    niterraSO?: StringFilter<"Distro_PO_Header"> | string
-    niterraPO?: StringFilter<"Distro_PO_Header"> | string
     createdAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
     updatedAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
+    niterraPO?: StringFilter<"Distro_PO_Header"> | string
+    niterraSO?: StringFilter<"Distro_PO_Header"> | string
+    uuid?: StringFilter<"Distro_PO_Header"> | string
     items?: Distro_PO_LineListRelationFilter
   }
 
   export type Distro_PO_HeaderOrderByWithRelationInput = {
     id?: SortOrder
-    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    niterraSO?: SortOrder
-    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    niterraPO?: SortOrder
+    niterraSO?: SortOrder
+    uuid?: SortOrder
     items?: Distro_PO_LineOrderByRelationAggregateInput
   }
 
   export type Distro_PO_HeaderWhereUniqueInput = Prisma.AtLeast<{
     id?: number
-    uuid?: string
     poNumber?: string
-    niterraSO?: string
     niterraPO?: string
+    niterraSO?: string
+    uuid?: string
     AND?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
     OR?: Distro_PO_HeaderWhereInput[]
     NOT?: Distro_PO_HeaderWhereInput | Distro_PO_HeaderWhereInput[]
@@ -32150,19 +32088,19 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
     updatedAt?: DateTimeFilter<"Distro_PO_Header"> | Date | string
     items?: Distro_PO_LineListRelationFilter
-  }, "id" | "uuid" | "poNumber" | "niterraSO" | "niterraPO">
+  }, "id" | "poNumber" | "niterraPO" | "niterraSO" | "uuid">
 
   export type Distro_PO_HeaderOrderByWithAggregationInput = {
     id?: SortOrder
-    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    niterraSO?: SortOrder
-    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    niterraPO?: SortOrder
+    niterraSO?: SortOrder
+    uuid?: SortOrder
     _count?: Distro_PO_HeaderCountOrderByAggregateInput
     _avg?: Distro_PO_HeaderAvgOrderByAggregateInput
     _max?: Distro_PO_HeaderMaxOrderByAggregateInput
@@ -32175,15 +32113,15 @@ export namespace Prisma {
     OR?: Distro_PO_HeaderScalarWhereWithAggregatesInput[]
     NOT?: Distro_PO_HeaderScalarWhereWithAggregatesInput | Distro_PO_HeaderScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Distro_PO_Header"> | number
-    uuid?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     poNumber?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     distributorName?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     customerCode?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     poDate?: DateTimeWithAggregatesFilter<"Distro_PO_Header"> | Date | string
-    niterraSO?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
-    niterraPO?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
     createdAt?: DateTimeWithAggregatesFilter<"Distro_PO_Header"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Distro_PO_Header"> | Date | string
+    niterraPO?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
+    niterraSO?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
+    uuid?: StringWithAggregatesFilter<"Distro_PO_Header"> | string
   }
 
   export type Distro_PO_LineWhereInput = {
@@ -32338,10 +32276,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"FormL9"> | Date | string
     company?: XOR<CompanyScalarRelationFilter, CompanyWhereInput>
     bankInfo?: XOR<FormL9BankInfoNullableScalarRelationFilter, FormL9BankInfoWhereInput> | null
-    generalInformation?: XOR<FormL9GeneralInformationNullableScalarRelationFilter, FormL9GeneralInformationWhereInput> | null
     employeeInfo?: XOR<FormL9EmployeNullableScalarRelationFilter, FormL9EmployeWhereInput> | null
-    others?: XOR<FormL9OthersNullableScalarRelationFilter, FormL9OthersWhereInput> | null
+    generalInformation?: XOR<FormL9GeneralInformationNullableScalarRelationFilter, FormL9GeneralInformationWhereInput> | null
     managements?: FormL9ManagementListRelationFilter
+    others?: XOR<FormL9OthersNullableScalarRelationFilter, FormL9OthersWhereInput> | null
     workExperiences?: FormL9WorkExperienceListRelationFilter
   }
 
@@ -32353,10 +32291,10 @@ export namespace Prisma {
     updatedAt?: SortOrder
     company?: CompanyOrderByWithRelationInput
     bankInfo?: FormL9BankInfoOrderByWithRelationInput
-    generalInformation?: FormL9GeneralInformationOrderByWithRelationInput
     employeeInfo?: FormL9EmployeOrderByWithRelationInput
-    others?: FormL9OthersOrderByWithRelationInput
+    generalInformation?: FormL9GeneralInformationOrderByWithRelationInput
     managements?: FormL9ManagementOrderByRelationAggregateInput
+    others?: FormL9OthersOrderByWithRelationInput
     workExperiences?: FormL9WorkExperienceOrderByRelationAggregateInput
   }
 
@@ -32371,10 +32309,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"FormL9"> | Date | string
     company?: XOR<CompanyScalarRelationFilter, CompanyWhereInput>
     bankInfo?: XOR<FormL9BankInfoNullableScalarRelationFilter, FormL9BankInfoWhereInput> | null
-    generalInformation?: XOR<FormL9GeneralInformationNullableScalarRelationFilter, FormL9GeneralInformationWhereInput> | null
     employeeInfo?: XOR<FormL9EmployeNullableScalarRelationFilter, FormL9EmployeWhereInput> | null
-    others?: XOR<FormL9OthersNullableScalarRelationFilter, FormL9OthersWhereInput> | null
+    generalInformation?: XOR<FormL9GeneralInformationNullableScalarRelationFilter, FormL9GeneralInformationWhereInput> | null
     managements?: FormL9ManagementListRelationFilter
+    others?: XOR<FormL9OthersNullableScalarRelationFilter, FormL9OthersWhereInput> | null
     workExperiences?: FormL9WorkExperienceListRelationFilter
   }, "formL9Id" | "companyId">
 
@@ -32882,8 +32820,8 @@ export namespace Prisma {
     signConfidentialityAgreement?: BoolFilter<"FormL9Others"> | boolean
     createdAt?: DateTimeFilter<"FormL9Others"> | Date | string
     updatedAt?: DateTimeFilter<"FormL9Others"> | Date | string
-    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
     certificateISOs?: FormL9CertificateISOListRelationFilter
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }
 
   export type FormL9OthersOrderByWithRelationInput = {
@@ -32903,8 +32841,8 @@ export namespace Prisma {
     signConfidentialityAgreement?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    formL9?: FormL9OrderByWithRelationInput
     certificateISOs?: FormL9CertificateISOOrderByRelationAggregateInput
+    formL9?: FormL9OrderByWithRelationInput
   }
 
   export type FormL9OthersWhereUniqueInput = Prisma.AtLeast<{
@@ -32927,8 +32865,8 @@ export namespace Prisma {
     signConfidentialityAgreement?: BoolFilter<"FormL9Others"> | boolean
     createdAt?: DateTimeFilter<"FormL9Others"> | Date | string
     updatedAt?: DateTimeFilter<"FormL9Others"> | Date | string
-    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
     certificateISOs?: FormL9CertificateISOListRelationFilter
+    formL9?: XOR<FormL9ScalarRelationFilter, FormL9WhereInput>
   }, "formL9OthersId" | "formL9Id">
 
   export type FormL9OthersOrderByWithAggregationInput = {
@@ -33166,38 +33104,34 @@ export namespace Prisma {
     userId?: UuidFilter<"User"> | string
     email?: StringFilter<"User"> | string
     application?: StringFilter<"User"> | string
-    failedLoginAttempts?: IntFilter<"User"> | number
-    blockedUntil?: DateTimeNullableFilter<"User"> | Date | string | null
     password?: StringFilter<"User"> | string
     isActive?: BoolFilter<"User"> | boolean
     sessionExpireDate?: DateTimeFilter<"User"> | Date | string
     createdDate?: DateTimeFilter<"User"> | Date | string
     updateDate?: DateTimeFilter<"User"> | Date | string
-    logs?: LogsLoginListRelationFilter
     linkedDevice?: LinkedDeviceListRelationFilter
+    logs?: LogsLoginListRelationFilter
     profile?: XOR<ProfileNullableScalarRelationFilter, ProfileWhereInput> | null
+    ResetPassword?: ResetPasswordListRelationFilter
     UserHasRoleAccess?: UserHasRoleAccessListRelationFilter
     otp?: OtpVerifikasiListRelationFilter
-    ResetPassword?: ResetPasswordListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
-    failedLoginAttempts?: SortOrder
-    blockedUntil?: SortOrderInput | SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
-    logs?: LogsLoginOrderByRelationAggregateInput
     linkedDevice?: LinkedDeviceOrderByRelationAggregateInput
+    logs?: LogsLoginOrderByRelationAggregateInput
     profile?: ProfileOrderByWithRelationInput
+    ResetPassword?: ResetPasswordOrderByRelationAggregateInput
     UserHasRoleAccess?: UserHasRoleAccessOrderByRelationAggregateInput
     otp?: otpVerifikasiOrderByRelationAggregateInput
-    ResetPassword?: ResetPasswordOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -33208,37 +33142,31 @@ export namespace Prisma {
     NOT?: UserWhereInput | UserWhereInput[]
     email?: StringFilter<"User"> | string
     application?: StringFilter<"User"> | string
-    failedLoginAttempts?: IntFilter<"User"> | number
-    blockedUntil?: DateTimeNullableFilter<"User"> | Date | string | null
     password?: StringFilter<"User"> | string
     isActive?: BoolFilter<"User"> | boolean
     sessionExpireDate?: DateTimeFilter<"User"> | Date | string
     createdDate?: DateTimeFilter<"User"> | Date | string
     updateDate?: DateTimeFilter<"User"> | Date | string
-    logs?: LogsLoginListRelationFilter
     linkedDevice?: LinkedDeviceListRelationFilter
+    logs?: LogsLoginListRelationFilter
     profile?: XOR<ProfileNullableScalarRelationFilter, ProfileWhereInput> | null
+    ResetPassword?: ResetPasswordListRelationFilter
     UserHasRoleAccess?: UserHasRoleAccessListRelationFilter
     otp?: OtpVerifikasiListRelationFilter
-    ResetPassword?: ResetPasswordListRelationFilter
   }, "userId" | "email_application">
 
   export type UserOrderByWithAggregationInput = {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
-    failedLoginAttempts?: SortOrder
-    blockedUntil?: SortOrderInput | SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
     _count?: UserCountOrderByAggregateInput
-    _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
-    _sum?: UserSumOrderByAggregateInput
   }
 
   export type UserScalarWhereWithAggregatesInput = {
@@ -33248,8 +33176,6 @@ export namespace Prisma {
     userId?: UuidWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
     application?: StringWithAggregatesFilter<"User"> | string
-    failedLoginAttempts?: IntWithAggregatesFilter<"User"> | number
-    blockedUntil?: DateTimeNullableWithAggregatesFilter<"User"> | Date | string | null
     password?: StringWithAggregatesFilter<"User"> | string
     isActive?: BoolWithAggregatesFilter<"User"> | boolean
     sessionExpireDate?: DateTimeWithAggregatesFilter<"User"> | Date | string
@@ -33526,10 +33452,10 @@ export namespace Prisma {
     roleId?: IntFilter<"UserHasRoleAccess"> | number
     accessId?: IntFilter<"UserHasRoleAccess"> | number
     menuId?: IntNullableFilter<"UserHasRoleAccess"> | number | null
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    role?: XOR<RoleScalarRelationFilter, RoleWhereInput>
     access?: XOR<AccessScalarRelationFilter, AccessWhereInput>
     menu?: XOR<MenuNullableScalarRelationFilter, MenuWhereInput> | null
+    role?: XOR<RoleScalarRelationFilter, RoleWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type UserHasRoleAccessOrderByWithRelationInput = {
@@ -33537,10 +33463,10 @@ export namespace Prisma {
     roleId?: SortOrder
     accessId?: SortOrder
     menuId?: SortOrderInput | SortOrder
-    user?: UserOrderByWithRelationInput
-    role?: RoleOrderByWithRelationInput
     access?: AccessOrderByWithRelationInput
     menu?: MenuOrderByWithRelationInput
+    role?: RoleOrderByWithRelationInput
+    user?: UserOrderByWithRelationInput
   }
 
   export type UserHasRoleAccessWhereUniqueInput = Prisma.AtLeast<{
@@ -33552,10 +33478,10 @@ export namespace Prisma {
     roleId?: IntFilter<"UserHasRoleAccess"> | number
     accessId?: IntFilter<"UserHasRoleAccess"> | number
     menuId?: IntNullableFilter<"UserHasRoleAccess"> | number | null
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
-    role?: XOR<RoleScalarRelationFilter, RoleWhereInput>
     access?: XOR<AccessScalarRelationFilter, AccessWhereInput>
     menu?: XOR<MenuNullableScalarRelationFilter, MenuWhereInput> | null
+    role?: XOR<RoleScalarRelationFilter, RoleWhereInput>
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "userId_roleId_accessId">
 
   export type UserHasRoleAccessOrderByWithAggregationInput = {
@@ -33637,8 +33563,8 @@ export namespace Prisma {
     phone?: StringFilter<"Profile"> | string
     createdAt?: DateTimeFilter<"Profile"> | Date | string
     updatedAt?: DateTimeFilter<"Profile"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     company?: XOR<CompanyNullableScalarRelationFilter, CompanyWhereInput> | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }
 
   export type ProfileOrderByWithRelationInput = {
@@ -33649,8 +33575,8 @@ export namespace Prisma {
     phone?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    user?: UserOrderByWithRelationInput
     company?: CompanyOrderByWithRelationInput
+    user?: UserOrderByWithRelationInput
   }
 
   export type ProfileWhereUniqueInput = Prisma.AtLeast<{
@@ -33664,8 +33590,8 @@ export namespace Prisma {
     phone?: StringFilter<"Profile"> | string
     createdAt?: DateTimeFilter<"Profile"> | Date | string
     updatedAt?: DateTimeFilter<"Profile"> | Date | string
-    user?: XOR<UserScalarRelationFilter, UserWhereInput>
     company?: XOR<CompanyNullableScalarRelationFilter, CompanyWhereInput> | null
+    user?: XOR<UserScalarRelationFilter, UserWhereInput>
   }, "userId">
 
   export type ProfileOrderByWithAggregationInput = {
@@ -33740,7 +33666,6 @@ export namespace Prisma {
   export type CompanyCreateInput = {
     companyId?: string
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -33752,8 +33677,9 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
-    profile?: ProfileCreateNestedManyWithoutCompanyInput
+    companyCode?: string | null
     segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
+    profile?: ProfileCreateNestedManyWithoutCompanyInput
     formL9?: FormL9CreateNestedOneWithoutCompanyInput
   }
 
@@ -33761,7 +33687,6 @@ export namespace Prisma {
     companyId?: string
     segmentId?: number | null
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -33773,6 +33698,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
+    companyCode?: string | null
     profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
     formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
@@ -33780,7 +33706,6 @@ export namespace Prisma {
   export type CompanyUpdateInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33792,8 +33717,9 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUpdateManyWithoutCompanyNestedInput
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+    profile?: ProfileUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UpdateOneWithoutCompanyNestedInput
   }
 
@@ -33801,7 +33727,6 @@ export namespace Prisma {
     companyId?: StringFieldUpdateOperationsInput | string
     segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33813,6 +33738,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
@@ -33821,7 +33747,6 @@ export namespace Prisma {
     companyId?: string
     segmentId?: number | null
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -33833,12 +33758,12 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
+    companyCode?: string | null
   }
 
   export type CompanyUpdateManyMutationInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33850,13 +33775,13 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type CompanyUncheckedUpdateManyInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33868,98 +33793,99 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type Distro_PO_HeaderCreateInput = {
-    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    niterraSO: string
-    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    niterraPO: string
+    niterraSO: string
+    uuid?: string
     items?: Distro_PO_LineCreateNestedManyWithoutPurchaseOrderInput
   }
 
   export type Distro_PO_HeaderUncheckedCreateInput = {
     id?: number
-    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    niterraSO: string
-    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    niterraPO: string
+    niterraSO: string
+    uuid?: string
     items?: Distro_PO_LineUncheckedCreateNestedManyWithoutPurchaseOrderInput
   }
 
   export type Distro_PO_HeaderUpdateInput = {
-    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    niterraSO?: StringFieldUpdateOperationsInput | string
-    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
     items?: Distro_PO_LineUpdateManyWithoutPurchaseOrderNestedInput
   }
 
   export type Distro_PO_HeaderUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    niterraSO?: StringFieldUpdateOperationsInput | string
-    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
     items?: Distro_PO_LineUncheckedUpdateManyWithoutPurchaseOrderNestedInput
   }
 
   export type Distro_PO_HeaderCreateManyInput = {
     id?: number
-    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    niterraSO: string
-    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    niterraPO: string
+    niterraSO: string
+    uuid?: string
   }
 
   export type Distro_PO_HeaderUpdateManyMutationInput = {
-    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    niterraSO?: StringFieldUpdateOperationsInput | string
-    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
   }
 
   export type Distro_PO_HeaderUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    niterraSO?: StringFieldUpdateOperationsInput | string
-    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
   }
 
   export type Distro_PO_LineCreateInput = {
@@ -34116,10 +34042,10 @@ export namespace Prisma {
     updatedAt?: Date | string
     company: CompanyCreateNestedOneWithoutFormL9Input
     bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
   }
 
@@ -34130,10 +34056,10 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
   }
 
@@ -34144,10 +34070,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
     bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
   }
 
@@ -34158,10 +34084,10 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
   }
 
@@ -34713,8 +34639,8 @@ export namespace Prisma {
     signConfidentialityAgreement?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
-    formL9: FormL9CreateNestedOneWithoutOthersInput
     certificateISOs?: FormL9CertificateISOCreateNestedManyWithoutOthersInput
+    formL9: FormL9CreateNestedOneWithoutOthersInput
   }
 
   export type FormL9OthersUncheckedCreateInput = {
@@ -34753,8 +34679,8 @@ export namespace Prisma {
     signConfidentialityAgreement?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    formL9?: FormL9UpdateOneRequiredWithoutOthersNestedInput
     certificateISOs?: FormL9CertificateISOUpdateManyWithoutOthersNestedInput
+    formL9?: FormL9UpdateOneRequiredWithoutOthersNestedInput
   }
 
   export type FormL9OthersUncheckedUpdateInput = {
@@ -35033,84 +34959,74 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
-    logs?: LogsLoginCreateNestedManyWithoutUserInput
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
+    logs?: LogsLoginCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
+    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
     UserHasRoleAccess?: UserHasRoleAccessCreateNestedManyWithoutUserInput
     otp?: otpVerifikasiCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateInput = {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
-    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
+    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
+    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedCreateNestedManyWithoutUserInput
     otp?: otpVerifikasiUncheckedCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserUpdateInput = {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUpdateManyWithoutUserNestedInput
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateManyInput = {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -35122,8 +35038,6 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -35135,8 +35049,6 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -35393,10 +35305,10 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessCreateInput = {
-    user: UserCreateNestedOneWithoutUserHasRoleAccessInput
-    role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
     access: AccessCreateNestedOneWithoutUserHasRoleAccessInput
     menu?: MenuCreateNestedOneWithoutUserHasRoleAccessInput
+    role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
+    user: UserCreateNestedOneWithoutUserHasRoleAccessInput
   }
 
   export type UserHasRoleAccessUncheckedCreateInput = {
@@ -35407,10 +35319,10 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessUpdateInput = {
-    user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
-    role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     access?: AccessUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     menu?: MenuUpdateOneWithoutUserHasRoleAccessNestedInput
+    role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
+    user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
   }
 
   export type UserHasRoleAccessUncheckedUpdateInput = {
@@ -35485,8 +35397,8 @@ export namespace Prisma {
     phone: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    user: UserCreateNestedOneWithoutProfileInput
     company?: CompanyCreateNestedOneWithoutProfileInput
+    user: UserCreateNestedOneWithoutProfileInput
   }
 
   export type ProfileUncheckedCreateInput = {
@@ -35505,8 +35417,8 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    user?: UserUpdateOneRequiredWithoutProfileNestedInput
     company?: CompanyUpdateOneWithoutProfileNestedInput
+    user?: UserUpdateOneRequiredWithoutProfileNestedInput
   }
 
   export type ProfileUncheckedUpdateInput = {
@@ -35726,15 +35638,15 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type CompanySegmentNullableScalarRelationFilter = {
+    is?: CompanySegmentWhereInput | null
+    isNot?: CompanySegmentWhereInput | null
+  }
+
   export type ProfileListRelationFilter = {
     every?: ProfileWhereInput
     some?: ProfileWhereInput
     none?: ProfileWhereInput
-  }
-
-  export type CompanySegmentNullableScalarRelationFilter = {
-    is?: CompanySegmentWhereInput | null
-    isNot?: CompanySegmentWhereInput | null
   }
 
   export type FormL9NullableScalarRelationFilter = {
@@ -35750,7 +35662,6 @@ export namespace Prisma {
     companyId?: SortOrder
     segmentId?: SortOrder
     urlImage?: SortOrder
-    companyCode?: SortOrder
     companyName?: SortOrder
     companyFoundingDate?: SortOrder
     companyStatus?: SortOrder
@@ -35762,6 +35673,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrder
+    companyCode?: SortOrder
   }
 
   export type CompanyAvgOrderByAggregateInput = {
@@ -35772,7 +35684,6 @@ export namespace Prisma {
     companyId?: SortOrder
     segmentId?: SortOrder
     urlImage?: SortOrder
-    companyCode?: SortOrder
     companyName?: SortOrder
     companyFoundingDate?: SortOrder
     companyStatus?: SortOrder
@@ -35784,13 +35695,13 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrder
+    companyCode?: SortOrder
   }
 
   export type CompanyMinOrderByAggregateInput = {
     companyId?: SortOrder
     segmentId?: SortOrder
     urlImage?: SortOrder
-    companyCode?: SortOrder
     companyName?: SortOrder
     companyFoundingDate?: SortOrder
     companyStatus?: SortOrder
@@ -35802,6 +35713,7 @@ export namespace Prisma {
     createdAt?: SortOrder
     updatedAt?: SortOrder
     totalCapital?: SortOrder
+    companyCode?: SortOrder
   }
 
   export type CompanySumOrderByAggregateInput = {
@@ -35879,15 +35791,15 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderCountOrderByAggregateInput = {
     id?: SortOrder
-    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    niterraSO?: SortOrder
-    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    niterraPO?: SortOrder
+    niterraSO?: SortOrder
+    uuid?: SortOrder
   }
 
   export type Distro_PO_HeaderAvgOrderByAggregateInput = {
@@ -35896,28 +35808,28 @@ export namespace Prisma {
 
   export type Distro_PO_HeaderMaxOrderByAggregateInput = {
     id?: SortOrder
-    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    niterraSO?: SortOrder
-    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    niterraPO?: SortOrder
+    niterraSO?: SortOrder
+    uuid?: SortOrder
   }
 
   export type Distro_PO_HeaderMinOrderByAggregateInput = {
     id?: SortOrder
-    uuid?: SortOrder
     poNumber?: SortOrder
     distributorName?: SortOrder
     customerCode?: SortOrder
     poDate?: SortOrder
-    niterraSO?: SortOrder
-    niterraPO?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+    niterraPO?: SortOrder
+    niterraSO?: SortOrder
+    uuid?: SortOrder
   }
 
   export type Distro_PO_HeaderSumOrderByAggregateInput = {
@@ -36040,25 +35952,25 @@ export namespace Prisma {
     isNot?: FormL9BankInfoWhereInput | null
   }
 
-  export type FormL9GeneralInformationNullableScalarRelationFilter = {
-    is?: FormL9GeneralInformationWhereInput | null
-    isNot?: FormL9GeneralInformationWhereInput | null
-  }
-
   export type FormL9EmployeNullableScalarRelationFilter = {
     is?: FormL9EmployeWhereInput | null
     isNot?: FormL9EmployeWhereInput | null
   }
 
-  export type FormL9OthersNullableScalarRelationFilter = {
-    is?: FormL9OthersWhereInput | null
-    isNot?: FormL9OthersWhereInput | null
+  export type FormL9GeneralInformationNullableScalarRelationFilter = {
+    is?: FormL9GeneralInformationWhereInput | null
+    isNot?: FormL9GeneralInformationWhereInput | null
   }
 
   export type FormL9ManagementListRelationFilter = {
     every?: FormL9ManagementWhereInput
     some?: FormL9ManagementWhereInput
     none?: FormL9ManagementWhereInput
+  }
+
+  export type FormL9OthersNullableScalarRelationFilter = {
+    is?: FormL9OthersWhereInput | null
+    isNot?: FormL9OthersWhereInput | null
   }
 
   export type FormL9WorkExperienceListRelationFilter = {
@@ -36537,27 +36449,21 @@ export namespace Prisma {
     parentId?: SortOrder
   }
 
-  export type LogsLoginListRelationFilter = {
-    every?: LogsLoginWhereInput
-    some?: LogsLoginWhereInput
-    none?: LogsLoginWhereInput
-  }
-
   export type LinkedDeviceListRelationFilter = {
     every?: LinkedDeviceWhereInput
     some?: LinkedDeviceWhereInput
     none?: LinkedDeviceWhereInput
   }
 
+  export type LogsLoginListRelationFilter = {
+    every?: LogsLoginWhereInput
+    some?: LogsLoginWhereInput
+    none?: LogsLoginWhereInput
+  }
+
   export type ProfileNullableScalarRelationFilter = {
     is?: ProfileWhereInput | null
     isNot?: ProfileWhereInput | null
-  }
-
-  export type OtpVerifikasiListRelationFilter = {
-    every?: otpVerifikasiWhereInput
-    some?: otpVerifikasiWhereInput
-    none?: otpVerifikasiWhereInput
   }
 
   export type ResetPasswordListRelationFilter = {
@@ -36566,19 +36472,25 @@ export namespace Prisma {
     none?: ResetPasswordWhereInput
   }
 
-  export type LogsLoginOrderByRelationAggregateInput = {
-    _count?: SortOrder
+  export type OtpVerifikasiListRelationFilter = {
+    every?: otpVerifikasiWhereInput
+    some?: otpVerifikasiWhereInput
+    none?: otpVerifikasiWhereInput
   }
 
   export type LinkedDeviceOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
-  export type otpVerifikasiOrderByRelationAggregateInput = {
+  export type LogsLoginOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
   export type ResetPasswordOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type otpVerifikasiOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -36591,8 +36503,6 @@ export namespace Prisma {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
-    failedLoginAttempts?: SortOrder
-    blockedUntil?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
@@ -36600,16 +36510,10 @@ export namespace Prisma {
     updateDate?: SortOrder
   }
 
-  export type UserAvgOrderByAggregateInput = {
-    failedLoginAttempts?: SortOrder
-  }
-
   export type UserMaxOrderByAggregateInput = {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
-    failedLoginAttempts?: SortOrder
-    blockedUntil?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
@@ -36621,17 +36525,11 @@ export namespace Prisma {
     userId?: SortOrder
     email?: SortOrder
     application?: SortOrder
-    failedLoginAttempts?: SortOrder
-    blockedUntil?: SortOrder
     password?: SortOrder
     isActive?: SortOrder
     sessionExpireDate?: SortOrder
     createdDate?: SortOrder
     updateDate?: SortOrder
-  }
-
-  export type UserSumOrderByAggregateInput = {
-    failedLoginAttempts?: SortOrder
   }
 
   export type UserScalarRelationFilter = {
@@ -36771,11 +36669,6 @@ export namespace Prisma {
     expireDate?: SortOrder
   }
 
-  export type RoleScalarRelationFilter = {
-    is?: RoleWhereInput
-    isNot?: RoleWhereInput
-  }
-
   export type AccessScalarRelationFilter = {
     is?: AccessWhereInput
     isNot?: AccessWhereInput
@@ -36784,6 +36677,11 @@ export namespace Prisma {
   export type MenuNullableScalarRelationFilter = {
     is?: MenuWhereInput | null
     isNot?: MenuWhereInput | null
+  }
+
+  export type RoleScalarRelationFilter = {
+    is?: RoleWhereInput
+    isNot?: RoleWhereInput
   }
 
   export type UserHasRoleAccessUserIdRoleIdAccessIdCompoundUniqueInput = {
@@ -36968,17 +36866,17 @@ export namespace Prisma {
     deleteMany?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
   }
 
+  export type CompanySegmentCreateNestedOneWithoutCompanyInput = {
+    create?: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
+    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompanyInput
+    connect?: CompanySegmentWhereUniqueInput
+  }
+
   export type ProfileCreateNestedManyWithoutCompanyInput = {
     create?: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput> | ProfileCreateWithoutCompanyInput[] | ProfileUncheckedCreateWithoutCompanyInput[]
     connectOrCreate?: ProfileCreateOrConnectWithoutCompanyInput | ProfileCreateOrConnectWithoutCompanyInput[]
     createMany?: ProfileCreateManyCompanyInputEnvelope
     connect?: ProfileWhereUniqueInput | ProfileWhereUniqueInput[]
-  }
-
-  export type CompanySegmentCreateNestedOneWithoutCompanyInput = {
-    create?: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
-    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompanyInput
-    connect?: CompanySegmentWhereUniqueInput
   }
 
   export type FormL9CreateNestedOneWithoutCompanyInput = {
@@ -37008,6 +36906,16 @@ export namespace Prisma {
     set?: Date | string
   }
 
+  export type CompanySegmentUpdateOneWithoutCompanyNestedInput = {
+    create?: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
+    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompanyInput
+    upsert?: CompanySegmentUpsertWithoutCompanyInput
+    disconnect?: CompanySegmentWhereInput | boolean
+    delete?: CompanySegmentWhereInput | boolean
+    connect?: CompanySegmentWhereUniqueInput
+    update?: XOR<XOR<CompanySegmentUpdateToOneWithWhereWithoutCompanyInput, CompanySegmentUpdateWithoutCompanyInput>, CompanySegmentUncheckedUpdateWithoutCompanyInput>
+  }
+
   export type ProfileUpdateManyWithoutCompanyNestedInput = {
     create?: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput> | ProfileCreateWithoutCompanyInput[] | ProfileUncheckedCreateWithoutCompanyInput[]
     connectOrCreate?: ProfileCreateOrConnectWithoutCompanyInput | ProfileCreateOrConnectWithoutCompanyInput[]
@@ -37020,16 +36928,6 @@ export namespace Prisma {
     update?: ProfileUpdateWithWhereUniqueWithoutCompanyInput | ProfileUpdateWithWhereUniqueWithoutCompanyInput[]
     updateMany?: ProfileUpdateManyWithWhereWithoutCompanyInput | ProfileUpdateManyWithWhereWithoutCompanyInput[]
     deleteMany?: ProfileScalarWhereInput | ProfileScalarWhereInput[]
-  }
-
-  export type CompanySegmentUpdateOneWithoutCompanyNestedInput = {
-    create?: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
-    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompanyInput
-    upsert?: CompanySegmentUpsertWithoutCompanyInput
-    disconnect?: CompanySegmentWhereInput | boolean
-    delete?: CompanySegmentWhereInput | boolean
-    connect?: CompanySegmentWhereUniqueInput
-    update?: XOR<XOR<CompanySegmentUpdateToOneWithWhereWithoutCompanyInput, CompanySegmentUpdateWithoutCompanyInput>, CompanySegmentUncheckedUpdateWithoutCompanyInput>
   }
 
   export type FormL9UpdateOneWithoutCompanyNestedInput = {
@@ -37146,22 +37044,16 @@ export namespace Prisma {
     connect?: FormL9BankInfoWhereUniqueInput
   }
 
-  export type FormL9GeneralInformationCreateNestedOneWithoutFormL9Input = {
-    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
-    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
-    connect?: FormL9GeneralInformationWhereUniqueInput
-  }
-
   export type FormL9EmployeCreateNestedOneWithoutFormL9Input = {
     create?: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
     connectOrCreate?: FormL9EmployeCreateOrConnectWithoutFormL9Input
     connect?: FormL9EmployeWhereUniqueInput
   }
 
-  export type FormL9OthersCreateNestedOneWithoutFormL9Input = {
-    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
-    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
-    connect?: FormL9OthersWhereUniqueInput
+  export type FormL9GeneralInformationCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
+    connect?: FormL9GeneralInformationWhereUniqueInput
   }
 
   export type FormL9ManagementCreateNestedManyWithoutFormL9Input = {
@@ -37169,6 +37061,12 @@ export namespace Prisma {
     connectOrCreate?: FormL9ManagementCreateOrConnectWithoutFormL9Input | FormL9ManagementCreateOrConnectWithoutFormL9Input[]
     createMany?: FormL9ManagementCreateManyFormL9InputEnvelope
     connect?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+  }
+
+  export type FormL9OthersCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
+    connect?: FormL9OthersWhereUniqueInput
   }
 
   export type FormL9WorkExperienceCreateNestedManyWithoutFormL9Input = {
@@ -37184,22 +37082,16 @@ export namespace Prisma {
     connect?: FormL9BankInfoWhereUniqueInput
   }
 
-  export type FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input = {
-    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
-    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
-    connect?: FormL9GeneralInformationWhereUniqueInput
-  }
-
   export type FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input = {
     create?: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
     connectOrCreate?: FormL9EmployeCreateOrConnectWithoutFormL9Input
     connect?: FormL9EmployeWhereUniqueInput
   }
 
-  export type FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input = {
-    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
-    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
-    connect?: FormL9OthersWhereUniqueInput
+  export type FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
+    connect?: FormL9GeneralInformationWhereUniqueInput
   }
 
   export type FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input = {
@@ -37207,6 +37099,12 @@ export namespace Prisma {
     connectOrCreate?: FormL9ManagementCreateOrConnectWithoutFormL9Input | FormL9ManagementCreateOrConnectWithoutFormL9Input[]
     createMany?: FormL9ManagementCreateManyFormL9InputEnvelope
     connect?: FormL9ManagementWhereUniqueInput | FormL9ManagementWhereUniqueInput[]
+  }
+
+  export type FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input = {
+    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
+    connect?: FormL9OthersWhereUniqueInput
   }
 
   export type FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input = {
@@ -37234,16 +37132,6 @@ export namespace Prisma {
     update?: XOR<XOR<FormL9BankInfoUpdateToOneWithWhereWithoutFormL9Input, FormL9BankInfoUpdateWithoutFormL9Input>, FormL9BankInfoUncheckedUpdateWithoutFormL9Input>
   }
 
-  export type FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput = {
-    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
-    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
-    upsert?: FormL9GeneralInformationUpsertWithoutFormL9Input
-    disconnect?: FormL9GeneralInformationWhereInput | boolean
-    delete?: FormL9GeneralInformationWhereInput | boolean
-    connect?: FormL9GeneralInformationWhereUniqueInput
-    update?: XOR<XOR<FormL9GeneralInformationUpdateToOneWithWhereWithoutFormL9Input, FormL9GeneralInformationUpdateWithoutFormL9Input>, FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input>
-  }
-
   export type FormL9EmployeUpdateOneWithoutFormL9NestedInput = {
     create?: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
     connectOrCreate?: FormL9EmployeCreateOrConnectWithoutFormL9Input
@@ -37254,14 +37142,14 @@ export namespace Prisma {
     update?: XOR<XOR<FormL9EmployeUpdateToOneWithWhereWithoutFormL9Input, FormL9EmployeUpdateWithoutFormL9Input>, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
   }
 
-  export type FormL9OthersUpdateOneWithoutFormL9NestedInput = {
-    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
-    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
-    upsert?: FormL9OthersUpsertWithoutFormL9Input
-    disconnect?: FormL9OthersWhereInput | boolean
-    delete?: FormL9OthersWhereInput | boolean
-    connect?: FormL9OthersWhereUniqueInput
-    update?: XOR<XOR<FormL9OthersUpdateToOneWithWhereWithoutFormL9Input, FormL9OthersUpdateWithoutFormL9Input>, FormL9OthersUncheckedUpdateWithoutFormL9Input>
+  export type FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9GeneralInformationUpsertWithoutFormL9Input
+    disconnect?: FormL9GeneralInformationWhereInput | boolean
+    delete?: FormL9GeneralInformationWhereInput | boolean
+    connect?: FormL9GeneralInformationWhereUniqueInput
+    update?: XOR<XOR<FormL9GeneralInformationUpdateToOneWithWhereWithoutFormL9Input, FormL9GeneralInformationUpdateWithoutFormL9Input>, FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input>
   }
 
   export type FormL9ManagementUpdateManyWithoutFormL9NestedInput = {
@@ -37276,6 +37164,16 @@ export namespace Prisma {
     update?: FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input | FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input[]
     updateMany?: FormL9ManagementUpdateManyWithWhereWithoutFormL9Input | FormL9ManagementUpdateManyWithWhereWithoutFormL9Input[]
     deleteMany?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
+  }
+
+  export type FormL9OthersUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9OthersUpsertWithoutFormL9Input
+    disconnect?: FormL9OthersWhereInput | boolean
+    delete?: FormL9OthersWhereInput | boolean
+    connect?: FormL9OthersWhereUniqueInput
+    update?: XOR<XOR<FormL9OthersUpdateToOneWithWhereWithoutFormL9Input, FormL9OthersUpdateWithoutFormL9Input>, FormL9OthersUncheckedUpdateWithoutFormL9Input>
   }
 
   export type FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput = {
@@ -37302,16 +37200,6 @@ export namespace Prisma {
     update?: XOR<XOR<FormL9BankInfoUpdateToOneWithWhereWithoutFormL9Input, FormL9BankInfoUpdateWithoutFormL9Input>, FormL9BankInfoUncheckedUpdateWithoutFormL9Input>
   }
 
-  export type FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput = {
-    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
-    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
-    upsert?: FormL9GeneralInformationUpsertWithoutFormL9Input
-    disconnect?: FormL9GeneralInformationWhereInput | boolean
-    delete?: FormL9GeneralInformationWhereInput | boolean
-    connect?: FormL9GeneralInformationWhereUniqueInput
-    update?: XOR<XOR<FormL9GeneralInformationUpdateToOneWithWhereWithoutFormL9Input, FormL9GeneralInformationUpdateWithoutFormL9Input>, FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input>
-  }
-
   export type FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput = {
     create?: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
     connectOrCreate?: FormL9EmployeCreateOrConnectWithoutFormL9Input
@@ -37322,14 +37210,14 @@ export namespace Prisma {
     update?: XOR<XOR<FormL9EmployeUpdateToOneWithWhereWithoutFormL9Input, FormL9EmployeUpdateWithoutFormL9Input>, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
   }
 
-  export type FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput = {
-    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
-    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
-    upsert?: FormL9OthersUpsertWithoutFormL9Input
-    disconnect?: FormL9OthersWhereInput | boolean
-    delete?: FormL9OthersWhereInput | boolean
-    connect?: FormL9OthersWhereUniqueInput
-    update?: XOR<XOR<FormL9OthersUpdateToOneWithWhereWithoutFormL9Input, FormL9OthersUpdateWithoutFormL9Input>, FormL9OthersUncheckedUpdateWithoutFormL9Input>
+  export type FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9GeneralInformationCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9GeneralInformationUpsertWithoutFormL9Input
+    disconnect?: FormL9GeneralInformationWhereInput | boolean
+    delete?: FormL9GeneralInformationWhereInput | boolean
+    connect?: FormL9GeneralInformationWhereUniqueInput
+    update?: XOR<XOR<FormL9GeneralInformationUpdateToOneWithWhereWithoutFormL9Input, FormL9GeneralInformationUpdateWithoutFormL9Input>, FormL9GeneralInformationUncheckedUpdateWithoutFormL9Input>
   }
 
   export type FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput = {
@@ -37344,6 +37232,16 @@ export namespace Prisma {
     update?: FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input | FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input[]
     updateMany?: FormL9ManagementUpdateManyWithWhereWithoutFormL9Input | FormL9ManagementUpdateManyWithWhereWithoutFormL9Input[]
     deleteMany?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
+  }
+
+  export type FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput = {
+    create?: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
+    connectOrCreate?: FormL9OthersCreateOrConnectWithoutFormL9Input
+    upsert?: FormL9OthersUpsertWithoutFormL9Input
+    disconnect?: FormL9OthersWhereInput | boolean
+    delete?: FormL9OthersWhereInput | boolean
+    connect?: FormL9OthersWhereUniqueInput
+    update?: XOR<XOR<FormL9OthersUpdateToOneWithWhereWithoutFormL9Input, FormL9OthersUpdateWithoutFormL9Input>, FormL9OthersUncheckedUpdateWithoutFormL9Input>
   }
 
   export type FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput = {
@@ -37476,12 +37374,6 @@ export namespace Prisma {
     update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutWorkExperiencesInput, FormL9UpdateWithoutWorkExperiencesInput>, FormL9UncheckedUpdateWithoutWorkExperiencesInput>
   }
 
-  export type FormL9CreateNestedOneWithoutOthersInput = {
-    create?: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
-    connectOrCreate?: FormL9CreateOrConnectWithoutOthersInput
-    connect?: FormL9WhereUniqueInput
-  }
-
   export type FormL9CertificateISOCreateNestedManyWithoutOthersInput = {
     create?: XOR<FormL9CertificateISOCreateWithoutOthersInput, FormL9CertificateISOUncheckedCreateWithoutOthersInput> | FormL9CertificateISOCreateWithoutOthersInput[] | FormL9CertificateISOUncheckedCreateWithoutOthersInput[]
     connectOrCreate?: FormL9CertificateISOCreateOrConnectWithoutOthersInput | FormL9CertificateISOCreateOrConnectWithoutOthersInput[]
@@ -37489,19 +37381,17 @@ export namespace Prisma {
     connect?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
   }
 
+  export type FormL9CreateNestedOneWithoutOthersInput = {
+    create?: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutOthersInput
+    connect?: FormL9WhereUniqueInput
+  }
+
   export type FormL9CertificateISOUncheckedCreateNestedManyWithoutOthersInput = {
     create?: XOR<FormL9CertificateISOCreateWithoutOthersInput, FormL9CertificateISOUncheckedCreateWithoutOthersInput> | FormL9CertificateISOCreateWithoutOthersInput[] | FormL9CertificateISOUncheckedCreateWithoutOthersInput[]
     connectOrCreate?: FormL9CertificateISOCreateOrConnectWithoutOthersInput | FormL9CertificateISOCreateOrConnectWithoutOthersInput[]
     createMany?: FormL9CertificateISOCreateManyOthersInputEnvelope
     connect?: FormL9CertificateISOWhereUniqueInput | FormL9CertificateISOWhereUniqueInput[]
-  }
-
-  export type FormL9UpdateOneRequiredWithoutOthersNestedInput = {
-    create?: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
-    connectOrCreate?: FormL9CreateOrConnectWithoutOthersInput
-    upsert?: FormL9UpsertWithoutOthersInput
-    connect?: FormL9WhereUniqueInput
-    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutOthersInput, FormL9UpdateWithoutOthersInput>, FormL9UncheckedUpdateWithoutOthersInput>
   }
 
   export type FormL9CertificateISOUpdateManyWithoutOthersNestedInput = {
@@ -37516,6 +37406,14 @@ export namespace Prisma {
     update?: FormL9CertificateISOUpdateWithWhereUniqueWithoutOthersInput | FormL9CertificateISOUpdateWithWhereUniqueWithoutOthersInput[]
     updateMany?: FormL9CertificateISOUpdateManyWithWhereWithoutOthersInput | FormL9CertificateISOUpdateManyWithWhereWithoutOthersInput[]
     deleteMany?: FormL9CertificateISOScalarWhereInput | FormL9CertificateISOScalarWhereInput[]
+  }
+
+  export type FormL9UpdateOneRequiredWithoutOthersNestedInput = {
+    create?: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
+    connectOrCreate?: FormL9CreateOrConnectWithoutOthersInput
+    upsert?: FormL9UpsertWithoutOthersInput
+    connect?: FormL9WhereUniqueInput
+    update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutOthersInput, FormL9UpdateWithoutOthersInput>, FormL9UncheckedUpdateWithoutOthersInput>
   }
 
   export type FormL9CertificateISOUncheckedUpdateManyWithoutOthersNestedInput = {
@@ -37588,13 +37486,6 @@ export namespace Prisma {
     deleteMany?: UserHasRoleAccessScalarWhereInput | UserHasRoleAccessScalarWhereInput[]
   }
 
-  export type LogsLoginCreateNestedManyWithoutUserInput = {
-    create?: XOR<LogsLoginCreateWithoutUserInput, LogsLoginUncheckedCreateWithoutUserInput> | LogsLoginCreateWithoutUserInput[] | LogsLoginUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: LogsLoginCreateOrConnectWithoutUserInput | LogsLoginCreateOrConnectWithoutUserInput[]
-    createMany?: LogsLoginCreateManyUserInputEnvelope
-    connect?: LogsLoginWhereUniqueInput | LogsLoginWhereUniqueInput[]
-  }
-
   export type LinkedDeviceCreateNestedManyWithoutUserInput = {
     create?: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput> | LinkedDeviceCreateWithoutUserInput[] | LinkedDeviceUncheckedCreateWithoutUserInput[]
     connectOrCreate?: LinkedDeviceCreateOrConnectWithoutUserInput | LinkedDeviceCreateOrConnectWithoutUserInput[]
@@ -37602,10 +37493,24 @@ export namespace Prisma {
     connect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
   }
 
+  export type LogsLoginCreateNestedManyWithoutUserInput = {
+    create?: XOR<LogsLoginCreateWithoutUserInput, LogsLoginUncheckedCreateWithoutUserInput> | LogsLoginCreateWithoutUserInput[] | LogsLoginUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: LogsLoginCreateOrConnectWithoutUserInput | LogsLoginCreateOrConnectWithoutUserInput[]
+    createMany?: LogsLoginCreateManyUserInputEnvelope
+    connect?: LogsLoginWhereUniqueInput | LogsLoginWhereUniqueInput[]
+  }
+
   export type ProfileCreateNestedOneWithoutUserInput = {
     create?: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
     connectOrCreate?: ProfileCreateOrConnectWithoutUserInput
     connect?: ProfileWhereUniqueInput
+  }
+
+  export type ResetPasswordCreateNestedManyWithoutUserInput = {
+    create?: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput> | ResetPasswordCreateWithoutUserInput[] | ResetPasswordUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ResetPasswordCreateOrConnectWithoutUserInput | ResetPasswordCreateOrConnectWithoutUserInput[]
+    createMany?: ResetPasswordCreateManyUserInputEnvelope
+    connect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
   }
 
   export type UserHasRoleAccessCreateNestedManyWithoutUserInput = {
@@ -37622,11 +37527,11 @@ export namespace Prisma {
     connect?: otpVerifikasiWhereUniqueInput | otpVerifikasiWhereUniqueInput[]
   }
 
-  export type ResetPasswordCreateNestedManyWithoutUserInput = {
-    create?: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput> | ResetPasswordCreateWithoutUserInput[] | ResetPasswordUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ResetPasswordCreateOrConnectWithoutUserInput | ResetPasswordCreateOrConnectWithoutUserInput[]
-    createMany?: ResetPasswordCreateManyUserInputEnvelope
-    connect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+  export type LinkedDeviceUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput> | LinkedDeviceCreateWithoutUserInput[] | LinkedDeviceUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: LinkedDeviceCreateOrConnectWithoutUserInput | LinkedDeviceCreateOrConnectWithoutUserInput[]
+    createMany?: LinkedDeviceCreateManyUserInputEnvelope
+    connect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
   }
 
   export type LogsLoginUncheckedCreateNestedManyWithoutUserInput = {
@@ -37636,17 +37541,17 @@ export namespace Prisma {
     connect?: LogsLoginWhereUniqueInput | LogsLoginWhereUniqueInput[]
   }
 
-  export type LinkedDeviceUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput> | LinkedDeviceCreateWithoutUserInput[] | LinkedDeviceUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: LinkedDeviceCreateOrConnectWithoutUserInput | LinkedDeviceCreateOrConnectWithoutUserInput[]
-    createMany?: LinkedDeviceCreateManyUserInputEnvelope
-    connect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
-  }
-
   export type ProfileUncheckedCreateNestedOneWithoutUserInput = {
     create?: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
     connectOrCreate?: ProfileCreateOrConnectWithoutUserInput
     connect?: ProfileWhereUniqueInput
+  }
+
+  export type ResetPasswordUncheckedCreateNestedManyWithoutUserInput = {
+    create?: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput> | ResetPasswordCreateWithoutUserInput[] | ResetPasswordUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ResetPasswordCreateOrConnectWithoutUserInput | ResetPasswordCreateOrConnectWithoutUserInput[]
+    createMany?: ResetPasswordCreateManyUserInputEnvelope
+    connect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
   }
 
   export type UserHasRoleAccessUncheckedCreateNestedManyWithoutUserInput = {
@@ -37663,11 +37568,18 @@ export namespace Prisma {
     connect?: otpVerifikasiWhereUniqueInput | otpVerifikasiWhereUniqueInput[]
   }
 
-  export type ResetPasswordUncheckedCreateNestedManyWithoutUserInput = {
-    create?: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput> | ResetPasswordCreateWithoutUserInput[] | ResetPasswordUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ResetPasswordCreateOrConnectWithoutUserInput | ResetPasswordCreateOrConnectWithoutUserInput[]
-    createMany?: ResetPasswordCreateManyUserInputEnvelope
-    connect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+  export type LinkedDeviceUpdateManyWithoutUserNestedInput = {
+    create?: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput> | LinkedDeviceCreateWithoutUserInput[] | LinkedDeviceUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: LinkedDeviceCreateOrConnectWithoutUserInput | LinkedDeviceCreateOrConnectWithoutUserInput[]
+    upsert?: LinkedDeviceUpsertWithWhereUniqueWithoutUserInput | LinkedDeviceUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: LinkedDeviceCreateManyUserInputEnvelope
+    set?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
+    disconnect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
+    delete?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
+    connect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
+    update?: LinkedDeviceUpdateWithWhereUniqueWithoutUserInput | LinkedDeviceUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: LinkedDeviceUpdateManyWithWhereWithoutUserInput | LinkedDeviceUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: LinkedDeviceScalarWhereInput | LinkedDeviceScalarWhereInput[]
   }
 
   export type LogsLoginUpdateManyWithoutUserNestedInput = {
@@ -37684,20 +37596,6 @@ export namespace Prisma {
     deleteMany?: LogsLoginScalarWhereInput | LogsLoginScalarWhereInput[]
   }
 
-  export type LinkedDeviceUpdateManyWithoutUserNestedInput = {
-    create?: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput> | LinkedDeviceCreateWithoutUserInput[] | LinkedDeviceUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: LinkedDeviceCreateOrConnectWithoutUserInput | LinkedDeviceCreateOrConnectWithoutUserInput[]
-    upsert?: LinkedDeviceUpsertWithWhereUniqueWithoutUserInput | LinkedDeviceUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: LinkedDeviceCreateManyUserInputEnvelope
-    set?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
-    disconnect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
-    delete?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
-    connect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
-    update?: LinkedDeviceUpdateWithWhereUniqueWithoutUserInput | LinkedDeviceUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: LinkedDeviceUpdateManyWithWhereWithoutUserInput | LinkedDeviceUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: LinkedDeviceScalarWhereInput | LinkedDeviceScalarWhereInput[]
-  }
-
   export type ProfileUpdateOneWithoutUserNestedInput = {
     create?: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
     connectOrCreate?: ProfileCreateOrConnectWithoutUserInput
@@ -37706,6 +37604,20 @@ export namespace Prisma {
     delete?: ProfileWhereInput | boolean
     connect?: ProfileWhereUniqueInput
     update?: XOR<XOR<ProfileUpdateToOneWithWhereWithoutUserInput, ProfileUpdateWithoutUserInput>, ProfileUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ResetPasswordUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput> | ResetPasswordCreateWithoutUserInput[] | ResetPasswordUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ResetPasswordCreateOrConnectWithoutUserInput | ResetPasswordCreateOrConnectWithoutUserInput[]
+    upsert?: ResetPasswordUpsertWithWhereUniqueWithoutUserInput | ResetPasswordUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ResetPasswordCreateManyUserInputEnvelope
+    set?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+    disconnect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+    delete?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+    connect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+    update?: ResetPasswordUpdateWithWhereUniqueWithoutUserInput | ResetPasswordUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ResetPasswordUpdateManyWithWhereWithoutUserInput | ResetPasswordUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ResetPasswordScalarWhereInput | ResetPasswordScalarWhereInput[]
   }
 
   export type UserHasRoleAccessUpdateManyWithoutUserNestedInput = {
@@ -37736,18 +37648,18 @@ export namespace Prisma {
     deleteMany?: otpVerifikasiScalarWhereInput | otpVerifikasiScalarWhereInput[]
   }
 
-  export type ResetPasswordUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput> | ResetPasswordCreateWithoutUserInput[] | ResetPasswordUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ResetPasswordCreateOrConnectWithoutUserInput | ResetPasswordCreateOrConnectWithoutUserInput[]
-    upsert?: ResetPasswordUpsertWithWhereUniqueWithoutUserInput | ResetPasswordUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ResetPasswordCreateManyUserInputEnvelope
-    set?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
-    disconnect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
-    delete?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
-    connect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
-    update?: ResetPasswordUpdateWithWhereUniqueWithoutUserInput | ResetPasswordUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ResetPasswordUpdateManyWithWhereWithoutUserInput | ResetPasswordUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ResetPasswordScalarWhereInput | ResetPasswordScalarWhereInput[]
+  export type LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput> | LinkedDeviceCreateWithoutUserInput[] | LinkedDeviceUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: LinkedDeviceCreateOrConnectWithoutUserInput | LinkedDeviceCreateOrConnectWithoutUserInput[]
+    upsert?: LinkedDeviceUpsertWithWhereUniqueWithoutUserInput | LinkedDeviceUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: LinkedDeviceCreateManyUserInputEnvelope
+    set?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
+    disconnect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
+    delete?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
+    connect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
+    update?: LinkedDeviceUpdateWithWhereUniqueWithoutUserInput | LinkedDeviceUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: LinkedDeviceUpdateManyWithWhereWithoutUserInput | LinkedDeviceUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: LinkedDeviceScalarWhereInput | LinkedDeviceScalarWhereInput[]
   }
 
   export type LogsLoginUncheckedUpdateManyWithoutUserNestedInput = {
@@ -37764,20 +37676,6 @@ export namespace Prisma {
     deleteMany?: LogsLoginScalarWhereInput | LogsLoginScalarWhereInput[]
   }
 
-  export type LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput> | LinkedDeviceCreateWithoutUserInput[] | LinkedDeviceUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: LinkedDeviceCreateOrConnectWithoutUserInput | LinkedDeviceCreateOrConnectWithoutUserInput[]
-    upsert?: LinkedDeviceUpsertWithWhereUniqueWithoutUserInput | LinkedDeviceUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: LinkedDeviceCreateManyUserInputEnvelope
-    set?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
-    disconnect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
-    delete?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
-    connect?: LinkedDeviceWhereUniqueInput | LinkedDeviceWhereUniqueInput[]
-    update?: LinkedDeviceUpdateWithWhereUniqueWithoutUserInput | LinkedDeviceUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: LinkedDeviceUpdateManyWithWhereWithoutUserInput | LinkedDeviceUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: LinkedDeviceScalarWhereInput | LinkedDeviceScalarWhereInput[]
-  }
-
   export type ProfileUncheckedUpdateOneWithoutUserNestedInput = {
     create?: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
     connectOrCreate?: ProfileCreateOrConnectWithoutUserInput
@@ -37786,6 +37684,20 @@ export namespace Prisma {
     delete?: ProfileWhereInput | boolean
     connect?: ProfileWhereUniqueInput
     update?: XOR<XOR<ProfileUpdateToOneWithWhereWithoutUserInput, ProfileUpdateWithoutUserInput>, ProfileUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ResetPasswordUncheckedUpdateManyWithoutUserNestedInput = {
+    create?: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput> | ResetPasswordCreateWithoutUserInput[] | ResetPasswordUncheckedCreateWithoutUserInput[]
+    connectOrCreate?: ResetPasswordCreateOrConnectWithoutUserInput | ResetPasswordCreateOrConnectWithoutUserInput[]
+    upsert?: ResetPasswordUpsertWithWhereUniqueWithoutUserInput | ResetPasswordUpsertWithWhereUniqueWithoutUserInput[]
+    createMany?: ResetPasswordCreateManyUserInputEnvelope
+    set?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+    disconnect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+    delete?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+    connect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
+    update?: ResetPasswordUpdateWithWhereUniqueWithoutUserInput | ResetPasswordUpdateWithWhereUniqueWithoutUserInput[]
+    updateMany?: ResetPasswordUpdateManyWithWhereWithoutUserInput | ResetPasswordUpdateManyWithWhereWithoutUserInput[]
+    deleteMany?: ResetPasswordScalarWhereInput | ResetPasswordScalarWhereInput[]
   }
 
   export type UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput = {
@@ -37814,20 +37726,6 @@ export namespace Prisma {
     update?: otpVerifikasiUpdateWithWhereUniqueWithoutUserInput | otpVerifikasiUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: otpVerifikasiUpdateManyWithWhereWithoutUserInput | otpVerifikasiUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: otpVerifikasiScalarWhereInput | otpVerifikasiScalarWhereInput[]
-  }
-
-  export type ResetPasswordUncheckedUpdateManyWithoutUserNestedInput = {
-    create?: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput> | ResetPasswordCreateWithoutUserInput[] | ResetPasswordUncheckedCreateWithoutUserInput[]
-    connectOrCreate?: ResetPasswordCreateOrConnectWithoutUserInput | ResetPasswordCreateOrConnectWithoutUserInput[]
-    upsert?: ResetPasswordUpsertWithWhereUniqueWithoutUserInput | ResetPasswordUpsertWithWhereUniqueWithoutUserInput[]
-    createMany?: ResetPasswordCreateManyUserInputEnvelope
-    set?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
-    disconnect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
-    delete?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
-    connect?: ResetPasswordWhereUniqueInput | ResetPasswordWhereUniqueInput[]
-    update?: ResetPasswordUpdateWithWhereUniqueWithoutUserInput | ResetPasswordUpdateWithWhereUniqueWithoutUserInput[]
-    updateMany?: ResetPasswordUpdateManyWithWhereWithoutUserInput | ResetPasswordUpdateManyWithWhereWithoutUserInput[]
-    deleteMany?: ResetPasswordScalarWhereInput | ResetPasswordScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutOtpInput = {
@@ -37956,18 +37854,6 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutResetPasswordInput, UserUpdateWithoutResetPasswordInput>, UserUncheckedUpdateWithoutResetPasswordInput>
   }
 
-  export type UserCreateNestedOneWithoutUserHasRoleAccessInput = {
-    create?: XOR<UserCreateWithoutUserHasRoleAccessInput, UserUncheckedCreateWithoutUserHasRoleAccessInput>
-    connectOrCreate?: UserCreateOrConnectWithoutUserHasRoleAccessInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type RoleCreateNestedOneWithoutUserHasRoleAccessInput = {
-    create?: XOR<RoleCreateWithoutUserHasRoleAccessInput, RoleUncheckedCreateWithoutUserHasRoleAccessInput>
-    connectOrCreate?: RoleCreateOrConnectWithoutUserHasRoleAccessInput
-    connect?: RoleWhereUniqueInput
-  }
-
   export type AccessCreateNestedOneWithoutUserHasRoleAccessInput = {
     create?: XOR<AccessCreateWithoutUserHasRoleAccessInput, AccessUncheckedCreateWithoutUserHasRoleAccessInput>
     connectOrCreate?: AccessCreateOrConnectWithoutUserHasRoleAccessInput
@@ -37980,20 +37866,16 @@ export namespace Prisma {
     connect?: MenuWhereUniqueInput
   }
 
-  export type UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput = {
-    create?: XOR<UserCreateWithoutUserHasRoleAccessInput, UserUncheckedCreateWithoutUserHasRoleAccessInput>
-    connectOrCreate?: UserCreateOrConnectWithoutUserHasRoleAccessInput
-    upsert?: UserUpsertWithoutUserHasRoleAccessInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutUserHasRoleAccessInput, UserUpdateWithoutUserHasRoleAccessInput>, UserUncheckedUpdateWithoutUserHasRoleAccessInput>
-  }
-
-  export type RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput = {
+  export type RoleCreateNestedOneWithoutUserHasRoleAccessInput = {
     create?: XOR<RoleCreateWithoutUserHasRoleAccessInput, RoleUncheckedCreateWithoutUserHasRoleAccessInput>
     connectOrCreate?: RoleCreateOrConnectWithoutUserHasRoleAccessInput
-    upsert?: RoleUpsertWithoutUserHasRoleAccessInput
     connect?: RoleWhereUniqueInput
-    update?: XOR<XOR<RoleUpdateToOneWithWhereWithoutUserHasRoleAccessInput, RoleUpdateWithoutUserHasRoleAccessInput>, RoleUncheckedUpdateWithoutUserHasRoleAccessInput>
+  }
+
+  export type UserCreateNestedOneWithoutUserHasRoleAccessInput = {
+    create?: XOR<UserCreateWithoutUserHasRoleAccessInput, UserUncheckedCreateWithoutUserHasRoleAccessInput>
+    connectOrCreate?: UserCreateOrConnectWithoutUserHasRoleAccessInput
+    connect?: UserWhereUniqueInput
   }
 
   export type AccessUpdateOneRequiredWithoutUserHasRoleAccessNestedInput = {
@@ -38014,6 +37896,22 @@ export namespace Prisma {
     update?: XOR<XOR<MenuUpdateToOneWithWhereWithoutUserHasRoleAccessInput, MenuUpdateWithoutUserHasRoleAccessInput>, MenuUncheckedUpdateWithoutUserHasRoleAccessInput>
   }
 
+  export type RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput = {
+    create?: XOR<RoleCreateWithoutUserHasRoleAccessInput, RoleUncheckedCreateWithoutUserHasRoleAccessInput>
+    connectOrCreate?: RoleCreateOrConnectWithoutUserHasRoleAccessInput
+    upsert?: RoleUpsertWithoutUserHasRoleAccessInput
+    connect?: RoleWhereUniqueInput
+    update?: XOR<XOR<RoleUpdateToOneWithWhereWithoutUserHasRoleAccessInput, RoleUpdateWithoutUserHasRoleAccessInput>, RoleUncheckedUpdateWithoutUserHasRoleAccessInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput = {
+    create?: XOR<UserCreateWithoutUserHasRoleAccessInput, UserUncheckedCreateWithoutUserHasRoleAccessInput>
+    connectOrCreate?: UserCreateOrConnectWithoutUserHasRoleAccessInput
+    upsert?: UserUpsertWithoutUserHasRoleAccessInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutUserHasRoleAccessInput, UserUpdateWithoutUserHasRoleAccessInput>, UserUncheckedUpdateWithoutUserHasRoleAccessInput>
+  }
+
   export type UserCreateNestedOneWithoutLinkedDeviceInput = {
     create?: XOR<UserCreateWithoutLinkedDeviceInput, UserUncheckedCreateWithoutLinkedDeviceInput>
     connectOrCreate?: UserCreateOrConnectWithoutLinkedDeviceInput
@@ -38028,24 +37926,16 @@ export namespace Prisma {
     update?: XOR<XOR<UserUpdateToOneWithWhereWithoutLinkedDeviceInput, UserUpdateWithoutLinkedDeviceInput>, UserUncheckedUpdateWithoutLinkedDeviceInput>
   }
 
-  export type UserCreateNestedOneWithoutProfileInput = {
-    create?: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
-    connectOrCreate?: UserCreateOrConnectWithoutProfileInput
-    connect?: UserWhereUniqueInput
-  }
-
   export type CompanyCreateNestedOneWithoutProfileInput = {
     create?: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
     connectOrCreate?: CompanyCreateOrConnectWithoutProfileInput
     connect?: CompanyWhereUniqueInput
   }
 
-  export type UserUpdateOneRequiredWithoutProfileNestedInput = {
+  export type UserCreateNestedOneWithoutProfileInput = {
     create?: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
     connectOrCreate?: UserCreateOrConnectWithoutProfileInput
-    upsert?: UserUpsertWithoutProfileInput
     connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProfileInput, UserUpdateWithoutProfileInput>, UserUncheckedUpdateWithoutProfileInput>
   }
 
   export type CompanyUpdateOneWithoutProfileNestedInput = {
@@ -38056,6 +37946,14 @@ export namespace Prisma {
     delete?: CompanyWhereInput | boolean
     connect?: CompanyWhereUniqueInput
     update?: XOR<XOR<CompanyUpdateToOneWithWhereWithoutProfileInput, CompanyUpdateWithoutProfileInput>, CompanyUncheckedUpdateWithoutProfileInput>
+  }
+
+  export type UserUpdateOneRequiredWithoutProfileNestedInput = {
+    create?: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
+    connectOrCreate?: UserCreateOrConnectWithoutProfileInput
+    upsert?: UserUpsertWithoutProfileInput
+    connect?: UserWhereUniqueInput
+    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutProfileInput, UserUpdateWithoutProfileInput>, UserUncheckedUpdateWithoutProfileInput>
   }
 
   export type NestedIntFilter<$PrismaModel = never> = {
@@ -38312,7 +38210,6 @@ export namespace Prisma {
   export type CompanyCreateWithoutSegmentInput = {
     companyId?: string
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -38324,6 +38221,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
+    companyCode?: string | null
     profile?: ProfileCreateNestedManyWithoutCompanyInput
     formL9?: FormL9CreateNestedOneWithoutCompanyInput
   }
@@ -38331,7 +38229,6 @@ export namespace Prisma {
   export type CompanyUncheckedCreateWithoutSegmentInput = {
     companyId?: string
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -38343,6 +38240,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
+    companyCode?: string | null
     profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
     formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
@@ -38380,7 +38278,6 @@ export namespace Prisma {
     companyId?: UuidFilter<"Company"> | string
     segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
-    companyCode?: StringNullableFilter<"Company"> | string | null
     companyName?: StringNullableFilter<"Company"> | string | null
     companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableFilter<"Company"> | string | null
@@ -38392,6 +38289,23 @@ export namespace Prisma {
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
     totalCapital?: StringNullableFilter<"Company"> | string | null
+    companyCode?: StringNullableFilter<"Company"> | string | null
+  }
+
+  export type CompanySegmentCreateWithoutCompanyInput = {
+    segmentName: string
+    description?: string | null
+  }
+
+  export type CompanySegmentUncheckedCreateWithoutCompanyInput = {
+    segmentId?: number
+    segmentName: string
+    description?: string | null
+  }
+
+  export type CompanySegmentCreateOrConnectWithoutCompanyInput = {
+    where: CompanySegmentWhereUniqueInput
+    create: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
   }
 
   export type ProfileCreateWithoutCompanyInput = {
@@ -38422,32 +38336,16 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type CompanySegmentCreateWithoutCompanyInput = {
-    segmentName: string
-    description?: string | null
-  }
-
-  export type CompanySegmentUncheckedCreateWithoutCompanyInput = {
-    segmentId?: number
-    segmentName: string
-    description?: string | null
-  }
-
-  export type CompanySegmentCreateOrConnectWithoutCompanyInput = {
-    where: CompanySegmentWhereUniqueInput
-    create: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
-  }
-
   export type FormL9CreateWithoutCompanyInput = {
     formL9Id?: string
     status: string
     createdAt?: Date | string
     updatedAt?: Date | string
     bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
   }
 
@@ -38457,16 +38355,38 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
   }
 
   export type FormL9CreateOrConnectWithoutCompanyInput = {
     where: FormL9WhereUniqueInput
     create: XOR<FormL9CreateWithoutCompanyInput, FormL9UncheckedCreateWithoutCompanyInput>
+  }
+
+  export type CompanySegmentUpsertWithoutCompanyInput = {
+    update: XOR<CompanySegmentUpdateWithoutCompanyInput, CompanySegmentUncheckedUpdateWithoutCompanyInput>
+    create: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
+    where?: CompanySegmentWhereInput
+  }
+
+  export type CompanySegmentUpdateToOneWithWhereWithoutCompanyInput = {
+    where?: CompanySegmentWhereInput
+    data: XOR<CompanySegmentUpdateWithoutCompanyInput, CompanySegmentUncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type CompanySegmentUpdateWithoutCompanyInput = {
+    segmentName?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type CompanySegmentUncheckedUpdateWithoutCompanyInput = {
+    segmentId?: IntFieldUpdateOperationsInput | number
+    segmentName?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProfileUpsertWithWhereUniqueWithoutCompanyInput = {
@@ -38498,28 +38418,6 @@ export namespace Prisma {
     updatedAt?: DateTimeFilter<"Profile"> | Date | string
   }
 
-  export type CompanySegmentUpsertWithoutCompanyInput = {
-    update: XOR<CompanySegmentUpdateWithoutCompanyInput, CompanySegmentUncheckedUpdateWithoutCompanyInput>
-    create: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
-    where?: CompanySegmentWhereInput
-  }
-
-  export type CompanySegmentUpdateToOneWithWhereWithoutCompanyInput = {
-    where?: CompanySegmentWhereInput
-    data: XOR<CompanySegmentUpdateWithoutCompanyInput, CompanySegmentUncheckedUpdateWithoutCompanyInput>
-  }
-
-  export type CompanySegmentUpdateWithoutCompanyInput = {
-    segmentName?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type CompanySegmentUncheckedUpdateWithoutCompanyInput = {
-    segmentId?: IntFieldUpdateOperationsInput | number
-    segmentName?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
   export type FormL9UpsertWithoutCompanyInput = {
     update: XOR<FormL9UpdateWithoutCompanyInput, FormL9UncheckedUpdateWithoutCompanyInput>
     create: XOR<FormL9CreateWithoutCompanyInput, FormL9UncheckedCreateWithoutCompanyInput>
@@ -38537,10 +38435,10 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
   }
 
@@ -38550,10 +38448,10 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
   }
 
@@ -38614,28 +38512,28 @@ export namespace Prisma {
   }
 
   export type Distro_PO_HeaderCreateWithoutItemsInput = {
-    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    niterraSO: string
-    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    niterraPO: string
+    niterraSO: string
+    uuid?: string
   }
 
   export type Distro_PO_HeaderUncheckedCreateWithoutItemsInput = {
     id?: number
-    uuid?: string
     poNumber: string
     distributorName: string
     customerCode: string
     poDate: Date | string
-    niterraSO: string
-    niterraPO: string
     createdAt?: Date | string
     updatedAt?: Date | string
+    niterraPO: string
+    niterraSO: string
+    uuid?: string
   }
 
   export type Distro_PO_HeaderCreateOrConnectWithoutItemsInput = {
@@ -38655,34 +38553,33 @@ export namespace Prisma {
   }
 
   export type Distro_PO_HeaderUpdateWithoutItemsInput = {
-    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    niterraSO?: StringFieldUpdateOperationsInput | string
-    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
   }
 
   export type Distro_PO_HeaderUncheckedUpdateWithoutItemsInput = {
     id?: IntFieldUpdateOperationsInput | number
-    uuid?: StringFieldUpdateOperationsInput | string
     poNumber?: StringFieldUpdateOperationsInput | string
     distributorName?: StringFieldUpdateOperationsInput | string
     customerCode?: StringFieldUpdateOperationsInput | string
     poDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    niterraSO?: StringFieldUpdateOperationsInput | string
-    niterraPO?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    niterraPO?: StringFieldUpdateOperationsInput | string
+    niterraSO?: StringFieldUpdateOperationsInput | string
+    uuid?: StringFieldUpdateOperationsInput | string
   }
 
   export type CompanyCreateWithoutFormL9Input = {
     companyId?: string
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -38694,15 +38591,15 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
-    profile?: ProfileCreateNestedManyWithoutCompanyInput
+    companyCode?: string | null
     segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
+    profile?: ProfileCreateNestedManyWithoutCompanyInput
   }
 
   export type CompanyUncheckedCreateWithoutFormL9Input = {
     companyId?: string
     segmentId?: number | null
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -38714,6 +38611,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
+    companyCode?: string | null
     profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
   }
 
@@ -38753,6 +38651,35 @@ export namespace Prisma {
     create: XOR<FormL9BankInfoCreateWithoutFormL9Input, FormL9BankInfoUncheckedCreateWithoutFormL9Input>
   }
 
+  export type FormL9EmployeCreateWithoutFormL9Input = {
+    formL9EmployeId?: string
+    totalEmployees?: number | null
+    qualityControl?: number | null
+    engineering?: number | null
+    production?: number | null
+    management?: number | null
+    other?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type FormL9EmployeUncheckedCreateWithoutFormL9Input = {
+    formL9EmployeId?: string
+    totalEmployees?: number | null
+    qualityControl?: number | null
+    engineering?: number | null
+    production?: number | null
+    management?: number | null
+    other?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type FormL9EmployeCreateOrConnectWithoutFormL9Input = {
+    where: FormL9EmployeWhereUniqueInput
+    create: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
+  }
+
   export type FormL9GeneralInformationCreateWithoutFormL9Input = {
     formGeneralInformationId?: string
     companyName?: string | null
@@ -38790,33 +38717,32 @@ export namespace Prisma {
     create: XOR<FormL9GeneralInformationCreateWithoutFormL9Input, FormL9GeneralInformationUncheckedCreateWithoutFormL9Input>
   }
 
-  export type FormL9EmployeCreateWithoutFormL9Input = {
-    formL9EmployeId?: string
-    totalEmployees?: number | null
-    qualityControl?: number | null
-    engineering?: number | null
-    production?: number | null
-    management?: number | null
-    other?: number | null
+  export type FormL9ManagementCreateWithoutFormL9Input = {
+    formL9ManagementId?: string
+    position?: string | null
+    name?: string | null
+    noTelpFaxHp?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type FormL9EmployeUncheckedCreateWithoutFormL9Input = {
-    formL9EmployeId?: string
-    totalEmployees?: number | null
-    qualityControl?: number | null
-    engineering?: number | null
-    production?: number | null
-    management?: number | null
-    other?: number | null
+  export type FormL9ManagementUncheckedCreateWithoutFormL9Input = {
+    formL9ManagementId?: string
+    position?: string | null
+    name?: string | null
+    noTelpFaxHp?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
   }
 
-  export type FormL9EmployeCreateOrConnectWithoutFormL9Input = {
-    where: FormL9EmployeWhereUniqueInput
-    create: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
+  export type FormL9ManagementCreateOrConnectWithoutFormL9Input = {
+    where: FormL9ManagementWhereUniqueInput
+    create: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input>
+  }
+
+  export type FormL9ManagementCreateManyFormL9InputEnvelope = {
+    data: FormL9ManagementCreateManyFormL9Input | FormL9ManagementCreateManyFormL9Input[]
+    skipDuplicates?: boolean
   }
 
   export type FormL9OthersCreateWithoutFormL9Input = {
@@ -38860,34 +38786,6 @@ export namespace Prisma {
   export type FormL9OthersCreateOrConnectWithoutFormL9Input = {
     where: FormL9OthersWhereUniqueInput
     create: XOR<FormL9OthersCreateWithoutFormL9Input, FormL9OthersUncheckedCreateWithoutFormL9Input>
-  }
-
-  export type FormL9ManagementCreateWithoutFormL9Input = {
-    formL9ManagementId?: string
-    position?: string | null
-    name?: string | null
-    noTelpFaxHp?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type FormL9ManagementUncheckedCreateWithoutFormL9Input = {
-    formL9ManagementId?: string
-    position?: string | null
-    name?: string | null
-    noTelpFaxHp?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-  }
-
-  export type FormL9ManagementCreateOrConnectWithoutFormL9Input = {
-    where: FormL9ManagementWhereUniqueInput
-    create: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input>
-  }
-
-  export type FormL9ManagementCreateManyFormL9InputEnvelope = {
-    data: FormL9ManagementCreateManyFormL9Input | FormL9ManagementCreateManyFormL9Input[]
-    skipDuplicates?: boolean
   }
 
   export type FormL9WorkExperienceCreateWithoutFormL9Input = {
@@ -38936,7 +38834,6 @@ export namespace Prisma {
   export type CompanyUpdateWithoutFormL9Input = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -38948,15 +38845,15 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    profile?: ProfileUpdateManyWithoutCompanyNestedInput
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+    profile?: ProfileUpdateManyWithoutCompanyNestedInput
   }
 
   export type CompanyUncheckedUpdateWithoutFormL9Input = {
     companyId?: StringFieldUpdateOperationsInput | string
     segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -38968,6 +38865,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
   }
 
@@ -39004,6 +38902,41 @@ export namespace Prisma {
     noRek?: NullableStringFieldUpdateOperationsInput | string | null
     swiftCode?: NullableStringFieldUpdateOperationsInput | string | null
     IBAN?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FormL9EmployeUpsertWithoutFormL9Input = {
+    update: XOR<FormL9EmployeUpdateWithoutFormL9Input, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
+    create: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
+    where?: FormL9EmployeWhereInput
+  }
+
+  export type FormL9EmployeUpdateToOneWithWhereWithoutFormL9Input = {
+    where?: FormL9EmployeWhereInput
+    data: XOR<FormL9EmployeUpdateWithoutFormL9Input, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
+  }
+
+  export type FormL9EmployeUpdateWithoutFormL9Input = {
+    formL9EmployeId?: StringFieldUpdateOperationsInput | string
+    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
+    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
+    engineering?: NullableIntFieldUpdateOperationsInput | number | null
+    production?: NullableIntFieldUpdateOperationsInput | number | null
+    management?: NullableIntFieldUpdateOperationsInput | number | null
+    other?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type FormL9EmployeUncheckedUpdateWithoutFormL9Input = {
+    formL9EmployeId?: StringFieldUpdateOperationsInput | string
+    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
+    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
+    engineering?: NullableIntFieldUpdateOperationsInput | number | null
+    production?: NullableIntFieldUpdateOperationsInput | number | null
+    management?: NullableIntFieldUpdateOperationsInput | number | null
+    other?: NullableIntFieldUpdateOperationsInput | number | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -39051,39 +38984,33 @@ export namespace Prisma {
     generalInfoContinue?: FormL9GeneralInformationContinueUncheckedUpdateOneWithoutGeneralInformationNestedInput
   }
 
-  export type FormL9EmployeUpsertWithoutFormL9Input = {
-    update: XOR<FormL9EmployeUpdateWithoutFormL9Input, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
-    create: XOR<FormL9EmployeCreateWithoutFormL9Input, FormL9EmployeUncheckedCreateWithoutFormL9Input>
-    where?: FormL9EmployeWhereInput
+  export type FormL9ManagementUpsertWithWhereUniqueWithoutFormL9Input = {
+    where: FormL9ManagementWhereUniqueInput
+    update: XOR<FormL9ManagementUpdateWithoutFormL9Input, FormL9ManagementUncheckedUpdateWithoutFormL9Input>
+    create: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input>
   }
 
-  export type FormL9EmployeUpdateToOneWithWhereWithoutFormL9Input = {
-    where?: FormL9EmployeWhereInput
-    data: XOR<FormL9EmployeUpdateWithoutFormL9Input, FormL9EmployeUncheckedUpdateWithoutFormL9Input>
+  export type FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input = {
+    where: FormL9ManagementWhereUniqueInput
+    data: XOR<FormL9ManagementUpdateWithoutFormL9Input, FormL9ManagementUncheckedUpdateWithoutFormL9Input>
   }
 
-  export type FormL9EmployeUpdateWithoutFormL9Input = {
-    formL9EmployeId?: StringFieldUpdateOperationsInput | string
-    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
-    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
-    engineering?: NullableIntFieldUpdateOperationsInput | number | null
-    production?: NullableIntFieldUpdateOperationsInput | number | null
-    management?: NullableIntFieldUpdateOperationsInput | number | null
-    other?: NullableIntFieldUpdateOperationsInput | number | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type FormL9ManagementUpdateManyWithWhereWithoutFormL9Input = {
+    where: FormL9ManagementScalarWhereInput
+    data: XOR<FormL9ManagementUpdateManyMutationInput, FormL9ManagementUncheckedUpdateManyWithoutFormL9Input>
   }
 
-  export type FormL9EmployeUncheckedUpdateWithoutFormL9Input = {
-    formL9EmployeId?: StringFieldUpdateOperationsInput | string
-    totalEmployees?: NullableIntFieldUpdateOperationsInput | number | null
-    qualityControl?: NullableIntFieldUpdateOperationsInput | number | null
-    engineering?: NullableIntFieldUpdateOperationsInput | number | null
-    production?: NullableIntFieldUpdateOperationsInput | number | null
-    management?: NullableIntFieldUpdateOperationsInput | number | null
-    other?: NullableIntFieldUpdateOperationsInput | number | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type FormL9ManagementScalarWhereInput = {
+    AND?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
+    OR?: FormL9ManagementScalarWhereInput[]
+    NOT?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
+    formL9ManagementId?: UuidFilter<"FormL9Management"> | string
+    formL9Id?: UuidFilter<"FormL9Management"> | string
+    position?: StringNullableFilter<"FormL9Management"> | string | null
+    name?: StringNullableFilter<"FormL9Management"> | string | null
+    noTelpFaxHp?: StringNullableFilter<"FormL9Management"> | string | null
+    createdAt?: DateTimeFilter<"FormL9Management"> | Date | string
+    updatedAt?: DateTimeFilter<"FormL9Management"> | Date | string
   }
 
   export type FormL9OthersUpsertWithoutFormL9Input = {
@@ -39135,35 +39062,6 @@ export namespace Prisma {
     certificateISOs?: FormL9CertificateISOUncheckedUpdateManyWithoutOthersNestedInput
   }
 
-  export type FormL9ManagementUpsertWithWhereUniqueWithoutFormL9Input = {
-    where: FormL9ManagementWhereUniqueInput
-    update: XOR<FormL9ManagementUpdateWithoutFormL9Input, FormL9ManagementUncheckedUpdateWithoutFormL9Input>
-    create: XOR<FormL9ManagementCreateWithoutFormL9Input, FormL9ManagementUncheckedCreateWithoutFormL9Input>
-  }
-
-  export type FormL9ManagementUpdateWithWhereUniqueWithoutFormL9Input = {
-    where: FormL9ManagementWhereUniqueInput
-    data: XOR<FormL9ManagementUpdateWithoutFormL9Input, FormL9ManagementUncheckedUpdateWithoutFormL9Input>
-  }
-
-  export type FormL9ManagementUpdateManyWithWhereWithoutFormL9Input = {
-    where: FormL9ManagementScalarWhereInput
-    data: XOR<FormL9ManagementUpdateManyMutationInput, FormL9ManagementUncheckedUpdateManyWithoutFormL9Input>
-  }
-
-  export type FormL9ManagementScalarWhereInput = {
-    AND?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
-    OR?: FormL9ManagementScalarWhereInput[]
-    NOT?: FormL9ManagementScalarWhereInput | FormL9ManagementScalarWhereInput[]
-    formL9ManagementId?: UuidFilter<"FormL9Management"> | string
-    formL9Id?: UuidFilter<"FormL9Management"> | string
-    position?: StringNullableFilter<"FormL9Management"> | string | null
-    name?: StringNullableFilter<"FormL9Management"> | string | null
-    noTelpFaxHp?: StringNullableFilter<"FormL9Management"> | string | null
-    createdAt?: DateTimeFilter<"FormL9Management"> | Date | string
-    updatedAt?: DateTimeFilter<"FormL9Management"> | Date | string
-  }
-
   export type FormL9WorkExperienceUpsertWithWhereUniqueWithoutFormL9Input = {
     where: FormL9WorkExperienceWhereUniqueInput
     update: XOR<FormL9WorkExperienceUpdateWithoutFormL9Input, FormL9WorkExperienceUncheckedUpdateWithoutFormL9Input>
@@ -39201,10 +39099,10 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     company: CompanyCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
   }
 
@@ -39214,10 +39112,10 @@ export namespace Prisma {
     status: string
     createdAt?: Date | string
     updatedAt?: Date | string
-    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
   }
 
@@ -39243,10 +39141,10 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
   }
 
@@ -39256,10 +39154,10 @@ export namespace Prisma {
     status?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
   }
 
@@ -39271,8 +39169,8 @@ export namespace Prisma {
     company: CompanyCreateNestedOneWithoutFormL9Input
     bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
   }
 
@@ -39284,8 +39182,8 @@ export namespace Prisma {
     updatedAt?: Date | string
     bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
   }
 
@@ -39332,8 +39230,8 @@ export namespace Prisma {
     company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
     bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
   }
 
@@ -39345,8 +39243,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
   }
 
@@ -39462,8 +39360,8 @@ export namespace Prisma {
     updatedAt?: Date | string
     company: CompanyCreateNestedOneWithoutFormL9Input
     bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     others?: FormL9OthersCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
   }
@@ -39475,8 +39373,8 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
   }
@@ -39504,8 +39402,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
     bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
   }
@@ -39517,8 +39415,8 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
   }
@@ -39531,8 +39429,8 @@ export namespace Prisma {
     company: CompanyCreateNestedOneWithoutFormL9Input
     bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
     generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
   }
 
@@ -39544,8 +39442,8 @@ export namespace Prisma {
     updatedAt?: Date | string
     bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
     generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
     workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
   }
 
@@ -39573,8 +39471,8 @@ export namespace Prisma {
     company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
     bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
     generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
   }
 
@@ -39586,8 +39484,8 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
     generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
     workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
   }
 
@@ -39598,10 +39496,10 @@ export namespace Prisma {
     updatedAt?: Date | string
     company: CompanyCreateNestedOneWithoutFormL9Input
     bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersCreateNestedOneWithoutFormL9Input
   }
 
   export type FormL9UncheckedCreateWithoutWorkExperiencesInput = {
@@ -39611,10 +39509,10 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
-    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
     managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    others?: FormL9OthersUncheckedCreateNestedOneWithoutFormL9Input
   }
 
   export type FormL9CreateOrConnectWithoutWorkExperiencesInput = {
@@ -39640,10 +39538,10 @@ export namespace Prisma {
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
     bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    others?: FormL9OthersUpdateOneWithoutFormL9NestedInput
   }
 
   export type FormL9UncheckedUpdateWithoutWorkExperiencesInput = {
@@ -39653,41 +39551,10 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
-    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
     managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
-  }
-
-  export type FormL9CreateWithoutOthersInput = {
-    formL9Id?: string
-    status: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    company: CompanyCreateNestedOneWithoutFormL9Input
-    bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
-    employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
-    managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
-    workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
-  }
-
-  export type FormL9UncheckedCreateWithoutOthersInput = {
-    formL9Id?: string
-    companyId: string
-    status: string
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
-    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
-    employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
-    managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
-    workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
-  }
-
-  export type FormL9CreateOrConnectWithoutOthersInput = {
-    where: FormL9WhereUniqueInput
-    create: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
+    others?: FormL9OthersUncheckedUpdateOneWithoutFormL9NestedInput
   }
 
   export type FormL9CertificateISOCreateWithoutOthersInput = {
@@ -39720,41 +39587,35 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type FormL9UpsertWithoutOthersInput = {
-    update: XOR<FormL9UpdateWithoutOthersInput, FormL9UncheckedUpdateWithoutOthersInput>
+  export type FormL9CreateWithoutOthersInput = {
+    formL9Id?: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    company: CompanyCreateNestedOneWithoutFormL9Input
+    bankInfo?: FormL9BankInfoCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9UncheckedCreateWithoutOthersInput = {
+    formL9Id?: string
+    companyId: string
+    status: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    bankInfo?: FormL9BankInfoUncheckedCreateNestedOneWithoutFormL9Input
+    employeeInfo?: FormL9EmployeUncheckedCreateNestedOneWithoutFormL9Input
+    generalInformation?: FormL9GeneralInformationUncheckedCreateNestedOneWithoutFormL9Input
+    managements?: FormL9ManagementUncheckedCreateNestedManyWithoutFormL9Input
+    workExperiences?: FormL9WorkExperienceUncheckedCreateNestedManyWithoutFormL9Input
+  }
+
+  export type FormL9CreateOrConnectWithoutOthersInput = {
+    where: FormL9WhereUniqueInput
     create: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
-    where?: FormL9WhereInput
-  }
-
-  export type FormL9UpdateToOneWithWhereWithoutOthersInput = {
-    where?: FormL9WhereInput
-    data: XOR<FormL9UpdateWithoutOthersInput, FormL9UncheckedUpdateWithoutOthersInput>
-  }
-
-  export type FormL9UpdateWithoutOthersInput = {
-    formL9Id?: StringFieldUpdateOperationsInput | string
-    status?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
-    bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
-    employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
-    managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
-    workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
-  }
-
-  export type FormL9UncheckedUpdateWithoutOthersInput = {
-    formL9Id?: StringFieldUpdateOperationsInput | string
-    companyId?: StringFieldUpdateOperationsInput | string
-    status?: StringFieldUpdateOperationsInput | string
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
-    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
-    employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
-    managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
-    workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
   }
 
   export type FormL9CertificateISOUpsertWithWhereUniqueWithoutOthersInput = {
@@ -39785,6 +39646,43 @@ export namespace Prisma {
     remakes?: StringNullableFilter<"FormL9CertificateISO"> | string | null
     createdAt?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
     updatedAt?: DateTimeFilter<"FormL9CertificateISO"> | Date | string
+  }
+
+  export type FormL9UpsertWithoutOthersInput = {
+    update: XOR<FormL9UpdateWithoutOthersInput, FormL9UncheckedUpdateWithoutOthersInput>
+    create: XOR<FormL9CreateWithoutOthersInput, FormL9UncheckedCreateWithoutOthersInput>
+    where?: FormL9WhereInput
+  }
+
+  export type FormL9UpdateToOneWithWhereWithoutOthersInput = {
+    where?: FormL9WhereInput
+    data: XOR<FormL9UpdateWithoutOthersInput, FormL9UncheckedUpdateWithoutOthersInput>
+  }
+
+  export type FormL9UpdateWithoutOthersInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    company?: CompanyUpdateOneRequiredWithoutFormL9NestedInput
+    bankInfo?: FormL9BankInfoUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUpdateManyWithoutFormL9NestedInput
+  }
+
+  export type FormL9UncheckedUpdateWithoutOthersInput = {
+    formL9Id?: StringFieldUpdateOperationsInput | string
+    companyId?: StringFieldUpdateOperationsInput | string
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    bankInfo?: FormL9BankInfoUncheckedUpdateOneWithoutFormL9NestedInput
+    employeeInfo?: FormL9EmployeUncheckedUpdateOneWithoutFormL9NestedInput
+    generalInformation?: FormL9GeneralInformationUncheckedUpdateOneWithoutFormL9NestedInput
+    managements?: FormL9ManagementUncheckedUpdateManyWithoutFormL9NestedInput
+    workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
   }
 
   export type FormL9OthersCreateWithoutCertificateISOsInput = {
@@ -39880,9 +39778,9 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessCreateWithoutMenuInput = {
-    user: UserCreateNestedOneWithoutUserHasRoleAccessInput
-    role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
     access: AccessCreateNestedOneWithoutUserHasRoleAccessInput
+    role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
+    user: UserCreateNestedOneWithoutUserHasRoleAccessInput
   }
 
   export type UserHasRoleAccessUncheckedCreateWithoutMenuInput = {
@@ -39927,6 +39825,26 @@ export namespace Prisma {
     menuId?: IntNullableFilter<"UserHasRoleAccess"> | number | null
   }
 
+  export type LinkedDeviceCreateWithoutUserInput = {
+    deviceId?: string
+    clientDeviceUuid: string
+  }
+
+  export type LinkedDeviceUncheckedCreateWithoutUserInput = {
+    deviceId?: string
+    clientDeviceUuid: string
+  }
+
+  export type LinkedDeviceCreateOrConnectWithoutUserInput = {
+    where: LinkedDeviceWhereUniqueInput
+    create: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput>
+  }
+
+  export type LinkedDeviceCreateManyUserInputEnvelope = {
+    data: LinkedDeviceCreateManyUserInput | LinkedDeviceCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type LogsLoginCreateWithoutUserInput = {
     logsId?: string
     token: string
@@ -39957,26 +39875,6 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type LinkedDeviceCreateWithoutUserInput = {
-    deviceId?: string
-    clientDeviceUuid: string
-  }
-
-  export type LinkedDeviceUncheckedCreateWithoutUserInput = {
-    deviceId?: string
-    clientDeviceUuid: string
-  }
-
-  export type LinkedDeviceCreateOrConnectWithoutUserInput = {
-    where: LinkedDeviceWhereUniqueInput
-    create: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput>
-  }
-
-  export type LinkedDeviceCreateManyUserInputEnvelope = {
-    data: LinkedDeviceCreateManyUserInput | LinkedDeviceCreateManyUserInput[]
-    skipDuplicates?: boolean
-  }
-
   export type ProfileCreateWithoutUserInput = {
     fullName: string
     urlImage?: string | null
@@ -40000,10 +39898,34 @@ export namespace Prisma {
     create: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
   }
 
+  export type ResetPasswordCreateWithoutUserInput = {
+    resetId?: string
+    token?: string
+    createdDate?: Date | string
+    expireDate: Date | string
+  }
+
+  export type ResetPasswordUncheckedCreateWithoutUserInput = {
+    resetId?: string
+    token?: string
+    createdDate?: Date | string
+    expireDate: Date | string
+  }
+
+  export type ResetPasswordCreateOrConnectWithoutUserInput = {
+    where: ResetPasswordWhereUniqueInput
+    create: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput>
+  }
+
+  export type ResetPasswordCreateManyUserInputEnvelope = {
+    data: ResetPasswordCreateManyUserInput | ResetPasswordCreateManyUserInput[]
+    skipDuplicates?: boolean
+  }
+
   export type UserHasRoleAccessCreateWithoutUserInput = {
-    role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
     access: AccessCreateNestedOneWithoutUserHasRoleAccessInput
     menu?: MenuCreateNestedOneWithoutUserHasRoleAccessInput
+    role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
   }
 
   export type UserHasRoleAccessUncheckedCreateWithoutUserInput = {
@@ -40043,28 +39965,29 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
-  export type ResetPasswordCreateWithoutUserInput = {
-    resetId?: string
-    token?: string
-    createdDate?: Date | string
-    expireDate: Date | string
+  export type LinkedDeviceUpsertWithWhereUniqueWithoutUserInput = {
+    where: LinkedDeviceWhereUniqueInput
+    update: XOR<LinkedDeviceUpdateWithoutUserInput, LinkedDeviceUncheckedUpdateWithoutUserInput>
+    create: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput>
   }
 
-  export type ResetPasswordUncheckedCreateWithoutUserInput = {
-    resetId?: string
-    token?: string
-    createdDate?: Date | string
-    expireDate: Date | string
+  export type LinkedDeviceUpdateWithWhereUniqueWithoutUserInput = {
+    where: LinkedDeviceWhereUniqueInput
+    data: XOR<LinkedDeviceUpdateWithoutUserInput, LinkedDeviceUncheckedUpdateWithoutUserInput>
   }
 
-  export type ResetPasswordCreateOrConnectWithoutUserInput = {
-    where: ResetPasswordWhereUniqueInput
-    create: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput>
+  export type LinkedDeviceUpdateManyWithWhereWithoutUserInput = {
+    where: LinkedDeviceScalarWhereInput
+    data: XOR<LinkedDeviceUpdateManyMutationInput, LinkedDeviceUncheckedUpdateManyWithoutUserInput>
   }
 
-  export type ResetPasswordCreateManyUserInputEnvelope = {
-    data: ResetPasswordCreateManyUserInput | ResetPasswordCreateManyUserInput[]
-    skipDuplicates?: boolean
+  export type LinkedDeviceScalarWhereInput = {
+    AND?: LinkedDeviceScalarWhereInput | LinkedDeviceScalarWhereInput[]
+    OR?: LinkedDeviceScalarWhereInput[]
+    NOT?: LinkedDeviceScalarWhereInput | LinkedDeviceScalarWhereInput[]
+    deviceId?: UuidFilter<"LinkedDevice"> | string
+    clientDeviceUuid?: UuidFilter<"LinkedDevice"> | string
+    userId?: UuidFilter<"LinkedDevice"> | string
   }
 
   export type LogsLoginUpsertWithWhereUniqueWithoutUserInput = {
@@ -40097,31 +40020,6 @@ export namespace Prisma {
     expireDate?: DateTimeFilter<"LogsLogin"> | Date | string
   }
 
-  export type LinkedDeviceUpsertWithWhereUniqueWithoutUserInput = {
-    where: LinkedDeviceWhereUniqueInput
-    update: XOR<LinkedDeviceUpdateWithoutUserInput, LinkedDeviceUncheckedUpdateWithoutUserInput>
-    create: XOR<LinkedDeviceCreateWithoutUserInput, LinkedDeviceUncheckedCreateWithoutUserInput>
-  }
-
-  export type LinkedDeviceUpdateWithWhereUniqueWithoutUserInput = {
-    where: LinkedDeviceWhereUniqueInput
-    data: XOR<LinkedDeviceUpdateWithoutUserInput, LinkedDeviceUncheckedUpdateWithoutUserInput>
-  }
-
-  export type LinkedDeviceUpdateManyWithWhereWithoutUserInput = {
-    where: LinkedDeviceScalarWhereInput
-    data: XOR<LinkedDeviceUpdateManyMutationInput, LinkedDeviceUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type LinkedDeviceScalarWhereInput = {
-    AND?: LinkedDeviceScalarWhereInput | LinkedDeviceScalarWhereInput[]
-    OR?: LinkedDeviceScalarWhereInput[]
-    NOT?: LinkedDeviceScalarWhereInput | LinkedDeviceScalarWhereInput[]
-    deviceId?: UuidFilter<"LinkedDevice"> | string
-    clientDeviceUuid?: UuidFilter<"LinkedDevice"> | string
-    userId?: UuidFilter<"LinkedDevice"> | string
-  }
-
   export type ProfileUpsertWithoutUserInput = {
     update: XOR<ProfileUpdateWithoutUserInput, ProfileUncheckedUpdateWithoutUserInput>
     create: XOR<ProfileCreateWithoutUserInput, ProfileUncheckedCreateWithoutUserInput>
@@ -40149,6 +40047,33 @@ export namespace Prisma {
     phone?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ResetPasswordUpsertWithWhereUniqueWithoutUserInput = {
+    where: ResetPasswordWhereUniqueInput
+    update: XOR<ResetPasswordUpdateWithoutUserInput, ResetPasswordUncheckedUpdateWithoutUserInput>
+    create: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput>
+  }
+
+  export type ResetPasswordUpdateWithWhereUniqueWithoutUserInput = {
+    where: ResetPasswordWhereUniqueInput
+    data: XOR<ResetPasswordUpdateWithoutUserInput, ResetPasswordUncheckedUpdateWithoutUserInput>
+  }
+
+  export type ResetPasswordUpdateManyWithWhereWithoutUserInput = {
+    where: ResetPasswordScalarWhereInput
+    data: XOR<ResetPasswordUpdateManyMutationInput, ResetPasswordUncheckedUpdateManyWithoutUserInput>
+  }
+
+  export type ResetPasswordScalarWhereInput = {
+    AND?: ResetPasswordScalarWhereInput | ResetPasswordScalarWhereInput[]
+    OR?: ResetPasswordScalarWhereInput[]
+    NOT?: ResetPasswordScalarWhereInput | ResetPasswordScalarWhereInput[]
+    resetId?: UuidFilter<"ResetPassword"> | string
+    userId?: UuidFilter<"ResetPassword"> | string
+    token?: UuidFilter<"ResetPassword"> | string
+    createdDate?: DateTimeFilter<"ResetPassword"> | Date | string
+    expireDate?: DateTimeFilter<"ResetPassword"> | Date | string
   }
 
   export type UserHasRoleAccessUpsertWithWhereUniqueWithoutUserInput = {
@@ -40193,67 +40118,36 @@ export namespace Prisma {
     expireDate?: DateTimeFilter<"otpVerifikasi"> | Date | string
   }
 
-  export type ResetPasswordUpsertWithWhereUniqueWithoutUserInput = {
-    where: ResetPasswordWhereUniqueInput
-    update: XOR<ResetPasswordUpdateWithoutUserInput, ResetPasswordUncheckedUpdateWithoutUserInput>
-    create: XOR<ResetPasswordCreateWithoutUserInput, ResetPasswordUncheckedCreateWithoutUserInput>
-  }
-
-  export type ResetPasswordUpdateWithWhereUniqueWithoutUserInput = {
-    where: ResetPasswordWhereUniqueInput
-    data: XOR<ResetPasswordUpdateWithoutUserInput, ResetPasswordUncheckedUpdateWithoutUserInput>
-  }
-
-  export type ResetPasswordUpdateManyWithWhereWithoutUserInput = {
-    where: ResetPasswordScalarWhereInput
-    data: XOR<ResetPasswordUpdateManyMutationInput, ResetPasswordUncheckedUpdateManyWithoutUserInput>
-  }
-
-  export type ResetPasswordScalarWhereInput = {
-    AND?: ResetPasswordScalarWhereInput | ResetPasswordScalarWhereInput[]
-    OR?: ResetPasswordScalarWhereInput[]
-    NOT?: ResetPasswordScalarWhereInput | ResetPasswordScalarWhereInput[]
-    resetId?: UuidFilter<"ResetPassword"> | string
-    userId?: UuidFilter<"ResetPassword"> | string
-    token?: UuidFilter<"ResetPassword"> | string
-    createdDate?: DateTimeFilter<"ResetPassword"> | Date | string
-    expireDate?: DateTimeFilter<"ResetPassword"> | Date | string
-  }
-
   export type UserCreateWithoutOtpInput = {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
-    logs?: LogsLoginCreateNestedManyWithoutUserInput
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
+    logs?: LogsLoginCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
-    UserHasRoleAccess?: UserHasRoleAccessCreateNestedManyWithoutUserInput
     ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
+    UserHasRoleAccess?: UserHasRoleAccessCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutOtpInput = {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
-    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
+    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    UserHasRoleAccess?: UserHasRoleAccessUncheckedCreateNestedManyWithoutUserInput
     ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
+    UserHasRoleAccess?: UserHasRoleAccessUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutOtpInput = {
@@ -40276,44 +40170,38 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUpdateManyWithoutUserNestedInput
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
-    UserHasRoleAccess?: UserHasRoleAccessUpdateManyWithoutUserNestedInput
     ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
+    UserHasRoleAccess?: UserHasRoleAccessUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutOtpInput = {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
     ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
+    UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserCreateWithoutLogsInput = {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40321,17 +40209,15 @@ export namespace Prisma {
     updateDate?: Date | string
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
+    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
     UserHasRoleAccess?: UserHasRoleAccessCreateNestedManyWithoutUserInput
     otp?: otpVerifikasiCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutLogsInput = {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40339,9 +40225,9 @@ export namespace Prisma {
     updateDate?: Date | string
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
+    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedCreateNestedManyWithoutUserInput
     otp?: otpVerifikasiUncheckedCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutLogsInput = {
@@ -40364,8 +40250,6 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40373,17 +40257,15 @@ export namespace Prisma {
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutLogsInput = {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40391,15 +40273,15 @@ export namespace Prisma {
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
   }
 
   export type UserHasRoleAccessCreateWithoutRoleInput = {
-    user: UserCreateNestedOneWithoutUserHasRoleAccessInput
     access: AccessCreateNestedOneWithoutUserHasRoleAccessInput
     menu?: MenuCreateNestedOneWithoutUserHasRoleAccessInput
+    user: UserCreateNestedOneWithoutUserHasRoleAccessInput
   }
 
   export type UserHasRoleAccessUncheckedCreateWithoutRoleInput = {
@@ -40435,9 +40317,9 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessCreateWithoutAccessInput = {
-    user: UserCreateNestedOneWithoutUserHasRoleAccessInput
-    role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
     menu?: MenuCreateNestedOneWithoutUserHasRoleAccessInput
+    role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
+    user: UserCreateNestedOneWithoutUserHasRoleAccessInput
   }
 
   export type UserHasRoleAccessUncheckedCreateWithoutAccessInput = {
@@ -40476,15 +40358,13 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
-    logs?: LogsLoginCreateNestedManyWithoutUserInput
     linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
+    logs?: LogsLoginCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
     UserHasRoleAccess?: UserHasRoleAccessCreateNestedManyWithoutUserInput
     otp?: otpVerifikasiCreateNestedManyWithoutUserInput
@@ -40494,15 +40374,13 @@ export namespace Prisma {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
     createdDate?: Date | string
     updateDate?: Date | string
-    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
+    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedCreateNestedManyWithoutUserInput
     otp?: otpVerifikasiUncheckedCreateNestedManyWithoutUserInput
@@ -40528,15 +40406,13 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUpdateManyWithoutUserNestedInput
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUpdateManyWithoutUserNestedInput
@@ -40546,73 +40422,16 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserCreateWithoutUserHasRoleAccessInput = {
-    userId?: string
-    email: string
-    application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
-    password: string
-    isActive?: boolean
-    sessionExpireDate: Date | string
-    createdDate?: Date | string
-    updateDate?: Date | string
-    logs?: LogsLoginCreateNestedManyWithoutUserInput
-    linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
-    profile?: ProfileCreateNestedOneWithoutUserInput
-    otp?: otpVerifikasiCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutUserHasRoleAccessInput = {
-    userId?: string
-    email: string
-    application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
-    password: string
-    isActive?: boolean
-    sessionExpireDate: Date | string
-    createdDate?: Date | string
-    updateDate?: Date | string
-    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
-    linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
-    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
-    otp?: otpVerifikasiUncheckedCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutUserHasRoleAccessInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutUserHasRoleAccessInput, UserUncheckedCreateWithoutUserHasRoleAccessInput>
-  }
-
-  export type RoleCreateWithoutUserHasRoleAccessInput = {
-    roleName: string
-  }
-
-  export type RoleUncheckedCreateWithoutUserHasRoleAccessInput = {
-    roleId?: number
-    roleName: string
-  }
-
-  export type RoleCreateOrConnectWithoutUserHasRoleAccessInput = {
-    where: RoleWhereUniqueInput
-    create: XOR<RoleCreateWithoutUserHasRoleAccessInput, RoleUncheckedCreateWithoutUserHasRoleAccessInput>
   }
 
   export type AccessCreateWithoutUserHasRoleAccessInput = {
@@ -40659,71 +40478,55 @@ export namespace Prisma {
     create: XOR<MenuCreateWithoutUserHasRoleAccessInput, MenuUncheckedCreateWithoutUserHasRoleAccessInput>
   }
 
-  export type UserUpsertWithoutUserHasRoleAccessInput = {
-    update: XOR<UserUpdateWithoutUserHasRoleAccessInput, UserUncheckedUpdateWithoutUserHasRoleAccessInput>
-    create: XOR<UserCreateWithoutUserHasRoleAccessInput, UserUncheckedCreateWithoutUserHasRoleAccessInput>
-    where?: UserWhereInput
+  export type RoleCreateWithoutUserHasRoleAccessInput = {
+    roleName: string
   }
 
-  export type UserUpdateToOneWithWhereWithoutUserHasRoleAccessInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutUserHasRoleAccessInput, UserUncheckedUpdateWithoutUserHasRoleAccessInput>
+  export type RoleUncheckedCreateWithoutUserHasRoleAccessInput = {
+    roleId?: number
+    roleName: string
   }
 
-  export type UserUpdateWithoutUserHasRoleAccessInput = {
-    userId?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUpdateManyWithoutUserNestedInput
-    linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
-    profile?: ProfileUpdateOneWithoutUserNestedInput
-    otp?: otpVerifikasiUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutUserHasRoleAccessInput = {
-    userId?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    password?: StringFieldUpdateOperationsInput | string
-    isActive?: BoolFieldUpdateOperationsInput | boolean
-    sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
-    linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
-    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
-    otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type RoleUpsertWithoutUserHasRoleAccessInput = {
-    update: XOR<RoleUpdateWithoutUserHasRoleAccessInput, RoleUncheckedUpdateWithoutUserHasRoleAccessInput>
+  export type RoleCreateOrConnectWithoutUserHasRoleAccessInput = {
+    where: RoleWhereUniqueInput
     create: XOR<RoleCreateWithoutUserHasRoleAccessInput, RoleUncheckedCreateWithoutUserHasRoleAccessInput>
-    where?: RoleWhereInput
   }
 
-  export type RoleUpdateToOneWithWhereWithoutUserHasRoleAccessInput = {
-    where?: RoleWhereInput
-    data: XOR<RoleUpdateWithoutUserHasRoleAccessInput, RoleUncheckedUpdateWithoutUserHasRoleAccessInput>
+  export type UserCreateWithoutUserHasRoleAccessInput = {
+    userId?: string
+    email: string
+    application?: string
+    password: string
+    isActive?: boolean
+    sessionExpireDate: Date | string
+    createdDate?: Date | string
+    updateDate?: Date | string
+    linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
+    logs?: LogsLoginCreateNestedManyWithoutUserInput
+    profile?: ProfileCreateNestedOneWithoutUserInput
+    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
+    otp?: otpVerifikasiCreateNestedManyWithoutUserInput
   }
 
-  export type RoleUpdateWithoutUserHasRoleAccessInput = {
-    roleName?: StringFieldUpdateOperationsInput | string
+  export type UserUncheckedCreateWithoutUserHasRoleAccessInput = {
+    userId?: string
+    email: string
+    application?: string
+    password: string
+    isActive?: boolean
+    sessionExpireDate: Date | string
+    createdDate?: Date | string
+    updateDate?: Date | string
+    linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
+    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
+    profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
+    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
+    otp?: otpVerifikasiUncheckedCreateNestedManyWithoutUserInput
   }
 
-  export type RoleUncheckedUpdateWithoutUserHasRoleAccessInput = {
-    roleId?: IntFieldUpdateOperationsInput | number
-    roleName?: StringFieldUpdateOperationsInput | string
+  export type UserCreateOrConnectWithoutUserHasRoleAccessInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutUserHasRoleAccessInput, UserUncheckedCreateWithoutUserHasRoleAccessInput>
   }
 
   export type AccessUpsertWithoutUserHasRoleAccessInput = {
@@ -40782,12 +40585,73 @@ export namespace Prisma {
     isActive?: BoolFieldUpdateOperationsInput | boolean
   }
 
+  export type RoleUpsertWithoutUserHasRoleAccessInput = {
+    update: XOR<RoleUpdateWithoutUserHasRoleAccessInput, RoleUncheckedUpdateWithoutUserHasRoleAccessInput>
+    create: XOR<RoleCreateWithoutUserHasRoleAccessInput, RoleUncheckedCreateWithoutUserHasRoleAccessInput>
+    where?: RoleWhereInput
+  }
+
+  export type RoleUpdateToOneWithWhereWithoutUserHasRoleAccessInput = {
+    where?: RoleWhereInput
+    data: XOR<RoleUpdateWithoutUserHasRoleAccessInput, RoleUncheckedUpdateWithoutUserHasRoleAccessInput>
+  }
+
+  export type RoleUpdateWithoutUserHasRoleAccessInput = {
+    roleName?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type RoleUncheckedUpdateWithoutUserHasRoleAccessInput = {
+    roleId?: IntFieldUpdateOperationsInput | number
+    roleName?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type UserUpsertWithoutUserHasRoleAccessInput = {
+    update: XOR<UserUpdateWithoutUserHasRoleAccessInput, UserUncheckedUpdateWithoutUserHasRoleAccessInput>
+    create: XOR<UserCreateWithoutUserHasRoleAccessInput, UserUncheckedCreateWithoutUserHasRoleAccessInput>
+    where?: UserWhereInput
+  }
+
+  export type UserUpdateToOneWithWhereWithoutUserHasRoleAccessInput = {
+    where?: UserWhereInput
+    data: XOR<UserUpdateWithoutUserHasRoleAccessInput, UserUncheckedUpdateWithoutUserHasRoleAccessInput>
+  }
+
+  export type UserUpdateWithoutUserHasRoleAccessInput = {
+    userId?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    application?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUpdateManyWithoutUserNestedInput
+    profile?: ProfileUpdateOneWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
+    otp?: otpVerifikasiUpdateManyWithoutUserNestedInput
+  }
+
+  export type UserUncheckedUpdateWithoutUserHasRoleAccessInput = {
+    userId?: StringFieldUpdateOperationsInput | string
+    email?: StringFieldUpdateOperationsInput | string
+    application?: StringFieldUpdateOperationsInput | string
+    password?: StringFieldUpdateOperationsInput | string
+    isActive?: BoolFieldUpdateOperationsInput | boolean
+    sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
+    profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
+    otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
+  }
+
   export type UserCreateWithoutLinkedDeviceInput = {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40795,17 +40659,15 @@ export namespace Prisma {
     updateDate?: Date | string
     logs?: LogsLoginCreateNestedManyWithoutUserInput
     profile?: ProfileCreateNestedOneWithoutUserInput
+    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
     UserHasRoleAccess?: UserHasRoleAccessCreateNestedManyWithoutUserInput
     otp?: otpVerifikasiCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
   }
 
   export type UserUncheckedCreateWithoutLinkedDeviceInput = {
     userId?: string
     email: string
     application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
     password: string
     isActive?: boolean
     sessionExpireDate: Date | string
@@ -40813,9 +40675,9 @@ export namespace Prisma {
     updateDate?: Date | string
     logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
     profile?: ProfileUncheckedCreateNestedOneWithoutUserInput
+    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedCreateNestedManyWithoutUserInput
     otp?: otpVerifikasiUncheckedCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
   }
 
   export type UserCreateOrConnectWithoutLinkedDeviceInput = {
@@ -40838,8 +40700,6 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40847,17 +40707,15 @@ export namespace Prisma {
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
     logs?: LogsLoginUpdateManyWithoutUserNestedInput
     profile?: ProfileUpdateOneWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutLinkedDeviceInput = {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
@@ -40865,56 +40723,14 @@ export namespace Prisma {
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
     logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     profile?: ProfileUncheckedUpdateOneWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserCreateWithoutProfileInput = {
-    userId?: string
-    email: string
-    application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
-    password: string
-    isActive?: boolean
-    sessionExpireDate: Date | string
-    createdDate?: Date | string
-    updateDate?: Date | string
-    logs?: LogsLoginCreateNestedManyWithoutUserInput
-    linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
-    UserHasRoleAccess?: UserHasRoleAccessCreateNestedManyWithoutUserInput
-    otp?: otpVerifikasiCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutProfileInput = {
-    userId?: string
-    email: string
-    application?: string
-    failedLoginAttempts?: number
-    blockedUntil?: Date | string | null
-    password: string
-    isActive?: boolean
-    sessionExpireDate: Date | string
-    createdDate?: Date | string
-    updateDate?: Date | string
-    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
-    linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
-    UserHasRoleAccess?: UserHasRoleAccessUncheckedCreateNestedManyWithoutUserInput
-    otp?: otpVerifikasiUncheckedCreateNestedManyWithoutUserInput
-    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutProfileInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
   }
 
   export type CompanyCreateWithoutProfileInput = {
     companyId?: string
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -40926,6 +40742,7 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
+    companyCode?: string | null
     segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
     formL9?: FormL9CreateNestedOneWithoutCompanyInput
   }
@@ -40934,7 +40751,6 @@ export namespace Prisma {
     companyId?: string
     segmentId?: number | null
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -40946,12 +40762,99 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
+    companyCode?: string | null
     formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
 
   export type CompanyCreateOrConnectWithoutProfileInput = {
     where: CompanyWhereUniqueInput
     create: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
+  }
+
+  export type UserCreateWithoutProfileInput = {
+    userId?: string
+    email: string
+    application?: string
+    password: string
+    isActive?: boolean
+    sessionExpireDate: Date | string
+    createdDate?: Date | string
+    updateDate?: Date | string
+    linkedDevice?: LinkedDeviceCreateNestedManyWithoutUserInput
+    logs?: LogsLoginCreateNestedManyWithoutUserInput
+    ResetPassword?: ResetPasswordCreateNestedManyWithoutUserInput
+    UserHasRoleAccess?: UserHasRoleAccessCreateNestedManyWithoutUserInput
+    otp?: otpVerifikasiCreateNestedManyWithoutUserInput
+  }
+
+  export type UserUncheckedCreateWithoutProfileInput = {
+    userId?: string
+    email: string
+    application?: string
+    password: string
+    isActive?: boolean
+    sessionExpireDate: Date | string
+    createdDate?: Date | string
+    updateDate?: Date | string
+    linkedDevice?: LinkedDeviceUncheckedCreateNestedManyWithoutUserInput
+    logs?: LogsLoginUncheckedCreateNestedManyWithoutUserInput
+    ResetPassword?: ResetPasswordUncheckedCreateNestedManyWithoutUserInput
+    UserHasRoleAccess?: UserHasRoleAccessUncheckedCreateNestedManyWithoutUserInput
+    otp?: otpVerifikasiUncheckedCreateNestedManyWithoutUserInput
+  }
+
+  export type UserCreateOrConnectWithoutProfileInput = {
+    where: UserWhereUniqueInput
+    create: XOR<UserCreateWithoutProfileInput, UserUncheckedCreateWithoutProfileInput>
+  }
+
+  export type CompanyUpsertWithoutProfileInput = {
+    update: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
+    create: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
+    where?: CompanyWhereInput
+  }
+
+  export type CompanyUpdateToOneWithWhereWithoutProfileInput = {
+    where?: CompanyWhereInput
+    data: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
+  }
+
+  export type CompanyUpdateWithoutProfileInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+    formL9?: FormL9UpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanyUncheckedUpdateWithoutProfileInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    website?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
 
   export type UserUpsertWithoutProfileInput = {
@@ -40969,91 +40872,37 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUpdateManyWithoutUserNestedInput
     linkedDevice?: LinkedDeviceUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUpdateManyWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUpdateManyWithoutUserNestedInput
   }
 
   export type UserUncheckedUpdateWithoutProfileInput = {
     userId?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
     application?: StringFieldUpdateOperationsInput | string
-    failedLoginAttempts?: IntFieldUpdateOperationsInput | number
-    blockedUntil?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     password?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
     sessionExpireDate?: DateTimeFieldUpdateOperationsInput | Date | string
     createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
     updateDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
     linkedDevice?: LinkedDeviceUncheckedUpdateManyWithoutUserNestedInput
+    logs?: LogsLoginUncheckedUpdateManyWithoutUserNestedInput
+    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
     UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutUserNestedInput
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
-    ResetPassword?: ResetPasswordUncheckedUpdateManyWithoutUserNestedInput
-  }
-
-  export type CompanyUpsertWithoutProfileInput = {
-    update: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
-    create: XOR<CompanyCreateWithoutProfileInput, CompanyUncheckedCreateWithoutProfileInput>
-    where?: CompanyWhereInput
-  }
-
-  export type CompanyUpdateToOneWithWhereWithoutProfileInput = {
-    where?: CompanyWhereInput
-    data: XOR<CompanyUpdateWithoutProfileInput, CompanyUncheckedUpdateWithoutProfileInput>
-  }
-
-  export type CompanyUpdateWithoutProfileInput = {
-    companyId?: StringFieldUpdateOperationsInput | string
-    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
-    npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
-    formL9?: FormL9UpdateOneWithoutCompanyNestedInput
-  }
-
-  export type CompanyUncheckedUpdateWithoutProfileInput = {
-    companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
-    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
-    npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
 
   export type CompanyCreateManySegmentInput = {
     companyId?: string
     urlImage?: string | null
-    companyCode?: string | null
     companyName?: string | null
     companyFoundingDate?: Date | string | null
     companyStatus?: string | null
@@ -41065,12 +40914,12 @@ export namespace Prisma {
     createdAt?: Date | string
     updatedAt?: Date | string
     totalCapital?: string | null
+    companyCode?: string | null
   }
 
   export type CompanyUpdateWithoutSegmentInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -41082,6 +40931,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     profile?: ProfileUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UpdateOneWithoutCompanyNestedInput
   }
@@ -41089,7 +40939,6 @@ export namespace Prisma {
   export type CompanyUncheckedUpdateWithoutSegmentInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -41101,6 +40950,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
@@ -41108,7 +40958,6 @@ export namespace Prisma {
   export type CompanyUncheckedUpdateManyWithoutSegmentInput = {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
     companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
@@ -41120,6 +40969,7 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ProfileCreateManyCompanyInput = {
@@ -41320,9 +41170,9 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessUpdateWithoutMenuInput = {
-    user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
-    role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     access?: AccessUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
+    role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
+    user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
   }
 
   export type UserHasRoleAccessUncheckedUpdateWithoutMenuInput = {
@@ -41337,6 +41187,11 @@ export namespace Prisma {
     accessId?: IntFieldUpdateOperationsInput | number
   }
 
+  export type LinkedDeviceCreateManyUserInput = {
+    deviceId?: string
+    clientDeviceUuid: string
+  }
+
   export type LogsLoginCreateManyUserInput = {
     logsId?: string
     token: string
@@ -41347,9 +41202,11 @@ export namespace Prisma {
     expireDate: Date | string
   }
 
-  export type LinkedDeviceCreateManyUserInput = {
-    deviceId?: string
-    clientDeviceUuid: string
+  export type ResetPasswordCreateManyUserInput = {
+    resetId?: string
+    token?: string
+    createdDate?: Date | string
+    expireDate: Date | string
   }
 
   export type UserHasRoleAccessCreateManyUserInput = {
@@ -41364,11 +41221,19 @@ export namespace Prisma {
     expireDate: Date | string
   }
 
-  export type ResetPasswordCreateManyUserInput = {
-    resetId?: string
-    token?: string
-    createdDate?: Date | string
-    expireDate: Date | string
+  export type LinkedDeviceUpdateWithoutUserInput = {
+    deviceId?: StringFieldUpdateOperationsInput | string
+    clientDeviceUuid?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type LinkedDeviceUncheckedUpdateWithoutUserInput = {
+    deviceId?: StringFieldUpdateOperationsInput | string
+    clientDeviceUuid?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type LinkedDeviceUncheckedUpdateManyWithoutUserInput = {
+    deviceId?: StringFieldUpdateOperationsInput | string
+    clientDeviceUuid?: StringFieldUpdateOperationsInput | string
   }
 
   export type LogsLoginUpdateWithoutUserInput = {
@@ -41401,25 +41266,31 @@ export namespace Prisma {
     expireDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type LinkedDeviceUpdateWithoutUserInput = {
-    deviceId?: StringFieldUpdateOperationsInput | string
-    clientDeviceUuid?: StringFieldUpdateOperationsInput | string
+  export type ResetPasswordUpdateWithoutUserInput = {
+    resetId?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    expireDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type LinkedDeviceUncheckedUpdateWithoutUserInput = {
-    deviceId?: StringFieldUpdateOperationsInput | string
-    clientDeviceUuid?: StringFieldUpdateOperationsInput | string
+  export type ResetPasswordUncheckedUpdateWithoutUserInput = {
+    resetId?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    expireDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type LinkedDeviceUncheckedUpdateManyWithoutUserInput = {
-    deviceId?: StringFieldUpdateOperationsInput | string
-    clientDeviceUuid?: StringFieldUpdateOperationsInput | string
+  export type ResetPasswordUncheckedUpdateManyWithoutUserInput = {
+    resetId?: StringFieldUpdateOperationsInput | string
+    token?: StringFieldUpdateOperationsInput | string
+    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    expireDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type UserHasRoleAccessUpdateWithoutUserInput = {
-    role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     access?: AccessUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     menu?: MenuUpdateOneWithoutUserHasRoleAccessNestedInput
+    role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
   }
 
   export type UserHasRoleAccessUncheckedUpdateWithoutUserInput = {
@@ -41451,27 +41322,6 @@ export namespace Prisma {
     expireDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type ResetPasswordUpdateWithoutUserInput = {
-    resetId?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    expireDate?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ResetPasswordUncheckedUpdateWithoutUserInput = {
-    resetId?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    expireDate?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type ResetPasswordUncheckedUpdateManyWithoutUserInput = {
-    resetId?: StringFieldUpdateOperationsInput | string
-    token?: StringFieldUpdateOperationsInput | string
-    createdDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    expireDate?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
   export type UserHasRoleAccessCreateManyRoleInput = {
     userId: string
     accessId: number
@@ -41479,9 +41329,9 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessUpdateWithoutRoleInput = {
-    user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     access?: AccessUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     menu?: MenuUpdateOneWithoutUserHasRoleAccessNestedInput
+    user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
   }
 
   export type UserHasRoleAccessUncheckedUpdateWithoutRoleInput = {
@@ -41503,9 +41353,9 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessUpdateWithoutAccessInput = {
-    user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
-    role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     menu?: MenuUpdateOneWithoutUserHasRoleAccessNestedInput
+    role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
+    user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
   }
 
   export type UserHasRoleAccessUncheckedUpdateWithoutAccessInput = {

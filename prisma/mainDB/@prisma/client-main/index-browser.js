@@ -131,7 +131,6 @@ exports.Prisma.CompanyScalarFieldEnum = {
   companyId: 'companyId',
   segmentId: 'segmentId',
   urlImage: 'urlImage',
-  companyCode: 'companyCode',
   companyName: 'companyName',
   companyFoundingDate: 'companyFoundingDate',
   companyStatus: 'companyStatus',
@@ -142,20 +141,21 @@ exports.Prisma.CompanyScalarFieldEnum = {
   website: 'website',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  totalCapital: 'totalCapital'
+  totalCapital: 'totalCapital',
+  companyCode: 'companyCode'
 };
 
 exports.Prisma.Distro_PO_HeaderScalarFieldEnum = {
   id: 'id',
-  uuid: 'uuid',
   poNumber: 'poNumber',
   distributorName: 'distributorName',
   customerCode: 'customerCode',
   poDate: 'poDate',
-  niterraSO: 'niterraSO',
-  niterraPO: 'niterraPO',
   createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
+  updatedAt: 'updatedAt',
+  niterraPO: 'niterraPO',
+  niterraSO: 'niterraSO',
+  uuid: 'uuid'
 };
 
 exports.Prisma.Distro_PO_LineScalarFieldEnum = {
@@ -312,8 +312,6 @@ exports.Prisma.UserScalarFieldEnum = {
   userId: 'userId',
   email: 'email',
   application: 'application',
-  failedLoginAttempts: 'failedLoginAttempts',
-  blockedUntil: 'blockedUntil',
   password: 'password',
   isActive: 'isActive',
   sessionExpireDate: 'sessionExpireDate',
