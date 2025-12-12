@@ -54,7 +54,10 @@ const otpSending = async (req, res, next) => {
   try {
     const userId = req.user.userId; 
     const email = req.user.email;
-    await authService.otpSending(userId,email);
+    const isActive = req.user.isActive;
+    const userAgent = req.headers['user-agent'];
+    const ip =req.ip;
+    await authService.otpSending(userId,email,isActive,userAgent,ip);
     res.status(200).json({
       message: "OTP Berhasil Di kirim",
       status: "Success",

@@ -4,7 +4,6 @@ import mailerTemplate from "../utils/mailerTemplate.js";
 
 export const authMiddleware = async (req, res, next) => {
   let token = req.get("Authorization");
-  console.log(token);
   if (!token) {
     return res
       .status(401)
@@ -13,15 +12,10 @@ export const authMiddleware = async (req, res, next) => {
       })
       .end();
   }
-  // Accept 'Bearer <token>' format
-  if (token.startsWith('Bearer ')) {
-    token = token.slice(7);
-  }
   
   const log = await niterraappdb.logsLogin.findUnique({
     where: {
       token: token,
-      isActive : true
     },
     include: {
     user: {
@@ -40,6 +34,8 @@ export const authMiddleware = async (req, res, next) => {
     }
   }
   });
+  console.log('masuk sini',token);
+
   if (!log || new Date() > log.expireDate) {
     //     if (log) {
     // //   await niterraappdb.logsLogin.delete({ where: { token: token } });
@@ -55,6 +51,7 @@ export const authMiddleware = async (req, res, next) => {
   }
     
     if(log.user.isActive == false){
+        await mailerTemplate.verifikasiRegistrasi(log.user.userId, log.user.email);
         return res
         .status(402)
         .json({
@@ -62,6 +59,7 @@ export const authMiddleware = async (req, res, next) => {
         })
         .end();
     }
+
     const deviceUuid = req.get("Client-Device-Uuid");
     if(!deviceUuid){
         return res
@@ -98,7 +96,7 @@ export const authMiddleware = async (req, res, next) => {
         }
       });
       
-      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
+      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.get('user-agent'),req.get('ip'));
       
       return res
         .status(403)
@@ -118,7 +116,7 @@ export const authMiddleware = async (req, res, next) => {
           .end();
       }
       
-      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.headers['user-agent'],req.ip);
+      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.get('user-agent'),req.get('ip'));
       return res
         .status(403)
         .json({
@@ -139,7 +137,7 @@ export const authMiddleware = async (req, res, next) => {
 
   const data = {
     ...log.user,
-  };
+  };W
 
   req.user = data;
   next();

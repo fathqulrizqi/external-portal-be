@@ -61,11 +61,6 @@ const register = async (payload) => {
     return newUser;
   });
   
-  try {
-    await mailerTemplate.verifikasiRegistrasi(result.userId, payload.email);
-  } catch (error) {
-    console.error("Gagal mengirim email verifikasi:", error);
-  }
   const { password, ...userWithoutPassword } = result;
 
   return userWithoutPassword;
@@ -97,9 +92,13 @@ try {
      throw new ResponseError(404,"You don't have an account,please register!!");
   }
 
+  if(user.blockedUntil > new Date()){
+    throw new ResponseError(406,`Account Blocked Until ${user.blockedUntil}`);
+  }
 
   const isMatch = await bcrypt.compare(payload.password, user.password);
   
+
   if (!isMatch) {
     const failedCounts = await niterraappdb.User.update({
       where : {userId : user.userId},
@@ -109,20 +108,23 @@ try {
         }
       }
     })
-    if(failedCounts >= 3){
+    console.log(failedCounts);
+    if(failedCounts.failedLoginAttempts >= 3){
       const BASE_LOCKOUT_DURATION_MS = 5 * 60 * 1000;
-      const multiplier = failedCounts - 2;
+      const multiplier = failedCounts.failedLoginAttempts - 2;
       const lockoutDuration = multiplier * BASE_LOCKOUT_DURATION_MS;
       const blockedUntilTime = new Date(Date.now() + lockoutDuration);
 
-      await niterraappdb.User.update({
+      const blocked = await niterraappdb.User.update({
       where: { userId: user.userId },
       data: {
         blockedUntil: blockedUntilTime,
         }
       })
+      throw new ResponseError(406,`Account Blocked Until ${blocked.blockedUntil}`);
+    }else{
+      throw new ResponseError(401,'Invalid email or password');
     }
-    throw new ResponseError(401,'Invalid email or password');
   }
 
   const userId = user.userId;
@@ -174,9 +176,14 @@ try {
   return { token, role, access };
 }
 
-const otpSending = async (userId, email) => {
+const otpSending = async (userId, email, isActive,userAgent,ip) => {
   try{
-    await mailerTemplate.verifikasiLogin(userId,email);
+    if(isActive){
+      await mailerTemplate.verifikasiLogin(userId,email,userAgent,ip);
+    }else{
+      await mailerTemplate.verifikasiRegistrasi(userId, email);
+    }
+
     return true;
   }catch(e){
     throw new ResponseError(424,'Failed to send OTP verification code.')
