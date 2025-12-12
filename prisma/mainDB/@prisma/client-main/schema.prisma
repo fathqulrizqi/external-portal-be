@@ -1,16 +1,14 @@
 model CompanySegment {
-  segmentId   Int     @id @default(autoincrement())
-  segmentName String  @db.VarChar(100)
-  description String? @db.VarChar(255)
-
-  company Company[]
+  segmentId   Int       @id @default(autoincrement())
+  segmentName String    @db.VarChar(100)
+  description String?   @db.VarChar(255)
+  company     Company[]
 }
 
 model Company {
-  companyId           String    @id @default(uuid()) @db.Uuid
+  companyId           String          @id @default(uuid()) @db.Uuid
   segmentId           Int?
-  urlImage            String?   @db.Text
-  companyCode         String?
+  urlImage            String?
   companyName         String?
   companyFoundingDate DateTime?
   companyStatus       String?
@@ -18,17 +16,15 @@ model Company {
   companyAddress      String?
   companyEmail        String?
   npwp                String?
-  application         String    @default("E-Bidding")
-  website             String?   @db.VarChar(100)
-
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  totalCapital String?
-
-  profile Profile[]
-  segment CompanySegment? @relation(fields: [segmentId], references: [segmentId])
-  formL9  FormL9?
+  website             String?         @db.VarChar(100)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
+  totalCapital        String?
+  companyCode         String?
+  application         String          @default("E-Bidding")
+  segment             CompanySegment? @relation(fields: [segmentId], references: [segmentId])
+  profile             Profile[]
+  formL9              FormL9?
 
   @@index([companyName])
   @@index([npwp])
@@ -36,51 +32,29 @@ model Company {
   @@index([segmentId])
 }
 
-// ------------------------------------------
-// MODEL 1: The PO Header (Top part of form)
-// ------------------------------------------
 model Distro_PO_Header {
-  id   Int    @id @default(autoincrement())
-  uuid String @unique @default(uuid())
+  id              Int              @id @default(autoincrement())
+  poNumber        String           @unique
+  distributorName String
+  customerCode    String
+  poDate          DateTime
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  niterraPO       String           @unique
+  niterraSO       String           @unique
+  uuid            String           @unique @default(uuid())
+  items           Distro_PO_Line[]
 
-  // Unique Identifier from the form "Nomor PO Distro"
-  poNumber String @unique
-
-  // Header Info
-  distributorName String // "Nama Distro"
-  customerCode    String // "Cust Code"
-  poDate          DateTime // "Tanggal PO"
-  niterraSO       String   @unique
-
-  // Auto-generated Niterra PO Number
-  niterraPO String @unique // Format: Niterra/PO/yyyyMM/xxx
-
-  // Relation: A PO has many line items
-  items Distro_PO_Line[]
-
-  // Standard timestamps for record keeping
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("Distro_PO_Header") // Optional: Custom table name in DB
+  @@map("Distro_PO_Header")
 }
 
-// ------------------------------------------
-// MODEL 2: The Line Items (Table rows)
-// ------------------------------------------
 model Distro_PO_Line {
-  id Int @id @default(autoincrement())
-
-  // Item Details
-  vehicleCategory String // "2W Ni", "4W PM", etc.
-  spType          String // "YL", "GP", etc.
-  partName        String // "Part 1"
-  partNumber      String // "Part Number 1"
-
-  // The crucial input field
-  qty Int @default(0)
-
-  // Foreign Key linking back to the PO Header
+  id              Int              @id @default(autoincrement())
+  vehicleCategory String
+  spType          String
+  partName        String
+  partNumber      String
+  qty             Int              @default(0)
   purchaseOrderId Int
   purchaseOrder   Distro_PO_Header @relation(fields: [purchaseOrderId], references: [id], onDelete: Cascade)
 
@@ -102,32 +76,26 @@ model Distro_PO_MasterItem {
 }
 
 model FormL9 {
-  formL9Id  String   @id @default(uuid()) @db.Uuid
-  companyId String   @unique @db.Uuid
-  status    String   @db.VarChar(50)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  company Company @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
-
+  formL9Id           String                    @id @default(uuid()) @db.Uuid
+  companyId          String                    @unique @db.Uuid
+  status             String                    @db.VarChar(50)
+  createdAt          DateTime                  @default(now())
+  updatedAt          DateTime                  @updatedAt
+  company            Company                   @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
   bankInfo           FormL9BankInfo?
-  generalInformation FormL9GeneralInformation?
   employeeInfo       FormL9Employe?
+  generalInformation FormL9GeneralInformation?
+  managements        FormL9Management[]
   others             FormL9Others?
-
-  managements     FormL9Management[]
-  workExperiences FormL9WorkExperience[]
+  workExperiences    FormL9WorkExperience[]
 
   @@index([companyId])
   @@map("ebidding_form_l9")
 }
 
 model FormL9BankInfo {
-  formL9BankInfoid String @id @default(uuid()) @db.Uuid
-
-  formL9Id String @unique @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
+  formL9BankInfoid   String   @id @default(uuid()) @db.Uuid
+  formL9Id           String   @unique @db.Uuid
   beneficiaryName    String?
   beneficiaryAddress String?
   bankName           String?
@@ -137,30 +105,28 @@ model FormL9BankInfo {
   IBAN               String?
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
+  formL9             FormL9   @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
   @@index([noRek])
   @@map("ebidding_form_l9_bank_info")
 }
 
 model FormL9GeneralInformation {
-  formGeneralInformationId String @id @default(uuid()) @db.Uuid
-
-  formL9Id String @unique @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  companyName         String?
-  companyFoundingDate DateTime?
-  companyStatus       String?
-  companyTelpFax      String?
-  companyAddress      String?
-  companyEmail        String?
-  npwp                String?
-  totalCapital        String?
-  segmentId           String?
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
-
-  generalInfoContinue FormL9GeneralInformationContinue?
+  formGeneralInformationId String                            @id @default(uuid()) @db.Uuid
+  formL9Id                 String                            @unique @db.Uuid
+  companyName              String?
+  companyFoundingDate      DateTime?
+  companyStatus            String?
+  companyTelpFax           String?
+  companyAddress           String?
+  companyEmail             String?
+  npwp                     String?
+  totalCapital             String?
+  segmentId                String?
+  createdAt                DateTime                          @default(now())
+  updatedAt                DateTime                          @updatedAt
+  formL9                   FormL9                            @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
+  generalInfoContinue      FormL9GeneralInformationContinue?
 
   @@index([companyName])
   @@index([npwp])
@@ -168,29 +134,25 @@ model FormL9GeneralInformation {
 }
 
 model FormL9GeneralInformationContinue {
-  formL9GeneralInformationContinueId String @id @default(uuid()) @db.Uuid
-
-  formGeneralInformationId String                   @unique @db.Uuid
-  generalInformation       FormL9GeneralInformation @relation(fields: [formGeneralInformationId], references: [formGeneralInformationId], onDelete: Cascade)
-
-  permitsHeld String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  formL9GeneralInformationContinueId String                   @id @default(uuid()) @db.Uuid
+  formGeneralInformationId           String                   @unique @db.Uuid
+  permitsHeld                        String?
+  createdAt                          DateTime                 @default(now())
+  updatedAt                          DateTime                 @updatedAt
+  generalInformation                 FormL9GeneralInformation @relation(fields: [formGeneralInformationId], references: [formGeneralInformationId], onDelete: Cascade)
 
   @@map("ebidding_form_l9_general_information_continue")
 }
 
 model FormL9Management {
-  formL9ManagementId String @id @default(uuid()) @db.Uuid
-
-  formL9Id String @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  position    String?
-  name        String?
-  noTelpFaxHp String?
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  formL9ManagementId String   @id @default(uuid()) @db.Uuid
+  formL9Id           String   @db.Uuid
+  position           String?
+  name               String?
+  noTelpFaxHp        String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  formL9             FormL9   @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
   @@index([formL9Id])
   @@index([name])
@@ -199,36 +161,32 @@ model FormL9Management {
 }
 
 model FormL9Employe {
-  formL9EmployeId String @id @default(uuid()) @db.Uuid
-
-  formL9Id String @unique @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  totalEmployees Int?
-  qualityControl Int?
-  engineering    Int?
-  production     Int?
-  management     Int?
-  other          Int?
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
+  formL9EmployeId String   @id @default(uuid()) @db.Uuid
+  formL9Id        String   @unique @db.Uuid
+  totalEmployees  Int?
+  qualityControl  Int?
+  engineering     Int?
+  production      Int?
+  management      Int?
+  other           Int?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  formL9          FormL9   @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
   @@map("ebidding_form_l9_employe")
 }
 
 model FormL9WorkExperience {
-  formL9WorkExperienceId String @id @default(uuid()) @db.Uuid
-
-  formL9Id String @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  customerOrLocation    String?
-  typeOfWork            String?
-  score                 Int?
-  customerContactPerson String?
-  customerTelpFaxHp     String?
-  createdAt             DateTime @default(now())
-  updatedAt             DateTime @updatedAt
+  formL9WorkExperienceId String   @id @default(uuid()) @db.Uuid
+  formL9Id               String   @db.Uuid
+  customerOrLocation     String?
+  typeOfWork             String?
+  score                  Int?
+  customerContactPerson  String?
+  customerTelpFaxHp      String?
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+  formL9                 FormL9   @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
   @@index([formL9Id])
   @@index([customerOrLocation])
@@ -237,47 +195,38 @@ model FormL9WorkExperience {
 }
 
 model FormL9Others {
-  formL9OthersId String @id @default(uuid()) @db.Uuid
-
-  formL9Id String @unique @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  haveCertificateISO                        Boolean @default(false)
-  haveCompanyOrganizationalStructure        Boolean @default(false)
-  haveQualityControlOrganizationalStructure Boolean @default(false)
-  haveProductWarranty                       Boolean @default(false)
-  haveExpiryDate                            Boolean @default(false)
-  haveAPD                                   Boolean @default(false)
-  haveAPDRegulation                         Boolean @default(false)
-  isTopApplicable                           Boolean @default(false)
-
-  paymentTime String?
-
-  agreeToConfidentialInformation         Boolean  @default(false)
-  understandingBreachesOfConfidentiality Boolean  @default(false)
-  signConfidentialityAgreement           Boolean  @default(false)
-  createdAt                              DateTime @default(now())
-  updatedAt                              DateTime @updatedAt
-
-  certificateISOs FormL9CertificateISO[]
+  formL9OthersId                            String                 @id @default(uuid()) @db.Uuid
+  formL9Id                                  String                 @unique @db.Uuid
+  haveCertificateISO                        Boolean                @default(false)
+  haveCompanyOrganizationalStructure        Boolean                @default(false)
+  haveQualityControlOrganizationalStructure Boolean                @default(false)
+  haveProductWarranty                       Boolean                @default(false)
+  haveExpiryDate                            Boolean                @default(false)
+  haveAPD                                   Boolean                @default(false)
+  haveAPDRegulation                         Boolean                @default(false)
+  isTopApplicable                           Boolean                @default(false)
+  paymentTime                               String?
+  agreeToConfidentialInformation            Boolean                @default(false)
+  understandingBreachesOfConfidentiality    Boolean                @default(false)
+  signConfidentialityAgreement              Boolean                @default(false)
+  createdAt                                 DateTime               @default(now())
+  updatedAt                                 DateTime               @updatedAt
+  certificateISOs                           FormL9CertificateISO[]
+  formL9                                    FormL9                 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
   @@map("ebidding_form_l9_others")
 }
 
 model FormL9CertificateISO {
-  certificateISOId String @id @default(uuid()) @db.Uuid
-
-  formL9OthersId String @db.Uuid
-
-  others FormL9Others @relation(fields: [formL9OthersId], references: [formL9OthersId], onDelete: Cascade)
-
+  certificateISOId   String       @id @default(uuid()) @db.Uuid
+  formL9OthersId     String       @db.Uuid
   isoName            String?
   validityPeriodFrom DateTime?
   validityPeriodTo   DateTime?
-
-  remakes   String?  @db.Text
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  remakes            String?
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+  others             FormL9Others @relation(fields: [formL9OthersId], references: [formL9OthersId], onDelete: Cascade)
 
   @@index([formL9OthersId])
   @@index([isoName])
@@ -302,39 +251,36 @@ model AllowedIpCors {
 }
 
 model Menu {
-  menuId      Int     @id @default(autoincrement())
-  sequence    Int
-  parentId    Int?
-  icon        String? @db.VarChar(50)
-  application String  @default("E-Bidding") @db.VarChar(50)
-  menuName    String  @db.VarChar(50)
-  redirect    String  @db.Text
-  isGlobal    Boolean @default(false)
-  isShow      Boolean @default(true)
-  isActive    Boolean @default(true)
-
+  menuId            Int                 @id @default(autoincrement())
+  sequence          Int
+  parentId          Int?
+  icon              String?             @db.VarChar(50)
+  application       String              @default("E-Bidding") @db.VarChar(50)
+  menuName          String              @db.VarChar(50)
+  redirect          String
+  isGlobal          Boolean             @default(false)
+  isShow            Boolean             @default(true)
+  isActive          Boolean             @default(true)
   UserHasRoleAccess UserHasRoleAccess[]
 }
 
 model User {
-  userId              String    @id @default(uuid()) @db.Uuid
-  email               String    @db.VarChar(150)
-  application         String    @default("E-Bidding") @db.VarChar(150)
-  failedLoginAttempts Int       @default(0)
+  userId              String              @id @default(uuid()) @db.Uuid
+  email               String              @db.VarChar(150)
+  application         String              @default("E-Bidding") @db.VarChar(150)
+  password            String              @db.VarChar(255)
+  isActive            Boolean             @default(false)
+  sessionExpireDate   DateTime
+  createdDate         DateTime            @default(now())
+  updateDate          DateTime            @updatedAt
   blockedUntil        DateTime?
-  password            String    @db.VarChar(255)
-  isActive            Boolean   @default(false)
-
-  sessionExpireDate DateTime
-  createdDate       DateTime @default(now())
-  updateDate        DateTime @updatedAt
-
-  logs              LogsLogin[]
-  linkedDevice      LinkedDevice[]
-  profile           Profile?
-  UserHasRoleAccess UserHasRoleAccess[]
-  otp               otpVerifikasi[]
-  ResetPassword     ResetPassword[]
+  failedLoginAttempts Int                 @default(0)
+  linkedDevice        LinkedDevice[]
+  logs                LogsLogin[]
+  profile             Profile?
+  ResetPassword       ResetPassword[]
+  UserHasRoleAccess   UserHasRoleAccess[]
+  otp                 otpVerifikasi[]
 
   @@unique([email, application])
   @@index([email])
@@ -348,8 +294,7 @@ model otpVerifikasi {
   userId     String   @db.Uuid
   code       String   @db.VarChar(6)
   expireDate DateTime
-
-  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  user       User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
 
   @@index([userId, code])
 }
@@ -357,29 +302,26 @@ model otpVerifikasi {
 model LogsLogin {
   logsId      String   @id @default(uuid()) @db.Uuid
   userId      String   @db.Uuid
-  token       String   @unique @db.Text
+  token       String   @unique
   isActive    Boolean  @default(true)
-  device      String?  @db.Text
+  device      String?
   ip          String?  @db.VarChar(45)
   createdDate DateTime @default(now())
   expireDate  DateTime
-
-  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  user        User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
 
   @@index([userId])
 }
 
 model Role {
-  roleId   Int    @id @default(autoincrement())
-  roleName String @db.VarChar(50)
-
+  roleId            Int                 @id @default(autoincrement())
+  roleName          String              @db.VarChar(50)
   UserHasRoleAccess UserHasRoleAccess[]
 }
 
 model Access {
-  accessId   Int    @id @default(autoincrement())
-  accessName String @db.VarChar(50)
-
+  accessId          Int                 @id @default(autoincrement())
+  accessName        String              @db.VarChar(50)
   UserHasRoleAccess UserHasRoleAccess[]
 }
 
@@ -389,8 +331,7 @@ model ResetPassword {
   token       String   @default(uuid()) @db.Uuid
   createdDate DateTime @default(now())
   expireDate  DateTime
-
-  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  user        User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
 }
 
 model UserHasRoleAccess {
@@ -398,11 +339,10 @@ model UserHasRoleAccess {
   roleId   Int
   accessId Int
   menuId   Int?
-
-  user   User   @relation(fields: [userId], references: [userId], onDelete: Cascade)
-  role   Role   @relation(fields: [roleId], references: [roleId], onDelete: Cascade)
-  access Access @relation(fields: [accessId], references: [accessId], onDelete: Cascade)
-  menu   Menu?  @relation(fields: [menuId], references: [menuId], onDelete: Cascade)
+  access   Access @relation(fields: [accessId], references: [accessId], onDelete: Cascade)
+  menu     Menu?  @relation(fields: [menuId], references: [menuId], onDelete: Cascade)
+  role     Role   @relation(fields: [roleId], references: [roleId], onDelete: Cascade)
+  user     User   @relation(fields: [userId], references: [userId], onDelete: Cascade)
 
   @@id([userId, roleId, accessId])
   @@index([userId, accessId, menuId])
@@ -420,8 +360,7 @@ model LinkedDevice {
   deviceId         String @id @default(uuid()) @db.Uuid
   clientDeviceUuid String @db.Uuid
   userId           String @db.Uuid
-
-  user User @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  user             User   @relation(fields: [userId], references: [userId], onDelete: Cascade)
 
   @@unique([userId, clientDeviceUuid])
   @@index([userId])
@@ -431,13 +370,12 @@ model Profile {
   userId    String   @id @db.Uuid
   companyId String?  @db.Uuid
   fullName  String   @db.VarChar(150)
-  urlImage  String?  @db.Text
+  urlImage  String?
   phone     String   @db.VarChar(15)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-
-  user    User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
-  company Company? @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
+  company   Company? @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [userId], onDelete: Cascade)
 
   @@index([userId, companyId])
   @@index([companyId])

@@ -2,33 +2,29 @@ model CompanySegment {
   segmentId   Int       @id @default(autoincrement())
   segmentName String    @db.VarChar(100)
   description String?   @db.VarChar(255)
-
-  company Company[]
+  company     Company[]
 }
 
 model Company {
-  companyId           String    @id @default(uuid()) @db.Uuid
-  segmentId           Int?      
-  urlImage            String?   @db.Text
-  companyCode        String?
-  companyName         String?   
-  companyFoundingDate DateTime? 
-  companyStatus       String?   
-  companyTelpFax      String?   
-  companyAddress      String?   
-  companyEmail        String?   
+  companyId           String          @id @default(uuid()) @db.Uuid
+  segmentId           Int?
+  urlImage            String?
+  companyName         String?
+  companyFoundingDate DateTime?
+  companyStatus       String?
+  companyTelpFax      String?
+  companyAddress      String?
+  companyEmail        String?
   npwp                String?
-  application         String   @default("E-Bidding")   
-  website             String?   @db.VarChar(100)
-  
-  createdAt           DateTime  @default(now())
-  updatedAt           DateTime  @updatedAt
-  
+  website             String?         @db.VarChar(100)
+  createdAt           DateTime        @default(now())
+  updatedAt           DateTime        @updatedAt
   totalCapital        String?
-
-  profile Profile[]
-  segment CompanySegment? @relation(fields: [segmentId], references: [segmentId])
-  formL9  FormL9?
+  companyCode         String?
+  application         String          @default("E-Bidding")
+  segment             CompanySegment? @relation(fields: [segmentId], references: [segmentId])
+  profile             Profile[]
+  formL9              FormL9?
 
   @@index([companyName])
   @@index([npwp])

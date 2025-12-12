@@ -12,6 +12,7 @@ import sanitizeInputMiddleware from "../middleware/sanitizeInputMiddleware.js";
 import { errorMiddleware } from '../middleware/errorMiddleware.js';
 import { niterraappdb } from './database.js';
 import distroPORouter from '../routes/Distro-PO/distroPORoute.js';
+import NGKAXrouter from '../routes/NGKAX/NGKAX-SalesRoute.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -44,6 +45,7 @@ app.use(globalRouter);
 app.use('/api/users',userRouter);
 app.use('/api/admin',adminRouter);
 app.use('/api/distro-po', distroPORouter);
+app.use('/api/ngkax', NGKAXrouter);
 app.use(errorMiddleware);
 
 const server = http.createServer(app);

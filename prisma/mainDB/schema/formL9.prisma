@@ -1,30 +1,24 @@
 model FormL9 {
-  formL9Id  String   @id @default(uuid()) @db.Uuid
-  companyId String   @unique @db.Uuid
-  status    String   @db.VarChar(50)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  company Company @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
-
+  formL9Id           String                    @id @default(uuid()) @db.Uuid
+  companyId          String                    @unique @db.Uuid
+  status             String                    @db.VarChar(50)
+  createdAt          DateTime                  @default(now())
+  updatedAt          DateTime                  @updatedAt
+  company            Company                   @relation(fields: [companyId], references: [companyId], onDelete: Cascade)
   bankInfo           FormL9BankInfo?
-  generalInformation FormL9GeneralInformation?
   employeeInfo       FormL9Employe?
-  others             FormL9Others?
-
+  generalInformation FormL9GeneralInformation?
   managements        FormL9Management[]
+  others             FormL9Others?
   workExperiences    FormL9WorkExperience[]
 
-  @@map("ebidding_form_l9")
   @@index([companyId])
+  @@map("ebidding_form_l9")
 }
 
 model FormL9BankInfo {
-  formL9BankInfoid String @id @default(uuid()) @db.Uuid
-
-  formL9Id String @unique @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
+  formL9BankInfoid   String   @id @default(uuid()) @db.Uuid
+  formL9Id           String   @unique @db.Uuid
   beneficiaryName    String?
   beneficiaryAddress String?
   bankName           String?
@@ -32,151 +26,132 @@ model FormL9BankInfo {
   noRek              String?
   swiftCode          String?
   IBAN               String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  formL9             FormL9   @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
-  @@map("ebidding_form_l9_bank_info")
   @@index([noRek])
+  @@map("ebidding_form_l9_bank_info")
 }
 
 model FormL9GeneralInformation {
-  formGeneralInformationId String @id @default(uuid()) @db.Uuid
+  formGeneralInformationId String                            @id @default(uuid()) @db.Uuid
+  formL9Id                 String                            @unique @db.Uuid
+  companyName              String?
+  companyFoundingDate      DateTime?
+  companyStatus            String?
+  companyTelpFax           String?
+  companyAddress           String?
+  companyEmail             String?
+  npwp                     String?
+  totalCapital             String?
+  segmentId                String?
+  createdAt                DateTime                          @default(now())
+  updatedAt                DateTime                          @updatedAt
+  formL9                   FormL9                            @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
+  generalInfoContinue      FormL9GeneralInformationContinue?
 
-  formL9Id String @unique @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  companyName         String?
-  companyFoundingDate DateTime?
-  companyStatus       String?
-  companyTelpFax      String?
-  companyAddress      String?
-  companyEmail        String?
-  npwp                String?
-  totalCapital        String?
-  segmentId           String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  generalInfoContinue FormL9GeneralInformationContinue?
-
-  @@map("ebidding_form_l9_general_information")
   @@index([companyName])
   @@index([npwp])
+  @@map("ebidding_form_l9_general_information")
 }
 
 model FormL9GeneralInformationContinue {
-  formL9GeneralInformationContinueId String @id @default(uuid()) @db.Uuid
-
-  formGeneralInformationId String                   @unique @db.Uuid
-  generalInformation       FormL9GeneralInformation @relation(fields: [formGeneralInformationId], references: [formGeneralInformationId], onDelete: Cascade)
-
-  permitsHeld String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  formL9GeneralInformationContinueId String                   @id @default(uuid()) @db.Uuid
+  formGeneralInformationId           String                   @unique @db.Uuid
+  permitsHeld                        String?
+  createdAt                          DateTime                 @default(now())
+  updatedAt                          DateTime                 @updatedAt
+  generalInformation                 FormL9GeneralInformation @relation(fields: [formGeneralInformationId], references: [formGeneralInformationId], onDelete: Cascade)
 
   @@map("ebidding_form_l9_general_information_continue")
 }
 
 model FormL9Management {
-  formL9ManagementId String @id @default(uuid()) @db.Uuid
+  formL9ManagementId String   @id @default(uuid()) @db.Uuid
+  formL9Id           String   @db.Uuid
+  position           String?
+  name               String?
+  noTelpFaxHp        String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+  formL9             FormL9   @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
-  formL9Id String @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  position    String?
-  name        String?
-  noTelpFaxHp String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("ebidding_form_l9_management")
   @@index([formL9Id])
   @@index([name])
   @@index([position])
+  @@map("ebidding_form_l9_management")
 }
 
 model FormL9Employe {
-  formL9EmployeId String @id @default(uuid()) @db.Uuid
-
-  formL9Id String @unique @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  totalEmployees Int?
-  qualityControl Int?
-  engineering    Int?
-  production     Int?
-  management     Int?
-  other          Int?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  formL9EmployeId String   @id @default(uuid()) @db.Uuid
+  formL9Id        String   @unique @db.Uuid
+  totalEmployees  Int?
+  qualityControl  Int?
+  engineering     Int?
+  production      Int?
+  management      Int?
+  other           Int?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  formL9          FormL9   @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
   @@map("ebidding_form_l9_employe")
 }
 
 model FormL9WorkExperience {
-  formL9WorkExperienceId String @id @default(uuid()) @db.Uuid
+  formL9WorkExperienceId String   @id @default(uuid()) @db.Uuid
+  formL9Id               String   @db.Uuid
+  customerOrLocation     String?
+  typeOfWork             String?
+  score                  Int?
+  customerContactPerson  String?
+  customerTelpFaxHp      String?
+  createdAt              DateTime @default(now())
+  updatedAt              DateTime @updatedAt
+  formL9                 FormL9   @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
-  formL9Id String @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  customerOrLocation    String?
-  typeOfWork            String?
-  score                 Int?
-  customerContactPerson String?
-  customerTelpFaxHp     String?
-  createdAt DateTime    @default(now())
-  updatedAt DateTime    @updatedAt
-
-  @@map("ebidding_form_l9_work_experience")
   @@index([formL9Id])
   @@index([customerOrLocation])
   @@index([typeOfWork])
+  @@map("ebidding_form_l9_work_experience")
 }
 
 model FormL9Others {
-  formL9OthersId String @id @default(uuid()) @db.Uuid
-
-  formL9Id String @unique @db.Uuid
-  formL9   FormL9 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
-
-  haveCertificateISO                        Boolean @default(false)
-  haveCompanyOrganizationalStructure        Boolean @default(false)
-  haveQualityControlOrganizationalStructure Boolean @default(false)
-  haveProductWarranty                       Boolean @default(false)
-  haveExpiryDate                            Boolean @default(false)
-  haveAPD                                   Boolean @default(false)
-  haveAPDRegulation                         Boolean @default(false)
-  isTopApplicable                           Boolean @default(false)
-
-  paymentTime String?
-
-  agreeToConfidentialInformation          Boolean @default(false)
-  understandingBreachesOfConfidentiality  Boolean @default(false)
-  signConfidentialityAgreement            Boolean @default(false)
-  createdAt                               DateTime @default(now())
-  updatedAt                               DateTime @updatedAt
-
-  certificateISOs FormL9CertificateISO[]
+  formL9OthersId                            String                 @id @default(uuid()) @db.Uuid
+  formL9Id                                  String                 @unique @db.Uuid
+  haveCertificateISO                        Boolean                @default(false)
+  haveCompanyOrganizationalStructure        Boolean                @default(false)
+  haveQualityControlOrganizationalStructure Boolean                @default(false)
+  haveProductWarranty                       Boolean                @default(false)
+  haveExpiryDate                            Boolean                @default(false)
+  haveAPD                                   Boolean                @default(false)
+  haveAPDRegulation                         Boolean                @default(false)
+  isTopApplicable                           Boolean                @default(false)
+  paymentTime                               String?
+  agreeToConfidentialInformation            Boolean                @default(false)
+  understandingBreachesOfConfidentiality    Boolean                @default(false)
+  signConfidentialityAgreement              Boolean                @default(false)
+  createdAt                                 DateTime               @default(now())
+  updatedAt                                 DateTime               @updatedAt
+  certificateISOs                           FormL9CertificateISO[]
+  formL9                                    FormL9                 @relation(fields: [formL9Id], references: [formL9Id], onDelete: Cascade)
 
   @@map("ebidding_form_l9_others")
 }
 
 model FormL9CertificateISO {
-  certificateISOId String @id @default(uuid()) @db.Uuid
-
-  formL9OthersId String @db.Uuid
-
-  others FormL9Others @relation(fields: [formL9OthersId], references: [formL9OthersId], onDelete: Cascade)
-
+  certificateISOId   String       @id @default(uuid()) @db.Uuid
+  formL9OthersId     String       @db.Uuid
   isoName            String?
   validityPeriodFrom DateTime?
   validityPeriodTo   DateTime?
+  remakes            String?
+  createdAt          DateTime     @default(now())
+  updatedAt          DateTime     @updatedAt
+  others             FormL9Others @relation(fields: [formL9OthersId], references: [formL9OthersId], onDelete: Cascade)
 
-  remakes String? @db.Text
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-
-  @@map("ebidding_form_l9_certificate_iso")
   @@index([formL9OthersId])
   @@index([isoName])
+  @@map("ebidding_form_l9_certificate_iso")
 }

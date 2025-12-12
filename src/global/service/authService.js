@@ -144,7 +144,7 @@ try {
     await niterraappdb.LogsLogin.create({
       data: {
         userId: userId,
-        token: 'Bearer ' + token,
+        token: token,
         isActive: true,
         device: requestContext.userAgent || 'Unknown',
         ip: requestContext.ip || 'Unknown',
