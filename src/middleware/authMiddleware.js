@@ -4,6 +4,7 @@ import mailerTemplate from "../utils/mailerTemplate.js";
 
 export const authMiddleware = async (req, res, next) => {
   let token = req.get("Authorization");
+  console.log(token);
   if (!token) {
     return res
       .status(401)

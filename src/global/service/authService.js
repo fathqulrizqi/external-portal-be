@@ -4,7 +4,6 @@ import { registerValidation, loginValidation } from '../validation/authValidatio
 import { niterraappdb } from '../../config/database.js';
 import mailerTemplate from '../../utils/mailerTemplate.js';
 import { ResponseError } from '../../error/responseError.js';
-import { application } from 'express';
 
 
 const register = async (payload) => {
@@ -143,7 +142,7 @@ try {
     await niterraappdb.LogsLogin.create({
       data: {
         userId: userId,
-        token: token,
+        token: 'Bearer ' + token,
         isActive: true,
         device: requestContext.userAgent || 'Unknown',
         ip: requestContext.ip || 'Unknown',
