@@ -139,6 +139,7 @@ exports.Prisma.CompanyScalarFieldEnum = {
   companyAddress: 'companyAddress',
   companyEmail: 'companyEmail',
   npwp: 'npwp',
+  application: 'application',
   website: 'website',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',

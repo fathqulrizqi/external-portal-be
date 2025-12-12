@@ -17,7 +17,8 @@ model Company {
   companyTelpFax      String?   
   companyAddress      String?   
   companyEmail        String?   
-  npwp                String?   
+  npwp                String?
+  application         String   @default("E-Bidding")   
   website             String?   @db.VarChar(100)
   
   createdAt           DateTime  @default(now())
