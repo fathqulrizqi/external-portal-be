@@ -69,6 +69,8 @@ export const authMiddleware = async (req, res, next) => {
       })
       .end();
     }
+    console.log('FE :',deviceUuid);
+    console.log('BE :',existingDevice.clientDeviceUuid);
 
     const existingDevice = await niterraappdb.linkedDevice.findFirst({
       where: { userId: log.user.userId }
