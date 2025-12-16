@@ -220,7 +220,7 @@ const otpRegistrationVerification = async (userId,otp) => {
     },
     data : {
       isActive : true, 
-      sessionExpireDate : verifikasi.expireDate
+      sessionExpireDate : new Date(Date.now() + 6 * 60 * 60 * 1000)
     }
   })
   return true;
