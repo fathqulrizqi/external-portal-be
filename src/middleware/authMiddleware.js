@@ -12,6 +12,8 @@ export const authMiddleware = async (req, res, next) => {
       })
       .end();
   }
+
+  
   
   const log = await niterraappdb.logsLogin.findUnique({
     where: {
