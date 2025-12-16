@@ -177,8 +177,10 @@ try {
   })
   if(!cekDevice){
     await niterraappdb.linkedDevice.create({
-     userId : user.userId ,
-     clientDeviceUuid : payload.clientDeviceUuid
+     data  : {
+      userId : user.userId ,
+      clientDeviceUuid : payload.clientDeviceUuid
+     }
     })
   }
 
