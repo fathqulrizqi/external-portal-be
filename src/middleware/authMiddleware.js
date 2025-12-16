@@ -13,7 +13,7 @@ export const authMiddleware = async (req, res, next) => {
       .end();
   }
 
-  
+
   
   const log = await niterraappdb.logsLogin.findUnique({
     where: {
@@ -109,7 +109,7 @@ export const authMiddleware = async (req, res, next) => {
         }
       });
       
-      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.get('user-agent'),req.get('ip'));
+      await mailerTemplate.verifikasiLogin(log.user.userId,log.user.email,req.get('user-agent'),req.ip);
       
       return res
         .status(403)

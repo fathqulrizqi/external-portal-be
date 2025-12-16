@@ -108,7 +108,7 @@ try {
         }
       }
     })
-    console.log(failedCounts);
+    
     if(failedCounts.failedLoginAttempts >= 3){
       const BASE_LOCKOUT_DURATION_MS = 5 * 60 * 1000;
       const multiplier = failedCounts.failedLoginAttempts - 2;
@@ -171,6 +171,16 @@ try {
       failedLoginAttempts : 0 
     }
   })
+
+  const cekDevice = await niterraappdb.linkedDevice.findFirst({
+    where : {userId : user.userId}
+  })
+  if(!cekDevice){
+    await niterraappdb.linkedDevice.create({
+     userId : user.userId ,
+     clientDeviceUuid : payload.clientDeviceUuid
+    })
+  }
 
   const {role,access} = roleAccess;
   return { token, role, access };

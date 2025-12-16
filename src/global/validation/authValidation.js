@@ -67,5 +67,13 @@ const loginValidation = Joi.object({
     'string.empty': 'Invalid application login',
     'any.required': 'Invalid application login',
   }),
+  clientDeviceUuid: Joi.string()
+  .uuid()
+  .required()
+  .messages({
+    'string.guid': 'Invalid client device UUID', 
+    'string.empty': 'Invalid client device UUID',
+    'any.required': 'Invalid client device UUID',
+  }),
 });
 export { registerValidation,loginValidation };

@@ -28,7 +28,8 @@ const login = async (req, res, next) => {
     const payload = {
       email: req.body.email?.trim().toLowerCase() || "",
       password: req.body.password || "",
-      application : req.body.application
+      application : req.body.application,
+      clientDeviceUuid : req.headers['client-device-uuid']
     };
 
     const requestContext = {
