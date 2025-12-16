@@ -21,7 +21,7 @@ const registerValidation = Joi.object({
     }),
   
   password: Joi.string()
-  .min(8) 
+  .min(10) 
   .pattern(new RegExp('[A-Z]'), { name: 'uppercase' }) 
   .pattern(new RegExp('[a-z]'), { name: 'lowercase' }) 
   .pattern(new RegExp('[0-9]'), { name: 'number' })
@@ -29,7 +29,7 @@ const registerValidation = Joi.object({
   .messages({ 
     'string.empty': 'Password is required',
     'any.required': 'Password is required',
-    'string.min': 'Password must be at least 8 characters long',
+    'string.min': 'Password must be at least 10 characters long',
     'string.pattern.base': 'Password must contain at least one uppercase letter, one lowercase letter, and one number'
   }),
 

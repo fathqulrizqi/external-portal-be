@@ -30,12 +30,16 @@ const updateProfileValidation = Joi.object({
 
 const updatePasswordValidation = Joi.object({
     password: Joi.string()
-        .min(8) 
-        .messages({
-            'string.base': 'Password must be a string.',
-            'string.empty': 'Password cannot be empty.',
-            'string.min': 'Password must have at least {#limit} characters.',
-            'any.required': 'Password is required.',
+        .min(10) 
+        .pattern(new RegExp('[A-Z]'), { name: 'uppercase' }) 
+        .pattern(new RegExp('[a-z]'), { name: 'lowercase' }) 
+        .pattern(new RegExp('[0-9]'), { name: 'number' })
+        .required()
+        .messages({ 
+            'string.empty': 'Password is required',
+            'any.required': 'Password is required',
+            'string.min': 'Password must be at least 10 characters long',
+            'string.pattern.base': 'Password must contain at least one uppercase letter, one lowercase letter, and one number'
         }),
 
     passwordConfirm: Joi.string()
