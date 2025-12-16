@@ -35,8 +35,27 @@ export const authMiddleware = async (req, res, next) => {
   }
   });
   console.log('masuk sini',token);
+    
+    if(!log){
+       return res
+      .status(401)
+      .json({
+          errors: "Unauthorized",
+      })
+      .end();
+    }
 
-  if (!log || new Date() > log.expireDate) {
+    if(log.user.isActive == false){
+        await mailerTemplate.verifikasiRegistrasi(log.user.userId, log.user.email);
+        return res
+        .status(402)
+        .json({
+          errors: "Account is not active",
+        })
+        .end();
+    }
+
+    if ( new Date() > log.expireDate) {
     //     if (log) {
     // //   await niterraappdb.logsLogin.delete({ where: { token: token } });
     //     }
@@ -49,16 +68,6 @@ export const authMiddleware = async (req, res, next) => {
       .end();
 
   }
-    
-    if(log.user.isActive == false){
-        await mailerTemplate.verifikasiRegistrasi(log.user.userId, log.user.email);
-        return res
-        .status(402)
-        .json({
-          errors: "Account is not active",
-        })
-        .end();
-    }
 
     const deviceUuid = req.get("Client-Device-Uuid");
     if(!deviceUuid){
