@@ -3,7 +3,6 @@ import {niterraappdb} from "../config/database.js";
 export const verifikasiMiddleware = async (req, res, next) => {
   const token = req.get("Authorization");
 
-  console.log(token);
   if (!token) {
     return res
       .status(401)

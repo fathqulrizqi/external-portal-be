@@ -36,7 +36,6 @@ export const authMiddleware = async (req, res, next) => {
     }
   }
   });
-  console.log('masuk sini',token);
     
     if(!log){
        return res
@@ -84,8 +83,6 @@ export const authMiddleware = async (req, res, next) => {
     const existingDevice = await niterraappdb.linkedDevice.findFirst({
       where: { userId: log.user.userId }
     });
-    console.log('FE :',deviceUuid);
-    console.log('BE :',existingDevice.clientDeviceUuid);
 
     if (existingDevice === null || deviceUuid !== existingDevice.clientDeviceUuid) {
       
