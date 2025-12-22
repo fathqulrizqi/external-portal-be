@@ -109,9 +109,9 @@ try {
       }
     })
     
-    if(failedCounts.failedLoginAttempts >= 3){
+    if(failedCounts.failedLoginAttempts >= 5){
       const BASE_LOCKOUT_DURATION_MS = 5 * 60 * 1000;
-      const multiplier = failedCounts.failedLoginAttempts - 2;
+      const multiplier = failedCounts.failedLoginAttempts - 4;
       const lockoutDuration = multiplier * BASE_LOCKOUT_DURATION_MS;
       const blockedUntilTime = new Date(Date.now() + lockoutDuration);
 
@@ -120,6 +120,9 @@ try {
       data: {
         blockedUntil: blockedUntilTime,
         }
+      })
+      await niterraappdb.linkedDevice.delete({
+        where : {userId : user.userId}
       })
       throw new ResponseError(406,`Account Blocked Until ${blocked.blockedUntil}`);
     }else{

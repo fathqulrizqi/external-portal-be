@@ -36,7 +36,6 @@ export const authMiddleware = async (req, res, next) => {
     }
   }
   });
-  console.log('masuk sini',token);
     
     if(!log){
        return res
