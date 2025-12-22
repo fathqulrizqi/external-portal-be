@@ -465,7 +465,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\inetpub\\wwwroot\\external-portal\\External-portal-Backend\\prisma\\mainDB\\@prisma\\client-main",
+      "value": "C:\\laragon\\www\\e-bidding-backend\\prisma\\mainDB\\@prisma\\client-main",
       "fromEnvVar": null
     },
     "config": {
@@ -479,7 +479,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\inetpub\\wwwroot\\external-portal\\External-portal-Backend\\prisma\\mainDB\\schema\\main.prisma",
+    "sourceFilePath": "C:\\laragon\\www\\e-bidding-backend\\prisma\\mainDB\\schema\\main.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
