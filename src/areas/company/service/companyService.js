@@ -1,143 +1,89 @@
+/**
+ * Get all companies (for dropdowns, admin, etc.)
+ */
+export async function getAllCompanies(filter = {}) {
+  const where = {};
+  if (filter.application) where.application = filter.application;
+  if (filter.companyStatus) where.companyStatus = filter.companyStatus;
+  return niterraappdb.Company.findMany({ where });
+}
 import { niterraappdb } from '../../../config/database.js';
-import {
-    createCompanyValidation,
-    updateCompanyValidation,
-} from '../validation/companyValidation.js';
-
 import { ResponseError } from '../../../error/responseError.js';
+import { createCompanyValidation, updateCompanyValidation } from '../validation/companyValidation.js';
 
-const handleValidationError = (error) => {
-    const firstError = error.details[0].message;
-    throw new ResponseError(404,firstError);
+/**
+ * Helper: Throws if user is not a company admin.
+ */
+async function assertCompanyAdmin(userId) {
+  const user = await niterraappdb.user.findUnique({
+    where: { userId },
+    include: { UserHasRoleAccess: true }
+  });
+  const isAdmin = user?.UserHasRoleAccess?.some(r => r.roleId === /* your admin role id, e.g. */ 2);
+  if (!isAdmin) throw new ResponseError(403, 'Only Company Administrators can perform this action.');
 }
 
-const create = async (userId,payload) => {
-    try {
-        await createCompanyValidation.validateAsync(payload, { abortEarly: false });
-    } catch (error) {
-        handleValidationError(error);
-    }
-    
-    const existing = await niterraappdb.Company.findFirst({
-        where: { companyName: payload.companyName }
-    });
+/**
+ * Create a company and associate with user (if not already associated).
+ */
+export async function createCompany(userId, payload) {
+  await createCompanyValidation.validateAsync(payload, { abortEarly: false });
 
-    if (existing) {
-        throw new ResponseError(409,'Company name already exists');
-    }
+  // Check if user already has a company
+  const profile = await niterraappdb.profile.findUnique({ where: { userId } });
+  if (profile?.companyId) throw new ResponseError(400, 'User already associated with a company.');
 
-    const company = await niterraappdb.Company.create({
-        data: payload
-    });
+  // Check for duplicate company name
+  const existing = await niterraappdb.Company.findFirst({ where: { companyName: payload.companyName } });
+  if (existing) throw new ResponseError(409, 'Company name already exists.');
 
-    await niterraappdb.profile.update({
-        where: {userId : userId},
-        data :{
-            companyId: company.companyId
-        }
-    })
-    return true;
-};
+  // Create company and associate
+  const company = await niterraappdb.Company.create({ data: payload });
+  await niterraappdb.profile.update({ where: { userId }, data: { companyId: company.companyId } });
+  return company;
+}
 
-const getAll = async () => {
-    return niterraappdb.Company.findMany({
-        orderBy: { segmentId: 'asc' }
-    });
-};
+/**
+ * Get company by user (each user can only have one).
+ */
+export async function getCompanyByUser(userId) {
+  const profile = await niterraappdb.profile.findUnique({ where: { userId } });
+  if (!profile?.companyId) throw new ResponseError(404, 'User not associated with a company.');
+  const company = await niterraappdb.Company.findUnique({ where: { companyId: profile.companyId } });
+  if (!company) throw new ResponseError(404, 'Company not found.');
+  return company;
+}
 
-const getById = async (payload) => {
+/**
+ * Update company (only by associated user).
+ */
+export async function updateCompany(userId, payload) {
+  await updateCompanyValidation.validateAsync(payload, { abortEarly: false });
+  const profile = await niterraappdb.profile.findUnique({ where: { userId } });
+  if (!profile?.companyId) throw new ResponseError(404, 'User not associated with a company.');
+  return niterraappdb.Company.update({
+    where: { companyId: profile.companyId },
+    data: payload
+  });
+}
 
-    const company = await niterraappdb.Company.findUnique({
-        where: { companyId: payload.companyId }
-    });
+/**
+ * Delete company (only by associated user, and if no other users are associated).
+ */
+export async function deleteCompany(userId) {
+  const profile = await niterraappdb.profile.findUnique({ where: { userId } });
+  if (!profile?.companyId) throw new ResponseError(404, 'User not associated with a company.');
+  const userCount = await niterraappdb.profile.count({ where: { companyId: profile.companyId } });
+  if (userCount > 1) throw new ResponseError(400, 'Cannot delete company: other users are still associated.');
+  await niterraappdb.Company.delete({ where: { companyId: profile.companyId } });
+}
 
-    if (!company) {
-        throw new ResponseError(404,'Company not found');
-    }
-
-    return company;
-};
-
-const getByUserId = async (userId) => {
-
-    const user = await niterraappdb.profile.findUnique({
-        where : {userId : userId},
-        select : {
-            companyId : true
-        }
-    })
-    const company = await niterraappdb.Company.findUnique({
-        where: { companyId: user.companyId }
-    });
-
-    if (!company) {
-        throw new ResponseError(404,'Company not found');
-    }
-
-    return company;
-};
-
-const update = async (userId,payload) => {
-    try {
-        await updateCompanyValidation.validateAsync(payload, { abortEarly: false });
-    } catch (error) {
-        handleValidationError(error);
-    }
-
-    const profile = await niterraappdb.profile.findUnique({
-        where :{userId : userId}
-    })
-    
-    if(!profile.companyId){
-        throw new ResponseError(404, 'You do not have company, Please Input Company Form First!')
-    }
-
-    return niterraappdb.Company.update({
-        where: { companyId: profile.companyId },
-        data: {
-            companyCode        : payload.companyCode,
-            companyName         : payload.companyName,
-            companyFoundingDate : payload.companyFoundingDate,
-            companyStatus       : payload.companyStatus,
-            companyTelpFax      : payload.companyTelpFax,
-            companyAddress      : payload.companyAddress,
-            companyEmail        : payload.companyEmail,
-            npwp                : payload.npwp,
-            website             : payload.website,
-            segmentId           : payload.segmentId,
-            urlImage            : payload.urlImage
-        }
-    });
-};
-
-const remove = async (payload) => {
-
-    const profiles = await niterraappdb.Profile.count({
-        where: { companyId: payload.companyId }
-    });
-
-    if (profiles > 0) {
-        throw new ResponseError(400,'Cannot delete company: it is currently used by one or more profiles');
-    }
-
-    try {
-        await niterraappdb.Company.delete({
-            where: { companyId: payload.companyId }
-        });
-    } catch (error) {
-        if (error.code === 'P2025') { 
-            throw new ResponseError(404,'Company not found');
-        }
-        throw error;
-    }
-};
-
-
-export default {
-    create,
-    getAll,
-    getById,
-    getByUserId,
-    update,
-    remove
-};
+/**
+ * Add a user to the company (only by company admin).
+ */
+export async function addUserToCompany(adminUserId, targetUserId) {
+  await assertCompanyAdmin(adminUserId);
+  const adminProfile = await niterraappdb.profile.findUnique({ where: { userId: adminUserId } });
+  if (!adminProfile?.companyId) throw new ResponseError(404, 'Admin not associated with a company.');
+  await niterraappdb.profile.update({ where: { userId: targetUserId }, data: { companyId: adminProfile.companyId } });
+}

@@ -1,10 +1,17 @@
+
 import express from 'express';
 import masteritemRoute from './masteritemRoute.js';
+import masterAchievementRoute from './masterAchievementRoute.js';
+import masterItemPriceRoute from './masterItemPriceRoute.js';
 import distroPOController from '../../areas/distro-po/controller/distroPOController.js';
+import masterItemPriceHeaderRoute from './masterItemPriceHeaderRoute.js';
 const router = express.Router();
 
 // Always mount static/subresource routes before parameterized routes
 router.use('/masteritem', masteritemRoute);
+router.use('/masterachievement', masterAchievementRoute);
+router.use(masterItemPriceRoute);
+router.use(masterItemPriceHeaderRoute);
 
 // PO CRUD routes
 router.post('/', distroPOController.createPO);

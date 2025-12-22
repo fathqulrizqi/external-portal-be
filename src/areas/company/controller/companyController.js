@@ -1,5 +1,21 @@
-import { application } from 'express';
-import companyService from '../service/companyService.js';
+import { getAllCompanies } from '../service/companyService.js';
+// Return all companies (for dropdowns, admin, etc.)
+const getAllCompaniesController = async (req, res, next) => {
+    try {
+        const { application, companyStatus } = req.query;
+        const companies = await getAllCompanies({ application, companyStatus });
+        res.status(200).json(companies);
+    } catch (e) {
+        next(e);
+    }
+};
+import { 
+    createCompany, 
+    getCompanyByUser, 
+    updateCompany, 
+    deleteCompany, 
+    addUserToCompany 
+} from '../service/companyService.js';
 
 const create = async (req, res, next) => {
     try {
@@ -7,19 +23,20 @@ const create = async (req, res, next) => {
         const userId = req.user.userId;
         const payload = {
             companyName         : req.body.companyName,
-            companyFoundingDate : req.body.companyFoundingDate,
             companyStatus       : req.body.companyStatus,
             companyTelpFax      : req.body.companyTelpFax,
             companyAddress      : req.body.companyAddress,
             companyEmail        : req.body.companyEmail,
             npwp                : req.body.npwp,
-            website             : req.body.website || null,
-            segmentId           : req.body.segmentId,
+            companyCode         : req.body.companyCode,
+            companyType         : req.body.companyType,
+            companyCity         : req.body.companyCity,
             urlImage            : companyImage ,
-            application         : req.body.application
+            application         : req.body.application,
+            segments            : Array.isArray(req.body.segments) ? req.body.segments.map(Number) : req.body.segments ? [Number(req.body.segments)] : []
         }
         
-        const result = await companyService.create(userId,payload);
+        const result = await createCompany(userId,payload);
         res.status(201).json({
             status: "Success",
             message: "Company  created successfully",
@@ -31,7 +48,7 @@ const create = async (req, res, next) => {
 
 const getAllCompany = async (req, res, next) => {
     try {
-        const result = await companyService.getAll();
+        const result = await getAllCompany();
         res.status(200).json({
             status: "Success",
             message: "Company s retrieved successfully",
@@ -47,7 +64,7 @@ const getCompanyById = async (req, res, next) => {
         const payload = {
             companyId: parseInt(req.params.companyId, 10) || null, 
         };
-        const result = await companyService.getById(payload);
+        const result = await getCompanyById(payload);
         res.status(200).json({
             status: "Success",
             message: "Company retrieved successfully",
@@ -59,7 +76,7 @@ const getCompanyById = async (req, res, next) => {
 };
 const getCompanyByUserId = async (req, res, next) => {
     try {
-        const result = await companyService.getByUserId(req.user.userId);
+        const result = await getCompanyByUser(req.user.userId);
         res.status(200).json({
             status: "Success",
             message: "Company retrieved successfully",
@@ -76,18 +93,19 @@ const update = async (req, res, next) => {
         const userId = req.user.userId;
         const payload = {
             companyCode        : req.body.companyCode,
-            companyName         : req.body.companyName ,
-            companyFoundingDate : req.body.companyFoundingDate ,
-            companyStatus       : req.body.companyStatus ,
-            companyTelpFax      : req.body.companyTelpFax ,
-            companyAddress      : req.body.companyAddress ,
-            companyEmail        : req.body.companyEmail ,
-            npwp                : req.body.npwp ,
-            website             : req.body.website ,
-            segmentId           : req.body.segmentId ,
-            urlImage            : companyImage ?? undefined
+            companyName        : req.body.companyName,
+            companyStatus      : req.body.companyStatus,
+            companyTelpFax     : req.body.companyTelpFax,
+            companyAddress     : req.body.companyAddress,
+            companyEmail       : req.body.companyEmail,
+            npwp               : req.body.npwp,
+            companyType        : req.body.companyType,
+            companyCity        : req.body.companyCity,
+            urlImage           : companyImage ?? undefined,
+            application        : req.body.application,
+            segments           : Array.isArray(req.body.segments) ? req.body.segments.map(Number) : req.body.segments ? [Number(req.body.segments)] : []
         }
-        const result = await companyService.update(userId,payload);
+        const result = await updateCompany(userId,payload);
         res.status(200).json({
             status: "Success",
             message: "Company  updated successfully",
@@ -97,20 +115,7 @@ const update = async (req, res, next) => {
     }
 };
 
-const deleteCompany = async (req, res, next) => {
-    try {
-        const payload = {
-            companyId: parseInt(req.params.companyId, 10) || null,
-        };
-        await companyService.remove(payload);
-        res.status(200).json({
-            status: "Success",
-            message: "Company  deleted successfully",
-        });
-    } catch (e) {
-        next(e);
-    }
-};
+
 
 
 export default {
@@ -119,5 +124,6 @@ export default {
     getCompanyById,
     getCompanyByUserId,
     update,
-    deleteCompany
+    deleteCompany,
+    getAllCompaniesController
 };

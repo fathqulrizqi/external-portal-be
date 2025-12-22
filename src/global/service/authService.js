@@ -251,7 +251,7 @@ const otpVerification = async (userId,otp)=>{
 const logout = async (token) => {
     await niterraappdb.LogsLogin.updateMany({
         where: {
-            token: token,
+            token:'Bearer ' + token,
             isActive: true,
         },
         data: {

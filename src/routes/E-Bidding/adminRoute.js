@@ -1,3 +1,4 @@
+// Public API for segments (for frontend)
 import express from 'express'
 import upload from "../../middleware/multerMiddleware.js";
 import roleMiddleware from '../../middleware/roleMiddleware.js';

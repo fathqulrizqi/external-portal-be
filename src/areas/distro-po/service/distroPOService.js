@@ -105,8 +105,8 @@ async function getPOSummary({ year, month }) {
       });
     }
     header.items.forEach(item => {
-      if (vehicleIDs.includes(item.vehicleCategory)) {
-        summaryMap[key][item.vehicleCategory] += Number(item.qty) || 0;
+      if (vehicleIDs.includes(item.vehicleId)) {
+        summaryMap[key][item.vehicleId] += Number(item.qty) || 0;
       }
     });
   });

@@ -24,6 +24,16 @@ export type CompanySegment = $Result.DefaultSelection<Prisma.$CompanySegmentPayl
  */
 export type Company = $Result.DefaultSelection<Prisma.$CompanyPayload>
 /**
+ * Model CompanySegmentLink
+ * 
+ */
+export type CompanySegmentLink = $Result.DefaultSelection<Prisma.$CompanySegmentLinkPayload>
+/**
+ * Model Distro_PO_Incentive
+ * 
+ */
+export type Distro_PO_Incentive = $Result.DefaultSelection<Prisma.$Distro_PO_IncentivePayload>
+/**
  * Model Distro_PO_Header
  * 
  */
@@ -38,6 +48,21 @@ export type Distro_PO_Line = $Result.DefaultSelection<Prisma.$Distro_PO_LinePayl
  * 
  */
 export type Distro_PO_MasterItem = $Result.DefaultSelection<Prisma.$Distro_PO_MasterItemPayload>
+/**
+ * Model Distro_PO_MasterItem_Price_Header
+ * 
+ */
+export type Distro_PO_MasterItem_Price_Header = $Result.DefaultSelection<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>
+/**
+ * Model Distro_PO_MasterItem_Price_Line
+ * 
+ */
+export type Distro_PO_MasterItem_Price_Line = $Result.DefaultSelection<Prisma.$Distro_PO_MasterItem_Price_LinePayload>
+/**
+ * Model Distro_PO_MasterAchievement
+ * 
+ */
+export type Distro_PO_MasterAchievement = $Result.DefaultSelection<Prisma.$Distro_PO_MasterAchievementPayload>
 /**
  * Model FormL9
  * 
@@ -278,6 +303,26 @@ export class PrismaClient<
   get company(): Prisma.CompanyDelegate<ExtArgs, ClientOptions>;
 
   /**
+   * `prisma.companySegmentLink`: Exposes CRUD operations for the **CompanySegmentLink** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CompanySegmentLinks
+    * const companySegmentLinks = await prisma.companySegmentLink.findMany()
+    * ```
+    */
+  get companySegmentLink(): Prisma.CompanySegmentLinkDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.distro_PO_Incentive`: Exposes CRUD operations for the **Distro_PO_Incentive** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Distro_PO_Incentives
+    * const distro_PO_Incentives = await prisma.distro_PO_Incentive.findMany()
+    * ```
+    */
+  get distro_PO_Incentive(): Prisma.Distro_PO_IncentiveDelegate<ExtArgs, ClientOptions>;
+
+  /**
    * `prisma.distro_PO_Header`: Exposes CRUD operations for the **Distro_PO_Header** model.
     * Example usage:
     * ```ts
@@ -306,6 +351,36 @@ export class PrismaClient<
     * ```
     */
   get distro_PO_MasterItem(): Prisma.Distro_PO_MasterItemDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.distro_PO_MasterItem_Price_Header`: Exposes CRUD operations for the **Distro_PO_MasterItem_Price_Header** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Distro_PO_MasterItem_Price_Headers
+    * const distro_PO_MasterItem_Price_Headers = await prisma.distro_PO_MasterItem_Price_Header.findMany()
+    * ```
+    */
+  get distro_PO_MasterItem_Price_Header(): Prisma.Distro_PO_MasterItem_Price_HeaderDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.distro_PO_MasterItem_Price_Line`: Exposes CRUD operations for the **Distro_PO_MasterItem_Price_Line** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Distro_PO_MasterItem_Price_Lines
+    * const distro_PO_MasterItem_Price_Lines = await prisma.distro_PO_MasterItem_Price_Line.findMany()
+    * ```
+    */
+  get distro_PO_MasterItem_Price_Line(): Prisma.Distro_PO_MasterItem_Price_LineDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.distro_PO_MasterAchievement`: Exposes CRUD operations for the **Distro_PO_MasterAchievement** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Distro_PO_MasterAchievements
+    * const distro_PO_MasterAchievements = await prisma.distro_PO_MasterAchievement.findMany()
+    * ```
+    */
+  get distro_PO_MasterAchievement(): Prisma.Distro_PO_MasterAchievementDelegate<ExtArgs, ClientOptions>;
 
   /**
    * `prisma.formL9`: Exposes CRUD operations for the **FormL9** model.
@@ -949,9 +1024,14 @@ export namespace Prisma {
   export const ModelName: {
     CompanySegment: 'CompanySegment',
     Company: 'Company',
+    CompanySegmentLink: 'CompanySegmentLink',
+    Distro_PO_Incentive: 'Distro_PO_Incentive',
     Distro_PO_Header: 'Distro_PO_Header',
     Distro_PO_Line: 'Distro_PO_Line',
     Distro_PO_MasterItem: 'Distro_PO_MasterItem',
+    Distro_PO_MasterItem_Price_Header: 'Distro_PO_MasterItem_Price_Header',
+    Distro_PO_MasterItem_Price_Line: 'Distro_PO_MasterItem_Price_Line',
+    Distro_PO_MasterAchievement: 'Distro_PO_MasterAchievement',
     FormL9: 'FormL9',
     FormL9BankInfo: 'FormL9BankInfo',
     FormL9GeneralInformation: 'FormL9GeneralInformation',
@@ -990,7 +1070,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "companySegment" | "company" | "distro_PO_Header" | "distro_PO_Line" | "distro_PO_MasterItem" | "formL9" | "formL9BankInfo" | "formL9GeneralInformation" | "formL9GeneralInformationContinue" | "formL9Management" | "formL9Employe" | "formL9WorkExperience" | "formL9Others" | "formL9CertificateISO" | "allowedIpCors" | "menu" | "user" | "otpVerifikasi" | "logsLogin" | "role" | "access" | "resetPassword" | "userHasRoleAccess" | "linkedDevice" | "profile"
+      modelProps: "companySegment" | "company" | "companySegmentLink" | "distro_PO_Incentive" | "distro_PO_Header" | "distro_PO_Line" | "distro_PO_MasterItem" | "distro_PO_MasterItem_Price_Header" | "distro_PO_MasterItem_Price_Line" | "distro_PO_MasterAchievement" | "formL9" | "formL9BankInfo" | "formL9GeneralInformation" | "formL9GeneralInformationContinue" | "formL9Management" | "formL9Employe" | "formL9WorkExperience" | "formL9Others" | "formL9CertificateISO" | "allowedIpCors" | "menu" | "user" | "otpVerifikasi" | "logsLogin" | "role" | "access" | "resetPassword" | "userHasRoleAccess" | "linkedDevice" | "profile"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -1139,6 +1219,154 @@ export namespace Prisma {
           count: {
             args: Prisma.CompanyCountArgs<ExtArgs>
             result: $Utils.Optional<CompanyCountAggregateOutputType> | number
+          }
+        }
+      }
+      CompanySegmentLink: {
+        payload: Prisma.$CompanySegmentLinkPayload<ExtArgs>
+        fields: Prisma.CompanySegmentLinkFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CompanySegmentLinkFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CompanySegmentLinkFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload>
+          }
+          findFirst: {
+            args: Prisma.CompanySegmentLinkFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CompanySegmentLinkFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload>
+          }
+          findMany: {
+            args: Prisma.CompanySegmentLinkFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload>[]
+          }
+          create: {
+            args: Prisma.CompanySegmentLinkCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload>
+          }
+          createMany: {
+            args: Prisma.CompanySegmentLinkCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CompanySegmentLinkCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload>[]
+          }
+          delete: {
+            args: Prisma.CompanySegmentLinkDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload>
+          }
+          update: {
+            args: Prisma.CompanySegmentLinkUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload>
+          }
+          deleteMany: {
+            args: Prisma.CompanySegmentLinkDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CompanySegmentLinkUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CompanySegmentLinkUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload>[]
+          }
+          upsert: {
+            args: Prisma.CompanySegmentLinkUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CompanySegmentLinkPayload>
+          }
+          aggregate: {
+            args: Prisma.CompanySegmentLinkAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCompanySegmentLink>
+          }
+          groupBy: {
+            args: Prisma.CompanySegmentLinkGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CompanySegmentLinkGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CompanySegmentLinkCountArgs<ExtArgs>
+            result: $Utils.Optional<CompanySegmentLinkCountAggregateOutputType> | number
+          }
+        }
+      }
+      Distro_PO_Incentive: {
+        payload: Prisma.$Distro_PO_IncentivePayload<ExtArgs>
+        fields: Prisma.Distro_PO_IncentiveFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.Distro_PO_IncentiveFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.Distro_PO_IncentiveFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload>
+          }
+          findFirst: {
+            args: Prisma.Distro_PO_IncentiveFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.Distro_PO_IncentiveFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload>
+          }
+          findMany: {
+            args: Prisma.Distro_PO_IncentiveFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload>[]
+          }
+          create: {
+            args: Prisma.Distro_PO_IncentiveCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload>
+          }
+          createMany: {
+            args: Prisma.Distro_PO_IncentiveCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.Distro_PO_IncentiveCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload>[]
+          }
+          delete: {
+            args: Prisma.Distro_PO_IncentiveDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload>
+          }
+          update: {
+            args: Prisma.Distro_PO_IncentiveUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload>
+          }
+          deleteMany: {
+            args: Prisma.Distro_PO_IncentiveDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.Distro_PO_IncentiveUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.Distro_PO_IncentiveUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload>[]
+          }
+          upsert: {
+            args: Prisma.Distro_PO_IncentiveUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_IncentivePayload>
+          }
+          aggregate: {
+            args: Prisma.Distro_PO_IncentiveAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDistro_PO_Incentive>
+          }
+          groupBy: {
+            args: Prisma.Distro_PO_IncentiveGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_IncentiveGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.Distro_PO_IncentiveCountArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_IncentiveCountAggregateOutputType> | number
           }
         }
       }
@@ -1361,6 +1589,228 @@ export namespace Prisma {
           count: {
             args: Prisma.Distro_PO_MasterItemCountArgs<ExtArgs>
             result: $Utils.Optional<Distro_PO_MasterItemCountAggregateOutputType> | number
+          }
+        }
+      }
+      Distro_PO_MasterItem_Price_Header: {
+        payload: Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>
+        fields: Prisma.Distro_PO_MasterItem_Price_HeaderFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>
+          }
+          findFirst: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>
+          }
+          findMany: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>[]
+          }
+          create: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>
+          }
+          createMany: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>[]
+          }
+          delete: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>
+          }
+          update: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>
+          }
+          deleteMany: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>[]
+          }
+          upsert: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload>
+          }
+          aggregate: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDistro_PO_MasterItem_Price_Header>
+          }
+          groupBy: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_MasterItem_Price_HeaderGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.Distro_PO_MasterItem_Price_HeaderCountArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_MasterItem_Price_HeaderCountAggregateOutputType> | number
+          }
+        }
+      }
+      Distro_PO_MasterItem_Price_Line: {
+        payload: Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>
+        fields: Prisma.Distro_PO_MasterItem_Price_LineFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload>
+          }
+          findFirst: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload>
+          }
+          findMany: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload>[]
+          }
+          create: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload>
+          }
+          createMany: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload>[]
+          }
+          delete: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload>
+          }
+          update: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload>
+          }
+          deleteMany: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload>[]
+          }
+          upsert: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload>
+          }
+          aggregate: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDistro_PO_MasterItem_Price_Line>
+          }
+          groupBy: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_MasterItem_Price_LineGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.Distro_PO_MasterItem_Price_LineCountArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_MasterItem_Price_LineCountAggregateOutputType> | number
+          }
+        }
+      }
+      Distro_PO_MasterAchievement: {
+        payload: Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>
+        fields: Prisma.Distro_PO_MasterAchievementFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.Distro_PO_MasterAchievementFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.Distro_PO_MasterAchievementFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload>
+          }
+          findFirst: {
+            args: Prisma.Distro_PO_MasterAchievementFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.Distro_PO_MasterAchievementFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload>
+          }
+          findMany: {
+            args: Prisma.Distro_PO_MasterAchievementFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload>[]
+          }
+          create: {
+            args: Prisma.Distro_PO_MasterAchievementCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload>
+          }
+          createMany: {
+            args: Prisma.Distro_PO_MasterAchievementCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.Distro_PO_MasterAchievementCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload>[]
+          }
+          delete: {
+            args: Prisma.Distro_PO_MasterAchievementDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload>
+          }
+          update: {
+            args: Prisma.Distro_PO_MasterAchievementUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload>
+          }
+          deleteMany: {
+            args: Prisma.Distro_PO_MasterAchievementDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.Distro_PO_MasterAchievementUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.Distro_PO_MasterAchievementUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload>[]
+          }
+          upsert: {
+            args: Prisma.Distro_PO_MasterAchievementUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$Distro_PO_MasterAchievementPayload>
+          }
+          aggregate: {
+            args: Prisma.Distro_PO_MasterAchievementAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateDistro_PO_MasterAchievement>
+          }
+          groupBy: {
+            args: Prisma.Distro_PO_MasterAchievementGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_MasterAchievementGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.Distro_PO_MasterAchievementCountArgs<ExtArgs>
+            result: $Utils.Optional<Distro_PO_MasterAchievementCountAggregateOutputType> | number
           }
         }
       }
@@ -2942,9 +3392,14 @@ export namespace Prisma {
   export type GlobalOmitConfig = {
     companySegment?: CompanySegmentOmit
     company?: CompanyOmit
+    companySegmentLink?: CompanySegmentLinkOmit
+    distro_PO_Incentive?: Distro_PO_IncentiveOmit
     distro_PO_Header?: Distro_PO_HeaderOmit
     distro_PO_Line?: Distro_PO_LineOmit
     distro_PO_MasterItem?: Distro_PO_MasterItemOmit
+    distro_PO_MasterItem_Price_Header?: Distro_PO_MasterItem_Price_HeaderOmit
+    distro_PO_MasterItem_Price_Line?: Distro_PO_MasterItem_Price_LineOmit
+    distro_PO_MasterAchievement?: Distro_PO_MasterAchievementOmit
     formL9?: FormL9Omit
     formL9BankInfo?: FormL9BankInfoOmit
     formL9GeneralInformation?: FormL9GeneralInformationOmit
@@ -3045,11 +3500,11 @@ export namespace Prisma {
    */
 
   export type CompanySegmentCountOutputType = {
-    company: number
+    companies: number
   }
 
   export type CompanySegmentCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    company?: boolean | CompanySegmentCountOutputTypeCountCompanyArgs
+    companies?: boolean | CompanySegmentCountOutputTypeCountCompaniesArgs
   }
 
   // Custom InputTypes
@@ -3066,8 +3521,8 @@ export namespace Prisma {
   /**
    * CompanySegmentCountOutputType without action
    */
-  export type CompanySegmentCountOutputTypeCountCompanyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: CompanyWhereInput
+  export type CompanySegmentCountOutputTypeCountCompaniesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CompanySegmentLinkWhereInput
   }
 
 
@@ -3076,10 +3531,12 @@ export namespace Prisma {
    */
 
   export type CompanyCountOutputType = {
+    segments: number
     profile: number
   }
 
   export type CompanyCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    segments?: boolean | CompanyCountOutputTypeCountSegmentsArgs
     profile?: boolean | CompanyCountOutputTypeCountProfileArgs
   }
 
@@ -3092,6 +3549,13 @@ export namespace Prisma {
      * Select specific fields to fetch from the CompanyCountOutputType
      */
     select?: CompanyCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * CompanyCountOutputType without action
+   */
+  export type CompanyCountOutputTypeCountSegmentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CompanySegmentLinkWhereInput
   }
 
   /**
@@ -3130,6 +3594,37 @@ export namespace Prisma {
    */
   export type Distro_PO_HeaderCountOutputTypeCountItemsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: Distro_PO_LineWhereInput
+  }
+
+
+  /**
+   * Count Type Distro_PO_MasterItem_Price_HeaderCountOutputType
+   */
+
+  export type Distro_PO_MasterItem_Price_HeaderCountOutputType = {
+    priceLines: number
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    priceLines?: boolean | Distro_PO_MasterItem_Price_HeaderCountOutputTypeCountPriceLinesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Distro_PO_MasterItem_Price_HeaderCountOutputType without action
+   */
+  export type Distro_PO_MasterItem_Price_HeaderCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_HeaderCountOutputType
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_HeaderCountOutputType without action
+   */
+  export type Distro_PO_MasterItem_Price_HeaderCountOutputTypeCountPriceLinesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
   }
 
 
@@ -3550,7 +4045,7 @@ export namespace Prisma {
     segmentId?: boolean
     segmentName?: boolean
     description?: boolean
-    company?: boolean | CompanySegment$companyArgs<ExtArgs>
+    companies?: boolean | CompanySegment$companiesArgs<ExtArgs>
     _count?: boolean | CompanySegmentCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["companySegment"]>
 
@@ -3574,7 +4069,7 @@ export namespace Prisma {
 
   export type CompanySegmentOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"segmentId" | "segmentName" | "description", ExtArgs["result"]["companySegment"]>
   export type CompanySegmentInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    company?: boolean | CompanySegment$companyArgs<ExtArgs>
+    companies?: boolean | CompanySegment$companiesArgs<ExtArgs>
     _count?: boolean | CompanySegmentCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type CompanySegmentIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -3583,7 +4078,7 @@ export namespace Prisma {
   export type $CompanySegmentPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "CompanySegment"
     objects: {
-      company: Prisma.$CompanyPayload<ExtArgs>[]
+      companies: Prisma.$CompanySegmentLinkPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       segmentId: number
@@ -3983,7 +4478,7 @@ export namespace Prisma {
    */
   export interface Prisma__CompanySegmentClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    company<T extends CompanySegment$companyArgs<ExtArgs> = {}>(args?: Subset<T, CompanySegment$companyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    companies<T extends CompanySegment$companiesArgs<ExtArgs> = {}>(args?: Subset<T, CompanySegment$companiesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4404,27 +4899,27 @@ export namespace Prisma {
   }
 
   /**
-   * CompanySegment.company
+   * CompanySegment.companies
    */
-  export type CompanySegment$companyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CompanySegment$companiesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Company
+     * Select specific fields to fetch from the CompanySegmentLink
      */
-    select?: CompanySelect<ExtArgs> | null
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Company
+     * Omit specific fields from the CompanySegmentLink
      */
-    omit?: CompanyOmit<ExtArgs> | null
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CompanyInclude<ExtArgs> | null
-    where?: CompanyWhereInput
-    orderBy?: CompanyOrderByWithRelationInput | CompanyOrderByWithRelationInput[]
-    cursor?: CompanyWhereUniqueInput
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    where?: CompanySegmentLinkWhereInput
+    orderBy?: CompanySegmentLinkOrderByWithRelationInput | CompanySegmentLinkOrderByWithRelationInput[]
+    cursor?: CompanySegmentLinkWhereUniqueInput
     take?: number
     skip?: number
-    distinct?: CompanyScalarFieldEnum | CompanyScalarFieldEnum[]
+    distinct?: CompanySegmentLinkScalarFieldEnum | CompanySegmentLinkScalarFieldEnum[]
   }
 
   /**
@@ -4452,141 +4947,111 @@ export namespace Prisma {
 
   export type AggregateCompany = {
     _count: CompanyCountAggregateOutputType | null
-    _avg: CompanyAvgAggregateOutputType | null
-    _sum: CompanySumAggregateOutputType | null
     _min: CompanyMinAggregateOutputType | null
     _max: CompanyMaxAggregateOutputType | null
   }
 
-  export type CompanyAvgAggregateOutputType = {
-    segmentId: number | null
-  }
-
-  export type CompanySumAggregateOutputType = {
-    segmentId: number | null
-  }
-
   export type CompanyMinAggregateOutputType = {
     companyId: string | null
-    segmentId: number | null
     urlImage: string | null
     companyName: string | null
-    companyFoundingDate: Date | null
     companyStatus: string | null
     companyTelpFax: string | null
+    companyCity: string | null
     companyAddress: string | null
     companyEmail: string | null
     npwp: string | null
-    website: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    totalCapital: string | null
     companyCode: string | null
+    companyType: string | null
     application: string | null
   }
 
   export type CompanyMaxAggregateOutputType = {
     companyId: string | null
-    segmentId: number | null
     urlImage: string | null
     companyName: string | null
-    companyFoundingDate: Date | null
     companyStatus: string | null
     companyTelpFax: string | null
+    companyCity: string | null
     companyAddress: string | null
     companyEmail: string | null
     npwp: string | null
-    website: string | null
     createdAt: Date | null
     updatedAt: Date | null
-    totalCapital: string | null
     companyCode: string | null
+    companyType: string | null
     application: string | null
   }
 
   export type CompanyCountAggregateOutputType = {
     companyId: number
-    segmentId: number
     urlImage: number
     companyName: number
-    companyFoundingDate: number
     companyStatus: number
     companyTelpFax: number
+    companyCity: number
     companyAddress: number
     companyEmail: number
     npwp: number
-    website: number
     createdAt: number
     updatedAt: number
-    totalCapital: number
     companyCode: number
+    companyType: number
     application: number
     _all: number
   }
 
 
-  export type CompanyAvgAggregateInputType = {
-    segmentId?: true
-  }
-
-  export type CompanySumAggregateInputType = {
-    segmentId?: true
-  }
-
   export type CompanyMinAggregateInputType = {
     companyId?: true
-    segmentId?: true
     urlImage?: true
     companyName?: true
-    companyFoundingDate?: true
     companyStatus?: true
     companyTelpFax?: true
+    companyCity?: true
     companyAddress?: true
     companyEmail?: true
     npwp?: true
-    website?: true
     createdAt?: true
     updatedAt?: true
-    totalCapital?: true
     companyCode?: true
+    companyType?: true
     application?: true
   }
 
   export type CompanyMaxAggregateInputType = {
     companyId?: true
-    segmentId?: true
     urlImage?: true
     companyName?: true
-    companyFoundingDate?: true
     companyStatus?: true
     companyTelpFax?: true
+    companyCity?: true
     companyAddress?: true
     companyEmail?: true
     npwp?: true
-    website?: true
     createdAt?: true
     updatedAt?: true
-    totalCapital?: true
     companyCode?: true
+    companyType?: true
     application?: true
   }
 
   export type CompanyCountAggregateInputType = {
     companyId?: true
-    segmentId?: true
     urlImage?: true
     companyName?: true
-    companyFoundingDate?: true
     companyStatus?: true
     companyTelpFax?: true
+    companyCity?: true
     companyAddress?: true
     companyEmail?: true
     npwp?: true
-    website?: true
     createdAt?: true
     updatedAt?: true
-    totalCapital?: true
     companyCode?: true
+    companyType?: true
     application?: true
     _all?: true
   }
@@ -4629,18 +5094,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: CompanyAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: CompanySumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: CompanyMinAggregateInputType
@@ -4671,32 +5124,26 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: CompanyCountAggregateInputType | true
-    _avg?: CompanyAvgAggregateInputType
-    _sum?: CompanySumAggregateInputType
     _min?: CompanyMinAggregateInputType
     _max?: CompanyMaxAggregateInputType
   }
 
   export type CompanyGroupByOutputType = {
     companyId: string
-    segmentId: number | null
     urlImage: string | null
     companyName: string | null
-    companyFoundingDate: Date | null
     companyStatus: string | null
     companyTelpFax: string | null
+    companyCity: string | null
     companyAddress: string | null
     companyEmail: string | null
     npwp: string | null
-    website: string | null
     createdAt: Date
     updatedAt: Date
-    totalCapital: string | null
     companyCode: string | null
+    companyType: string | null
     application: string
     _count: CompanyCountAggregateOutputType | null
-    _avg: CompanyAvgAggregateOutputType | null
-    _sum: CompanySumAggregateOutputType | null
     _min: CompanyMinAggregateOutputType | null
     _max: CompanyMaxAggregateOutputType | null
   }
@@ -4717,22 +5164,20 @@ export namespace Prisma {
 
   export type CompanySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     companyId?: boolean
-    segmentId?: boolean
     urlImage?: boolean
     companyName?: boolean
-    companyFoundingDate?: boolean
     companyStatus?: boolean
     companyTelpFax?: boolean
+    companyCity?: boolean
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
-    website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    totalCapital?: boolean
     companyCode?: boolean
+    companyType?: boolean
     application?: boolean
-    segment?: boolean | Company$segmentArgs<ExtArgs>
+    segments?: boolean | Company$segmentsArgs<ExtArgs>
     profile?: boolean | Company$profileArgs<ExtArgs>
     formL9?: boolean | Company$formL9Args<ExtArgs>
     _count?: boolean | CompanyCountOutputTypeDefaultArgs<ExtArgs>
@@ -4740,100 +5185,86 @@ export namespace Prisma {
 
   export type CompanySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     companyId?: boolean
-    segmentId?: boolean
     urlImage?: boolean
     companyName?: boolean
-    companyFoundingDate?: boolean
     companyStatus?: boolean
     companyTelpFax?: boolean
+    companyCity?: boolean
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
-    website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    totalCapital?: boolean
     companyCode?: boolean
+    companyType?: boolean
     application?: boolean
-    segment?: boolean | Company$segmentArgs<ExtArgs>
   }, ExtArgs["result"]["company"]>
 
   export type CompanySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     companyId?: boolean
-    segmentId?: boolean
     urlImage?: boolean
     companyName?: boolean
-    companyFoundingDate?: boolean
     companyStatus?: boolean
     companyTelpFax?: boolean
+    companyCity?: boolean
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
-    website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    totalCapital?: boolean
     companyCode?: boolean
+    companyType?: boolean
     application?: boolean
-    segment?: boolean | Company$segmentArgs<ExtArgs>
   }, ExtArgs["result"]["company"]>
 
   export type CompanySelectScalar = {
     companyId?: boolean
-    segmentId?: boolean
     urlImage?: boolean
     companyName?: boolean
-    companyFoundingDate?: boolean
     companyStatus?: boolean
     companyTelpFax?: boolean
+    companyCity?: boolean
     companyAddress?: boolean
     companyEmail?: boolean
     npwp?: boolean
-    website?: boolean
     createdAt?: boolean
     updatedAt?: boolean
-    totalCapital?: boolean
     companyCode?: boolean
+    companyType?: boolean
     application?: boolean
   }
 
-  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "segmentId" | "urlImage" | "companyName" | "companyFoundingDate" | "companyStatus" | "companyTelpFax" | "companyAddress" | "companyEmail" | "npwp" | "website" | "createdAt" | "updatedAt" | "totalCapital" | "companyCode" | "application", ExtArgs["result"]["company"]>
+  export type CompanyOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"companyId" | "urlImage" | "companyName" | "companyStatus" | "companyTelpFax" | "companyCity" | "companyAddress" | "companyEmail" | "npwp" | "createdAt" | "updatedAt" | "companyCode" | "companyType" | "application", ExtArgs["result"]["company"]>
   export type CompanyInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    segment?: boolean | Company$segmentArgs<ExtArgs>
+    segments?: boolean | Company$segmentsArgs<ExtArgs>
     profile?: boolean | Company$profileArgs<ExtArgs>
     formL9?: boolean | Company$formL9Args<ExtArgs>
     _count?: boolean | CompanyCountOutputTypeDefaultArgs<ExtArgs>
   }
-  export type CompanyIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    segment?: boolean | Company$segmentArgs<ExtArgs>
-  }
-  export type CompanyIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    segment?: boolean | Company$segmentArgs<ExtArgs>
-  }
+  export type CompanyIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type CompanyIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $CompanyPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Company"
     objects: {
-      segment: Prisma.$CompanySegmentPayload<ExtArgs> | null
+      segments: Prisma.$CompanySegmentLinkPayload<ExtArgs>[]
       profile: Prisma.$ProfilePayload<ExtArgs>[]
       formL9: Prisma.$FormL9Payload<ExtArgs> | null
     }
     scalars: $Extensions.GetPayloadResult<{
       companyId: string
-      segmentId: number | null
       urlImage: string | null
       companyName: string | null
-      companyFoundingDate: Date | null
       companyStatus: string | null
       companyTelpFax: string | null
+      companyCity: string | null
       companyAddress: string | null
       companyEmail: string | null
       npwp: string | null
-      website: string | null
       createdAt: Date
       updatedAt: Date
-      totalCapital: string | null
       companyCode: string | null
+      companyType: string | null
       application: string
     }, ExtArgs["result"]["company"]>
     composites: {}
@@ -5229,7 +5660,7 @@ export namespace Prisma {
    */
   export interface Prisma__CompanyClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    segment<T extends Company$segmentArgs<ExtArgs> = {}>(args?: Subset<T, Company$segmentArgs<ExtArgs>>): Prisma__CompanySegmentClient<$Result.GetResult<Prisma.$CompanySegmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    segments<T extends Company$segmentsArgs<ExtArgs> = {}>(args?: Subset<T, Company$segmentsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     profile<T extends Company$profileArgs<ExtArgs> = {}>(args?: Subset<T, Company$profileArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProfilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     formL9<T extends Company$formL9Args<ExtArgs> = {}>(args?: Subset<T, Company$formL9Args<ExtArgs>>): Prisma__FormL9Client<$Result.GetResult<Prisma.$FormL9Payload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
@@ -5262,20 +5693,18 @@ export namespace Prisma {
    */
   interface CompanyFieldRefs {
     readonly companyId: FieldRef<"Company", 'String'>
-    readonly segmentId: FieldRef<"Company", 'Int'>
     readonly urlImage: FieldRef<"Company", 'String'>
     readonly companyName: FieldRef<"Company", 'String'>
-    readonly companyFoundingDate: FieldRef<"Company", 'DateTime'>
     readonly companyStatus: FieldRef<"Company", 'String'>
     readonly companyTelpFax: FieldRef<"Company", 'String'>
+    readonly companyCity: FieldRef<"Company", 'String'>
     readonly companyAddress: FieldRef<"Company", 'String'>
     readonly companyEmail: FieldRef<"Company", 'String'>
     readonly npwp: FieldRef<"Company", 'String'>
-    readonly website: FieldRef<"Company", 'String'>
     readonly createdAt: FieldRef<"Company", 'DateTime'>
     readonly updatedAt: FieldRef<"Company", 'DateTime'>
-    readonly totalCapital: FieldRef<"Company", 'String'>
     readonly companyCode: FieldRef<"Company", 'String'>
+    readonly companyType: FieldRef<"Company", 'String'>
     readonly application: FieldRef<"Company", 'String'>
   }
     
@@ -5526,10 +5955,6 @@ export namespace Prisma {
      */
     data: CompanyCreateManyInput | CompanyCreateManyInput[]
     skipDuplicates?: boolean
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: CompanyIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -5600,10 +6025,6 @@ export namespace Prisma {
      * Limit how many Companies to update.
      */
     limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: CompanyIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -5673,22 +6094,27 @@ export namespace Prisma {
   }
 
   /**
-   * Company.segment
+   * Company.segments
    */
-  export type Company$segmentArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Company$segmentsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the CompanySegment
+     * Select specific fields to fetch from the CompanySegmentLink
      */
-    select?: CompanySegmentSelect<ExtArgs> | null
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the CompanySegment
+     * Omit specific fields from the CompanySegmentLink
      */
-    omit?: CompanySegmentOmit<ExtArgs> | null
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: CompanySegmentInclude<ExtArgs> | null
-    where?: CompanySegmentWhereInput
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    where?: CompanySegmentLinkWhereInput
+    orderBy?: CompanySegmentLinkOrderByWithRelationInput | CompanySegmentLinkOrderByWithRelationInput[]
+    cursor?: CompanySegmentLinkWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: CompanySegmentLinkScalarFieldEnum | CompanySegmentLinkScalarFieldEnum[]
   }
 
   /**
@@ -5750,6 +6176,2181 @@ export namespace Prisma {
      * Choose, which related nodes to fetch as well
      */
     include?: CompanyInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model CompanySegmentLink
+   */
+
+  export type AggregateCompanySegmentLink = {
+    _count: CompanySegmentLinkCountAggregateOutputType | null
+    _avg: CompanySegmentLinkAvgAggregateOutputType | null
+    _sum: CompanySegmentLinkSumAggregateOutputType | null
+    _min: CompanySegmentLinkMinAggregateOutputType | null
+    _max: CompanySegmentLinkMaxAggregateOutputType | null
+  }
+
+  export type CompanySegmentLinkAvgAggregateOutputType = {
+    id: number | null
+    segmentId: number | null
+  }
+
+  export type CompanySegmentLinkSumAggregateOutputType = {
+    id: number | null
+    segmentId: number | null
+  }
+
+  export type CompanySegmentLinkMinAggregateOutputType = {
+    id: number | null
+    companyId: string | null
+    segmentId: number | null
+  }
+
+  export type CompanySegmentLinkMaxAggregateOutputType = {
+    id: number | null
+    companyId: string | null
+    segmentId: number | null
+  }
+
+  export type CompanySegmentLinkCountAggregateOutputType = {
+    id: number
+    companyId: number
+    segmentId: number
+    _all: number
+  }
+
+
+  export type CompanySegmentLinkAvgAggregateInputType = {
+    id?: true
+    segmentId?: true
+  }
+
+  export type CompanySegmentLinkSumAggregateInputType = {
+    id?: true
+    segmentId?: true
+  }
+
+  export type CompanySegmentLinkMinAggregateInputType = {
+    id?: true
+    companyId?: true
+    segmentId?: true
+  }
+
+  export type CompanySegmentLinkMaxAggregateInputType = {
+    id?: true
+    companyId?: true
+    segmentId?: true
+  }
+
+  export type CompanySegmentLinkCountAggregateInputType = {
+    id?: true
+    companyId?: true
+    segmentId?: true
+    _all?: true
+  }
+
+  export type CompanySegmentLinkAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CompanySegmentLink to aggregate.
+     */
+    where?: CompanySegmentLinkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CompanySegmentLinks to fetch.
+     */
+    orderBy?: CompanySegmentLinkOrderByWithRelationInput | CompanySegmentLinkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CompanySegmentLinkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CompanySegmentLinks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CompanySegmentLinks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned CompanySegmentLinks
+    **/
+    _count?: true | CompanySegmentLinkCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: CompanySegmentLinkAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: CompanySegmentLinkSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CompanySegmentLinkMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CompanySegmentLinkMaxAggregateInputType
+  }
+
+  export type GetCompanySegmentLinkAggregateType<T extends CompanySegmentLinkAggregateArgs> = {
+        [P in keyof T & keyof AggregateCompanySegmentLink]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCompanySegmentLink[P]>
+      : GetScalarType<T[P], AggregateCompanySegmentLink[P]>
+  }
+
+
+
+
+  export type CompanySegmentLinkGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CompanySegmentLinkWhereInput
+    orderBy?: CompanySegmentLinkOrderByWithAggregationInput | CompanySegmentLinkOrderByWithAggregationInput[]
+    by: CompanySegmentLinkScalarFieldEnum[] | CompanySegmentLinkScalarFieldEnum
+    having?: CompanySegmentLinkScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CompanySegmentLinkCountAggregateInputType | true
+    _avg?: CompanySegmentLinkAvgAggregateInputType
+    _sum?: CompanySegmentLinkSumAggregateInputType
+    _min?: CompanySegmentLinkMinAggregateInputType
+    _max?: CompanySegmentLinkMaxAggregateInputType
+  }
+
+  export type CompanySegmentLinkGroupByOutputType = {
+    id: number
+    companyId: string
+    segmentId: number
+    _count: CompanySegmentLinkCountAggregateOutputType | null
+    _avg: CompanySegmentLinkAvgAggregateOutputType | null
+    _sum: CompanySegmentLinkSumAggregateOutputType | null
+    _min: CompanySegmentLinkMinAggregateOutputType | null
+    _max: CompanySegmentLinkMaxAggregateOutputType | null
+  }
+
+  type GetCompanySegmentLinkGroupByPayload<T extends CompanySegmentLinkGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CompanySegmentLinkGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CompanySegmentLinkGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CompanySegmentLinkGroupByOutputType[P]>
+            : GetScalarType<T[P], CompanySegmentLinkGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CompanySegmentLinkSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    companyId?: boolean
+    segmentId?: boolean
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+    segment?: boolean | CompanySegmentDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["companySegmentLink"]>
+
+  export type CompanySegmentLinkSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    companyId?: boolean
+    segmentId?: boolean
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+    segment?: boolean | CompanySegmentDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["companySegmentLink"]>
+
+  export type CompanySegmentLinkSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    companyId?: boolean
+    segmentId?: boolean
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+    segment?: boolean | CompanySegmentDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["companySegmentLink"]>
+
+  export type CompanySegmentLinkSelectScalar = {
+    id?: boolean
+    companyId?: boolean
+    segmentId?: boolean
+  }
+
+  export type CompanySegmentLinkOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "companyId" | "segmentId", ExtArgs["result"]["companySegmentLink"]>
+  export type CompanySegmentLinkInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+    segment?: boolean | CompanySegmentDefaultArgs<ExtArgs>
+  }
+  export type CompanySegmentLinkIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+    segment?: boolean | CompanySegmentDefaultArgs<ExtArgs>
+  }
+  export type CompanySegmentLinkIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    company?: boolean | CompanyDefaultArgs<ExtArgs>
+    segment?: boolean | CompanySegmentDefaultArgs<ExtArgs>
+  }
+
+  export type $CompanySegmentLinkPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "CompanySegmentLink"
+    objects: {
+      company: Prisma.$CompanyPayload<ExtArgs>
+      segment: Prisma.$CompanySegmentPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      companyId: string
+      segmentId: number
+    }, ExtArgs["result"]["companySegmentLink"]>
+    composites: {}
+  }
+
+  type CompanySegmentLinkGetPayload<S extends boolean | null | undefined | CompanySegmentLinkDefaultArgs> = $Result.GetResult<Prisma.$CompanySegmentLinkPayload, S>
+
+  type CompanySegmentLinkCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CompanySegmentLinkFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CompanySegmentLinkCountAggregateInputType | true
+    }
+
+  export interface CompanySegmentLinkDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['CompanySegmentLink'], meta: { name: 'CompanySegmentLink' } }
+    /**
+     * Find zero or one CompanySegmentLink that matches the filter.
+     * @param {CompanySegmentLinkFindUniqueArgs} args - Arguments to find a CompanySegmentLink
+     * @example
+     * // Get one CompanySegmentLink
+     * const companySegmentLink = await prisma.companySegmentLink.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CompanySegmentLinkFindUniqueArgs>(args: SelectSubset<T, CompanySegmentLinkFindUniqueArgs<ExtArgs>>): Prisma__CompanySegmentLinkClient<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one CompanySegmentLink that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CompanySegmentLinkFindUniqueOrThrowArgs} args - Arguments to find a CompanySegmentLink
+     * @example
+     * // Get one CompanySegmentLink
+     * const companySegmentLink = await prisma.companySegmentLink.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CompanySegmentLinkFindUniqueOrThrowArgs>(args: SelectSubset<T, CompanySegmentLinkFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CompanySegmentLinkClient<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CompanySegmentLink that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanySegmentLinkFindFirstArgs} args - Arguments to find a CompanySegmentLink
+     * @example
+     * // Get one CompanySegmentLink
+     * const companySegmentLink = await prisma.companySegmentLink.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CompanySegmentLinkFindFirstArgs>(args?: SelectSubset<T, CompanySegmentLinkFindFirstArgs<ExtArgs>>): Prisma__CompanySegmentLinkClient<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CompanySegmentLink that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanySegmentLinkFindFirstOrThrowArgs} args - Arguments to find a CompanySegmentLink
+     * @example
+     * // Get one CompanySegmentLink
+     * const companySegmentLink = await prisma.companySegmentLink.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CompanySegmentLinkFindFirstOrThrowArgs>(args?: SelectSubset<T, CompanySegmentLinkFindFirstOrThrowArgs<ExtArgs>>): Prisma__CompanySegmentLinkClient<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more CompanySegmentLinks that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanySegmentLinkFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all CompanySegmentLinks
+     * const companySegmentLinks = await prisma.companySegmentLink.findMany()
+     * 
+     * // Get first 10 CompanySegmentLinks
+     * const companySegmentLinks = await prisma.companySegmentLink.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const companySegmentLinkWithIdOnly = await prisma.companySegmentLink.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CompanySegmentLinkFindManyArgs>(args?: SelectSubset<T, CompanySegmentLinkFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a CompanySegmentLink.
+     * @param {CompanySegmentLinkCreateArgs} args - Arguments to create a CompanySegmentLink.
+     * @example
+     * // Create one CompanySegmentLink
+     * const CompanySegmentLink = await prisma.companySegmentLink.create({
+     *   data: {
+     *     // ... data to create a CompanySegmentLink
+     *   }
+     * })
+     * 
+     */
+    create<T extends CompanySegmentLinkCreateArgs>(args: SelectSubset<T, CompanySegmentLinkCreateArgs<ExtArgs>>): Prisma__CompanySegmentLinkClient<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many CompanySegmentLinks.
+     * @param {CompanySegmentLinkCreateManyArgs} args - Arguments to create many CompanySegmentLinks.
+     * @example
+     * // Create many CompanySegmentLinks
+     * const companySegmentLink = await prisma.companySegmentLink.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CompanySegmentLinkCreateManyArgs>(args?: SelectSubset<T, CompanySegmentLinkCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many CompanySegmentLinks and returns the data saved in the database.
+     * @param {CompanySegmentLinkCreateManyAndReturnArgs} args - Arguments to create many CompanySegmentLinks.
+     * @example
+     * // Create many CompanySegmentLinks
+     * const companySegmentLink = await prisma.companySegmentLink.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many CompanySegmentLinks and only return the `id`
+     * const companySegmentLinkWithIdOnly = await prisma.companySegmentLink.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CompanySegmentLinkCreateManyAndReturnArgs>(args?: SelectSubset<T, CompanySegmentLinkCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a CompanySegmentLink.
+     * @param {CompanySegmentLinkDeleteArgs} args - Arguments to delete one CompanySegmentLink.
+     * @example
+     * // Delete one CompanySegmentLink
+     * const CompanySegmentLink = await prisma.companySegmentLink.delete({
+     *   where: {
+     *     // ... filter to delete one CompanySegmentLink
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CompanySegmentLinkDeleteArgs>(args: SelectSubset<T, CompanySegmentLinkDeleteArgs<ExtArgs>>): Prisma__CompanySegmentLinkClient<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one CompanySegmentLink.
+     * @param {CompanySegmentLinkUpdateArgs} args - Arguments to update one CompanySegmentLink.
+     * @example
+     * // Update one CompanySegmentLink
+     * const companySegmentLink = await prisma.companySegmentLink.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CompanySegmentLinkUpdateArgs>(args: SelectSubset<T, CompanySegmentLinkUpdateArgs<ExtArgs>>): Prisma__CompanySegmentLinkClient<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more CompanySegmentLinks.
+     * @param {CompanySegmentLinkDeleteManyArgs} args - Arguments to filter CompanySegmentLinks to delete.
+     * @example
+     * // Delete a few CompanySegmentLinks
+     * const { count } = await prisma.companySegmentLink.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CompanySegmentLinkDeleteManyArgs>(args?: SelectSubset<T, CompanySegmentLinkDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CompanySegmentLinks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanySegmentLinkUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many CompanySegmentLinks
+     * const companySegmentLink = await prisma.companySegmentLink.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CompanySegmentLinkUpdateManyArgs>(args: SelectSubset<T, CompanySegmentLinkUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CompanySegmentLinks and returns the data updated in the database.
+     * @param {CompanySegmentLinkUpdateManyAndReturnArgs} args - Arguments to update many CompanySegmentLinks.
+     * @example
+     * // Update many CompanySegmentLinks
+     * const companySegmentLink = await prisma.companySegmentLink.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more CompanySegmentLinks and only return the `id`
+     * const companySegmentLinkWithIdOnly = await prisma.companySegmentLink.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CompanySegmentLinkUpdateManyAndReturnArgs>(args: SelectSubset<T, CompanySegmentLinkUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one CompanySegmentLink.
+     * @param {CompanySegmentLinkUpsertArgs} args - Arguments to update or create a CompanySegmentLink.
+     * @example
+     * // Update or create a CompanySegmentLink
+     * const companySegmentLink = await prisma.companySegmentLink.upsert({
+     *   create: {
+     *     // ... data to create a CompanySegmentLink
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the CompanySegmentLink we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CompanySegmentLinkUpsertArgs>(args: SelectSubset<T, CompanySegmentLinkUpsertArgs<ExtArgs>>): Prisma__CompanySegmentLinkClient<$Result.GetResult<Prisma.$CompanySegmentLinkPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of CompanySegmentLinks.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanySegmentLinkCountArgs} args - Arguments to filter CompanySegmentLinks to count.
+     * @example
+     * // Count the number of CompanySegmentLinks
+     * const count = await prisma.companySegmentLink.count({
+     *   where: {
+     *     // ... the filter for the CompanySegmentLinks we want to count
+     *   }
+     * })
+    **/
+    count<T extends CompanySegmentLinkCountArgs>(
+      args?: Subset<T, CompanySegmentLinkCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CompanySegmentLinkCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a CompanySegmentLink.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanySegmentLinkAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CompanySegmentLinkAggregateArgs>(args: Subset<T, CompanySegmentLinkAggregateArgs>): Prisma.PrismaPromise<GetCompanySegmentLinkAggregateType<T>>
+
+    /**
+     * Group by CompanySegmentLink.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CompanySegmentLinkGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CompanySegmentLinkGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CompanySegmentLinkGroupByArgs['orderBy'] }
+        : { orderBy?: CompanySegmentLinkGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CompanySegmentLinkGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCompanySegmentLinkGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the CompanySegmentLink model
+   */
+  readonly fields: CompanySegmentLinkFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for CompanySegmentLink.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CompanySegmentLinkClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    company<T extends CompanyDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CompanyDefaultArgs<ExtArgs>>): Prisma__CompanyClient<$Result.GetResult<Prisma.$CompanyPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    segment<T extends CompanySegmentDefaultArgs<ExtArgs> = {}>(args?: Subset<T, CompanySegmentDefaultArgs<ExtArgs>>): Prisma__CompanySegmentClient<$Result.GetResult<Prisma.$CompanySegmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the CompanySegmentLink model
+   */
+  interface CompanySegmentLinkFieldRefs {
+    readonly id: FieldRef<"CompanySegmentLink", 'Int'>
+    readonly companyId: FieldRef<"CompanySegmentLink", 'String'>
+    readonly segmentId: FieldRef<"CompanySegmentLink", 'Int'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * CompanySegmentLink findUnique
+   */
+  export type CompanySegmentLinkFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    /**
+     * Filter, which CompanySegmentLink to fetch.
+     */
+    where: CompanySegmentLinkWhereUniqueInput
+  }
+
+  /**
+   * CompanySegmentLink findUniqueOrThrow
+   */
+  export type CompanySegmentLinkFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    /**
+     * Filter, which CompanySegmentLink to fetch.
+     */
+    where: CompanySegmentLinkWhereUniqueInput
+  }
+
+  /**
+   * CompanySegmentLink findFirst
+   */
+  export type CompanySegmentLinkFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    /**
+     * Filter, which CompanySegmentLink to fetch.
+     */
+    where?: CompanySegmentLinkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CompanySegmentLinks to fetch.
+     */
+    orderBy?: CompanySegmentLinkOrderByWithRelationInput | CompanySegmentLinkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CompanySegmentLinks.
+     */
+    cursor?: CompanySegmentLinkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CompanySegmentLinks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CompanySegmentLinks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CompanySegmentLinks.
+     */
+    distinct?: CompanySegmentLinkScalarFieldEnum | CompanySegmentLinkScalarFieldEnum[]
+  }
+
+  /**
+   * CompanySegmentLink findFirstOrThrow
+   */
+  export type CompanySegmentLinkFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    /**
+     * Filter, which CompanySegmentLink to fetch.
+     */
+    where?: CompanySegmentLinkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CompanySegmentLinks to fetch.
+     */
+    orderBy?: CompanySegmentLinkOrderByWithRelationInput | CompanySegmentLinkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CompanySegmentLinks.
+     */
+    cursor?: CompanySegmentLinkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CompanySegmentLinks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CompanySegmentLinks.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CompanySegmentLinks.
+     */
+    distinct?: CompanySegmentLinkScalarFieldEnum | CompanySegmentLinkScalarFieldEnum[]
+  }
+
+  /**
+   * CompanySegmentLink findMany
+   */
+  export type CompanySegmentLinkFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    /**
+     * Filter, which CompanySegmentLinks to fetch.
+     */
+    where?: CompanySegmentLinkWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CompanySegmentLinks to fetch.
+     */
+    orderBy?: CompanySegmentLinkOrderByWithRelationInput | CompanySegmentLinkOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing CompanySegmentLinks.
+     */
+    cursor?: CompanySegmentLinkWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CompanySegmentLinks from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CompanySegmentLinks.
+     */
+    skip?: number
+    distinct?: CompanySegmentLinkScalarFieldEnum | CompanySegmentLinkScalarFieldEnum[]
+  }
+
+  /**
+   * CompanySegmentLink create
+   */
+  export type CompanySegmentLinkCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    /**
+     * The data needed to create a CompanySegmentLink.
+     */
+    data: XOR<CompanySegmentLinkCreateInput, CompanySegmentLinkUncheckedCreateInput>
+  }
+
+  /**
+   * CompanySegmentLink createMany
+   */
+  export type CompanySegmentLinkCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many CompanySegmentLinks.
+     */
+    data: CompanySegmentLinkCreateManyInput | CompanySegmentLinkCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * CompanySegmentLink createManyAndReturn
+   */
+  export type CompanySegmentLinkCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * The data used to create many CompanySegmentLinks.
+     */
+    data: CompanySegmentLinkCreateManyInput | CompanySegmentLinkCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * CompanySegmentLink update
+   */
+  export type CompanySegmentLinkUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    /**
+     * The data needed to update a CompanySegmentLink.
+     */
+    data: XOR<CompanySegmentLinkUpdateInput, CompanySegmentLinkUncheckedUpdateInput>
+    /**
+     * Choose, which CompanySegmentLink to update.
+     */
+    where: CompanySegmentLinkWhereUniqueInput
+  }
+
+  /**
+   * CompanySegmentLink updateMany
+   */
+  export type CompanySegmentLinkUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update CompanySegmentLinks.
+     */
+    data: XOR<CompanySegmentLinkUpdateManyMutationInput, CompanySegmentLinkUncheckedUpdateManyInput>
+    /**
+     * Filter which CompanySegmentLinks to update
+     */
+    where?: CompanySegmentLinkWhereInput
+    /**
+     * Limit how many CompanySegmentLinks to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * CompanySegmentLink updateManyAndReturn
+   */
+  export type CompanySegmentLinkUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * The data used to update CompanySegmentLinks.
+     */
+    data: XOR<CompanySegmentLinkUpdateManyMutationInput, CompanySegmentLinkUncheckedUpdateManyInput>
+    /**
+     * Filter which CompanySegmentLinks to update
+     */
+    where?: CompanySegmentLinkWhereInput
+    /**
+     * Limit how many CompanySegmentLinks to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * CompanySegmentLink upsert
+   */
+  export type CompanySegmentLinkUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    /**
+     * The filter to search for the CompanySegmentLink to update in case it exists.
+     */
+    where: CompanySegmentLinkWhereUniqueInput
+    /**
+     * In case the CompanySegmentLink found by the `where` argument doesn't exist, create a new CompanySegmentLink with this data.
+     */
+    create: XOR<CompanySegmentLinkCreateInput, CompanySegmentLinkUncheckedCreateInput>
+    /**
+     * In case the CompanySegmentLink was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CompanySegmentLinkUpdateInput, CompanySegmentLinkUncheckedUpdateInput>
+  }
+
+  /**
+   * CompanySegmentLink delete
+   */
+  export type CompanySegmentLinkDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+    /**
+     * Filter which CompanySegmentLink to delete.
+     */
+    where: CompanySegmentLinkWhereUniqueInput
+  }
+
+  /**
+   * CompanySegmentLink deleteMany
+   */
+  export type CompanySegmentLinkDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CompanySegmentLinks to delete
+     */
+    where?: CompanySegmentLinkWhereInput
+    /**
+     * Limit how many CompanySegmentLinks to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * CompanySegmentLink without action
+   */
+  export type CompanySegmentLinkDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CompanySegmentLink
+     */
+    select?: CompanySegmentLinkSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CompanySegmentLink
+     */
+    omit?: CompanySegmentLinkOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: CompanySegmentLinkInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Distro_PO_Incentive
+   */
+
+  export type AggregateDistro_PO_Incentive = {
+    _count: Distro_PO_IncentiveCountAggregateOutputType | null
+    _avg: Distro_PO_IncentiveAvgAggregateOutputType | null
+    _sum: Distro_PO_IncentiveSumAggregateOutputType | null
+    _min: Distro_PO_IncentiveMinAggregateOutputType | null
+    _max: Distro_PO_IncentiveMaxAggregateOutputType | null
+  }
+
+  export type Distro_PO_IncentiveAvgAggregateOutputType = {
+    id: number | null
+    rangeFrom: number | null
+    rangeTo: number | null
+    periodYear: number | null
+    amount: number | null
+  }
+
+  export type Distro_PO_IncentiveSumAggregateOutputType = {
+    id: number | null
+    rangeFrom: number | null
+    rangeTo: number | null
+    periodYear: number | null
+    amount: number | null
+  }
+
+  export type Distro_PO_IncentiveMinAggregateOutputType = {
+    id: number | null
+    rangeFrom: number | null
+    rangeTo: number | null
+    vehicle: string | null
+    vehicleId: string | null
+    periodYear: number | null
+    amount: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_IncentiveMaxAggregateOutputType = {
+    id: number | null
+    rangeFrom: number | null
+    rangeTo: number | null
+    vehicle: string | null
+    vehicleId: string | null
+    periodYear: number | null
+    amount: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_IncentiveCountAggregateOutputType = {
+    id: number
+    rangeFrom: number
+    rangeTo: number
+    vehicle: number
+    vehicleId: number
+    periodYear: number
+    amount: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type Distro_PO_IncentiveAvgAggregateInputType = {
+    id?: true
+    rangeFrom?: true
+    rangeTo?: true
+    periodYear?: true
+    amount?: true
+  }
+
+  export type Distro_PO_IncentiveSumAggregateInputType = {
+    id?: true
+    rangeFrom?: true
+    rangeTo?: true
+    periodYear?: true
+    amount?: true
+  }
+
+  export type Distro_PO_IncentiveMinAggregateInputType = {
+    id?: true
+    rangeFrom?: true
+    rangeTo?: true
+    vehicle?: true
+    vehicleId?: true
+    periodYear?: true
+    amount?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_IncentiveMaxAggregateInputType = {
+    id?: true
+    rangeFrom?: true
+    rangeTo?: true
+    vehicle?: true
+    vehicleId?: true
+    periodYear?: true
+    amount?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_IncentiveCountAggregateInputType = {
+    id?: true
+    rangeFrom?: true
+    rangeTo?: true
+    vehicle?: true
+    vehicleId?: true
+    periodYear?: true
+    amount?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type Distro_PO_IncentiveAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_Incentive to aggregate.
+     */
+    where?: Distro_PO_IncentiveWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Incentives to fetch.
+     */
+    orderBy?: Distro_PO_IncentiveOrderByWithRelationInput | Distro_PO_IncentiveOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: Distro_PO_IncentiveWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Incentives from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Incentives.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Distro_PO_Incentives
+    **/
+    _count?: true | Distro_PO_IncentiveCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Distro_PO_IncentiveAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Distro_PO_IncentiveSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Distro_PO_IncentiveMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Distro_PO_IncentiveMaxAggregateInputType
+  }
+
+  export type GetDistro_PO_IncentiveAggregateType<T extends Distro_PO_IncentiveAggregateArgs> = {
+        [P in keyof T & keyof AggregateDistro_PO_Incentive]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDistro_PO_Incentive[P]>
+      : GetScalarType<T[P], AggregateDistro_PO_Incentive[P]>
+  }
+
+
+
+
+  export type Distro_PO_IncentiveGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Distro_PO_IncentiveWhereInput
+    orderBy?: Distro_PO_IncentiveOrderByWithAggregationInput | Distro_PO_IncentiveOrderByWithAggregationInput[]
+    by: Distro_PO_IncentiveScalarFieldEnum[] | Distro_PO_IncentiveScalarFieldEnum
+    having?: Distro_PO_IncentiveScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Distro_PO_IncentiveCountAggregateInputType | true
+    _avg?: Distro_PO_IncentiveAvgAggregateInputType
+    _sum?: Distro_PO_IncentiveSumAggregateInputType
+    _min?: Distro_PO_IncentiveMinAggregateInputType
+    _max?: Distro_PO_IncentiveMaxAggregateInputType
+  }
+
+  export type Distro_PO_IncentiveGroupByOutputType = {
+    id: number
+    rangeFrom: number
+    rangeTo: number
+    vehicle: string
+    vehicleId: string
+    periodYear: number
+    amount: number
+    createdAt: Date
+    updatedAt: Date
+    _count: Distro_PO_IncentiveCountAggregateOutputType | null
+    _avg: Distro_PO_IncentiveAvgAggregateOutputType | null
+    _sum: Distro_PO_IncentiveSumAggregateOutputType | null
+    _min: Distro_PO_IncentiveMinAggregateOutputType | null
+    _max: Distro_PO_IncentiveMaxAggregateOutputType | null
+  }
+
+  type GetDistro_PO_IncentiveGroupByPayload<T extends Distro_PO_IncentiveGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Distro_PO_IncentiveGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Distro_PO_IncentiveGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Distro_PO_IncentiveGroupByOutputType[P]>
+            : GetScalarType<T[P], Distro_PO_IncentiveGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type Distro_PO_IncentiveSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    rangeFrom?: boolean
+    rangeTo?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    periodYear?: boolean
+    amount?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_Incentive"]>
+
+  export type Distro_PO_IncentiveSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    rangeFrom?: boolean
+    rangeTo?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    periodYear?: boolean
+    amount?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_Incentive"]>
+
+  export type Distro_PO_IncentiveSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    rangeFrom?: boolean
+    rangeTo?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    periodYear?: boolean
+    amount?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_Incentive"]>
+
+  export type Distro_PO_IncentiveSelectScalar = {
+    id?: boolean
+    rangeFrom?: boolean
+    rangeTo?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    periodYear?: boolean
+    amount?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type Distro_PO_IncentiveOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "rangeFrom" | "rangeTo" | "vehicle" | "vehicleId" | "periodYear" | "amount" | "createdAt" | "updatedAt", ExtArgs["result"]["distro_PO_Incentive"]>
+
+  export type $Distro_PO_IncentivePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Distro_PO_Incentive"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      rangeFrom: number
+      rangeTo: number
+      vehicle: string
+      vehicleId: string
+      periodYear: number
+      amount: number
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["distro_PO_Incentive"]>
+    composites: {}
+  }
+
+  type Distro_PO_IncentiveGetPayload<S extends boolean | null | undefined | Distro_PO_IncentiveDefaultArgs> = $Result.GetResult<Prisma.$Distro_PO_IncentivePayload, S>
+
+  type Distro_PO_IncentiveCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<Distro_PO_IncentiveFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Distro_PO_IncentiveCountAggregateInputType | true
+    }
+
+  export interface Distro_PO_IncentiveDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Distro_PO_Incentive'], meta: { name: 'Distro_PO_Incentive' } }
+    /**
+     * Find zero or one Distro_PO_Incentive that matches the filter.
+     * @param {Distro_PO_IncentiveFindUniqueArgs} args - Arguments to find a Distro_PO_Incentive
+     * @example
+     * // Get one Distro_PO_Incentive
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends Distro_PO_IncentiveFindUniqueArgs>(args: SelectSubset<T, Distro_PO_IncentiveFindUniqueArgs<ExtArgs>>): Prisma__Distro_PO_IncentiveClient<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Distro_PO_Incentive that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {Distro_PO_IncentiveFindUniqueOrThrowArgs} args - Arguments to find a Distro_PO_Incentive
+     * @example
+     * // Get one Distro_PO_Incentive
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends Distro_PO_IncentiveFindUniqueOrThrowArgs>(args: SelectSubset<T, Distro_PO_IncentiveFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_IncentiveClient<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_Incentive that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_IncentiveFindFirstArgs} args - Arguments to find a Distro_PO_Incentive
+     * @example
+     * // Get one Distro_PO_Incentive
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends Distro_PO_IncentiveFindFirstArgs>(args?: SelectSubset<T, Distro_PO_IncentiveFindFirstArgs<ExtArgs>>): Prisma__Distro_PO_IncentiveClient<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_Incentive that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_IncentiveFindFirstOrThrowArgs} args - Arguments to find a Distro_PO_Incentive
+     * @example
+     * // Get one Distro_PO_Incentive
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends Distro_PO_IncentiveFindFirstOrThrowArgs>(args?: SelectSubset<T, Distro_PO_IncentiveFindFirstOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_IncentiveClient<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Distro_PO_Incentives that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_IncentiveFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Distro_PO_Incentives
+     * const distro_PO_Incentives = await prisma.distro_PO_Incentive.findMany()
+     * 
+     * // Get first 10 Distro_PO_Incentives
+     * const distro_PO_Incentives = await prisma.distro_PO_Incentive.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const distro_PO_IncentiveWithIdOnly = await prisma.distro_PO_Incentive.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends Distro_PO_IncentiveFindManyArgs>(args?: SelectSubset<T, Distro_PO_IncentiveFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Distro_PO_Incentive.
+     * @param {Distro_PO_IncentiveCreateArgs} args - Arguments to create a Distro_PO_Incentive.
+     * @example
+     * // Create one Distro_PO_Incentive
+     * const Distro_PO_Incentive = await prisma.distro_PO_Incentive.create({
+     *   data: {
+     *     // ... data to create a Distro_PO_Incentive
+     *   }
+     * })
+     * 
+     */
+    create<T extends Distro_PO_IncentiveCreateArgs>(args: SelectSubset<T, Distro_PO_IncentiveCreateArgs<ExtArgs>>): Prisma__Distro_PO_IncentiveClient<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Distro_PO_Incentives.
+     * @param {Distro_PO_IncentiveCreateManyArgs} args - Arguments to create many Distro_PO_Incentives.
+     * @example
+     * // Create many Distro_PO_Incentives
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends Distro_PO_IncentiveCreateManyArgs>(args?: SelectSubset<T, Distro_PO_IncentiveCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Distro_PO_Incentives and returns the data saved in the database.
+     * @param {Distro_PO_IncentiveCreateManyAndReturnArgs} args - Arguments to create many Distro_PO_Incentives.
+     * @example
+     * // Create many Distro_PO_Incentives
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Distro_PO_Incentives and only return the `id`
+     * const distro_PO_IncentiveWithIdOnly = await prisma.distro_PO_Incentive.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends Distro_PO_IncentiveCreateManyAndReturnArgs>(args?: SelectSubset<T, Distro_PO_IncentiveCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Distro_PO_Incentive.
+     * @param {Distro_PO_IncentiveDeleteArgs} args - Arguments to delete one Distro_PO_Incentive.
+     * @example
+     * // Delete one Distro_PO_Incentive
+     * const Distro_PO_Incentive = await prisma.distro_PO_Incentive.delete({
+     *   where: {
+     *     // ... filter to delete one Distro_PO_Incentive
+     *   }
+     * })
+     * 
+     */
+    delete<T extends Distro_PO_IncentiveDeleteArgs>(args: SelectSubset<T, Distro_PO_IncentiveDeleteArgs<ExtArgs>>): Prisma__Distro_PO_IncentiveClient<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Distro_PO_Incentive.
+     * @param {Distro_PO_IncentiveUpdateArgs} args - Arguments to update one Distro_PO_Incentive.
+     * @example
+     * // Update one Distro_PO_Incentive
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends Distro_PO_IncentiveUpdateArgs>(args: SelectSubset<T, Distro_PO_IncentiveUpdateArgs<ExtArgs>>): Prisma__Distro_PO_IncentiveClient<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Distro_PO_Incentives.
+     * @param {Distro_PO_IncentiveDeleteManyArgs} args - Arguments to filter Distro_PO_Incentives to delete.
+     * @example
+     * // Delete a few Distro_PO_Incentives
+     * const { count } = await prisma.distro_PO_Incentive.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends Distro_PO_IncentiveDeleteManyArgs>(args?: SelectSubset<T, Distro_PO_IncentiveDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_Incentives.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_IncentiveUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Distro_PO_Incentives
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends Distro_PO_IncentiveUpdateManyArgs>(args: SelectSubset<T, Distro_PO_IncentiveUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_Incentives and returns the data updated in the database.
+     * @param {Distro_PO_IncentiveUpdateManyAndReturnArgs} args - Arguments to update many Distro_PO_Incentives.
+     * @example
+     * // Update many Distro_PO_Incentives
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Distro_PO_Incentives and only return the `id`
+     * const distro_PO_IncentiveWithIdOnly = await prisma.distro_PO_Incentive.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends Distro_PO_IncentiveUpdateManyAndReturnArgs>(args: SelectSubset<T, Distro_PO_IncentiveUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Distro_PO_Incentive.
+     * @param {Distro_PO_IncentiveUpsertArgs} args - Arguments to update or create a Distro_PO_Incentive.
+     * @example
+     * // Update or create a Distro_PO_Incentive
+     * const distro_PO_Incentive = await prisma.distro_PO_Incentive.upsert({
+     *   create: {
+     *     // ... data to create a Distro_PO_Incentive
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Distro_PO_Incentive we want to update
+     *   }
+     * })
+     */
+    upsert<T extends Distro_PO_IncentiveUpsertArgs>(args: SelectSubset<T, Distro_PO_IncentiveUpsertArgs<ExtArgs>>): Prisma__Distro_PO_IncentiveClient<$Result.GetResult<Prisma.$Distro_PO_IncentivePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Distro_PO_Incentives.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_IncentiveCountArgs} args - Arguments to filter Distro_PO_Incentives to count.
+     * @example
+     * // Count the number of Distro_PO_Incentives
+     * const count = await prisma.distro_PO_Incentive.count({
+     *   where: {
+     *     // ... the filter for the Distro_PO_Incentives we want to count
+     *   }
+     * })
+    **/
+    count<T extends Distro_PO_IncentiveCountArgs>(
+      args?: Subset<T, Distro_PO_IncentiveCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Distro_PO_IncentiveCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Distro_PO_Incentive.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_IncentiveAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Distro_PO_IncentiveAggregateArgs>(args: Subset<T, Distro_PO_IncentiveAggregateArgs>): Prisma.PrismaPromise<GetDistro_PO_IncentiveAggregateType<T>>
+
+    /**
+     * Group by Distro_PO_Incentive.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_IncentiveGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends Distro_PO_IncentiveGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: Distro_PO_IncentiveGroupByArgs['orderBy'] }
+        : { orderBy?: Distro_PO_IncentiveGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, Distro_PO_IncentiveGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDistro_PO_IncentiveGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Distro_PO_Incentive model
+   */
+  readonly fields: Distro_PO_IncentiveFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Distro_PO_Incentive.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__Distro_PO_IncentiveClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Distro_PO_Incentive model
+   */
+  interface Distro_PO_IncentiveFieldRefs {
+    readonly id: FieldRef<"Distro_PO_Incentive", 'Int'>
+    readonly rangeFrom: FieldRef<"Distro_PO_Incentive", 'Int'>
+    readonly rangeTo: FieldRef<"Distro_PO_Incentive", 'Int'>
+    readonly vehicle: FieldRef<"Distro_PO_Incentive", 'String'>
+    readonly vehicleId: FieldRef<"Distro_PO_Incentive", 'String'>
+    readonly periodYear: FieldRef<"Distro_PO_Incentive", 'Int'>
+    readonly amount: FieldRef<"Distro_PO_Incentive", 'Int'>
+    readonly createdAt: FieldRef<"Distro_PO_Incentive", 'DateTime'>
+    readonly updatedAt: FieldRef<"Distro_PO_Incentive", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Distro_PO_Incentive findUnique
+   */
+  export type Distro_PO_IncentiveFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Incentive to fetch.
+     */
+    where: Distro_PO_IncentiveWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Incentive findUniqueOrThrow
+   */
+  export type Distro_PO_IncentiveFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Incentive to fetch.
+     */
+    where: Distro_PO_IncentiveWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Incentive findFirst
+   */
+  export type Distro_PO_IncentiveFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Incentive to fetch.
+     */
+    where?: Distro_PO_IncentiveWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Incentives to fetch.
+     */
+    orderBy?: Distro_PO_IncentiveOrderByWithRelationInput | Distro_PO_IncentiveOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_Incentives.
+     */
+    cursor?: Distro_PO_IncentiveWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Incentives from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Incentives.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_Incentives.
+     */
+    distinct?: Distro_PO_IncentiveScalarFieldEnum | Distro_PO_IncentiveScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Incentive findFirstOrThrow
+   */
+  export type Distro_PO_IncentiveFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Incentive to fetch.
+     */
+    where?: Distro_PO_IncentiveWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Incentives to fetch.
+     */
+    orderBy?: Distro_PO_IncentiveOrderByWithRelationInput | Distro_PO_IncentiveOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_Incentives.
+     */
+    cursor?: Distro_PO_IncentiveWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Incentives from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Incentives.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_Incentives.
+     */
+    distinct?: Distro_PO_IncentiveScalarFieldEnum | Distro_PO_IncentiveScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Incentive findMany
+   */
+  export type Distro_PO_IncentiveFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_Incentives to fetch.
+     */
+    where?: Distro_PO_IncentiveWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_Incentives to fetch.
+     */
+    orderBy?: Distro_PO_IncentiveOrderByWithRelationInput | Distro_PO_IncentiveOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Distro_PO_Incentives.
+     */
+    cursor?: Distro_PO_IncentiveWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_Incentives from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_Incentives.
+     */
+    skip?: number
+    distinct?: Distro_PO_IncentiveScalarFieldEnum | Distro_PO_IncentiveScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_Incentive create
+   */
+  export type Distro_PO_IncentiveCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * The data needed to create a Distro_PO_Incentive.
+     */
+    data: XOR<Distro_PO_IncentiveCreateInput, Distro_PO_IncentiveUncheckedCreateInput>
+  }
+
+  /**
+   * Distro_PO_Incentive createMany
+   */
+  export type Distro_PO_IncentiveCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Distro_PO_Incentives.
+     */
+    data: Distro_PO_IncentiveCreateManyInput | Distro_PO_IncentiveCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_Incentive createManyAndReturn
+   */
+  export type Distro_PO_IncentiveCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * The data used to create many Distro_PO_Incentives.
+     */
+    data: Distro_PO_IncentiveCreateManyInput | Distro_PO_IncentiveCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_Incentive update
+   */
+  export type Distro_PO_IncentiveUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * The data needed to update a Distro_PO_Incentive.
+     */
+    data: XOR<Distro_PO_IncentiveUpdateInput, Distro_PO_IncentiveUncheckedUpdateInput>
+    /**
+     * Choose, which Distro_PO_Incentive to update.
+     */
+    where: Distro_PO_IncentiveWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Incentive updateMany
+   */
+  export type Distro_PO_IncentiveUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Distro_PO_Incentives.
+     */
+    data: XOR<Distro_PO_IncentiveUpdateManyMutationInput, Distro_PO_IncentiveUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_Incentives to update
+     */
+    where?: Distro_PO_IncentiveWhereInput
+    /**
+     * Limit how many Distro_PO_Incentives to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_Incentive updateManyAndReturn
+   */
+  export type Distro_PO_IncentiveUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * The data used to update Distro_PO_Incentives.
+     */
+    data: XOR<Distro_PO_IncentiveUpdateManyMutationInput, Distro_PO_IncentiveUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_Incentives to update
+     */
+    where?: Distro_PO_IncentiveWhereInput
+    /**
+     * Limit how many Distro_PO_Incentives to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_Incentive upsert
+   */
+  export type Distro_PO_IncentiveUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * The filter to search for the Distro_PO_Incentive to update in case it exists.
+     */
+    where: Distro_PO_IncentiveWhereUniqueInput
+    /**
+     * In case the Distro_PO_Incentive found by the `where` argument doesn't exist, create a new Distro_PO_Incentive with this data.
+     */
+    create: XOR<Distro_PO_IncentiveCreateInput, Distro_PO_IncentiveUncheckedCreateInput>
+    /**
+     * In case the Distro_PO_Incentive was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<Distro_PO_IncentiveUpdateInput, Distro_PO_IncentiveUncheckedUpdateInput>
+  }
+
+  /**
+   * Distro_PO_Incentive delete
+   */
+  export type Distro_PO_IncentiveDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
+    /**
+     * Filter which Distro_PO_Incentive to delete.
+     */
+    where: Distro_PO_IncentiveWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_Incentive deleteMany
+   */
+  export type Distro_PO_IncentiveDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_Incentives to delete
+     */
+    where?: Distro_PO_IncentiveWhereInput
+    /**
+     * Limit how many Distro_PO_Incentives to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_Incentive without action
+   */
+  export type Distro_PO_IncentiveDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_Incentive
+     */
+    select?: Distro_PO_IncentiveSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_Incentive
+     */
+    omit?: Distro_PO_IncentiveOmit<ExtArgs> | null
   }
 
 
@@ -6937,42 +9538,53 @@ export namespace Prisma {
   export type Distro_PO_LineAvgAggregateOutputType = {
     id: number | null
     qty: number | null
+    price: number | null
     purchaseOrderId: number | null
   }
 
   export type Distro_PO_LineSumAggregateOutputType = {
     id: number | null
     qty: number | null
+    price: number | null
     purchaseOrderId: number | null
   }
 
   export type Distro_PO_LineMinAggregateOutputType = {
     id: number | null
-    vehicleCategory: string | null
+    vehicle: string | null
+    vehicleId: string | null
+    category: string | null
     spType: string | null
     partName: string | null
     partNumber: string | null
     qty: number | null
+    price: number | null
     purchaseOrderId: number | null
   }
 
   export type Distro_PO_LineMaxAggregateOutputType = {
     id: number | null
-    vehicleCategory: string | null
+    vehicle: string | null
+    vehicleId: string | null
+    category: string | null
     spType: string | null
     partName: string | null
     partNumber: string | null
     qty: number | null
+    price: number | null
     purchaseOrderId: number | null
   }
 
   export type Distro_PO_LineCountAggregateOutputType = {
     id: number
-    vehicleCategory: number
+    vehicle: number
+    vehicleId: number
+    category: number
     spType: number
     partName: number
     partNumber: number
     qty: number
+    price: number
     purchaseOrderId: number
     _all: number
   }
@@ -6981,42 +9593,53 @@ export namespace Prisma {
   export type Distro_PO_LineAvgAggregateInputType = {
     id?: true
     qty?: true
+    price?: true
     purchaseOrderId?: true
   }
 
   export type Distro_PO_LineSumAggregateInputType = {
     id?: true
     qty?: true
+    price?: true
     purchaseOrderId?: true
   }
 
   export type Distro_PO_LineMinAggregateInputType = {
     id?: true
-    vehicleCategory?: true
+    vehicle?: true
+    vehicleId?: true
+    category?: true
     spType?: true
     partName?: true
     partNumber?: true
     qty?: true
+    price?: true
     purchaseOrderId?: true
   }
 
   export type Distro_PO_LineMaxAggregateInputType = {
     id?: true
-    vehicleCategory?: true
+    vehicle?: true
+    vehicleId?: true
+    category?: true
     spType?: true
     partName?: true
     partNumber?: true
     qty?: true
+    price?: true
     purchaseOrderId?: true
   }
 
   export type Distro_PO_LineCountAggregateInputType = {
     id?: true
-    vehicleCategory?: true
+    vehicle?: true
+    vehicleId?: true
+    category?: true
     spType?: true
     partName?: true
     partNumber?: true
     qty?: true
+    price?: true
     purchaseOrderId?: true
     _all?: true
   }
@@ -7109,11 +9732,14 @@ export namespace Prisma {
 
   export type Distro_PO_LineGroupByOutputType = {
     id: number
-    vehicleCategory: string
+    vehicle: string
+    vehicleId: string
+    category: string
     spType: string
     partName: string
     partNumber: string
     qty: number
+    price: number
     purchaseOrderId: number
     _count: Distro_PO_LineCountAggregateOutputType | null
     _avg: Distro_PO_LineAvgAggregateOutputType | null
@@ -7138,48 +9764,60 @@ export namespace Prisma {
 
   export type Distro_PO_LineSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    vehicleCategory?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    category?: boolean
     spType?: boolean
     partName?: boolean
     partNumber?: boolean
     qty?: boolean
+    price?: boolean
     purchaseOrderId?: boolean
     purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["distro_PO_Line"]>
 
   export type Distro_PO_LineSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    vehicleCategory?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    category?: boolean
     spType?: boolean
     partName?: boolean
     partNumber?: boolean
     qty?: boolean
+    price?: boolean
     purchaseOrderId?: boolean
     purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["distro_PO_Line"]>
 
   export type Distro_PO_LineSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    vehicleCategory?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    category?: boolean
     spType?: boolean
     partName?: boolean
     partNumber?: boolean
     qty?: boolean
+    price?: boolean
     purchaseOrderId?: boolean
     purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["distro_PO_Line"]>
 
   export type Distro_PO_LineSelectScalar = {
     id?: boolean
-    vehicleCategory?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    category?: boolean
     spType?: boolean
     partName?: boolean
     partNumber?: boolean
     qty?: boolean
+    price?: boolean
     purchaseOrderId?: boolean
   }
 
-  export type Distro_PO_LineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "vehicleCategory" | "spType" | "partName" | "partNumber" | "qty" | "purchaseOrderId", ExtArgs["result"]["distro_PO_Line"]>
+  export type Distro_PO_LineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "vehicle" | "vehicleId" | "category" | "spType" | "partName" | "partNumber" | "qty" | "price" | "purchaseOrderId", ExtArgs["result"]["distro_PO_Line"]>
   export type Distro_PO_LineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     purchaseOrder?: boolean | Distro_PO_HeaderDefaultArgs<ExtArgs>
   }
@@ -7197,11 +9835,14 @@ export namespace Prisma {
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
-      vehicleCategory: string
+      vehicle: string
+      vehicleId: string
+      category: string
       spType: string
       partName: string
       partNumber: string
       qty: number
+      price: number
       purchaseOrderId: number
     }, ExtArgs["result"]["distro_PO_Line"]>
     composites: {}
@@ -7628,11 +10269,14 @@ export namespace Prisma {
    */
   interface Distro_PO_LineFieldRefs {
     readonly id: FieldRef<"Distro_PO_Line", 'Int'>
-    readonly vehicleCategory: FieldRef<"Distro_PO_Line", 'String'>
+    readonly vehicle: FieldRef<"Distro_PO_Line", 'String'>
+    readonly vehicleId: FieldRef<"Distro_PO_Line", 'String'>
+    readonly category: FieldRef<"Distro_PO_Line", 'String'>
     readonly spType: FieldRef<"Distro_PO_Line", 'String'>
     readonly partName: FieldRef<"Distro_PO_Line", 'String'>
     readonly partNumber: FieldRef<"Distro_PO_Line", 'String'>
     readonly qty: FieldRef<"Distro_PO_Line", 'Int'>
+    readonly price: FieldRef<"Distro_PO_Line", 'Int'>
     readonly purchaseOrderId: FieldRef<"Distro_PO_Line", 'Int'>
   }
     
@@ -8062,12 +10706,10 @@ export namespace Prisma {
 
   export type Distro_PO_MasterItemAvgAggregateOutputType = {
     id: number | null
-    price: number | null
   }
 
   export type Distro_PO_MasterItemSumAggregateOutputType = {
     id: number | null
-    price: number | null
   }
 
   export type Distro_PO_MasterItemMinAggregateOutputType = {
@@ -8079,7 +10721,6 @@ export namespace Prisma {
     spType: string | null
     itemId: string | null
     isActive: boolean | null
-    price: number | null
   }
 
   export type Distro_PO_MasterItemMaxAggregateOutputType = {
@@ -8091,7 +10732,6 @@ export namespace Prisma {
     spType: string | null
     itemId: string | null
     isActive: boolean | null
-    price: number | null
   }
 
   export type Distro_PO_MasterItemCountAggregateOutputType = {
@@ -8103,19 +10743,16 @@ export namespace Prisma {
     spType: number
     itemId: number
     isActive: number
-    price: number
     _all: number
   }
 
 
   export type Distro_PO_MasterItemAvgAggregateInputType = {
     id?: true
-    price?: true
   }
 
   export type Distro_PO_MasterItemSumAggregateInputType = {
     id?: true
-    price?: true
   }
 
   export type Distro_PO_MasterItemMinAggregateInputType = {
@@ -8127,7 +10764,6 @@ export namespace Prisma {
     spType?: true
     itemId?: true
     isActive?: true
-    price?: true
   }
 
   export type Distro_PO_MasterItemMaxAggregateInputType = {
@@ -8139,7 +10775,6 @@ export namespace Prisma {
     spType?: true
     itemId?: true
     isActive?: true
-    price?: true
   }
 
   export type Distro_PO_MasterItemCountAggregateInputType = {
@@ -8151,7 +10786,6 @@ export namespace Prisma {
     spType?: true
     itemId?: true
     isActive?: true
-    price?: true
     _all?: true
   }
 
@@ -8250,7 +10884,6 @@ export namespace Prisma {
     spType: string | null
     itemId: string
     isActive: boolean
-    price: number | null
     _count: Distro_PO_MasterItemCountAggregateOutputType | null
     _avg: Distro_PO_MasterItemAvgAggregateOutputType | null
     _sum: Distro_PO_MasterItemSumAggregateOutputType | null
@@ -8281,7 +10914,6 @@ export namespace Prisma {
     spType?: boolean
     itemId?: boolean
     isActive?: boolean
-    price?: boolean
   }, ExtArgs["result"]["distro_PO_MasterItem"]>
 
   export type Distro_PO_MasterItemSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -8293,7 +10925,6 @@ export namespace Prisma {
     spType?: boolean
     itemId?: boolean
     isActive?: boolean
-    price?: boolean
   }, ExtArgs["result"]["distro_PO_MasterItem"]>
 
   export type Distro_PO_MasterItemSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -8305,7 +10936,6 @@ export namespace Prisma {
     spType?: boolean
     itemId?: boolean
     isActive?: boolean
-    price?: boolean
   }, ExtArgs["result"]["distro_PO_MasterItem"]>
 
   export type Distro_PO_MasterItemSelectScalar = {
@@ -8317,10 +10947,9 @@ export namespace Prisma {
     spType?: boolean
     itemId?: boolean
     isActive?: boolean
-    price?: boolean
   }
 
-  export type Distro_PO_MasterItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "vehicle" | "vehicleId" | "category" | "productName" | "spType" | "itemId" | "isActive" | "price", ExtArgs["result"]["distro_PO_MasterItem"]>
+  export type Distro_PO_MasterItemOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "vehicle" | "vehicleId" | "category" | "productName" | "spType" | "itemId" | "isActive", ExtArgs["result"]["distro_PO_MasterItem"]>
 
   export type $Distro_PO_MasterItemPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Distro_PO_MasterItem"
@@ -8334,7 +10963,6 @@ export namespace Prisma {
       spType: string | null
       itemId: string
       isActive: boolean
-      price: number | null
     }, ExtArgs["result"]["distro_PO_MasterItem"]>
     composites: {}
   }
@@ -8766,7 +11394,6 @@ export namespace Prisma {
     readonly spType: FieldRef<"Distro_PO_MasterItem", 'String'>
     readonly itemId: FieldRef<"Distro_PO_MasterItem", 'String'>
     readonly isActive: FieldRef<"Distro_PO_MasterItem", 'Boolean'>
-    readonly price: FieldRef<"Distro_PO_MasterItem", 'Int'>
   }
     
 
@@ -9130,6 +11757,3356 @@ export namespace Prisma {
      * Omit specific fields from the Distro_PO_MasterItem
      */
     omit?: Distro_PO_MasterItemOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Distro_PO_MasterItem_Price_Header
+   */
+
+  export type AggregateDistro_PO_MasterItem_Price_Header = {
+    _count: Distro_PO_MasterItem_Price_HeaderCountAggregateOutputType | null
+    _min: Distro_PO_MasterItem_Price_HeaderMinAggregateOutputType | null
+    _max: Distro_PO_MasterItem_Price_HeaderMaxAggregateOutputType | null
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderMinAggregateOutputType = {
+    id: string | null
+    description: string | null
+    createdAt: Date | null
+    createdBy: string | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderMaxAggregateOutputType = {
+    id: string | null
+    description: string | null
+    createdAt: Date | null
+    createdBy: string | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderCountAggregateOutputType = {
+    id: number
+    description: number
+    createdAt: number
+    createdBy: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type Distro_PO_MasterItem_Price_HeaderMinAggregateInputType = {
+    id?: true
+    description?: true
+    createdAt?: true
+    createdBy?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderMaxAggregateInputType = {
+    id?: true
+    description?: true
+    createdAt?: true
+    createdBy?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderCountAggregateInputType = {
+    id?: true
+    description?: true
+    createdAt?: true
+    createdBy?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Header to aggregate.
+     */
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItem_Price_Headers to fetch.
+     */
+    orderBy?: Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput | Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItem_Price_Headers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItem_Price_Headers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Distro_PO_MasterItem_Price_Headers
+    **/
+    _count?: true | Distro_PO_MasterItem_Price_HeaderCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Distro_PO_MasterItem_Price_HeaderMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Distro_PO_MasterItem_Price_HeaderMaxAggregateInputType
+  }
+
+  export type GetDistro_PO_MasterItem_Price_HeaderAggregateType<T extends Distro_PO_MasterItem_Price_HeaderAggregateArgs> = {
+        [P in keyof T & keyof AggregateDistro_PO_MasterItem_Price_Header]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDistro_PO_MasterItem_Price_Header[P]>
+      : GetScalarType<T[P], AggregateDistro_PO_MasterItem_Price_Header[P]>
+  }
+
+
+
+
+  export type Distro_PO_MasterItem_Price_HeaderGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    orderBy?: Distro_PO_MasterItem_Price_HeaderOrderByWithAggregationInput | Distro_PO_MasterItem_Price_HeaderOrderByWithAggregationInput[]
+    by: Distro_PO_MasterItem_Price_HeaderScalarFieldEnum[] | Distro_PO_MasterItem_Price_HeaderScalarFieldEnum
+    having?: Distro_PO_MasterItem_Price_HeaderScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Distro_PO_MasterItem_Price_HeaderCountAggregateInputType | true
+    _min?: Distro_PO_MasterItem_Price_HeaderMinAggregateInputType
+    _max?: Distro_PO_MasterItem_Price_HeaderMaxAggregateInputType
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderGroupByOutputType = {
+    id: string
+    description: string
+    createdAt: Date
+    createdBy: string
+    updatedAt: Date
+    _count: Distro_PO_MasterItem_Price_HeaderCountAggregateOutputType | null
+    _min: Distro_PO_MasterItem_Price_HeaderMinAggregateOutputType | null
+    _max: Distro_PO_MasterItem_Price_HeaderMaxAggregateOutputType | null
+  }
+
+  type GetDistro_PO_MasterItem_Price_HeaderGroupByPayload<T extends Distro_PO_MasterItem_Price_HeaderGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Distro_PO_MasterItem_Price_HeaderGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Distro_PO_MasterItem_Price_HeaderGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Distro_PO_MasterItem_Price_HeaderGroupByOutputType[P]>
+            : GetScalarType<T[P], Distro_PO_MasterItem_Price_HeaderGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    description?: boolean
+    createdAt?: boolean
+    createdBy?: boolean
+    updatedAt?: boolean
+    priceLines?: boolean | Distro_PO_MasterItem_Price_Header$priceLinesArgs<ExtArgs>
+    _count?: boolean | Distro_PO_MasterItem_Price_HeaderCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["distro_PO_MasterItem_Price_Header"]>
+
+  export type Distro_PO_MasterItem_Price_HeaderSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    description?: boolean
+    createdAt?: boolean
+    createdBy?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_MasterItem_Price_Header"]>
+
+  export type Distro_PO_MasterItem_Price_HeaderSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    description?: boolean
+    createdAt?: boolean
+    createdBy?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_MasterItem_Price_Header"]>
+
+  export type Distro_PO_MasterItem_Price_HeaderSelectScalar = {
+    id?: boolean
+    description?: boolean
+    createdAt?: boolean
+    createdBy?: boolean
+    updatedAt?: boolean
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "description" | "createdAt" | "createdBy" | "updatedAt", ExtArgs["result"]["distro_PO_MasterItem_Price_Header"]>
+  export type Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    priceLines?: boolean | Distro_PO_MasterItem_Price_Header$priceLinesArgs<ExtArgs>
+    _count?: boolean | Distro_PO_MasterItem_Price_HeaderCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type Distro_PO_MasterItem_Price_HeaderIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type Distro_PO_MasterItem_Price_HeaderIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Distro_PO_MasterItem_Price_Header"
+    objects: {
+      priceLines: Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      description: string
+      createdAt: Date
+      createdBy: string
+      updatedAt: Date
+    }, ExtArgs["result"]["distro_PO_MasterItem_Price_Header"]>
+    composites: {}
+  }
+
+  type Distro_PO_MasterItem_Price_HeaderGetPayload<S extends boolean | null | undefined | Distro_PO_MasterItem_Price_HeaderDefaultArgs> = $Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload, S>
+
+  type Distro_PO_MasterItem_Price_HeaderCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<Distro_PO_MasterItem_Price_HeaderFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Distro_PO_MasterItem_Price_HeaderCountAggregateInputType | true
+    }
+
+  export interface Distro_PO_MasterItem_Price_HeaderDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Distro_PO_MasterItem_Price_Header'], meta: { name: 'Distro_PO_MasterItem_Price_Header' } }
+    /**
+     * Find zero or one Distro_PO_MasterItem_Price_Header that matches the filter.
+     * @param {Distro_PO_MasterItem_Price_HeaderFindUniqueArgs} args - Arguments to find a Distro_PO_MasterItem_Price_Header
+     * @example
+     * // Get one Distro_PO_MasterItem_Price_Header
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends Distro_PO_MasterItem_Price_HeaderFindUniqueArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderFindUniqueArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Distro_PO_MasterItem_Price_Header that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {Distro_PO_MasterItem_Price_HeaderFindUniqueOrThrowArgs} args - Arguments to find a Distro_PO_MasterItem_Price_Header
+     * @example
+     * // Get one Distro_PO_MasterItem_Price_Header
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends Distro_PO_MasterItem_Price_HeaderFindUniqueOrThrowArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_MasterItem_Price_Header that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_HeaderFindFirstArgs} args - Arguments to find a Distro_PO_MasterItem_Price_Header
+     * @example
+     * // Get one Distro_PO_MasterItem_Price_Header
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends Distro_PO_MasterItem_Price_HeaderFindFirstArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderFindFirstArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_MasterItem_Price_Header that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_HeaderFindFirstOrThrowArgs} args - Arguments to find a Distro_PO_MasterItem_Price_Header
+     * @example
+     * // Get one Distro_PO_MasterItem_Price_Header
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends Distro_PO_MasterItem_Price_HeaderFindFirstOrThrowArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderFindFirstOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Distro_PO_MasterItem_Price_Headers that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_HeaderFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Distro_PO_MasterItem_Price_Headers
+     * const distro_PO_MasterItem_Price_Headers = await prisma.distro_PO_MasterItem_Price_Header.findMany()
+     * 
+     * // Get first 10 Distro_PO_MasterItem_Price_Headers
+     * const distro_PO_MasterItem_Price_Headers = await prisma.distro_PO_MasterItem_Price_Header.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const distro_PO_MasterItem_Price_HeaderWithIdOnly = await prisma.distro_PO_MasterItem_Price_Header.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends Distro_PO_MasterItem_Price_HeaderFindManyArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Distro_PO_MasterItem_Price_Header.
+     * @param {Distro_PO_MasterItem_Price_HeaderCreateArgs} args - Arguments to create a Distro_PO_MasterItem_Price_Header.
+     * @example
+     * // Create one Distro_PO_MasterItem_Price_Header
+     * const Distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.create({
+     *   data: {
+     *     // ... data to create a Distro_PO_MasterItem_Price_Header
+     *   }
+     * })
+     * 
+     */
+    create<T extends Distro_PO_MasterItem_Price_HeaderCreateArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderCreateArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Distro_PO_MasterItem_Price_Headers.
+     * @param {Distro_PO_MasterItem_Price_HeaderCreateManyArgs} args - Arguments to create many Distro_PO_MasterItem_Price_Headers.
+     * @example
+     * // Create many Distro_PO_MasterItem_Price_Headers
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends Distro_PO_MasterItem_Price_HeaderCreateManyArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Distro_PO_MasterItem_Price_Headers and returns the data saved in the database.
+     * @param {Distro_PO_MasterItem_Price_HeaderCreateManyAndReturnArgs} args - Arguments to create many Distro_PO_MasterItem_Price_Headers.
+     * @example
+     * // Create many Distro_PO_MasterItem_Price_Headers
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Distro_PO_MasterItem_Price_Headers and only return the `id`
+     * const distro_PO_MasterItem_Price_HeaderWithIdOnly = await prisma.distro_PO_MasterItem_Price_Header.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends Distro_PO_MasterItem_Price_HeaderCreateManyAndReturnArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Distro_PO_MasterItem_Price_Header.
+     * @param {Distro_PO_MasterItem_Price_HeaderDeleteArgs} args - Arguments to delete one Distro_PO_MasterItem_Price_Header.
+     * @example
+     * // Delete one Distro_PO_MasterItem_Price_Header
+     * const Distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.delete({
+     *   where: {
+     *     // ... filter to delete one Distro_PO_MasterItem_Price_Header
+     *   }
+     * })
+     * 
+     */
+    delete<T extends Distro_PO_MasterItem_Price_HeaderDeleteArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderDeleteArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Distro_PO_MasterItem_Price_Header.
+     * @param {Distro_PO_MasterItem_Price_HeaderUpdateArgs} args - Arguments to update one Distro_PO_MasterItem_Price_Header.
+     * @example
+     * // Update one Distro_PO_MasterItem_Price_Header
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends Distro_PO_MasterItem_Price_HeaderUpdateArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderUpdateArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Distro_PO_MasterItem_Price_Headers.
+     * @param {Distro_PO_MasterItem_Price_HeaderDeleteManyArgs} args - Arguments to filter Distro_PO_MasterItem_Price_Headers to delete.
+     * @example
+     * // Delete a few Distro_PO_MasterItem_Price_Headers
+     * const { count } = await prisma.distro_PO_MasterItem_Price_Header.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends Distro_PO_MasterItem_Price_HeaderDeleteManyArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_MasterItem_Price_Headers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_HeaderUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Distro_PO_MasterItem_Price_Headers
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends Distro_PO_MasterItem_Price_HeaderUpdateManyArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_MasterItem_Price_Headers and returns the data updated in the database.
+     * @param {Distro_PO_MasterItem_Price_HeaderUpdateManyAndReturnArgs} args - Arguments to update many Distro_PO_MasterItem_Price_Headers.
+     * @example
+     * // Update many Distro_PO_MasterItem_Price_Headers
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Distro_PO_MasterItem_Price_Headers and only return the `id`
+     * const distro_PO_MasterItem_Price_HeaderWithIdOnly = await prisma.distro_PO_MasterItem_Price_Header.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends Distro_PO_MasterItem_Price_HeaderUpdateManyAndReturnArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Distro_PO_MasterItem_Price_Header.
+     * @param {Distro_PO_MasterItem_Price_HeaderUpsertArgs} args - Arguments to update or create a Distro_PO_MasterItem_Price_Header.
+     * @example
+     * // Update or create a Distro_PO_MasterItem_Price_Header
+     * const distro_PO_MasterItem_Price_Header = await prisma.distro_PO_MasterItem_Price_Header.upsert({
+     *   create: {
+     *     // ... data to create a Distro_PO_MasterItem_Price_Header
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Distro_PO_MasterItem_Price_Header we want to update
+     *   }
+     * })
+     */
+    upsert<T extends Distro_PO_MasterItem_Price_HeaderUpsertArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_HeaderUpsertArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Distro_PO_MasterItem_Price_Headers.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_HeaderCountArgs} args - Arguments to filter Distro_PO_MasterItem_Price_Headers to count.
+     * @example
+     * // Count the number of Distro_PO_MasterItem_Price_Headers
+     * const count = await prisma.distro_PO_MasterItem_Price_Header.count({
+     *   where: {
+     *     // ... the filter for the Distro_PO_MasterItem_Price_Headers we want to count
+     *   }
+     * })
+    **/
+    count<T extends Distro_PO_MasterItem_Price_HeaderCountArgs>(
+      args?: Subset<T, Distro_PO_MasterItem_Price_HeaderCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Distro_PO_MasterItem_Price_HeaderCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Distro_PO_MasterItem_Price_Header.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_HeaderAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Distro_PO_MasterItem_Price_HeaderAggregateArgs>(args: Subset<T, Distro_PO_MasterItem_Price_HeaderAggregateArgs>): Prisma.PrismaPromise<GetDistro_PO_MasterItem_Price_HeaderAggregateType<T>>
+
+    /**
+     * Group by Distro_PO_MasterItem_Price_Header.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_HeaderGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends Distro_PO_MasterItem_Price_HeaderGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: Distro_PO_MasterItem_Price_HeaderGroupByArgs['orderBy'] }
+        : { orderBy?: Distro_PO_MasterItem_Price_HeaderGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, Distro_PO_MasterItem_Price_HeaderGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDistro_PO_MasterItem_Price_HeaderGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Distro_PO_MasterItem_Price_Header model
+   */
+  readonly fields: Distro_PO_MasterItem_Price_HeaderFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Distro_PO_MasterItem_Price_Header.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__Distro_PO_MasterItem_Price_HeaderClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    priceLines<T extends Distro_PO_MasterItem_Price_Header$priceLinesArgs<ExtArgs> = {}>(args?: Subset<T, Distro_PO_MasterItem_Price_Header$priceLinesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Distro_PO_MasterItem_Price_Header model
+   */
+  interface Distro_PO_MasterItem_Price_HeaderFieldRefs {
+    readonly id: FieldRef<"Distro_PO_MasterItem_Price_Header", 'String'>
+    readonly description: FieldRef<"Distro_PO_MasterItem_Price_Header", 'String'>
+    readonly createdAt: FieldRef<"Distro_PO_MasterItem_Price_Header", 'DateTime'>
+    readonly createdBy: FieldRef<"Distro_PO_MasterItem_Price_Header", 'String'>
+    readonly updatedAt: FieldRef<"Distro_PO_MasterItem_Price_Header", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Distro_PO_MasterItem_Price_Header findUnique
+   */
+  export type Distro_PO_MasterItem_Price_HeaderFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Header to fetch.
+     */
+    where: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header findUniqueOrThrow
+   */
+  export type Distro_PO_MasterItem_Price_HeaderFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Header to fetch.
+     */
+    where: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header findFirst
+   */
+  export type Distro_PO_MasterItem_Price_HeaderFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Header to fetch.
+     */
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItem_Price_Headers to fetch.
+     */
+    orderBy?: Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput | Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_MasterItem_Price_Headers.
+     */
+    cursor?: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItem_Price_Headers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItem_Price_Headers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_MasterItem_Price_Headers.
+     */
+    distinct?: Distro_PO_MasterItem_Price_HeaderScalarFieldEnum | Distro_PO_MasterItem_Price_HeaderScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header findFirstOrThrow
+   */
+  export type Distro_PO_MasterItem_Price_HeaderFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Header to fetch.
+     */
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItem_Price_Headers to fetch.
+     */
+    orderBy?: Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput | Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_MasterItem_Price_Headers.
+     */
+    cursor?: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItem_Price_Headers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItem_Price_Headers.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_MasterItem_Price_Headers.
+     */
+    distinct?: Distro_PO_MasterItem_Price_HeaderScalarFieldEnum | Distro_PO_MasterItem_Price_HeaderScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header findMany
+   */
+  export type Distro_PO_MasterItem_Price_HeaderFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Headers to fetch.
+     */
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItem_Price_Headers to fetch.
+     */
+    orderBy?: Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput | Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Distro_PO_MasterItem_Price_Headers.
+     */
+    cursor?: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItem_Price_Headers from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItem_Price_Headers.
+     */
+    skip?: number
+    distinct?: Distro_PO_MasterItem_Price_HeaderScalarFieldEnum | Distro_PO_MasterItem_Price_HeaderScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header create
+   */
+  export type Distro_PO_MasterItem_Price_HeaderCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Distro_PO_MasterItem_Price_Header.
+     */
+    data: XOR<Distro_PO_MasterItem_Price_HeaderCreateInput, Distro_PO_MasterItem_Price_HeaderUncheckedCreateInput>
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header createMany
+   */
+  export type Distro_PO_MasterItem_Price_HeaderCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Distro_PO_MasterItem_Price_Headers.
+     */
+    data: Distro_PO_MasterItem_Price_HeaderCreateManyInput | Distro_PO_MasterItem_Price_HeaderCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header createManyAndReturn
+   */
+  export type Distro_PO_MasterItem_Price_HeaderCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * The data used to create many Distro_PO_MasterItem_Price_Headers.
+     */
+    data: Distro_PO_MasterItem_Price_HeaderCreateManyInput | Distro_PO_MasterItem_Price_HeaderCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header update
+   */
+  export type Distro_PO_MasterItem_Price_HeaderUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Distro_PO_MasterItem_Price_Header.
+     */
+    data: XOR<Distro_PO_MasterItem_Price_HeaderUpdateInput, Distro_PO_MasterItem_Price_HeaderUncheckedUpdateInput>
+    /**
+     * Choose, which Distro_PO_MasterItem_Price_Header to update.
+     */
+    where: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header updateMany
+   */
+  export type Distro_PO_MasterItem_Price_HeaderUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Distro_PO_MasterItem_Price_Headers.
+     */
+    data: XOR<Distro_PO_MasterItem_Price_HeaderUpdateManyMutationInput, Distro_PO_MasterItem_Price_HeaderUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Headers to update
+     */
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    /**
+     * Limit how many Distro_PO_MasterItem_Price_Headers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header updateManyAndReturn
+   */
+  export type Distro_PO_MasterItem_Price_HeaderUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * The data used to update Distro_PO_MasterItem_Price_Headers.
+     */
+    data: XOR<Distro_PO_MasterItem_Price_HeaderUpdateManyMutationInput, Distro_PO_MasterItem_Price_HeaderUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Headers to update
+     */
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    /**
+     * Limit how many Distro_PO_MasterItem_Price_Headers to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header upsert
+   */
+  export type Distro_PO_MasterItem_Price_HeaderUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Distro_PO_MasterItem_Price_Header to update in case it exists.
+     */
+    where: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+    /**
+     * In case the Distro_PO_MasterItem_Price_Header found by the `where` argument doesn't exist, create a new Distro_PO_MasterItem_Price_Header with this data.
+     */
+    create: XOR<Distro_PO_MasterItem_Price_HeaderCreateInput, Distro_PO_MasterItem_Price_HeaderUncheckedCreateInput>
+    /**
+     * In case the Distro_PO_MasterItem_Price_Header was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<Distro_PO_MasterItem_Price_HeaderUpdateInput, Distro_PO_MasterItem_Price_HeaderUncheckedUpdateInput>
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header delete
+   */
+  export type Distro_PO_MasterItem_Price_HeaderDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Header to delete.
+     */
+    where: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header deleteMany
+   */
+  export type Distro_PO_MasterItem_Price_HeaderDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Headers to delete
+     */
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    /**
+     * Limit how many Distro_PO_MasterItem_Price_Headers to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header.priceLines
+   */
+  export type Distro_PO_MasterItem_Price_Header$priceLinesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
+    orderBy?: Distro_PO_MasterItem_Price_LineOrderByWithRelationInput | Distro_PO_MasterItem_Price_LineOrderByWithRelationInput[]
+    cursor?: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Distro_PO_MasterItem_Price_LineScalarFieldEnum | Distro_PO_MasterItem_Price_LineScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Header without action
+   */
+  export type Distro_PO_MasterItem_Price_HeaderDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Header
+     */
+    select?: Distro_PO_MasterItem_Price_HeaderSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Header
+     */
+    omit?: Distro_PO_MasterItem_Price_HeaderOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_HeaderInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Distro_PO_MasterItem_Price_Line
+   */
+
+  export type AggregateDistro_PO_MasterItem_Price_Line = {
+    _count: Distro_PO_MasterItem_Price_LineCountAggregateOutputType | null
+    _avg: Distro_PO_MasterItem_Price_LineAvgAggregateOutputType | null
+    _sum: Distro_PO_MasterItem_Price_LineSumAggregateOutputType | null
+    _min: Distro_PO_MasterItem_Price_LineMinAggregateOutputType | null
+    _max: Distro_PO_MasterItem_Price_LineMaxAggregateOutputType | null
+  }
+
+  export type Distro_PO_MasterItem_Price_LineAvgAggregateOutputType = {
+    id: number | null
+    price: number | null
+  }
+
+  export type Distro_PO_MasterItem_Price_LineSumAggregateOutputType = {
+    id: number | null
+    price: number | null
+  }
+
+  export type Distro_PO_MasterItem_Price_LineMinAggregateOutputType = {
+    id: number | null
+    headerId: string | null
+    customerCode: string | null
+    customerName: string | null
+    itemId: string | null
+    itemName: string | null
+    price: number | null
+    activationDate: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_MasterItem_Price_LineMaxAggregateOutputType = {
+    id: number | null
+    headerId: string | null
+    customerCode: string | null
+    customerName: string | null
+    itemId: string | null
+    itemName: string | null
+    price: number | null
+    activationDate: Date | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_MasterItem_Price_LineCountAggregateOutputType = {
+    id: number
+    headerId: number
+    customerCode: number
+    customerName: number
+    itemId: number
+    itemName: number
+    price: number
+    activationDate: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type Distro_PO_MasterItem_Price_LineAvgAggregateInputType = {
+    id?: true
+    price?: true
+  }
+
+  export type Distro_PO_MasterItem_Price_LineSumAggregateInputType = {
+    id?: true
+    price?: true
+  }
+
+  export type Distro_PO_MasterItem_Price_LineMinAggregateInputType = {
+    id?: true
+    headerId?: true
+    customerCode?: true
+    customerName?: true
+    itemId?: true
+    itemName?: true
+    price?: true
+    activationDate?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_MasterItem_Price_LineMaxAggregateInputType = {
+    id?: true
+    headerId?: true
+    customerCode?: true
+    customerName?: true
+    itemId?: true
+    itemName?: true
+    price?: true
+    activationDate?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_MasterItem_Price_LineCountAggregateInputType = {
+    id?: true
+    headerId?: true
+    customerCode?: true
+    customerName?: true
+    itemId?: true
+    itemName?: true
+    price?: true
+    activationDate?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type Distro_PO_MasterItem_Price_LineAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Line to aggregate.
+     */
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItem_Price_Lines to fetch.
+     */
+    orderBy?: Distro_PO_MasterItem_Price_LineOrderByWithRelationInput | Distro_PO_MasterItem_Price_LineOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItem_Price_Lines from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItem_Price_Lines.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Distro_PO_MasterItem_Price_Lines
+    **/
+    _count?: true | Distro_PO_MasterItem_Price_LineCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Distro_PO_MasterItem_Price_LineAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Distro_PO_MasterItem_Price_LineSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Distro_PO_MasterItem_Price_LineMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Distro_PO_MasterItem_Price_LineMaxAggregateInputType
+  }
+
+  export type GetDistro_PO_MasterItem_Price_LineAggregateType<T extends Distro_PO_MasterItem_Price_LineAggregateArgs> = {
+        [P in keyof T & keyof AggregateDistro_PO_MasterItem_Price_Line]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDistro_PO_MasterItem_Price_Line[P]>
+      : GetScalarType<T[P], AggregateDistro_PO_MasterItem_Price_Line[P]>
+  }
+
+
+
+
+  export type Distro_PO_MasterItem_Price_LineGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
+    orderBy?: Distro_PO_MasterItem_Price_LineOrderByWithAggregationInput | Distro_PO_MasterItem_Price_LineOrderByWithAggregationInput[]
+    by: Distro_PO_MasterItem_Price_LineScalarFieldEnum[] | Distro_PO_MasterItem_Price_LineScalarFieldEnum
+    having?: Distro_PO_MasterItem_Price_LineScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Distro_PO_MasterItem_Price_LineCountAggregateInputType | true
+    _avg?: Distro_PO_MasterItem_Price_LineAvgAggregateInputType
+    _sum?: Distro_PO_MasterItem_Price_LineSumAggregateInputType
+    _min?: Distro_PO_MasterItem_Price_LineMinAggregateInputType
+    _max?: Distro_PO_MasterItem_Price_LineMaxAggregateInputType
+  }
+
+  export type Distro_PO_MasterItem_Price_LineGroupByOutputType = {
+    id: number
+    headerId: string
+    customerCode: string
+    customerName: string
+    itemId: string
+    itemName: string
+    price: number
+    activationDate: Date
+    createdAt: Date
+    updatedAt: Date
+    _count: Distro_PO_MasterItem_Price_LineCountAggregateOutputType | null
+    _avg: Distro_PO_MasterItem_Price_LineAvgAggregateOutputType | null
+    _sum: Distro_PO_MasterItem_Price_LineSumAggregateOutputType | null
+    _min: Distro_PO_MasterItem_Price_LineMinAggregateOutputType | null
+    _max: Distro_PO_MasterItem_Price_LineMaxAggregateOutputType | null
+  }
+
+  type GetDistro_PO_MasterItem_Price_LineGroupByPayload<T extends Distro_PO_MasterItem_Price_LineGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Distro_PO_MasterItem_Price_LineGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Distro_PO_MasterItem_Price_LineGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Distro_PO_MasterItem_Price_LineGroupByOutputType[P]>
+            : GetScalarType<T[P], Distro_PO_MasterItem_Price_LineGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type Distro_PO_MasterItem_Price_LineSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    headerId?: boolean
+    customerCode?: boolean
+    customerName?: boolean
+    itemId?: boolean
+    itemName?: boolean
+    price?: boolean
+    activationDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    header?: boolean | Distro_PO_MasterItem_Price_HeaderDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["distro_PO_MasterItem_Price_Line"]>
+
+  export type Distro_PO_MasterItem_Price_LineSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    headerId?: boolean
+    customerCode?: boolean
+    customerName?: boolean
+    itemId?: boolean
+    itemName?: boolean
+    price?: boolean
+    activationDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    header?: boolean | Distro_PO_MasterItem_Price_HeaderDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["distro_PO_MasterItem_Price_Line"]>
+
+  export type Distro_PO_MasterItem_Price_LineSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    headerId?: boolean
+    customerCode?: boolean
+    customerName?: boolean
+    itemId?: boolean
+    itemName?: boolean
+    price?: boolean
+    activationDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    header?: boolean | Distro_PO_MasterItem_Price_HeaderDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["distro_PO_MasterItem_Price_Line"]>
+
+  export type Distro_PO_MasterItem_Price_LineSelectScalar = {
+    id?: boolean
+    headerId?: boolean
+    customerCode?: boolean
+    customerName?: boolean
+    itemId?: boolean
+    itemName?: boolean
+    price?: boolean
+    activationDate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type Distro_PO_MasterItem_Price_LineOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "headerId" | "customerCode" | "customerName" | "itemId" | "itemName" | "price" | "activationDate" | "createdAt" | "updatedAt", ExtArgs["result"]["distro_PO_MasterItem_Price_Line"]>
+  export type Distro_PO_MasterItem_Price_LineInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    header?: boolean | Distro_PO_MasterItem_Price_HeaderDefaultArgs<ExtArgs>
+  }
+  export type Distro_PO_MasterItem_Price_LineIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    header?: boolean | Distro_PO_MasterItem_Price_HeaderDefaultArgs<ExtArgs>
+  }
+  export type Distro_PO_MasterItem_Price_LineIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    header?: boolean | Distro_PO_MasterItem_Price_HeaderDefaultArgs<ExtArgs>
+  }
+
+  export type $Distro_PO_MasterItem_Price_LinePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Distro_PO_MasterItem_Price_Line"
+    objects: {
+      header: Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      headerId: string
+      customerCode: string
+      customerName: string
+      itemId: string
+      itemName: string
+      price: number
+      activationDate: Date
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["distro_PO_MasterItem_Price_Line"]>
+    composites: {}
+  }
+
+  type Distro_PO_MasterItem_Price_LineGetPayload<S extends boolean | null | undefined | Distro_PO_MasterItem_Price_LineDefaultArgs> = $Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload, S>
+
+  type Distro_PO_MasterItem_Price_LineCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<Distro_PO_MasterItem_Price_LineFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Distro_PO_MasterItem_Price_LineCountAggregateInputType | true
+    }
+
+  export interface Distro_PO_MasterItem_Price_LineDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Distro_PO_MasterItem_Price_Line'], meta: { name: 'Distro_PO_MasterItem_Price_Line' } }
+    /**
+     * Find zero or one Distro_PO_MasterItem_Price_Line that matches the filter.
+     * @param {Distro_PO_MasterItem_Price_LineFindUniqueArgs} args - Arguments to find a Distro_PO_MasterItem_Price_Line
+     * @example
+     * // Get one Distro_PO_MasterItem_Price_Line
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends Distro_PO_MasterItem_Price_LineFindUniqueArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_LineFindUniqueArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_LineClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Distro_PO_MasterItem_Price_Line that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {Distro_PO_MasterItem_Price_LineFindUniqueOrThrowArgs} args - Arguments to find a Distro_PO_MasterItem_Price_Line
+     * @example
+     * // Get one Distro_PO_MasterItem_Price_Line
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends Distro_PO_MasterItem_Price_LineFindUniqueOrThrowArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_LineFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_LineClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_MasterItem_Price_Line that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_LineFindFirstArgs} args - Arguments to find a Distro_PO_MasterItem_Price_Line
+     * @example
+     * // Get one Distro_PO_MasterItem_Price_Line
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends Distro_PO_MasterItem_Price_LineFindFirstArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_LineFindFirstArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_LineClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_MasterItem_Price_Line that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_LineFindFirstOrThrowArgs} args - Arguments to find a Distro_PO_MasterItem_Price_Line
+     * @example
+     * // Get one Distro_PO_MasterItem_Price_Line
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends Distro_PO_MasterItem_Price_LineFindFirstOrThrowArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_LineFindFirstOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_LineClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Distro_PO_MasterItem_Price_Lines that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_LineFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Distro_PO_MasterItem_Price_Lines
+     * const distro_PO_MasterItem_Price_Lines = await prisma.distro_PO_MasterItem_Price_Line.findMany()
+     * 
+     * // Get first 10 Distro_PO_MasterItem_Price_Lines
+     * const distro_PO_MasterItem_Price_Lines = await prisma.distro_PO_MasterItem_Price_Line.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const distro_PO_MasterItem_Price_LineWithIdOnly = await prisma.distro_PO_MasterItem_Price_Line.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends Distro_PO_MasterItem_Price_LineFindManyArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_LineFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Distro_PO_MasterItem_Price_Line.
+     * @param {Distro_PO_MasterItem_Price_LineCreateArgs} args - Arguments to create a Distro_PO_MasterItem_Price_Line.
+     * @example
+     * // Create one Distro_PO_MasterItem_Price_Line
+     * const Distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.create({
+     *   data: {
+     *     // ... data to create a Distro_PO_MasterItem_Price_Line
+     *   }
+     * })
+     * 
+     */
+    create<T extends Distro_PO_MasterItem_Price_LineCreateArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_LineCreateArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_LineClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Distro_PO_MasterItem_Price_Lines.
+     * @param {Distro_PO_MasterItem_Price_LineCreateManyArgs} args - Arguments to create many Distro_PO_MasterItem_Price_Lines.
+     * @example
+     * // Create many Distro_PO_MasterItem_Price_Lines
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends Distro_PO_MasterItem_Price_LineCreateManyArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_LineCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Distro_PO_MasterItem_Price_Lines and returns the data saved in the database.
+     * @param {Distro_PO_MasterItem_Price_LineCreateManyAndReturnArgs} args - Arguments to create many Distro_PO_MasterItem_Price_Lines.
+     * @example
+     * // Create many Distro_PO_MasterItem_Price_Lines
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Distro_PO_MasterItem_Price_Lines and only return the `id`
+     * const distro_PO_MasterItem_Price_LineWithIdOnly = await prisma.distro_PO_MasterItem_Price_Line.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends Distro_PO_MasterItem_Price_LineCreateManyAndReturnArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_LineCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Distro_PO_MasterItem_Price_Line.
+     * @param {Distro_PO_MasterItem_Price_LineDeleteArgs} args - Arguments to delete one Distro_PO_MasterItem_Price_Line.
+     * @example
+     * // Delete one Distro_PO_MasterItem_Price_Line
+     * const Distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.delete({
+     *   where: {
+     *     // ... filter to delete one Distro_PO_MasterItem_Price_Line
+     *   }
+     * })
+     * 
+     */
+    delete<T extends Distro_PO_MasterItem_Price_LineDeleteArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_LineDeleteArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_LineClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Distro_PO_MasterItem_Price_Line.
+     * @param {Distro_PO_MasterItem_Price_LineUpdateArgs} args - Arguments to update one Distro_PO_MasterItem_Price_Line.
+     * @example
+     * // Update one Distro_PO_MasterItem_Price_Line
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends Distro_PO_MasterItem_Price_LineUpdateArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_LineUpdateArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_LineClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Distro_PO_MasterItem_Price_Lines.
+     * @param {Distro_PO_MasterItem_Price_LineDeleteManyArgs} args - Arguments to filter Distro_PO_MasterItem_Price_Lines to delete.
+     * @example
+     * // Delete a few Distro_PO_MasterItem_Price_Lines
+     * const { count } = await prisma.distro_PO_MasterItem_Price_Line.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends Distro_PO_MasterItem_Price_LineDeleteManyArgs>(args?: SelectSubset<T, Distro_PO_MasterItem_Price_LineDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_MasterItem_Price_Lines.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_LineUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Distro_PO_MasterItem_Price_Lines
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends Distro_PO_MasterItem_Price_LineUpdateManyArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_LineUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_MasterItem_Price_Lines and returns the data updated in the database.
+     * @param {Distro_PO_MasterItem_Price_LineUpdateManyAndReturnArgs} args - Arguments to update many Distro_PO_MasterItem_Price_Lines.
+     * @example
+     * // Update many Distro_PO_MasterItem_Price_Lines
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Distro_PO_MasterItem_Price_Lines and only return the `id`
+     * const distro_PO_MasterItem_Price_LineWithIdOnly = await prisma.distro_PO_MasterItem_Price_Line.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends Distro_PO_MasterItem_Price_LineUpdateManyAndReturnArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_LineUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Distro_PO_MasterItem_Price_Line.
+     * @param {Distro_PO_MasterItem_Price_LineUpsertArgs} args - Arguments to update or create a Distro_PO_MasterItem_Price_Line.
+     * @example
+     * // Update or create a Distro_PO_MasterItem_Price_Line
+     * const distro_PO_MasterItem_Price_Line = await prisma.distro_PO_MasterItem_Price_Line.upsert({
+     *   create: {
+     *     // ... data to create a Distro_PO_MasterItem_Price_Line
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Distro_PO_MasterItem_Price_Line we want to update
+     *   }
+     * })
+     */
+    upsert<T extends Distro_PO_MasterItem_Price_LineUpsertArgs>(args: SelectSubset<T, Distro_PO_MasterItem_Price_LineUpsertArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_LineClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_LinePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Distro_PO_MasterItem_Price_Lines.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_LineCountArgs} args - Arguments to filter Distro_PO_MasterItem_Price_Lines to count.
+     * @example
+     * // Count the number of Distro_PO_MasterItem_Price_Lines
+     * const count = await prisma.distro_PO_MasterItem_Price_Line.count({
+     *   where: {
+     *     // ... the filter for the Distro_PO_MasterItem_Price_Lines we want to count
+     *   }
+     * })
+    **/
+    count<T extends Distro_PO_MasterItem_Price_LineCountArgs>(
+      args?: Subset<T, Distro_PO_MasterItem_Price_LineCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Distro_PO_MasterItem_Price_LineCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Distro_PO_MasterItem_Price_Line.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_LineAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Distro_PO_MasterItem_Price_LineAggregateArgs>(args: Subset<T, Distro_PO_MasterItem_Price_LineAggregateArgs>): Prisma.PrismaPromise<GetDistro_PO_MasterItem_Price_LineAggregateType<T>>
+
+    /**
+     * Group by Distro_PO_MasterItem_Price_Line.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterItem_Price_LineGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends Distro_PO_MasterItem_Price_LineGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: Distro_PO_MasterItem_Price_LineGroupByArgs['orderBy'] }
+        : { orderBy?: Distro_PO_MasterItem_Price_LineGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, Distro_PO_MasterItem_Price_LineGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDistro_PO_MasterItem_Price_LineGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Distro_PO_MasterItem_Price_Line model
+   */
+  readonly fields: Distro_PO_MasterItem_Price_LineFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Distro_PO_MasterItem_Price_Line.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__Distro_PO_MasterItem_Price_LineClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    header<T extends Distro_PO_MasterItem_Price_HeaderDefaultArgs<ExtArgs> = {}>(args?: Subset<T, Distro_PO_MasterItem_Price_HeaderDefaultArgs<ExtArgs>>): Prisma__Distro_PO_MasterItem_Price_HeaderClient<$Result.GetResult<Prisma.$Distro_PO_MasterItem_Price_HeaderPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Distro_PO_MasterItem_Price_Line model
+   */
+  interface Distro_PO_MasterItem_Price_LineFieldRefs {
+    readonly id: FieldRef<"Distro_PO_MasterItem_Price_Line", 'Int'>
+    readonly headerId: FieldRef<"Distro_PO_MasterItem_Price_Line", 'String'>
+    readonly customerCode: FieldRef<"Distro_PO_MasterItem_Price_Line", 'String'>
+    readonly customerName: FieldRef<"Distro_PO_MasterItem_Price_Line", 'String'>
+    readonly itemId: FieldRef<"Distro_PO_MasterItem_Price_Line", 'String'>
+    readonly itemName: FieldRef<"Distro_PO_MasterItem_Price_Line", 'String'>
+    readonly price: FieldRef<"Distro_PO_MasterItem_Price_Line", 'Int'>
+    readonly activationDate: FieldRef<"Distro_PO_MasterItem_Price_Line", 'DateTime'>
+    readonly createdAt: FieldRef<"Distro_PO_MasterItem_Price_Line", 'DateTime'>
+    readonly updatedAt: FieldRef<"Distro_PO_MasterItem_Price_Line", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Distro_PO_MasterItem_Price_Line findUnique
+   */
+  export type Distro_PO_MasterItem_Price_LineFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Line to fetch.
+     */
+    where: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line findUniqueOrThrow
+   */
+  export type Distro_PO_MasterItem_Price_LineFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Line to fetch.
+     */
+    where: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line findFirst
+   */
+  export type Distro_PO_MasterItem_Price_LineFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Line to fetch.
+     */
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItem_Price_Lines to fetch.
+     */
+    orderBy?: Distro_PO_MasterItem_Price_LineOrderByWithRelationInput | Distro_PO_MasterItem_Price_LineOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_MasterItem_Price_Lines.
+     */
+    cursor?: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItem_Price_Lines from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItem_Price_Lines.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_MasterItem_Price_Lines.
+     */
+    distinct?: Distro_PO_MasterItem_Price_LineScalarFieldEnum | Distro_PO_MasterItem_Price_LineScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line findFirstOrThrow
+   */
+  export type Distro_PO_MasterItem_Price_LineFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Line to fetch.
+     */
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItem_Price_Lines to fetch.
+     */
+    orderBy?: Distro_PO_MasterItem_Price_LineOrderByWithRelationInput | Distro_PO_MasterItem_Price_LineOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_MasterItem_Price_Lines.
+     */
+    cursor?: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItem_Price_Lines from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItem_Price_Lines.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_MasterItem_Price_Lines.
+     */
+    distinct?: Distro_PO_MasterItem_Price_LineScalarFieldEnum | Distro_PO_MasterItem_Price_LineScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line findMany
+   */
+  export type Distro_PO_MasterItem_Price_LineFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterItem_Price_Lines to fetch.
+     */
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterItem_Price_Lines to fetch.
+     */
+    orderBy?: Distro_PO_MasterItem_Price_LineOrderByWithRelationInput | Distro_PO_MasterItem_Price_LineOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Distro_PO_MasterItem_Price_Lines.
+     */
+    cursor?: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterItem_Price_Lines from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterItem_Price_Lines.
+     */
+    skip?: number
+    distinct?: Distro_PO_MasterItem_Price_LineScalarFieldEnum | Distro_PO_MasterItem_Price_LineScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line create
+   */
+  export type Distro_PO_MasterItem_Price_LineCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    /**
+     * The data needed to create a Distro_PO_MasterItem_Price_Line.
+     */
+    data: XOR<Distro_PO_MasterItem_Price_LineCreateInput, Distro_PO_MasterItem_Price_LineUncheckedCreateInput>
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line createMany
+   */
+  export type Distro_PO_MasterItem_Price_LineCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Distro_PO_MasterItem_Price_Lines.
+     */
+    data: Distro_PO_MasterItem_Price_LineCreateManyInput | Distro_PO_MasterItem_Price_LineCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line createManyAndReturn
+   */
+  export type Distro_PO_MasterItem_Price_LineCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * The data used to create many Distro_PO_MasterItem_Price_Lines.
+     */
+    data: Distro_PO_MasterItem_Price_LineCreateManyInput | Distro_PO_MasterItem_Price_LineCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line update
+   */
+  export type Distro_PO_MasterItem_Price_LineUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    /**
+     * The data needed to update a Distro_PO_MasterItem_Price_Line.
+     */
+    data: XOR<Distro_PO_MasterItem_Price_LineUpdateInput, Distro_PO_MasterItem_Price_LineUncheckedUpdateInput>
+    /**
+     * Choose, which Distro_PO_MasterItem_Price_Line to update.
+     */
+    where: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line updateMany
+   */
+  export type Distro_PO_MasterItem_Price_LineUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Distro_PO_MasterItem_Price_Lines.
+     */
+    data: XOR<Distro_PO_MasterItem_Price_LineUpdateManyMutationInput, Distro_PO_MasterItem_Price_LineUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Lines to update
+     */
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
+    /**
+     * Limit how many Distro_PO_MasterItem_Price_Lines to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line updateManyAndReturn
+   */
+  export type Distro_PO_MasterItem_Price_LineUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * The data used to update Distro_PO_MasterItem_Price_Lines.
+     */
+    data: XOR<Distro_PO_MasterItem_Price_LineUpdateManyMutationInput, Distro_PO_MasterItem_Price_LineUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Lines to update
+     */
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
+    /**
+     * Limit how many Distro_PO_MasterItem_Price_Lines to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line upsert
+   */
+  export type Distro_PO_MasterItem_Price_LineUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    /**
+     * The filter to search for the Distro_PO_MasterItem_Price_Line to update in case it exists.
+     */
+    where: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+    /**
+     * In case the Distro_PO_MasterItem_Price_Line found by the `where` argument doesn't exist, create a new Distro_PO_MasterItem_Price_Line with this data.
+     */
+    create: XOR<Distro_PO_MasterItem_Price_LineCreateInput, Distro_PO_MasterItem_Price_LineUncheckedCreateInput>
+    /**
+     * In case the Distro_PO_MasterItem_Price_Line was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<Distro_PO_MasterItem_Price_LineUpdateInput, Distro_PO_MasterItem_Price_LineUncheckedUpdateInput>
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line delete
+   */
+  export type Distro_PO_MasterItem_Price_LineDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Line to delete.
+     */
+    where: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line deleteMany
+   */
+  export type Distro_PO_MasterItem_Price_LineDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_MasterItem_Price_Lines to delete
+     */
+    where?: Distro_PO_MasterItem_Price_LineWhereInput
+    /**
+     * Limit how many Distro_PO_MasterItem_Price_Lines to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterItem_Price_Line without action
+   */
+  export type Distro_PO_MasterItem_Price_LineDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterItem_Price_Line
+     */
+    select?: Distro_PO_MasterItem_Price_LineSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterItem_Price_Line
+     */
+    omit?: Distro_PO_MasterItem_Price_LineOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: Distro_PO_MasterItem_Price_LineInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Distro_PO_MasterAchievement
+   */
+
+  export type AggregateDistro_PO_MasterAchievement = {
+    _count: Distro_PO_MasterAchievementCountAggregateOutputType | null
+    _avg: Distro_PO_MasterAchievementAvgAggregateOutputType | null
+    _sum: Distro_PO_MasterAchievementSumAggregateOutputType | null
+    _min: Distro_PO_MasterAchievementMinAggregateOutputType | null
+    _max: Distro_PO_MasterAchievementMaxAggregateOutputType | null
+  }
+
+  export type Distro_PO_MasterAchievementAvgAggregateOutputType = {
+    id: number | null
+    targetQty: number | null
+    targetAmount: number | null
+    periodYear: number | null
+  }
+
+  export type Distro_PO_MasterAchievementSumAggregateOutputType = {
+    id: number | null
+    targetQty: number | null
+    targetAmount: bigint | null
+    periodYear: number | null
+  }
+
+  export type Distro_PO_MasterAchievementMinAggregateOutputType = {
+    id: number | null
+    customerCode: string | null
+    customerName: string | null
+    city: string | null
+    targetQty: number | null
+    targetAmount: bigint | null
+    vehicle: string | null
+    vehicleId: string | null
+    periodYear: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_MasterAchievementMaxAggregateOutputType = {
+    id: number | null
+    customerCode: string | null
+    customerName: string | null
+    city: string | null
+    targetQty: number | null
+    targetAmount: bigint | null
+    vehicle: string | null
+    vehicleId: string | null
+    periodYear: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type Distro_PO_MasterAchievementCountAggregateOutputType = {
+    id: number
+    customerCode: number
+    customerName: number
+    city: number
+    targetQty: number
+    targetAmount: number
+    vehicle: number
+    vehicleId: number
+    periodYear: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type Distro_PO_MasterAchievementAvgAggregateInputType = {
+    id?: true
+    targetQty?: true
+    targetAmount?: true
+    periodYear?: true
+  }
+
+  export type Distro_PO_MasterAchievementSumAggregateInputType = {
+    id?: true
+    targetQty?: true
+    targetAmount?: true
+    periodYear?: true
+  }
+
+  export type Distro_PO_MasterAchievementMinAggregateInputType = {
+    id?: true
+    customerCode?: true
+    customerName?: true
+    city?: true
+    targetQty?: true
+    targetAmount?: true
+    vehicle?: true
+    vehicleId?: true
+    periodYear?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_MasterAchievementMaxAggregateInputType = {
+    id?: true
+    customerCode?: true
+    customerName?: true
+    city?: true
+    targetQty?: true
+    targetAmount?: true
+    vehicle?: true
+    vehicleId?: true
+    periodYear?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type Distro_PO_MasterAchievementCountAggregateInputType = {
+    id?: true
+    customerCode?: true
+    customerName?: true
+    city?: true
+    targetQty?: true
+    targetAmount?: true
+    vehicle?: true
+    vehicleId?: true
+    periodYear?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type Distro_PO_MasterAchievementAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_MasterAchievement to aggregate.
+     */
+    where?: Distro_PO_MasterAchievementWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterAchievements to fetch.
+     */
+    orderBy?: Distro_PO_MasterAchievementOrderByWithRelationInput | Distro_PO_MasterAchievementOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: Distro_PO_MasterAchievementWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterAchievements from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterAchievements.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Distro_PO_MasterAchievements
+    **/
+    _count?: true | Distro_PO_MasterAchievementCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Distro_PO_MasterAchievementAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Distro_PO_MasterAchievementSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Distro_PO_MasterAchievementMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Distro_PO_MasterAchievementMaxAggregateInputType
+  }
+
+  export type GetDistro_PO_MasterAchievementAggregateType<T extends Distro_PO_MasterAchievementAggregateArgs> = {
+        [P in keyof T & keyof AggregateDistro_PO_MasterAchievement]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateDistro_PO_MasterAchievement[P]>
+      : GetScalarType<T[P], AggregateDistro_PO_MasterAchievement[P]>
+  }
+
+
+
+
+  export type Distro_PO_MasterAchievementGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: Distro_PO_MasterAchievementWhereInput
+    orderBy?: Distro_PO_MasterAchievementOrderByWithAggregationInput | Distro_PO_MasterAchievementOrderByWithAggregationInput[]
+    by: Distro_PO_MasterAchievementScalarFieldEnum[] | Distro_PO_MasterAchievementScalarFieldEnum
+    having?: Distro_PO_MasterAchievementScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Distro_PO_MasterAchievementCountAggregateInputType | true
+    _avg?: Distro_PO_MasterAchievementAvgAggregateInputType
+    _sum?: Distro_PO_MasterAchievementSumAggregateInputType
+    _min?: Distro_PO_MasterAchievementMinAggregateInputType
+    _max?: Distro_PO_MasterAchievementMaxAggregateInputType
+  }
+
+  export type Distro_PO_MasterAchievementGroupByOutputType = {
+    id: number
+    customerCode: string
+    customerName: string
+    city: string
+    targetQty: number
+    targetAmount: bigint
+    vehicle: string
+    vehicleId: string
+    periodYear: number
+    createdAt: Date
+    updatedAt: Date
+    _count: Distro_PO_MasterAchievementCountAggregateOutputType | null
+    _avg: Distro_PO_MasterAchievementAvgAggregateOutputType | null
+    _sum: Distro_PO_MasterAchievementSumAggregateOutputType | null
+    _min: Distro_PO_MasterAchievementMinAggregateOutputType | null
+    _max: Distro_PO_MasterAchievementMaxAggregateOutputType | null
+  }
+
+  type GetDistro_PO_MasterAchievementGroupByPayload<T extends Distro_PO_MasterAchievementGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Distro_PO_MasterAchievementGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Distro_PO_MasterAchievementGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Distro_PO_MasterAchievementGroupByOutputType[P]>
+            : GetScalarType<T[P], Distro_PO_MasterAchievementGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type Distro_PO_MasterAchievementSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    customerCode?: boolean
+    customerName?: boolean
+    city?: boolean
+    targetQty?: boolean
+    targetAmount?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    periodYear?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_MasterAchievement"]>
+
+  export type Distro_PO_MasterAchievementSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    customerCode?: boolean
+    customerName?: boolean
+    city?: boolean
+    targetQty?: boolean
+    targetAmount?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    periodYear?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_MasterAchievement"]>
+
+  export type Distro_PO_MasterAchievementSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    customerCode?: boolean
+    customerName?: boolean
+    city?: boolean
+    targetQty?: boolean
+    targetAmount?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    periodYear?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["distro_PO_MasterAchievement"]>
+
+  export type Distro_PO_MasterAchievementSelectScalar = {
+    id?: boolean
+    customerCode?: boolean
+    customerName?: boolean
+    city?: boolean
+    targetQty?: boolean
+    targetAmount?: boolean
+    vehicle?: boolean
+    vehicleId?: boolean
+    periodYear?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type Distro_PO_MasterAchievementOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "customerCode" | "customerName" | "city" | "targetQty" | "targetAmount" | "vehicle" | "vehicleId" | "periodYear" | "createdAt" | "updatedAt", ExtArgs["result"]["distro_PO_MasterAchievement"]>
+
+  export type $Distro_PO_MasterAchievementPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Distro_PO_MasterAchievement"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: number
+      customerCode: string
+      customerName: string
+      city: string
+      targetQty: number
+      targetAmount: bigint
+      vehicle: string
+      vehicleId: string
+      periodYear: number
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["distro_PO_MasterAchievement"]>
+    composites: {}
+  }
+
+  type Distro_PO_MasterAchievementGetPayload<S extends boolean | null | undefined | Distro_PO_MasterAchievementDefaultArgs> = $Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload, S>
+
+  type Distro_PO_MasterAchievementCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<Distro_PO_MasterAchievementFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Distro_PO_MasterAchievementCountAggregateInputType | true
+    }
+
+  export interface Distro_PO_MasterAchievementDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Distro_PO_MasterAchievement'], meta: { name: 'Distro_PO_MasterAchievement' } }
+    /**
+     * Find zero or one Distro_PO_MasterAchievement that matches the filter.
+     * @param {Distro_PO_MasterAchievementFindUniqueArgs} args - Arguments to find a Distro_PO_MasterAchievement
+     * @example
+     * // Get one Distro_PO_MasterAchievement
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends Distro_PO_MasterAchievementFindUniqueArgs>(args: SelectSubset<T, Distro_PO_MasterAchievementFindUniqueArgs<ExtArgs>>): Prisma__Distro_PO_MasterAchievementClient<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Distro_PO_MasterAchievement that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {Distro_PO_MasterAchievementFindUniqueOrThrowArgs} args - Arguments to find a Distro_PO_MasterAchievement
+     * @example
+     * // Get one Distro_PO_MasterAchievement
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends Distro_PO_MasterAchievementFindUniqueOrThrowArgs>(args: SelectSubset<T, Distro_PO_MasterAchievementFindUniqueOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_MasterAchievementClient<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_MasterAchievement that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterAchievementFindFirstArgs} args - Arguments to find a Distro_PO_MasterAchievement
+     * @example
+     * // Get one Distro_PO_MasterAchievement
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends Distro_PO_MasterAchievementFindFirstArgs>(args?: SelectSubset<T, Distro_PO_MasterAchievementFindFirstArgs<ExtArgs>>): Prisma__Distro_PO_MasterAchievementClient<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Distro_PO_MasterAchievement that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterAchievementFindFirstOrThrowArgs} args - Arguments to find a Distro_PO_MasterAchievement
+     * @example
+     * // Get one Distro_PO_MasterAchievement
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends Distro_PO_MasterAchievementFindFirstOrThrowArgs>(args?: SelectSubset<T, Distro_PO_MasterAchievementFindFirstOrThrowArgs<ExtArgs>>): Prisma__Distro_PO_MasterAchievementClient<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Distro_PO_MasterAchievements that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterAchievementFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Distro_PO_MasterAchievements
+     * const distro_PO_MasterAchievements = await prisma.distro_PO_MasterAchievement.findMany()
+     * 
+     * // Get first 10 Distro_PO_MasterAchievements
+     * const distro_PO_MasterAchievements = await prisma.distro_PO_MasterAchievement.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const distro_PO_MasterAchievementWithIdOnly = await prisma.distro_PO_MasterAchievement.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends Distro_PO_MasterAchievementFindManyArgs>(args?: SelectSubset<T, Distro_PO_MasterAchievementFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Distro_PO_MasterAchievement.
+     * @param {Distro_PO_MasterAchievementCreateArgs} args - Arguments to create a Distro_PO_MasterAchievement.
+     * @example
+     * // Create one Distro_PO_MasterAchievement
+     * const Distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.create({
+     *   data: {
+     *     // ... data to create a Distro_PO_MasterAchievement
+     *   }
+     * })
+     * 
+     */
+    create<T extends Distro_PO_MasterAchievementCreateArgs>(args: SelectSubset<T, Distro_PO_MasterAchievementCreateArgs<ExtArgs>>): Prisma__Distro_PO_MasterAchievementClient<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Distro_PO_MasterAchievements.
+     * @param {Distro_PO_MasterAchievementCreateManyArgs} args - Arguments to create many Distro_PO_MasterAchievements.
+     * @example
+     * // Create many Distro_PO_MasterAchievements
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends Distro_PO_MasterAchievementCreateManyArgs>(args?: SelectSubset<T, Distro_PO_MasterAchievementCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Distro_PO_MasterAchievements and returns the data saved in the database.
+     * @param {Distro_PO_MasterAchievementCreateManyAndReturnArgs} args - Arguments to create many Distro_PO_MasterAchievements.
+     * @example
+     * // Create many Distro_PO_MasterAchievements
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Distro_PO_MasterAchievements and only return the `id`
+     * const distro_PO_MasterAchievementWithIdOnly = await prisma.distro_PO_MasterAchievement.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends Distro_PO_MasterAchievementCreateManyAndReturnArgs>(args?: SelectSubset<T, Distro_PO_MasterAchievementCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Distro_PO_MasterAchievement.
+     * @param {Distro_PO_MasterAchievementDeleteArgs} args - Arguments to delete one Distro_PO_MasterAchievement.
+     * @example
+     * // Delete one Distro_PO_MasterAchievement
+     * const Distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.delete({
+     *   where: {
+     *     // ... filter to delete one Distro_PO_MasterAchievement
+     *   }
+     * })
+     * 
+     */
+    delete<T extends Distro_PO_MasterAchievementDeleteArgs>(args: SelectSubset<T, Distro_PO_MasterAchievementDeleteArgs<ExtArgs>>): Prisma__Distro_PO_MasterAchievementClient<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Distro_PO_MasterAchievement.
+     * @param {Distro_PO_MasterAchievementUpdateArgs} args - Arguments to update one Distro_PO_MasterAchievement.
+     * @example
+     * // Update one Distro_PO_MasterAchievement
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends Distro_PO_MasterAchievementUpdateArgs>(args: SelectSubset<T, Distro_PO_MasterAchievementUpdateArgs<ExtArgs>>): Prisma__Distro_PO_MasterAchievementClient<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Distro_PO_MasterAchievements.
+     * @param {Distro_PO_MasterAchievementDeleteManyArgs} args - Arguments to filter Distro_PO_MasterAchievements to delete.
+     * @example
+     * // Delete a few Distro_PO_MasterAchievements
+     * const { count } = await prisma.distro_PO_MasterAchievement.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends Distro_PO_MasterAchievementDeleteManyArgs>(args?: SelectSubset<T, Distro_PO_MasterAchievementDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_MasterAchievements.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterAchievementUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Distro_PO_MasterAchievements
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends Distro_PO_MasterAchievementUpdateManyArgs>(args: SelectSubset<T, Distro_PO_MasterAchievementUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Distro_PO_MasterAchievements and returns the data updated in the database.
+     * @param {Distro_PO_MasterAchievementUpdateManyAndReturnArgs} args - Arguments to update many Distro_PO_MasterAchievements.
+     * @example
+     * // Update many Distro_PO_MasterAchievements
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Distro_PO_MasterAchievements and only return the `id`
+     * const distro_PO_MasterAchievementWithIdOnly = await prisma.distro_PO_MasterAchievement.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends Distro_PO_MasterAchievementUpdateManyAndReturnArgs>(args: SelectSubset<T, Distro_PO_MasterAchievementUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Distro_PO_MasterAchievement.
+     * @param {Distro_PO_MasterAchievementUpsertArgs} args - Arguments to update or create a Distro_PO_MasterAchievement.
+     * @example
+     * // Update or create a Distro_PO_MasterAchievement
+     * const distro_PO_MasterAchievement = await prisma.distro_PO_MasterAchievement.upsert({
+     *   create: {
+     *     // ... data to create a Distro_PO_MasterAchievement
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Distro_PO_MasterAchievement we want to update
+     *   }
+     * })
+     */
+    upsert<T extends Distro_PO_MasterAchievementUpsertArgs>(args: SelectSubset<T, Distro_PO_MasterAchievementUpsertArgs<ExtArgs>>): Prisma__Distro_PO_MasterAchievementClient<$Result.GetResult<Prisma.$Distro_PO_MasterAchievementPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Distro_PO_MasterAchievements.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterAchievementCountArgs} args - Arguments to filter Distro_PO_MasterAchievements to count.
+     * @example
+     * // Count the number of Distro_PO_MasterAchievements
+     * const count = await prisma.distro_PO_MasterAchievement.count({
+     *   where: {
+     *     // ... the filter for the Distro_PO_MasterAchievements we want to count
+     *   }
+     * })
+    **/
+    count<T extends Distro_PO_MasterAchievementCountArgs>(
+      args?: Subset<T, Distro_PO_MasterAchievementCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Distro_PO_MasterAchievementCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Distro_PO_MasterAchievement.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterAchievementAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Distro_PO_MasterAchievementAggregateArgs>(args: Subset<T, Distro_PO_MasterAchievementAggregateArgs>): Prisma.PrismaPromise<GetDistro_PO_MasterAchievementAggregateType<T>>
+
+    /**
+     * Group by Distro_PO_MasterAchievement.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Distro_PO_MasterAchievementGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends Distro_PO_MasterAchievementGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: Distro_PO_MasterAchievementGroupByArgs['orderBy'] }
+        : { orderBy?: Distro_PO_MasterAchievementGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, Distro_PO_MasterAchievementGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDistro_PO_MasterAchievementGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Distro_PO_MasterAchievement model
+   */
+  readonly fields: Distro_PO_MasterAchievementFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Distro_PO_MasterAchievement.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__Distro_PO_MasterAchievementClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Distro_PO_MasterAchievement model
+   */
+  interface Distro_PO_MasterAchievementFieldRefs {
+    readonly id: FieldRef<"Distro_PO_MasterAchievement", 'Int'>
+    readonly customerCode: FieldRef<"Distro_PO_MasterAchievement", 'String'>
+    readonly customerName: FieldRef<"Distro_PO_MasterAchievement", 'String'>
+    readonly city: FieldRef<"Distro_PO_MasterAchievement", 'String'>
+    readonly targetQty: FieldRef<"Distro_PO_MasterAchievement", 'Int'>
+    readonly targetAmount: FieldRef<"Distro_PO_MasterAchievement", 'BigInt'>
+    readonly vehicle: FieldRef<"Distro_PO_MasterAchievement", 'String'>
+    readonly vehicleId: FieldRef<"Distro_PO_MasterAchievement", 'String'>
+    readonly periodYear: FieldRef<"Distro_PO_MasterAchievement", 'Int'>
+    readonly createdAt: FieldRef<"Distro_PO_MasterAchievement", 'DateTime'>
+    readonly updatedAt: FieldRef<"Distro_PO_MasterAchievement", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Distro_PO_MasterAchievement findUnique
+   */
+  export type Distro_PO_MasterAchievementFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterAchievement to fetch.
+     */
+    where: Distro_PO_MasterAchievementWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterAchievement findUniqueOrThrow
+   */
+  export type Distro_PO_MasterAchievementFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterAchievement to fetch.
+     */
+    where: Distro_PO_MasterAchievementWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterAchievement findFirst
+   */
+  export type Distro_PO_MasterAchievementFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterAchievement to fetch.
+     */
+    where?: Distro_PO_MasterAchievementWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterAchievements to fetch.
+     */
+    orderBy?: Distro_PO_MasterAchievementOrderByWithRelationInput | Distro_PO_MasterAchievementOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_MasterAchievements.
+     */
+    cursor?: Distro_PO_MasterAchievementWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterAchievements from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterAchievements.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_MasterAchievements.
+     */
+    distinct?: Distro_PO_MasterAchievementScalarFieldEnum | Distro_PO_MasterAchievementScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterAchievement findFirstOrThrow
+   */
+  export type Distro_PO_MasterAchievementFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterAchievement to fetch.
+     */
+    where?: Distro_PO_MasterAchievementWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterAchievements to fetch.
+     */
+    orderBy?: Distro_PO_MasterAchievementOrderByWithRelationInput | Distro_PO_MasterAchievementOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Distro_PO_MasterAchievements.
+     */
+    cursor?: Distro_PO_MasterAchievementWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterAchievements from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterAchievements.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Distro_PO_MasterAchievements.
+     */
+    distinct?: Distro_PO_MasterAchievementScalarFieldEnum | Distro_PO_MasterAchievementScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterAchievement findMany
+   */
+  export type Distro_PO_MasterAchievementFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * Filter, which Distro_PO_MasterAchievements to fetch.
+     */
+    where?: Distro_PO_MasterAchievementWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Distro_PO_MasterAchievements to fetch.
+     */
+    orderBy?: Distro_PO_MasterAchievementOrderByWithRelationInput | Distro_PO_MasterAchievementOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Distro_PO_MasterAchievements.
+     */
+    cursor?: Distro_PO_MasterAchievementWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Distro_PO_MasterAchievements from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Distro_PO_MasterAchievements.
+     */
+    skip?: number
+    distinct?: Distro_PO_MasterAchievementScalarFieldEnum | Distro_PO_MasterAchievementScalarFieldEnum[]
+  }
+
+  /**
+   * Distro_PO_MasterAchievement create
+   */
+  export type Distro_PO_MasterAchievementCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * The data needed to create a Distro_PO_MasterAchievement.
+     */
+    data: XOR<Distro_PO_MasterAchievementCreateInput, Distro_PO_MasterAchievementUncheckedCreateInput>
+  }
+
+  /**
+   * Distro_PO_MasterAchievement createMany
+   */
+  export type Distro_PO_MasterAchievementCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Distro_PO_MasterAchievements.
+     */
+    data: Distro_PO_MasterAchievementCreateManyInput | Distro_PO_MasterAchievementCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_MasterAchievement createManyAndReturn
+   */
+  export type Distro_PO_MasterAchievementCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * The data used to create many Distro_PO_MasterAchievements.
+     */
+    data: Distro_PO_MasterAchievementCreateManyInput | Distro_PO_MasterAchievementCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * Distro_PO_MasterAchievement update
+   */
+  export type Distro_PO_MasterAchievementUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * The data needed to update a Distro_PO_MasterAchievement.
+     */
+    data: XOR<Distro_PO_MasterAchievementUpdateInput, Distro_PO_MasterAchievementUncheckedUpdateInput>
+    /**
+     * Choose, which Distro_PO_MasterAchievement to update.
+     */
+    where: Distro_PO_MasterAchievementWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterAchievement updateMany
+   */
+  export type Distro_PO_MasterAchievementUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Distro_PO_MasterAchievements.
+     */
+    data: XOR<Distro_PO_MasterAchievementUpdateManyMutationInput, Distro_PO_MasterAchievementUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_MasterAchievements to update
+     */
+    where?: Distro_PO_MasterAchievementWhereInput
+    /**
+     * Limit how many Distro_PO_MasterAchievements to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterAchievement updateManyAndReturn
+   */
+  export type Distro_PO_MasterAchievementUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * The data used to update Distro_PO_MasterAchievements.
+     */
+    data: XOR<Distro_PO_MasterAchievementUpdateManyMutationInput, Distro_PO_MasterAchievementUncheckedUpdateManyInput>
+    /**
+     * Filter which Distro_PO_MasterAchievements to update
+     */
+    where?: Distro_PO_MasterAchievementWhereInput
+    /**
+     * Limit how many Distro_PO_MasterAchievements to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterAchievement upsert
+   */
+  export type Distro_PO_MasterAchievementUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * The filter to search for the Distro_PO_MasterAchievement to update in case it exists.
+     */
+    where: Distro_PO_MasterAchievementWhereUniqueInput
+    /**
+     * In case the Distro_PO_MasterAchievement found by the `where` argument doesn't exist, create a new Distro_PO_MasterAchievement with this data.
+     */
+    create: XOR<Distro_PO_MasterAchievementCreateInput, Distro_PO_MasterAchievementUncheckedCreateInput>
+    /**
+     * In case the Distro_PO_MasterAchievement was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<Distro_PO_MasterAchievementUpdateInput, Distro_PO_MasterAchievementUncheckedUpdateInput>
+  }
+
+  /**
+   * Distro_PO_MasterAchievement delete
+   */
+  export type Distro_PO_MasterAchievementDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
+    /**
+     * Filter which Distro_PO_MasterAchievement to delete.
+     */
+    where: Distro_PO_MasterAchievementWhereUniqueInput
+  }
+
+  /**
+   * Distro_PO_MasterAchievement deleteMany
+   */
+  export type Distro_PO_MasterAchievementDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Distro_PO_MasterAchievements to delete
+     */
+    where?: Distro_PO_MasterAchievementWhereInput
+    /**
+     * Limit how many Distro_PO_MasterAchievements to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Distro_PO_MasterAchievement without action
+   */
+  export type Distro_PO_MasterAchievementDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Distro_PO_MasterAchievement
+     */
+    select?: Distro_PO_MasterAchievementSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Distro_PO_MasterAchievement
+     */
+    omit?: Distro_PO_MasterAchievementOmit<ExtArgs> | null
   }
 
 
@@ -31539,24 +37516,46 @@ export namespace Prisma {
 
   export const CompanyScalarFieldEnum: {
     companyId: 'companyId',
-    segmentId: 'segmentId',
     urlImage: 'urlImage',
     companyName: 'companyName',
-    companyFoundingDate: 'companyFoundingDate',
     companyStatus: 'companyStatus',
     companyTelpFax: 'companyTelpFax',
+    companyCity: 'companyCity',
     companyAddress: 'companyAddress',
     companyEmail: 'companyEmail',
     npwp: 'npwp',
-    website: 'website',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
-    totalCapital: 'totalCapital',
     companyCode: 'companyCode',
+    companyType: 'companyType',
     application: 'application'
   };
 
   export type CompanyScalarFieldEnum = (typeof CompanyScalarFieldEnum)[keyof typeof CompanyScalarFieldEnum]
+
+
+  export const CompanySegmentLinkScalarFieldEnum: {
+    id: 'id',
+    companyId: 'companyId',
+    segmentId: 'segmentId'
+  };
+
+  export type CompanySegmentLinkScalarFieldEnum = (typeof CompanySegmentLinkScalarFieldEnum)[keyof typeof CompanySegmentLinkScalarFieldEnum]
+
+
+  export const Distro_PO_IncentiveScalarFieldEnum: {
+    id: 'id',
+    rangeFrom: 'rangeFrom',
+    rangeTo: 'rangeTo',
+    vehicle: 'vehicle',
+    vehicleId: 'vehicleId',
+    periodYear: 'periodYear',
+    amount: 'amount',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type Distro_PO_IncentiveScalarFieldEnum = (typeof Distro_PO_IncentiveScalarFieldEnum)[keyof typeof Distro_PO_IncentiveScalarFieldEnum]
 
 
   export const Distro_PO_HeaderScalarFieldEnum: {
@@ -31577,11 +37576,14 @@ export namespace Prisma {
 
   export const Distro_PO_LineScalarFieldEnum: {
     id: 'id',
-    vehicleCategory: 'vehicleCategory',
+    vehicle: 'vehicle',
+    vehicleId: 'vehicleId',
+    category: 'category',
     spType: 'spType',
     partName: 'partName',
     partNumber: 'partNumber',
     qty: 'qty',
+    price: 'price',
     purchaseOrderId: 'purchaseOrderId'
   };
 
@@ -31596,11 +37598,54 @@ export namespace Prisma {
     productName: 'productName',
     spType: 'spType',
     itemId: 'itemId',
-    isActive: 'isActive',
-    price: 'price'
+    isActive: 'isActive'
   };
 
   export type Distro_PO_MasterItemScalarFieldEnum = (typeof Distro_PO_MasterItemScalarFieldEnum)[keyof typeof Distro_PO_MasterItemScalarFieldEnum]
+
+
+  export const Distro_PO_MasterItem_Price_HeaderScalarFieldEnum: {
+    id: 'id',
+    description: 'description',
+    createdAt: 'createdAt',
+    createdBy: 'createdBy',
+    updatedAt: 'updatedAt'
+  };
+
+  export type Distro_PO_MasterItem_Price_HeaderScalarFieldEnum = (typeof Distro_PO_MasterItem_Price_HeaderScalarFieldEnum)[keyof typeof Distro_PO_MasterItem_Price_HeaderScalarFieldEnum]
+
+
+  export const Distro_PO_MasterItem_Price_LineScalarFieldEnum: {
+    id: 'id',
+    headerId: 'headerId',
+    customerCode: 'customerCode',
+    customerName: 'customerName',
+    itemId: 'itemId',
+    itemName: 'itemName',
+    price: 'price',
+    activationDate: 'activationDate',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type Distro_PO_MasterItem_Price_LineScalarFieldEnum = (typeof Distro_PO_MasterItem_Price_LineScalarFieldEnum)[keyof typeof Distro_PO_MasterItem_Price_LineScalarFieldEnum]
+
+
+  export const Distro_PO_MasterAchievementScalarFieldEnum: {
+    id: 'id',
+    customerCode: 'customerCode',
+    customerName: 'customerName',
+    city: 'city',
+    targetQty: 'targetQty',
+    targetAmount: 'targetAmount',
+    vehicle: 'vehicle',
+    vehicleId: 'vehicleId',
+    periodYear: 'periodYear',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type Distro_PO_MasterAchievementScalarFieldEnum = (typeof Distro_PO_MasterAchievementScalarFieldEnum)[keyof typeof Distro_PO_MasterAchievementScalarFieldEnum]
 
 
   export const FormL9ScalarFieldEnum: {
@@ -31942,6 +37987,20 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'BigInt'
+   */
+  export type BigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt'>
+    
+
+
+  /**
+   * Reference to a field of type 'BigInt[]'
+   */
+  export type ListBigIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'BigInt[]'>
+    
+
+
+  /**
    * Reference to a field of type 'Float'
    */
   export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
@@ -31965,25 +38024,25 @@ export namespace Prisma {
     segmentId?: IntFilter<"CompanySegment"> | number
     segmentName?: StringFilter<"CompanySegment"> | string
     description?: StringNullableFilter<"CompanySegment"> | string | null
-    company?: CompanyListRelationFilter
+    companies?: CompanySegmentLinkListRelationFilter
   }
 
   export type CompanySegmentOrderByWithRelationInput = {
     segmentId?: SortOrder
     segmentName?: SortOrder
     description?: SortOrderInput | SortOrder
-    company?: CompanyOrderByRelationAggregateInput
+    companies?: CompanySegmentLinkOrderByRelationAggregateInput
   }
 
   export type CompanySegmentWhereUniqueInput = Prisma.AtLeast<{
     segmentId?: number
+    segmentName?: string
     AND?: CompanySegmentWhereInput | CompanySegmentWhereInput[]
     OR?: CompanySegmentWhereInput[]
     NOT?: CompanySegmentWhereInput | CompanySegmentWhereInput[]
-    segmentName?: StringFilter<"CompanySegment"> | string
     description?: StringNullableFilter<"CompanySegment"> | string | null
-    company?: CompanyListRelationFilter
-  }, "segmentId">
+    companies?: CompanySegmentLinkListRelationFilter
+  }, "segmentId" | "segmentName">
 
   export type CompanySegmentOrderByWithAggregationInput = {
     segmentId?: SortOrder
@@ -32010,44 +38069,40 @@ export namespace Prisma {
     OR?: CompanyWhereInput[]
     NOT?: CompanyWhereInput | CompanyWhereInput[]
     companyId?: UuidFilter<"Company"> | string
-    segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
     companyName?: StringNullableFilter<"Company"> | string | null
-    companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableFilter<"Company"> | string | null
     companyTelpFax?: StringNullableFilter<"Company"> | string | null
+    companyCity?: StringNullableFilter<"Company"> | string | null
     companyAddress?: StringNullableFilter<"Company"> | string | null
     companyEmail?: StringNullableFilter<"Company"> | string | null
     npwp?: StringNullableFilter<"Company"> | string | null
-    website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
-    totalCapital?: StringNullableFilter<"Company"> | string | null
     companyCode?: StringNullableFilter<"Company"> | string | null
+    companyType?: StringNullableFilter<"Company"> | string | null
     application?: StringFilter<"Company"> | string
-    segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
+    segments?: CompanySegmentLinkListRelationFilter
     profile?: ProfileListRelationFilter
     formL9?: XOR<FormL9NullableScalarRelationFilter, FormL9WhereInput> | null
   }
 
   export type CompanyOrderByWithRelationInput = {
     companyId?: SortOrder
-    segmentId?: SortOrderInput | SortOrder
     urlImage?: SortOrderInput | SortOrder
     companyName?: SortOrderInput | SortOrder
-    companyFoundingDate?: SortOrderInput | SortOrder
     companyStatus?: SortOrderInput | SortOrder
     companyTelpFax?: SortOrderInput | SortOrder
+    companyCity?: SortOrderInput | SortOrder
     companyAddress?: SortOrderInput | SortOrder
     companyEmail?: SortOrderInput | SortOrder
     npwp?: SortOrderInput | SortOrder
-    website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    totalCapital?: SortOrderInput | SortOrder
     companyCode?: SortOrderInput | SortOrder
+    companyType?: SortOrderInput | SortOrder
     application?: SortOrder
-    segment?: CompanySegmentOrderByWithRelationInput
+    segments?: CompanySegmentLinkOrderByRelationAggregateInput
     profile?: ProfileOrderByRelationAggregateInput
     formL9?: FormL9OrderByWithRelationInput
   }
@@ -32057,48 +38112,42 @@ export namespace Prisma {
     AND?: CompanyWhereInput | CompanyWhereInput[]
     OR?: CompanyWhereInput[]
     NOT?: CompanyWhereInput | CompanyWhereInput[]
-    segmentId?: IntNullableFilter<"Company"> | number | null
     urlImage?: StringNullableFilter<"Company"> | string | null
     companyName?: StringNullableFilter<"Company"> | string | null
-    companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableFilter<"Company"> | string | null
     companyTelpFax?: StringNullableFilter<"Company"> | string | null
+    companyCity?: StringNullableFilter<"Company"> | string | null
     companyAddress?: StringNullableFilter<"Company"> | string | null
     companyEmail?: StringNullableFilter<"Company"> | string | null
     npwp?: StringNullableFilter<"Company"> | string | null
-    website?: StringNullableFilter<"Company"> | string | null
     createdAt?: DateTimeFilter<"Company"> | Date | string
     updatedAt?: DateTimeFilter<"Company"> | Date | string
-    totalCapital?: StringNullableFilter<"Company"> | string | null
     companyCode?: StringNullableFilter<"Company"> | string | null
+    companyType?: StringNullableFilter<"Company"> | string | null
     application?: StringFilter<"Company"> | string
-    segment?: XOR<CompanySegmentNullableScalarRelationFilter, CompanySegmentWhereInput> | null
+    segments?: CompanySegmentLinkListRelationFilter
     profile?: ProfileListRelationFilter
     formL9?: XOR<FormL9NullableScalarRelationFilter, FormL9WhereInput> | null
   }, "companyId">
 
   export type CompanyOrderByWithAggregationInput = {
     companyId?: SortOrder
-    segmentId?: SortOrderInput | SortOrder
     urlImage?: SortOrderInput | SortOrder
     companyName?: SortOrderInput | SortOrder
-    companyFoundingDate?: SortOrderInput | SortOrder
     companyStatus?: SortOrderInput | SortOrder
     companyTelpFax?: SortOrderInput | SortOrder
+    companyCity?: SortOrderInput | SortOrder
     companyAddress?: SortOrderInput | SortOrder
     companyEmail?: SortOrderInput | SortOrder
     npwp?: SortOrderInput | SortOrder
-    website?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    totalCapital?: SortOrderInput | SortOrder
     companyCode?: SortOrderInput | SortOrder
+    companyType?: SortOrderInput | SortOrder
     application?: SortOrder
     _count?: CompanyCountOrderByAggregateInput
-    _avg?: CompanyAvgOrderByAggregateInput
     _max?: CompanyMaxOrderByAggregateInput
     _min?: CompanyMinOrderByAggregateInput
-    _sum?: CompanySumOrderByAggregateInput
   }
 
   export type CompanyScalarWhereWithAggregatesInput = {
@@ -32106,21 +38155,144 @@ export namespace Prisma {
     OR?: CompanyScalarWhereWithAggregatesInput[]
     NOT?: CompanyScalarWhereWithAggregatesInput | CompanyScalarWhereWithAggregatesInput[]
     companyId?: UuidWithAggregatesFilter<"Company"> | string
-    segmentId?: IntNullableWithAggregatesFilter<"Company"> | number | null
     urlImage?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyName?: StringNullableWithAggregatesFilter<"Company"> | string | null
-    companyFoundingDate?: DateTimeNullableWithAggregatesFilter<"Company"> | Date | string | null
     companyStatus?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyTelpFax?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    companyCity?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyAddress?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyEmail?: StringNullableWithAggregatesFilter<"Company"> | string | null
     npwp?: StringNullableWithAggregatesFilter<"Company"> | string | null
-    website?: StringNullableWithAggregatesFilter<"Company"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Company"> | Date | string
-    totalCapital?: StringNullableWithAggregatesFilter<"Company"> | string | null
     companyCode?: StringNullableWithAggregatesFilter<"Company"> | string | null
+    companyType?: StringNullableWithAggregatesFilter<"Company"> | string | null
     application?: StringWithAggregatesFilter<"Company"> | string
+  }
+
+  export type CompanySegmentLinkWhereInput = {
+    AND?: CompanySegmentLinkWhereInput | CompanySegmentLinkWhereInput[]
+    OR?: CompanySegmentLinkWhereInput[]
+    NOT?: CompanySegmentLinkWhereInput | CompanySegmentLinkWhereInput[]
+    id?: IntFilter<"CompanySegmentLink"> | number
+    companyId?: UuidFilter<"CompanySegmentLink"> | string
+    segmentId?: IntFilter<"CompanySegmentLink"> | number
+    company?: XOR<CompanyScalarRelationFilter, CompanyWhereInput>
+    segment?: XOR<CompanySegmentScalarRelationFilter, CompanySegmentWhereInput>
+  }
+
+  export type CompanySegmentLinkOrderByWithRelationInput = {
+    id?: SortOrder
+    companyId?: SortOrder
+    segmentId?: SortOrder
+    company?: CompanyOrderByWithRelationInput
+    segment?: CompanySegmentOrderByWithRelationInput
+  }
+
+  export type CompanySegmentLinkWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    companyId_segmentId?: CompanySegmentLinkCompanyIdSegmentIdCompoundUniqueInput
+    AND?: CompanySegmentLinkWhereInput | CompanySegmentLinkWhereInput[]
+    OR?: CompanySegmentLinkWhereInput[]
+    NOT?: CompanySegmentLinkWhereInput | CompanySegmentLinkWhereInput[]
+    companyId?: UuidFilter<"CompanySegmentLink"> | string
+    segmentId?: IntFilter<"CompanySegmentLink"> | number
+    company?: XOR<CompanyScalarRelationFilter, CompanyWhereInput>
+    segment?: XOR<CompanySegmentScalarRelationFilter, CompanySegmentWhereInput>
+  }, "id" | "companyId_segmentId">
+
+  export type CompanySegmentLinkOrderByWithAggregationInput = {
+    id?: SortOrder
+    companyId?: SortOrder
+    segmentId?: SortOrder
+    _count?: CompanySegmentLinkCountOrderByAggregateInput
+    _avg?: CompanySegmentLinkAvgOrderByAggregateInput
+    _max?: CompanySegmentLinkMaxOrderByAggregateInput
+    _min?: CompanySegmentLinkMinOrderByAggregateInput
+    _sum?: CompanySegmentLinkSumOrderByAggregateInput
+  }
+
+  export type CompanySegmentLinkScalarWhereWithAggregatesInput = {
+    AND?: CompanySegmentLinkScalarWhereWithAggregatesInput | CompanySegmentLinkScalarWhereWithAggregatesInput[]
+    OR?: CompanySegmentLinkScalarWhereWithAggregatesInput[]
+    NOT?: CompanySegmentLinkScalarWhereWithAggregatesInput | CompanySegmentLinkScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"CompanySegmentLink"> | number
+    companyId?: UuidWithAggregatesFilter<"CompanySegmentLink"> | string
+    segmentId?: IntWithAggregatesFilter<"CompanySegmentLink"> | number
+  }
+
+  export type Distro_PO_IncentiveWhereInput = {
+    AND?: Distro_PO_IncentiveWhereInput | Distro_PO_IncentiveWhereInput[]
+    OR?: Distro_PO_IncentiveWhereInput[]
+    NOT?: Distro_PO_IncentiveWhereInput | Distro_PO_IncentiveWhereInput[]
+    id?: IntFilter<"Distro_PO_Incentive"> | number
+    rangeFrom?: IntFilter<"Distro_PO_Incentive"> | number
+    rangeTo?: IntFilter<"Distro_PO_Incentive"> | number
+    vehicle?: StringFilter<"Distro_PO_Incentive"> | string
+    vehicleId?: StringFilter<"Distro_PO_Incentive"> | string
+    periodYear?: IntFilter<"Distro_PO_Incentive"> | number
+    amount?: IntFilter<"Distro_PO_Incentive"> | number
+    createdAt?: DateTimeFilter<"Distro_PO_Incentive"> | Date | string
+    updatedAt?: DateTimeFilter<"Distro_PO_Incentive"> | Date | string
+  }
+
+  export type Distro_PO_IncentiveOrderByWithRelationInput = {
+    id?: SortOrder
+    rangeFrom?: SortOrder
+    rangeTo?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    amount?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_IncentiveWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: Distro_PO_IncentiveWhereInput | Distro_PO_IncentiveWhereInput[]
+    OR?: Distro_PO_IncentiveWhereInput[]
+    NOT?: Distro_PO_IncentiveWhereInput | Distro_PO_IncentiveWhereInput[]
+    rangeFrom?: IntFilter<"Distro_PO_Incentive"> | number
+    rangeTo?: IntFilter<"Distro_PO_Incentive"> | number
+    vehicle?: StringFilter<"Distro_PO_Incentive"> | string
+    vehicleId?: StringFilter<"Distro_PO_Incentive"> | string
+    periodYear?: IntFilter<"Distro_PO_Incentive"> | number
+    amount?: IntFilter<"Distro_PO_Incentive"> | number
+    createdAt?: DateTimeFilter<"Distro_PO_Incentive"> | Date | string
+    updatedAt?: DateTimeFilter<"Distro_PO_Incentive"> | Date | string
+  }, "id">
+
+  export type Distro_PO_IncentiveOrderByWithAggregationInput = {
+    id?: SortOrder
+    rangeFrom?: SortOrder
+    rangeTo?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    amount?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: Distro_PO_IncentiveCountOrderByAggregateInput
+    _avg?: Distro_PO_IncentiveAvgOrderByAggregateInput
+    _max?: Distro_PO_IncentiveMaxOrderByAggregateInput
+    _min?: Distro_PO_IncentiveMinOrderByAggregateInput
+    _sum?: Distro_PO_IncentiveSumOrderByAggregateInput
+  }
+
+  export type Distro_PO_IncentiveScalarWhereWithAggregatesInput = {
+    AND?: Distro_PO_IncentiveScalarWhereWithAggregatesInput | Distro_PO_IncentiveScalarWhereWithAggregatesInput[]
+    OR?: Distro_PO_IncentiveScalarWhereWithAggregatesInput[]
+    NOT?: Distro_PO_IncentiveScalarWhereWithAggregatesInput | Distro_PO_IncentiveScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Distro_PO_Incentive"> | number
+    rangeFrom?: IntWithAggregatesFilter<"Distro_PO_Incentive"> | number
+    rangeTo?: IntWithAggregatesFilter<"Distro_PO_Incentive"> | number
+    vehicle?: StringWithAggregatesFilter<"Distro_PO_Incentive"> | string
+    vehicleId?: StringWithAggregatesFilter<"Distro_PO_Incentive"> | string
+    periodYear?: IntWithAggregatesFilter<"Distro_PO_Incentive"> | number
+    amount?: IntWithAggregatesFilter<"Distro_PO_Incentive"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"Distro_PO_Incentive"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Distro_PO_Incentive"> | Date | string
   }
 
   export type Distro_PO_HeaderWhereInput = {
@@ -32210,22 +38382,28 @@ export namespace Prisma {
     OR?: Distro_PO_LineWhereInput[]
     NOT?: Distro_PO_LineWhereInput | Distro_PO_LineWhereInput[]
     id?: IntFilter<"Distro_PO_Line"> | number
-    vehicleCategory?: StringFilter<"Distro_PO_Line"> | string
+    vehicle?: StringFilter<"Distro_PO_Line"> | string
+    vehicleId?: StringFilter<"Distro_PO_Line"> | string
+    category?: StringFilter<"Distro_PO_Line"> | string
     spType?: StringFilter<"Distro_PO_Line"> | string
     partName?: StringFilter<"Distro_PO_Line"> | string
     partNumber?: StringFilter<"Distro_PO_Line"> | string
     qty?: IntFilter<"Distro_PO_Line"> | number
+    price?: IntFilter<"Distro_PO_Line"> | number
     purchaseOrderId?: IntFilter<"Distro_PO_Line"> | number
     purchaseOrder?: XOR<Distro_PO_HeaderScalarRelationFilter, Distro_PO_HeaderWhereInput>
   }
 
   export type Distro_PO_LineOrderByWithRelationInput = {
     id?: SortOrder
-    vehicleCategory?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
     spType?: SortOrder
     partName?: SortOrder
     partNumber?: SortOrder
     qty?: SortOrder
+    price?: SortOrder
     purchaseOrderId?: SortOrder
     purchaseOrder?: Distro_PO_HeaderOrderByWithRelationInput
   }
@@ -32235,22 +38413,28 @@ export namespace Prisma {
     AND?: Distro_PO_LineWhereInput | Distro_PO_LineWhereInput[]
     OR?: Distro_PO_LineWhereInput[]
     NOT?: Distro_PO_LineWhereInput | Distro_PO_LineWhereInput[]
-    vehicleCategory?: StringFilter<"Distro_PO_Line"> | string
+    vehicle?: StringFilter<"Distro_PO_Line"> | string
+    vehicleId?: StringFilter<"Distro_PO_Line"> | string
+    category?: StringFilter<"Distro_PO_Line"> | string
     spType?: StringFilter<"Distro_PO_Line"> | string
     partName?: StringFilter<"Distro_PO_Line"> | string
     partNumber?: StringFilter<"Distro_PO_Line"> | string
     qty?: IntFilter<"Distro_PO_Line"> | number
+    price?: IntFilter<"Distro_PO_Line"> | number
     purchaseOrderId?: IntFilter<"Distro_PO_Line"> | number
     purchaseOrder?: XOR<Distro_PO_HeaderScalarRelationFilter, Distro_PO_HeaderWhereInput>
   }, "id">
 
   export type Distro_PO_LineOrderByWithAggregationInput = {
     id?: SortOrder
-    vehicleCategory?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
     spType?: SortOrder
     partName?: SortOrder
     partNumber?: SortOrder
     qty?: SortOrder
+    price?: SortOrder
     purchaseOrderId?: SortOrder
     _count?: Distro_PO_LineCountOrderByAggregateInput
     _avg?: Distro_PO_LineAvgOrderByAggregateInput
@@ -32264,11 +38448,14 @@ export namespace Prisma {
     OR?: Distro_PO_LineScalarWhereWithAggregatesInput[]
     NOT?: Distro_PO_LineScalarWhereWithAggregatesInput | Distro_PO_LineScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Distro_PO_Line"> | number
-    vehicleCategory?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
+    vehicle?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
+    vehicleId?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
+    category?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
     spType?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
     partName?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
     partNumber?: StringWithAggregatesFilter<"Distro_PO_Line"> | string
     qty?: IntWithAggregatesFilter<"Distro_PO_Line"> | number
+    price?: IntWithAggregatesFilter<"Distro_PO_Line"> | number
     purchaseOrderId?: IntWithAggregatesFilter<"Distro_PO_Line"> | number
   }
 
@@ -32284,7 +38471,6 @@ export namespace Prisma {
     spType?: StringNullableFilter<"Distro_PO_MasterItem"> | string | null
     itemId?: StringFilter<"Distro_PO_MasterItem"> | string
     isActive?: BoolFilter<"Distro_PO_MasterItem"> | boolean
-    price?: IntNullableFilter<"Distro_PO_MasterItem"> | number | null
   }
 
   export type Distro_PO_MasterItemOrderByWithRelationInput = {
@@ -32296,7 +38482,6 @@ export namespace Prisma {
     spType?: SortOrderInput | SortOrder
     itemId?: SortOrder
     isActive?: SortOrder
-    price?: SortOrderInput | SortOrder
   }
 
   export type Distro_PO_MasterItemWhereUniqueInput = Prisma.AtLeast<{
@@ -32311,7 +38496,6 @@ export namespace Prisma {
     productName?: StringFilter<"Distro_PO_MasterItem"> | string
     spType?: StringNullableFilter<"Distro_PO_MasterItem"> | string | null
     isActive?: BoolFilter<"Distro_PO_MasterItem"> | boolean
-    price?: IntNullableFilter<"Distro_PO_MasterItem"> | number | null
   }, "id" | "itemId">
 
   export type Distro_PO_MasterItemOrderByWithAggregationInput = {
@@ -32323,7 +38507,6 @@ export namespace Prisma {
     spType?: SortOrderInput | SortOrder
     itemId?: SortOrder
     isActive?: SortOrder
-    price?: SortOrderInput | SortOrder
     _count?: Distro_PO_MasterItemCountOrderByAggregateInput
     _avg?: Distro_PO_MasterItemAvgOrderByAggregateInput
     _max?: Distro_PO_MasterItemMaxOrderByAggregateInput
@@ -32343,7 +38526,227 @@ export namespace Prisma {
     spType?: StringNullableWithAggregatesFilter<"Distro_PO_MasterItem"> | string | null
     itemId?: StringWithAggregatesFilter<"Distro_PO_MasterItem"> | string
     isActive?: BoolWithAggregatesFilter<"Distro_PO_MasterItem"> | boolean
-    price?: IntNullableWithAggregatesFilter<"Distro_PO_MasterItem"> | number | null
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderWhereInput = {
+    AND?: Distro_PO_MasterItem_Price_HeaderWhereInput | Distro_PO_MasterItem_Price_HeaderWhereInput[]
+    OR?: Distro_PO_MasterItem_Price_HeaderWhereInput[]
+    NOT?: Distro_PO_MasterItem_Price_HeaderWhereInput | Distro_PO_MasterItem_Price_HeaderWhereInput[]
+    id?: StringFilter<"Distro_PO_MasterItem_Price_Header"> | string
+    description?: StringFilter<"Distro_PO_MasterItem_Price_Header"> | string
+    createdAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Header"> | Date | string
+    createdBy?: StringFilter<"Distro_PO_MasterItem_Price_Header"> | string
+    updatedAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Header"> | Date | string
+    priceLines?: Distro_PO_MasterItem_Price_LineListRelationFilter
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    createdBy?: SortOrder
+    updatedAt?: SortOrder
+    priceLines?: Distro_PO_MasterItem_Price_LineOrderByRelationAggregateInput
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: Distro_PO_MasterItem_Price_HeaderWhereInput | Distro_PO_MasterItem_Price_HeaderWhereInput[]
+    OR?: Distro_PO_MasterItem_Price_HeaderWhereInput[]
+    NOT?: Distro_PO_MasterItem_Price_HeaderWhereInput | Distro_PO_MasterItem_Price_HeaderWhereInput[]
+    description?: StringFilter<"Distro_PO_MasterItem_Price_Header"> | string
+    createdAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Header"> | Date | string
+    createdBy?: StringFilter<"Distro_PO_MasterItem_Price_Header"> | string
+    updatedAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Header"> | Date | string
+    priceLines?: Distro_PO_MasterItem_Price_LineListRelationFilter
+  }, "id">
+
+  export type Distro_PO_MasterItem_Price_HeaderOrderByWithAggregationInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    createdBy?: SortOrder
+    updatedAt?: SortOrder
+    _count?: Distro_PO_MasterItem_Price_HeaderCountOrderByAggregateInput
+    _max?: Distro_PO_MasterItem_Price_HeaderMaxOrderByAggregateInput
+    _min?: Distro_PO_MasterItem_Price_HeaderMinOrderByAggregateInput
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderScalarWhereWithAggregatesInput = {
+    AND?: Distro_PO_MasterItem_Price_HeaderScalarWhereWithAggregatesInput | Distro_PO_MasterItem_Price_HeaderScalarWhereWithAggregatesInput[]
+    OR?: Distro_PO_MasterItem_Price_HeaderScalarWhereWithAggregatesInput[]
+    NOT?: Distro_PO_MasterItem_Price_HeaderScalarWhereWithAggregatesInput | Distro_PO_MasterItem_Price_HeaderScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Distro_PO_MasterItem_Price_Header"> | string
+    description?: StringWithAggregatesFilter<"Distro_PO_MasterItem_Price_Header"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Distro_PO_MasterItem_Price_Header"> | Date | string
+    createdBy?: StringWithAggregatesFilter<"Distro_PO_MasterItem_Price_Header"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Distro_PO_MasterItem_Price_Header"> | Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineWhereInput = {
+    AND?: Distro_PO_MasterItem_Price_LineWhereInput | Distro_PO_MasterItem_Price_LineWhereInput[]
+    OR?: Distro_PO_MasterItem_Price_LineWhereInput[]
+    NOT?: Distro_PO_MasterItem_Price_LineWhereInput | Distro_PO_MasterItem_Price_LineWhereInput[]
+    id?: IntFilter<"Distro_PO_MasterItem_Price_Line"> | number
+    headerId?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    customerCode?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    customerName?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    itemId?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    itemName?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    price?: IntFilter<"Distro_PO_MasterItem_Price_Line"> | number
+    activationDate?: DateTimeFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    createdAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    updatedAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    header?: XOR<Distro_PO_MasterItem_Price_HeaderScalarRelationFilter, Distro_PO_MasterItem_Price_HeaderWhereInput>
+  }
+
+  export type Distro_PO_MasterItem_Price_LineOrderByWithRelationInput = {
+    id?: SortOrder
+    headerId?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    itemId?: SortOrder
+    itemName?: SortOrder
+    price?: SortOrder
+    activationDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    header?: Distro_PO_MasterItem_Price_HeaderOrderByWithRelationInput
+  }
+
+  export type Distro_PO_MasterItem_Price_LineWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: Distro_PO_MasterItem_Price_LineWhereInput | Distro_PO_MasterItem_Price_LineWhereInput[]
+    OR?: Distro_PO_MasterItem_Price_LineWhereInput[]
+    NOT?: Distro_PO_MasterItem_Price_LineWhereInput | Distro_PO_MasterItem_Price_LineWhereInput[]
+    headerId?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    customerCode?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    customerName?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    itemId?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    itemName?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    price?: IntFilter<"Distro_PO_MasterItem_Price_Line"> | number
+    activationDate?: DateTimeFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    createdAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    updatedAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    header?: XOR<Distro_PO_MasterItem_Price_HeaderScalarRelationFilter, Distro_PO_MasterItem_Price_HeaderWhereInput>
+  }, "id">
+
+  export type Distro_PO_MasterItem_Price_LineOrderByWithAggregationInput = {
+    id?: SortOrder
+    headerId?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    itemId?: SortOrder
+    itemName?: SortOrder
+    price?: SortOrder
+    activationDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: Distro_PO_MasterItem_Price_LineCountOrderByAggregateInput
+    _avg?: Distro_PO_MasterItem_Price_LineAvgOrderByAggregateInput
+    _max?: Distro_PO_MasterItem_Price_LineMaxOrderByAggregateInput
+    _min?: Distro_PO_MasterItem_Price_LineMinOrderByAggregateInput
+    _sum?: Distro_PO_MasterItem_Price_LineSumOrderByAggregateInput
+  }
+
+  export type Distro_PO_MasterItem_Price_LineScalarWhereWithAggregatesInput = {
+    AND?: Distro_PO_MasterItem_Price_LineScalarWhereWithAggregatesInput | Distro_PO_MasterItem_Price_LineScalarWhereWithAggregatesInput[]
+    OR?: Distro_PO_MasterItem_Price_LineScalarWhereWithAggregatesInput[]
+    NOT?: Distro_PO_MasterItem_Price_LineScalarWhereWithAggregatesInput | Distro_PO_MasterItem_Price_LineScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | number
+    headerId?: StringWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    customerCode?: StringWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    customerName?: StringWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    itemId?: StringWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    itemName?: StringWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    price?: IntWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | number
+    activationDate?: DateTimeWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    createdAt?: DateTimeWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+  }
+
+  export type Distro_PO_MasterAchievementWhereInput = {
+    AND?: Distro_PO_MasterAchievementWhereInput | Distro_PO_MasterAchievementWhereInput[]
+    OR?: Distro_PO_MasterAchievementWhereInput[]
+    NOT?: Distro_PO_MasterAchievementWhereInput | Distro_PO_MasterAchievementWhereInput[]
+    id?: IntFilter<"Distro_PO_MasterAchievement"> | number
+    customerCode?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    customerName?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    city?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    targetQty?: IntFilter<"Distro_PO_MasterAchievement"> | number
+    targetAmount?: BigIntFilter<"Distro_PO_MasterAchievement"> | bigint | number
+    vehicle?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    vehicleId?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    periodYear?: IntFilter<"Distro_PO_MasterAchievement"> | number
+    createdAt?: DateTimeFilter<"Distro_PO_MasterAchievement"> | Date | string
+    updatedAt?: DateTimeFilter<"Distro_PO_MasterAchievement"> | Date | string
+  }
+
+  export type Distro_PO_MasterAchievementOrderByWithRelationInput = {
+    id?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    city?: SortOrder
+    targetQty?: SortOrder
+    targetAmount?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterAchievementWhereUniqueInput = Prisma.AtLeast<{
+    id?: number
+    AND?: Distro_PO_MasterAchievementWhereInput | Distro_PO_MasterAchievementWhereInput[]
+    OR?: Distro_PO_MasterAchievementWhereInput[]
+    NOT?: Distro_PO_MasterAchievementWhereInput | Distro_PO_MasterAchievementWhereInput[]
+    customerCode?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    customerName?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    city?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    targetQty?: IntFilter<"Distro_PO_MasterAchievement"> | number
+    targetAmount?: BigIntFilter<"Distro_PO_MasterAchievement"> | bigint | number
+    vehicle?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    vehicleId?: StringFilter<"Distro_PO_MasterAchievement"> | string
+    periodYear?: IntFilter<"Distro_PO_MasterAchievement"> | number
+    createdAt?: DateTimeFilter<"Distro_PO_MasterAchievement"> | Date | string
+    updatedAt?: DateTimeFilter<"Distro_PO_MasterAchievement"> | Date | string
+  }, "id">
+
+  export type Distro_PO_MasterAchievementOrderByWithAggregationInput = {
+    id?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    city?: SortOrder
+    targetQty?: SortOrder
+    targetAmount?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: Distro_PO_MasterAchievementCountOrderByAggregateInput
+    _avg?: Distro_PO_MasterAchievementAvgOrderByAggregateInput
+    _max?: Distro_PO_MasterAchievementMaxOrderByAggregateInput
+    _min?: Distro_PO_MasterAchievementMinOrderByAggregateInput
+    _sum?: Distro_PO_MasterAchievementSumOrderByAggregateInput
+  }
+
+  export type Distro_PO_MasterAchievementScalarWhereWithAggregatesInput = {
+    AND?: Distro_PO_MasterAchievementScalarWhereWithAggregatesInput | Distro_PO_MasterAchievementScalarWhereWithAggregatesInput[]
+    OR?: Distro_PO_MasterAchievementScalarWhereWithAggregatesInput[]
+    NOT?: Distro_PO_MasterAchievementScalarWhereWithAggregatesInput | Distro_PO_MasterAchievementScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Distro_PO_MasterAchievement"> | number
+    customerCode?: StringWithAggregatesFilter<"Distro_PO_MasterAchievement"> | string
+    customerName?: StringWithAggregatesFilter<"Distro_PO_MasterAchievement"> | string
+    city?: StringWithAggregatesFilter<"Distro_PO_MasterAchievement"> | string
+    targetQty?: IntWithAggregatesFilter<"Distro_PO_MasterAchievement"> | number
+    targetAmount?: BigIntWithAggregatesFilter<"Distro_PO_MasterAchievement"> | bigint | number
+    vehicle?: StringWithAggregatesFilter<"Distro_PO_MasterAchievement"> | string
+    vehicleId?: StringWithAggregatesFilter<"Distro_PO_MasterAchievement"> | string
+    periodYear?: IntWithAggregatesFilter<"Distro_PO_MasterAchievement"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"Distro_PO_MasterAchievement"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Distro_PO_MasterAchievement"> | Date | string
   }
 
   export type FormL9WhereInput = {
@@ -33716,27 +40119,27 @@ export namespace Prisma {
   export type CompanySegmentCreateInput = {
     segmentName: string
     description?: string | null
-    company?: CompanyCreateNestedManyWithoutSegmentInput
+    companies?: CompanySegmentLinkCreateNestedManyWithoutSegmentInput
   }
 
   export type CompanySegmentUncheckedCreateInput = {
     segmentId?: number
     segmentName: string
     description?: string | null
-    company?: CompanyUncheckedCreateNestedManyWithoutSegmentInput
+    companies?: CompanySegmentLinkUncheckedCreateNestedManyWithoutSegmentInput
   }
 
   export type CompanySegmentUpdateInput = {
     segmentName?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    company?: CompanyUpdateManyWithoutSegmentNestedInput
+    companies?: CompanySegmentLinkUpdateManyWithoutSegmentNestedInput
   }
 
   export type CompanySegmentUncheckedUpdateInput = {
     segmentId?: IntFieldUpdateOperationsInput | number
     segmentName?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
-    company?: CompanyUncheckedUpdateManyWithoutSegmentNestedInput
+    companies?: CompanySegmentLinkUncheckedUpdateManyWithoutSegmentNestedInput
   }
 
   export type CompanySegmentCreateManyInput = {
@@ -33760,40 +40163,38 @@ export namespace Prisma {
     companyId?: string
     urlImage?: string | null
     companyName?: string | null
-    companyFoundingDate?: Date | string | null
     companyStatus?: string | null
     companyTelpFax?: string | null
+    companyCity?: string | null
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    totalCapital?: string | null
     companyCode?: string | null
+    companyType?: string | null
     application?: string
-    segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
+    segments?: CompanySegmentLinkCreateNestedManyWithoutCompanyInput
     profile?: ProfileCreateNestedManyWithoutCompanyInput
     formL9?: FormL9CreateNestedOneWithoutCompanyInput
   }
 
   export type CompanyUncheckedCreateInput = {
     companyId?: string
-    segmentId?: number | null
     urlImage?: string | null
     companyName?: string | null
-    companyFoundingDate?: Date | string | null
     companyStatus?: string | null
     companyTelpFax?: string | null
+    companyCity?: string | null
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    totalCapital?: string | null
     companyCode?: string | null
+    companyType?: string | null
     application?: string
+    segments?: CompanySegmentLinkUncheckedCreateNestedManyWithoutCompanyInput
     profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
     formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
@@ -33802,60 +40203,56 @@ export namespace Prisma {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
     companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
     application?: StringFieldUpdateOperationsInput | string
-    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+    segments?: CompanySegmentLinkUpdateManyWithoutCompanyNestedInput
     profile?: ProfileUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UpdateOneWithoutCompanyNestedInput
   }
 
   export type CompanyUncheckedUpdateInput = {
     companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
     companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
     application?: StringFieldUpdateOperationsInput | string
+    segments?: CompanySegmentLinkUncheckedUpdateManyWithoutCompanyNestedInput
     profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
 
   export type CompanyCreateManyInput = {
     companyId?: string
-    segmentId?: number | null
     urlImage?: string | null
     companyName?: string | null
-    companyFoundingDate?: Date | string | null
     companyStatus?: string | null
     companyTelpFax?: string | null
+    companyCity?: string | null
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    totalCapital?: string | null
     companyCode?: string | null
+    companyType?: string | null
     application?: string
   }
 
@@ -33863,37 +40260,153 @@ export namespace Prisma {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
     companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
     application?: StringFieldUpdateOperationsInput | string
   }
 
   export type CompanyUncheckedUpdateManyInput = {
     companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
     companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
     application?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type CompanySegmentLinkCreateInput = {
+    company: CompanyCreateNestedOneWithoutSegmentsInput
+    segment: CompanySegmentCreateNestedOneWithoutCompaniesInput
+  }
+
+  export type CompanySegmentLinkUncheckedCreateInput = {
+    id?: number
+    companyId: string
+    segmentId: number
+  }
+
+  export type CompanySegmentLinkUpdateInput = {
+    company?: CompanyUpdateOneRequiredWithoutSegmentsNestedInput
+    segment?: CompanySegmentUpdateOneRequiredWithoutCompaniesNestedInput
+  }
+
+  export type CompanySegmentLinkUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    companyId?: StringFieldUpdateOperationsInput | string
+    segmentId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type CompanySegmentLinkCreateManyInput = {
+    id?: number
+    companyId: string
+    segmentId: number
+  }
+
+  export type CompanySegmentLinkUpdateManyMutationInput = {
+
+  }
+
+  export type CompanySegmentLinkUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    companyId?: StringFieldUpdateOperationsInput | string
+    segmentId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type Distro_PO_IncentiveCreateInput = {
+    rangeFrom: number
+    rangeTo: number
+    vehicle: string
+    vehicleId: string
+    periodYear: number
+    amount: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_IncentiveUncheckedCreateInput = {
+    id?: number
+    rangeFrom: number
+    rangeTo: number
+    vehicle: string
+    vehicleId: string
+    periodYear: number
+    amount: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_IncentiveUpdateInput = {
+    rangeFrom?: IntFieldUpdateOperationsInput | number
+    rangeTo?: IntFieldUpdateOperationsInput | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    periodYear?: IntFieldUpdateOperationsInput | number
+    amount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_IncentiveUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    rangeFrom?: IntFieldUpdateOperationsInput | number
+    rangeTo?: IntFieldUpdateOperationsInput | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    periodYear?: IntFieldUpdateOperationsInput | number
+    amount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_IncentiveCreateManyInput = {
+    id?: number
+    rangeFrom: number
+    rangeTo: number
+    vehicle: string
+    vehicleId: string
+    periodYear: number
+    amount: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_IncentiveUpdateManyMutationInput = {
+    rangeFrom?: IntFieldUpdateOperationsInput | number
+    rangeTo?: IntFieldUpdateOperationsInput | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    periodYear?: IntFieldUpdateOperationsInput | number
+    amount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_IncentiveUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    rangeFrom?: IntFieldUpdateOperationsInput | number
+    rangeTo?: IntFieldUpdateOperationsInput | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    periodYear?: IntFieldUpdateOperationsInput | number
+    amount?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type Distro_PO_HeaderCreateInput = {
@@ -33989,68 +40502,89 @@ export namespace Prisma {
   }
 
   export type Distro_PO_LineCreateInput = {
-    vehicleCategory: string
+    vehicle: string
+    vehicleId: string
+    category: string
     spType: string
     partName: string
     partNumber: string
     qty?: number
+    price?: number
     purchaseOrder: Distro_PO_HeaderCreateNestedOneWithoutItemsInput
   }
 
   export type Distro_PO_LineUncheckedCreateInput = {
     id?: number
-    vehicleCategory: string
+    vehicle: string
+    vehicleId: string
+    category: string
     spType: string
     partName: string
     partNumber: string
     qty?: number
+    price?: number
     purchaseOrderId: number
   }
 
   export type Distro_PO_LineUpdateInput = {
-    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     spType?: StringFieldUpdateOperationsInput | string
     partName?: StringFieldUpdateOperationsInput | string
     partNumber?: StringFieldUpdateOperationsInput | string
     qty?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
     purchaseOrder?: Distro_PO_HeaderUpdateOneRequiredWithoutItemsNestedInput
   }
 
   export type Distro_PO_LineUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     spType?: StringFieldUpdateOperationsInput | string
     partName?: StringFieldUpdateOperationsInput | string
     partNumber?: StringFieldUpdateOperationsInput | string
     qty?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
     purchaseOrderId?: IntFieldUpdateOperationsInput | number
   }
 
   export type Distro_PO_LineCreateManyInput = {
     id?: number
-    vehicleCategory: string
+    vehicle: string
+    vehicleId: string
+    category: string
     spType: string
     partName: string
     partNumber: string
     qty?: number
+    price?: number
     purchaseOrderId: number
   }
 
   export type Distro_PO_LineUpdateManyMutationInput = {
-    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     spType?: StringFieldUpdateOperationsInput | string
     partName?: StringFieldUpdateOperationsInput | string
     partNumber?: StringFieldUpdateOperationsInput | string
     qty?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
   }
 
   export type Distro_PO_LineUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     spType?: StringFieldUpdateOperationsInput | string
     partName?: StringFieldUpdateOperationsInput | string
     partNumber?: StringFieldUpdateOperationsInput | string
     qty?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
     purchaseOrderId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -34062,7 +40596,6 @@ export namespace Prisma {
     spType?: string | null
     itemId: string
     isActive?: boolean
-    price?: number | null
   }
 
   export type Distro_PO_MasterItemUncheckedCreateInput = {
@@ -34074,7 +40607,6 @@ export namespace Prisma {
     spType?: string | null
     itemId: string
     isActive?: boolean
-    price?: number | null
   }
 
   export type Distro_PO_MasterItemUpdateInput = {
@@ -34085,7 +40617,6 @@ export namespace Prisma {
     spType?: NullableStringFieldUpdateOperationsInput | string | null
     itemId?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
-    price?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type Distro_PO_MasterItemUncheckedUpdateInput = {
@@ -34097,7 +40628,6 @@ export namespace Prisma {
     spType?: NullableStringFieldUpdateOperationsInput | string | null
     itemId?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
-    price?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type Distro_PO_MasterItemCreateManyInput = {
@@ -34109,7 +40639,6 @@ export namespace Prisma {
     spType?: string | null
     itemId: string
     isActive?: boolean
-    price?: number | null
   }
 
   export type Distro_PO_MasterItemUpdateManyMutationInput = {
@@ -34120,7 +40649,6 @@ export namespace Prisma {
     spType?: NullableStringFieldUpdateOperationsInput | string | null
     itemId?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
-    price?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
   export type Distro_PO_MasterItemUncheckedUpdateManyInput = {
@@ -34132,7 +40660,248 @@ export namespace Prisma {
     spType?: NullableStringFieldUpdateOperationsInput | string | null
     itemId?: StringFieldUpdateOperationsInput | string
     isActive?: BoolFieldUpdateOperationsInput | boolean
-    price?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderCreateInput = {
+    id?: string
+    description: string
+    createdAt?: Date | string
+    createdBy: string
+    updatedAt?: Date | string
+    priceLines?: Distro_PO_MasterItem_Price_LineCreateNestedManyWithoutHeaderInput
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUncheckedCreateInput = {
+    id?: string
+    description: string
+    createdAt?: Date | string
+    createdBy: string
+    updatedAt?: Date | string
+    priceLines?: Distro_PO_MasterItem_Price_LineUncheckedCreateNestedManyWithoutHeaderInput
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    priceLines?: Distro_PO_MasterItem_Price_LineUpdateManyWithoutHeaderNestedInput
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    priceLines?: Distro_PO_MasterItem_Price_LineUncheckedUpdateManyWithoutHeaderNestedInput
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderCreateManyInput = {
+    id?: string
+    description: string
+    createdAt?: Date | string
+    createdBy: string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineCreateInput = {
+    customerCode: string
+    customerName: string
+    itemId: string
+    itemName: string
+    price: number
+    activationDate: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    header: Distro_PO_MasterItem_Price_HeaderCreateNestedOneWithoutPriceLinesInput
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUncheckedCreateInput = {
+    id?: number
+    headerId: string
+    customerCode: string
+    customerName: string
+    itemId: string
+    itemName: string
+    price: number
+    activationDate: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUpdateInput = {
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    itemId?: StringFieldUpdateOperationsInput | string
+    itemName?: StringFieldUpdateOperationsInput | string
+    price?: IntFieldUpdateOperationsInput | number
+    activationDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    header?: Distro_PO_MasterItem_Price_HeaderUpdateOneRequiredWithoutPriceLinesNestedInput
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    headerId?: StringFieldUpdateOperationsInput | string
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    itemId?: StringFieldUpdateOperationsInput | string
+    itemName?: StringFieldUpdateOperationsInput | string
+    price?: IntFieldUpdateOperationsInput | number
+    activationDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineCreateManyInput = {
+    id?: number
+    headerId: string
+    customerCode: string
+    customerName: string
+    itemId: string
+    itemName: string
+    price: number
+    activationDate: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUpdateManyMutationInput = {
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    itemId?: StringFieldUpdateOperationsInput | string
+    itemName?: StringFieldUpdateOperationsInput | string
+    price?: IntFieldUpdateOperationsInput | number
+    activationDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    headerId?: StringFieldUpdateOperationsInput | string
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    itemId?: StringFieldUpdateOperationsInput | string
+    itemName?: StringFieldUpdateOperationsInput | string
+    price?: IntFieldUpdateOperationsInput | number
+    activationDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterAchievementCreateInput = {
+    customerCode: string
+    customerName: string
+    city: string
+    targetQty: number
+    targetAmount: bigint | number
+    vehicle: string
+    vehicleId: string
+    periodYear: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterAchievementUncheckedCreateInput = {
+    id?: number
+    customerCode: string
+    customerName: string
+    city: string
+    targetQty: number
+    targetAmount: bigint | number
+    vehicle: string
+    vehicleId: string
+    periodYear: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterAchievementUpdateInput = {
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    targetQty?: IntFieldUpdateOperationsInput | number
+    targetAmount?: BigIntFieldUpdateOperationsInput | bigint | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    periodYear?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterAchievementUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    targetQty?: IntFieldUpdateOperationsInput | number
+    targetAmount?: BigIntFieldUpdateOperationsInput | bigint | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    periodYear?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterAchievementCreateManyInput = {
+    id?: number
+    customerCode: string
+    customerName: string
+    city: string
+    targetQty: number
+    targetAmount: bigint | number
+    vehicle: string
+    vehicleId: string
+    periodYear: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterAchievementUpdateManyMutationInput = {
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    targetQty?: IntFieldUpdateOperationsInput | number
+    targetAmount?: BigIntFieldUpdateOperationsInput | bigint | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    periodYear?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterAchievementUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    city?: StringFieldUpdateOperationsInput | string
+    targetQty?: IntFieldUpdateOperationsInput | number
+    targetAmount?: BigIntFieldUpdateOperationsInput | bigint | number
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    periodYear?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9CreateInput = {
@@ -35614,10 +42383,10 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type CompanyListRelationFilter = {
-    every?: CompanyWhereInput
-    some?: CompanyWhereInput
-    none?: CompanyWhereInput
+  export type CompanySegmentLinkListRelationFilter = {
+    every?: CompanySegmentLinkWhereInput
+    some?: CompanySegmentLinkWhereInput
+    none?: CompanySegmentLinkWhereInput
   }
 
   export type SortOrderInput = {
@@ -35625,7 +42394,7 @@ export namespace Prisma {
     nulls?: NullsOrder
   }
 
-  export type CompanyOrderByRelationAggregateInput = {
+  export type CompanySegmentLinkOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -35719,28 +42488,6 @@ export namespace Prisma {
     not?: NestedUuidFilter<$PrismaModel> | string
   }
 
-  export type IntNullableFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type DateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -35750,11 +42497,6 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
-  export type CompanySegmentNullableScalarRelationFilter = {
-    is?: CompanySegmentWhereInput | null
-    isNot?: CompanySegmentWhereInput | null
   }
 
   export type ProfileListRelationFilter = {
@@ -35774,67 +42516,53 @@ export namespace Prisma {
 
   export type CompanyCountOrderByAggregateInput = {
     companyId?: SortOrder
-    segmentId?: SortOrder
     urlImage?: SortOrder
     companyName?: SortOrder
-    companyFoundingDate?: SortOrder
     companyStatus?: SortOrder
     companyTelpFax?: SortOrder
+    companyCity?: SortOrder
     companyAddress?: SortOrder
     companyEmail?: SortOrder
     npwp?: SortOrder
-    website?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    totalCapital?: SortOrder
     companyCode?: SortOrder
+    companyType?: SortOrder
     application?: SortOrder
-  }
-
-  export type CompanyAvgOrderByAggregateInput = {
-    segmentId?: SortOrder
   }
 
   export type CompanyMaxOrderByAggregateInput = {
     companyId?: SortOrder
-    segmentId?: SortOrder
     urlImage?: SortOrder
     companyName?: SortOrder
-    companyFoundingDate?: SortOrder
     companyStatus?: SortOrder
     companyTelpFax?: SortOrder
+    companyCity?: SortOrder
     companyAddress?: SortOrder
     companyEmail?: SortOrder
     npwp?: SortOrder
-    website?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    totalCapital?: SortOrder
     companyCode?: SortOrder
+    companyType?: SortOrder
     application?: SortOrder
   }
 
   export type CompanyMinOrderByAggregateInput = {
     companyId?: SortOrder
-    segmentId?: SortOrder
     urlImage?: SortOrder
     companyName?: SortOrder
-    companyFoundingDate?: SortOrder
     companyStatus?: SortOrder
     companyTelpFax?: SortOrder
+    companyCity?: SortOrder
     companyAddress?: SortOrder
     companyEmail?: SortOrder
     npwp?: SortOrder
-    website?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-    totalCapital?: SortOrder
     companyCode?: SortOrder
+    companyType?: SortOrder
     application?: SortOrder
-  }
-
-  export type CompanySumOrderByAggregateInput = {
-    segmentId?: SortOrder
   }
 
   export type UuidWithAggregatesFilter<$PrismaModel = never> = {
@@ -35852,36 +42580,6 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
-  }
-
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -35894,6 +42592,101 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type CompanyScalarRelationFilter = {
+    is?: CompanyWhereInput
+    isNot?: CompanyWhereInput
+  }
+
+  export type CompanySegmentScalarRelationFilter = {
+    is?: CompanySegmentWhereInput
+    isNot?: CompanySegmentWhereInput
+  }
+
+  export type CompanySegmentLinkCompanyIdSegmentIdCompoundUniqueInput = {
+    companyId: string
+    segmentId: number
+  }
+
+  export type CompanySegmentLinkCountOrderByAggregateInput = {
+    id?: SortOrder
+    companyId?: SortOrder
+    segmentId?: SortOrder
+  }
+
+  export type CompanySegmentLinkAvgOrderByAggregateInput = {
+    id?: SortOrder
+    segmentId?: SortOrder
+  }
+
+  export type CompanySegmentLinkMaxOrderByAggregateInput = {
+    id?: SortOrder
+    companyId?: SortOrder
+    segmentId?: SortOrder
+  }
+
+  export type CompanySegmentLinkMinOrderByAggregateInput = {
+    id?: SortOrder
+    companyId?: SortOrder
+    segmentId?: SortOrder
+  }
+
+  export type CompanySegmentLinkSumOrderByAggregateInput = {
+    id?: SortOrder
+    segmentId?: SortOrder
+  }
+
+  export type Distro_PO_IncentiveCountOrderByAggregateInput = {
+    id?: SortOrder
+    rangeFrom?: SortOrder
+    rangeTo?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    amount?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_IncentiveAvgOrderByAggregateInput = {
+    id?: SortOrder
+    rangeFrom?: SortOrder
+    rangeTo?: SortOrder
+    periodYear?: SortOrder
+    amount?: SortOrder
+  }
+
+  export type Distro_PO_IncentiveMaxOrderByAggregateInput = {
+    id?: SortOrder
+    rangeFrom?: SortOrder
+    rangeTo?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    amount?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_IncentiveMinOrderByAggregateInput = {
+    id?: SortOrder
+    rangeFrom?: SortOrder
+    rangeTo?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    amount?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_IncentiveSumOrderByAggregateInput = {
+    id?: SortOrder
+    rangeFrom?: SortOrder
+    rangeTo?: SortOrder
+    periodYear?: SortOrder
+    amount?: SortOrder
   }
 
   export type Distro_PO_LineListRelationFilter = {
@@ -35960,43 +42753,54 @@ export namespace Prisma {
 
   export type Distro_PO_LineCountOrderByAggregateInput = {
     id?: SortOrder
-    vehicleCategory?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
     spType?: SortOrder
     partName?: SortOrder
     partNumber?: SortOrder
     qty?: SortOrder
+    price?: SortOrder
     purchaseOrderId?: SortOrder
   }
 
   export type Distro_PO_LineAvgOrderByAggregateInput = {
     id?: SortOrder
     qty?: SortOrder
+    price?: SortOrder
     purchaseOrderId?: SortOrder
   }
 
   export type Distro_PO_LineMaxOrderByAggregateInput = {
     id?: SortOrder
-    vehicleCategory?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
     spType?: SortOrder
     partName?: SortOrder
     partNumber?: SortOrder
     qty?: SortOrder
+    price?: SortOrder
     purchaseOrderId?: SortOrder
   }
 
   export type Distro_PO_LineMinOrderByAggregateInput = {
     id?: SortOrder
-    vehicleCategory?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    category?: SortOrder
     spType?: SortOrder
     partName?: SortOrder
     partNumber?: SortOrder
     qty?: SortOrder
+    price?: SortOrder
     purchaseOrderId?: SortOrder
   }
 
   export type Distro_PO_LineSumOrderByAggregateInput = {
     id?: SortOrder
     qty?: SortOrder
+    price?: SortOrder
     purchaseOrderId?: SortOrder
   }
 
@@ -36014,12 +42818,10 @@ export namespace Prisma {
     spType?: SortOrder
     itemId?: SortOrder
     isActive?: SortOrder
-    price?: SortOrder
   }
 
   export type Distro_PO_MasterItemAvgOrderByAggregateInput = {
     id?: SortOrder
-    price?: SortOrder
   }
 
   export type Distro_PO_MasterItemMaxOrderByAggregateInput = {
@@ -36031,7 +42833,6 @@ export namespace Prisma {
     spType?: SortOrder
     itemId?: SortOrder
     isActive?: SortOrder
-    price?: SortOrder
   }
 
   export type Distro_PO_MasterItemMinOrderByAggregateInput = {
@@ -36043,12 +42844,10 @@ export namespace Prisma {
     spType?: SortOrder
     itemId?: SortOrder
     isActive?: SortOrder
-    price?: SortOrder
   }
 
   export type Distro_PO_MasterItemSumOrderByAggregateInput = {
     id?: SortOrder
-    price?: SortOrder
   }
 
   export type BoolWithAggregatesFilter<$PrismaModel = never> = {
@@ -36059,9 +42858,175 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type CompanyScalarRelationFilter = {
-    is?: CompanyWhereInput
-    isNot?: CompanyWhereInput
+  export type Distro_PO_MasterItem_Price_LineListRelationFilter = {
+    every?: Distro_PO_MasterItem_Price_LineWhereInput
+    some?: Distro_PO_MasterItem_Price_LineWhereInput
+    none?: Distro_PO_MasterItem_Price_LineWhereInput
+  }
+
+  export type Distro_PO_MasterItem_Price_LineOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderCountOrderByAggregateInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    createdBy?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderMaxOrderByAggregateInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    createdBy?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderMinOrderByAggregateInput = {
+    id?: SortOrder
+    description?: SortOrder
+    createdAt?: SortOrder
+    createdBy?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderScalarRelationFilter = {
+    is?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    isNot?: Distro_PO_MasterItem_Price_HeaderWhereInput
+  }
+
+  export type Distro_PO_MasterItem_Price_LineCountOrderByAggregateInput = {
+    id?: SortOrder
+    headerId?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    itemId?: SortOrder
+    itemName?: SortOrder
+    price?: SortOrder
+    activationDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterItem_Price_LineAvgOrderByAggregateInput = {
+    id?: SortOrder
+    price?: SortOrder
+  }
+
+  export type Distro_PO_MasterItem_Price_LineMaxOrderByAggregateInput = {
+    id?: SortOrder
+    headerId?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    itemId?: SortOrder
+    itemName?: SortOrder
+    price?: SortOrder
+    activationDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterItem_Price_LineMinOrderByAggregateInput = {
+    id?: SortOrder
+    headerId?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    itemId?: SortOrder
+    itemName?: SortOrder
+    price?: SortOrder
+    activationDate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterItem_Price_LineSumOrderByAggregateInput = {
+    id?: SortOrder
+    price?: SortOrder
+  }
+
+  export type BigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
+  }
+
+  export type Distro_PO_MasterAchievementCountOrderByAggregateInput = {
+    id?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    city?: SortOrder
+    targetQty?: SortOrder
+    targetAmount?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterAchievementAvgOrderByAggregateInput = {
+    id?: SortOrder
+    targetQty?: SortOrder
+    targetAmount?: SortOrder
+    periodYear?: SortOrder
+  }
+
+  export type Distro_PO_MasterAchievementMaxOrderByAggregateInput = {
+    id?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    city?: SortOrder
+    targetQty?: SortOrder
+    targetAmount?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterAchievementMinOrderByAggregateInput = {
+    id?: SortOrder
+    customerCode?: SortOrder
+    customerName?: SortOrder
+    city?: SortOrder
+    targetQty?: SortOrder
+    targetAmount?: SortOrder
+    vehicle?: SortOrder
+    vehicleId?: SortOrder
+    periodYear?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type Distro_PO_MasterAchievementSumOrderByAggregateInput = {
+    id?: SortOrder
+    targetQty?: SortOrder
+    targetAmount?: SortOrder
+    periodYear?: SortOrder
+  }
+
+  export type BigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
   }
 
   export type FormL9BankInfoNullableScalarRelationFilter = {
@@ -36175,6 +43140,17 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
   export type FormL9GeneralInformationContinueNullableScalarRelationFilter = {
     is?: FormL9GeneralInformationContinueWhereInput | null
     isNot?: FormL9GeneralInformationContinueWhereInput | null
@@ -36226,6 +43202,20 @@ export namespace Prisma {
     segmentId?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type FormL9GeneralInformationScalarRelationFilter = {
@@ -36287,6 +43277,17 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
   export type FormL9EmployeCountOrderByAggregateInput = {
     formL9EmployeId?: SortOrder
     formL9Id?: SortOrder
@@ -36342,6 +43343,22 @@ export namespace Prisma {
     production?: SortOrder
     management?: SortOrder
     other?: SortOrder
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
   export type FormL9WorkExperienceCountOrderByAggregateInput = {
@@ -36939,18 +43956,18 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type CompanyCreateNestedManyWithoutSegmentInput = {
-    create?: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput> | CompanyCreateWithoutSegmentInput[] | CompanyUncheckedCreateWithoutSegmentInput[]
-    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentInput | CompanyCreateOrConnectWithoutSegmentInput[]
-    createMany?: CompanyCreateManySegmentInputEnvelope
-    connect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+  export type CompanySegmentLinkCreateNestedManyWithoutSegmentInput = {
+    create?: XOR<CompanySegmentLinkCreateWithoutSegmentInput, CompanySegmentLinkUncheckedCreateWithoutSegmentInput> | CompanySegmentLinkCreateWithoutSegmentInput[] | CompanySegmentLinkUncheckedCreateWithoutSegmentInput[]
+    connectOrCreate?: CompanySegmentLinkCreateOrConnectWithoutSegmentInput | CompanySegmentLinkCreateOrConnectWithoutSegmentInput[]
+    createMany?: CompanySegmentLinkCreateManySegmentInputEnvelope
+    connect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
   }
 
-  export type CompanyUncheckedCreateNestedManyWithoutSegmentInput = {
-    create?: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput> | CompanyCreateWithoutSegmentInput[] | CompanyUncheckedCreateWithoutSegmentInput[]
-    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentInput | CompanyCreateOrConnectWithoutSegmentInput[]
-    createMany?: CompanyCreateManySegmentInputEnvelope
-    connect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
+  export type CompanySegmentLinkUncheckedCreateNestedManyWithoutSegmentInput = {
+    create?: XOR<CompanySegmentLinkCreateWithoutSegmentInput, CompanySegmentLinkUncheckedCreateWithoutSegmentInput> | CompanySegmentLinkCreateWithoutSegmentInput[] | CompanySegmentLinkUncheckedCreateWithoutSegmentInput[]
+    connectOrCreate?: CompanySegmentLinkCreateOrConnectWithoutSegmentInput | CompanySegmentLinkCreateOrConnectWithoutSegmentInput[]
+    createMany?: CompanySegmentLinkCreateManySegmentInputEnvelope
+    connect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
   }
 
   export type StringFieldUpdateOperationsInput = {
@@ -36961,18 +43978,18 @@ export namespace Prisma {
     set?: string | null
   }
 
-  export type CompanyUpdateManyWithoutSegmentNestedInput = {
-    create?: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput> | CompanyCreateWithoutSegmentInput[] | CompanyUncheckedCreateWithoutSegmentInput[]
-    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentInput | CompanyCreateOrConnectWithoutSegmentInput[]
-    upsert?: CompanyUpsertWithWhereUniqueWithoutSegmentInput | CompanyUpsertWithWhereUniqueWithoutSegmentInput[]
-    createMany?: CompanyCreateManySegmentInputEnvelope
-    set?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
-    disconnect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
-    delete?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
-    connect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
-    update?: CompanyUpdateWithWhereUniqueWithoutSegmentInput | CompanyUpdateWithWhereUniqueWithoutSegmentInput[]
-    updateMany?: CompanyUpdateManyWithWhereWithoutSegmentInput | CompanyUpdateManyWithWhereWithoutSegmentInput[]
-    deleteMany?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
+  export type CompanySegmentLinkUpdateManyWithoutSegmentNestedInput = {
+    create?: XOR<CompanySegmentLinkCreateWithoutSegmentInput, CompanySegmentLinkUncheckedCreateWithoutSegmentInput> | CompanySegmentLinkCreateWithoutSegmentInput[] | CompanySegmentLinkUncheckedCreateWithoutSegmentInput[]
+    connectOrCreate?: CompanySegmentLinkCreateOrConnectWithoutSegmentInput | CompanySegmentLinkCreateOrConnectWithoutSegmentInput[]
+    upsert?: CompanySegmentLinkUpsertWithWhereUniqueWithoutSegmentInput | CompanySegmentLinkUpsertWithWhereUniqueWithoutSegmentInput[]
+    createMany?: CompanySegmentLinkCreateManySegmentInputEnvelope
+    set?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    disconnect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    delete?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    connect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    update?: CompanySegmentLinkUpdateWithWhereUniqueWithoutSegmentInput | CompanySegmentLinkUpdateWithWhereUniqueWithoutSegmentInput[]
+    updateMany?: CompanySegmentLinkUpdateManyWithWhereWithoutSegmentInput | CompanySegmentLinkUpdateManyWithWhereWithoutSegmentInput[]
+    deleteMany?: CompanySegmentLinkScalarWhereInput | CompanySegmentLinkScalarWhereInput[]
   }
 
   export type IntFieldUpdateOperationsInput = {
@@ -36983,24 +44000,25 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type CompanyUncheckedUpdateManyWithoutSegmentNestedInput = {
-    create?: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput> | CompanyCreateWithoutSegmentInput[] | CompanyUncheckedCreateWithoutSegmentInput[]
-    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentInput | CompanyCreateOrConnectWithoutSegmentInput[]
-    upsert?: CompanyUpsertWithWhereUniqueWithoutSegmentInput | CompanyUpsertWithWhereUniqueWithoutSegmentInput[]
-    createMany?: CompanyCreateManySegmentInputEnvelope
-    set?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
-    disconnect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
-    delete?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
-    connect?: CompanyWhereUniqueInput | CompanyWhereUniqueInput[]
-    update?: CompanyUpdateWithWhereUniqueWithoutSegmentInput | CompanyUpdateWithWhereUniqueWithoutSegmentInput[]
-    updateMany?: CompanyUpdateManyWithWhereWithoutSegmentInput | CompanyUpdateManyWithWhereWithoutSegmentInput[]
-    deleteMany?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
+  export type CompanySegmentLinkUncheckedUpdateManyWithoutSegmentNestedInput = {
+    create?: XOR<CompanySegmentLinkCreateWithoutSegmentInput, CompanySegmentLinkUncheckedCreateWithoutSegmentInput> | CompanySegmentLinkCreateWithoutSegmentInput[] | CompanySegmentLinkUncheckedCreateWithoutSegmentInput[]
+    connectOrCreate?: CompanySegmentLinkCreateOrConnectWithoutSegmentInput | CompanySegmentLinkCreateOrConnectWithoutSegmentInput[]
+    upsert?: CompanySegmentLinkUpsertWithWhereUniqueWithoutSegmentInput | CompanySegmentLinkUpsertWithWhereUniqueWithoutSegmentInput[]
+    createMany?: CompanySegmentLinkCreateManySegmentInputEnvelope
+    set?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    disconnect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    delete?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    connect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    update?: CompanySegmentLinkUpdateWithWhereUniqueWithoutSegmentInput | CompanySegmentLinkUpdateWithWhereUniqueWithoutSegmentInput[]
+    updateMany?: CompanySegmentLinkUpdateManyWithWhereWithoutSegmentInput | CompanySegmentLinkUpdateManyWithWhereWithoutSegmentInput[]
+    deleteMany?: CompanySegmentLinkScalarWhereInput | CompanySegmentLinkScalarWhereInput[]
   }
 
-  export type CompanySegmentCreateNestedOneWithoutCompanyInput = {
-    create?: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
-    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompanyInput
-    connect?: CompanySegmentWhereUniqueInput
+  export type CompanySegmentLinkCreateNestedManyWithoutCompanyInput = {
+    create?: XOR<CompanySegmentLinkCreateWithoutCompanyInput, CompanySegmentLinkUncheckedCreateWithoutCompanyInput> | CompanySegmentLinkCreateWithoutCompanyInput[] | CompanySegmentLinkUncheckedCreateWithoutCompanyInput[]
+    connectOrCreate?: CompanySegmentLinkCreateOrConnectWithoutCompanyInput | CompanySegmentLinkCreateOrConnectWithoutCompanyInput[]
+    createMany?: CompanySegmentLinkCreateManyCompanyInputEnvelope
+    connect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
   }
 
   export type ProfileCreateNestedManyWithoutCompanyInput = {
@@ -37016,6 +44034,13 @@ export namespace Prisma {
     connect?: FormL9WhereUniqueInput
   }
 
+  export type CompanySegmentLinkUncheckedCreateNestedManyWithoutCompanyInput = {
+    create?: XOR<CompanySegmentLinkCreateWithoutCompanyInput, CompanySegmentLinkUncheckedCreateWithoutCompanyInput> | CompanySegmentLinkCreateWithoutCompanyInput[] | CompanySegmentLinkUncheckedCreateWithoutCompanyInput[]
+    connectOrCreate?: CompanySegmentLinkCreateOrConnectWithoutCompanyInput | CompanySegmentLinkCreateOrConnectWithoutCompanyInput[]
+    createMany?: CompanySegmentLinkCreateManyCompanyInputEnvelope
+    connect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+  }
+
   export type ProfileUncheckedCreateNestedManyWithoutCompanyInput = {
     create?: XOR<ProfileCreateWithoutCompanyInput, ProfileUncheckedCreateWithoutCompanyInput> | ProfileCreateWithoutCompanyInput[] | ProfileUncheckedCreateWithoutCompanyInput[]
     connectOrCreate?: ProfileCreateOrConnectWithoutCompanyInput | ProfileCreateOrConnectWithoutCompanyInput[]
@@ -37029,22 +44054,22 @@ export namespace Prisma {
     connect?: FormL9WhereUniqueInput
   }
 
-  export type NullableDateTimeFieldUpdateOperationsInput = {
-    set?: Date | string | null
-  }
-
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
 
-  export type CompanySegmentUpdateOneWithoutCompanyNestedInput = {
-    create?: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
-    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompanyInput
-    upsert?: CompanySegmentUpsertWithoutCompanyInput
-    disconnect?: CompanySegmentWhereInput | boolean
-    delete?: CompanySegmentWhereInput | boolean
-    connect?: CompanySegmentWhereUniqueInput
-    update?: XOR<XOR<CompanySegmentUpdateToOneWithWhereWithoutCompanyInput, CompanySegmentUpdateWithoutCompanyInput>, CompanySegmentUncheckedUpdateWithoutCompanyInput>
+  export type CompanySegmentLinkUpdateManyWithoutCompanyNestedInput = {
+    create?: XOR<CompanySegmentLinkCreateWithoutCompanyInput, CompanySegmentLinkUncheckedCreateWithoutCompanyInput> | CompanySegmentLinkCreateWithoutCompanyInput[] | CompanySegmentLinkUncheckedCreateWithoutCompanyInput[]
+    connectOrCreate?: CompanySegmentLinkCreateOrConnectWithoutCompanyInput | CompanySegmentLinkCreateOrConnectWithoutCompanyInput[]
+    upsert?: CompanySegmentLinkUpsertWithWhereUniqueWithoutCompanyInput | CompanySegmentLinkUpsertWithWhereUniqueWithoutCompanyInput[]
+    createMany?: CompanySegmentLinkCreateManyCompanyInputEnvelope
+    set?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    disconnect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    delete?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    connect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    update?: CompanySegmentLinkUpdateWithWhereUniqueWithoutCompanyInput | CompanySegmentLinkUpdateWithWhereUniqueWithoutCompanyInput[]
+    updateMany?: CompanySegmentLinkUpdateManyWithWhereWithoutCompanyInput | CompanySegmentLinkUpdateManyWithWhereWithoutCompanyInput[]
+    deleteMany?: CompanySegmentLinkScalarWhereInput | CompanySegmentLinkScalarWhereInput[]
   }
 
   export type ProfileUpdateManyWithoutCompanyNestedInput = {
@@ -37071,12 +44096,18 @@ export namespace Prisma {
     update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutCompanyInput, FormL9UpdateWithoutCompanyInput>, FormL9UncheckedUpdateWithoutCompanyInput>
   }
 
-  export type NullableIntFieldUpdateOperationsInput = {
-    set?: number | null
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
+  export type CompanySegmentLinkUncheckedUpdateManyWithoutCompanyNestedInput = {
+    create?: XOR<CompanySegmentLinkCreateWithoutCompanyInput, CompanySegmentLinkUncheckedCreateWithoutCompanyInput> | CompanySegmentLinkCreateWithoutCompanyInput[] | CompanySegmentLinkUncheckedCreateWithoutCompanyInput[]
+    connectOrCreate?: CompanySegmentLinkCreateOrConnectWithoutCompanyInput | CompanySegmentLinkCreateOrConnectWithoutCompanyInput[]
+    upsert?: CompanySegmentLinkUpsertWithWhereUniqueWithoutCompanyInput | CompanySegmentLinkUpsertWithWhereUniqueWithoutCompanyInput[]
+    createMany?: CompanySegmentLinkCreateManyCompanyInputEnvelope
+    set?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    disconnect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    delete?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    connect?: CompanySegmentLinkWhereUniqueInput | CompanySegmentLinkWhereUniqueInput[]
+    update?: CompanySegmentLinkUpdateWithWhereUniqueWithoutCompanyInput | CompanySegmentLinkUpdateWithWhereUniqueWithoutCompanyInput[]
+    updateMany?: CompanySegmentLinkUpdateManyWithWhereWithoutCompanyInput | CompanySegmentLinkUpdateManyWithWhereWithoutCompanyInput[]
+    deleteMany?: CompanySegmentLinkScalarWhereInput | CompanySegmentLinkScalarWhereInput[]
   }
 
   export type ProfileUncheckedUpdateManyWithoutCompanyNestedInput = {
@@ -37101,6 +44132,34 @@ export namespace Prisma {
     delete?: FormL9WhereInput | boolean
     connect?: FormL9WhereUniqueInput
     update?: XOR<XOR<FormL9UpdateToOneWithWhereWithoutCompanyInput, FormL9UpdateWithoutCompanyInput>, FormL9UncheckedUpdateWithoutCompanyInput>
+  }
+
+  export type CompanyCreateNestedOneWithoutSegmentsInput = {
+    create?: XOR<CompanyCreateWithoutSegmentsInput, CompanyUncheckedCreateWithoutSegmentsInput>
+    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentsInput
+    connect?: CompanyWhereUniqueInput
+  }
+
+  export type CompanySegmentCreateNestedOneWithoutCompaniesInput = {
+    create?: XOR<CompanySegmentCreateWithoutCompaniesInput, CompanySegmentUncheckedCreateWithoutCompaniesInput>
+    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompaniesInput
+    connect?: CompanySegmentWhereUniqueInput
+  }
+
+  export type CompanyUpdateOneRequiredWithoutSegmentsNestedInput = {
+    create?: XOR<CompanyCreateWithoutSegmentsInput, CompanyUncheckedCreateWithoutSegmentsInput>
+    connectOrCreate?: CompanyCreateOrConnectWithoutSegmentsInput
+    upsert?: CompanyUpsertWithoutSegmentsInput
+    connect?: CompanyWhereUniqueInput
+    update?: XOR<XOR<CompanyUpdateToOneWithWhereWithoutSegmentsInput, CompanyUpdateWithoutSegmentsInput>, CompanyUncheckedUpdateWithoutSegmentsInput>
+  }
+
+  export type CompanySegmentUpdateOneRequiredWithoutCompaniesNestedInput = {
+    create?: XOR<CompanySegmentCreateWithoutCompaniesInput, CompanySegmentUncheckedCreateWithoutCompaniesInput>
+    connectOrCreate?: CompanySegmentCreateOrConnectWithoutCompaniesInput
+    upsert?: CompanySegmentUpsertWithoutCompaniesInput
+    connect?: CompanySegmentWhereUniqueInput
+    update?: XOR<XOR<CompanySegmentUpdateToOneWithWhereWithoutCompaniesInput, CompanySegmentUpdateWithoutCompaniesInput>, CompanySegmentUncheckedUpdateWithoutCompaniesInput>
   }
 
   export type Distro_PO_LineCreateNestedManyWithoutPurchaseOrderInput = {
@@ -37161,6 +44220,70 @@ export namespace Prisma {
 
   export type BoolFieldUpdateOperationsInput = {
     set?: boolean
+  }
+
+  export type Distro_PO_MasterItem_Price_LineCreateNestedManyWithoutHeaderInput = {
+    create?: XOR<Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput, Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput> | Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput[] | Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput[]
+    connectOrCreate?: Distro_PO_MasterItem_Price_LineCreateOrConnectWithoutHeaderInput | Distro_PO_MasterItem_Price_LineCreateOrConnectWithoutHeaderInput[]
+    createMany?: Distro_PO_MasterItem_Price_LineCreateManyHeaderInputEnvelope
+    connect?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUncheckedCreateNestedManyWithoutHeaderInput = {
+    create?: XOR<Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput, Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput> | Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput[] | Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput[]
+    connectOrCreate?: Distro_PO_MasterItem_Price_LineCreateOrConnectWithoutHeaderInput | Distro_PO_MasterItem_Price_LineCreateOrConnectWithoutHeaderInput[]
+    createMany?: Distro_PO_MasterItem_Price_LineCreateManyHeaderInputEnvelope
+    connect?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUpdateManyWithoutHeaderNestedInput = {
+    create?: XOR<Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput, Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput> | Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput[] | Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput[]
+    connectOrCreate?: Distro_PO_MasterItem_Price_LineCreateOrConnectWithoutHeaderInput | Distro_PO_MasterItem_Price_LineCreateOrConnectWithoutHeaderInput[]
+    upsert?: Distro_PO_MasterItem_Price_LineUpsertWithWhereUniqueWithoutHeaderInput | Distro_PO_MasterItem_Price_LineUpsertWithWhereUniqueWithoutHeaderInput[]
+    createMany?: Distro_PO_MasterItem_Price_LineCreateManyHeaderInputEnvelope
+    set?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+    disconnect?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+    delete?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+    connect?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+    update?: Distro_PO_MasterItem_Price_LineUpdateWithWhereUniqueWithoutHeaderInput | Distro_PO_MasterItem_Price_LineUpdateWithWhereUniqueWithoutHeaderInput[]
+    updateMany?: Distro_PO_MasterItem_Price_LineUpdateManyWithWhereWithoutHeaderInput | Distro_PO_MasterItem_Price_LineUpdateManyWithWhereWithoutHeaderInput[]
+    deleteMany?: Distro_PO_MasterItem_Price_LineScalarWhereInput | Distro_PO_MasterItem_Price_LineScalarWhereInput[]
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUncheckedUpdateManyWithoutHeaderNestedInput = {
+    create?: XOR<Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput, Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput> | Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput[] | Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput[]
+    connectOrCreate?: Distro_PO_MasterItem_Price_LineCreateOrConnectWithoutHeaderInput | Distro_PO_MasterItem_Price_LineCreateOrConnectWithoutHeaderInput[]
+    upsert?: Distro_PO_MasterItem_Price_LineUpsertWithWhereUniqueWithoutHeaderInput | Distro_PO_MasterItem_Price_LineUpsertWithWhereUniqueWithoutHeaderInput[]
+    createMany?: Distro_PO_MasterItem_Price_LineCreateManyHeaderInputEnvelope
+    set?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+    disconnect?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+    delete?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+    connect?: Distro_PO_MasterItem_Price_LineWhereUniqueInput | Distro_PO_MasterItem_Price_LineWhereUniqueInput[]
+    update?: Distro_PO_MasterItem_Price_LineUpdateWithWhereUniqueWithoutHeaderInput | Distro_PO_MasterItem_Price_LineUpdateWithWhereUniqueWithoutHeaderInput[]
+    updateMany?: Distro_PO_MasterItem_Price_LineUpdateManyWithWhereWithoutHeaderInput | Distro_PO_MasterItem_Price_LineUpdateManyWithWhereWithoutHeaderInput[]
+    deleteMany?: Distro_PO_MasterItem_Price_LineScalarWhereInput | Distro_PO_MasterItem_Price_LineScalarWhereInput[]
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderCreateNestedOneWithoutPriceLinesInput = {
+    create?: XOR<Distro_PO_MasterItem_Price_HeaderCreateWithoutPriceLinesInput, Distro_PO_MasterItem_Price_HeaderUncheckedCreateWithoutPriceLinesInput>
+    connectOrCreate?: Distro_PO_MasterItem_Price_HeaderCreateOrConnectWithoutPriceLinesInput
+    connect?: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUpdateOneRequiredWithoutPriceLinesNestedInput = {
+    create?: XOR<Distro_PO_MasterItem_Price_HeaderCreateWithoutPriceLinesInput, Distro_PO_MasterItem_Price_HeaderUncheckedCreateWithoutPriceLinesInput>
+    connectOrCreate?: Distro_PO_MasterItem_Price_HeaderCreateOrConnectWithoutPriceLinesInput
+    upsert?: Distro_PO_MasterItem_Price_HeaderUpsertWithoutPriceLinesInput
+    connect?: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+    update?: XOR<XOR<Distro_PO_MasterItem_Price_HeaderUpdateToOneWithWhereWithoutPriceLinesInput, Distro_PO_MasterItem_Price_HeaderUpdateWithoutPriceLinesInput>, Distro_PO_MasterItem_Price_HeaderUncheckedUpdateWithoutPriceLinesInput>
+  }
+
+  export type BigIntFieldUpdateOperationsInput = {
+    set?: bigint | number
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
   }
 
   export type CompanyCreateNestedOneWithoutFormL9Input = {
@@ -37421,6 +44544,10 @@ export namespace Prisma {
     connect?: FormL9GeneralInformationContinueWhereUniqueInput
   }
 
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
+  }
+
   export type FormL9UpdateOneRequiredWithoutGeneralInformationNestedInput = {
     create?: XOR<FormL9CreateWithoutGeneralInformationInput, FormL9UncheckedCreateWithoutGeneralInformationInput>
     connectOrCreate?: FormL9CreateOrConnectWithoutGeneralInformationInput
@@ -37481,6 +44608,14 @@ export namespace Prisma {
     create?: XOR<FormL9CreateWithoutEmployeeInfoInput, FormL9UncheckedCreateWithoutEmployeeInfoInput>
     connectOrCreate?: FormL9CreateOrConnectWithoutEmployeeInfoInput
     connect?: FormL9WhereUniqueInput
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type FormL9UpdateOneRequiredWithoutEmployeeInfoNestedInput = {
@@ -38209,17 +45344,6 @@ export namespace Prisma {
     not?: NestedUuidFilter<$PrismaModel> | string
   }
 
-  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
-  }
-
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -38243,47 +45367,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _avg?: NestedFloatNullableFilter<$PrismaModel>
-    _sum?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedIntNullableFilter<$PrismaModel>
-    _max?: NestedIntNullableFilter<$PrismaModel>
-  }
-
-  export type NestedFloatNullableFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel> | null
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
-  }
-
-  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedDateTimeNullableFilter<$PrismaModel>
-    _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -38313,6 +45396,85 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
+  export type NestedBigIntFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntFilter<$PrismaModel> | bigint | number
+  }
+
+  export type NestedBigIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    in?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    notIn?: bigint[] | number[] | ListBigIntFieldRefInput<$PrismaModel>
+    lt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    lte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gt?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    gte?: bigint | number | BigIntFieldRefInput<$PrismaModel>
+    not?: NestedBigIntWithAggregatesFilter<$PrismaModel> | bigint | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedBigIntFilter<$PrismaModel>
+    _min?: NestedBigIntFilter<$PrismaModel>
+    _max?: NestedBigIntFilter<$PrismaModel>
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel> | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListIntFieldRefInput<$PrismaModel> | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
   export type NestedUuidNullableFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -38338,108 +45500,67 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type CompanyCreateWithoutSegmentInput = {
-    companyId?: string
-    urlImage?: string | null
-    companyName?: string | null
-    companyFoundingDate?: Date | string | null
-    companyStatus?: string | null
-    companyTelpFax?: string | null
-    companyAddress?: string | null
-    companyEmail?: string | null
-    npwp?: string | null
-    website?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    totalCapital?: string | null
-    companyCode?: string | null
-    application?: string
-    profile?: ProfileCreateNestedManyWithoutCompanyInput
-    formL9?: FormL9CreateNestedOneWithoutCompanyInput
+  export type CompanySegmentLinkCreateWithoutSegmentInput = {
+    company: CompanyCreateNestedOneWithoutSegmentsInput
   }
 
-  export type CompanyUncheckedCreateWithoutSegmentInput = {
-    companyId?: string
-    urlImage?: string | null
-    companyName?: string | null
-    companyFoundingDate?: Date | string | null
-    companyStatus?: string | null
-    companyTelpFax?: string | null
-    companyAddress?: string | null
-    companyEmail?: string | null
-    npwp?: string | null
-    website?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    totalCapital?: string | null
-    companyCode?: string | null
-    application?: string
-    profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
-    formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
+  export type CompanySegmentLinkUncheckedCreateWithoutSegmentInput = {
+    id?: number
+    companyId: string
   }
 
-  export type CompanyCreateOrConnectWithoutSegmentInput = {
-    where: CompanyWhereUniqueInput
-    create: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput>
+  export type CompanySegmentLinkCreateOrConnectWithoutSegmentInput = {
+    where: CompanySegmentLinkWhereUniqueInput
+    create: XOR<CompanySegmentLinkCreateWithoutSegmentInput, CompanySegmentLinkUncheckedCreateWithoutSegmentInput>
   }
 
-  export type CompanyCreateManySegmentInputEnvelope = {
-    data: CompanyCreateManySegmentInput | CompanyCreateManySegmentInput[]
+  export type CompanySegmentLinkCreateManySegmentInputEnvelope = {
+    data: CompanySegmentLinkCreateManySegmentInput | CompanySegmentLinkCreateManySegmentInput[]
     skipDuplicates?: boolean
   }
 
-  export type CompanyUpsertWithWhereUniqueWithoutSegmentInput = {
-    where: CompanyWhereUniqueInput
-    update: XOR<CompanyUpdateWithoutSegmentInput, CompanyUncheckedUpdateWithoutSegmentInput>
-    create: XOR<CompanyCreateWithoutSegmentInput, CompanyUncheckedCreateWithoutSegmentInput>
+  export type CompanySegmentLinkUpsertWithWhereUniqueWithoutSegmentInput = {
+    where: CompanySegmentLinkWhereUniqueInput
+    update: XOR<CompanySegmentLinkUpdateWithoutSegmentInput, CompanySegmentLinkUncheckedUpdateWithoutSegmentInput>
+    create: XOR<CompanySegmentLinkCreateWithoutSegmentInput, CompanySegmentLinkUncheckedCreateWithoutSegmentInput>
   }
 
-  export type CompanyUpdateWithWhereUniqueWithoutSegmentInput = {
-    where: CompanyWhereUniqueInput
-    data: XOR<CompanyUpdateWithoutSegmentInput, CompanyUncheckedUpdateWithoutSegmentInput>
+  export type CompanySegmentLinkUpdateWithWhereUniqueWithoutSegmentInput = {
+    where: CompanySegmentLinkWhereUniqueInput
+    data: XOR<CompanySegmentLinkUpdateWithoutSegmentInput, CompanySegmentLinkUncheckedUpdateWithoutSegmentInput>
   }
 
-  export type CompanyUpdateManyWithWhereWithoutSegmentInput = {
-    where: CompanyScalarWhereInput
-    data: XOR<CompanyUpdateManyMutationInput, CompanyUncheckedUpdateManyWithoutSegmentInput>
+  export type CompanySegmentLinkUpdateManyWithWhereWithoutSegmentInput = {
+    where: CompanySegmentLinkScalarWhereInput
+    data: XOR<CompanySegmentLinkUpdateManyMutationInput, CompanySegmentLinkUncheckedUpdateManyWithoutSegmentInput>
   }
 
-  export type CompanyScalarWhereInput = {
-    AND?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
-    OR?: CompanyScalarWhereInput[]
-    NOT?: CompanyScalarWhereInput | CompanyScalarWhereInput[]
-    companyId?: UuidFilter<"Company"> | string
-    segmentId?: IntNullableFilter<"Company"> | number | null
-    urlImage?: StringNullableFilter<"Company"> | string | null
-    companyName?: StringNullableFilter<"Company"> | string | null
-    companyFoundingDate?: DateTimeNullableFilter<"Company"> | Date | string | null
-    companyStatus?: StringNullableFilter<"Company"> | string | null
-    companyTelpFax?: StringNullableFilter<"Company"> | string | null
-    companyAddress?: StringNullableFilter<"Company"> | string | null
-    companyEmail?: StringNullableFilter<"Company"> | string | null
-    npwp?: StringNullableFilter<"Company"> | string | null
-    website?: StringNullableFilter<"Company"> | string | null
-    createdAt?: DateTimeFilter<"Company"> | Date | string
-    updatedAt?: DateTimeFilter<"Company"> | Date | string
-    totalCapital?: StringNullableFilter<"Company"> | string | null
-    companyCode?: StringNullableFilter<"Company"> | string | null
-    application?: StringFilter<"Company"> | string
+  export type CompanySegmentLinkScalarWhereInput = {
+    AND?: CompanySegmentLinkScalarWhereInput | CompanySegmentLinkScalarWhereInput[]
+    OR?: CompanySegmentLinkScalarWhereInput[]
+    NOT?: CompanySegmentLinkScalarWhereInput | CompanySegmentLinkScalarWhereInput[]
+    id?: IntFilter<"CompanySegmentLink"> | number
+    companyId?: UuidFilter<"CompanySegmentLink"> | string
+    segmentId?: IntFilter<"CompanySegmentLink"> | number
   }
 
-  export type CompanySegmentCreateWithoutCompanyInput = {
-    segmentName: string
-    description?: string | null
+  export type CompanySegmentLinkCreateWithoutCompanyInput = {
+    segment: CompanySegmentCreateNestedOneWithoutCompaniesInput
   }
 
-  export type CompanySegmentUncheckedCreateWithoutCompanyInput = {
-    segmentId?: number
-    segmentName: string
-    description?: string | null
+  export type CompanySegmentLinkUncheckedCreateWithoutCompanyInput = {
+    id?: number
+    segmentId: number
   }
 
-  export type CompanySegmentCreateOrConnectWithoutCompanyInput = {
-    where: CompanySegmentWhereUniqueInput
-    create: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
+  export type CompanySegmentLinkCreateOrConnectWithoutCompanyInput = {
+    where: CompanySegmentLinkWhereUniqueInput
+    create: XOR<CompanySegmentLinkCreateWithoutCompanyInput, CompanySegmentLinkUncheckedCreateWithoutCompanyInput>
+  }
+
+  export type CompanySegmentLinkCreateManyCompanyInputEnvelope = {
+    data: CompanySegmentLinkCreateManyCompanyInput | CompanySegmentLinkCreateManyCompanyInput[]
+    skipDuplicates?: boolean
   }
 
   export type ProfileCreateWithoutCompanyInput = {
@@ -38501,26 +45622,20 @@ export namespace Prisma {
     create: XOR<FormL9CreateWithoutCompanyInput, FormL9UncheckedCreateWithoutCompanyInput>
   }
 
-  export type CompanySegmentUpsertWithoutCompanyInput = {
-    update: XOR<CompanySegmentUpdateWithoutCompanyInput, CompanySegmentUncheckedUpdateWithoutCompanyInput>
-    create: XOR<CompanySegmentCreateWithoutCompanyInput, CompanySegmentUncheckedCreateWithoutCompanyInput>
-    where?: CompanySegmentWhereInput
+  export type CompanySegmentLinkUpsertWithWhereUniqueWithoutCompanyInput = {
+    where: CompanySegmentLinkWhereUniqueInput
+    update: XOR<CompanySegmentLinkUpdateWithoutCompanyInput, CompanySegmentLinkUncheckedUpdateWithoutCompanyInput>
+    create: XOR<CompanySegmentLinkCreateWithoutCompanyInput, CompanySegmentLinkUncheckedCreateWithoutCompanyInput>
   }
 
-  export type CompanySegmentUpdateToOneWithWhereWithoutCompanyInput = {
-    where?: CompanySegmentWhereInput
-    data: XOR<CompanySegmentUpdateWithoutCompanyInput, CompanySegmentUncheckedUpdateWithoutCompanyInput>
+  export type CompanySegmentLinkUpdateWithWhereUniqueWithoutCompanyInput = {
+    where: CompanySegmentLinkWhereUniqueInput
+    data: XOR<CompanySegmentLinkUpdateWithoutCompanyInput, CompanySegmentLinkUncheckedUpdateWithoutCompanyInput>
   }
 
-  export type CompanySegmentUpdateWithoutCompanyInput = {
-    segmentName?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
-  }
-
-  export type CompanySegmentUncheckedUpdateWithoutCompanyInput = {
-    segmentId?: IntFieldUpdateOperationsInput | number
-    segmentName?: StringFieldUpdateOperationsInput | string
-    description?: NullableStringFieldUpdateOperationsInput | string | null
+  export type CompanySegmentLinkUpdateManyWithWhereWithoutCompanyInput = {
+    where: CompanySegmentLinkScalarWhereInput
+    data: XOR<CompanySegmentLinkUpdateManyMutationInput, CompanySegmentLinkUncheckedUpdateManyWithoutCompanyInput>
   }
 
   export type ProfileUpsertWithWhereUniqueWithoutCompanyInput = {
@@ -38589,21 +45704,157 @@ export namespace Prisma {
     workExperiences?: FormL9WorkExperienceUncheckedUpdateManyWithoutFormL9NestedInput
   }
 
+  export type CompanyCreateWithoutSegmentsInput = {
+    companyId?: string
+    urlImage?: string | null
+    companyName?: string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyCity?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    companyCode?: string | null
+    companyType?: string | null
+    application?: string
+    profile?: ProfileCreateNestedManyWithoutCompanyInput
+    formL9?: FormL9CreateNestedOneWithoutCompanyInput
+  }
+
+  export type CompanyUncheckedCreateWithoutSegmentsInput = {
+    companyId?: string
+    urlImage?: string | null
+    companyName?: string | null
+    companyStatus?: string | null
+    companyTelpFax?: string | null
+    companyCity?: string | null
+    companyAddress?: string | null
+    companyEmail?: string | null
+    npwp?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    companyCode?: string | null
+    companyType?: string | null
+    application?: string
+    profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
+    formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
+  }
+
+  export type CompanyCreateOrConnectWithoutSegmentsInput = {
+    where: CompanyWhereUniqueInput
+    create: XOR<CompanyCreateWithoutSegmentsInput, CompanyUncheckedCreateWithoutSegmentsInput>
+  }
+
+  export type CompanySegmentCreateWithoutCompaniesInput = {
+    segmentName: string
+    description?: string | null
+  }
+
+  export type CompanySegmentUncheckedCreateWithoutCompaniesInput = {
+    segmentId?: number
+    segmentName: string
+    description?: string | null
+  }
+
+  export type CompanySegmentCreateOrConnectWithoutCompaniesInput = {
+    where: CompanySegmentWhereUniqueInput
+    create: XOR<CompanySegmentCreateWithoutCompaniesInput, CompanySegmentUncheckedCreateWithoutCompaniesInput>
+  }
+
+  export type CompanyUpsertWithoutSegmentsInput = {
+    update: XOR<CompanyUpdateWithoutSegmentsInput, CompanyUncheckedUpdateWithoutSegmentsInput>
+    create: XOR<CompanyCreateWithoutSegmentsInput, CompanyUncheckedCreateWithoutSegmentsInput>
+    where?: CompanyWhereInput
+  }
+
+  export type CompanyUpdateToOneWithWhereWithoutSegmentsInput = {
+    where?: CompanyWhereInput
+    data: XOR<CompanyUpdateWithoutSegmentsInput, CompanyUncheckedUpdateWithoutSegmentsInput>
+  }
+
+  export type CompanyUpdateWithoutSegmentsInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
+    profile?: ProfileUpdateManyWithoutCompanyNestedInput
+    formL9?: FormL9UpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanyUncheckedUpdateWithoutSegmentsInput = {
+    companyId?: StringFieldUpdateOperationsInput | string
+    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
+    companyName?: NullableStringFieldUpdateOperationsInput | string | null
+    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
+    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
+    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
+    npwp?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
+    application?: StringFieldUpdateOperationsInput | string
+    profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
+    formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
+  }
+
+  export type CompanySegmentUpsertWithoutCompaniesInput = {
+    update: XOR<CompanySegmentUpdateWithoutCompaniesInput, CompanySegmentUncheckedUpdateWithoutCompaniesInput>
+    create: XOR<CompanySegmentCreateWithoutCompaniesInput, CompanySegmentUncheckedCreateWithoutCompaniesInput>
+    where?: CompanySegmentWhereInput
+  }
+
+  export type CompanySegmentUpdateToOneWithWhereWithoutCompaniesInput = {
+    where?: CompanySegmentWhereInput
+    data: XOR<CompanySegmentUpdateWithoutCompaniesInput, CompanySegmentUncheckedUpdateWithoutCompaniesInput>
+  }
+
+  export type CompanySegmentUpdateWithoutCompaniesInput = {
+    segmentName?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type CompanySegmentUncheckedUpdateWithoutCompaniesInput = {
+    segmentId?: IntFieldUpdateOperationsInput | number
+    segmentName?: StringFieldUpdateOperationsInput | string
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
   export type Distro_PO_LineCreateWithoutPurchaseOrderInput = {
-    vehicleCategory: string
+    vehicle: string
+    vehicleId: string
+    category: string
     spType: string
     partName: string
     partNumber: string
     qty?: number
+    price?: number
   }
 
   export type Distro_PO_LineUncheckedCreateWithoutPurchaseOrderInput = {
     id?: number
-    vehicleCategory: string
+    vehicle: string
+    vehicleId: string
+    category: string
     spType: string
     partName: string
     partNumber: string
     qty?: number
+    price?: number
   }
 
   export type Distro_PO_LineCreateOrConnectWithoutPurchaseOrderInput = {
@@ -38637,11 +45888,14 @@ export namespace Prisma {
     OR?: Distro_PO_LineScalarWhereInput[]
     NOT?: Distro_PO_LineScalarWhereInput | Distro_PO_LineScalarWhereInput[]
     id?: IntFilter<"Distro_PO_Line"> | number
-    vehicleCategory?: StringFilter<"Distro_PO_Line"> | string
+    vehicle?: StringFilter<"Distro_PO_Line"> | string
+    vehicleId?: StringFilter<"Distro_PO_Line"> | string
+    category?: StringFilter<"Distro_PO_Line"> | string
     spType?: StringFilter<"Distro_PO_Line"> | string
     partName?: StringFilter<"Distro_PO_Line"> | string
     partNumber?: StringFilter<"Distro_PO_Line"> | string
     qty?: IntFilter<"Distro_PO_Line"> | number
+    price?: IntFilter<"Distro_PO_Line"> | number
     purchaseOrderId?: IntFilter<"Distro_PO_Line"> | number
   }
 
@@ -38711,43 +45965,154 @@ export namespace Prisma {
     uuid?: StringFieldUpdateOperationsInput | string
   }
 
+  export type Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput = {
+    customerCode: string
+    customerName: string
+    itemId: string
+    itemName: string
+    price: number
+    activationDate: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput = {
+    id?: number
+    customerCode: string
+    customerName: string
+    itemId: string
+    itemName: string
+    price: number
+    activationDate: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineCreateOrConnectWithoutHeaderInput = {
+    where: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+    create: XOR<Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput, Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput>
+  }
+
+  export type Distro_PO_MasterItem_Price_LineCreateManyHeaderInputEnvelope = {
+    data: Distro_PO_MasterItem_Price_LineCreateManyHeaderInput | Distro_PO_MasterItem_Price_LineCreateManyHeaderInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUpsertWithWhereUniqueWithoutHeaderInput = {
+    where: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+    update: XOR<Distro_PO_MasterItem_Price_LineUpdateWithoutHeaderInput, Distro_PO_MasterItem_Price_LineUncheckedUpdateWithoutHeaderInput>
+    create: XOR<Distro_PO_MasterItem_Price_LineCreateWithoutHeaderInput, Distro_PO_MasterItem_Price_LineUncheckedCreateWithoutHeaderInput>
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUpdateWithWhereUniqueWithoutHeaderInput = {
+    where: Distro_PO_MasterItem_Price_LineWhereUniqueInput
+    data: XOR<Distro_PO_MasterItem_Price_LineUpdateWithoutHeaderInput, Distro_PO_MasterItem_Price_LineUncheckedUpdateWithoutHeaderInput>
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUpdateManyWithWhereWithoutHeaderInput = {
+    where: Distro_PO_MasterItem_Price_LineScalarWhereInput
+    data: XOR<Distro_PO_MasterItem_Price_LineUpdateManyMutationInput, Distro_PO_MasterItem_Price_LineUncheckedUpdateManyWithoutHeaderInput>
+  }
+
+  export type Distro_PO_MasterItem_Price_LineScalarWhereInput = {
+    AND?: Distro_PO_MasterItem_Price_LineScalarWhereInput | Distro_PO_MasterItem_Price_LineScalarWhereInput[]
+    OR?: Distro_PO_MasterItem_Price_LineScalarWhereInput[]
+    NOT?: Distro_PO_MasterItem_Price_LineScalarWhereInput | Distro_PO_MasterItem_Price_LineScalarWhereInput[]
+    id?: IntFilter<"Distro_PO_MasterItem_Price_Line"> | number
+    headerId?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    customerCode?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    customerName?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    itemId?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    itemName?: StringFilter<"Distro_PO_MasterItem_Price_Line"> | string
+    price?: IntFilter<"Distro_PO_MasterItem_Price_Line"> | number
+    activationDate?: DateTimeFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    createdAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+    updatedAt?: DateTimeFilter<"Distro_PO_MasterItem_Price_Line"> | Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderCreateWithoutPriceLinesInput = {
+    id?: string
+    description: string
+    createdAt?: Date | string
+    createdBy: string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUncheckedCreateWithoutPriceLinesInput = {
+    id?: string
+    description: string
+    createdAt?: Date | string
+    createdBy: string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderCreateOrConnectWithoutPriceLinesInput = {
+    where: Distro_PO_MasterItem_Price_HeaderWhereUniqueInput
+    create: XOR<Distro_PO_MasterItem_Price_HeaderCreateWithoutPriceLinesInput, Distro_PO_MasterItem_Price_HeaderUncheckedCreateWithoutPriceLinesInput>
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUpsertWithoutPriceLinesInput = {
+    update: XOR<Distro_PO_MasterItem_Price_HeaderUpdateWithoutPriceLinesInput, Distro_PO_MasterItem_Price_HeaderUncheckedUpdateWithoutPriceLinesInput>
+    create: XOR<Distro_PO_MasterItem_Price_HeaderCreateWithoutPriceLinesInput, Distro_PO_MasterItem_Price_HeaderUncheckedCreateWithoutPriceLinesInput>
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUpdateToOneWithWhereWithoutPriceLinesInput = {
+    where?: Distro_PO_MasterItem_Price_HeaderWhereInput
+    data: XOR<Distro_PO_MasterItem_Price_HeaderUpdateWithoutPriceLinesInput, Distro_PO_MasterItem_Price_HeaderUncheckedUpdateWithoutPriceLinesInput>
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUpdateWithoutPriceLinesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_HeaderUncheckedUpdateWithoutPriceLinesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    description?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdBy?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
   export type CompanyCreateWithoutFormL9Input = {
     companyId?: string
     urlImage?: string | null
     companyName?: string | null
-    companyFoundingDate?: Date | string | null
     companyStatus?: string | null
     companyTelpFax?: string | null
+    companyCity?: string | null
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    totalCapital?: string | null
     companyCode?: string | null
+    companyType?: string | null
     application?: string
-    segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
+    segments?: CompanySegmentLinkCreateNestedManyWithoutCompanyInput
     profile?: ProfileCreateNestedManyWithoutCompanyInput
   }
 
   export type CompanyUncheckedCreateWithoutFormL9Input = {
     companyId?: string
-    segmentId?: number | null
     urlImage?: string | null
     companyName?: string | null
-    companyFoundingDate?: Date | string | null
     companyStatus?: string | null
     companyTelpFax?: string | null
+    companyCity?: string | null
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    totalCapital?: string | null
     companyCode?: string | null
+    companyType?: string | null
     application?: string
+    segments?: CompanySegmentLinkUncheckedCreateNestedManyWithoutCompanyInput
     profile?: ProfileUncheckedCreateNestedManyWithoutCompanyInput
   }
 
@@ -38971,39 +46336,37 @@ export namespace Prisma {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
     companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
     application?: StringFieldUpdateOperationsInput | string
-    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+    segments?: CompanySegmentLinkUpdateManyWithoutCompanyNestedInput
     profile?: ProfileUpdateManyWithoutCompanyNestedInput
   }
 
   export type CompanyUncheckedUpdateWithoutFormL9Input = {
     companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
     companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
     application?: StringFieldUpdateOperationsInput | string
+    segments?: CompanySegmentLinkUncheckedUpdateManyWithoutCompanyNestedInput
     profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
   }
 
@@ -40910,39 +48273,37 @@ export namespace Prisma {
     companyId?: string
     urlImage?: string | null
     companyName?: string | null
-    companyFoundingDate?: Date | string | null
     companyStatus?: string | null
     companyTelpFax?: string | null
+    companyCity?: string | null
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    totalCapital?: string | null
     companyCode?: string | null
+    companyType?: string | null
     application?: string
-    segment?: CompanySegmentCreateNestedOneWithoutCompanyInput
+    segments?: CompanySegmentLinkCreateNestedManyWithoutCompanyInput
     formL9?: FormL9CreateNestedOneWithoutCompanyInput
   }
 
   export type CompanyUncheckedCreateWithoutProfileInput = {
     companyId?: string
-    segmentId?: number | null
     urlImage?: string | null
     companyName?: string | null
-    companyFoundingDate?: Date | string | null
     companyStatus?: string | null
     companyTelpFax?: string | null
+    companyCity?: string | null
     companyAddress?: string | null
     companyEmail?: string | null
     npwp?: string | null
-    website?: string | null
     createdAt?: Date | string
     updatedAt?: Date | string
-    totalCapital?: string | null
     companyCode?: string | null
+    companyType?: string | null
     application?: string
+    segments?: CompanySegmentLinkUncheckedCreateNestedManyWithoutCompanyInput
     formL9?: FormL9UncheckedCreateNestedOneWithoutCompanyInput
   }
 
@@ -41007,39 +48368,37 @@ export namespace Prisma {
     companyId?: StringFieldUpdateOperationsInput | string
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
     companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
     application?: StringFieldUpdateOperationsInput | string
-    segment?: CompanySegmentUpdateOneWithoutCompanyNestedInput
+    segments?: CompanySegmentLinkUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UpdateOneWithoutCompanyNestedInput
   }
 
   export type CompanyUncheckedUpdateWithoutProfileInput = {
     companyId?: StringFieldUpdateOperationsInput | string
-    segmentId?: NullableIntFieldUpdateOperationsInput | number | null
     urlImage?: NullableStringFieldUpdateOperationsInput | string | null
     companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
     companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
+    companyCity?: NullableStringFieldUpdateOperationsInput | string | null
     companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
     companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
     npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
     companyCode?: NullableStringFieldUpdateOperationsInput | string | null
+    companyType?: NullableStringFieldUpdateOperationsInput | string | null
     application?: StringFieldUpdateOperationsInput | string
+    segments?: CompanySegmentLinkUncheckedUpdateManyWithoutCompanyNestedInput
     formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
 
@@ -41090,80 +48449,28 @@ export namespace Prisma {
     otp?: otpVerifikasiUncheckedUpdateManyWithoutUserNestedInput
   }
 
-  export type CompanyCreateManySegmentInput = {
-    companyId?: string
-    urlImage?: string | null
-    companyName?: string | null
-    companyFoundingDate?: Date | string | null
-    companyStatus?: string | null
-    companyTelpFax?: string | null
-    companyAddress?: string | null
-    companyEmail?: string | null
-    npwp?: string | null
-    website?: string | null
-    createdAt?: Date | string
-    updatedAt?: Date | string
-    totalCapital?: string | null
-    companyCode?: string | null
-    application?: string
+  export type CompanySegmentLinkCreateManySegmentInput = {
+    id?: number
+    companyId: string
   }
 
-  export type CompanyUpdateWithoutSegmentInput = {
-    companyId?: StringFieldUpdateOperationsInput | string
-    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
-    npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
-    profile?: ProfileUpdateManyWithoutCompanyNestedInput
-    formL9?: FormL9UpdateOneWithoutCompanyNestedInput
+  export type CompanySegmentLinkUpdateWithoutSegmentInput = {
+    company?: CompanyUpdateOneRequiredWithoutSegmentsNestedInput
   }
 
-  export type CompanyUncheckedUpdateWithoutSegmentInput = {
+  export type CompanySegmentLinkUncheckedUpdateWithoutSegmentInput = {
+    id?: IntFieldUpdateOperationsInput | number
     companyId?: StringFieldUpdateOperationsInput | string
-    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
-    npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
-    profile?: ProfileUncheckedUpdateManyWithoutCompanyNestedInput
-    formL9?: FormL9UncheckedUpdateOneWithoutCompanyNestedInput
   }
 
-  export type CompanyUncheckedUpdateManyWithoutSegmentInput = {
+  export type CompanySegmentLinkUncheckedUpdateManyWithoutSegmentInput = {
+    id?: IntFieldUpdateOperationsInput | number
     companyId?: StringFieldUpdateOperationsInput | string
-    urlImage?: NullableStringFieldUpdateOperationsInput | string | null
-    companyName?: NullableStringFieldUpdateOperationsInput | string | null
-    companyFoundingDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    companyStatus?: NullableStringFieldUpdateOperationsInput | string | null
-    companyTelpFax?: NullableStringFieldUpdateOperationsInput | string | null
-    companyAddress?: NullableStringFieldUpdateOperationsInput | string | null
-    companyEmail?: NullableStringFieldUpdateOperationsInput | string | null
-    npwp?: NullableStringFieldUpdateOperationsInput | string | null
-    website?: NullableStringFieldUpdateOperationsInput | string | null
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    totalCapital?: NullableStringFieldUpdateOperationsInput | string | null
-    companyCode?: NullableStringFieldUpdateOperationsInput | string | null
-    application?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type CompanySegmentLinkCreateManyCompanyInput = {
+    id?: number
+    segmentId: number
   }
 
   export type ProfileCreateManyCompanyInput = {
@@ -41173,6 +48480,20 @@ export namespace Prisma {
     phone: string
     createdAt?: Date | string
     updatedAt?: Date | string
+  }
+
+  export type CompanySegmentLinkUpdateWithoutCompanyInput = {
+    segment?: CompanySegmentUpdateOneRequiredWithoutCompaniesNestedInput
+  }
+
+  export type CompanySegmentLinkUncheckedUpdateWithoutCompanyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    segmentId?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type CompanySegmentLinkUncheckedUpdateManyWithoutCompanyInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    segmentId?: IntFieldUpdateOperationsInput | number
   }
 
   export type ProfileUpdateWithoutCompanyInput = {
@@ -41204,37 +48525,96 @@ export namespace Prisma {
 
   export type Distro_PO_LineCreateManyPurchaseOrderInput = {
     id?: number
-    vehicleCategory: string
+    vehicle: string
+    vehicleId: string
+    category: string
     spType: string
     partName: string
     partNumber: string
     qty?: number
+    price?: number
   }
 
   export type Distro_PO_LineUpdateWithoutPurchaseOrderInput = {
-    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     spType?: StringFieldUpdateOperationsInput | string
     partName?: StringFieldUpdateOperationsInput | string
     partNumber?: StringFieldUpdateOperationsInput | string
     qty?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
   }
 
   export type Distro_PO_LineUncheckedUpdateWithoutPurchaseOrderInput = {
     id?: IntFieldUpdateOperationsInput | number
-    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     spType?: StringFieldUpdateOperationsInput | string
     partName?: StringFieldUpdateOperationsInput | string
     partNumber?: StringFieldUpdateOperationsInput | string
     qty?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
   }
 
   export type Distro_PO_LineUncheckedUpdateManyWithoutPurchaseOrderInput = {
     id?: IntFieldUpdateOperationsInput | number
-    vehicleCategory?: StringFieldUpdateOperationsInput | string
+    vehicle?: StringFieldUpdateOperationsInput | string
+    vehicleId?: StringFieldUpdateOperationsInput | string
+    category?: StringFieldUpdateOperationsInput | string
     spType?: StringFieldUpdateOperationsInput | string
     partName?: StringFieldUpdateOperationsInput | string
     partNumber?: StringFieldUpdateOperationsInput | string
     qty?: IntFieldUpdateOperationsInput | number
+    price?: IntFieldUpdateOperationsInput | number
+  }
+
+  export type Distro_PO_MasterItem_Price_LineCreateManyHeaderInput = {
+    id?: number
+    customerCode: string
+    customerName: string
+    itemId: string
+    itemName: string
+    price: number
+    activationDate: Date | string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUpdateWithoutHeaderInput = {
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    itemId?: StringFieldUpdateOperationsInput | string
+    itemName?: StringFieldUpdateOperationsInput | string
+    price?: IntFieldUpdateOperationsInput | number
+    activationDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUncheckedUpdateWithoutHeaderInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    itemId?: StringFieldUpdateOperationsInput | string
+    itemName?: StringFieldUpdateOperationsInput | string
+    price?: IntFieldUpdateOperationsInput | number
+    activationDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type Distro_PO_MasterItem_Price_LineUncheckedUpdateManyWithoutHeaderInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    customerCode?: StringFieldUpdateOperationsInput | string
+    customerName?: StringFieldUpdateOperationsInput | string
+    itemId?: StringFieldUpdateOperationsInput | string
+    itemName?: StringFieldUpdateOperationsInput | string
+    price?: IntFieldUpdateOperationsInput | number
+    activationDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type FormL9ManagementCreateManyFormL9Input = {

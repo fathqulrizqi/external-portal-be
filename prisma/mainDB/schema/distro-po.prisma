@@ -1,3 +1,16 @@
+
+model Distro_PO_Incentive {
+  id            Int      @id @default(autoincrement())
+  rangeFrom     Int
+  rangeTo       Int
+  vehicle       String
+  vehicleId     String
+  periodYear    Int
+  amount        Int
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
 model Distro_PO_Header {
   id              Int              @id @default(autoincrement())
   poNumber        String           @unique
@@ -16,11 +29,14 @@ model Distro_PO_Header {
 
 model Distro_PO_Line {
   id              Int              @id @default(autoincrement())
-  vehicleCategory String
+  vehicle         String
+  vehicleId       String
+  category        String
   spType          String
   partName        String
   partNumber      String
   qty             Int              @default(0)
+  price           Int              @default(0)
   purchaseOrderId Int
   purchaseOrder   Distro_PO_Header @relation(fields: [purchaseOrderId], references: [id], onDelete: Cascade)
 
@@ -36,7 +52,44 @@ model Distro_PO_MasterItem {
   spType      String? @map("S_P_type")
   itemId      String  @unique @map("ITEMID")
   isActive    Boolean @default(true) @map("IsActive")
-  price       Int?    @map("PRICE")
 
   @@map("Distro_PO_MasterItem")
+}
+
+  // price removed; now handled in Distro_PO_MasterItem_Price_Line
+model Distro_PO_MasterItem_Price_Header {
+  id           String   @id @default(uuid())
+  description  String
+  createdAt    DateTime @default(now())
+  createdBy    String
+  updatedAt    DateTime @updatedAt
+  priceLines   Distro_PO_MasterItem_Price_Line[]
+}
+
+model Distro_PO_MasterItem_Price_Line {
+  id             Int      @id @default(autoincrement())
+  headerId       String
+  header         Distro_PO_MasterItem_Price_Header @relation(fields: [headerId], references: [id], onDelete: Cascade)
+  customerCode   String
+  customerName   String
+  itemId         String
+  itemName       String
+  price          Int
+  activationDate DateTime
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Distro_PO_MasterAchievement {
+  id           Int      @id @default(autoincrement())
+  customerCode String   @map("Customer Code")
+  customerName String   @map("Customer Name")
+  city         String   @map("City")
+  targetQty    Int      @map("Target QTY")
+  targetAmount BigInt   @map("Target Amount")
+  vehicle      String   @map("Vehicle")
+  vehicleId    String   @map("Vechicle ID")
+  periodYear   Int      @map("Period Year")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }

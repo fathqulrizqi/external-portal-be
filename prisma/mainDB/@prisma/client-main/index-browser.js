@@ -129,21 +129,37 @@ exports.Prisma.CompanySegmentScalarFieldEnum = {
 
 exports.Prisma.CompanyScalarFieldEnum = {
   companyId: 'companyId',
-  segmentId: 'segmentId',
   urlImage: 'urlImage',
   companyName: 'companyName',
-  companyFoundingDate: 'companyFoundingDate',
   companyStatus: 'companyStatus',
   companyTelpFax: 'companyTelpFax',
+  companyCity: 'companyCity',
   companyAddress: 'companyAddress',
   companyEmail: 'companyEmail',
   npwp: 'npwp',
-  website: 'website',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
-  totalCapital: 'totalCapital',
   companyCode: 'companyCode',
+  companyType: 'companyType',
   application: 'application'
+};
+
+exports.Prisma.CompanySegmentLinkScalarFieldEnum = {
+  id: 'id',
+  companyId: 'companyId',
+  segmentId: 'segmentId'
+};
+
+exports.Prisma.Distro_PO_IncentiveScalarFieldEnum = {
+  id: 'id',
+  rangeFrom: 'rangeFrom',
+  rangeTo: 'rangeTo',
+  vehicle: 'vehicle',
+  vehicleId: 'vehicleId',
+  periodYear: 'periodYear',
+  amount: 'amount',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.Distro_PO_HeaderScalarFieldEnum = {
@@ -161,11 +177,14 @@ exports.Prisma.Distro_PO_HeaderScalarFieldEnum = {
 
 exports.Prisma.Distro_PO_LineScalarFieldEnum = {
   id: 'id',
-  vehicleCategory: 'vehicleCategory',
+  vehicle: 'vehicle',
+  vehicleId: 'vehicleId',
+  category: 'category',
   spType: 'spType',
   partName: 'partName',
   partNumber: 'partNumber',
   qty: 'qty',
+  price: 'price',
   purchaseOrderId: 'purchaseOrderId'
 };
 
@@ -177,8 +196,42 @@ exports.Prisma.Distro_PO_MasterItemScalarFieldEnum = {
   productName: 'productName',
   spType: 'spType',
   itemId: 'itemId',
-  isActive: 'isActive',
-  price: 'price'
+  isActive: 'isActive'
+};
+
+exports.Prisma.Distro_PO_MasterItem_Price_HeaderScalarFieldEnum = {
+  id: 'id',
+  description: 'description',
+  createdAt: 'createdAt',
+  createdBy: 'createdBy',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Distro_PO_MasterItem_Price_LineScalarFieldEnum = {
+  id: 'id',
+  headerId: 'headerId',
+  customerCode: 'customerCode',
+  customerName: 'customerName',
+  itemId: 'itemId',
+  itemName: 'itemName',
+  price: 'price',
+  activationDate: 'activationDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.Distro_PO_MasterAchievementScalarFieldEnum = {
+  id: 'id',
+  customerCode: 'customerCode',
+  customerName: 'customerName',
+  city: 'city',
+  targetQty: 'targetQty',
+  targetAmount: 'targetAmount',
+  vehicle: 'vehicle',
+  vehicleId: 'vehicleId',
+  periodYear: 'periodYear',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.FormL9ScalarFieldEnum = {
@@ -400,9 +453,14 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   CompanySegment: 'CompanySegment',
   Company: 'Company',
+  CompanySegmentLink: 'CompanySegmentLink',
+  Distro_PO_Incentive: 'Distro_PO_Incentive',
   Distro_PO_Header: 'Distro_PO_Header',
   Distro_PO_Line: 'Distro_PO_Line',
   Distro_PO_MasterItem: 'Distro_PO_MasterItem',
+  Distro_PO_MasterItem_Price_Header: 'Distro_PO_MasterItem_Price_Header',
+  Distro_PO_MasterItem_Price_Line: 'Distro_PO_MasterItem_Price_Line',
+  Distro_PO_MasterAchievement: 'Distro_PO_MasterAchievement',
   FormL9: 'FormL9',
   FormL9BankInfo: 'FormL9BankInfo',
   FormL9GeneralInformation: 'FormL9GeneralInformation',

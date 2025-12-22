@@ -5,15 +5,17 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "start": "node ./src/main.js",
+    "dev": "node ./src/main.js",
     "postinstall": "npx prisma generate --schema=./prisma/mainDB/schema && npx prisma generate --schema=./prisma/NGKbusi/schema.prisma",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prisma": "npx prisma introspect --schema=./prisma/NGKbusi/schema.prisma && npx prisma migrate dev --schema ./prisma/mainDB/schema",
-    "prisma-migrate": "npx prisma migrate dev --schema ./prisma/mainDB/schema"
+    "prisma-migrate": "npx prisma migrate dev --schema ./prisma/mainDB/schema",
+    "prisma-reset": "npx prisma migrate reset --schema ./prisma/mainDB/schema"
   },
   "author": "Iksan Wijaya",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^10.1.0",
     "@prisma/client": "^6.18.0",
     "bcryptjs": "^3.0.3",
     "cookie-parser": "^1.4.7",

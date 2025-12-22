@@ -1,35 +1,54 @@
 model CompanySegment {
-  segmentId   Int       @id @default(autoincrement())
-  segmentName String    @db.VarChar(100)
-  description String?   @db.VarChar(255)
-  company     Company[]
+  segmentId   Int                  @id @default(autoincrement())
+  segmentName String               @unique @db.VarChar(100)
+  description String?              @db.VarChar(255)
+  companies   CompanySegmentLink[]
 }
 
 model Company {
-  companyId           String          @id @default(uuid()) @db.Uuid
-  segmentId           Int?
-  urlImage            String?
-  companyName         String?
-  companyFoundingDate DateTime?
-  companyStatus       String?
-  companyTelpFax      String?
-  companyAddress      String?
-  companyEmail        String?
-  npwp                String?
-  website             String?         @db.VarChar(100)
-  createdAt           DateTime        @default(now())
-  updatedAt           DateTime        @updatedAt
-  totalCapital        String?
-  companyCode         String?
-  application         String          @default("E-Bidding")
-  segment             CompanySegment? @relation(fields: [segmentId], references: [segmentId])
-  profile             Profile[]
-  formL9              FormL9?
+  companyId      String               @id @default(uuid()) @db.Uuid
+  urlImage       String?
+  companyName    String?
+  companyStatus  String? //will be used for differentiating between active, inactive, blacklisted, etc.
+  companyTelpFax String?
+  companyCity    String?
+  companyAddress String?
+  companyEmail   String?
+  npwp           String? //tax identification number
+  createdAt      DateTime             @default(now())
+  updatedAt      DateTime             @updatedAt
+  companyCode    String? //unique company code/id used internally
+  companyType    String? //will be used for differentiating between vendor, consultant, contractor, etc.
+  application    String               @default("External Portal")
+  segments       CompanySegmentLink[]
+  profile        Profile[] //relation to Profile/user model
+  formL9         FormL9?
 
   @@index([companyName])
   @@index([npwp])
   @@index([companyEmail])
-  @@index([segmentId])
+}
+
+model CompanySegmentLink {
+  id        Int            @id @default(autoincrement())
+  companyId String         @db.Uuid
+  segmentId Int
+  company   Company        @relation(fields: [companyId], references: [companyId])
+  segment   CompanySegment @relation(fields: [segmentId], references: [segmentId])
+
+  @@unique([companyId, segmentId])
+}
+
+model Distro_PO_Incentive {
+  id         Int      @id @default(autoincrement())
+  rangeFrom  Int
+  rangeTo    Int
+  vehicle    String
+  vehicleId  String
+  periodYear Int
+  amount     Int
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
 }
 
 model Distro_PO_Header {
@@ -50,11 +69,14 @@ model Distro_PO_Header {
 
 model Distro_PO_Line {
   id              Int              @id @default(autoincrement())
-  vehicleCategory String
+  vehicle         String
+  vehicleId       String
+  category        String
   spType          String
   partName        String
   partNumber      String
   qty             Int              @default(0)
+  price           Int              @default(0)
   purchaseOrderId Int
   purchaseOrder   Distro_PO_Header @relation(fields: [purchaseOrderId], references: [id], onDelete: Cascade)
 
@@ -70,9 +92,46 @@ model Distro_PO_MasterItem {
   spType      String? @map("S_P_type")
   itemId      String  @unique @map("ITEMID")
   isActive    Boolean @default(true) @map("IsActive")
-  price       Int?    @map("PRICE")
 
   @@map("Distro_PO_MasterItem")
+}
+
+// price removed; now handled in Distro_PO_MasterItem_Price_Line
+model Distro_PO_MasterItem_Price_Header {
+  id          String                            @id @default(uuid())
+  description String
+  createdAt   DateTime                          @default(now())
+  createdBy   String
+  updatedAt   DateTime                          @updatedAt
+  priceLines  Distro_PO_MasterItem_Price_Line[]
+}
+
+model Distro_PO_MasterItem_Price_Line {
+  id             Int                               @id @default(autoincrement())
+  headerId       String
+  header         Distro_PO_MasterItem_Price_Header @relation(fields: [headerId], references: [id], onDelete: Cascade)
+  customerCode   String
+  customerName   String
+  itemId         String
+  itemName       String
+  price          Int
+  activationDate DateTime
+  createdAt      DateTime                          @default(now())
+  updatedAt      DateTime                          @updatedAt
+}
+
+model Distro_PO_MasterAchievement {
+  id           Int      @id @default(autoincrement())
+  customerCode String   @map("Customer Code")
+  customerName String   @map("Customer Name")
+  city         String   @map("City")
+  targetQty    Int      @map("Target QTY")
+  targetAmount BigInt   @map("Target Amount")
+  vehicle      String   @map("Vehicle")
+  vehicleId    String   @map("Vechicle ID")
+  periodYear   Int      @map("Period Year")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
 
 model FormL9 {
@@ -234,9 +293,8 @@ model FormL9CertificateISO {
 }
 
 generator client {
-  provider        = "prisma-client-js"
-  output          = "../@prisma/client-main"
-  previewFeatures = ["prismaSchemaFolder"]
+  provider = "prisma-client-js"
+  output   = "../@prisma/client-main"
 }
 
 datasource db {

@@ -1,33 +1,40 @@
 model CompanySegment {
   segmentId   Int       @id @default(autoincrement())
-  segmentName String    @db.VarChar(100)
+  segmentName String    @unique @db.VarChar(100)
   description String?   @db.VarChar(255)
-  company     Company[]
+  companies   CompanySegmentLink[]
 }
 
 model Company {
   companyId           String          @id @default(uuid()) @db.Uuid
-  segmentId           Int?
   urlImage            String?
   companyName         String?
-  companyFoundingDate DateTime?
-  companyStatus       String?
+  companyStatus       String? //will be used for differentiating between active, inactive, blacklisted, etc.
   companyTelpFax      String?
+  companyCity         String?
   companyAddress      String?
   companyEmail        String?
-  npwp                String?
-  website             String?         @db.VarChar(100)
+  npwp                String? //tax identification number
   createdAt           DateTime        @default(now())
   updatedAt           DateTime        @updatedAt
-  totalCapital        String?
-  companyCode         String?
-  application         String          @default("E-Bidding")
-  segment             CompanySegment? @relation(fields: [segmentId], references: [segmentId])
-  profile             Profile[]
+  companyCode         String? //unique company code/id used internally
+  companyType         String? //will be used for differentiating between vendor, consultant, contractor, etc.
+  application         String          @default("External Portal")
+  segments            CompanySegmentLink[]
+  profile             Profile[] //relation to Profile/user model
   formL9              FormL9?
 
   @@index([companyName])
   @@index([npwp])
   @@index([companyEmail])
-  @@index([segmentId])
+}
+
+model CompanySegmentLink {
+  id          Int      @id @default(autoincrement())
+  companyId   String   @db.Uuid
+  segmentId   Int
+  company     Company  @relation(fields: [companyId], references: [companyId])
+  segment     CompanySegment @relation(fields: [segmentId], references: [segmentId])
+
+  @@unique([companyId, segmentId])
 }

@@ -18,7 +18,7 @@ export async function getAll() {
       spType: true,
       itemId: true,
       isActive: true,
-      price: true,
+      // price: true, // removed, no longer in schema
     }
   });
 }
