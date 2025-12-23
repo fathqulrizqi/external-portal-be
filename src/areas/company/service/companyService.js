@@ -7,6 +7,7 @@ export async function getAllCompanies(filter = {}) {
   if (filter.companyStatus) where.companyStatus = filter.companyStatus;
   return niterraappdb.Company.findMany({ where });
 }
+import { application } from 'express';
 import { niterraappdb } from '../../../config/database.js';
 import { ResponseError } from '../../../error/responseError.js';
 import { createCompanyValidation, updateCompanyValidation } from '../validation/companyValidation.js';
@@ -38,7 +39,31 @@ export async function createCompany(userId, payload) {
   if (existing) throw new ResponseError(409, 'Company name already exists.');
 
   // Create company and associate
-  const company = await niterraappdb.Company.create({ data: payload });
+  const company = await niterraappdb.Company.create({ data: {
+    urlImage : payload.urlImage,
+    companyName : payload.companyName,
+    companyStatus : payload.companyStatus,
+    comapnyTelpFax : payload.comapnyTelpFax,
+    companyCity : payload.companyCity,
+    companyAddress : payload.companyAddress,
+    companyEmail : payload.companyEmail,
+    npwp : payload.npwp,
+    companyCode : payload.companyCode,
+    companyType : payload.companyType,
+    application : payload.application
+  } });
+
+  const promiseList = payload.segments.map(item => {
+      return niterraappdb.companySegmentLink.create({
+          data: {
+              companyId: company.companyId,
+              segmentId: item
+          }
+      });
+  });
+
+  await Promise.all(promiseList);
+  
   await niterraappdb.profile.update({ where: { userId }, data: { companyId: company.companyId } });
   return company;
 }
