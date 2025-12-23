@@ -6,11 +6,7 @@ const createCompanyValidation = Joi.object({
         'string.max': 'Company Name must not exceed 100 characters',
         'any.required': 'Company Name is required',
     }),
-    companyFoundingDate: Joi.date().iso().required().messages({
-        'date.base': 'Founding Date must be a valid date',
-        'date.format': 'Founding Date must be in ISO format (YYYY-MM-DD)',
-        'any.required': 'Founding Date is required',
-    }),
+    
     companyStatus: Joi.string().max(50).required().messages({
         'string.empty': 'Company Status is required',
         'string.max': 'Company Status must not exceed 50 characters',
@@ -38,15 +34,28 @@ const createCompanyValidation = Joi.object({
         'string.max': 'NPWP must not exceed 30 characters',
         'any.required': 'NPWP is required',
     }),
-    website: Joi.string().uri().max(255).optional().allow(null, '').messages({
-        'string.uri': 'Website must be a valid URL',
-        'string.max': 'Website URL must not exceed 255 characters',
-    }),
-    segmentId: Joi.number().integer().min(1).required().messages({
+   
+    segments: Joi.min(1).required().messages({
         'number.base': 'Segment ID must be a number',
         'number.integer': 'Segment ID must be an integer',
         'number.min': 'Segment ID must be greater than or equal to 1',
         'any.required': 'Segment ID is required',
+    }),
+    
+    companyCode: Joi.string().max(100).required().messages({
+        'string.empty': 'Company Code is required',
+        'string.max': 'Company Code must not exceed 100 characters',
+        'any.required': 'Company Code is required',
+    }),
+    companyType: Joi.string().max(100).required().messages({
+        'string.empty': 'Company Type is required',
+        'string.max': 'Company Type must not exceed 100 characters',
+        'any.required': 'Company Type is required',
+    }),
+    companyCity: Joi.string().max(100).required().messages({
+        'string.empty': 'Company City is required',
+        'string.max': 'Company City must not exceed 100 characters',
+        'any.required': 'Company City is required',
     }),
     // urlImage: Joi.string().optional().allow(null, '').messages({
     //     'string.base': 'Image URL must be a string',
