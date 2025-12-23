@@ -20,6 +20,7 @@ const getAllCompaniesController = async (req, res, next) => {
 const create = async (req, res, next) => {
     try {
         const companyImage = req.files.companyImage ? req.files.companyImage[0] : null;
+        console.log(companyImage);
         const userId = req.user.userId;
         const payload = {
             companyName         : req.body.companyName,
