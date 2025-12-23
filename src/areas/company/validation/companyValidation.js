@@ -48,9 +48,9 @@ const createCompanyValidation = Joi.object({
         'number.min': 'Segment ID must be greater than or equal to 1',
         'any.required': 'Segment ID is required',
     }),
-    urlImage: Joi.string().optional().allow(null, '').messages({
-        'string.base': 'Image URL must be a string',
-    }),
+    // urlImage: Joi.string().optional().allow(null, '').messages({
+    //     'string.base': 'Image URL must be a string',
+    // }),
     application : Joi.string().required().messages({
         'string.empty': 'Invalid application Register',
         'any.required': 'Invalid application Register',
