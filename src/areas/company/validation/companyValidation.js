@@ -55,9 +55,9 @@ const createCompanyValidation = Joi.object({
         'string.max': 'Company City must not exceed 100 characters',
         'any.required': 'Company City is required',
     }),
-    // urlImage: Joi.string().optional().allow(null, '').messages({
-    //     'string.base': 'Image URL must be a string',
-    // }),
+    urlImage: Joi.string().optional().allow(null, '').messages({
+        'string.base': 'Image URL must be a string',
+    }),
     application : Joi.string().required().messages({
         'string.empty': 'Invalid application Register',
         'any.required': 'Invalid application Register',
