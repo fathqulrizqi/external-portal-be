@@ -1,5 +1,12 @@
 import { getAllCompanies } from '../service/companyService.js';
-// Return all companies (for dropdowns, admin, etc.)
+import { 
+    createCompany, 
+    getCompanyByUser, 
+    updateCompany, 
+    deleteCompany, 
+    addUserToCompany 
+} from '../service/companyService.js';
+
 const getAllCompaniesController = async (req, res, next) => {
     try {
         const { application, companyStatus } = req.query;
@@ -9,13 +16,6 @@ const getAllCompaniesController = async (req, res, next) => {
         next(e);
     }
 };
-import { 
-    createCompany, 
-    getCompanyByUser, 
-    updateCompany, 
-    deleteCompany, 
-    addUserToCompany 
-} from '../service/companyService.js';
 
 const create = async (req, res, next) => {
     try {

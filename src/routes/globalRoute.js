@@ -38,7 +38,7 @@ globalRouter.use('/api/distro-po/masterincentive', distroPOMasterIncentiveRoute)
 globalRouter.use('/api/distro-po/report', distroPOReportRoute);
 // Return all companies for dropdowns
 globalRouter.get('/api/company', companyController.getAllCompaniesController);
-globalRouter.get("/api/user/sidebar", sidebarController.getMenuSidebar);
+globalRouter.get("/api/users/sidebar", sidebarController.getMenuSidebar);
 globalRouter.get("/api/users/profile", accountController.getProfile);
 globalRouter.patch("/api/users/profile", upload.single("profileImage"), accountController.updateProfile);
 globalRouter.patch("/api/users/changePassword", accountController.updatePassword);
