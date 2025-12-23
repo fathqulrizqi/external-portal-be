@@ -35,13 +35,11 @@ const createCompanyValidation = Joi.object({
         'any.required': 'NPWP is required',
     }),
    
-    segments: Joi.min(1).required().messages({
-        'number.base': 'Segment ID must be a number',
-        'number.integer': 'Segment ID must be an integer',
-        'number.min': 'Segment ID must be greater than or equal to 1',
+    segments: Joi.array().min(1).required().messages({
+        'array.min': 'Segment ID must be greater than or equal to 1',
         'any.required': 'Segment ID is required',
     }),
-    
+
     companyCode: Joi.string().max(100).required().messages({
         'string.empty': 'Company Code is required',
         'string.max': 'Company Code must not exceed 100 characters',
