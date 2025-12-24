@@ -119,11 +119,10 @@ try {
       where: { userId: user.userId },
       data: {
         blockedUntil: blockedUntilTime,
+        sessionExpireDate : Date.now(),
         }
       })
-      await niterraappdb.linkedDevice.delete({
-        where : {userId : user.userId}
-      })
+      
       throw new ResponseError(406,`Account Blocked Until ${blocked.blockedUntil}`);
     }else{
       throw new ResponseError(401,'Invalid email or password');
