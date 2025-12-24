@@ -119,7 +119,7 @@ try {
       where: { userId: user.userId },
       data: {
         blockedUntil: blockedUntilTime,
-        sessionExpireDate : Date.now(),
+        sessionExpireDate : new Date(),
         }
       })
       
