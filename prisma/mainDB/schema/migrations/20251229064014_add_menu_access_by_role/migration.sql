@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Menu" ADD COLUMN     "isAdmin" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "isUser" BOOLEAN NOT NULL DEFAULT false;

@@ -20,19 +20,29 @@ const buildMenuHierarchy = (menus, parentId = null) => {
 
 const getMenuSidebar = async(userId) => {
 
-    const userAccesses = await niterraappdb.userHasRoleAccess.findMany({
-        where: { userId: userId },
-        include: { access: true }
-    });
-
+    
     const user = await niterraappdb.user.findUnique({
         where: {userId : userId}
     })
-
-    const allMenus = await niterraappdb.menu.findMany({
-        where: { isShow: true, isActive: true, application : user.application },
-        orderBy: { sequence: 'asc' }
+    const userAccesses = await niterraappdb.userHasRoleAccess.findMany({
+        where: { userId: userId , application : user.application},
+        include: { access: true }
     });
+
+    let allMenus;
+    if(userAccesses[0].roleId == 2){
+        allMenus = await niterraappdb.menu.findMany({
+            where: { isShow: true, isActive: true, application : user.application, isAdmin : true },
+            orderBy: { sequence: 'asc' }
+        });
+    }else{
+        allMenus = await niterraappdb.menu.findMany({
+            where: { isShow: true, isActive: true, application : user.application, isUser : true },
+            orderBy: { sequence: 'asc' }
+        });
+    }
+
+    
 
     const processedMenus = allMenus.map(menu => {
         

@@ -9,7 +9,7 @@ model Company {
   companyId      String               @id @default(uuid()) @db.Uuid
   urlImage       String?
   companyName    String?
-  companyStatus  String? //will be used for differentiating between active, inactive, blacklisted, etc.
+  companyStatus  String?
   companyTelpFax String?
   companyCity    String?
   companyAddress String?
@@ -17,8 +17,8 @@ model Company {
   npwp           String? //tax identification number
   createdAt      DateTime             @default(now())
   updatedAt      DateTime             @updatedAt
-  companyCode    String? //unique company code/id used internally
-  companyType    String? //will be used for differentiating between vendor, consultant, contractor, etc.
+  companyCode    String?
+  companyType    String?
   application    String               @default("External Portal")
   segments       CompanySegmentLink[]
   profile        Profile[] //relation to Profile/user model
@@ -319,6 +319,8 @@ model Menu {
   isGlobal          Boolean             @default(false)
   isShow            Boolean             @default(true)
   isActive          Boolean             @default(true)
+  isUser            Boolean             @default(false)
+  isAdmin           Boolean             @default(false)
   UserHasRoleAccess UserHasRoleAccess[]
 }
 
@@ -393,14 +395,15 @@ model ResetPassword {
 }
 
 model UserHasRoleAccess {
-  userId   String @db.Uuid
-  roleId   Int
-  accessId Int
-  menuId   Int?
-  access   Access @relation(fields: [accessId], references: [accessId], onDelete: Cascade)
-  menu     Menu?  @relation(fields: [menuId], references: [menuId], onDelete: Cascade)
-  role     Role   @relation(fields: [roleId], references: [roleId], onDelete: Cascade)
-  user     User   @relation(fields: [userId], references: [userId], onDelete: Cascade)
+  userId      String  @db.Uuid
+  roleId      Int
+  accessId    Int
+  menuId      Int?
+  application String? @db.VarChar(150)
+  access      Access  @relation(fields: [accessId], references: [accessId], onDelete: Cascade)
+  menu        Menu?   @relation(fields: [menuId], references: [menuId], onDelete: Cascade)
+  role        Role    @relation(fields: [roleId], references: [roleId], onDelete: Cascade)
+  user        User    @relation(fields: [userId], references: [userId], onDelete: Cascade)
 
   @@id([userId, roleId, accessId])
   @@index([userId, accessId, menuId])

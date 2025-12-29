@@ -73,6 +73,7 @@ model UserHasRoleAccess {
   roleId   Int
   accessId Int
   menuId   Int?
+  application  String? @db.VarChar(150) 
   access   Access @relation(fields: [accessId], references: [accessId], onDelete: Cascade)
   menu     Menu?  @relation(fields: [menuId], references: [menuId], onDelete: Cascade)
   role     Role   @relation(fields: [roleId], references: [roleId], onDelete: Cascade)

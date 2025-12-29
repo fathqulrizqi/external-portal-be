@@ -33,6 +33,14 @@ const createMenuValidation = Joi.object({
     isActive: Joi.boolean().required().messages({
         'boolean.base': 'Is Active must be a boolean',
         'any.required': 'Is Active field is required'
+    }),
+    isAdmin: Joi.boolean().required().messages({
+        'boolean.base': 'Is Admin must be a boolean',
+        'any.required': 'Is Admin field is required'
+    }),
+    isUser: Joi.boolean().required().messages({
+        'boolean.base': 'Is User must be a boolean',
+        'any.required': 'Is User field is required'
     })
 });
 
@@ -63,6 +71,12 @@ const updateMenuValidation = Joi.object({
     }),
     isActive: Joi.boolean().optional().messages({
         'boolean.base': 'Is Active must be a boolean'
+    }),
+    isAdmin: Joi.boolean().optional().messages({
+        'boolean.base': 'Is Admin must be a boolean'
+    }),
+    isUser: Joi.boolean().optional().messages({
+        'boolean.base': 'Is User must be a boolean'
     })
 });
 
