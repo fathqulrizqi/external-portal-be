@@ -10,7 +10,9 @@ const getProfile = async(userId)=>{
             where : {userId: userId},
             include : {
                 user : {
-                    email : true
+                    select: {    
+                        email: true
+                    }
                 }
             }
         })
