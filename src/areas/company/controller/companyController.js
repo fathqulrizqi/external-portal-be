@@ -90,7 +90,7 @@ const getCompanyByUserId = async (req, res, next) => {
 
 const update = async (req, res, next) => {
     try {
-        const companyImage = req.files.companyImage ? req.files.companyImage[0] : null;
+        const companyImage = req.file.companyImage ? req.file.companyImage : null;
         const userId = req.user.userId;
         const payload = {
             companyCode        : req.body.companyCode,
@@ -103,7 +103,6 @@ const update = async (req, res, next) => {
             companyType        : req.body.companyType,
             companyCity        : req.body.companyCity,
             urlImage           : companyImage ?? undefined,
-            application        : req.body.application,
             segments           : Array.isArray(req.body.segments) ? req.body.segments.map(Number) : req.body.segments ? [Number(req.body.segments)] : []
         }
         const result = await updateCompany(userId,payload);

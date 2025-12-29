@@ -97,7 +97,7 @@ export async function updateCompany(userId, payload) {
       where: {
         companyName: companyData.companyName,
         NOT: {
-          companyId: profile.companyId // Kecualikan company ini sendiri agar tidak error jika nama tidak diganti
+          companyId: profile.companyId 
         }
       }
     });
@@ -116,8 +116,7 @@ export async function updateCompany(userId, payload) {
         companyEmail : companyData.companyEmail,
         npwp : companyData.npwp,
         companyCode : companyData.companyCode,
-        companyType : companyData.companyType,
-        application : companyData.application
+        companyType : companyData.companyType
     }
   });
 
