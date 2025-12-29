@@ -103,7 +103,7 @@ export async function updateCompany(userId, payload) {
     });
     if (existing) throw new ResponseError(409, 'Company name already exists.');
   }
-
+  console.log(companyData);
   const company = await niterraappdb.Company.update({
     where: { companyId: profile.companyId },
     data: {

@@ -20,7 +20,6 @@ const getAllCompaniesController = async (req, res, next) => {
 const create = async (req, res, next) => {
     try {
         const companyImage = req.file.companyImage ? req.file.companyImage : null;
-        console.log(companyImage);
         const userId = req.user.userId;
         const payload = {
             companyName         : req.body.companyName,
@@ -105,6 +104,8 @@ const update = async (req, res, next) => {
             urlImage           : companyImage ?? undefined,
             segments           : Array.isArray(req.body.segments) ? req.body.segments.map(Number) : req.body.segments ? [Number(req.body.segments)] : []
         }
+
+        console.log(payload);
         const result = await updateCompany(userId,payload);
         res.status(200).json({
             status: "Success",
