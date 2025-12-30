@@ -19,8 +19,20 @@ const getAllCompaniesController = async (req, res, next) => {
 
 const create = async (req, res, next) => {
     try {
-        const companyImage = req.file.companyImage ? req.file.companyImage : null;
-        console.log(companyImage);
+        let companyImage = null;
+
+        if (req.file) {
+        let baseFolder = "misc";
+            if (["image/jpeg", "image/jpg", "image/png"].includes(req.file.mimetype)) {
+                baseFolder = "images";
+            } else if (req.file.mimetype === "application/pdf") {
+                baseFolder = "documents";
+            }
+
+            const subFolder = req.query.mainFolder || "default";
+
+            companyImage = `/public/${baseFolder}/${subFolder}/${req.file.filename}`;
+        }
         const userId = req.user.userId;
         const payload = {
             companyName         : req.body.companyName,
@@ -90,7 +102,19 @@ const getCompanyByUserId = async (req, res, next) => {
 
 const update = async (req, res, next) => {
     try {
-        const companyImage = req.files.companyImage ? req.files.companyImage[0] : null;
+        let companyImage = undefined;
+
+        if (req.file) {
+        let baseFolder = "misc";
+            if (["image/jpeg", "image/jpg", "image/png"].includes(req.file.mimetype)) {
+                baseFolder = "images";
+            } else if (req.file.mimetype === "application/pdf") {
+                baseFolder = "documents";
+            }
+            const subFolder = req.query.mainFolder || "default";
+            companyImage = `/public/${baseFolder}/${subFolder}/${req.file.filename}`;
+        }
+
         const userId = req.user.userId;
         const payload = {
             companyCode        : req.body.companyCode,
@@ -103,9 +127,10 @@ const update = async (req, res, next) => {
             companyType        : req.body.companyType,
             companyCity        : req.body.companyCity,
             urlImage           : companyImage ?? undefined,
-            application        : req.body.application,
             segments           : Array.isArray(req.body.segments) ? req.body.segments.map(Number) : req.body.segments ? [Number(req.body.segments)] : []
         }
+
+        console.log(payload);
         const result = await updateCompany(userId,payload);
         res.status(200).json({
             status: "Success",

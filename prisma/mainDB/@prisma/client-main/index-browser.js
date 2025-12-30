@@ -359,7 +359,9 @@ exports.Prisma.MenuScalarFieldEnum = {
   redirect: 'redirect',
   isGlobal: 'isGlobal',
   isShow: 'isShow',
-  isActive: 'isActive'
+  isActive: 'isActive',
+  isUser: 'isUser',
+  isAdmin: 'isAdmin'
 };
 
 exports.Prisma.UserScalarFieldEnum = {
@@ -415,7 +417,8 @@ exports.Prisma.UserHasRoleAccessScalarFieldEnum = {
   userId: 'userId',
   roleId: 'roleId',
   accessId: 'accessId',
-  menuId: 'menuId'
+  menuId: 'menuId',
+  application: 'application'
 };
 
 exports.Prisma.LinkedDeviceScalarFieldEnum = {

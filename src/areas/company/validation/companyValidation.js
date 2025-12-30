@@ -61,7 +61,7 @@ const createCompanyValidation = Joi.object({
     application : Joi.string().required().messages({
         'string.empty': 'Invalid application Register',
         'any.required': 'Invalid application Register',
-      })
+    })
 });
 
 const updateCompanyValidation = Joi.object({
@@ -72,10 +72,6 @@ const updateCompanyValidation = Joi.object({
     }),
     companyName: Joi.string().max(100).optional().messages({
         'string.max': 'Company Name must not exceed 100 characters',
-    }),
-    companyFoundingDate: Joi.date().iso().optional().messages({
-        'date.base': 'Founding Date must be a valid date',
-        'date.format': 'Founding Date must be in ISO format (YYYY-MM-DD)',
     }),
     companyStatus: Joi.string().max(50).optional().messages({
         'string.max': 'Company Status must not exceed 50 characters',
@@ -94,14 +90,12 @@ const updateCompanyValidation = Joi.object({
     npwp: Joi.string().max(30).optional().messages({
         'string.max': 'NPWP must not exceed 30 characters',
     }),
-    website: Joi.string().uri().max(255).optional().allow(null, '').messages({
-        'string.uri': 'Website must be a valid URL',
-        'string.max': 'Website URL must not exceed 255 characters',
+    segments: Joi.array().optional(),
+    companyType: Joi.string().max(100).optional().messages({
+        'string.max': 'Company Type must not exceed 100 characters',
     }),
-    segmentId: Joi.number().integer().min(1).optional().messages({
-        'number.base': 'Segment ID must be a number',
-        'number.integer': 'Segment ID must be an integer',
-        'number.min': 'Segment ID must be greater than or equal to 1',
+    companyCity: Joi.string().max(100).optional().messages({
+        'string.max': 'Company City must not exceed 100 characters',
     }),
     urlImage: Joi.string().optional().allow(null, '').messages({
         'string.base': 'Image URL must be a string',

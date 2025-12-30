@@ -43,7 +43,7 @@ export async function createCompany(userId, payload) {
     urlImage : payload.urlImage,
     companyName : payload.companyName,
     companyStatus : payload.companyStatus,
-    comapnyTelpFax : payload.comapnyTelpFax,
+    companyTelpFax : payload.companyTelpFax,
     companyCity : payload.companyCity,
     companyAddress : payload.companyAddress,
     companyEmail : payload.companyEmail,
@@ -83,13 +83,61 @@ export async function getCompanyByUser(userId) {
  * Update company (only by associated user).
  */
 export async function updateCompany(userId, payload) {
+  // 1. Validasi input
   await updateCompanyValidation.validateAsync(payload, { abortEarly: false });
+
+  // 2. Cek apakah user punya company
   const profile = await niterraappdb.profile.findUnique({ where: { userId } });
   if (!profile?.companyId) throw new ResponseError(404, 'User not associated with a company.');
-  return niterraappdb.Company.update({
+
+  const { segments, ...companyData } = payload;
+
+  if (companyData.companyName) {
+    const existing = await niterraappdb.Company.findFirst({
+      where: {
+        companyName: companyData.companyName,
+        NOT: {
+          companyId: profile.companyId 
+        }
+      }
+    });
+    if (existing) throw new ResponseError(409, 'Company name already exists.');
+  }
+  console.log(companyData);
+  const company = await niterraappdb.Company.update({
     where: { companyId: profile.companyId },
-    data: payload
+    data: {
+        urlImage : companyData.urlImage,
+        companyName : companyData.companyName,
+        companyStatus : companyData.companyStatus,
+        companyTelpFax : companyData.companyTelpFax,
+        companyCity : companyData.companyCity,
+        companyAddress : companyData.companyAddress,
+        companyEmail : companyData.companyEmail,
+        npwp : companyData.npwp,
+        companyCode : companyData.companyCode,
+        companyType : companyData.companyType
+    }
   });
+
+  if (segments && Array.isArray(segments)) {
+    await niterraappdb.companySegmentLink.deleteMany({
+      where: { companyId: profile.companyId }
+    });
+
+    const promiseList = segments.map(item => {
+      return niterraappdb.companySegmentLink.create({
+        data: {
+          companyId: profile.companyId,
+          segmentId: item
+        }
+      });
+    });
+
+    await Promise.all(promiseList);
+  }
+
+  return company;
 }
 
 /**

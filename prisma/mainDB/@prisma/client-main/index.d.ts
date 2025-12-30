@@ -26408,6 +26408,8 @@ export namespace Prisma {
     isGlobal: boolean | null
     isShow: boolean | null
     isActive: boolean | null
+    isUser: boolean | null
+    isAdmin: boolean | null
   }
 
   export type MenuMaxAggregateOutputType = {
@@ -26421,6 +26423,8 @@ export namespace Prisma {
     isGlobal: boolean | null
     isShow: boolean | null
     isActive: boolean | null
+    isUser: boolean | null
+    isAdmin: boolean | null
   }
 
   export type MenuCountAggregateOutputType = {
@@ -26434,6 +26438,8 @@ export namespace Prisma {
     isGlobal: number
     isShow: number
     isActive: number
+    isUser: number
+    isAdmin: number
     _all: number
   }
 
@@ -26461,6 +26467,8 @@ export namespace Prisma {
     isGlobal?: true
     isShow?: true
     isActive?: true
+    isUser?: true
+    isAdmin?: true
   }
 
   export type MenuMaxAggregateInputType = {
@@ -26474,6 +26482,8 @@ export namespace Prisma {
     isGlobal?: true
     isShow?: true
     isActive?: true
+    isUser?: true
+    isAdmin?: true
   }
 
   export type MenuCountAggregateInputType = {
@@ -26487,6 +26497,8 @@ export namespace Prisma {
     isGlobal?: true
     isShow?: true
     isActive?: true
+    isUser?: true
+    isAdmin?: true
     _all?: true
   }
 
@@ -26587,6 +26599,8 @@ export namespace Prisma {
     isGlobal: boolean
     isShow: boolean
     isActive: boolean
+    isUser: boolean
+    isAdmin: boolean
     _count: MenuCountAggregateOutputType | null
     _avg: MenuAvgAggregateOutputType | null
     _sum: MenuSumAggregateOutputType | null
@@ -26619,6 +26633,8 @@ export namespace Prisma {
     isGlobal?: boolean
     isShow?: boolean
     isActive?: boolean
+    isUser?: boolean
+    isAdmin?: boolean
     UserHasRoleAccess?: boolean | Menu$UserHasRoleAccessArgs<ExtArgs>
     _count?: boolean | MenuCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["menu"]>
@@ -26634,6 +26650,8 @@ export namespace Prisma {
     isGlobal?: boolean
     isShow?: boolean
     isActive?: boolean
+    isUser?: boolean
+    isAdmin?: boolean
   }, ExtArgs["result"]["menu"]>
 
   export type MenuSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -26647,6 +26665,8 @@ export namespace Prisma {
     isGlobal?: boolean
     isShow?: boolean
     isActive?: boolean
+    isUser?: boolean
+    isAdmin?: boolean
   }, ExtArgs["result"]["menu"]>
 
   export type MenuSelectScalar = {
@@ -26660,9 +26680,11 @@ export namespace Prisma {
     isGlobal?: boolean
     isShow?: boolean
     isActive?: boolean
+    isUser?: boolean
+    isAdmin?: boolean
   }
 
-  export type MenuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"menuId" | "sequence" | "parentId" | "icon" | "application" | "menuName" | "redirect" | "isGlobal" | "isShow" | "isActive", ExtArgs["result"]["menu"]>
+  export type MenuOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"menuId" | "sequence" | "parentId" | "icon" | "application" | "menuName" | "redirect" | "isGlobal" | "isShow" | "isActive" | "isUser" | "isAdmin", ExtArgs["result"]["menu"]>
   export type MenuInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     UserHasRoleAccess?: boolean | Menu$UserHasRoleAccessArgs<ExtArgs>
     _count?: boolean | MenuCountOutputTypeDefaultArgs<ExtArgs>
@@ -26686,6 +26708,8 @@ export namespace Prisma {
       isGlobal: boolean
       isShow: boolean
       isActive: boolean
+      isUser: boolean
+      isAdmin: boolean
     }, ExtArgs["result"]["menu"]>
     composites: {}
   }
@@ -27120,6 +27144,8 @@ export namespace Prisma {
     readonly isGlobal: FieldRef<"Menu", 'Boolean'>
     readonly isShow: FieldRef<"Menu", 'Boolean'>
     readonly isActive: FieldRef<"Menu", 'Boolean'>
+    readonly isUser: FieldRef<"Menu", 'Boolean'>
+    readonly isAdmin: FieldRef<"Menu", 'Boolean'>
   }
     
 
@@ -34247,6 +34273,7 @@ export namespace Prisma {
     roleId: number | null
     accessId: number | null
     menuId: number | null
+    application: string | null
   }
 
   export type UserHasRoleAccessMaxAggregateOutputType = {
@@ -34254,6 +34281,7 @@ export namespace Prisma {
     roleId: number | null
     accessId: number | null
     menuId: number | null
+    application: string | null
   }
 
   export type UserHasRoleAccessCountAggregateOutputType = {
@@ -34261,6 +34289,7 @@ export namespace Prisma {
     roleId: number
     accessId: number
     menuId: number
+    application: number
     _all: number
   }
 
@@ -34282,6 +34311,7 @@ export namespace Prisma {
     roleId?: true
     accessId?: true
     menuId?: true
+    application?: true
   }
 
   export type UserHasRoleAccessMaxAggregateInputType = {
@@ -34289,6 +34319,7 @@ export namespace Prisma {
     roleId?: true
     accessId?: true
     menuId?: true
+    application?: true
   }
 
   export type UserHasRoleAccessCountAggregateInputType = {
@@ -34296,6 +34327,7 @@ export namespace Prisma {
     roleId?: true
     accessId?: true
     menuId?: true
+    application?: true
     _all?: true
   }
 
@@ -34390,6 +34422,7 @@ export namespace Prisma {
     roleId: number
     accessId: number
     menuId: number | null
+    application: string | null
     _count: UserHasRoleAccessCountAggregateOutputType | null
     _avg: UserHasRoleAccessAvgAggregateOutputType | null
     _sum: UserHasRoleAccessSumAggregateOutputType | null
@@ -34416,6 +34449,7 @@ export namespace Prisma {
     roleId?: boolean
     accessId?: boolean
     menuId?: boolean
+    application?: boolean
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
     role?: boolean | RoleDefaultArgs<ExtArgs>
@@ -34427,6 +34461,7 @@ export namespace Prisma {
     roleId?: boolean
     accessId?: boolean
     menuId?: boolean
+    application?: boolean
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
     role?: boolean | RoleDefaultArgs<ExtArgs>
@@ -34438,6 +34473,7 @@ export namespace Prisma {
     roleId?: boolean
     accessId?: boolean
     menuId?: boolean
+    application?: boolean
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
     role?: boolean | RoleDefaultArgs<ExtArgs>
@@ -34449,9 +34485,10 @@ export namespace Prisma {
     roleId?: boolean
     accessId?: boolean
     menuId?: boolean
+    application?: boolean
   }
 
-  export type UserHasRoleAccessOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "roleId" | "accessId" | "menuId", ExtArgs["result"]["userHasRoleAccess"]>
+  export type UserHasRoleAccessOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"userId" | "roleId" | "accessId" | "menuId" | "application", ExtArgs["result"]["userHasRoleAccess"]>
   export type UserHasRoleAccessInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     access?: boolean | AccessDefaultArgs<ExtArgs>
     menu?: boolean | UserHasRoleAccess$menuArgs<ExtArgs>
@@ -34484,6 +34521,7 @@ export namespace Prisma {
       roleId: number
       accessId: number
       menuId: number | null
+      application: string | null
     }, ExtArgs["result"]["userHasRoleAccess"]>
     composites: {}
   }
@@ -34915,6 +34953,7 @@ export namespace Prisma {
     readonly roleId: FieldRef<"UserHasRoleAccess", 'Int'>
     readonly accessId: FieldRef<"UserHasRoleAccess", 'Int'>
     readonly menuId: FieldRef<"UserHasRoleAccess", 'Int'>
+    readonly application: FieldRef<"UserHasRoleAccess", 'String'>
   }
     
 
@@ -37803,7 +37842,9 @@ export namespace Prisma {
     redirect: 'redirect',
     isGlobal: 'isGlobal',
     isShow: 'isShow',
-    isActive: 'isActive'
+    isActive: 'isActive',
+    isUser: 'isUser',
+    isAdmin: 'isAdmin'
   };
 
   export type MenuScalarFieldEnum = (typeof MenuScalarFieldEnum)[keyof typeof MenuScalarFieldEnum]
@@ -37880,7 +37921,8 @@ export namespace Prisma {
     userId: 'userId',
     roleId: 'roleId',
     accessId: 'accessId',
-    menuId: 'menuId'
+    menuId: 'menuId',
+    application: 'application'
   };
 
   export type UserHasRoleAccessScalarFieldEnum = (typeof UserHasRoleAccessScalarFieldEnum)[keyof typeof UserHasRoleAccessScalarFieldEnum]
@@ -39513,6 +39555,8 @@ export namespace Prisma {
     isGlobal?: BoolFilter<"Menu"> | boolean
     isShow?: BoolFilter<"Menu"> | boolean
     isActive?: BoolFilter<"Menu"> | boolean
+    isUser?: BoolFilter<"Menu"> | boolean
+    isAdmin?: BoolFilter<"Menu"> | boolean
     UserHasRoleAccess?: UserHasRoleAccessListRelationFilter
   }
 
@@ -39527,6 +39571,8 @@ export namespace Prisma {
     isGlobal?: SortOrder
     isShow?: SortOrder
     isActive?: SortOrder
+    isUser?: SortOrder
+    isAdmin?: SortOrder
     UserHasRoleAccess?: UserHasRoleAccessOrderByRelationAggregateInput
   }
 
@@ -39544,6 +39590,8 @@ export namespace Prisma {
     isGlobal?: BoolFilter<"Menu"> | boolean
     isShow?: BoolFilter<"Menu"> | boolean
     isActive?: BoolFilter<"Menu"> | boolean
+    isUser?: BoolFilter<"Menu"> | boolean
+    isAdmin?: BoolFilter<"Menu"> | boolean
     UserHasRoleAccess?: UserHasRoleAccessListRelationFilter
   }, "menuId">
 
@@ -39558,6 +39606,8 @@ export namespace Prisma {
     isGlobal?: SortOrder
     isShow?: SortOrder
     isActive?: SortOrder
+    isUser?: SortOrder
+    isAdmin?: SortOrder
     _count?: MenuCountOrderByAggregateInput
     _avg?: MenuAvgOrderByAggregateInput
     _max?: MenuMaxOrderByAggregateInput
@@ -39579,6 +39629,8 @@ export namespace Prisma {
     isGlobal?: BoolWithAggregatesFilter<"Menu"> | boolean
     isShow?: BoolWithAggregatesFilter<"Menu"> | boolean
     isActive?: BoolWithAggregatesFilter<"Menu"> | boolean
+    isUser?: BoolWithAggregatesFilter<"Menu"> | boolean
+    isAdmin?: BoolWithAggregatesFilter<"Menu"> | boolean
   }
 
   export type UserWhereInput = {
@@ -39948,6 +40000,7 @@ export namespace Prisma {
     roleId?: IntFilter<"UserHasRoleAccess"> | number
     accessId?: IntFilter<"UserHasRoleAccess"> | number
     menuId?: IntNullableFilter<"UserHasRoleAccess"> | number | null
+    application?: StringNullableFilter<"UserHasRoleAccess"> | string | null
     access?: XOR<AccessScalarRelationFilter, AccessWhereInput>
     menu?: XOR<MenuNullableScalarRelationFilter, MenuWhereInput> | null
     role?: XOR<RoleScalarRelationFilter, RoleWhereInput>
@@ -39959,6 +40012,7 @@ export namespace Prisma {
     roleId?: SortOrder
     accessId?: SortOrder
     menuId?: SortOrderInput | SortOrder
+    application?: SortOrderInput | SortOrder
     access?: AccessOrderByWithRelationInput
     menu?: MenuOrderByWithRelationInput
     role?: RoleOrderByWithRelationInput
@@ -39974,6 +40028,7 @@ export namespace Prisma {
     roleId?: IntFilter<"UserHasRoleAccess"> | number
     accessId?: IntFilter<"UserHasRoleAccess"> | number
     menuId?: IntNullableFilter<"UserHasRoleAccess"> | number | null
+    application?: StringNullableFilter<"UserHasRoleAccess"> | string | null
     access?: XOR<AccessScalarRelationFilter, AccessWhereInput>
     menu?: XOR<MenuNullableScalarRelationFilter, MenuWhereInput> | null
     role?: XOR<RoleScalarRelationFilter, RoleWhereInput>
@@ -39985,6 +40040,7 @@ export namespace Prisma {
     roleId?: SortOrder
     accessId?: SortOrder
     menuId?: SortOrderInput | SortOrder
+    application?: SortOrderInput | SortOrder
     _count?: UserHasRoleAccessCountOrderByAggregateInput
     _avg?: UserHasRoleAccessAvgOrderByAggregateInput
     _max?: UserHasRoleAccessMaxOrderByAggregateInput
@@ -40000,6 +40056,7 @@ export namespace Prisma {
     roleId?: IntWithAggregatesFilter<"UserHasRoleAccess"> | number
     accessId?: IntWithAggregatesFilter<"UserHasRoleAccess"> | number
     menuId?: IntNullableWithAggregatesFilter<"UserHasRoleAccess"> | number | null
+    application?: StringNullableWithAggregatesFilter<"UserHasRoleAccess"> | string | null
   }
 
   export type LinkedDeviceWhereInput = {
@@ -41742,6 +41799,8 @@ export namespace Prisma {
     isGlobal?: boolean
     isShow?: boolean
     isActive?: boolean
+    isUser?: boolean
+    isAdmin?: boolean
     UserHasRoleAccess?: UserHasRoleAccessCreateNestedManyWithoutMenuInput
   }
 
@@ -41756,6 +41815,8 @@ export namespace Prisma {
     isGlobal?: boolean
     isShow?: boolean
     isActive?: boolean
+    isUser?: boolean
+    isAdmin?: boolean
     UserHasRoleAccess?: UserHasRoleAccessUncheckedCreateNestedManyWithoutMenuInput
   }
 
@@ -41769,6 +41830,8 @@ export namespace Prisma {
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
     isShow?: BoolFieldUpdateOperationsInput | boolean
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isUser?: BoolFieldUpdateOperationsInput | boolean
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     UserHasRoleAccess?: UserHasRoleAccessUpdateManyWithoutMenuNestedInput
   }
 
@@ -41783,6 +41846,8 @@ export namespace Prisma {
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
     isShow?: BoolFieldUpdateOperationsInput | boolean
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isUser?: BoolFieldUpdateOperationsInput | boolean
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
     UserHasRoleAccess?: UserHasRoleAccessUncheckedUpdateManyWithoutMenuNestedInput
   }
 
@@ -41797,6 +41862,8 @@ export namespace Prisma {
     isGlobal?: boolean
     isShow?: boolean
     isActive?: boolean
+    isUser?: boolean
+    isAdmin?: boolean
   }
 
   export type MenuUpdateManyMutationInput = {
@@ -41809,6 +41876,8 @@ export namespace Prisma {
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
     isShow?: BoolFieldUpdateOperationsInput | boolean
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isUser?: BoolFieldUpdateOperationsInput | boolean
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type MenuUncheckedUpdateManyInput = {
@@ -41822,6 +41891,8 @@ export namespace Prisma {
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
     isShow?: BoolFieldUpdateOperationsInput | boolean
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isUser?: BoolFieldUpdateOperationsInput | boolean
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type UserCreateInput = {
@@ -42188,6 +42259,7 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessCreateInput = {
+    application?: string | null
     access: AccessCreateNestedOneWithoutUserHasRoleAccessInput
     menu?: MenuCreateNestedOneWithoutUserHasRoleAccessInput
     role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
@@ -42199,9 +42271,11 @@ export namespace Prisma {
     roleId: number
     accessId: number
     menuId?: number | null
+    application?: string | null
   }
 
   export type UserHasRoleAccessUpdateInput = {
+    application?: NullableStringFieldUpdateOperationsInput | string | null
     access?: AccessUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     menu?: MenuUpdateOneWithoutUserHasRoleAccessNestedInput
     role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
@@ -42213,6 +42287,7 @@ export namespace Prisma {
     roleId?: IntFieldUpdateOperationsInput | number
     accessId?: IntFieldUpdateOperationsInput | number
     menuId?: NullableIntFieldUpdateOperationsInput | number | null
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserHasRoleAccessCreateManyInput = {
@@ -42220,10 +42295,11 @@ export namespace Prisma {
     roleId: number
     accessId: number
     menuId?: number | null
+    application?: string | null
   }
 
   export type UserHasRoleAccessUpdateManyMutationInput = {
-
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserHasRoleAccessUncheckedUpdateManyInput = {
@@ -42231,6 +42307,7 @@ export namespace Prisma {
     roleId?: IntFieldUpdateOperationsInput | number
     accessId?: IntFieldUpdateOperationsInput | number
     menuId?: NullableIntFieldUpdateOperationsInput | number | null
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type LinkedDeviceCreateInput = {
@@ -43543,6 +43620,8 @@ export namespace Prisma {
     isGlobal?: SortOrder
     isShow?: SortOrder
     isActive?: SortOrder
+    isUser?: SortOrder
+    isAdmin?: SortOrder
   }
 
   export type MenuAvgOrderByAggregateInput = {
@@ -43562,6 +43641,8 @@ export namespace Prisma {
     isGlobal?: SortOrder
     isShow?: SortOrder
     isActive?: SortOrder
+    isUser?: SortOrder
+    isAdmin?: SortOrder
   }
 
   export type MenuMinOrderByAggregateInput = {
@@ -43575,6 +43656,8 @@ export namespace Prisma {
     isGlobal?: SortOrder
     isShow?: SortOrder
     isActive?: SortOrder
+    isUser?: SortOrder
+    isAdmin?: SortOrder
   }
 
   export type MenuSumOrderByAggregateInput = {
@@ -43843,6 +43926,7 @@ export namespace Prisma {
     roleId?: SortOrder
     accessId?: SortOrder
     menuId?: SortOrder
+    application?: SortOrder
   }
 
   export type UserHasRoleAccessAvgOrderByAggregateInput = {
@@ -43856,6 +43940,7 @@ export namespace Prisma {
     roleId?: SortOrder
     accessId?: SortOrder
     menuId?: SortOrder
+    application?: SortOrder
   }
 
   export type UserHasRoleAccessMinOrderByAggregateInput = {
@@ -43863,6 +43948,7 @@ export namespace Prisma {
     roleId?: SortOrder
     accessId?: SortOrder
     menuId?: SortOrder
+    application?: SortOrder
   }
 
   export type UserHasRoleAccessSumOrderByAggregateInput = {
@@ -47279,6 +47365,7 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessCreateWithoutMenuInput = {
+    application?: string | null
     access: AccessCreateNestedOneWithoutUserHasRoleAccessInput
     role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
     user: UserCreateNestedOneWithoutUserHasRoleAccessInput
@@ -47288,6 +47375,7 @@ export namespace Prisma {
     userId: string
     roleId: number
     accessId: number
+    application?: string | null
   }
 
   export type UserHasRoleAccessCreateOrConnectWithoutMenuInput = {
@@ -47324,6 +47412,7 @@ export namespace Prisma {
     roleId?: IntFilter<"UserHasRoleAccess"> | number
     accessId?: IntFilter<"UserHasRoleAccess"> | number
     menuId?: IntNullableFilter<"UserHasRoleAccess"> | number | null
+    application?: StringNullableFilter<"UserHasRoleAccess"> | string | null
   }
 
   export type LinkedDeviceCreateWithoutUserInput = {
@@ -47424,6 +47513,7 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessCreateWithoutUserInput = {
+    application?: string | null
     access: AccessCreateNestedOneWithoutUserHasRoleAccessInput
     menu?: MenuCreateNestedOneWithoutUserHasRoleAccessInput
     role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
@@ -47433,6 +47523,7 @@ export namespace Prisma {
     roleId: number
     accessId: number
     menuId?: number | null
+    application?: string | null
   }
 
   export type UserHasRoleAccessCreateOrConnectWithoutUserInput = {
@@ -47796,6 +47887,7 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessCreateWithoutRoleInput = {
+    application?: string | null
     access: AccessCreateNestedOneWithoutUserHasRoleAccessInput
     menu?: MenuCreateNestedOneWithoutUserHasRoleAccessInput
     user: UserCreateNestedOneWithoutUserHasRoleAccessInput
@@ -47805,6 +47897,7 @@ export namespace Prisma {
     userId: string
     accessId: number
     menuId?: number | null
+    application?: string | null
   }
 
   export type UserHasRoleAccessCreateOrConnectWithoutRoleInput = {
@@ -47834,6 +47927,7 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessCreateWithoutAccessInput = {
+    application?: string | null
     menu?: MenuCreateNestedOneWithoutUserHasRoleAccessInput
     role: RoleCreateNestedOneWithoutUserHasRoleAccessInput
     user: UserCreateNestedOneWithoutUserHasRoleAccessInput
@@ -47843,6 +47937,7 @@ export namespace Prisma {
     userId: string
     roleId: number
     menuId?: number | null
+    application?: string | null
   }
 
   export type UserHasRoleAccessCreateOrConnectWithoutAccessInput = {
@@ -47983,6 +48078,8 @@ export namespace Prisma {
     isGlobal?: boolean
     isShow?: boolean
     isActive?: boolean
+    isUser?: boolean
+    isAdmin?: boolean
   }
 
   export type MenuUncheckedCreateWithoutUserHasRoleAccessInput = {
@@ -47996,6 +48093,8 @@ export namespace Prisma {
     isGlobal?: boolean
     isShow?: boolean
     isActive?: boolean
+    isUser?: boolean
+    isAdmin?: boolean
   }
 
   export type MenuCreateOrConnectWithoutUserHasRoleAccessInput = {
@@ -48099,6 +48198,8 @@ export namespace Prisma {
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
     isShow?: BoolFieldUpdateOperationsInput | boolean
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isUser?: BoolFieldUpdateOperationsInput | boolean
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type MenuUncheckedUpdateWithoutUserHasRoleAccessInput = {
@@ -48112,6 +48213,8 @@ export namespace Prisma {
     isGlobal?: BoolFieldUpdateOperationsInput | boolean
     isShow?: BoolFieldUpdateOperationsInput | boolean
     isActive?: BoolFieldUpdateOperationsInput | boolean
+    isUser?: BoolFieldUpdateOperationsInput | boolean
+    isAdmin?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type RoleUpsertWithoutUserHasRoleAccessInput = {
@@ -48741,9 +48844,11 @@ export namespace Prisma {
     userId: string
     roleId: number
     accessId: number
+    application?: string | null
   }
 
   export type UserHasRoleAccessUpdateWithoutMenuInput = {
+    application?: NullableStringFieldUpdateOperationsInput | string | null
     access?: AccessUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
@@ -48753,12 +48858,14 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     roleId?: IntFieldUpdateOperationsInput | number
     accessId?: IntFieldUpdateOperationsInput | number
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserHasRoleAccessUncheckedUpdateManyWithoutMenuInput = {
     userId?: StringFieldUpdateOperationsInput | string
     roleId?: IntFieldUpdateOperationsInput | number
     accessId?: IntFieldUpdateOperationsInput | number
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type LinkedDeviceCreateManyUserInput = {
@@ -48787,6 +48894,7 @@ export namespace Prisma {
     roleId: number
     accessId: number
     menuId?: number | null
+    application?: string | null
   }
 
   export type otpVerifikasiCreateManyUserInput = {
@@ -48862,6 +48970,7 @@ export namespace Prisma {
   }
 
   export type UserHasRoleAccessUpdateWithoutUserInput = {
+    application?: NullableStringFieldUpdateOperationsInput | string | null
     access?: AccessUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     menu?: MenuUpdateOneWithoutUserHasRoleAccessNestedInput
     role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
@@ -48871,12 +48980,14 @@ export namespace Prisma {
     roleId?: IntFieldUpdateOperationsInput | number
     accessId?: IntFieldUpdateOperationsInput | number
     menuId?: NullableIntFieldUpdateOperationsInput | number | null
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserHasRoleAccessUncheckedUpdateManyWithoutUserInput = {
     roleId?: IntFieldUpdateOperationsInput | number
     accessId?: IntFieldUpdateOperationsInput | number
     menuId?: NullableIntFieldUpdateOperationsInput | number | null
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type otpVerifikasiUpdateWithoutUserInput = {
@@ -48900,9 +49011,11 @@ export namespace Prisma {
     userId: string
     accessId: number
     menuId?: number | null
+    application?: string | null
   }
 
   export type UserHasRoleAccessUpdateWithoutRoleInput = {
+    application?: NullableStringFieldUpdateOperationsInput | string | null
     access?: AccessUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     menu?: MenuUpdateOneWithoutUserHasRoleAccessNestedInput
     user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
@@ -48912,21 +49025,25 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     accessId?: IntFieldUpdateOperationsInput | number
     menuId?: NullableIntFieldUpdateOperationsInput | number | null
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserHasRoleAccessUncheckedUpdateManyWithoutRoleInput = {
     userId?: StringFieldUpdateOperationsInput | string
     accessId?: IntFieldUpdateOperationsInput | number
     menuId?: NullableIntFieldUpdateOperationsInput | number | null
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserHasRoleAccessCreateManyAccessInput = {
     userId: string
     roleId: number
     menuId?: number | null
+    application?: string | null
   }
 
   export type UserHasRoleAccessUpdateWithoutAccessInput = {
+    application?: NullableStringFieldUpdateOperationsInput | string | null
     menu?: MenuUpdateOneWithoutUserHasRoleAccessNestedInput
     role?: RoleUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
     user?: UserUpdateOneRequiredWithoutUserHasRoleAccessNestedInput
@@ -48936,12 +49053,14 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
     roleId?: IntFieldUpdateOperationsInput | number
     menuId?: NullableIntFieldUpdateOperationsInput | number | null
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type UserHasRoleAccessUncheckedUpdateManyWithoutAccessInput = {
     userId?: StringFieldUpdateOperationsInput | string
     roleId?: IntFieldUpdateOperationsInput | number
     menuId?: NullableIntFieldUpdateOperationsInput | number | null
+    application?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
 

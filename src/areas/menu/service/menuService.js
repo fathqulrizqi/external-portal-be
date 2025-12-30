@@ -31,7 +31,9 @@ const create = async (payload) =>{
             redirect : payload.redirect,
             isGlobal : payload.isGlobal,
             isShow   : payload.isShow,
-            isActive : payload.isActive
+            isActive : payload.isActive,
+            isAdmin  : payload.isAdmin,
+            isUser   : payload.isUser
         }
     })
 
@@ -67,7 +69,9 @@ const update = async (menuId,payload) =>{
             redirect : payload.redirect,
             isGlobal : payload.isGlobal,
             isShow   : payload.isShow,
-            isActive : payload.isActive
+            isActive : payload.isActive,
+            isAdmin  : payload.isAdmin,
+            isUser   : payload.isUser
         }
     })
 

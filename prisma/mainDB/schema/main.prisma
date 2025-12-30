@@ -25,5 +25,7 @@ model Menu {
   isGlobal          Boolean             @default(false)
   isShow            Boolean             @default(true)
   isActive          Boolean             @default(true)
+  isUser            Boolean             @default(false)      
+  isAdmin           Boolean             @default(false)
   UserHasRoleAccess UserHasRoleAccess[]
 }

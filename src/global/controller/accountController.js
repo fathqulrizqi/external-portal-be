@@ -16,10 +16,22 @@ const getProfile = async(req,res,next)=>{
 
 const updateProfile = async(req,res,next)=>{
     try{
+        let profileImage = undefined;
+
+        if (req.file) {
+            let baseFolder = "misc";
+            if (["image/jpeg", "image/jpg", "image/png"].includes(req.file.mimetype)) {
+                baseFolder = "images";
+            } else if (req.file.mimetype === "application/pdf") {
+                baseFolder = "documents";
+            }
+            const subFolder = req.query.mainFolder || "default";
+            profileImage = `/public/${baseFolder}/${subFolder}/${req.file.filename}`;
+        }
         const userId = req.user.userId;
         const payload = {
             fullName : req.body.fullName,
-            urlImage : req.body.urlImage,
+            urlImage : profileImage,
             phone    : req.body.phone,
         }
         await accountService.updateProfile(userId, payload);

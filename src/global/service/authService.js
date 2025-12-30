@@ -55,6 +55,7 @@ const register = async (payload) => {
         userId: newUser.userId,
         roleId: DEFAULT_ROLE_ID,
         accessId: DEFAULT_ACCESS_ID,
+        application : payload.application
       },
     });
 

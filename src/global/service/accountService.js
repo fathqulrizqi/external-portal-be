@@ -7,7 +7,14 @@ import { logger } from "../../config/logging.js";
 const getProfile = async(userId)=>{
     try{
         const profile = await niterraappdb.profile.findFirst({
-            where : {userId: userId}
+            where : {userId: userId},
+            include : {
+                user : {
+                    select: {    
+                        email: true
+                    }
+                }
+            }
         })
         return profile;
     }catch(e){

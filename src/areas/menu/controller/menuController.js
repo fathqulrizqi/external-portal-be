@@ -11,7 +11,9 @@ const create = async(req,res,next)=>{
             redirect : req.body.redirect,
             isGlobal : req.body.isGlobal,
             isShow   : req.body.isShow,
-            isActive : req.body.isActive
+            isActive : req.body.isActive,
+            isAdmin  : req.body.isAdmin,
+            isUser   : req.body.isUser
         }    
 
         await menuService.create(payload);
@@ -52,7 +54,9 @@ const update = async (req,res,next)=>{
             redirect : req.body.redirect,
             isGlobal : req.body.isGlobal,
             isShow   : req.body.isShow,
-            isActive : req.body.isActive
+            isActive : req.body.isActive,
+            isAdmin  : req.body.isAdmin,
+            isUser   : req.body.isUser
         }
 
         await menuService.update(menuId,payload);

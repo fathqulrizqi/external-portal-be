@@ -10,12 +10,10 @@ const updateProfileValidation = Joi.object({
         }),
 
     urlImage: Joi.string()
-        .uri() 
         .optional() 
         .allow(null, '') 
         .messages({
             'string.base': 'URL gambar harus berupa teks.',
-            'string.uri': 'URL gambar harus berupa URL yang valid.',
         }),
 
     phone: Joi.string()
