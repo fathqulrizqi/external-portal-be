@@ -9,7 +9,7 @@ model Company {
   companyId      String               @id @default(uuid()) @db.Uuid
   urlImage       String?
   companyName    String?
-  companyStatus  String? //will be used for differentiating between active, inactive, blacklisted, etc.
+  companyStatus  String?
   companyTelpFax String?
   companyCity    String?
   companyAddress String?
@@ -17,8 +17,8 @@ model Company {
   npwp           String? //tax identification number
   createdAt      DateTime             @default(now())
   updatedAt      DateTime             @updatedAt
-  companyCode    String? //unique company code/id used internally
-  companyType    String? //will be used for differentiating between vendor, consultant, contractor, etc.
+  companyCode    String?
+  companyType    String?
   application    String               @default("External Portal")
   segments       CompanySegmentLink[]
   profile        Profile[] //relation to Profile/user model
