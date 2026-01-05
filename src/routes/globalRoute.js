@@ -26,6 +26,7 @@ globalRouter.get("/api", (req, res) => {
 
 globalRouter.post("/api/forgotPasswordSendingEmail", accountController.sendingEmailResetPassword);
 globalRouter.post("/api/forgotPassword", accountController.resetPassword);
+globalRouter.post("/api/updatePassword", accountController.updatePassword);
 globalRouter.post("/api/users/register", authController.register);
 globalRouter.post("/api/users/login", authController.login);
 globalRouter.use(verifikasiMiddleware);
